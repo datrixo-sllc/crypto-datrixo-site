@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "build-local": "ng build --prod --base-href /ico_page_war/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
