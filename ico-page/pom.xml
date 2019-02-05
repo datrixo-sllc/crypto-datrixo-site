@@ -12,6 +12,10 @@
     <artifactId>ico-page</artifactId>
     <packaging>war</packaging>
 
+    <properties>
+        <start-class>com.datrixo.crypto_datrixo_site.ico_page.App</start-class>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.hsqldb</groupId>
