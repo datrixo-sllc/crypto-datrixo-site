@@ -3,17 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
+        <groupId>com.datrixo</groupId>
         <artifactId>crypto-datrixo-site</artifactId>
-        <groupId>com.datrixo.crypto</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.datrixo</groupId>
     <artifactId>ico-page</artifactId>
     <packaging>war</packaging>
 
     <properties>
         <start-class>com.datrixo.crypto_datrixo_site.ico_page.App</start-class>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+        <beanstalk.versionLabel>${maven.build.timestamp}</beanstalk.versionLabel>
     </properties>
 
     <dependencies>
@@ -29,7 +32,12 @@
     </dependencies>
 
     <build>
+        <finalName>ico-page</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -38,22 +46,63 @@
                     <webResources>
                         <resource>
                             <directory>${basedir}/frontend-ico-page/dist/frontend-ico-page</directory>
-                            <targetPath>/</targetPath>
+                            <targetPath>/WEB-INF/classes/static/</targetPath>
                             <includes>
                                 <include>**</include>
                             </includes>
                         </resource>
                     </webResources>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+
+        <profile>
+            <id>deploy-on-aws</id>
+            <build>
+                <plugins>
+                    <!--deploy to amazon elastic beanstalk-->
+                    <plugin>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                    <!--deploy on AWS beanstalk config crypto-datrixo-site-->
+                    <plugin>
+                        <groupId>br.com.ingenieux</groupId>
+                        <artifactId>beanstalk-maven-plugin</artifactId>
+                        <version>1.5.0</version>
+                        <executions>
+                            <execution>
+                                <id>deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>upload-source-bundle</goal>
+                                    <goal>create-application-version</goal>
+                                    <goal>update-environment</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <!--ico-page-->
+                        <configuration>
+                            <applicationName>crypto-datrixo-site</applicationName>
+                            <environmentName>ico-page</environmentName>
+                            <serverId>senti@aws.amazon.com</serverId>
+                            <s3Bucket>elasticbeanstalk-us-east-1-508213701893</s3Bucket>
+                            <versionLabel>${project.build.finalName}.${maven.build.timestamp}</versionLabel>
+                            <versionDescription>Deployed from maven</versionDescription>
+                            <s3Key>${project.build.finalName}.${maven.build.timestamp}.jar</s3Key>
+                            <environmentRef>ico-page.elasticbeanstalk.com</environmentRef>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 
 </project>
