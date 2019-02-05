@@ -90,13 +90,13 @@
                         <!--ico-page-->
                         <configuration>
                             <applicationName>crypto-datrixo-site</applicationName>
-                            <environmentName>ico-page</environmentName>
+                            <environmentName>ico-page-site</environmentName>
                             <serverId>senti@aws.amazon.com</serverId>
                             <s3Bucket>elasticbeanstalk-us-east-1-508213701893</s3Bucket>
                             <versionLabel>${project.build.finalName}.${maven.build.timestamp}</versionLabel>
                             <versionDescription>Deployed from maven</versionDescription>
                             <s3Key>${project.build.finalName}.${maven.build.timestamp}.jar</s3Key>
-                            <environmentRef>ico-page.elasticbeanstalk.com</environmentRef>
+                            <environmentRef>ico-page-site.elasticbeanstalk.com</environmentRef>
                         </configuration>
                     </plugin>
                 </plugins>
