@@ -129,39 +129,10 @@
       <hr>
     </div>
     <div class="text-left text-white-50">
-      <p>Holders: 20</p>
+      <p>Holders: {{holdersCount}}</p>
     </div>
-    <div class="text-center text-white">
-      <table class="table table-bordered">
-        <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Holders</th>
-          <th scope="col">Time/Date</th>
-          <th scope="col">Share Tokens</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td><a href="#holders">0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee</a></td>
-          <td>20 hrs 9 min ago</td>
-          <td>100</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td><a href="#holders">0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee</a></td>
-          <td>25 hrs 40 min ago</td>
-          <td>200</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td><a href="#holders">0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee</a></td>
-          <td>10 hrs 20 min ago</td>
-          <td>300</td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="text-center text-white" *ngIf="holders">
+      <app-holders-datatable [holders]="holders"></app-holders-datatable>
     </div>
   </div>
 </section>

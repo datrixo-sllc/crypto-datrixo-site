@@ -8,7 +8,7 @@ import {APP_CONFIG} from './app.config';
 import {IAppConfig} from './i-app-config';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {IcoPageResponce} from './ico-page-responce';
+import {IcoPageResponse} from './ico-page-response';
 
 @Injectable()
 export class HoldersService {

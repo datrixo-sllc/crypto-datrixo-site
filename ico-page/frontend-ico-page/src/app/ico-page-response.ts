@@ -5,7 +5,7 @@
  */
 import {HolderResponce} from './holder-responce';
 
-export class IcoPageResponce {
+export class IcoPageResponse {
   totalSupplyTokens: string;
   soldTokens: string;
   holdersCount: string;

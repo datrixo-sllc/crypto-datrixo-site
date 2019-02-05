@@ -2,7 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {interval, Subscription} from 'rxjs';
 import {HoldersService} from './holders.service';
 import {switchMap} from 'rxjs/operators';
-import {IcoPageResponce} from './ico-page-responce';
+import {IcoPageResponse} from './ico-page-response';
+import {HolderResponce} from './holder-responce';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ import {IcoPageResponce} from './ico-page-responce';
 export class AppComponent implements OnInit, OnDestroy {
   totalSupply: string;
   sold: string;
-  responce: IcoPageResponce;
+  holdersCount: string;
+  holders: HolderResponce[];
+  response: IcoPageResponse;
 
   subscriber: Subscription;
 
@@ -24,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
       switchMap(() => this.holdersService.getIcoPage())
     ).subscribe(value => {
       if (value) {
-        this.responce = value as IcoPageResponce;
+        this.response = value as IcoPageResponse;
         this.fillValues();
       }
     }, error => this.unSubscribe());
@@ -44,9 +47,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
 
   private fillValues() {
-    if (this.responce) {
-      this.totalSupply = this.responce.totalSupplyTokens;
-      this.sold = this.responce.soldTokens;
+    if (this.response) {
+      this.totalSupply = this.response.totalSupplyTokens;
+      this.sold = this.response.soldTokens;
+      this.holdersCount = this.response.holdersCount;
+      this.holders = this.response.holders;
     }
   }
 }
