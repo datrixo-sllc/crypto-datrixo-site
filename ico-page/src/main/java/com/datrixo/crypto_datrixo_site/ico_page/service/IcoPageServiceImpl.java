@@ -29,7 +29,7 @@ public class IcoPageServiceImpl implements IcoPageService {
         icoPageDto.setHoldersCount(String.valueOf(holders.size()));
         List<HolderDto> holderDtoList = new ArrayList<>();
         holders.forEach(holder -> {
-            HolderDto holderDto = new HolderDto(holder.getAddress(), holder.getTimeDate().toString(), String.valueOf(holder.getShareTokens()));
+            HolderDto holderDto = new HolderDto(holder.getAddress(), holder.getTimeDate(), String.valueOf(holder.getShareTokens()));
             holderDtoList.add(holderDto);
         });
         icoPageDto.setHolders(holderDtoList);
