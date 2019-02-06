@@ -99,7 +99,7 @@
                             <versionLabel>${project.build.finalName}.${maven.build.timestamp}</versionLabel>
                             <versionDescription>Deployed from maven</versionDescription>
                             <s3Key>${project.build.finalName}.${maven.build.timestamp}.jar</s3Key>
-                            <environmentRef>ico-page-site.elasticbeanstalk.com</environmentRef>
+                            <environmentRef>ico-page-site</environmentRef>
                         </configuration>
                     </plugin>
                 </plugins>
