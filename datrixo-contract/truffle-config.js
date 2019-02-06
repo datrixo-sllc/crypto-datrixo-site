@@ -10,7 +10,7 @@
  *
  * To deploy via Infura you'll need a wallet provider (like truffle-hdwallet-provider)
  * to sign your transactions before they're sent to a remote public node. Infura API
- * keys are available for free at: infura.io/register
+ * keys are avaiiilable for free at: infura.io/register
  *
  * You'll also need a mnemonic - the twelve word phrase the wallet uses to generate
  * public/private key pairs. If you're publishing your code to GitHub make sure you load this
