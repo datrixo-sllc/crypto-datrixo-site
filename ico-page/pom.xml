@@ -32,7 +32,7 @@
     </dependencies>
 
     <build>
-        <finalName>ico-page</finalName>
+        <finalName>ico-page-site</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
