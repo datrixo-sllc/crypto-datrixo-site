@@ -56,9 +56,37 @@ contract DatrixoToken is SafeMath {
     event Burned(uint amount);
 
 
-
-
-    function DatrixoToken(){
-
+    /* Initializes contract with initial supply tokens to the creator of the contract */
+    function DatrixoToken(address _ownerAddr, uint _startTime){
+        owner = _ownerAddr;
+        startTime = _startTime;
+        lockReleaseDate = startTime + 1 years;
+        balanceOf[owner] = totalSupply; // Give the owner all initial tokens
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
