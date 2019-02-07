@@ -64,12 +64,70 @@ contract DatrixoToken is SafeMath {
         balanceOf[owner] = totalSupply; // Give the owner all initial tokens
     }
 
+    /* Send some of your tokens to a given address */
+    function transfer(address _to, uint _value) returns(bool success){
+        require(now >= startTime); //check if the crowdsale is already over
+        if (msg.sender == owner && now < lockReleaseDate)
+            require(safeSub(balanceOf[msg.sender], _value) >= lockedAmount); // prevent the owner o spending his share of tokens for company, loyalty program and future financing of the company within the first year
+        balanceOf[msg.sender] = safeSub(balanceOf[msg.sender], _value); // Subtract from the sender
+        balanceOf[_to] = safeAdd(balanceOf[_to], _value); // Add the same to the recipient
+        Transfer(msg.sender, _to, _value); // Notify anyone listening that this transfer took place
+        return true;
+    }
+
+    /* Allow another contract or person to spend some tokens in your behalf */
+    function approve(address _spender, uint _value) returns(bool success) {
+        return _approve(_spender, _value);
+    }
+
+    /* internal approve functionality. needed, so we can check the payloadsize if called externally, but smaller
+     * payload allowed internally */
+    function _approve(address _spender, uint _value) internal returns(bool success) {
+        //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+        require((_value == 0) || (allowance[msg.sender][_spender] == 0));
+        allowance[msg.sender][_spender] = _value;
+        Approval(msg.sender, _spender, _value);
+        return true;
+    }
 
 
+    /* to be called when ICO is closed. burns the remaining tokens except the company share (60360000), the tokens reserved
+     * for the bounty/advisors/marketing program (48288000), for the loyalty program (52312000) and for future financing of the company (40240000).
+     * anybody may burn the the tokens after ICO ended, but only once (in case the owner holds more tokens in the future).
+     * this ensures that the owner will not posses a majority of the tokens. */
+    function burn() {
+        // if token have not been burned already and the ICO ended
+        if (!burned && now > startTime) {
+            uint difference = safeSub(balanceOf[owner], reservedAmount);
+            balanceOf[owner] = reservedAmount;
+            totalSupply = safeSub(totalSupply, difference);
+            burned = true;
+            Burned(difference);
+        }
+    }
 
 
+    /**
+     * sets the ico address and give it allowance to spend the crowdsale tokens. Only collable once.
+     * @param _icoAddress the address of the ico contract
+     * value the max amount of tokens to sell during the ICO
+     **/
+    function setICO(address _icoAddress) {
+        require(msg.sender == owner);
+        ico = _icoAddress;
+        assert((_approve(ico, tokensForIco)));
+    }
 
 
+    /**
+     * Allows the ico contract to set the traiding start time to an earler point of time.
+     * (In case the soft cap has been reached)
+     * @param _newStart the new start date
+     **/
+    function setStart(uint _newStart) {
+        require(msg.sender = ico && _newStart < startTime);
+        startTime = _newStart;
+    }
 
 
 
