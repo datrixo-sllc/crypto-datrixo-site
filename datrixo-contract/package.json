@@ -1,0 +1,30 @@
+{
+  "name": "datrixo-contract",
+  "version": "1.0.0",
+  "description": "Ethereum smartcontracts for Datrixo, payment solution for merchants that enables globally trustfull commerce.",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/truffle.cmd test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/yuri_nikiforov/crypto-datrixo-site.git%22.git"
+  },
+  "keywords": [
+    "[ethereum",
+    "truffle]"
+  ],
+  "author": "Yuri Nikiforov",
+  "license": "GPL-3.0",
+  "homepage": "https://bitbucket.org/yuri_nikiforov/crypto-datrixo-site.git%22#readme",
+  "dependencies": {
+    "truffle": "^5.0.3",
+    "ethereumjs-testrpc": "^6.0.3"
+  },
+  "devDependencies": {
+    "solium": "^1.2.2"
+  }
+}
