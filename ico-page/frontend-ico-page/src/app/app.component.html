@@ -11,13 +11,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#investment">Request investment summary</a>
+          <a class="nav-link js-scroll-trigger" href="#investment">Request investment</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#holders">Holders</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -34,30 +31,33 @@
             <img src="assets/img/Datrixo-Big-Data-Company.png" class="img-fluid" alt="">
           </div>
           <div class="text-center">
-            <a href="#investment" class="btn btn-outline btn-xl js-scroll-trigger mb-5">More info</a>
+            <a href="#investment" class="btn btn-outline btn-xl js-scroll-trigger mb-3">More info</a>
           </div>
           <div class="text-center mb-3 mt-3">
             <a href="#"><img src="assets/img/sec.png" alt=""></a>
           </div>
           <div class="text-center">
-            <p>Filled with<br>Securities Exchange<br>Commission</p>
+            <p class="mb-0">Filled with<br>Securities Exchange<br>Commission</p>
+            <p><a href="#">[View]</a></p>
           </div>
         </div>
       </div>
       <div class="col-lg-7 my-auto">
-        <h1 class="text-justify border-bottom pb-lg-3 mb-2">Datrixo is a New York - based company focused on Machine
-          Intelligence (AI) and applications of AI in various industry sectors.</h1>
-        <div class="text-center mt-4">
-          <h4 class="mb-4">Purchase amount ($5,000 minimum)</h4>
-          <div class="text-center pb-lg-3 mb-3">
-            <a href="#investment" class="btn btn-outline btn-xl js-scroll-trigger mr-3">$5,000</a>
-            <a href="#investment" class="btn btn-outline btn-xl js-scroll-trigger mr-3">$10,000</a>
-            <a href="#investment" class="btn btn-outline btn-xl js-scroll-trigger">$20,000</a>
+        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Datrixo Token (DAT)</h5>
+        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Token Price - Contact Us ir@datrioxp.com</h5>
+        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Datrixo is a New York - based company focused on Machine
+          Intelligence (AI) and applications of AI in various industry sectors.</h5>
+        <div class="mt-4">
+          <p class="mb-4">Purchase amount ($5,000 minimum)</p>
+          <div class="pb-lg-3 mb-3">
+            <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger mr-3">$5,000</a>
+            <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger mr-3">$10,000</a>
+            <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger">$20,000</a>
           </div>
-          <div class="text-center border-bottom pb-lg-1 mb-3">
+          <div class="border-bottom pb-lg-1 mb-3">
             <p>The account is: <a href="#">0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee</a></p>
           </div>
-          <div class="text-center">
+          <div>
             <ul class="list-inline list-social">
               <li class="list-inline-item">
                 Links
@@ -90,31 +90,28 @@
 <section class="investment bg-primary text-center" id="investment">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 mx-auto">
-        <h2 class="section-heading">REQUEST INVESTMENT SUMMARY</h2>
+      <div class="col-sm-6 mx-auto">
+        <p class="section-heading text-center mb-4 h3 font-weight-bold">
+          REQUEST INVESTMENT SUMMARY
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 mx-auto">
         <div class="form-group row">
-          <label for="senderName" class="col-sm-2 col-form-label">Name</label>
-          <div class="col-sm-10">
             <input type="password" class="form-control" id="senderName" placeholder="your name">
-          </div>
         </div>
         <div class="form-group row">
-          <label for="senderEmail" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
             <input type="password" class="form-control" id="senderEmail" placeholder="e-mail">
-          </div>
         </div>
         <div class="form-group row mb-5">
-          <label for="senderType" class="col-sm-2 col-form-label">You name</label>
-          <div class="col-sm-10">
             <select class="form-control" id="senderType">
               <option>Accredited US Investor</option>
               <option>Funds or Institiationals</option>
             </select>
-          </div>
         </div>
         <div class="text-center">
-          <a href="#investment" class="btn btn-outline-secondary btn-xl js-scroll-trigger mb-5">Apply</a>
+          <a href="#investment" class="btn btn-outline-dark btn-xl js-scroll-trigger mb-5">Apply</a>
         </div>
       </div>
     </div>
@@ -123,10 +120,12 @@
 
 <section class="holders bg-secondary" id="holders">
   <div class="container">
-    <div class="section-heading text-center">
-      <h2 class="text-white">{{totalSupply}} / {{sold}}</h2>
-      <p class="text-white-50">TOTAL SUPPLY / SOLD</p>
-      <hr>
+    <div class="text-center mb-5">
+      <p class="text-white-50 h2 mb-3">TOTAL SUPPLY / SOLD</p>
+      <p class="text-white h1">{{totalSupply}} / {{sold}} <span class="text-white-50 h3">token sold</span></p>
+    </div>
+    <div class="text-center">
+      <p class="text-white-50 h1">HOLDERS</p>
     </div>
     <div class="text-left text-white-50">
       <p>Holders: {{holdersCount}}</p>
@@ -145,31 +144,6 @@
     </div>
   </div>
   <div class="overlay"></div>
-</section>
-
-<section class="contact bg-primary" id="contact">
-  <div class="container">
-    <h2>We
-      <i class="fas fa-heart"></i>
-      new friends!</h2>
-    <ul class="list-inline list-social">
-      <li class="list-inline-item social-twitter">
-        <a href="#">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-      <li class="list-inline-item social-facebook">
-        <a href="#">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-      </li>
-      <li class="list-inline-item social-google-plus">
-        <a href="#">
-          <i class="fab fa-google-plus-g"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
 </section>
 
 <footer>

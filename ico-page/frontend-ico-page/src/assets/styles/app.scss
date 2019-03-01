@@ -75,6 +75,9 @@ section h2 {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
+  margin-left: 18rem;
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
 #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
@@ -111,6 +114,24 @@ section h2 {
 #mainNav .navbar-nav > li > a:hover,
 #mainNav .navbar-nav > li > a:focus:hover {
   color: #fdcc52;
+}
+
+.navbar-collapse {
+  margin-top: 0.3rem;
+}
+@media (max-width: 1028px) {
+  #mainNav .navbar-brand {
+    margin-left: 6rem;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 995px) {
+  #mainNav .navbar-brand {
+    margin-left: 1rem;
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -150,6 +171,7 @@ section h2 {
   #mainNav.navbar-shrink .navbar-nav > li > a:focus:hover {
     color: #fdcc52;
   }
+
 }
 
 header.masthead {
