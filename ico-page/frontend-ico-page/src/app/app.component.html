@@ -3,18 +3,20 @@
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">DATRIXO TOKEN SALE (STO)</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-            aria-label="Toggle navigation">
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false">
       Menu
       <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#investment">Request investment</a>
+          <a class="nav-link js-scroll-trigger" href="#investment">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#holders">Holders</a>
+          <a class="nav-link js-scroll-trigger" href="#totalsupply">STO results</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#holders">Token Holders</a>
         </li>
       </ul>
     </div>
@@ -38,29 +40,29 @@
           </div>
           <div class="text-center">
             <p class="mb-0">Filled with<br>Securities Exchange<br>Commission</p>
-            <p><a href="#">[View]</a></p>
+            <p class="h6"><a href="#">[View]</a></p>
           </div>
         </div>
       </div>
       <div class="col-lg-7 my-auto">
-        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Datrixo Token (DAT)</h5>
-        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Token Price - Contact Us ir@datrioxp.com</h5>
+        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Datrixo Inc Token (DAT)</h5>
+        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Token Price - Contact Us at ir@datriosto.com</h5>
         <h5 class="text-justify border-bottom pb-lg-3 mb-3">Datrixo is a New York - based company focused on Machine
-          Intelligence (AI) and applications of AI in various industry sectors.</h5>
+          Intelligence (AI) and applications of AI in various industry sectors. <span class="h6"><a href="http://datrixo.com/" target="_blank">[Website]</a></span></h5>
         <div class="mt-4">
-          <p class="mb-4">Purchase amount ($5,000 minimum)</p>
+          <h5 class="mb-4">Purchase amount ($5,000 minimum)</h5>
           <div class="pb-lg-3 mb-3">
             <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger mr-3">$5,000</a>
             <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger mr-3">$10,000</a>
             <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger">$20,000</a>
           </div>
           <div class="border-bottom pb-lg-1 mb-3">
-            <p>The account is: <a href="#">0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee</a></p>
+            <h5>The account is: <span class="h6"><a href="#">0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee</a></span></h5>
           </div>
           <div>
             <ul class="list-inline list-social">
               <li class="list-inline-item">
-                Links
+                <h5>Links:</h5>
               </li>
               <li class="list-inline-item social-twitter">
                 <a href="#">
@@ -68,13 +70,8 @@
                 </a>
               </li>
               <li class="list-inline-item social-facebook">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item social-google-plus">
-                <a href="#">
-                  <i class="fab fa-google-plus-g"></i>
+                <a href="http://datrixo.com/" target="_blank">
+                  [Website]
                 </a>
               </li>
             </ul>
@@ -91,7 +88,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 mx-auto">
-        <p class="section-heading text-center mb-4 h3 font-weight-bold">
+        <p class="section-heading text-center mb-4 h3 font-weight-bold text-black-50">
           REQUEST INVESTMENT SUMMARY
         </p>
       </div>
@@ -99,10 +96,10 @@
     <div class="row">
       <div class="col-sm-4 mx-auto">
         <div class="form-group row">
-            <input type="password" class="form-control" id="senderName" placeholder="your name">
+            <input type="password" class="form-control" id="senderName" placeholder="Name">
         </div>
         <div class="form-group row">
-            <input type="password" class="form-control" id="senderEmail" placeholder="e-mail">
+            <input type="password" class="form-control" id="senderEmail" placeholder="E-mail">
         </div>
         <div class="form-group row mb-5">
             <select class="form-control" id="senderType">
@@ -118,16 +115,23 @@
   </div>
 </section>
 
-<section class="holders bg-secondary" id="holders">
+<section class="totalsupply" id="totalsupply">
   <div class="container">
-    <div class="text-center mb-5">
-      <p class="text-white-50 h2 mb-3">TOTAL SUPPLY / SOLD</p>
-      <p class="text-white h1">{{totalSupply}} / {{sold}} <span class="text-white-50 h3">token sold</span></p>
+    <div class="text-center">
+      <p class="h1">TOTAL SUPPLY / SOLD</p>
     </div>
     <div class="text-center">
-      <p class="text-white-50 h1">HOLDERS</p>
+      <p class="h2">{{totalSupply}} / {{sold}} <span class="h3">token sold</span></p>
     </div>
-    <div class="text-left text-white-50">
+  </div>
+</section>
+
+<section class="holders bg-primary" id="holders">
+  <div class="container">
+    <div class="text-center">
+      <p class="text-white h1">HOLDERS</p>
+    </div>
+    <div class="text-left text-white">
       <p>Holders: {{holdersCount}}</p>
     </div>
     <div class="text-center text-white" *ngIf="holders">
@@ -148,7 +152,7 @@
 
 <footer>
   <div class="container">
-    <p>&copy; Your Website 2019. All Rights Reserved.</p>
+    <p>&copy; datrixosto.com 2019. All Rights Reserved.</p>
     <ul class="list-inline">
       <li class="list-inline-item">
         <a href="#">Privacy</a>
@@ -164,9 +168,9 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
