@@ -21,7 +21,7 @@
       <div class="header-class">Time/Date</div>
     </ng-template>
     <ng-template let-row="row" ngx-datatable-cell-template>
-      <a href="#holders">{{row.timeDate | date:'medium'}}</a>
+      {{row.timeDate | date:'medium'}}
     </ng-template>
   </ngx-datatable-column>
   <ngx-datatable-column name="shareTokens">
@@ -29,7 +29,7 @@
       <div class="header-class">Share Tokens</div>
     </ng-template>
     <ng-template let-row="row" ngx-datatable-cell-template>
-      <a href="#holders">{{row.shareTokens}}</a>
+      {{row.shareTokens}}
     </ng-template>
   </ngx-datatable-column>
 </ngx-datatable>
