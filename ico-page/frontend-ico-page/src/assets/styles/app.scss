@@ -58,7 +58,7 @@ p {
 }
 
 section {
-  padding: 100px 0;
+  padding: 150px 0;
 }
 
 section h2 {
@@ -222,16 +222,6 @@ header.masthead .device-container .screen img {
   }
 }
 
-section.investment {
-  position: relative;
-  padding: 150px 0;
-}
-
-section.investment h2 {
-  font-size: 50px;
-  margin-top: 0;
-}
-
 section.investment .badges .badge-link {
   display: block;
   margin-bottom: 25px;
@@ -245,18 +235,16 @@ section.investment .badges .badge-link img {
   height: 60px;
 }
 
-section.totalsupply {
-  position: relative;
-  padding: 250px 0;
+
+
+section.totalsupply h1,
+section.investment h1,
+section.holders h1 {
+  margin-bottom: 3rem;
 }
 
-section.totalsupply .h1 {
-  font-size: 2.5rem;
-  margin-bottom: 3.5rem;
-}
-
-section.totalsupply .h2 {
-  font-size: 2rem;
+section.totalsupply h2 {
+  font-size: 2.2rem;
 }
 
 section.totalsupply .badges .badge-link {
@@ -274,6 +262,20 @@ section.totalsupply .badges .badge-link img {
 
 
 @media (min-width: 768px) {
+  section {
+    padding-bottom: 250px;
+  }
+
+  @media (min-width: 1022px) {
+    section {
+      padding-bottom: 500px;
+    }
+
+    section.totalsupply h2 {
+      margin-bottom: 200px;
+    }
+  }
+
   section.investment .badges .badge-link {
     display: inline-block;
     margin-bottom: 0;
@@ -286,12 +288,8 @@ section.totalsupply .badges .badge-link img {
 }
 
 @media (min-width: 768px) {
-  section.investment h2 {
-    font-size: 70px;
-  }
-
   section.totalsupply h2 {
-    font-size: 70px;
+    font-size: 2.2rem;
   }
 
 }
