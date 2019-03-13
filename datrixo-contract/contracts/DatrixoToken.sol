@@ -46,8 +46,16 @@ contract DatrixoToken is SafeMath {
     bool burned;
 
     /* This creates an array with all balances */
-    mapping(address => uint) public balanceOf;
-    mapping(address => mapping(address => uint)) public allowance;
+
+    /* This balance structure is
+    *  account address -> Date of purchase -> value of sold Tokens
+    */
+    mapping(address => mapping(uint => uint)) public balanceOf;
+
+    /* This allowance structure is
+     * seller account -> Date of purchase by seller -> customer account -> allowance value of Tokens
+    */
+    mapping(address => mapping(uint => mapping(address => uint))) public allowance;
 
 
     /* This generates a public event on the blockchain that will notify clients */
