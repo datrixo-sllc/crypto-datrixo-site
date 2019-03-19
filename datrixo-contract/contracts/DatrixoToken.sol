@@ -41,7 +41,6 @@ contract DatrixoToken is SafeMath {
     address public owner;
     /* from this time on tokens may be transfered (after ICO) */
     uint public startTime;
-    uint public lockReleaseDate;
     /* tells if tokens have been burned already */
     bool burned;
 
@@ -53,13 +52,13 @@ contract DatrixoToken is SafeMath {
     mapping(address => mapping(uint => uint)) public balanceOf;
 
     /* This allowance structure is
-     * seller account -> Date of purchase by seller -> customer account -> allowance value of Tokens
+     * seller account -> customer account -> allowance value of Tokens
     */
-    mapping(address => mapping(uint => mapping(address => uint))) public allowance;
+    mapping(address => mapping(address => uint)) public allowance;
 
 
     /* This generates a public event on the blockchain that will notify clients */
-    event Transfer(address indexed from, address indexed to, uint value);
+    event Transfer(address indexed from, uint purchaseTime, address indexed to, uint transactionTime, uint value);
     event Approval(address indexed _owner, address indexed spender, uint value);
     event Burned(uint amount);
 
@@ -68,18 +67,25 @@ contract DatrixoToken is SafeMath {
     function DatrixoToken(address _ownerAddr, uint _startTime){
         owner = _ownerAddr;
         startTime = _startTime;
-        lockReleaseDate = startTime + 1 years;
-        balanceOf[owner] = totalSupply; // Give the owner all initial tokens
+        balanceOf[owner][startTime] = totalSupply; // Give the owner all initial tokens with date of purchase = startTime
     }
 
-    /* Send some of your tokens to a given address */
-    function transfer(address _to, uint _value) returns(bool success){
-        require(now >= startTime); //check if the crowdsale is already over
-        if (msg.sender == owner && now < lockReleaseDate)
-            require(safeSub(balanceOf[msg.sender], _value) >= lockedAmount); // prevent the owner o spending his share of tokens for company, loyalty program and future financing of the company within the first year
-        balanceOf[msg.sender] = safeSub(balanceOf[msg.sender], _value); // Subtract from the sender
-        balanceOf[_to] = safeAdd(balanceOf[_to], _value); // Add the same to the recipient
-        Transfer(msg.sender, _to, _value); // Notify anyone listening that this transfer took place
+    /* Send some of your tokens from your purchase with date = _purchaseTime to a given address and register purchase with date = now*/
+    function transfer(uint _purchaseTime, address _to, uint _value) returns(bool success){
+        uint _transactionTime = now;
+        require(_transactionTime >= startTime); //check if the crowdsale is already over
+        if (msg.sender == owner) {
+            require(safeSub(balanceOf[msg.sender][startTime], _value) >= lockedAmount); // prevent the owner o spending his share of tokens for company, loyalty program and future financing of the company within the first year
+            _purchaseTime = startTime;
+        } else {
+            if (_purchaseTime != 0) {
+                require(_transactionTime > (_purchaseTime + 1 years)); // prevent sale tokens during first year with first purchase. Following purchases have _purchaseTime = 0 and not controlled
+            }
+            _transactionTime = 0;
+        }
+        balanceOf[msg.sender][_purchaseTime] = safeSub(balanceOf[msg.sender][_purchaseTime], _value); // Subtract from the sender purchase with purchase date = _purchaseTime
+        balanceOf[_to][_transactionTime] = safeAdd(balanceOf[_to][_transactionTime], _value); // Add the same to the recipient purchase with _transactionTime
+        Transfer(msg.sender, _purchaseTime, _to, _transactionTime, _value); // Notify anyone listening that this transfer took place
         return true;
     }
 
@@ -106,8 +112,8 @@ contract DatrixoToken is SafeMath {
     function burn() {
         // if token have not been burned already and the ICO ended
         if (!burned && now > startTime) {
-            uint difference = safeSub(balanceOf[owner], reservedAmount);
-            balanceOf[owner] = reservedAmount;
+            uint difference = safeSub(balanceOf[owner][startTime], reservedAmount);
+            balanceOf[owner][startTime] = reservedAmount;
             totalSupply = safeSub(totalSupply, difference);
             burned = true;
             Burned(difference);
