@@ -4,26 +4,26 @@
  * Time: 20:53
  **/
 
-pragma solidity ^0.4.0;
+pragma solidity >=0.4.21 <0.6.0;
 
 contract SafeMath {
     //internals
 
-    function safeMul(uint a, uint b) internal returns(uint) {
+    function safeMul(uint a, uint b) internal pure returns(uint) {
         uint c = a * b;
         assert(a == 0 || c / a == b);
         return c;
     }
 
-    function safeSub(uint a, uint b) internal returns(uint) {
+    function safeSub(uint a, uint b) internal pure returns(uint) {
         assert(b <= a);
         return a - b;
     }
 
-    function safeAdd(uint a, uint b) internal returns(uint) {
+    function safeAdd(uint a, uint b) internal pure returns(uint) {
         uint c = a + b;
         assert(c >=a && c >= b);
-        retyrn c;
+        return c;
     }
 }
 
@@ -39,6 +39,7 @@ contract DatrixoToken is SafeMath {
     uint constant public reservedAmount = 20120000000000;
     uint constant public lockedAmount = 15291200000000;
     address public owner;
+    address public ico;
     /* from this time on tokens may be transfered (after ICO) */
     uint public startTime;
     /* tells if tokens have been burned already */
@@ -64,14 +65,14 @@ contract DatrixoToken is SafeMath {
 
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function DatrixoToken(address _ownerAddr, uint _startTime){
+    constructor(address _ownerAddr, uint _startTime) public {
         owner = _ownerAddr;
         startTime = _startTime;
         balanceOf[owner][startTime] = totalSupply; // Give the owner all initial tokens with date of purchase = startTime
     }
 
     /* Send some of your tokens from your purchase with date = _purchaseTime to a given address and register purchase with date = now*/
-    function transfer(uint _purchaseTime, address _to, uint _value) returns(bool success){
+    function transfer(uint _purchaseTime, address _to, uint _value) public returns(bool success){
         uint _transactionTime = now;
         require(_transactionTime >= startTime); //check if the crowdsale is already over
         if (msg.sender == owner) {
@@ -79,18 +80,18 @@ contract DatrixoToken is SafeMath {
             _purchaseTime = startTime;
         } else {
             if (_purchaseTime != 0) {
-                require(_transactionTime > (_purchaseTime + 1 years)); // prevent sale tokens during first year with first purchase. Following purchases have _purchaseTime = 0 and not controlled
+                require(_transactionTime > (_purchaseTime + 365 days)); // prevent sale tokens during first year with first purchase. Following purchases have _purchaseTime = 0 and not controlled
             }
             _transactionTime = 0;
         }
         balanceOf[msg.sender][_purchaseTime] = safeSub(balanceOf[msg.sender][_purchaseTime], _value); // Subtract from the sender purchase with purchase date = _purchaseTime
         balanceOf[_to][_transactionTime] = safeAdd(balanceOf[_to][_transactionTime], _value); // Add the same to the recipient purchase with _transactionTime
-        Transfer(msg.sender, _purchaseTime, _to, _transactionTime, _value); // Notify anyone listening that this transfer took place
+        emit Transfer(msg.sender, _purchaseTime, _to, _transactionTime, _value); // Notify anyone listening that this transfer took place
         return true;
     }
 
     /* Allow another contract or person to spend some tokens in your behalf */
-    function approve(address _spender, uint _value) returns(bool success) {
+    function approve(address _spender, uint _value) public returns(bool success) {
         return _approve(_spender, _value);
     }
 
@@ -100,7 +101,7 @@ contract DatrixoToken is SafeMath {
         //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
         require((_value == 0) || (allowance[msg.sender][_spender] == 0));
         allowance[msg.sender][_spender] = _value;
-        Approval(msg.sender, _spender, _value);
+        emit Approval(msg.sender, _spender, _value);
         return true;
     }
 
@@ -109,14 +110,15 @@ contract DatrixoToken is SafeMath {
      * for the bounty/advisors/marketing program (48288000), for the loyalty program (52312000) and for future financing of the company (40240000).
      * anybody may burn the the tokens after ICO ended, but only once (in case the owner holds more tokens in the future).
      * this ensures that the owner will not posses a majority of the tokens. */
-    function burn() {
+    function burn() public {
         // if token have not been burned already and the ICO ended
+        require(msg.sender == owner);
         if (!burned && now > startTime) {
             uint difference = safeSub(balanceOf[owner][startTime], reservedAmount);
             balanceOf[owner][startTime] = reservedAmount;
             totalSupply = safeSub(totalSupply, difference);
             burned = true;
-            Burned(difference);
+            emit Burned(difference);
         }
     }
 
@@ -126,7 +128,7 @@ contract DatrixoToken is SafeMath {
      * @param _icoAddress the address of the ico contract
      * value the max amount of tokens to sell during the ICO
      **/
-    function setICO(address _icoAddress) {
+    function setICO(address _icoAddress) public {
         require(msg.sender == owner);
         ico = _icoAddress;
         assert((_approve(ico, tokensForIco)));
@@ -138,8 +140,8 @@ contract DatrixoToken is SafeMath {
      * (In case the soft cap has been reached)
      * @param _newStart the new start date
      **/
-    function setStart(uint _newStart) {
-        require(msg.sender = ico && _newStart < startTime);
+    function setStart(uint _newStart) public {
+        require(msg.sender == owner && _newStart < startTime);
         startTime = _newStart;
     }
 

@@ -7,6 +7,8 @@
     "test": "test"
   },
   "scripts": {
+    "compile": "./node_modules/.bin/truffle.cmd compile",
+    "ganache-cli": "./node_modules/.bin/ganache-cli -p8545",
     "test": "./node_modules/.bin/truffle.cmd test"
   },
   "repository": {
@@ -21,8 +23,8 @@
   "license": "GPL-3.0",
   "homepage": "https://bitbucket.org/yuri_nikiforov/crypto-datrixo-site.git%22#readme",
   "dependencies": {
-    "truffle": "^5.0.3",
-    "ethereumjs-testrpc": "^6.0.3"
+    "truffle": "^4.1.15",
+    "ganache-cli": "^6.4.1"
   },
   "devDependencies": {
     "solium": "^1.2.2"
