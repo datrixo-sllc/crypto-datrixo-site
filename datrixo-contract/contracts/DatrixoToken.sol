@@ -98,17 +98,18 @@ contract DatrixoToken is SafeMath {
     }
 
     /* First send tokens to shareholder by owner*/
-    function firstTransfer(address _to, uint _value) public onlyOwner afterStartTime returns(bool) {
+    function firstTransfer(address _to, uint _value) public onlyOwner afterStartTime returns(bool success) {
         require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
         require(balanceOf[_to] == 0, "Target balance not equal 0"); // prevent secondary transfer
         require(safeSub(balanceOf[msg.sender], _value) >= lockedAmount, "Value more then locked amount"); // prevent the owner to spending his share of tokens for company, loyalty program and future financing of the company within the first year
         shareholders.push(_to);
         firstPurchaseTime[_to] = now;
+
         return _transfer(_to, _value);
     }
 
     /* Send some of your tokens*/
-    function transfer(address _to, uint _value) public onlyShareholder afterFirstYear returns(bool){
+    function transfer(address _to, uint _value) public onlyShareholder afterFirstYear returns(bool success){
         require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
         require(firstPurchaseTime[_to] == 0, "Target balance has first transfer amount.");
         if (firstPurchaseTime[msg.sender] > 0) {
