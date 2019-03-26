@@ -97,19 +97,26 @@ contract DatrixoToken is SafeMath {
         _;
     }
 
+    function transfer(address _to, uint _value) public returns(bool success){
+        if (msg.sender == owner) {
+            return _firstTransfer(_to, _value);
+        } else {
+            return _secondTransfer(_to, _value);
+        }
+    }
+
     /* First send tokens to shareholder by owner*/
-    function firstTransfer(address _to, uint _value) public onlyOwner afterStartTime returns(bool success) {
+    function _firstTransfer(address _to, uint _value) internal onlyOwner afterStartTime returns(bool success) {
         require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
         require(balanceOf[_to] == 0, "Target balance not equal 0"); // prevent secondary transfer
         require(safeSub(balanceOf[msg.sender], _value) >= lockedAmount, "Value more then locked amount"); // prevent the owner to spending his share of tokens for company, loyalty program and future financing of the company within the first year
         shareholders.push(_to);
         firstPurchaseTime[_to] = now;
-
         return _transfer(_to, _value);
     }
 
     /* Send some of your tokens*/
-    function transfer(address _to, uint _value) public onlyShareholder afterFirstYear returns(bool success){
+    function _secondTransfer(address _to, uint _value) public onlyShareholder afterFirstYear returns(bool success){
         require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
         require(firstPurchaseTime[_to] == 0, "Target balance has first transfer amount.");
         if (firstPurchaseTime[msg.sender] > 0) {
@@ -135,6 +142,12 @@ contract DatrixoToken is SafeMath {
         return true;
     }
 
+    /*
+    * Getter for whole shareholders array, not any array mamber as default getter, which generated complier
+    */
+    function getShareholdersArray() public returns(address[] memory) {
+        return shareholders;
+    }
 
 
     /* to be called when STO is closed. burns the remaining tokens except the company share (60360000), the tokens reserved
