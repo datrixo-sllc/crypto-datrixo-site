@@ -145,7 +145,7 @@ contract DatrixoToken is SafeMath {
     /*
     * Getter for whole shareholders array, not any array mamber as default getter, which generated complier
     */
-    function getShareholdersArray() public returns(address[] memory) {
+    function getShareholdersArray() public view returns(address[] memory) {
         return shareholders;
     }
 
