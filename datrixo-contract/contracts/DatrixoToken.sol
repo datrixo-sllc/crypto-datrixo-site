@@ -116,7 +116,7 @@ contract DatrixoToken is SafeMath {
     }
 
     /* Send some of your tokens*/
-    function _secondTransfer(address _to, uint _value) public onlyShareholder afterFirstYear returns(bool success){
+    function _secondTransfer(address _to, uint _value) internal onlyShareholder afterFirstYear returns(bool success){
         require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
         require(firstPurchaseTime[_to] == 0, "Target balance has first transfer amount.");
         if (firstPurchaseTime[msg.sender] > 0) {
