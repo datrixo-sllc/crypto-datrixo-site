@@ -93,11 +93,12 @@ contract DatrixoToken is SafeMath {
     }
 
     modifier afterFirstYear() {
-        require(firstPurchaseTime[msg.sender] == 0 || firstPurchaseTime[msg.sender] + 365 days >= now, "First year is not expired.");
+        require(firstPurchaseTime[msg.sender] == 0 || now >=firstPurchaseTime[msg.sender] + 365 days, "First year is not expired.");
         _;
     }
 
     function transfer(address _to, uint _value) public returns(bool success){
+        require(msg.sender != _to, "Target address can't be equal source.")
         if (msg.sender == owner) {
             return _firstTransfer(_to, _value);
         } else {
