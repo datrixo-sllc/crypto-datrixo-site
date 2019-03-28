@@ -98,7 +98,7 @@ contract DatrixoToken is SafeMath {
     }
 
     function transfer(address _to, uint _value) public returns(bool success){
-        require(msg.sender != _to, "Target address can't be equal source.")
+        require(msg.sender != _to, "Target address can't be equal source.");
         if (msg.sender == owner) {
             return _firstTransfer(_to, _value);
         } else {
