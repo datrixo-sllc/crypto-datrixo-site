@@ -87,23 +87,16 @@ contract DatrixoToken is SafeMath {
         _;
     }
 
-    modifier onlyShareholder() {
-        require(balanceOf[msg.sender] > 0, "You are not shareholder.");
-        _;
-    }
 
-    modifier afterFirstYear() {
-        require(firstPurchaseTime[msg.sender] == 0 || now >=firstPurchaseTime[msg.sender] + 365 days, "First year is not expired.");
-        _;
-    }
-
-    function transfer(address _to, uint _value) public returns(bool success){
+    /*only contract owner can perform transfer and this is only first transfer*/
+    function transfer(address _to, uint _value) public onlyOwner afterStartTime returns(bool success){
         require(msg.sender != _to, "Target address can't be equal source.");
-        if (msg.sender == owner) {
-            return _firstTransfer(_to, _value);
-        } else {
-            return _secondTransfer(_to, _value);
-        }
+        return _firstTransfer(_to, _value);
+    }
+
+    /*only contract owner can perform transferFrom after first year is expired for account _from*/
+    function transferFrom(address _from, address _to, uint _value) public onlyOwner afterStartTime returns(bool success){
+        return _secondTransfer(_from, _to, _value);
     }
 
     /* First send tokens to shareholder by owner*/
@@ -116,17 +109,21 @@ contract DatrixoToken is SafeMath {
         return _transfer(_to, _value);
     }
 
-    /* Send some of your tokens*/
-    function _secondTransfer(address _to, uint _value) internal onlyShareholder afterFirstYear returns(bool success){
-        require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
-        require(firstPurchaseTime[_to] == 0, "Target balance has first transfer amount.");
-        if (firstPurchaseTime[msg.sender] > 0) {
-            delete firstPurchaseTime[msg.sender];
+    /* Send some of hareholder tokens to other by owner*/
+    function _secondTransfer(address _from, address _to, uint _value) onlyOwner afterStartTime internal returns(bool success){
+        require(safeSub(balanceOf[_from], _value) >= 0, "Value more then balance amount"); // prevent the to spending his tokens more then have on account
+        require(firstPurchaseTime[_from] == 0 || now >=firstPurchaseTime[_from] + 365 days, "First year is not expired.");
+        // when contract will be burned contract owner will spend all tokens to address 0x0
+        if (_to != address(0)) {
+            require(firstPurchaseTime[_to] == 0, "Target balance has first transfer amount.");
+        }
+        if (firstPurchaseTime[_from] > 0) {
+            delete firstPurchaseTime[_from];
         }
         if (!checkShareholderExist(_to)) {
             shareholders.push(_to);
         }
-        return _transfer(_to, _value);
+        return _transferFrom(_from, _to, _value);
     }
 
     function checkShareholderExist(address _addr) internal view returns(bool) {
@@ -138,10 +135,18 @@ contract DatrixoToken is SafeMath {
 
     function _transfer(address _to, uint _value) internal returns(bool success){
         balanceOf[msg.sender] = safeSub(balanceOf[msg.sender], _value); // Subtract from the sender
-        balanceOf[_to] = safeAdd(balanceOf[_to], _value); // Add the same to the recipient purchase with _transactionTime
+        balanceOf[_to] = safeAdd(balanceOf[_to], _value); // Add the same to the recipient
         emit Transfer(msg.sender, _to, _value); // Notify anyone listening that this transfer took place
         return true;
     }
+
+    function _transferFrom(address _from, address _to, uint _value) internal returns(bool success){
+        balanceOf[_from] = safeSub(balanceOf[_from], _value); // Subtract from the sender
+        balanceOf[_to] = safeAdd(balanceOf[_to], _value); // Add the same to the recipient
+        emit Transfer(_from, _to, _value); // Notify anyone listening that this transfer took place
+        return true;
+    }
+
 
     /*
     * Getter for whole shareholders array, not any array mamber as default getter, which generated complier
