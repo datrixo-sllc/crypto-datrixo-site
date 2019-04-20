@@ -3,6 +3,8 @@ package com.datrixo.crypto_datrixo_site.ico_page.model;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.math.BigInteger;
 import java.util.Date;
 
 /**
@@ -14,12 +16,12 @@ import java.util.Date;
 public class Holder extends AbstractPersistable<Long> {
     private String address;
     private Date timeDate;
-    private int shareTokens;
+    private BigInteger shareTokens;
 
     public Holder() {
     }
 
-    public Holder(String address, Date timeDate, int shareTokens) {
+    public Holder(String address, Date timeDate, BigInteger shareTokens) {
         this.address = address;
         this.timeDate = timeDate;
         this.shareTokens = shareTokens;
@@ -41,11 +43,11 @@ public class Holder extends AbstractPersistable<Long> {
         this.timeDate = timeDate;
     }
 
-    public int getShareTokens() {
+    public BigInteger getShareTokens() {
         return shareTokens;
     }
 
-    public void setShareTokens(int shareTokens) {
+    public void setShareTokens(BigInteger shareTokens) {
         this.shareTokens = shareTokens;
     }
 }

@@ -2,6 +2,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.service;
 
 import com.datrixo.crypto_datrixo_site.ico_page.model.Holder;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -10,8 +11,9 @@ import java.util.List;
  * Time: 13:04
  */
 public interface HolderService {
-    int TOTAL_SUPPLY = 200000;
-    void demoProcessing();
+    BigInteger getTotalSupply();
+    //void demoProcessing();
     void addHolder(Holder holder);
     List<Holder> getAll();
+    void dbMemoryUpdate();
 }

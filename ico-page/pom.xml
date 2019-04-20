@@ -29,7 +29,19 @@
             <artifactId>postgresql</artifactId>
             <version>9.4.1207</version>
         </dependency>
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>web3j-spring-boot-starter</artifactId>
+            <version>4.0.3</version>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>java-net-repo</id>
+            <url>https://maven.java.net/content/repositories/public/</url>
+        </repository>
+    </repositories>
 
     <build>
         <finalName>ico-page-site</finalName>
