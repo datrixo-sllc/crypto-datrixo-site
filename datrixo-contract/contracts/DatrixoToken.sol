@@ -31,13 +31,11 @@ contract DatrixoToken is SafeMath {
     /* Public variables of the token */
 
     string constant public standard = "ERC20";
-    string constant public name = "DarixoToken";
-    string constant public symbol = "DRT";
+    string constant public name = "DatrixoToken";
+    string constant public symbol = "DRX";
     uint8 constant public decimals = 5;
     uint public totalSupply = 40240000000000;
-    uint constant public tokensForIco = 20120000000000;
-    uint constant public reservedAmount = 20120000000000;
-    uint constant public lockedAmount = 15291200000000;
+
     address public owner;
     /* from this time on tokens may be transfered (after ICO) */
     uint public startTime;
@@ -61,12 +59,11 @@ contract DatrixoToken is SafeMath {
     /* This allowance structure is
      * seller account -> customer account -> allowance value of Tokens
     */
-    mapping(address => mapping(address => uint)) public allowance;
+    /*mapping(address => mapping(address => uint)) public allowance;*/
 
 
     /* This generates a public event on the blockchain that will notify clients */
     event Transfer(address indexed from, address indexed to, uint value);
-    event Approval(address indexed _owner, address indexed spender, uint value);
     event Burned(uint amount);
 
 
@@ -91,6 +88,11 @@ contract DatrixoToken is SafeMath {
     /*only contract owner can perform transfer and this is only first transfer*/
     function transfer(address _to, uint _value) public onlyOwner afterStartTime returns(bool success){
         require(msg.sender != _to, "Target address can't be equal source.");
+        require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
+        require(balanceOf[_to] == 0, "Target balance not equal 0"); // prevent secondary transfer
+        if (!checkShareholderExist(_to)) {
+            shareholders.push(_to);
+        }
         return _firstTransfer(_to, _value);
     }
 
@@ -156,10 +158,7 @@ contract DatrixoToken is SafeMath {
     }
 
 
-    /* to be called when STO is closed. burns the remaining tokens except the company share (60360000), the tokens reserved
-     * for the bounty/advisors/marketing program (48288000), for the loyalty program (52312000) and for future financing of the company (40240000).
-     * anybody may burn the the tokens after ICO ended, but only once (in case the owner holds more tokens in the future).
-     * this ensures that the owner will not posses a majority of the tokens. */
+
     function burn() public onlyOwner afterStartTime {
         // if token have not been burned already and the STO ended
         require(!burned, "Token have been burned already.");

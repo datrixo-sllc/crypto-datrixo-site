@@ -6,6 +6,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.model.Holder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +23,11 @@ public class IcoPageServiceImpl implements IcoPageService {
     @Override
     public IcoPageDto getAllData() {
         List<Holder> holders = holderService.getAll();
-        int totalShareTokens = holders.stream().mapToInt(value -> value.getShareTokens()).sum();
+        BigInteger totalShareTokens = holders.stream()
+                .map(Holder::getShareTokens)
+                .reduce(BigInteger.ZERO, BigInteger::add);
         IcoPageDto icoPageDto = new IcoPageDto();
-        icoPageDto.setTotalSupplyTokens(String.valueOf(HolderService.TOTAL_SUPPLY));
+        icoPageDto.setTotalSupplyTokens(String.valueOf(holderService.getTotalSupply()));
         icoPageDto.setSoldTokens(String.valueOf(totalShareTokens));
         icoPageDto.setHoldersCount(String.valueOf(holders.size()));
         List<HolderDto> holderDtoList = new ArrayList<>();
