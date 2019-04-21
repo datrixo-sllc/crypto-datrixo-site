@@ -65,6 +65,7 @@ contract DatrixoToken is SafeMath {
     /* This generates a public event on the blockchain that will notify clients */
     event Transfer(address indexed from, address indexed to, uint value);
     event Burned();
+    event removeShareholder(address indexed addr, uint value);
 
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
@@ -99,6 +100,28 @@ contract DatrixoToken is SafeMath {
     /*only contract owner can perform transferFrom after first year is expired for account _from*/
     function transferFrom(address _from, address _to, uint _value) public onlyOwner afterStartTime returns(bool success){
         return _secondTransfer(_from, _to, _value);
+    }
+
+    /*remove shareholder and return tokens to owner ballance*/
+    function removeShareholder(address _addr) public onlyOwner returns(bool success) {
+        require(_to != address(0), "Target address is 0x0");
+        for (uint i = 1; i < shareholders.length; i++) {
+            if (shareholders[i] == _addr) {
+                delete shareholders[i];
+            }
+        }
+        if (firstPurchaseTime[_from] > 0) {
+            delete firstPurchaseTime[_addr];
+        }
+        bool result = true;
+        uint value = 0;
+        if (balanceOf[_addr] > 0) {
+            value = balanceOf[_addr];
+            result = _transferFrom(_addr, owner, balanceOf[_addr]);
+        }
+        require(result);
+        emit removeShareholder(_addr, value);
+        return result;
     }
 
     /* First send tokens to shareholder by owner*/
