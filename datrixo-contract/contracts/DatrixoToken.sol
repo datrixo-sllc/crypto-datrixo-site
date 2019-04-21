@@ -105,8 +105,10 @@ contract DatrixoToken is SafeMath {
     function _firstTransfer(address _to, uint _value) internal onlyOwner afterStartTime returns(bool success) {
         require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
         require(balanceOf[_to] == 0, "Target balance not equal 0"); // prevent secondary transfer
-        require(safeSub(balanceOf[msg.sender], _value) >= lockedAmount, "Value more then locked amount"); // prevent the owner to spending his share of tokens for company, loyalty program and future financing of the company within the first year
-        shareholders.push(_to);
+        require(safeSub(balanceOf[msg.sender], _value) >= 0, "Value more then available amount");
+        if (!checkShareholderExist(_to)) {
+            shareholders.push(_to);
+        }
         firstPurchaseTime[_to] = now;
         return _transfer(_to, _value);
     }
@@ -162,9 +164,6 @@ contract DatrixoToken is SafeMath {
     function burn() public onlyOwner afterStartTime {
         // if token have not been burned already and the STO ended
         require(!burned, "Token have been burned already.");
-        uint difference = safeSub(balanceOf[owner], reservedAmount);
-        balanceOf[owner] = reservedAmount;
-        totalSupply = safeSub(totalSupply, difference);
         burned = true;
         emit Burned(difference);
 
