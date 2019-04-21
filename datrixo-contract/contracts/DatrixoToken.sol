@@ -104,7 +104,7 @@ contract DatrixoToken is SafeMath {
 
     /*remove shareholder and return tokens to owner ballance*/
     function removeShareholder(address _addr) public onlyOwner returns(bool success) {
-        require(_to != address(0), "Target address is 0x0");
+        require(_addr != address(0), "Target address is 0x0");
         for (uint i = 1; i < shareholders.length; i++) {
             if (shareholders[i] == _addr) {
                 delete shareholders[i];
