@@ -64,7 +64,7 @@ contract DatrixoToken is SafeMath {
 
     /* This generates a public event on the blockchain that will notify clients */
     event Transfer(address indexed from, address indexed to, uint value);
-    event Burned(uint amount);
+    event Burned();
 
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
@@ -165,7 +165,7 @@ contract DatrixoToken is SafeMath {
         // if token have not been burned already and the STO ended
         require(!burned, "Token have been burned already.");
         burned = true;
-        emit Burned(difference);
+        emit Burned();
 
     }
 
