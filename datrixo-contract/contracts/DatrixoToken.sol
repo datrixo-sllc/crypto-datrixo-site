@@ -65,7 +65,7 @@ contract DatrixoToken is SafeMath {
     /* This generates a public event on the blockchain that will notify clients */
     event Transfer(address indexed from, address indexed to, uint value);
     event Burned();
-    event removeShareholder(address indexed addr, uint value);
+    event ShareholderRemoved(address indexed addr, uint value);
 
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
@@ -105,22 +105,23 @@ contract DatrixoToken is SafeMath {
     /*remove shareholder and return tokens to owner ballance*/
     function removeShareholder(address _addr) public onlyOwner returns(bool success) {
         require(_addr != address(0), "Target address is 0x0");
-        for (uint i = 1; i < shareholders.length; i++) {
+        require(checkShareholderExist(_addr), "Shareholder is not exist.");
+        for (uint i = 0; i < shareholders.length; i++) {
             if (shareholders[i] == _addr) {
                 delete shareholders[i];
             }
         }
-        if (firstPurchaseTime[_from] > 0) {
+        if (firstPurchaseTime[_addr] > 0) {
             delete firstPurchaseTime[_addr];
         }
         bool result = true;
         uint value = 0;
         if (balanceOf[_addr] > 0) {
             value = balanceOf[_addr];
-            result = _transferFrom(_addr, owner, balanceOf[_addr]);
+            result = _transferFrom(_addr, owner, value);
         }
         require(result);
-        emit removeShareholder(_addr, value);
+        emit ShareholderRemoved(_addr, value);
         return result;
     }
 
@@ -154,7 +155,7 @@ contract DatrixoToken is SafeMath {
     }
 
     function checkShareholderExist(address _addr) internal view returns(bool) {
-        for (uint i = 1; i < shareholders.length; i++) {
+        for (uint i = 0; i < shareholders.length; i++) {
             if (shareholders[i] == _addr) return true;
         }
         return false;
