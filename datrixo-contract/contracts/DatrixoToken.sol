@@ -34,13 +34,11 @@ contract DatrixoToken is SafeMath {
     string constant public name = "DatrixoToken";
     string constant public symbol = "DRX";
     uint8 constant public decimals = 5;
-    uint public totalSupply = 40240000000000;
+    uint public totalSupply = 50000000000000;
 
     address public owner;
     /* from this time on tokens may be transfered (after ICO) */
     uint public startTime;
-    /* tells if tokens have been burned already */
-    bool burned;
 
     /* This creates an array with all balances */
 
@@ -64,7 +62,6 @@ contract DatrixoToken is SafeMath {
 
     /* This generates a public event on the blockchain that will notify clients */
     event Transfer(address indexed from, address indexed to, uint value);
-    event Burned();
     event ShareholderRemoved(address indexed addr, uint value);
 
 
@@ -181,16 +178,6 @@ contract DatrixoToken is SafeMath {
     */
     function getShareholdersArray() public view returns(address[] memory) {
         return shareholders;
-    }
-
-
-
-    function burn() public onlyOwner afterStartTime {
-        // if token have not been burned already and the STO ended
-        require(!burned, "Token have been burned already.");
-        burned = true;
-        emit Burned();
-
     }
 
     /**
