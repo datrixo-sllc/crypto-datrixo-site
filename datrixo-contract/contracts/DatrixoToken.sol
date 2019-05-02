@@ -54,10 +54,6 @@ contract DatrixoToken is SafeMath {
     */
     address[] public shareholders;
 
-    /* This allowance structure is
-     * seller account -> customer account -> allowance value of Tokens
-    */
-    /*mapping(address => mapping(address => uint)) public allowance;*/
 
 
     /* This generates a public event on the blockchain that will notify clients */
@@ -174,14 +170,14 @@ contract DatrixoToken is SafeMath {
 
 
     /*
-    * Getter for whole shareholders array, not any array mamber as default getter, which generated complier
+    * Getter for whole shareholders array, not any array member as default getter, which generated complier
     */
     function getShareholdersArray() public view returns(address[] memory) {
         return shareholders;
     }
 
     /**
-     * Allows the sto contract to set the traiding start time to an earler point of time.
+     * Allows the sto contract to set the trading start time to an earlier point of time.
      * (In case the soft cap has been reached)
      * @param _newStart the new start date
      **/
