@@ -37,7 +37,7 @@ contract DatrixoToken is SafeMath {
     uint public totalSupply = 50000000000000;
 
     address public owner;
-    /* from this time on tokens may be transfered (after ICO) */
+    /* from this time on tokens may be transferred (after ICO) */
     uint public startTime;
 
     /* This creates an array with all balances */
@@ -170,7 +170,7 @@ contract DatrixoToken is SafeMath {
 
 
     /*
-    * Getter for whole shareholders array, not any array member as default getter, which generated complier
+    * Getter for whole shareholders array, not any array member as default getter, which generated compiler
     */
     function getShareholdersArray() public view returns(address[] memory) {
         return shareholders;
