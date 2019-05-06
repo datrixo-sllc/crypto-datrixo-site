@@ -123,15 +123,15 @@
   </div>
 </section>
 
-<section class="holders bg-primary" id="holders">
+<section class="holders bg-light" id="holders">
   <div class="container">
     <div class="text-center">
-      <h1 class="text-white">HOLDERS</h1>
+      <h1>HOLDERS</h1>
     </div>
-    <div class="text-left text-white">
+    <div class="text-left">
       <p>Holders: {{holdersCount}}</p>
     </div>
-    <div class="text-center text-white" *ngIf="holders">
+    <div class="text-center" *ngIf="holders">
       <app-holders-datatable [holders]="holders"></app-holders-datatable>
     </div>
   </div>
