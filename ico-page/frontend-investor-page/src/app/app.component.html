@@ -24,128 +24,11 @@
   </div>
 </nav>
 
-<header class="masthead">
-  <div class="container h-100">
-    <div class="row h-100">
-      <div class="col-lg-5 my-auto">
-        <div class="header-content mx-auto">
-          <div class="text-center mb-5">
-            <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-            <img src="assets/img/Datrixo-Big-Data-Company.png" class="img-fluid" alt="">
-          </div>
-          <div class="text-center">
-            <a href="#investment" class="btn btn-outline btn-xl js-scroll-trigger mb-3">More info</a>
-          </div>
-          <div class="text-center mb-3 mt-3">
-            <a href="#"><img src="assets/img/sec.png" alt=""></a>
-          </div>
-          <div class="text-center">
-            <p class="mb-0">Filled with<br>Securities Exchange<br>Commission</p>
-            <p class="h6"><a href="#">[View]</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-7 my-auto">
-        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Datrixo Inc Token (DAT)</h5>
-        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Token Price - Contact Us at ir@datriosto.com</h5>
-        <h5 class="text-justify border-bottom pb-lg-3 mb-3">Datrixo is a New York - based company focused on Machine
-          Intelligence (AI) and applications of AI in various industry sectors. <span class="h6"><a href="http://datrixo.com/" target="_blank">[Website]</a></span></h5>
-        <div class="mt-4">
-          <h5 class="mb-4">Purchase amount ($5,000 minimum)</h5>
-          <div class="pb-lg-3 mb-3">
-            <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger mr-3">$5,000</a>
-            <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger mr-3">$10,000</a>
-            <a href="#investment" class="btn btn-outline btn-lg js-scroll-trigger">$20,000</a>
-          </div>
-          <div class="border-bottom pb-lg-1 mb-3">
-            <h5>The account is: <span class="h6"><a href="#">0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee</a></span></h5>
-          </div>
-          <div>
-            <ul class="list-inline list-social">
-              <li class="list-inline-item">
-                <h5>Links:</h5>
-              </li>
-              <li class="list-inline-item social-twitter">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item social-facebook">
-                <a href="http://datrixo.com/" target="_blank">
-                  [Website]
-                </a>
-              </li>
-            </ul>
-          </div>
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
 
-        </div>
-
-      </div>
-    </div>
-  </div>
-</header>
-
-<section class="investment bg-primary" id="investment">
-  <div class="container">
-    <div class="col-sm-8 mx-auto mb-5">
-      <h1 class="text-white">REQUEST INVESTMENT SUMMARY</h1>
-    </div>
-    <div class="col-sm-6 mx-auto border pt-5 pb-4">
-      <div class="col-sm-10 mx-auto">
-        <div class="form-group row">
-          <input type="password" class="form-control" id="senderName" placeholder="Name">
-        </div>
-        <div class="form-group row">
-          <input type="password" class="form-control" id="senderEmail" placeholder="E-mail">
-        </div>
-        <div class="form-group row mb-4">
-          <select class="form-control" id="senderType">
-            <option>Accredited US Investor</option>
-            <option>Funds or Institiationals</option>
-          </select>
-        </div>
-        <div class="text-center">
-          <a href="#investment" class="btn btn-outline-light btn-xl js-scroll-trigger">Apply</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="totalsupply" id="totalsupply">
-  <div class="container">
-    <div class="text-center">
-      <h1>TOTAL SUPPLY / SOLD</h1>
-      <h2>{{totalSupply}} / {{sold}} <span class="h3">token sold</span></h2>
-    </div>
-  </div>
-</section>
-
-<section class="holders bg-primary" id="holders">
-  <div class="container">
-    <div class="text-center">
-      <h1 class="text-white">HOLDERS</h1>
-    </div>
-    <div class="text-left text-white">
-      <p>Holders: {{holdersCount}}</p>
-    </div>
-    <div class="text-center text-white" *ngIf="holders">
-      <app-holders-datatable [holders]="holders"></app-holders-datatable>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="cta-content">
-    <div class="container">
-      <h2>Stop waiting.<br>Start funding.</h2>
-      <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
-    </div>
-  </div>
-  <div class="overlay"></div>
-</section>
-
-<footer>
+<!--<footer>
   <div class="container">
     <p>&copy; datrixosto.com 2019. All Rights Reserved.</p>
     <ul class="list-inline">
@@ -160,4 +43,4 @@
       </li>
     </ul>
   </div>
-</footer>
+</footer>-->
