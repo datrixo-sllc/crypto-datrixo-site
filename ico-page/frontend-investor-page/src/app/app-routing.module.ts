@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {SelectivePreloadingStrategyService} from './selective-preloading-strategy.service';
 
 // import { ComposeMessageComponent } from './compose-message/compose-message.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -16,16 +18,29 @@ const appRoutes: Routes = [
   },
 */
   {
-    path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule',
+    path: 'my-holdings',
+    loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule',
+    data: { preload: true },
     // canLoad: [AuthGuard]
   },
+  /*{
+    path: 'invest',
+    loadChildren: './invest/invest.module#InvestModule',
+    // canLoad: [AuthGuard]
+  },*/
+  /*{
+    path: 'investor-profile',
+    loadChildren: './investor-profile/investor-profile.module#InvestorProfileModule',
+    data: { preload: true },
+    // canLoad: [AuthGuard]
+  },*/
+
   {
-    path: 'crisis-center',
-    loadChildren: './crisis-center/crisis-center.module#CrisisCenterModule',
-    data: { preload: true }
+    path: '',
+    loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule',
+    data: { preload: true },
+    // canLoad: [AuthGuard]
   },
-  { path: '',   redirectTo: '/superheroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

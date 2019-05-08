@@ -1,57 +1,14 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {interval, Subscription} from 'rxjs';
-import {HoldersService} from './holders.service';
-import {switchMap} from 'rxjs/operators';
-import {IcoPageResponse} from './ico-page-response';
-import {HolderResponce} from './holder-responce';
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
-  totalSupply: string;
-  sold: string;
-  holdersCount: string;
-  holders: HolderResponce[];
-  response: IcoPageResponse;
+export class AppComponent {
 
-  subscriber: Subscription;
-
-  constructor(private holdersService: HoldersService) {}
-
-  ngOnInit(): void {
-    this.unSubscribe();
-    this.subscriber = interval(1500).pipe(
-      switchMap(() => this.holdersService.getIcoPage())
-    ).subscribe(value => {
-      if (value) {
-        this.response = value as IcoPageResponse;
-        this.fillValues();
-      }
-    }, error => this.unSubscribe());
-
-  }
-
-  ngOnDestroy(): void {
-    this.unSubscribe();
-
-  }
-
-  unSubscribe(): void {
-    if (this.subscriber) {
-      this.subscriber.unsubscribe();
-    }
-  }
-
-
-  private fillValues() {
-    if (this.response) {
-      this.totalSupply = this.response.totalSupplyTokens;
-      this.sold = this.response.soldTokens;
-      this.holdersCount = this.response.holdersCount;
-      this.holders = this.response.holders;
-    }
+  getAnimationData(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }
