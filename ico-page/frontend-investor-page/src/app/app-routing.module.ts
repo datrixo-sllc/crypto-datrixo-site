@@ -1,61 +1,22 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {SelectivePreloadingStrategyService} from './selective-preloading-strategy.service';
+import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './shared/guard/auth.guard';
 
-// import { ComposeMessageComponent } from './compose-message/compose-message.component';
-// import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-// import { AuthGuard } from './auth/auth.guard';
-// import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
-
-const appRoutes: Routes = [
-/*
-  {
-    path: 'compose',
-    component: ComposeMessageComponent,
-    outlet: 'popup'
-  },
-*/
-  {
-    path: 'my-holdings',
-    loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule',
-    data: { preload: true },
-    // canLoad: [AuthGuard]
-  },
-  /*{
-    path: 'invest',
-    loadChildren: './invest/invest.module#InvestModule',
-    // canLoad: [AuthGuard]
-  },*/
-  /*{
-    path: 'investor-profile',
-    loadChildren: './investor-profile/investor-profile.module#InvestorProfileModule',
-    data: { preload: true },
-    // canLoad: [AuthGuard]
-  },*/
-
-  {
-    path: '',
-    loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule',
-    data: { preload: true },
-    // canLoad: [AuthGuard]
-  },
-  { path: '**', component: PageNotFoundComponent }
+const routes: Routes = [
+    {
+        path: '',
+        loadChildren: './layout/layout.module#LayoutModule',
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'login',
+        loadChildren: './login/login.module#LoginModule'
+    }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(
-      appRoutes,
-      {
-        enableTracing: false, // <-- debugging purposes only
-        preloadingStrategy: SelectivePreloadingStrategyService,
-      }
-    )
-  ],
-  exports: [
-    RouterModule
-  ]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
+    providers: [AuthGuard]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

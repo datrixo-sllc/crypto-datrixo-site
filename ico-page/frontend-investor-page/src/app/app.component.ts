@@ -1,14 +1,16 @@
-import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    constructor(private translate: TranslateService) {
+        translate.setDefaultLang('en');
+    }
 
-  getAnimationData(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
+    ngOnInit() {
+    }
 }
