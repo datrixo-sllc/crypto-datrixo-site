@@ -10,7 +10,11 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'dashboard'
+                redirectTo: 'profile'
+            },
+            {
+                path: 'profile',
+                loadChildren: './profile/profile.module#ProfileModule'
             },
             {
                 path: 'dashboard',
