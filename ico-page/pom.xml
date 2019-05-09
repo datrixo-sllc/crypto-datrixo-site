@@ -63,6 +63,13 @@
                                 <include>**</include>
                             </includes>
                         </resource>
+                        <resource>
+                            <directory>${basedir}/frontend-investor-page/dist/frontend-ico-page</directory>
+                            <targetPath>/WEB-INF/classes/static/investor-page</targetPath>
+                            <includes>
+                                <include>**</include>
+                            </includes>
+                        </resource>
                     </webResources>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
