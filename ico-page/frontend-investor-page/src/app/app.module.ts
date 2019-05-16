@@ -1,50 +1,25 @@
-import { LayoutModule } from '@angular/cdk/layout';
-import { OverlayModule } from '@angular/cdk/overlay';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import {
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatSidenavModule,
-    MatToolbarModule
-} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LanguageTranslationModule } from './shared/modules/language-translation/language-translation.module'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// AoT requires an exported function for factories
-export const createTranslateLoader = (http: HttpClient) => {
-    /* for development
-    return new TranslateHttpLoader(
-        http,
-        '/start-javascript/sb-admin-material/master/dist/assets/i18n/',
-        '.json'
-    );*/
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-};
+import { AuthGuard } from './shared';
 
 @NgModule({
-    declarations: [AppComponent],
     imports: [
+        CommonModule,
         BrowserModule,
-        AppRoutingModule,
         BrowserAnimationsModule,
-        LayoutModule,
-        OverlayModule,
         HttpClientModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: createTranslateLoader,
-                deps: [HttpClient]
-            }
-        })
+        LanguageTranslationModule,
+        AppRoutingModule
     ],
-    providers: [],
+    declarations: [AppComponent],
+    providers: [AuthGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

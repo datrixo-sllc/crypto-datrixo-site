@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { routerTransition } from '../../router.animations';
 
 @Component({
     selector: 'app-charts',
     templateUrl: './charts.component.html',
-    styleUrls: ['./charts.component.scss']
+    styleUrls: ['./charts.component.scss'],
+    animations: [routerTransition()]
 })
 export class ChartsComponent implements OnInit {
     // bar chart
@@ -11,7 +13,15 @@ export class ChartsComponent implements OnInit {
         scaleShowVerticalLines: false,
         responsive: true
     };
-    public barChartLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+    public barChartLabels: string[] = [
+        '2006',
+        '2007',
+        '2008',
+        '2009',
+        '2010',
+        '2011',
+        '2012'
+    ];
     public barChartType: string;
     public barChartLegend: boolean;
 
@@ -21,7 +31,11 @@ export class ChartsComponent implements OnInit {
     ];
 
     // Doughnut
-    public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
+    public doughnutChartLabels: string[] = [
+        'Download Sales',
+        'In-Store Sales',
+        'Mail-Order Sales'
+    ];
     public doughnutChartData: number[] = [350, 450, 100];
     public doughnutChartType: string;
 
@@ -42,7 +56,11 @@ export class ChartsComponent implements OnInit {
     public radarChartType: string;
 
     // Pie
-    public pieChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
+    public pieChartLabels: string[] = [
+        'Download Sales',
+        'In-Store Sales',
+        'Mail Sales'
+    ];
     public pieChartData: number[] = [300, 500, 100];
     public pieChartType: string;
 
@@ -139,6 +157,7 @@ export class ChartsComponent implements OnInit {
          * assign it;
          */
     }
+
     constructor() {}
 
     ngOnInit() {
@@ -146,7 +165,6 @@ export class ChartsComponent implements OnInit {
         this.barChartLegend = true;
         this.doughnutChartType = 'doughnut';
         this.radarChartType = 'radar';
-
         this.pieChartType = 'pie';
         this.polarAreaLegend = true;
         this.polarAreaChartType = 'polarArea';

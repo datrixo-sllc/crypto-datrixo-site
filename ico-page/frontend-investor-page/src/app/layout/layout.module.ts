@@ -1,34 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import {
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatToolbarModule
-} from '@angular/material';
+import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { TopnavComponent } from './components/topnav/topnav.component';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
-import { NavComponent } from './nav/nav.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
     imports: [
         CommonModule,
         LayoutRoutingModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatSidenavModule,
-        MatIconModule,
-        MatInputModule,
-        MatMenuModule,
-        MatListModule,
-        TranslateModule
+        TranslateModule,
+        NgbDropdownModule
     ],
-    declarations: [LayoutComponent, NavComponent, TopnavComponent, SidebarComponent]
+    declarations: [LayoutComponent, SidebarComponent, HeaderComponent]
 })
 export class LayoutModule {}

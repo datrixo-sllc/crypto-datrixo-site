@@ -1,14 +1,19 @@
-<mat-card [ngClass]="bgClass">
-    <mat-card-header>
-        <div mat-card-avatar>
-            <mat-icon class="icon-lg">{{icon}}</mat-icon>
+<div class="card text-white bg-{{bgClass}}">
+    <div class="card-header">
+        <div class="row">
+            <div class="col col-xs-3">
+                <i class="fa {{icon}} fa-5x"></i>
+            </div>
+            <div class="col col-xs-9 text-right">
+                <div class="d-block huge">{{count}}</div>
+                <div class="d-block">{{label}}</div>
+            </div>
         </div>
-        <mat-card-title>{{count}}</mat-card-title>
-        <mat-card-subtitle>{{label}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-actions>
+    </div>
+    <div class="card-footer">
+        <span class="float-left">View Details {{data}}</span>
         <a href="javascript:void(0)" class="float-right card-inverse">
-            View Details
+            <span ><i class="fa fa-arrow-circle-right"></i></span>
         </a>
-    </mat-card-actions>
-</mat-card>
+    </div>
+</div>
