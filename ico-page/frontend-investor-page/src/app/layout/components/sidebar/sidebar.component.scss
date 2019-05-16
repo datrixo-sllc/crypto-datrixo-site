@@ -1,4 +1,4 @@
-$topnav-background-color: #222;
+$topnav-background-color: #f8f9fa;
 .sidebar {
     border-radius: 0;
     position: fixed;
@@ -35,11 +35,11 @@ $topnav-background-color: #222;
         }
         a:hover {
             background: darken($topnav-background-color, 5%);
-            color: #fff;
+            color: #555555;
         }
         a.router-link-active {
             background: darken($topnav-background-color, 5%);
-            color: #fff;
+            color: #555555;
         }
         .header-fields {
             padding-top: 10px;
@@ -72,7 +72,7 @@ $topnav-background-color: #222;
             }
             a:hover,
             a:focus {
-                color: #fff;
+                color: #555555;
                 outline: none;
                 outline-offset: -2px;
             }
@@ -92,7 +92,7 @@ $topnav-background-color: #222;
                         color: #999;
                     }
                     a:hover {
-                        color: #fff;
+                        color: #555555;
                     }
                 }
                 .list-group-item:hover {
@@ -121,7 +121,7 @@ $topnav-background-color: #222;
             height: auto;
             li {
                 a {
-                    color: #fff;
+                    color: #555555;
                     padding: 10px;
                     display: block;
                 }
@@ -167,15 +167,15 @@ $topnav-background-color: #222;
     padding: 12px;
     bottom: 0;
     color: #999;
-    background: #212529;
+    background: darken($topnav-background-color, 5%);
     i {
         font-size: 23px;
     }
     &:hover {
-        background: darken($topnav-background-color, 5%);
-        color: #fff;
+        background: darken($topnav-background-color, 10%);
+        color: #555555;
     }
-    border-top: 1px solid #999;
+    border-top: 1px solid #dddddd;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
