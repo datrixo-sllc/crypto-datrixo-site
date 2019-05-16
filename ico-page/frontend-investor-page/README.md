@@ -1,26 +1,28 @@
-# SB Admin rewritten in Angular7 and Material2
+# SB Admin rewritten in Angular7 and Bootstrap 4
 
-Simple Dashboard Admin App built using Angular 7 and Material 2.
+Simple Dashboard Admin App built using Angular 7 and Bootstrap 4
 
-This project is a port of the famous Free Admin Bootstrap Theme [SB Admin v1.0](http://startbootstrap.com/template-overviews/sb-admin-2/) to Angular6 Theme.
+This project is a port of the famous Free Admin Bootstrap Theme [SB Admin v7.0](http://startbootstrap.com/template-overviews/sb-admin-2/) to Angular7 Theme.
 
-## [Demo](http://rawgit.com/start-javascript/sb-admin-material/master/dist/)
+Powered by [StartAngular](http://startangular.com/) & [StrapUI](http://strapui.com/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+## [Demo](http://rawgit.com/start-angular/SB-Admin-BS4-Angular-6/master/dist/)
+
+## [SB Admin Material version](https://github.com/start-javascript/sb-admin-material)
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
 ### Introduction
 
 Provides fast, reliable and extensible starter for the development of Angular projects.
 
-`sb-admin-material` provides the following features:
+`sb-admin-bs4-angular7` provides the following features:
 
-*   Developed using Material-v2.0.0
-*   angular-v7.1.0
-*   angular/cli-v7.0.6
-*   angular/material-v7.1.0
-*   angular/cdk-v7.1.0
-*   angular/flex-layout-v7.0.0-beta.19
-*   [ngx-translate-v11.0.1](https://github.com/ngx-translate)
+*   Developed using boostrap-v4.0.0
+*   angular-v7.0.2
+*   angular/cli-v7.0.4
+*   [ng-bootstrap-v4.0.0](https://github.com/ng-bootstrap/)
+*   [ngx-translate-v11.0.0](https://github.com/ngx-translate)
 *   Following the best practices.
 *   Ahead-of-Time compilation support.
 *   Official Angular i18n support.
@@ -29,13 +31,13 @@ Provides fast, reliable and extensible starter for the development of Angular pr
 
 ### How to start
 
-**Note** that this seed project requires **node >=v8.9.0 and npm >=6**.
+**Note** that this seed project requires **node >=v8.9.0 and npm >=4**.
 
 In order to start the project use:
 
 ```bash
-$ git clone https://github.com/start-javascript/sb-admin-material.git
-$ cd sb-admin-material
+$ git clone https://github.com/start-angular/SB-Admin-BS4-Angular-6.git
+$ cd SB-Admin-BS4-Angular-6
 # install the project's dependencies
 $ npm install
 # watches your files and uses livereload by default run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -45,22 +47,19 @@ $ npm start
 $ npm run build
 ```
 
-## Code scaffolding
+### Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
+### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
+### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -1,50 +1,151 @@
-<div id="sidebar">
-    <mat-nav-list>
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/profile']">
-        <mat-icon class="sidenav-icon">folder_shared</mat-icon> {{ 'Profile' | translate }}
-      </a>
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/invest']">
-        <mat-icon class="sidenav-icon">free_breakfast</mat-icon> {{ 'Invest' | translate }}
-      </a>
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/tables']">
-        <mat-icon class="sidenav-icon">business_center</mat-icon> {{ 'My Holdings' | translate }}
-      </a>
-      <!--<a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/dashboard']">
-            <mat-icon class="sidenav-icon">dashboard</mat-icon> {{ 'Dashboard' | translate }}
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' | translate }}</span>
         </a>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/charts']">
-            <mat-icon class="sidenav-icon">bar_chart</mat-icon> {{ 'Charts' | translate }}
+        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
+            <span>{{ 'Charts' | translate }}</span>
         </a>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/tables']">
-            <mat-icon class="sidenav-icon">table_chart</mat-icon> {{ 'Tables' | translate }}
+        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Tables' | translate }}</span>
         </a>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/forms']">
-            <mat-icon class="sidenav-icon">input</mat-icon> {{ 'Forms' | translate }}
+        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'Forms' | translate }}</span>
         </a>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/grid']">
-            <mat-icon class="sidenav-icon">grid_on</mat-icon> {{ 'Material Grid' | translate }}
+        <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-desktop"></i>&nbsp;
+            <span>{{ 'Bootstrap Element' | translate }}</span>
         </a>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/components']">
-            <mat-icon class="sidenav-icon">code</mat-icon> {{ 'Material Component' | translate }}
+        <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-wrench"></i>&nbsp;
+            <span>{{ 'Bootstrap Grid' | translate }}</span>
         </a>
-        <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/blank-page']">
-            <mat-icon class="sidenav-icon">insert_drive_file</mat-icon> {{ 'Blank Page' | translate }}
+        <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'Component' | translate }}</span>
         </a>
         <div class="nested-menu">
-            <a mat-list-item (click)="addExpandClass('pages')">
-                <mat-icon class="sidenav-icon">add</mat-icon> {{ 'Menu' | translate }}
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <i class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Menu' | translate }}</span>
             </a>
-            <ul class="nested submenu" [class.expand]="showMenu === 'pages'">
-                <li>
-                    <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
+            <li class="nested" [class.expand]="showMenu === 'pages'">
+                <ul class="submenu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Submenu' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Submenu' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Submenu' | translate }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file-o"></i>&nbsp;
+            <span>{{ 'Blank Page' | translate }}</span>
+        </a>
+        <a href="http://www.strapui.com/" class="list-group-item">
+            <i class="fa fa-caret-down"></i>&nbsp;
+            <span>{{ 'More Themes' | translate }}</span>
+        </a>
+
+        <div class="header-fields">
+            <a (click)="rltAndLtr()" class="list-group-item">
+                <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
+            </a>
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('languages')">
+                    <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'languages'">
+                    <ul class="submenu">
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('en')">
+                                {{ 'English' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('fr')">
+                                {{ 'French' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('ur')">
+                                {{ 'Urdu' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('es')">
+                                {{ 'Spanish' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('it')">
+                                {{ 'Italian' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('fa')">
+                                {{ 'Farsi' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" (click)="changeLang('de')">
+                                {{ 'German' | translate }}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
+            </div>
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('profile')">
+                    <span><i class="fa fa-user"></i>&nbsp; John Smith</span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'profile'">
+                    <ul class="submenu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span><i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/login']" (click)="onLoggedout()">
+                                <span><i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
-                </li>
-            </ul>
-        </div>-->
-    </mat-nav-list>
-</div>
+            </div>
+        </div>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+        <span>{{ 'Collapse Sidebar' | translate }}</span>
+    </div>
+</nav>

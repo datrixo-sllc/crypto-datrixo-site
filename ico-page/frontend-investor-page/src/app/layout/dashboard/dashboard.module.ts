@@ -1,26 +1,29 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatCardModule, MatIconModule, MatTableModule } from '@angular/material';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { CommonModule } from '@angular/common';
+import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { StatModule } from '../../shared/modules/stat/stat.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import {
+    TimelineComponent,
+    NotificationComponent,
+    ChatComponent
+} from './components';
+import { StatModule } from '../../shared';
 
 @NgModule({
     imports: [
         CommonModule,
+        NgbCarouselModule,
+        NgbAlertModule,
         DashboardRoutingModule,
-        MatGridListModule,
-        StatModule,
-        MatCardModule,
-        MatCardModule,
-        MatTableModule,
-        MatButtonModule,
-        MatIconModule,
-        FlexLayoutModule.withConfig({addFlexToParent: false})
+        StatModule
     ],
-    declarations: [DashboardComponent]
+    declarations: [
+        DashboardComponent,
+        TimelineComponent,
+        NotificationComponent,
+        ChatComponent
+    ]
 })
 export class DashboardModule {}
