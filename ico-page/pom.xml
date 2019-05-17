@@ -65,7 +65,7 @@
                         </resource>
                         <resource>
                             <directory>${basedir}/frontend-investor-page/dist</directory>
-                            <targetPath>/WEB-INF/classes/static/investor-page</targetPath>
+                            <targetPath>/WEB-INF/classes/static/investor-page/</targetPath>
                             <includes>
                                 <include>**</include>
                             </includes>
