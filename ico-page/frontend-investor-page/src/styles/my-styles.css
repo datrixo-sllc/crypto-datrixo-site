@@ -1,0 +1,23 @@
+.my-btn-outline {
+    border: 1px solid;
+}
+
+.my-btn-outline:hover, .my-btn-outline:focus, .my-btn-outline:active, .my-btn-outline.active {
+    color: white;
+    border-color: #95999c;
+    background-color: #95999c;
+    outline: 0;
+}
+
+.my-btn {
+    border-radius: 300px;
+    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+
+.my-btn-xl {
+    font-size: 11px;
+    padding: 15px 45px;
+}

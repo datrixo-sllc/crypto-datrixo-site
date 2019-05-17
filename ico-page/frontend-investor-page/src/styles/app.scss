@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import "bootstrap/bootstrap";
+@import "../assets/vendor/bootstrap/css/bootstrap";
+// @import "bootstrap/bootstrap";
 @import "spinner";
 @import "utils";
 @import "rtl";
 @import "responsive";
+@import "my-styles.css";
 
 @media print {
     .breadcrumb {
