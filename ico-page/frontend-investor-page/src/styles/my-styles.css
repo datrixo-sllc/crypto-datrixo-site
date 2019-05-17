@@ -18,6 +18,8 @@
 }
 
 .my-btn-xl {
-    font-size: 11px;
-    padding: 15px 45px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 25px;
+    color: #868e96;
 }
