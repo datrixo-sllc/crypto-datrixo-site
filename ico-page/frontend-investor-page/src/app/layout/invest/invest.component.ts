@@ -11,4 +11,12 @@ export class InvestComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {}
+
+    onNavigate() {
+        window.open('http://datrixo.com', '_blank');
+    }
+
+    onPPMDownload() {}
+
+    onGetInvoice() {}
 }

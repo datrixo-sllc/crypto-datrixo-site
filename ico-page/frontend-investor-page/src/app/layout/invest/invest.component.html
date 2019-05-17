@@ -8,19 +8,209 @@
                     <img src="assets/images/Datrixo-Big-Data-Company.png" class="img-fluid" alt="">
                 </div>
                 <div class="text-center">
-                    <button class="my-btn my-btn-outline my-btn-xl mb-3">More info</button>
+                    <button class="my-btn my-btn-outline my-btn-xl mb-3" (click)="onNavigate()">
+                        More info
+                    </button>
                 </div>
                 <div class="text-center mb-3 mt-3">
-                    <a href="#"><img src="assets/images/sec.png" alt=""></a>
+                    <a href="https://www.sec.gov/" target="_blank"><img src="assets/images/sec.png" alt=""></a>
                 </div>
                 <div class="text-center">
                     <p class="mb-0">Filled with<br>Securities Exchange<br>Commission</p>
-                    <p class="h6"><a href="#">[View]</a></p>
+                    <p class="h6"><a href="https://www.sec.gov/" target="_blank">[View]</a></p>
                 </div>
             </div>
         </div>
         <div class="col-lg-7 my-auto">
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo Inc Token (DRX)</h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Token Price - Contact Us</h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo is a New York - based company
+                focused on Machine
+                Intelligence (AI) and applications of AI in various industry sectors. <span class="h6"><a
+                    href="http://datrixo.com/" target="_blank">[Website]</a></span></h5>
+            <div class="mt-4">
+                <div class="border-bottom pb-lg-1 mb-3">
+                    <h5 class="font-weight-normal">The account is: <span class="h6"><a
+                        href="https://ropsten.etherscan.io/address/0xed6b5a307ff305f1c36a532b2e2ef7d0c9f143e9#readContract"
+                        target="_blank">
+              0xed6B5a307Ff305F1C36a532B2E2ef7d0C9F143E9</a></span></h5>
+                </div>
+                <div>
+                    <ul class="list-inline list-social">
+                        <li class="list-inline-item">
+                            <h5 class="font-weight-normal">Links:</h5>
+                        </li>
+                        <!--<li class="list-inline-item social-twitter">
+                          <a href="#">
+                            <i class="fab fa-twitter"></i>
+                          </a>
+                        </li>-->
+                        <li class="list-inline-item social-facebook">
+                            <a href="http://datrixo.com/" target="_blank">
+                                [Website]
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">PPM</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Private Placement Memorandum</h5>
+                    <p class="card-text">Prior to making an investment, please review the Offering Terms in PPM.</p>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onPPMDownload()">
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">Buy tokens</h4>
+                <div class="card-body">
+                    <h5 class="card-title">$5,000 minimum</h5>
+                    <p class="card-text">Please, chose number of shares tokens to purchase,
+                        download the appropriate invoice that includes payment instructions and remit the payment to:
+                        Datrixo Inc.</p>
+                    <fieldset class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optAmounts" id="opt5000" value="opt5000" checked=""> $5,000
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optAmounts" id="opt10000" value="opt10000"> $10,000
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optAmounts" id="opt50000" value="opt50000"> $50,000
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optAmounts" id="optOtherAmount" value="optOtherAmount"> Other
+                                Amount
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onGetInvoice()">
+                            Get Invoice
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">Agreement</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Subscription Agreement</h5>
+                    <p class="card-text">Please, upload, sign and send us the PDF of the signed Subscription
+                        Documents.</p>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onPPMDownload()">
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-12 mt-3 p-4 border-left-0 border-right-0">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div class="row my-auto">
+                    <label class="col-lg-4 mt-3" for="agreementFile">Upload signed agreement here</label>
+                    <input type="file" class="col-lg-4 form-control-file mt-3" id="agreementFile"/>
+                    <button class="col-lg-2 my-btn my-btn-outline my-btn-xl mt-3">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-12 mt-3 p-4 border-top-0 border-left-0 border-right-0">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="text-center"><h4>Total Supply</h4></td>
+                        <td class="text-center"><h4>/</h4></td>
+                        <td class="text-center"><h4>Sold</h4></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">300,000</td>
+                        <td class="text-center">/</td>
+                        <td class="text-center">1,460,000</td>
+                        <td>(tokens sold)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-12 mt-3 p-4 border-top-0 border-left-0 border-right-0">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <h4 class="text-center">Holders</h4>
+                <div class="row">
+                    <div class="col-md-2">
+                        Holders: <a href="">3</a>
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                    <div class="col-md-2">
+                        <!--<a href="">View all</a>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table" style="margin: 0 auto;">
+                            <thead>
+                            <tr>
+                                <th scope="col">Holder</th>
+                                <th scope="col">Age</th>
+                                <th scope="col"># Share Tokens</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
+                            <tr>
+                                <td><a
+                                    href="https://etherscan.io/token/0x4e7bd88e3996f48e2a24d15e37ca4c02b4d134d2?a=0xe17ee7b3c676701c66b395a35f0df4c2276a344e"
+                                    target="_blank">0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe</a></td>
+                                <td>13 days, 4 hours ago</td>
+                                <td>1,300,000</td>
+                            </tr>
+
+                            <tr>
+                                <td><a
+                                    href="https://etherscan.io/token/0x4e7bd88e3996f48e2a24d15e37ca4c02b4d134d2?a=0xe17ee7b3c676701c66b395a35f0df4c2276a344e"
+                                    target="_blank">0x5eD8Cee6b63b1c6AFce3AD7c92f4fD7E1B8fAd9F</a></td>
+                                <td>17 days, 8 hours ago</td>
+                                <td>150,000</td>
+                            </tr>
+
+                            <tr>
+                                <td><a
+                                    href="https://etherscan.io/token/0x4e7bd88e3996f48e2a24d15e37ca4c02b4d134d2?a=0xe17ee7b3c676701c66b395a35f0df4c2276a344e"
+                                    target="_blank">0xdfbC84CcAC430f2c0455C437ADf417095D7AD68E</a></td>
+                                <td>23 days, 4 hours ago</td>
+                                <td>10,000</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
