@@ -1,9 +1,8 @@
-package com.datrixo.crypto_datrixo_site.ico_page.model;
+package com.datrixo.crypto_datrixo_site.ico_page.h2.model;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigInteger;
 import java.util.Date;
 

@@ -2,7 +2,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.service;
 
 import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
-import com.datrixo.crypto_datrixo_site.ico_page.model.Holder;
+import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

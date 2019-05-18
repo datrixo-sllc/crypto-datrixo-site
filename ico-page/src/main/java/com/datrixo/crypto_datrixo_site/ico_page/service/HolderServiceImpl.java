@@ -1,21 +1,15 @@
 package com.datrixo.crypto_datrixo_site.ico_page.service;
 
 import com.datrixo.crypto_datrixo_site.ico_page.contract.DatrixoContract;
-import com.datrixo.crypto_datrixo_site.ico_page.model.Holder;
-import com.datrixo.crypto_datrixo_site.ico_page.repository.HolderRepository;
+import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
+import com.datrixo.crypto_datrixo_site.ico_page.h2.repository.HolderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.web3j.crypto.Credentials;
-import org.web3j.crypto.WalletUtils;
 import org.web3j.protocol.Web3j;
-import org.web3j.protocol.core.methods.request.EthFilter;
-import org.web3j.protocol.core.methods.response.TransactionReceipt;
-import org.web3j.protocol.http.HttpService;
-import org.web3j.tx.Contract;
-import org.web3j.tx.ManagedTransaction;
 import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.tx.gas.DefaultGasProvider;
 
