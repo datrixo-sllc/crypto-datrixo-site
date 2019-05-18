@@ -1,6 +1,6 @@
 package com.datrixo.crypto_datrixo_site.ico_page.service;
 
-import com.datrixo.crypto_datrixo_site.ico_page.model.Holder;
+import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
 
 import java.math.BigInteger;
 import java.util.List;
