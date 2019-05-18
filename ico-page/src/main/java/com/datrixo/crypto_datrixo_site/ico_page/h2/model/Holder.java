@@ -3,6 +3,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.h2.model;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -12,6 +13,7 @@ import java.util.Date;
  * Time: 12:59
  */
 @Entity
+@Table(name = "HOLDERS")
 public class Holder extends AbstractPersistable<Long> {
     private String address;
     private Date timeDate;
