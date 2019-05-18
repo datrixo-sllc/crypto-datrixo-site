@@ -10,8 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @ComponentScan("com.datrixo.crypto_datrixo_site.ico_page.*")
-//@EntityScan("com.datrixo.crypto_datrixo_site.ico_page.h2.model")
-//@EnableJpaRepositories("com.datrixo.crypto_datrixo_site.ico_page.h2.repository")
 @EnableAsync
 @EnableScheduling
 public class App {
