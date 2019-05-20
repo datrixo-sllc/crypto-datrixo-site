@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {interval, Subscription} from 'rxjs';
 import {HoldersService} from './holders.service';
 import {switchMap} from 'rxjs/operators';
@@ -22,8 +22,9 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private holdersService: HoldersService) {}
 
   ngOnInit(): void {
+    this.getIcoPage();
     this.unSubscribe();
-    this.subscriber = interval(1500).pipe(
+    this.subscriber = interval(300000/*5 min*/).pipe(
       switchMap(() => this.holdersService.getIcoPage())
     ).subscribe(value => {
       if (value) {
@@ -32,6 +33,16 @@ export class AppComponent implements OnInit, OnDestroy {
       }
     }, error => this.unSubscribe());
 
+  }
+
+  getIcoPage(): void {
+    this.holdersService.getIcoPage()
+      .subscribe(value => {
+        if (value) {
+          this.response = value as IcoPageResponse;
+          this.fillValues();
+        }
+      });
   }
 
   ngOnDestroy(): void {

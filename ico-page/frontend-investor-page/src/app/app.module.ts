@@ -7,7 +7,10 @@ import { LanguageTranslationModule } from './shared/modules/language-translation
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { APP_CONFIG, AppConfig } from './app.config';
 import { AuthGuard } from './shared';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { Http, HttpModule } from '@angular/http';
 
 @NgModule({
     imports: [
@@ -16,10 +19,12 @@ import { AuthGuard } from './shared';
         BrowserAnimationsModule,
         HttpClientModule,
         LanguageTranslationModule,
-        AppRoutingModule
+        AppRoutingModule,
+        NgxSpinnerModule,
+        HttpModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard, { provide: APP_CONFIG, useValue: AppConfig }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
