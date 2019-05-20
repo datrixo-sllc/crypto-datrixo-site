@@ -1,7 +1,9 @@
 package com.datrixo.crypto_datrixo_site.ico_page.security;
 
+import com.datrixo.crypto_datrixo_site.ico_page.h2.repository.HolderRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.UserRepository;
+import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +30,7 @@ import java.util.Optional;
 public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -48,7 +50,7 @@ public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthe
                 throw new AuthenticationCredentialsNotFoundException(StatusResponseAuth.PASSWORD_INVALID.toString());
             }
 
-            Optional<User> optionalUser = userRepository.findByEmail(username);
+            Optional<User> optionalUser = userService.findByEmail(username);
             if (!optionalUser.isPresent()) {
                 throw new UsernameNotFoundException(StatusResponseAuth.LOGIN_NOT_FOUND.toString());
             } else if (!optionalUser.get().getPassword().equals(password)) {
