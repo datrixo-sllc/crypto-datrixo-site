@@ -10,5 +10,5 @@ import java.util.Optional;
  * Time: 7:28
  **/
 public interface UserService {
-    Optional<User> findByEmail(String email);
+    Optional<User> findByUsername(String username);
 }
