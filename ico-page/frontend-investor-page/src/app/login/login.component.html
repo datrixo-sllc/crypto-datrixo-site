@@ -8,9 +8,9 @@
             <form name="form" (ngSubmit)="onLoggedin()" #f="ngForm" novalidate>
                 <div class="form-content">
                     <div class="form-group">
-                        <input type="text" [(ngModel)]="model.email" #email="ngModel" required class="form-control input-underline input-lg"
-                               name="email" placeholder="Email">
-                        <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+                        <input type="text" [(ngModel)]="model.username" #username="ngModel" required class="form-control input-underline input-lg"
+                               name="username" placeholder="Email">
+                        <div *ngIf="f.submitted && !username.valid" class="help-block">Email is required</div>
                     </div>
 
                     <div class="form-group">

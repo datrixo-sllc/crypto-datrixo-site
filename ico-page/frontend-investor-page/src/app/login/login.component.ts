@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
     onLoggedin() {
         this.spinner.show();
-        this.loginService.login(this.model.email, this.model.password)
+        this.loginService.login(this.model.username, this.model.password)
             .subscribe((response: Response) => {
                 if (response && response.json().statusResponseAuth) {
                     if (response.json().statusResponseAuth === StatusResponseAuth.OK) {

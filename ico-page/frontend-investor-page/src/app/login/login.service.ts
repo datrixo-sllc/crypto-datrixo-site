@@ -20,7 +20,7 @@ export class LoginService {
         const url = this.config.apiEndpoint + LoginService.AUTH_URL
         const headers: Headers =  new Headers({'content-type': 'text/plain'});
         headers.append('Authorization', btoa(email + ':' + password));
-        const body = {'email': email, 'password': password};
+        const body = {'username': email, 'password': password};
         const options = new RequestOptions({ headers: headers });
         options.withCredentials = true;
         return this.http

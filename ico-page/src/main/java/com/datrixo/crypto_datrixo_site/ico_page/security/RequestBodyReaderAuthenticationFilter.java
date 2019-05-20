@@ -1,8 +1,6 @@
 package com.datrixo.crypto_datrixo_site.ico_page.security;
 
-import com.datrixo.crypto_datrixo_site.ico_page.h2.repository.HolderRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
-import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.UserRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
@@ -16,7 +14,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import javax.security.auth.login.CredentialNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -41,7 +38,7 @@ public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthe
         } else {
             RequestAuth requestAuth = createRequestAuth(request);
 
-            String username = requestAuth.getEmail();
+            String username = requestAuth.getUsername();
             String password = requestAuth.getPassword();
             if (username == null) {
                 throw new UsernameNotFoundException(StatusResponseAuth.LOGIN_NOT_FOUND.toString());
@@ -50,16 +47,17 @@ public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthe
                 throw new AuthenticationCredentialsNotFoundException(StatusResponseAuth.PASSWORD_INVALID.toString());
             }
 
-            Optional<User> optionalUser = userService.findByEmail(username);
+            Optional<User> optionalUser = userService.findByUsername(username);
             if (!optionalUser.isPresent()) {
                 throw new UsernameNotFoundException(StatusResponseAuth.LOGIN_NOT_FOUND.toString());
             } else if (!optionalUser.get().getPassword().equals(password)) {
                 throw new AuthenticationCredentialsNotFoundException(StatusResponseAuth.PASSWORD_INVALID.toString());
             }
-            username = username.trim();
-            UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username, password);
-            this.setDetails(request, authRequest);
-            return this.getAuthenticationManager().authenticate(authRequest);
+
+            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username,
+                    /*SecurityUtils.passwordEncode(username, password)*/ password);
+            this.setDetails(request, token);
+            return this.getAuthenticationManager().authenticate(token);
         }
     }
 
