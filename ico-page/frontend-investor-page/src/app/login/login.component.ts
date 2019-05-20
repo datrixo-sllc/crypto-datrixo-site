@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
                     if (response.json().statusResponseAuth === StatusResponseAuth.OK) {
                         this.varStatus = StatusResponseAuth.OK;
                         localStorage.setItem('authorityStatus', JSON.stringify(response.json()));
-                        localStorage.setItem('login', (response.json().login) + ', ' + response.json().desc);
                         localStorage.setItem('isLoggedin', 'true');
                         this.router.navigate(['/investor-profile']);
                     } else if (response.json().statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
@@ -48,7 +47,7 @@ export class LoginComponent implements OnInit {
                         this.clearLocalStorage();
                     }
                     this.spinner.hide();
-                    alert('Server вернул ответ ' +
+                    /*alert('Server вернул ответ ' +
                         'на запрос по URL: ' + response.url +
                         '\n--------' +
                         '\nСтатус ответа: ' + response.status +
@@ -56,7 +55,7 @@ export class LoginComponent implements OnInit {
                         '\nOk ответа: ' + response.ok +
                         '\nТип ответа: ' + response.type +
                         '\nЗаголовки ответа: ' + this.getStringFromHeaders(response) +
-                        '\nТело ответа: ' + response.text());
+                        '\nТело ответа: ' + response.text());*/
                 }
             }, error => {
                 if (error && error.json().statusResponseAuth) {
@@ -72,7 +71,7 @@ export class LoginComponent implements OnInit {
                     }
                 }
                 this.spinner.hide();
-                alert('Server вернул ошибку: ' + error);
+                /*alert('Server вернул ошибку: ' + error);*/
                 
             });
 
