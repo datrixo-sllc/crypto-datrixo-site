@@ -32,7 +32,8 @@
     "ng2-charts": "1.6.0",
     "rxjs": "6.3.3",
     "yarn": "1.12.1",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "ngx-spinner": "^7.1.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.10.4",
