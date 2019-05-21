@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
                     if (response.json().statusResponseAuth === StatusResponseAuth.OK) {
                         this.varStatus = StatusResponseAuth.OK;
                         localStorage.setItem('authorityStatus', JSON.stringify(response.json()));
+                        localStorage.setItem('username', this.model.username)
                         localStorage.setItem('isLoggedin', 'true');
                         this.router.navigate(['/investor-profile']);
                     } else if (response.json().statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
@@ -89,6 +90,9 @@ export class LoginComponent implements OnInit {
     private clearLocalStorage() {
         if (localStorage.getItem('authorityStatus') != null) {
             localStorage.removeItem('authorityStatus');
+        }
+        if (localStorage.getItem('username') != null) {
+            localStorage.removeItem('username');
         }
         localStorage.setItem('isLoggedin', 'false');
     }
