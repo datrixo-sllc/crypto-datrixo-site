@@ -62,7 +62,7 @@ section {
 }
 
 section h2 {
-  font-size: 50px;
+  font-size: 2.2rem;
 }
 
 #mainNav {
@@ -263,10 +263,10 @@ section.totalsupply .badges .badge-link img {
 
 @media (min-width: 768px) {
   section {
-    padding-bottom: 250px;
+    padding-bottom: 80px;
   }
 
-  @media (min-width: 1022px) {
+  /*@media (min-width: 1022px) {
     section {
       padding-bottom: 500px;
     }
@@ -274,7 +274,7 @@ section.totalsupply .badges .badge-link img {
     section.totalsupply h2 {
       margin-bottom: 200px;
     }
-  }
+  }*/
 
   section.investment .badges .badge-link {
     display: inline-block;
