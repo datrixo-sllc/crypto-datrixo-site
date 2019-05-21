@@ -40,7 +40,8 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.45</version>
+            <version>8.0.16</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -71,7 +72,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
@@ -94,24 +95,24 @@
                     </webResources>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
-    <profiles>
+    <!--<profiles>
 
         <profile>
             <id>deploy-on-aws</id>
             <build>
                 <plugins>
-                    <!--deploy to amazon elastic beanstalk-->
+                    &lt;!&ndash;deploy to amazon elastic beanstalk&ndash;&gt;
                     <plugin>
                         <artifactId>maven-deploy-plugin</artifactId>
                         <configuration>
                             <skip>true</skip>
                         </configuration>
                     </plugin>
-                    <!--deploy on AWS beanstalk config crypto-datrixo-site-->
+                    &lt;!&ndash;deploy on AWS beanstalk config crypto-datrixo-site&ndash;&gt;
                     <plugin>
                         <groupId>br.com.ingenieux</groupId>
                         <artifactId>beanstalk-maven-plugin</artifactId>
@@ -127,7 +128,7 @@
                                 </goals>
                             </execution>
                         </executions>
-                        <!--ico-page-->
+                        &lt;!&ndash;ico-page&ndash;&gt;
                         <configuration>
                             <applicationName>crypto-datrixo-site</applicationName>
                             <environmentName>ico-page-site</environmentName>
@@ -146,6 +147,6 @@
             </build>
         </profile>
 
-    </profiles>
+    </profiles>-->
 
 </project>
