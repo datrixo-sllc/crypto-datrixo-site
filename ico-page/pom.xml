@@ -41,7 +41,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.16</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
         </dependency>
 
         <dependency>
@@ -99,20 +99,20 @@
         </plugins>
     </build>
 
-    <!--<profiles>
+    <profiles>
 
         <profile>
             <id>deploy-on-aws</id>
             <build>
                 <plugins>
-                    &lt;!&ndash;deploy to amazon elastic beanstalk&ndash;&gt;
+                    <!--deploy to amazon elastic beanstalk-->
                     <plugin>
                         <artifactId>maven-deploy-plugin</artifactId>
                         <configuration>
                             <skip>true</skip>
                         </configuration>
                     </plugin>
-                    &lt;!&ndash;deploy on AWS beanstalk config crypto-datrixo-site&ndash;&gt;
+                    <!--deploy on AWS beanstalk config crypto-datrixo-site-->
                     <plugin>
                         <groupId>br.com.ingenieux</groupId>
                         <artifactId>beanstalk-maven-plugin</artifactId>
@@ -128,25 +128,25 @@
                                 </goals>
                             </execution>
                         </executions>
-                        &lt;!&ndash;ico-page&ndash;&gt;
+                        <!--ico-page-site-backend-->
                         <configuration>
                             <applicationName>crypto-datrixo-site</applicationName>
-                            <environmentName>ico-page-site</environmentName>
+                            <environmentName>ico-page-site-backend</environmentName>
                             <regionName>us-east-1</regionName>
-                            <cnamePrefix>ico-page-site</cnamePrefix>
+                            <cnamePrefix>ico-page-site-backend</cnamePrefix>
                             <serverId>senti@aws.amazon.com</serverId>
                             <verbose>true</verbose>
                             <s3Bucket>elasticbeanstalk-us-east-1-508213701893</s3Bucket>
                             <versionLabel>${project.build.finalName}.${maven.build.timestamp}</versionLabel>
                             <versionDescription>Deployed from maven</versionDescription>
                             <s3Key>${project.build.finalName}.${maven.build.timestamp}.jar</s3Key>
-                            <environmentRef>ico-page-site</environmentRef>
+                            <environmentRef>ico-page-site-backend</environmentRef>
                         </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
 
-    </profiles>-->
+    </profiles>
 
 </project>
