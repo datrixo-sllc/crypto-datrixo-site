@@ -10,7 +10,7 @@ import {APP_CONFIG} from '../../app.config';
 import {Observable} from 'rxjs/internal/Observable';
 
 @Injectable()
-export class InvestService {
+export class InvestDownloadService {
     private static URL_INVESTOR = 'investor';
     private static URL_PPM = 'ppm';
     private static SLASH = '/';
@@ -21,7 +21,8 @@ export class InvestService {
         this.options.withCredentials = true;
     }
     getPPM(): Observable<Response>  {
-        const url = this.config.apiEndpoint + InvestService.URL_INVESTOR + InvestService.SLASH + InvestService.URL_PPM;
+        const url = this.config.apiEndpoint + InvestDownloadService.URL_INVESTOR + 
+            InvestDownloadService.SLASH + InvestDownloadService.URL_PPM;
         return this.http
             .get(url, this.options);
     }
