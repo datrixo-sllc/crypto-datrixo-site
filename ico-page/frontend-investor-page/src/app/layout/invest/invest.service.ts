@@ -4,7 +4,7 @@
  * Time: 1:45
  */
 import {Inject, Injectable} from '@angular/core';
-import {Headers, Http, RequestOptions, Response} from '@angular/http';
+import {Headers, Http, RequestOptions, Response, ResponseContentType} from '@angular/http';
 import {IAppConfig} from '../../i-app-config';
 import {APP_CONFIG} from '../../app.config';
 import {Observable} from 'rxjs/internal/Observable';
@@ -14,8 +14,8 @@ export class InvestService {
     private static URL_INVESTOR = 'investor';
     private static URL_PPM = 'ppm';
     private static SLASH = '/';
-    private headers = new Headers({'content-type': 'application/json'});
-    private options = new RequestOptions({ headers: this.headers });
+    private headers = new Headers({'content-type': 'application/octet-binary;charset=utf-8'});
+    private options = new RequestOptions({ responseType: ResponseContentType.Blob, headers: this.headers });
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
         this.options.withCredentials = true;
