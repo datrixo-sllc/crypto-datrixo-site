@@ -102,7 +102,7 @@
                         </div>
                     </fieldset>
                     <div class="text-center">
-                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onGetInvoice()">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitGetInvoice()">
                             Get Invoice
                         </button>
                     </div>
@@ -131,7 +131,7 @@
                 <div class="row my-auto">
                     <label class="col-lg-4 mt-3" for="agreementFile">Upload signed agreement here</label>
                     <input type="file" class="col-lg-4 form-control-file mt-3" id="agreementFile"/>
-                    <button class="col-lg-2 my-btn my-btn-outline my-btn-xl mt-3">Upload</button>
+                    <button class="col-lg-2 my-btn my-btn-outline my-btn-xl mt-3" (click)="onSubmitSignedAgreementUpload()">Upload</button>
                 </div>
             </div>
         </div>

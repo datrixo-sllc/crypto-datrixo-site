@@ -5,7 +5,7 @@ import { InvestRoutingModule } from './invest-routing.module';
 import { InvestComponent } from './invest.component';
 import { PageHeaderModule } from './../../shared';
 import {FormsModule} from '@angular/forms';
-import {InvestService} from './invest.service';
+import {InvestDownloadService} from './invest-download.service';
 import { FileSaverModule } from 'ngx-filesaver';
 import {RecieveUtils} from './recieve-utils';
 
@@ -17,6 +17,6 @@ import {RecieveUtils} from './recieve-utils';
         FileSaverModule
     ],
     declarations: [InvestComponent],
-    providers: [InvestService, RecieveUtils]
+    providers: [InvestDownloadService, RecieveUtils]
 })
 export class InvestModule {}

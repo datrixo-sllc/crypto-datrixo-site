@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {routerTransition} from '../../router.animations';
-import {InvestService} from './invest.service';
+import {InvestDownloadService} from './invest-download.service';
 import {Response} from '@angular/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {RecieveUtils} from './recieve-utils';
@@ -14,7 +14,7 @@ import {RecieveUtils} from './recieve-utils';
 export class InvestComponent implements OnInit {
     private static readonly  FN_PPM: string = 'ppm.pdf';
 
-    constructor(private investService: InvestService,
+    constructor(private investDownloadService: InvestDownloadService,
                 private spinner: NgxSpinnerService,
                 private recieveUtils: RecieveUtils) {}
 
@@ -26,7 +26,7 @@ export class InvestComponent implements OnInit {
 
     onSubmitPPMDownload() {
         this.spinner.show();
-        this.investService.getPPM()
+        this.investDownloadService.getPPM()
             .toPromise()
             .then((response: Response) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_PPM);
@@ -38,5 +38,11 @@ export class InvestComponent implements OnInit {
                 });
     }
 
-    onGetInvoice() {}
+    onSubmitGetInvoice() {
+        this.onSubmitPPMDownload();
+    }
+
+    onSubmitSignedAgreementUpload() {
+
+    }
 }
