@@ -6,14 +6,17 @@ import { InvestComponent } from './invest.component';
 import { PageHeaderModule } from './../../shared';
 import {FormsModule} from '@angular/forms';
 import {InvestService} from './invest.service';
+import { FileSaverModule } from 'ngx-filesaver';
+import {RecieveUtils} from './recieve-utils';
 
 @NgModule({
     imports: [
         CommonModule,
         InvestRoutingModule,
-        PageHeaderModule
+        PageHeaderModule,
+        FileSaverModule
     ],
     declarations: [InvestComponent],
-    providers: [InvestService]
+    providers: [InvestService, RecieveUtils]
 })
 export class InvestModule {}
