@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {InvestDownloadService} from './invest-download.service';
 import { FileSaverModule } from 'ngx-filesaver';
 import {RecieveUtils} from './recieve-utils';
+import {InvestUploadService} from './invest-upload.service';
 
 @NgModule({
     imports: [
@@ -17,6 +18,10 @@ import {RecieveUtils} from './recieve-utils';
         FileSaverModule
     ],
     declarations: [InvestComponent],
-    providers: [InvestDownloadService, RecieveUtils]
+    providers: [
+        InvestDownloadService,
+        InvestUploadService,
+        RecieveUtils
+    ]
 })
 export class InvestModule {}

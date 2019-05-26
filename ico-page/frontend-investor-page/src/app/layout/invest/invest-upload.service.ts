@@ -34,7 +34,7 @@ export class InvestUploadService {
     }
 
     private createUrlOptions(): RequestOptions {
-        const urlHeaders = new Headers({'content-type': 'text/plain'});
+        const urlHeaders = new Headers(/*{'content-type': 'multipart/form-data'}*/);
         const urlOptions = new RequestOptions({headers: urlHeaders});
         urlOptions.withCredentials = true;
         return urlOptions;

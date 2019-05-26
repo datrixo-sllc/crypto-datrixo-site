@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import {InvestDownloadService} from './invest-download.service';
 import {Response} from '@angular/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {RecieveUtils} from './recieve-utils';
+import {InvestUploadService} from './invest-upload.service';
 
 @Component({
     selector: 'app-invest',
@@ -13,8 +14,11 @@ import {RecieveUtils} from './recieve-utils';
 })
 export class InvestComponent implements OnInit {
     private static readonly  FN_PPM: string = 'ppm.pdf';
+    fileToUpload: File = null;
+    @ViewChild('uploadFile') uploadEl: ElementRef;
 
     constructor(private investDownloadService: InvestDownloadService,
+                private investUploadService: InvestUploadService,
                 private spinner: NgxSpinnerService,
                 private recieveUtils: RecieveUtils) {}
 
@@ -42,7 +46,32 @@ export class InvestComponent implements OnInit {
         this.onSubmitPPMDownload();
     }
 
-    onSubmitSignedAgreementUpload() {
-
+    handleFileInput(files: FileList) {
+        this.fileToUpload = files.item(0);
     }
+
+    onSubmitSignedAgreementUpload() {
+        if (this.fileToUpload === null) {
+            alert('File for uploading is not selected');
+        } else {
+            this.investUploadService.postSignedAgreement(this.fileToUpload)
+                .toPromise()
+                .then(value => {
+                        alert('Server pull response' + value);
+                        this.clearUploadParams();
+                    },
+                    reason => {
+                        alert('Server pull error: ' + reason);
+                        this.clearUploadParams();
+                    });
+
+        }
+    }
+
+    clearUploadParams() {
+        this.fileToUpload = null;
+        this.uploadEl.nativeElement.value = null;
+    }
+
+
 }
