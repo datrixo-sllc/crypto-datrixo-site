@@ -1,8 +1,10 @@
 package com.datrixo.crypto_datrixo_site.ico_page.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,20 +29,23 @@ import java.nio.file.Paths;
 @RequestMapping("investor")
 public class InvestorPageController {
 
+    @Autowired
+    ResourceLoader resourceLoader;
+
     @RequestMapping(value = "/ppm", method = RequestMethod.GET)
     public ResponseEntity<Resource> getIcoPage() throws IOException {
-        File file = ResourceUtils.getFile("classpath:ppm.pdf");
+        Resource fileResource = resourceLoader.getResource("classpath:ppm.pdf");
         HttpHeaders headers = new HttpHeaders();
         headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
         headers.add("Pragma", "no-cache");
         headers.add("Expires", "0");
 
-        InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
+        InputStreamResource resource = new InputStreamResource(fileResource.getInputStream());
 
 
         return ResponseEntity.ok()
                 .headers(headers)
-                .contentLength(file.length())
+                .contentLength(fileResource.contentLength())
                 .contentType(MediaType.parseMediaType("application/octet-stream"))
                 .body(resource);
     }
