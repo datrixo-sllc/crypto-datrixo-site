@@ -130,8 +130,10 @@
             <div class="col-lg-9 mx-auto">
                 <div class="row my-auto">
                     <label class="col-lg-4 mt-3" for="agreementFile">Upload signed agreement here</label>
-                    <input type="file" class="col-lg-4 form-control-file mt-3" id="agreementFile"/>
-                    <button class="col-lg-2 my-btn my-btn-outline my-btn-xl mt-3" (click)="onSubmitSignedAgreementUpload()">Upload</button>
+                    <input #uploadFile type="file" class="col-lg-4 form-control-file mt-3" id="agreementFile"
+                           (change)="handleFileInput($event.target.files)"/>
+                    <button class="col-lg-2 my-btn my-btn-outline my-btn-xl mt-3"
+                            (click)="onSubmitSignedAgreementUpload()">Upload</button>
                 </div>
             </div>
         </div>

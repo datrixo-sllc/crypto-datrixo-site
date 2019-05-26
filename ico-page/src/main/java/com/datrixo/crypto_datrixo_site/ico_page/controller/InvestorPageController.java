@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,5 +43,10 @@ public class InvestorPageController {
                 .contentLength(file.length())
                 .contentType(MediaType.parseMediaType("application/octet-stream"))
                 .body(resource);
+    }
+
+    @PostMapping(value = "/signed-agreement")
+    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
+        return new UploadFileResponse("success");
     }
 }
