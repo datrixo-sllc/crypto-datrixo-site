@@ -94,6 +94,8 @@ export class LoginComponent implements OnInit {
         if (localStorage.getItem('username') != null) {
             localStorage.removeItem('username');
         }
-        localStorage.setItem('isLoggedin', 'false');
+        if (localStorage.getItem('isLoggedin') != null) {
+            localStorage.removeItem('isLoggedin');
+        }
     }
 }
