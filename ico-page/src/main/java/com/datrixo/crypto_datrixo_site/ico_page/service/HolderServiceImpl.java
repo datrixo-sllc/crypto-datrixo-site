@@ -14,7 +14,9 @@ import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.tx.gas.DefaultGasProvider;
 
 import javax.annotation.PostConstruct;
+import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.MathContext;
 import java.util.Date;
 import java.util.List;
 
@@ -97,7 +99,10 @@ public class HolderServiceImpl implements HolderService {
             hareholders.forEach(s -> {
                 try {
                     BigInteger balance = datrixoContract.balanceOf(s).send();
-                    Date date = new Date(datrixoContract.firstPurchaseTime(s).send().longValue());
+                    if (balance != null && balance.signum() == 1 ) {
+                        balance = balance.divide(new BigInteger("100000"));
+                    }
+                    Date date = new Date(datrixoContract.firstPurchaseTime(s).send().longValue() * 1000);
                     if (holderRepository.findFirstByAddress(s) == null) {
                         holderRepository.save(new Holder(s, date, balance));
                     }
