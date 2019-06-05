@@ -7,7 +7,7 @@ const routes: Routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'investor-profile', pathMatch: 'prefix' },
+            { path: '', redirectTo: 'investor-profile' },
             { path: 'investor-profile', loadChildren: './investor-profile/investor-profile.module#InvestorProfileModule' },
             { path: 'invest', loadChildren: './invest/invest.module#InvestModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
