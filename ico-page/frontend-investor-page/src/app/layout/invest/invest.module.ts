@@ -9,6 +9,8 @@ import {InvestDownloadService} from './invest-download.service';
 import { FileSaverModule } from 'ngx-filesaver';
 import {RecieveUtils} from './recieve-utils';
 import {InvestUploadService} from './invest-upload.service';
+import {HoldersDatatableComponent} from './holders-datatable/holders-datatable.component';
+import {InvestService} from './invest.service';
 
 @NgModule({
     imports: [
@@ -17,8 +19,12 @@ import {InvestUploadService} from './invest-upload.service';
         PageHeaderModule,
         FileSaverModule
     ],
-    declarations: [InvestComponent],
+    declarations: [
+        InvestComponent,
+        HoldersDatatableComponent
+    ],
     providers: [
+        InvestService,
         InvestDownloadService,
         InvestUploadService,
         RecieveUtils

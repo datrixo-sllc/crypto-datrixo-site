@@ -1,0 +1,35 @@
+<ngx-datatable
+  #table
+  class='bootstrap'
+  style="margin-top: 1.2em"
+  [columnMode]="'force'"
+  [headerHeight]="20"
+  [footerHeight]="20"
+  [rowHeight]="'auto'"
+  [limit]="10"
+  [rows]='rows'>
+  <ngx-datatable-column name="address">
+    <ng-template let-column="column" ngx-datatable-header-template>
+      <div class="header-class">Address</div>
+    </ng-template>
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <a href="https://ropsten.etherscan.io/address/{{row.address}}" target="_blank">{{row.address}}</a>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="timeDate">
+    <ng-template let-column="column" ngx-datatable-header-template>
+      <div class="header-class">Time/Date</div>
+    </ng-template>
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.timeDate | date:'medium'}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="shareTokens">
+    <ng-template let-column="column" ngx-datatable-header-template>
+      <div class="header-class">Share Tokens</div>
+    </ng-template>
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.shareTokens}}
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>

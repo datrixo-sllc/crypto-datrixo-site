@@ -5,6 +5,10 @@ import {Response} from '@angular/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {RecieveUtils} from './recieve-utils';
 import {InvestUploadService} from './invest-upload.service';
+import {InvestService} from './invest.service';
+import {HolderResponce} from './holder-responce';
+import {IcoPageResponse} from './ico-page-response';
+import {interval, Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-invest',
@@ -17,10 +21,20 @@ export class InvestComponent implements OnInit {
     fileToUpload: File = null;
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
-    constructor(private investDownloadService: InvestDownloadService,
-                private investUploadService: InvestUploadService,
-                private spinner: NgxSpinnerService,
-                private recieveUtils: RecieveUtils) {}
+    totalSupply: string;
+    sold: string;
+    holdersCount: string;
+    holders: HolderResponce[];
+    response: IcoPageResponse;
+
+    subscriber: Subscription;
+
+    constructor(
+        private investService: InvestService,
+        private investDownloadService: InvestDownloadService,
+        private investUploadService: InvestUploadService,
+        private spinner: NgxSpinnerService,
+        private recieveUtils: RecieveUtils) {}
 
     ngOnInit() {}
 
