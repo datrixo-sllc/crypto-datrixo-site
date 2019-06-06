@@ -11,13 +11,15 @@ import {RecieveUtils} from './recieve-utils';
 import {InvestUploadService} from './invest-upload.service';
 import {HoldersDatatableComponent} from './holders-datatable/holders-datatable.component';
 import {InvestService} from './invest.service';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
     imports: [
         CommonModule,
         InvestRoutingModule,
         PageHeaderModule,
-        FileSaverModule
+        FileSaverModule,
+        NgxDatatableModule
     ],
     declarations: [
         InvestComponent,

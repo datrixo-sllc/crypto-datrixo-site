@@ -35,7 +35,8 @@
     "zone.js": "0.8.26",
     "ngx-spinner": "7.1.4",
     "file-saver": "^2.0.2",
-    "ngx-filesaver": "2.2.1"
+    "ngx-filesaver": "2.2.1",
+    "@swimlane/ngx-datatable": "^14.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.10.4",

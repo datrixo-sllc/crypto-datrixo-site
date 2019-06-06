@@ -149,9 +149,9 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="text-center">300,000</td>
+                        <td class="text-center">{{totalSupply}}</td>
                         <td class="text-center">/</td>
-                        <td class="text-center">1,460,000</td>
+                        <td class="text-center">{{sold}}</td>
                         <td>(tokens sold)</td>
                     </tr>
                 </table>
@@ -164,7 +164,7 @@
                 <h4 class="text-center">Holders</h4>
                 <div class="row">
                     <div class="col-md-2">
-                        Holders: <a href="">3</a>
+                        Holders: <a href="">{{holdersCount}}</a>
                     </div>
                     <div class="col-md-8">
                     </div>
@@ -174,42 +174,9 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table" style="margin: 0 auto;">
-                            <thead>
-                            <tr>
-                                <th scope="col">Holder</th>
-                                <th scope="col">Age</th>
-                                <th scope="col"># Share Tokens</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            <tr>
-                                <td><a
-                                    href="https://etherscan.io/token/0x4e7bd88e3996f48e2a24d15e37ca4c02b4d134d2?a=0xe17ee7b3c676701c66b395a35f0df4c2276a344e"
-                                    target="_blank">0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe</a></td>
-                                <td>13 days, 4 hours ago</td>
-                                <td>1,300,000</td>
-                            </tr>
-
-                            <tr>
-                                <td><a
-                                    href="https://etherscan.io/token/0x4e7bd88e3996f48e2a24d15e37ca4c02b4d134d2?a=0xe17ee7b3c676701c66b395a35f0df4c2276a344e"
-                                    target="_blank">0x5eD8Cee6b63b1c6AFce3AD7c92f4fD7E1B8fAd9F</a></td>
-                                <td>17 days, 8 hours ago</td>
-                                <td>150,000</td>
-                            </tr>
-
-                            <tr>
-                                <td><a
-                                    href="https://etherscan.io/token/0x4e7bd88e3996f48e2a24d15e37ca4c02b4d134d2?a=0xe17ee7b3c676701c66b395a35f0df4c2276a344e"
-                                    target="_blank">0xdfbC84CcAC430f2c0455C437ADf417095D7AD68E</a></td>
-                                <td>23 days, 4 hours ago</td>
-                                <td>10,000</td>
-                            </tr>
-
-                            </tbody>
-                        </table>
+                        <div class="text-center" *ngIf="holders">
+                            <app-holders-datatable [holders]="holders"></app-holders-datatable>
+                        </div>
                     </div>
                 </div>
             </div>
