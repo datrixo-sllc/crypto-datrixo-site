@@ -95,6 +95,9 @@ public class HolderServiceImpl implements HolderService {
     public void dbMemoryUpdate() {
         try {
             totalSupply = datrixoContract.totalSupply().send();
+            if (totalSupply != null && totalSupply.signum() == 1 ) {
+                totalSupply = totalSupply.divide(new BigInteger("100000"));
+            }
             hareholders = datrixoContract.getShareholdersArray().send();
             hareholders.forEach(s -> {
                 try {
