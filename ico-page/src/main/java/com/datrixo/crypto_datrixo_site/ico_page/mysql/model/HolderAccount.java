@@ -1,0 +1,45 @@
+package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
+
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
+import javax.persistence.*;
+import java.util.Date;
+
+/**
+ * Created by Yuri Nikiforov.
+ * Date: 07.06.2019
+ * Time: 9:56
+ **/
+@Entity
+@Table(name="holder_account")
+public class HolderAccount extends AbstractPersistable<Long> {
+    private String address;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+    private Date createDate;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+}
