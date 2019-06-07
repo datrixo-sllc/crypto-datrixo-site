@@ -18,14 +18,16 @@ public class Holder extends AbstractPersistable<Long> {
     private String address;
     private Date timeDate;
     private BigInteger shareTokens;
+    private double share;
 
     public Holder() {
     }
 
-    public Holder(String address, Date timeDate, BigInteger shareTokens) {
+    public Holder(String address, Date timeDate, BigInteger shareTokens, double share) {
         this.address = address;
         this.timeDate = timeDate;
         this.shareTokens = shareTokens;
+        this.share = share;
     }
 
     public String getAddress() {
@@ -50,5 +52,13 @@ public class Holder extends AbstractPersistable<Long> {
 
     public void setShareTokens(BigInteger shareTokens) {
         this.shareTokens = shareTokens;
+    }
+
+    public double getShare() {
+        return share;
+    }
+
+    public void setShare(double share) {
+        this.share = share;
     }
 }

@@ -99,16 +99,19 @@ public class HolderServiceImpl implements HolderService {
                 totalSupply = totalSupply.divide(new BigInteger("100000"));
             }
             hareholders = datrixoContract.getShareholdersArray().send();
+            holderRepository.deleteAll();
             hareholders.forEach(s -> {
                 try {
                     BigInteger balance = datrixoContract.balanceOf(s).send();
                     if (balance != null && balance.signum() == 1 ) {
                         balance = balance.divide(new BigInteger("100000"));
                     }
-                    Date date = new Date(datrixoContract.firstPurchaseTime(s).send().longValue() * 1000);
-                    if (holderRepository.findFirstByAddress(s) == null) {
-                        holderRepository.save(new Holder(s, date, balance));
+                    double share = 0;
+                    if (totalSupply != null && totalSupply.signum() == 1) {
+                        share = balance.doubleValue() / totalSupply.doubleValue() * 100d;
                     }
+                    Date date = new Date(datrixoContract.firstPurchaseTime(s).send().longValue() * 1000);
+                    holderRepository.save(new Holder(s, date, balance, share));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
