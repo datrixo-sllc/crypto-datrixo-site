@@ -1,1 +1,1 @@
-insert into country(id, name) values (1, '');
+insert into country(id, name, code) values (1, "", "");
