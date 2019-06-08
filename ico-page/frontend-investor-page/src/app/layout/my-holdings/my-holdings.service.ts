@@ -13,8 +13,8 @@ import {HttpClient} from '@angular/common/http';
 export class MyHoldingsService {
 
     private static readonly SLASH: string = '/';
-    private static readonly ICO: string = 'ico';
-    private static readonly ICO_PAGE: string = 'ico-page';
+    private static readonly INVESTOR: string = 'investor';
+    private static readonly HOLDINGS: string = 'holdings';
 
     constructor(
         @Inject(APP_CONFIG) private config: IAppConfig,
@@ -23,8 +23,8 @@ export class MyHoldingsService {
     }
 
     getIcoPage(): Observable<any> {
-        const url = this.config.apiEndpoint + MyHoldingsService.ICO + MyHoldingsService.SLASH + MyHoldingsService.ICO_PAGE;
-        return this.http.get(url);
+        const url = this.config.apiEndpoint + MyHoldingsService.INVESTOR + MyHoldingsService.SLASH + MyHoldingsService.HOLDINGS;
+        return this.http.get(url, {withCredentials: true});
     }
 
 }

@@ -83,6 +83,6 @@ public class InvestorPageController {
     private boolean hasAccount(String holderAccountAddress, List<HolderAccount> principalAccounts) {
         boolean result = false;
         return principalAccounts.stream()
-                .anyMatch(holderAccount1 -> holderAccount1.getAddress().equals(holderAccountAddress));
+                .anyMatch(holderAccount1 -> holderAccount1.getAddress().equalsIgnoreCase(holderAccountAddress));
     }
 }
