@@ -52,19 +52,22 @@
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Company Name</label>
-                            <input class="form-control" [value]="userData.organizationName" disabled />
+                            <input class="form-control" [(ngModel)]="userData.organizationName" disabled name="organizationName" />
                         </fieldset>
                     </div>
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Incorporate Date</label>
-                            <input class="form-control" [value]="userData.incorporateDate | date:'yyyy-MM-dd'" disabled />
+                            <input class="form-control"
+                                   [ngModel]="userData.incorporateDate | date:'yyyy-MM-dd'"
+                                   (ngModelChange)="userData.incorporateDate = $event"
+                                   disabled name="incorporateDate" />
                         </fieldset>
                     </div>
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Phone</label>
-                            <input class="form-control" [value]="userData.organizationPhone" disabled />
+                            <input class="form-control" [(ngModel)]="userData.organizationPhone" disabled name="organizationPhone" />
                         </fieldset>
                     </div>
                 </div>
@@ -72,25 +75,25 @@
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Street Address</label>
-                            <input class="form-control" [value]="userData.streetAddress" disabled />
+                            <input class="form-control" [(ngModel)]="userData.streetAddress" disabled name="streetAddress" />
                         </fieldset>
                     </div>
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>City</label>
-                            <input class="form-control" [value]="userData.city" disabled />
+                            <input class="form-control" [(ngModel)]="userData.city" disabled name="city" />
                         </fieldset>
                     </div>
                     <div class="col-lg-2">
                         <fieldset class="form-group">
                             <label>State</label>
-                            <input class="form-control" [value]="userData.state" disabled />
+                            <input class="form-control" [(ngModel)]="userData.state" disabled name="state" />
                         </fieldset>
                     </div>
                     <div class="col-lg-2">
                         <fieldset class="form-group">
                             <label>Zip</label>
-                            <input class="form-control" [value]="userData.zip" disabled />
+                            <input class="form-control" [(ngModel)]="userData.zip" disabled name="zip" />
                         </fieldset>
                     </div>
                 </div>
@@ -98,12 +101,12 @@
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Country</label>
-                            <input class="form-control" [value]="userData.country" disabled />
+                            <input class="form-control" [(ngModel)]="userData.country" disabled name="country" />
                         </fieldset>
                     </div>
                 </div>
                 <button type="submit" class="mr-2 btn btn-secondary">Update Profile</button>
-                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="reset" class="btn btn-secondary" (click)="onReset()">Reset</button>
             </form>
         </div>
     </div>
