@@ -62,9 +62,9 @@ export class InvestComponent implements OnInit, OnDestroy {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_PPM);
                     this.spinner.hide();
                 },
-                error => {
+                (error: Error) => {
                     this.spinner.hide();
-                    alert('Server pull error: ' + error.text());
+                    alert('Server pull error: ' + error.message);
                 });
     }
 
@@ -82,12 +82,12 @@ export class InvestComponent implements OnInit, OnDestroy {
         } else {
             this.investUploadService.postSignedAgreement(this.fileToUpload)
                 .toPromise()
-                .then(value => {
-                        alert('Server pull response' + value);
+                .then((value: Response) => {
+                        alert('Server pull response' + value.text());
                         this.clearUploadParams();
                     },
-                    reason => {
-                        alert('Server pull error: ' + reason);
+                    (reason: Error) => {
+                        alert('Server pull error: ' + reason.message);
                         this.clearUploadParams();
                     });
 
