@@ -1,6 +1,9 @@
 package com.datrixo.crypto_datrixo_site.ico_page.controller;
 
+import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
 import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -10,6 +13,8 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,6 +27,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Yuri Nikiforov.
@@ -62,9 +69,20 @@ public class InvestorPageController {
 
     @GetMapping(value = "/holdings", produces = "application/json")
     public @ResponseBody
-    IcoPageDto getHoldings(Principal principal) {
+    IcoPageDto getHoldings() {
         IcoPageDto icoPageDto = icoPageService.getAllData();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        MediUser currentUser = (MediUser)auth.getPrincipal();
+        List<HolderDto> holderDtoList = icoPageDto.getHolders();
+        icoPageDto.setHolders(holderDtoList.stream()
+                .filter(holderDto -> hasAccount(holderDto.getAddress(), currentUser.getAccounts()))
+                .collect(Collectors.toList()));
+        return icoPageDto;
+    }
 
-        return null;
+    private boolean hasAccount(String holderAccountAddress, List<HolderAccount> principalAccounts) {
+        boolean result = false;
+        return principalAccounts.stream()
+                .anyMatch(holderAccount1 -> holderAccount1.getAddress().equals(holderAccountAddress));
     }
 }
