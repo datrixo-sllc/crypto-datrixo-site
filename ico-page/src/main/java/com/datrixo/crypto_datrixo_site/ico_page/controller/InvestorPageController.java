@@ -1,5 +1,7 @@
 package com.datrixo.crypto_datrixo_site.ico_page.controller;
 
+import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
+import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
@@ -19,6 +21,7 @@ import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Principal;
 
 /**
  * Created by Yuri Nikiforov.
@@ -31,6 +34,8 @@ public class InvestorPageController {
 
     @Autowired
     ResourceLoader resourceLoader;
+    @Autowired
+    IcoPageService icoPageService;
 
     @RequestMapping(value = "/ppm", method = RequestMethod.GET)
     public ResponseEntity<Resource> getIcoPage() throws IOException {
@@ -53,5 +58,13 @@ public class InvestorPageController {
     @PostMapping(value = "/signed-agreement")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
         return new UploadFileResponse("success");
+    }
+
+    @GetMapping(value = "/holdings", produces = "application/json")
+    public @ResponseBody
+    IcoPageDto getHoldings(Principal principal) {
+        IcoPageDto icoPageDto = icoPageService.getAllData();
+
+        return null;
     }
 }

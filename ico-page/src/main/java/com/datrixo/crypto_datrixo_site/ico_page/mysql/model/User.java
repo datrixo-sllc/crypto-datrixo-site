@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -19,7 +20,7 @@ import java.util.List;
 
 @Entity
 @Table(name="USERS")
-public class User extends AbstractPersistable<Long> implements UserDetails {
+public class User extends AbstractPersistable<Long> {
     @Column(unique = true)
     private String username;
     private String password;
@@ -33,47 +34,26 @@ public class User extends AbstractPersistable<Long> implements UserDetails {
     @ManyToOne(fetch = FetchType.LAZY,cascade = {})
     @JoinColumn(name = "organization_id")
     private Organization organization;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.MERGE, orphanRemoval = true)
     @OrderBy("createDate")
     private List<HolderAccount> accounts;
 
     public User(){}
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
+    public User(String username, String password, Role role, List<HolderAccount> accounts) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.accounts = accounts;
+    }
+
     public String getUsername() {
         return username;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptySet();
     }
 
     public String getPassword() {
@@ -122,5 +102,24 @@ public class User extends AbstractPersistable<Long> implements UserDetails {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
+    public List<HolderAccount> getAccounts() {
+        if (accounts == null) {
+            accounts = new ArrayList<>();
+        }
+        return accounts;
+    }
+
+    public void setAccounts(List<HolderAccount> accounts) {
+        this.accounts = accounts;
     }
 }
