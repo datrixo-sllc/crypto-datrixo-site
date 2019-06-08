@@ -31,7 +31,7 @@ public class User extends AbstractPersistable<Long> {
     private String firstName;
     private String lastName;
     private String phone;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = {})
+    @ManyToOne(fetch = FetchType.EAGER,cascade = {})
     @JoinColumn(name = "organization_id")
     private Organization organization;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.MERGE, orphanRemoval = true)
