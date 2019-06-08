@@ -20,7 +20,7 @@ public class Organization extends AbstractPersistable<Long> {
     private String city;
     private String state;
     private String zip;
-    @ManyToOne(fetch = FetchType.LAZY,cascade = {})
+    @ManyToOne(fetch = FetchType.EAGER,cascade = {})
     @JoinColumn(name = "country_id")
     private Country country;
 

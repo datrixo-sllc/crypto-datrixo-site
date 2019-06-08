@@ -2,9 +2,12 @@ package com.datrixo.crypto_datrixo_site.ico_page.controller;
 
 import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
+import com.datrixo.crypto_datrixo_site.ico_page.dto.UserDto;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
 import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
+import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
@@ -15,6 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,6 +32,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -43,6 +48,8 @@ public class InvestorPageController {
     ResourceLoader resourceLoader;
     @Autowired
     IcoPageService icoPageService;
+    @Autowired
+    UserService userService;
 
     @RequestMapping(value = "/ppm", method = RequestMethod.GET)
     public ResponseEntity<Resource> getIcoPage() throws IOException {
@@ -84,5 +91,33 @@ public class InvestorPageController {
         boolean result = false;
         return principalAccounts.stream()
                 .anyMatch(holderAccount1 -> holderAccount1.getAddress().equalsIgnoreCase(holderAccountAddress));
+    }
+
+    @GetMapping(value = "/user-data", produces = "application/json")
+    public @ResponseBody
+    UserDto getUserData() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        MediUser currentUser = (MediUser)auth.getPrincipal();
+        Optional<User> optionalUser = userService.findByUsername(currentUser.getUsername());
+        UserDto userDto = null;
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            userDto = new UserDto(user.getUsername(), user.getTitle().name(), user.getFirstName(), user.getLastName(),
+                    user.getPhone(),
+                    user.getOrganization() != null ? user.getOrganization().getCompanyName() : "",
+                    user.getOrganization() != null ? user.getOrganization().getIncorporateDate() : null,
+                    user.getOrganization() != null ? user.getOrganization().getPhone() : "",
+                    user.getOrganization() != null ? user.getOrganization().getStreetAddress() : "",
+                    user.getOrganization() != null ? user.getOrganization().getCity() : "",
+                    user.getOrganization() != null ? user.getOrganization().getState() : "",
+                    user.getOrganization() != null ? user.getOrganization().getZip() : "",
+                    user.getOrganization() != null ? user.getOrganization().getCountry() != null ?
+                            user.getOrganization().getCountry().getName() : ""
+                            : ""
+                    );
+        } else {
+            throw new UsernameNotFoundException("user not found");
+        }
+        return userDto;
     }
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {NgxSpinnerService} from 'ngx-spinner';
+import {InvestorProfileService} from './investor-profile.service';
+import {RespUserData} from './resp-user-data';
 
 @Component({
     selector: 'app-investor-profile',
@@ -10,9 +13,32 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class InvestorProfileComponent implements OnInit {
     closeResult: string;
-    constructor(private modalService: NgbModal) {}
+    userData: RespUserData = new RespUserData();
+    constructor(
+        private investorProfileService: InvestorProfileService,
+        private modalService: NgbModal,
+        private spinner: NgxSpinnerService
+        ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.getUserData();
+    }
+
+    getUserData(): void {
+        this.spinner.show();
+        this.investorProfileService.getUserData()
+            .toPromise()
+            .then((response: any) => {
+                   this.userData = response as RespUserData;
+
+                    this.spinner.hide();
+                },
+                error => {
+                    this.spinner.hide();
+                    alert('Server error: ' + error);
+                });
+
+    }
 
     open(content) {
         this.modalService.open(content).result.then((result) => {
