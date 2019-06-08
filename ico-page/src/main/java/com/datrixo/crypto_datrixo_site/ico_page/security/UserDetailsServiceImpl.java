@@ -19,7 +19,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         Optional<User> optionalUser = userService.findByUsername(username);
         if (optionalUser.isPresent()) {
-            return new User(optionalUser.get().getUsername(), optionalUser.get().getPassword());
+            return new MediUser(optionalUser.get().getUsername(), optionalUser.get().getPassword(),
+                    optionalUser.get().getRole(), optionalUser.get().getAccounts());
         } else {
             throw new UsernameNotFoundException("user not found");
         }

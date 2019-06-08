@@ -14,7 +14,7 @@ import java.util.Date;
 @Table(name="holder_account")
 public class HolderAccount extends AbstractPersistable<Long> {
     private String address;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
     private Date createDate;
