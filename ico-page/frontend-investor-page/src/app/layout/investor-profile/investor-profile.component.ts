@@ -4,6 +4,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {InvestorProfileService} from './investor-profile.service';
 import {RespUserData} from './resp-user-data';
+import {RequestUpdateUserData} from './request-update-user-data';
 
 @Component({
     selector: 'app-investor-profile',
@@ -33,9 +34,9 @@ export class InvestorProfileComponent implements OnInit {
 
                     this.spinner.hide();
                 },
-                error => {
+                (error: Error) => {
                     this.spinner.hide();
-                    alert('Server error: ' + error);
+                    alert('Server error: ' + error.message);
                 });
 
     }
@@ -62,4 +63,25 @@ export class InvestorProfileComponent implements OnInit {
         this.getUserData();
     }
 
+    onUpdateUserData() {
+        const conf = confirm('Update profile ?');
+        if (conf) {
+            const request = new RequestUpdateUserData();
+            request.title = this.userData.title;
+            request.firstName = this.userData.firstName;
+            request.lastName = this.userData.lastName;
+            request.phone = this.userData.phone;
+
+            this.investorProfileService.updateUserData(request)
+                .toPromise()
+                .then((response: Response) => {
+                        this.spinner.hide();
+                        alert('Server response: ' + response.text());
+                    },
+                    (error: Error) => {
+                        this.spinner.hide();
+                        alert('Server error: ' + error.message);
+                    });
+        }
+    }
 }
