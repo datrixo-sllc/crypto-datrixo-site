@@ -58,5 +58,8 @@ export class InvestorProfileComponent implements OnInit {
         }
     }
 
+    onReset() {
+        this.getUserData();
+    }
 
 }
