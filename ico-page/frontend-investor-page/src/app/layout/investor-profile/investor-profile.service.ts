@@ -35,7 +35,7 @@ export class InvestorProfileService {
         const url = this.config.apiEndpoint + InvestorProfileService.INVESTOR + InvestorProfileService.SLASH +
             InvestorProfileService.UPDATE_USER_DATA;
         return this.http
-            .post(url, request, {withCredentials: true});
+            .post(url, request, {withCredentials: true, responseType: 'text'} );
     }
 
 }

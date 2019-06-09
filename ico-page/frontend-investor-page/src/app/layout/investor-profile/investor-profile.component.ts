@@ -74,13 +74,14 @@ export class InvestorProfileComponent implements OnInit {
 
             this.investorProfileService.updateUserData(request)
                 .toPromise()
-                .then((response: Response) => {
+                .then((response: any) => {
                         this.spinner.hide();
-                        alert('Server response: ' + response.text());
+                        alert('Server response: ' + response);
+                        this.getUserData();
                     },
                     (error: Error) => {
                         this.spinner.hide();
-                        alert('Server error: ' + error.message);
+                        alert('Server error: ' + error);
                     });
         }
     }

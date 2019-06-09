@@ -8,12 +8,14 @@ import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
 import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
+import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -22,6 +24,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -119,5 +122,15 @@ public class InvestorPageController {
             throw new UsernameNotFoundException("user not found");
         }
         return userDto;
+    }
+
+    @PostMapping(value = "/update-user-data")
+    public @ResponseBody String updateUser(@RequestBody RequestUpdateUserData updateUserData) {
+        User currentUser = userService.updateUser(updateUserData);
+        if (currentUser == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        } else {
+            return "User data is updated";
+        }
     }
 }
