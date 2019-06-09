@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username);
     }
     @Transactional
-    public void updateUser(RequestUpdateUserData updateUserData) {
+    public User updateUser(RequestUpdateUserData updateUserData) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         MediUser currentUser = (MediUser)auth.getPrincipal();
         Optional<User> optionalUser = findByUsername(currentUser.getUsername());
@@ -41,9 +41,9 @@ public class UserServiceImpl implements UserService {
             user.setLastName(updateUserData.getLastName());
             user.setPhone(updateUserData.getPhone());
 
-            userRepository.saveAndFlush(user);
+            return userRepository.saveAndFlush(user);
         } else {
-            throw new UsernameNotFoundException("user not found");
+            return null;
         }
     }
 }
