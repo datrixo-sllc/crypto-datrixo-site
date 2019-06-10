@@ -127,24 +127,31 @@
                                 <fieldset class="form-group">
                                     <label>New Password</label>
                                     <input type="password" [(ngModel)]="newPassword" name="newPassword" #newPasswordF="ngModel" class="form-control" required />
-                                    <div *ngIf="f.submitted && !newPasswordF.valid" class="help-block">Email is required</div>
+                                    <div *ngIf="!newPasswordF.valid" class="help-block">Field is required</div>
+                                    <div *ngIf="!checkPasswordContent()" class="help-block">Password must contain at least 1 lowercase alphabetical character, <br />
+                                                                                            must contain at least 1 uppercase alphabetical character, <br />
+                                                                                            must contain at least 1 numeric character, <br />
+                                                                                            must contain at least one special character in list: !@#$%^&* <br />
+                                                                                            and must be eight characters or longer.
+                                    </div>
                                 </fieldset>
                                 <fieldset class="form-group">
                                     <label>Reenter New Password</label>
                                     <input type="password" [(ngModel)]="newPasswordReent" name="newPasswordReent" #newPasswordReentF="ngModel" class="form-control"  required />
-                                    <div *ngIf="f.submitted && !newPasswordReentF.valid" class="help-block">Password is required</div>
+                                    <div *ngIf="!newPasswordReentF.valid" class="help-block">Field is required</div>
                                     <div *ngIf="!checkPassword()" class="help-block">Reenter password is not same</div>
                                 </fieldset>
                                 <fieldset class="form-group">
                                     <label>Current Password</label>
                                     <input type="password" [(ngModel)]="currentPassword" name="currentPassword" #currentPasswordF="ngModel" class="form-control"  required />
-                                    <div *ngIf="f.submitted && !currentPasswordF.valid" class="help-block">Email is required</div>
+                                    <div *ngIf="!currentPasswordF.valid" class="help-block">Field is required</div>
                                 </fieldset>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" (click)="f.ngSubmit.emit()" [disabled]="!f.form.valid || !checkPassword()">Reset Password</button>
+                        <button type="button" class="btn btn-secondary" (click)="f.ngSubmit.emit()"
+                                [disabled]="!f.form.valid || !checkPassword() || !checkPasswordContent()">Reset Password</button>
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                     </div>
                 </form>
