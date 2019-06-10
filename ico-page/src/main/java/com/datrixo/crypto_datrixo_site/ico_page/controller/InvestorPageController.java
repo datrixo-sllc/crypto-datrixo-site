@@ -9,6 +9,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
 import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
+import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserPassword;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
@@ -133,4 +134,10 @@ public class InvestorPageController {
             return "User data is updated";
         }
     }
+    @PostMapping(value = "/update-user-password")
+    public @ResponseBody String updateUserPassword(@RequestBody RequestUpdateUserPassword updateUserPassword) {
+        return userService.updateUserPassword(updateUserPassword);
+    }
+
+
 }
