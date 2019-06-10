@@ -20,6 +20,7 @@ export class InvestorProfileComponent implements OnInit {
     newPasswordReent: string;
     @ViewChild('modalResetPasswordWindow') templateRef: TemplateRef<any>;
 
+
     constructor(
         private investorProfileService: InvestorProfileService,
         private modalService: NgbModal,
@@ -93,6 +94,22 @@ export class InvestorProfileComponent implements OnInit {
 
     onResetPassword() {
 
+    }
+
+    checkPasswordContent(): boolean {
+
+//             ^	The password string will start this way.
+//            (?=.*[a-z])	The string must contain at least 1 lowercase alphabetical character.
+//            (?=.*[A-Z])	The string must contain at least 1 uppercase alphabetical character.
+//            (?=.*[0-9])	The string must contain at least 1 numeric character.
+//            (?=.*[!@#\$%\^&\*])	The string must contain at least one special character, but we are escaping
+//                                  reserved RegEx characters to avoid conflict.
+//            (?=.{8,})	The string must be eight characters or longer.
+
+
+
+        const regex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})');
+        return regex.test(this.newPassword);
     }
 
     checkPassword(): boolean {

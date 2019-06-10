@@ -2,6 +2,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.service;
 
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
+import com.datrixo.crypto_datrixo_site.ico_page.util.RequestupdateUserPassword;
 
 import java.util.Optional;
 
@@ -13,4 +14,5 @@ import java.util.Optional;
 public interface UserService {
     Optional<User> findByUsername(String username);
     User updateUser(RequestUpdateUserData updateUserData);
+    String updateUserPassword(RequestupdateUserPassword updateUserPassword);
 }
