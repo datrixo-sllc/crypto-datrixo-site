@@ -5,7 +5,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.util;
  * Date: 10.06.2019
  * Time: 17:22
  **/
-public class RequestupdateUserPassword {
+public class RequestUpdateUserPassword {
     private String newPassword;
     private String newPasswordReent;
     private String currentPassword;

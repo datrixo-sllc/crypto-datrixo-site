@@ -5,15 +5,13 @@ import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserTitle;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.UserRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
-import com.datrixo.crypto_datrixo_site.ico_page.util.RequestupdateUserPassword;
+import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserPassword;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.Optional;
 
 /**
@@ -54,7 +52,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String updateUserPassword(RequestupdateUserPassword updateUserPassword) {
+    public String updateUserPassword(RequestUpdateUserPassword updateUserPassword) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         MediUser currentUser = (MediUser)auth.getPrincipal();
         Optional<User> optionalUser = findByUsername(currentUser.getUsername());
