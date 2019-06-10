@@ -9,6 +9,7 @@ import {IAppConfig} from '../../i-app-config';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {RequestUpdateUserData} from './request-update-user-data';
+import {RequestUpdateUserPassword} from './request-update-user-password';
 
 @Injectable()
 export class InvestorProfileService {
@@ -17,6 +18,7 @@ export class InvestorProfileService {
     private static readonly INVESTOR: string = 'investor';
     private static readonly USER_DATA: string = 'user-data';
     private static readonly UPDATE_USER_DATA: string = 'update-user-data';
+    private static readonly UPDATE_USER_PASSWORD: string = 'update-user-password';
 
     constructor(
         @Inject(APP_CONFIG) private config: IAppConfig,
@@ -37,5 +39,13 @@ export class InvestorProfileService {
         return this.http
             .post(url, request, {withCredentials: true, responseType: 'text'} );
     }
+
+    updateUserPassword(request: RequestUpdateUserPassword): Observable<any> {
+        const url = this.config.apiEndpoint + InvestorProfileService.INVESTOR + InvestorProfileService.SLASH +
+            InvestorProfileService.UPDATE_USER_PASSWORD;
+        return this.http
+            .post(url, request, {withCredentials: true, responseType: 'text'} );
+    }
+
 
 }
