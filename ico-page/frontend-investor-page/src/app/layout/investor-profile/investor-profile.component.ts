@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import {NgxSpinnerService} from 'ngx-spinner';
@@ -15,6 +15,11 @@ import {RequestUpdateUserData} from './request-update-user-data';
 export class InvestorProfileComponent implements OnInit {
     closeResult: string;
     userData: RespUserData = new RespUserData();
+    currentPassword: string;
+    newPassword: string;
+    newPasswordReent: string;
+    @ViewChild('modalResetPasswordWindow') templateRef: TemplateRef<any>;
+
     constructor(
         private investorProfileService: InvestorProfileService,
         private modalService: NgbModal,
@@ -84,5 +89,20 @@ export class InvestorProfileComponent implements OnInit {
                         alert('Server error: ' + error);
                     });
         }
+    }
+
+    onResetPassword() {
+
+    }
+
+    checkPassword(): boolean {
+        return this.newPassword != null && this.newPasswordReent != null && this.newPassword === this.newPasswordReent;
+    }
+
+    openResetPassword() {
+        this.newPassword = null;
+        this.newPasswordReent = null;
+        this.currentPassword = null;
+        this.modalService.open(this.templateRef);
     }
 }
