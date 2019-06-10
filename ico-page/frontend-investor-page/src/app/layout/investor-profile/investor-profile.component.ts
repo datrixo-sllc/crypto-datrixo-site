@@ -1,10 +1,11 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {routerTransition} from '../../router.animations';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {InvestorProfileService} from './investor-profile.service';
 import {RespUserData} from './resp-user-data';
 import {RequestUpdateUserData} from './request-update-user-data';
+import {RequestUpdateUserPassword} from './request-update-user-password';
 
 @Component({
     selector: 'app-investor-profile',
@@ -19,6 +20,7 @@ export class InvestorProfileComponent implements OnInit {
     newPassword: string;
     newPasswordReent: string;
     @ViewChild('modalResetPasswordWindow') templateRef: TemplateRef<any>;
+    modal: NgbModalRef;
 
 
     constructor(
@@ -92,10 +94,6 @@ export class InvestorProfileComponent implements OnInit {
         }
     }
 
-    onResetPassword() {
-
-    }
-
     checkPasswordContent(): boolean {
 
 //             ^	The password string will start this way.
@@ -120,6 +118,42 @@ export class InvestorProfileComponent implements OnInit {
         this.newPassword = null;
         this.newPasswordReent = null;
         this.currentPassword = null;
-        this.modalService.open(this.templateRef);
+        this.modal = this.modalService.open(this.templateRef);
+    }
+
+    onResetPassword() {
+        this.modal.close();
+        const conf = confirm('Update password ?');
+        if (conf) {
+            const request = new RequestUpdateUserPassword();
+            request.newPassword = this.newPassword;
+            request.newPasswordReent = this.newPasswordReent;
+            request.currentPassword = this.currentPassword;
+
+            this.investorProfileService.updateUserPassword(request)
+                .toPromise()
+                .then((response: any) => {
+
+                        this.spinner.hide();
+                        alert('Server response: ' + response);
+                        this.clearLocalStorage();
+                    },
+                    (error: Error) => {
+                        this.spinner.hide();
+                        alert('Server error: ' + error);
+                    });
+        }
+    }
+
+    private clearLocalStorage() {
+        if (localStorage.getItem('authorityStatus') != null) {
+            localStorage.removeItem('authorityStatus');
+        }
+        if (localStorage.getItem('username') != null) {
+            localStorage.removeItem('username');
+        }
+        if (localStorage.getItem('isLoggedin') != null) {
+            localStorage.removeItem('isLoggedin');
+        }
     }
 }

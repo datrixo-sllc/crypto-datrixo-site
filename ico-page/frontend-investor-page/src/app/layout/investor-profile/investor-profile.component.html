@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" (click)="f.ngSubmit.emit()"
+                        <button type="button" class="btn btn-secondary" (click)="f.ngSubmit.emit()" [routerLink]="['/login']"
                                 [disabled]="!f.form.valid || !checkPassword() || !checkPasswordContent()">Reset Password</button>
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                     </div>
