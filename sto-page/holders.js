@@ -10,7 +10,7 @@ jQuery(document).ready( function() {
 			var item = [];
 			item.push("<a href='https://ropsten.etherscan.io/address/" + data.holders[ind].address +
 				"#readContract' target='_blank'>" + data.holders[ind].address + "</a>");
-			item.push(data.holders[ind].timeDate);
+			item.push(new Date(data.holders[ind].timeDate).toUTCString());
 			item.push(data.holders[ind].shareTokens);
 			item.push(data.holders[ind].share);
 			holders.push(item);
