@@ -35,7 +35,7 @@ contract DatrixoToken is SafeMath {
     string constant public name = "DatrixoToken";
     string constant public symbol = "DRXT";
     uint8 constant public decimals = 5;
-    uint public totalSupply = 16000000;
+    uint public totalSupply = 800000000;
 
     address public owner;
     /* from this time on tokens may be transferred (after ICO) */
@@ -134,7 +134,7 @@ contract DatrixoToken is SafeMath {
     /* Send some of hareholder tokens to other by owner*/
     function _secondTransfer(address _from, address _to, uint _value) onlyOwner afterStartTime internal returns(bool success){
         require(safeSub(balanceOf[_from], _value) >= 0, "Value more then balance amount"); // prevent the to spending his tokens more then have on account
-        require(firstPurchaseTime[_from] == 0 || now >=firstPurchaseTime[_from] + 365 days, "First year is not expired.");
+        //require(firstPurchaseTime[_from] == 0 || now >=firstPurchaseTime[_from] + 365 days, "First year is not expired.");
         // when contract will be burned contract owner will spend all tokens to address 0x0
         if (_to != address(0)) {
             require(firstPurchaseTime[_to] == 0, "Target balance has first transfer amount.");
@@ -145,6 +145,7 @@ contract DatrixoToken is SafeMath {
         if (!checkShareholderExist(_to)) {
             shareholders.push(_to);
         }
+        firstPurchaseTime[_to] = now;
         return _transferFrom(_from, _to, _value);
     }
 
