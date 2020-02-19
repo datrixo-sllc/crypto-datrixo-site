@@ -29,13 +29,13 @@ contract SafeMath {
 
 contract DatrixoToken is SafeMath {
     /* Public variables of the token */
-    /*new Date(2020, 1, 1).getTime()/1000*/
+    /*new Date(2020, 1, 1).getTime()/1000 = 1580504400*/
 
     string constant public standard = "ERC20";
     string constant public name = "DatrixoToken";
     string constant public symbol = "DRXT";
     uint8 constant public decimals = 5;
-    uint public totalSupply = 800000000;
+    uint public totalSupply = 80000000;
 
     address public owner;
     /* from this time on tokens may be transferred (after ICO) */
