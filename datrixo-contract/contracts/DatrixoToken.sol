@@ -29,7 +29,6 @@ contract SafeMath {
 
 contract DatrixoToken is SafeMath {
     /* Public variables of the token */
-    /*new Date(2020, 1, 1).getTime()/1000 = 1580504400*/
     /*Apr 13 2020 00:00:00 ---- new Date(2020, 3, 13).getTime()/1000 = 1586725200*/
 
     string constant public standard = "ERC20";
@@ -63,11 +62,11 @@ contract DatrixoToken is SafeMath {
     event ShareholderRemoved(address indexed addr, uint value);
 
 
-    /* Initializes contract with initial supply tokens to the creator of the contract */
+    /* Initializes contract with initial token supply assigned to the creator of the contract */
     constructor(address _ownerAddr, uint _startTime) public {
         owner = _ownerAddr;
         startTime = _startTime;
-        balanceOf[owner] = totalSupply; // Give the owner all initial tokens
+        balanceOf[owner] = totalSupply; // Assignes all initial tokens to the creator
     }
 
     modifier onlyOwner() {
