@@ -39,7 +39,7 @@ contract DatrixoToken is SafeMath {
     uint public totalSupply = 400000000;
 
     address public owner;
-    /* from this time on tokens may be transferred (after ICO) */
+    /* from this time on tokens may be transferred (STO date) */
     uint public startTime;
 
     /* This creates an array with all balances */
