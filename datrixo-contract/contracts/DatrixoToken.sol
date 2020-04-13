@@ -30,6 +30,7 @@ contract SafeMath {
 contract DatrixoToken is SafeMath {
     /* Public variables of the token */
     /*new Date(2020, 1, 1).getTime()/1000 = 1580504400*/
+    /*Apr 13 2020 00:00:00 ---- new Date(2020, 3, 13).getTime()/1000 = 1586725200*/
 
     string constant public standard = "ERC20";
     string constant public name = "DatrixoToken";
