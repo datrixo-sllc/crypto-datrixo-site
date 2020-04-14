@@ -38,7 +38,7 @@ contract DatrixoToken is SafeMath {
     uint public totalSupply = 400000000;
 
     address public owner;
-    /* from this time on tokens may be transferred (STO date) */
+    /* STO date - DRXT tokens can be transferred */
     uint public startTime;
 
     /* This creates an array with all balances */
@@ -62,11 +62,11 @@ contract DatrixoToken is SafeMath {
     event ShareholderRemoved(address indexed addr, uint value);
 
 
-    /* Initializes contract with initial token supply assigned to the creator of the contract */
+    /* Initializes contract with the original (DRXT tokens) supply. All supply is assigned to the creator of the contract */
     constructor(address _ownerAddr, uint _startTime) public {
         owner = _ownerAddr;
         startTime = _startTime;
-        balanceOf[owner] = totalSupply; // Assignes all initial tokens to the creator
+        balanceOf[owner] = totalSupply; // Assigns all the initial tokens to the creator
     }
 
     modifier onlyOwner() {
@@ -80,23 +80,23 @@ contract DatrixoToken is SafeMath {
     }
 
 
-    /*only contract owner can perform transfer and this is only first transfer*/
+    /* Only a contract owner can perform the transfer (only the first transfer) */
     function transfer(address _to, uint _value) public onlyOwner afterStartTime returns(bool success){
         require(msg.sender != _to, "Target address can't be equal source.");
-        require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
-        require(balanceOf[_to] == 0, "Target balance not equal 0"); // prevent secondary transfer
+        require(_to != address(0), "Target address is 0x0"); // Prevents the owner to sending to the address 0x0
+        require(balanceOf[_to] == 0, "Target balance not equal 0"); // Prevents the secondary transfer
         if (!checkShareholderExist(_to)) {
             shareholders.push(_to);
         }
         return _firstTransfer(_to, _value);
     }
 
-    /*only contract owner can perform transferFrom after first year is expired for account _from*/
+    /* Only a contract owner can perform the transferFrom after 12-month expired for that account _from */
     function transferFrom(address _from, address _to, uint _value) public onlyOwner afterStartTime returns(bool success){
         return _secondTransfer(_from, _to, _value);
     }
 
-    /*remove shareholder and return tokens to owner ballance*/
+    /* Remove the shareholder from teh list and return DRXT tokens to the original owner account (owner ballance) */
     function removeShareholder(address _addr) public onlyOwner returns(bool success) {
         require(_addr != address(0), "Target address is 0x0");
         require(checkShareholderExist(_addr), "Shareholder is not exist.");
@@ -119,7 +119,7 @@ contract DatrixoToken is SafeMath {
         return result;
     }
 
-    /* First send tokens to shareholder by owner*/
+    /* First the DRXT tokens are sent to the shareholder by the contract owner*/
     function _firstTransfer(address _to, uint _value) internal onlyOwner afterStartTime returns(bool success) {
         require(_to != address(0), "Target address is 0x0"); // prevent the owner to spending to address 0x0
         require(balanceOf[_to] == 0, "Target balance not equal 0"); // prevent secondary transfer
@@ -131,7 +131,7 @@ contract DatrixoToken is SafeMath {
         return _transfer(_to, _value);
     }
 
-    /* Send some of hareholder tokens to other by owner*/
+    /* Send some of of the shareholder tokens to others (by the owner)*/
     function _secondTransfer(address _from, address _to, uint _value) onlyOwner afterStartTime internal returns(bool success){
         require(safeSub(balanceOf[_from], _value) >= 0, "Value more then balance amount"); // prevent the to spending his tokens more then have on account
         //require(firstPurchaseTime[_from] == 0 || now >=firstPurchaseTime[_from] + 365 days, "First year is not expired.");
@@ -172,14 +172,14 @@ contract DatrixoToken is SafeMath {
 
 
     /*
-    * Getter for whole shareholders array, not any array member as default getter, which generated compiler
+    * The getter for whole shareholders array, not any array member as default getter, which generated compiler
     */
     function getShareholdersArray() public view returns(address[] memory) {
         return shareholders;
     }
 
     /**
-     * Allows the sto contract to set the trading start time to an earlier point of time.
+     * Allows the STO contract to set the start date/time fro trading to the earlier point of time.
      * (In case the soft cap has been reached)
      * @param _newStart the new start date
      **/
