@@ -45,7 +45,7 @@ $topnav-background-color: #f8f9fa;
             padding-top: 10px;
 
             > .list-group-item:first-child {
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                border-top: 1px solid darken($topnav-background-color, 30%);
             }
         }
     }
