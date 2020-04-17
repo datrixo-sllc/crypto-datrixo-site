@@ -8,7 +8,7 @@ jQuery(document).ready( function() {
 		var holders = [];
 		for (ind in data.holders) {
 			var item = [];
-			item.push("<a href='https://ropsten.etherscan.io/address/" + data.holders[ind].address +
+			item.push("<a href='https://etherscan.io/address/" + data.holders[ind].address +
 				"#readContract' target='_blank'>" + data.holders[ind].address + "</a>");
 			item.push(new Date(data.holders[ind].timeDate).toUTCString());
 			item.push(data.holders[ind].shareTokens);
