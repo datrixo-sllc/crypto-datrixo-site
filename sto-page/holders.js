@@ -1,6 +1,6 @@
 jQuery(document).ready( function() {
 	
-	jQuery.getJSON('http://ico-page-site-backend.gned73gxqz.us-east-1.elasticbeanstalk.com/ico/ico-page', function (data) {
+	jQuery.getJSON('https://api-backend.datrixo.com/ico/ico-page', function (data) {
 
 		document.getElementById("totalSupply").textContent = data.totalSupplyTokens;
 		document.getElementById("sold").textContent = data.soldTokens;
