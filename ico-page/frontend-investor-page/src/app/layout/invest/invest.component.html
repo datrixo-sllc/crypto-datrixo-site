@@ -22,12 +22,10 @@
             </div>
         </div>
         <div class="col-lg-7 my-auto">
-            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo Inc Token (DRX)</h5>
-            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Token Price - Contact Us</h5>
-            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo is a New York - based company
-                focused on Machine
-                Intelligence (AI) and applications of AI in various industry sectors. <span class="h6"><a
-                    href="http://datrixo.com/" target="_blank">[Website]</a></span></h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo LLC Token (DRXT)</h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Token Price - $300</h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo is a NY-based holding firm focused on applications of AI in various sectors. DRXT is an equity token representing the Datrixo’s equity and backed by the portfolio assets. Owning the Datrixo holding equity means ownership in all our portfolio companies. The funds raised via Equity Token Offering of DRXT are invested in the portfolio of AI ventures. <span class="h6"><a
+                    href="https://datrixo.com/" target="_blank">[Website]</a></span></h5>
             <div class="mt-4">
                 <div class="border-bottom pb-lg-1 mb-3">
                     <h5 class="font-weight-normal">The account is: <span class="h6"><a
@@ -46,7 +44,7 @@
                           </a>
                         </li>-->
                         <li class="list-inline-item social-facebook">
-                            <a href="http://datrixo.com/" target="_blank">
+                            <a href="https://datrixo.com/" target="_blank">
                                 [Website]
                             </a>
                         </li>
@@ -61,7 +59,7 @@
                 <h4 class="card-header">PPM</h4>
                 <div class="card-body">
                     <h5 class="card-title">Private Placement Memorandum</h5>
-                    <p class="card-text">Prior to making an investment, please review the Offering Terms in PPM.</p>
+                    <p class="card-text">Prior to making an investment, please, review the Offering’s Terms in PPM.</p>
                     <div class="text-center">
                         <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitPPMDownload()">
                             Download
@@ -72,12 +70,10 @@
         </div>
         <div class="col-lg-4">
             <div class="card mb-3">
-                <h4 class="card-header">Buy tokens</h4>
+                <h4 class="card-header">Buy DRXT</h4>
                 <div class="card-body">
                     <h5 class="card-title">$300 minimum</h5>
-                    <p class="card-text">Please, chose number of shares tokens to purchase,
-                        download the appropriate invoice that includes payment instructions and remit the payment to:
-                        Datrixo Inc.</p>
+                    <p class="card-text">Please, chose a number of share tokens to purchase, download the appropriate invoice that includes (payment) instructions and remit a payment to Datrixo LLC.</p>
                     <fieldset class="form-group pl-5 pr-5">
                         <div class="row">
                             <div class="col-lg-6">
@@ -129,8 +125,7 @@
                 <h4 class="card-header">Agreement</h4>
                 <div class="card-body">
                     <h5 class="card-title">Subscription Agreement</h5>
-                    <p class="card-text">Please, upload, sign and send us the PDF of the signed Subscription
-                        Documents.</p>
+                    <p class="card-text">Please, download, sign and upload back to us the PDF of the (signed) Subscription Agreement.</p>
                     <div class="text-center">
                         <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitPPMDownload()">
                             Download
@@ -144,7 +139,7 @@
         <div class="row">
             <div class="col-lg-9 mx-auto">
                 <div class="row my-auto">
-                    <label class="col-lg-4 mt-3" for="agreementFile">Upload signed agreement here</label>
+                    <label class="col-lg-4 mt-3" for="agreementFile">Upload your signed agreement here</label>
                     <input #uploadFile type="file" class="col-lg-4 form-control-file mt-3" id="agreementFile"
                            (change)="handleFileInput($event.target.files)"/>
                     <button class="col-lg-2 my-btn my-btn-outline my-btn-xl mt-3"
@@ -164,7 +159,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td class="text-center">{{totalSupply}}</td>
+                        <td class="text-right pr-1">{{totalSupply}}</td>
                         <td class="text-center">/</td>
                         <td class="text-center">{{sold}}</td>
                         <td>(tokens sold)</td>
