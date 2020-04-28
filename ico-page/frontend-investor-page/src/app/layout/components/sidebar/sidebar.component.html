@@ -6,10 +6,10 @@
         </a>
         <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-money"></i>&nbsp;
-            <span>{{ 'Invest' | translate }}</span>
+            <span>{{ 'Invest DRXT' | translate }}</span>
         </a>
         <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-book"></i>&nbsp;
+            <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
             <span>{{ 'My Holdings' | translate }}</span>
         </a>
 
@@ -18,7 +18,7 @@
                (click)="onLoggedout()">
                 <i class="fa fa-fw fa-power-off"></i> <span>{{ 'Log Out' | translate }}</span>
             </a>
-            <div class="nested-menu">
+            <!--<div class="nested-menu">
                 <a class="list-group-item" (click)="addExpandClass('languages')">
                     <span><i class="fa fa-language"></i>&nbsp; {{ 'Language' | translate }} <b class="caret"></b></span>
                 </a>
@@ -34,11 +34,11 @@
                                 {{ 'French' | translate }}
                             </a>
                         </li>
-                        <!--<li>
+                        &lt;!&ndash;<li>
                             <a href="javascript:void(0)" (click)="changeLang('ur')">
                                 {{ 'Urdu' | translate }}
                             </a>
-                        </li>-->
+                        </li>&ndash;&gt;
                         <li>
                             <a href="javascript:void(0)" (click)="changeLang('es')">
                                 {{ 'Spanish' | translate }}
@@ -49,11 +49,11 @@
                                 {{ 'Italian' | translate }}
                             </a>
                         </li>
-                        <!--<li>
+                        &lt;!&ndash;<li>
                             <a href="javascript:void(0)" (click)="changeLang('fa')">
                                 {{ 'Farsi' | translate }}
                             </a>
-                        </li>-->
+                        </li>&ndash;&gt;
                         <li>
                             <a href="javascript:void(0)" (click)="changeLang('de')">
                                 {{ 'German' | translate }}
@@ -61,7 +61,7 @@
                         </li>
                     </ul>
                 </li>
-            </div>
+            </div>-->
         </div>
     </div>
     <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">

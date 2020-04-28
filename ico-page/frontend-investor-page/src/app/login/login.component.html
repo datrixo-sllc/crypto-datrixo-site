@@ -19,7 +19,7 @@
                         <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
                     </div>
                 </div>
-                <button class="btn rounded-btn" (click)="f.ngSubmit.emit()" [disabled]="!f.form.valid">{{ 'Log in' | translate }}</button>
+                <button class="btn rounded-btn" (click)="f.ngSubmit.emit()" [disabled]="!f.form.valid">{{ 'Login' | translate }}</button>
                 &nbsp;
                 <!--<a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>-->
             </form>
