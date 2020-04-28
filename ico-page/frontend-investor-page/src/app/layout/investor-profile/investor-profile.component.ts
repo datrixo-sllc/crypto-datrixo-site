@@ -84,7 +84,7 @@ export class InvestorProfileComponent implements OnInit {
                 .toPromise()
                 .then((response: any) => {
                         this.spinner.hide();
-                        alert('Server response: ' + response);
+                        alert('Successfully updated');
                         this.getUserData();
                     },
                     (error: Error) => {
