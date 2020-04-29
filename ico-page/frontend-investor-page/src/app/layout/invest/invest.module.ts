@@ -12,6 +12,7 @@ import {InvestUploadService} from './invest-upload.service';
 import {HoldersDatatableComponent} from './holders-datatable/holders-datatable.component';
 import {InvestService} from './invest.service';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
         InvestRoutingModule,
         PageHeaderModule,
         FileSaverModule,
-        NgxDatatableModule
+        NgxDatatableModule,
+        NgbModule
     ],
     declarations: [
         InvestComponent,

@@ -6,6 +6,7 @@ import {InvestorProfileService} from './investor-profile.service';
 import {RespUserData} from './resp-user-data';
 import {RequestUpdateUserData} from './request-update-user-data';
 import {RequestUpdateUserPassword} from './request-update-user-password';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-investor-profile',
@@ -19,15 +20,25 @@ export class InvestorProfileComponent implements OnInit {
     currentPassword: string;
     newPassword: string;
     newPasswordReent: string;
-    @ViewChild('modalResetPasswordWindow') templateRef: TemplateRef<any>;
+
     modal: NgbModalRef;
+    @ViewChild('modalResetPasswordWindow') templateRef: TemplateRef<any>;
+    @ViewChild('modalAlertWindow') templateAlertRef: TemplateRef<any>;
+    @ViewChild('modalConfirmUserDataWindow') templateConfirmUserDataRef: TemplateRef<any>;
+    @ViewChild('modalConfirmResetPasswordWindow') templateConfirmResetPasswordRef: TemplateRef<any>;
+    alertTitle: string;
+    confirmTitle: string;
+    alertBody: string;
+    confirmBody: string;
 
 
     constructor(
         private investorProfileService: InvestorProfileService,
         private modalService: NgbModal,
-        private spinner: NgxSpinnerService
-        ) {}
+        private spinner: NgxSpinnerService,
+        private router: Router
+    ) {
+    }
 
     ngOnInit() {
         this.getUserData();
@@ -38,13 +49,14 @@ export class InvestorProfileComponent implements OnInit {
         this.investorProfileService.getUserData()
             .toPromise()
             .then((response: any) => {
-                   this.userData = response as RespUserData;
-
+                    this.userData = response as RespUserData;
                     this.spinner.hide();
                 },
                 (error: Error) => {
+                    this.alertTitle = 'Investor Profile';
+                    this.alertBody = 'Server error: ' + error;
                     this.spinner.hide();
-                    alert('Server error: ' + error.message);
+                    this.modal = this.modalService.open(this.templateAlertRef);
                 });
 
     }
@@ -63,7 +75,7 @@ export class InvestorProfileComponent implements OnInit {
         } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
             return 'by clicking on a backdrop';
         } else {
-            return  `with: ${reason}`;
+            return `with: ${reason}`;
         }
     }
 
@@ -71,27 +83,33 @@ export class InvestorProfileComponent implements OnInit {
         this.getUserData();
     }
 
-    onUpdateUserData() {
-        const conf = confirm('Update profile ?');
-        if (conf) {
-            const request = new RequestUpdateUserData();
-            request.title = this.userData.title;
-            request.firstName = this.userData.firstName;
-            request.lastName = this.userData.lastName;
-            request.phone = this.userData.phone;
+    onConfirmUpdateUserData() {
+        this.confirmTitle = 'Investor Profile Update';
+        this.confirmBody = 'Do you want update Profile?';
+        this.modal = this.modalService.open(this.templateConfirmUserDataRef);
+    }
 
-            this.investorProfileService.updateUserData(request)
-                .toPromise()
-                .then((response: any) => {
-                        this.spinner.hide();
-                        alert('Successfully updated');
-                        this.getUserData();
-                    },
-                    (error: Error) => {
-                        this.spinner.hide();
-                        alert('Server error: ' + error);
-                    });
-        }
+    onUpdateUserData() {
+        this.modal.close();
+        const request = new RequestUpdateUserData();
+        request.title = this.userData.title;
+        request.firstName = this.userData.firstName;
+        request.lastName = this.userData.lastName;
+        request.phone = this.userData.phone;
+        this.alertTitle = 'Investor Profile Update';
+        this.investorProfileService.updateUserData(request)
+            .toPromise()
+            .then((response: any) => {
+                    this.spinner.hide();
+                    this.alertBody = 'Successfully updated';
+                    this.modal = this.modalService.open(this.templateAlertRef);
+                    this.getUserData();
+                },
+                (error: Error) => {
+                    this.spinner.hide();
+                    this.alertBody = 'Server error: ' + error;
+                    this.modal = this.modalService.open(this.templateAlertRef);
+                });
     }
 
     checkPasswordContent(): boolean {
@@ -103,7 +121,6 @@ export class InvestorProfileComponent implements OnInit {
 //            (?=.*[!@#\$%\^&\*])	The string must contain at least one special character, but we are escaping
 //                                  reserved RegEx characters to avoid conflict.
 //            (?=.{8,})	The string must be eight characters or longer.
-
 
 
         const regex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})');
@@ -121,28 +138,36 @@ export class InvestorProfileComponent implements OnInit {
         this.modal = this.modalService.open(this.templateRef);
     }
 
+    onConfirmResetPassword() {
+        this.confirmTitle = 'Change Password';
+        this.confirmBody = 'Do you want change Password?';
+        this.modal.close();
+        this.modal = this.modalService.open(this.templateConfirmResetPasswordRef);
+    }
+
+
     onResetPassword() {
         this.modal.close();
-        const conf = confirm('Update password ?');
-        if (conf) {
-            const request = new RequestUpdateUserPassword();
-            request.newPassword = this.newPassword;
-            request.newPasswordReent = this.newPasswordReent;
-            request.currentPassword = this.currentPassword;
+        const request = new RequestUpdateUserPassword();
+        request.newPassword = this.newPassword;
+        request.newPasswordReent = this.newPasswordReent;
+        request.currentPassword = this.currentPassword;
+        this.alertTitle = 'Change Password';
+        this.investorProfileService.updateUserPassword(request)
+            .toPromise()
+            .then((response: any) => {
+                    this.spinner.hide();
+                    this.alertBody = 'Successfully updated';
+                    this.modal = this.modalService.open(this.templateAlertRef);
+                    this.clearLocalStorage();
+                    this.router.navigate(['/login']);
+                },
+                (error: Error) => {
+                    this.spinner.hide();
+                    this.alertBody = 'Server error: ' + error;
+                    this.modal = this.modalService.open(this.templateAlertRef);
+                });
 
-            this.investorProfileService.updateUserPassword(request)
-                .toPromise()
-                .then((response: any) => {
-
-                        this.spinner.hide();
-                        alert('Server response: ' + response);
-                        this.clearLocalStorage();
-                    },
-                    (error: Error) => {
-                        this.spinner.hide();
-                        alert('Server error: ' + error);
-                    });
-        }
     }
 
     private clearLocalStorage() {

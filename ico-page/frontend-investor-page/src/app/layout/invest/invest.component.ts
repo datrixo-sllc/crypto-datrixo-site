@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import {InvestDownloadService} from './invest-download.service';
 import {Response} from '@angular/http';
@@ -10,6 +10,7 @@ import {HolderResponce} from './holder-responce';
 import {IcoPageResponse} from './ico-page-response';
 import {interval, Subscription} from 'rxjs';
 import {switchMap} from 'rxjs/internal/operators/switchMap';
+import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-invest',
@@ -30,12 +31,18 @@ export class InvestComponent implements OnInit, OnDestroy {
 
     subscriber: Subscription;
 
+    modal: NgbModalRef;
+    @ViewChild('modalAlertWindow') templateAlertRef: TemplateRef<any>;
+    alertTitle: string;
+    alertBody: string;
+
     constructor(
         private investService: InvestService,
         private investDownloadService: InvestDownloadService,
         private investUploadService: InvestUploadService,
         private spinner: NgxSpinnerService,
-        private recieveUtils: RecieveUtils) {}
+        private recieveUtils: RecieveUtils,
+        private modalService: NgbModal) {}
 
     ngOnInit() {
         this.getIcoPage();
@@ -56,6 +63,7 @@ export class InvestComponent implements OnInit, OnDestroy {
 
     onSubmitPPMDownload() {
         this.spinner.show();
+        this.alertTitle = 'PPM Download';
         this.investDownloadService.getPPM()
             .toPromise()
             .then((response: Response) => {
@@ -63,8 +71,9 @@ export class InvestComponent implements OnInit, OnDestroy {
                     this.spinner.hide();
                 },
                 (error: Error) => {
+                    this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
-                    alert('Server pull error: ' + error.message);
+                    this.modal = this.modalService.open(this.templateAlertRef);
                 });
     }
 
@@ -78,16 +87,20 @@ export class InvestComponent implements OnInit, OnDestroy {
 
     onSubmitSignedAgreementUpload() {
         if (this.fileToUpload === null) {
-            alert('File for uploading is not selected');
+            this.alertTitle = 'Signed Agreement Upload';
+            this.alertBody = 'File for uploading is not selected';
+            this.modal = this.modalService.open(this.templateAlertRef);
         } else {
             this.investUploadService.postSignedAgreement(this.fileToUpload)
                 .toPromise()
                 .then((value: Response) => {
-                        alert('Server pull response' + value.text());
+                        this.alertBody = 'Server pull response' + value.text();
+                        this.modal = this.modalService.open(this.templateAlertRef);
                         this.clearUploadParams();
                     },
                     (reason: Error) => {
-                        alert('Server pull error: ' + reason.message);
+                        this.alertBody = 'Server pull error: ' + reason.message;
+                        this.modal = this.modalService.open(this.templateAlertRef);
                         this.clearUploadParams();
                     });
 
