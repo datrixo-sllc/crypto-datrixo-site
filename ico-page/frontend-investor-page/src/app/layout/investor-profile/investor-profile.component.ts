@@ -47,11 +47,14 @@ export class InvestorProfileComponent implements OnInit {
 
     getUserData(): void {
         this.spinner.show();
+        this.alertTitle = 'Investor Profile';
         this.investorProfileService.getUserData()
             .toPromise()
             .then((response: any) => {
                     this.userData = response as RespUserData;
-                    this.spinner.hide();
+                    this.alertBody = 'Successfully loaded';
+                        this.spinner.hide();
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                 },
                 (error: Error) => {
                     this.alertTitle = 'Investor Profile';
@@ -91,6 +94,7 @@ export class InvestorProfileComponent implements OnInit {
 
     onReset() {
         this.getUserData();
+
     }
 
     onConfirmUpdateUserData() {
