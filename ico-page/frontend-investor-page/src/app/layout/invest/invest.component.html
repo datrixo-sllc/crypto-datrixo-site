@@ -133,17 +133,17 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="card col-lg-12 mt-3 p-4 border-left-0 border-right-0">
-        <div class="row">
-            <div class="col-lg-9 mx-auto">
-                <div class="row my-auto">
-                    <label class="col-lg-4 mt-3" for="agreementFile">Upload your signed agreement here</label>
-                    <input #uploadFile type="file" class="col-lg-4 form-control-file mt-3" id="agreementFile"
-                           (change)="handleFileInput($event.target.files)"/>
-                    <button class="col-lg-2 my-btn my-btn-outline my-btn-xl mt-3"
-                            (click)="onSubmitSignedAgreementUpload()">Upload</button>
+            <div class="card mb-3">
+                <h4 class="card-header">Agreement</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Signed Subscription Agreement</h5>
+                    <p class="card-text">Upload your signed Subscription Agreement here.</p>
+                    <div class="text-center">
+                        <input #uploadFile type="file" class="form-control-file mt-3" id="agreementFile"
+                               (change)="handleFileInput($event.target.files)"/>
+                        <button class="my-btn my-btn-outline my-btn-xl mt-3"
+                                (click)="onSubmitSignedAgreementUpload()">Upload</button>
+                    </div>
                 </div>
             </div>
         </div>

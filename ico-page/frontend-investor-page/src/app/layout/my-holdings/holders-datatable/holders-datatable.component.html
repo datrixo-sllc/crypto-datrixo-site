@@ -1,14 +1,14 @@
 <ngx-datatable
     #table
     class='bootstrap'
-    style="margin-top: 1.2em; word-wrap: break-word; word-break: break-all; white-space: normal;"
+    style="margin-top: 1.2em; word-wrap: break-word; white-space: normal;"
     [columnMode]="'force'"
     [headerHeight]="20"
     [footerHeight]="20"
     [rowHeight]="'auto'"
     [limit]="10"
     [rows]='rows'>
-    <ngx-datatable-column name="address" [width]="220">
+    <ngx-datatable-column name="address" [width]="220" [style]="'word-break: break-all;'">
         <ng-template let-column="column" ngx-datatable-header-template>
             <div class="header-class">Address</div>
         </ng-template>
@@ -18,10 +18,10 @@
     </ngx-datatable-column>
     <ngx-datatable-column name="timeDate">
         <ng-template let-column="column" ngx-datatable-header-template>
-            <div class="header-class">Time/Date</div>
+            <div class="header-class">Date</div>
         </ng-template>
-        <ng-template let-row="row" ngx-datatable-cell-template>
-            {{row.timeDate | date:'medium'}}
+        <ng-template let-row="row " ngx-datatable-cell-template>
+            {{row.timeDate | date}}
         </ng-template>
     </ngx-datatable-column>
     <ngx-datatable-column name="shareTokens">
