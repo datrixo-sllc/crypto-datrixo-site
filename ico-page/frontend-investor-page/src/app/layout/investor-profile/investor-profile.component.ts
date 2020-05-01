@@ -7,6 +7,7 @@ import {RespUserData} from './resp-user-data';
 import {RequestUpdateUserData} from './request-update-user-data';
 import {RequestUpdateUserPassword} from './request-update-user-password';
 import {Router} from '@angular/router';
+import * as Noty from 'noty';
 
 @Component({
     selector: 'app-investor-profile',
@@ -56,7 +57,8 @@ export class InvestorProfileComponent implements OnInit {
                     this.alertTitle = 'Investor Profile';
                     this.alertBody = 'Server error: ' + error;
                     this.spinner.hide();
-                    this.modal = this.modalService.open(this.templateAlertRef);
+                    // this.modal = this.modalService.open(this.templateAlertRef);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 });
 
     }
@@ -77,6 +79,14 @@ export class InvestorProfileComponent implements OnInit {
         } else {
             return `with: ${reason}`;
         }
+    }
+
+    notyMessage(alertTitle: string, alertBody: string, messageType: Noty.Type): Noty {
+        return new Noty({
+            type: messageType,
+            text: '<strong>' + alertTitle + '</strong><br /> ' + alertBody,
+            timeout: 3000
+        });
     }
 
     onReset() {
@@ -102,13 +112,15 @@ export class InvestorProfileComponent implements OnInit {
             .then((response: any) => {
                     this.spinner.hide();
                     this.alertBody = 'Successfully updated';
-                    this.modal = this.modalService.open(this.templateAlertRef);
+                    // this.modal = this.modalService.open(this.templateAlertRef);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                     this.getUserData();
                 },
                 (error: Error) => {
                     this.spinner.hide();
                     this.alertBody = 'Server error: ' + error;
-                    this.modal = this.modalService.open(this.templateAlertRef);
+                    // this.modal = this.modalService.open(this.templateAlertRef);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 });
     }
 
@@ -158,14 +170,16 @@ export class InvestorProfileComponent implements OnInit {
             .then((response: any) => {
                     this.spinner.hide();
                     this.alertBody = 'Successfully updated';
-                    this.modal = this.modalService.open(this.templateAlertRef);
+                    // this.modal = this.modalService.open(this.templateAlertRef);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                     this.clearLocalStorage();
                     this.router.navigate(['/login']);
                 },
                 (error: Error) => {
                     this.spinner.hide();
                     this.alertBody = 'Server error: ' + error;
-                    this.modal = this.modalService.open(this.templateAlertRef);
+                    // this.modal = this.modalService.open(this.templateAlertRef);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 });
 
     }
