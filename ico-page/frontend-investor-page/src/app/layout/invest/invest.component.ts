@@ -11,6 +11,7 @@ import {IcoPageResponse} from './ico-page-response';
 import {interval, Subscription} from 'rxjs';
 import {switchMap} from 'rxjs/internal/operators/switchMap';
 import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import * as Noty from 'noty';
 
 @Component({
     selector: 'app-invest',
@@ -61,6 +62,14 @@ export class InvestComponent implements OnInit, OnDestroy {
         window.open('http://datrixo.com', '_blank');
     }
 
+    notyMessage(alertTitle: string, alertBody: string, messageType: Noty.Type): Noty {
+        return new Noty({
+            type: messageType,
+            text: '<strong>' + alertTitle + '</strong><br /> ' + alertBody,
+            timeout: 3000
+        });
+    }
+
     onSubmitPPMDownload() {
         this.spinner.show();
         this.alertTitle = 'PPM Download';
@@ -73,7 +82,8 @@ export class InvestComponent implements OnInit, OnDestroy {
                 (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
-                    this.modal = this.modalService.open(this.templateAlertRef);
+                    // this.modal = this.modalService.open(this.templateAlertRef);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 });
     }
 
@@ -89,18 +99,21 @@ export class InvestComponent implements OnInit, OnDestroy {
         if (this.fileToUpload === null) {
             this.alertTitle = 'Signed Agreement Upload';
             this.alertBody = 'File for uploading is not selected';
-            this.modal = this.modalService.open(this.templateAlertRef);
+            // this.modal = this.modalService.open(this.templateAlertRef);
+            this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
         } else {
             this.investUploadService.postSignedAgreement(this.fileToUpload)
                 .toPromise()
                 .then((value: Response) => {
                         this.alertBody = 'Server pull response' + value.text();
-                        this.modal = this.modalService.open(this.templateAlertRef);
+                        // this.modal = this.modalService.open(this.templateAlertRef);
+                        this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                         this.clearUploadParams();
                     },
                     (reason: Error) => {
                         this.alertBody = 'Server pull error: ' + reason.message;
-                        this.modal = this.modalService.open(this.templateAlertRef);
+                        // this.modal = this.modalService.open(this.templateAlertRef);
+                        this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                         this.clearUploadParams();
                     });
 
