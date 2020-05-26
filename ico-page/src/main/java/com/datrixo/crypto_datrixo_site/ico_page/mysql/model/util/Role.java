@@ -7,5 +7,6 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util;
  **/
 public enum Role {
     ADMIN,
-    USER
+    USER_CRYPTO,
+    USER_TRADITIONAL
 }
