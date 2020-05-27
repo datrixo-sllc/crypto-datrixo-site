@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
                         localStorage.setItem('username', this.model.username);
                         localStorage.setItem('userRole', response.json().role);
                         localStorage.setItem('isLoggedin', 'true');
-                        this.router.navigate(['/investor-profile']);
+                        this.router.navigate(['/main-page']);
                     } else if (response.json().statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
                         this.varStatus = StatusResponseAuth.LOGIN_NOT_FOUND;
                         this.clearLocalStorage();
