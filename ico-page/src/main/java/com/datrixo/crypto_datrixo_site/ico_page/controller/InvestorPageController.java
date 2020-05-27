@@ -106,7 +106,7 @@ public class InvestorPageController {
         UserDto userDto = null;
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-            userDto = new UserDto(user.getUsername(), user.getTitle().name(), user.getFirstName(), user.getLastName(),
+            userDto = new UserDto(user.getUsername(), user.getRole().name(), user.getTitle().name(), user.getFirstName(), user.getLastName(),
                     user.getPhone(),
                     user.getOrganization() != null ? user.getOrganization().getCompanyName() : "",
                     user.getOrganization() != null ? user.getOrganization().getIncorporateDate() : null,

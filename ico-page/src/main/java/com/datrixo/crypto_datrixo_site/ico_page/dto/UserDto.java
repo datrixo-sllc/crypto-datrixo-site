@@ -9,6 +9,7 @@ import java.util.Date;
  **/
 public class UserDto {
     private String username;
+    private String role;
     private String title;
     private String firstName;
     private String lastName;
@@ -25,10 +26,11 @@ public class UserDto {
     public UserDto() {
     }
 
-    public UserDto(String username, String title, String firstName, String lastName, String phone,
+    public UserDto(String username, String role, String title, String firstName, String lastName, String phone,
                    String organizationName, Date incorporateDate, String organizationPhone,
                    String streetAddress, String city, String state, String zip, String country) {
         this.username = username;
+        this.role = role;
         this.title = title;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -49,6 +51,14 @@ public class UserDto {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getTitle() {
