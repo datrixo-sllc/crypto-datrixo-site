@@ -7,7 +7,8 @@ const routes: Routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'investor-profile' },
+            { path: '', redirectTo: 'main-page' },
+            { path: 'main-page', loadChildren: './main-page/main-page.module#MainPageModule' },
             { path: 'investor-profile', loadChildren: './investor-profile/investor-profile.module#InvestorProfileModule' },
             { path: 'invest', loadChildren: './invest/invest.module#InvestModule' },
             { path: 'my-holdings', loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule' }
