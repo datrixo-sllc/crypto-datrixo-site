@@ -1,21 +1,23 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
-    <div class="list-group" *ngIf="app.localStorageItem('userRole') === 'USER_CRYPTO'">
-        <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-user"></i>&nbsp;
-            <span>{{ 'Dashboard' | translate }}</span>
-        </a>
-        <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-user"></i>&nbsp;
-            <span>{{ 'Investor Profile' | translate }}</span>
-        </a>
-        <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-money"></i>&nbsp;
-            <span>{{ 'Invest DRXT' | translate }}</span>
-        </a>
-        <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
-            <span>{{ 'My Holdings' | translate }}</span>
-        </a>
+    <div class="list-group">
+        <div *ngIf="app.localStorageItem('userRole') === 'USER_CRYPTO'">
+            <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-user"></i>&nbsp;
+                <span>{{ 'Dashboard' | translate }}</span>
+            </a>
+            <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-user"></i>&nbsp;
+                <span>{{ 'Investor Profile' | translate }}</span>
+            </a>
+            <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-money"></i>&nbsp;
+                <span>{{ 'Invest DRXT' | translate }}</span>
+            </a>
+            <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
+                <span>{{ 'My Holdings' | translate }}</span>
+            </a>
+        </div>
 
         <div class="header-fields">
             <a [routerLink]="['/login']" class="list-group-item"

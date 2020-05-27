@@ -195,6 +195,9 @@ export class InvestorProfileComponent implements OnInit {
         if (localStorage.getItem('username') != null) {
             localStorage.removeItem('username');
         }
+        if (localStorage.getItem('userRole') != null) {
+            localStorage.removeItem('userRole');
+        }
         if (localStorage.getItem('isLoggedin') != null) {
             localStorage.removeItem('isLoggedin');
         }
