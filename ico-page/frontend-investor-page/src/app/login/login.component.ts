@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
                         this.varStatus = StatusResponseAuth.OK;
                         localStorage.setItem('authorityStatus', JSON.stringify(response.json()));
                         localStorage.setItem('username', this.model.username);
-                        localStorage.setItem('userRole', this.model.role);
+                        localStorage.setItem('userRole', response.json().role);
                         localStorage.setItem('isLoggedin', 'true');
                         this.router.navigate(['/investor-profile']);
                     } else if (response.json().statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {

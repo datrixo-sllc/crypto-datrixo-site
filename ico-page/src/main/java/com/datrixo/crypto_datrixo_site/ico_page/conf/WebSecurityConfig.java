@@ -1,9 +1,6 @@
 package com.datrixo.crypto_datrixo_site.ico_page.conf;
 
-import com.datrixo.crypto_datrixo_site.ico_page.security.RequestBodyReaderAuthenticationFilter;
-import com.datrixo.crypto_datrixo_site.ico_page.security.ResponseAuth;
-import com.datrixo.crypto_datrixo_site.ico_page.security.StatusResponseAuth;
-import com.datrixo.crypto_datrixo_site.ico_page.security.UserDetailsServiceImpl;
+import com.datrixo.crypto_datrixo_site.ico_page.security.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -82,6 +79,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         ResponseAuth resp = new ResponseAuth();
         httpServletResponse.setStatus(HttpStatus.OK.value());
         resp.setStatusResponseAuth(StatusResponseAuth.OK.toString());
+        resp.setRole(((MediUser)authentication.getPrincipal()).getRole().name());
         objectMapper.writeValue(httpServletResponse.getWriter(), resp);
     }
 
