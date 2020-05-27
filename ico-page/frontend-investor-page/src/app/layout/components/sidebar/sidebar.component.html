@@ -18,7 +18,24 @@
                 <span>{{ 'My Holdings' | translate }}</span>
             </a>
         </div>
-
+        <div *ngIf="app.localStorageItem('userRole') === 'USER_TRADITIONAL'">
+            <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-user"></i>&nbsp;
+                <span>{{ 'Investor Profile' | translate }}</span>
+            </a>
+            <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-money"></i>&nbsp;
+                <span>{{ 'Buy Datrixo Equity' | translate }}</span>
+            </a>
+            <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
+                <span>{{ 'My Equity Holdings' | translate }}</span>
+            </a>
+            <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
+                <span>{{ 'My DRXT Holdings' | translate }}</span>
+            </a>
+        </div>
         <div class="header-fields">
             <a [routerLink]="['/login']" class="list-group-item"
                (click)="onLoggedout()">
