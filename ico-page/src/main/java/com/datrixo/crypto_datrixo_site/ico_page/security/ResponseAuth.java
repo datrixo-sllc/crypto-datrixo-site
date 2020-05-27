@@ -7,6 +7,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.security;
  **/
 public class ResponseAuth {
     private String statusResponseAuth;
+    private String role;
 
     public String getStatusResponseAuth() {
         return statusResponseAuth;
@@ -14,5 +15,13 @@ public class ResponseAuth {
 
     public void setStatusResponseAuth(String statusResponseAuth) {
         this.statusResponseAuth = statusResponseAuth;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
