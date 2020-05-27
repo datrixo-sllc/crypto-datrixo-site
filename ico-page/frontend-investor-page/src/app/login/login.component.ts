@@ -15,7 +15,7 @@ import {StatusResponseAuth} from './status-response-auth';
 export class LoginComponent implements OnInit {
     model: any = {};
     varStatus: string;
-    
+
     constructor(
       public router: Router,
       private loginService: LoginService,
@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
                     if (response.json().statusResponseAuth === StatusResponseAuth.OK) {
                         this.varStatus = StatusResponseAuth.OK;
                         localStorage.setItem('authorityStatus', JSON.stringify(response.json()));
-                        localStorage.setItem('username', this.model.username)
+                        localStorage.setItem('username', this.model.username);
+                        localStorage.setItem('userRole', this.model.role);
                         localStorage.setItem('isLoggedin', 'true');
                         this.router.navigate(['/investor-profile']);
                     } else if (response.json().statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
@@ -73,7 +74,7 @@ export class LoginComponent implements OnInit {
                 }
                 this.spinner.hide();
                 /*alert('Server вернул ошибку: ' + error);*/
-                
+
             });
 
     }

@@ -11,6 +11,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
 import { AuthGuard } from './shared';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { Http, HttpModule } from '@angular/http';
+import {GlobalApp} from './helpers/global-app';
 
 @NgModule({
     imports: [
@@ -28,6 +29,7 @@ import { Http, HttpModule } from '@angular/http';
         AuthGuard,
         { provide: APP_CONFIG, useValue: AppConfig },
         {provide: LocationStrategy, useClass: HashLocationStrategy},
+        { provide: GlobalApp, useClass: GlobalApp}
         ],
     bootstrap: [AppComponent]
 })

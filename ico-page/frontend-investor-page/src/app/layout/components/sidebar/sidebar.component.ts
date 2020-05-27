@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import {GlobalApp} from '../../../helpers/global-app';
 
 @Component({
     selector: 'app-sidebar',
@@ -15,7 +16,9 @@ export class SidebarComponent implements OnInit {
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor(private translate: TranslateService,
+                public router: Router,
+                public app: GlobalApp) {
         this.router.events.subscribe(val => {
             if (
                 val instanceof NavigationEnd &&
