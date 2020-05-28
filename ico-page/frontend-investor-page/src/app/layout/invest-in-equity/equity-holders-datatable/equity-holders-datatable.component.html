@@ -8,12 +8,12 @@
   [rowHeight]="'auto'"
   [limit]="10"
   [rows]='rows'>
-  <ngx-datatable-column name="address" [width]="220" [style]="'word-break: break-all;'">
+  <ngx-datatable-column name="address">
     <ng-template let-column="column" ngx-datatable-header-template>
-      <div class="header-class">Address</div>
+      <div class="header-class"></div>
     </ng-template>
     <ng-template let-row="row" ngx-datatable-cell-template>
-      <a href="https://etherscan.io/address/{{row.address}}" target="_blank">{{row.address}}</a>
+      <a href="https://etherscan.io/address/{{row.address}}" target="_blank"><i class="fa fa-external-link-square"></i></a>
     </ng-template>
   </ngx-datatable-column>
   <ngx-datatable-column name="timeDate">
@@ -24,17 +24,9 @@
       {{row.timeDate | date}}
     </ng-template>
   </ngx-datatable-column>
-  <ngx-datatable-column name="shareTokens">
-    <ng-template let-column="column" ngx-datatable-header-template>
-      <div class="header-class">Equity Tokens</div>
-    </ng-template>
-    <ng-template let-row="row" ngx-datatable-cell-template>
-      {{row.shareTokens}}
-    </ng-template>
-  </ngx-datatable-column>
     <ngx-datatable-column name="share">
         <ng-template let-column="column" ngx-datatable-header-template>
-            <div class="header-class">Share (%)</div>
+            <div class="header-class">Equity (%)</div>
         </ng-template>
         <ng-template let-row="row" ngx-datatable-cell-template>
             {{row.share}}
