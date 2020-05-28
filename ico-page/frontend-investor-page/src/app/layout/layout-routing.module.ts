@@ -11,6 +11,7 @@ const routes: Routes = [
             { path: 'main-page', loadChildren: './main-page/main-page.module#MainPageModule' },
             { path: 'investor-profile', loadChildren: './investor-profile/investor-profile.module#InvestorProfileModule' },
             { path: 'invest', loadChildren: './invest/invest.module#InvestModule' },
+            { path: 'invest-in-equity', loadChildren: './invest-in-equity/invest-in-equity.module#InvestInEquityModule' },
             { path: 'my-holdings', loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule' }
 
         ]

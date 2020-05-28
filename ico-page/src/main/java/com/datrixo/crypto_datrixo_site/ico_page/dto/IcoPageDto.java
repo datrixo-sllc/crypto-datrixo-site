@@ -11,6 +11,7 @@ import java.util.List;
 public class IcoPageDto {
     private String totalSupplyTokens;
     private String soldTokens;
+    private String soldEquity;
     private String holdersCount;
     private List<HolderDto> holders;
 
@@ -28,6 +29,14 @@ public class IcoPageDto {
 
     public void setSoldTokens(String soldTokens) {
         this.soldTokens = soldTokens;
+    }
+
+    public String getSoldEquity() {
+        return soldEquity;
+    }
+
+    public void setSoldEquity(String soldEquity) {
+        this.soldEquity = soldEquity;
     }
 
     public String getHoldersCount() {
