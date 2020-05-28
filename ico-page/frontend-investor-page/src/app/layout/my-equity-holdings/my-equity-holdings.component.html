@@ -1,0 +1,14 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'My Equity Holdings'" [icon]="'fa-money'"></app-page-header>
+        <div class="row">
+            <div class="container mx-auto">
+                <div class="row">
+                    <div class="container">
+                        <div class="text-center" *ngIf="holders">
+                            <app-my-equity-holding-datatable [holders]="holders"></app-my-equity-holding-datatable>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
