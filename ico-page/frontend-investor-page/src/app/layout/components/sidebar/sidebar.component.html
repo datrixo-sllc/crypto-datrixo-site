@@ -15,7 +15,7 @@
             </a>
             <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
-                <span>{{ 'My Holdings' | translate }}</span>
+                <span>{{ 'My DRXT Holdings' | translate }}</span>
             </a>
         </div>
         <div *ngIf="app.localStorageItem('userRole') === 'USER_TRADITIONAL'">

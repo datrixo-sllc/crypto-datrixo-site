@@ -12,7 +12,8 @@ const routes: Routes = [
             { path: 'investor-profile', loadChildren: './investor-profile/investor-profile.module#InvestorProfileModule' },
             { path: 'invest', loadChildren: './invest/invest.module#InvestModule' },
             { path: 'invest-in-equity', loadChildren: './invest-in-equity/invest-in-equity.module#InvestInEquityModule' },
-            { path: 'my-holdings', loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule' }
+            { path: 'my-holdings', loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule' },
+            { path: 'my-equity-holdings', loadChildren: './my-equity-holdings/my-equity-holdings.module#MyEquityHoldingsModule' }
 
         ]
     }
