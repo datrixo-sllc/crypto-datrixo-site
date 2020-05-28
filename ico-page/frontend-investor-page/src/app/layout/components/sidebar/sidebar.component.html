@@ -4,11 +4,11 @@
             <i class="fa fa-fw fa-diamond"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
         </a>
+        <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-user"></i>&nbsp;
+            <span>{{ 'Investor Profile' | translate }}</span>
+        </a>
         <div *ngIf="app.localStorageItem('userRole') === 'USER_CRYPTO'">
-            <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
-                <i class="fa fa-fw fa-user"></i>&nbsp;
-                <span>{{ 'Investor Profile' | translate }}</span>
-            </a>
             <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-fw fa-money"></i>&nbsp;
                 <span>{{ 'Invest DRXT' | translate }}</span>
@@ -19,15 +19,11 @@
             </a>
         </div>
         <div *ngIf="app.localStorageItem('userRole') === 'USER_TRADITIONAL'">
-            <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
-                <i class="fa fa-fw fa-user"></i>&nbsp;
-                <span>{{ 'Investor Profile' | translate }}</span>
-            </a>
-            <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <a [routerLink]="['/invest-in-equity']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-fw fa-money"></i>&nbsp;
                 <span>{{ 'Buy Datrixo Equity' | translate }}</span>
             </a>
-            <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <a [routerLink]="['/my-equity-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
                 <span>{{ 'My Equity Holdings' | translate }}</span>
             </a>

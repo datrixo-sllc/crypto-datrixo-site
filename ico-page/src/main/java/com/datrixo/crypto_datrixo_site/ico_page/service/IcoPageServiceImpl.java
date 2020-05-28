@@ -26,8 +26,12 @@ public class IcoPageServiceImpl implements IcoPageService {
         BigInteger totalShareTokens = holders.stream()
                 .map(Holder::getShareTokens)
                 .reduce(BigInteger.ZERO, BigInteger::add);
+        double share = holders.stream()
+                .map(Holder::getShare)
+                .reduce(0d, Double::sum);
         IcoPageDto icoPageDto = new IcoPageDto();
         icoPageDto.setTotalSupplyTokens(String.valueOf(holderService.getTotalSupply()));
+        icoPageDto.setSoldEquity(String.valueOf(share));
         icoPageDto.setSoldTokens(String.valueOf(totalShareTokens));
         icoPageDto.setHoldersCount(String.valueOf(holders.size()));
         List<HolderDto> holderDtoList = new ArrayList<>();
