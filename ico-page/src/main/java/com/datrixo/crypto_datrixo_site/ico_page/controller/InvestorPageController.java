@@ -10,6 +10,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserPassword;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
@@ -102,11 +103,11 @@ public class InvestorPageController {
     UserDto getUserData() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         MediUser currentUser = (MediUser)auth.getPrincipal();
-        Optional<User> optionalUser = userService.findByUsername(currentUser.getUsername());
+        User user = userService.findByUsernameWithImage(currentUser.getUsername());
         UserDto userDto = null;
-        if (optionalUser.isPresent()) {
-            User user = optionalUser.get();
-            userDto = new UserDto(user.getUsername(), user.getRole().name(), user.getTitle().name(), user.getFirstName(), user.getLastName(),
+        if (user != null) {
+            userDto = new UserDto(user.getUsername(), user.getRole().name(), user.getTitle().name(),
+                    user.getFirstName(), user.getLastName(),
                     user.getPhone(),
                     user.getOrganization() != null ? user.getOrganization().getCompanyName() : "",
                     user.getOrganization() != null ? user.getOrganization().getIncorporateDate() : null,
@@ -117,7 +118,8 @@ public class InvestorPageController {
                     user.getOrganization() != null ? user.getOrganization().getZip() : "",
                     user.getOrganization() != null ? user.getOrganization().getCountry() != null ?
                             user.getOrganization().getCountry().getName() : ""
-                            : ""
+                            : "",
+                    user.getImageContent() != null ? user.getImageContent().getContent() : null
                     );
         } else {
             throw new UsernameNotFoundException("user not found");
@@ -125,13 +127,18 @@ public class InvestorPageController {
         return userDto;
     }
 
-    @PostMapping(value = "/update-user-data")
-    public @ResponseBody String updateUser(@RequestBody RequestUpdateUserData updateUserData) {
-        User currentUser = userService.updateUser(updateUserData);
+    @PutMapping(value = "/update-user-data")
+    public ResponseEntity<Void> updateUser(@RequestParam(required = false, name="file") MultipartFile file,
+                                           @RequestParam("userdata") String userdata) throws IOException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        RequestUpdateUserData updateUserData = mapper.readValue(userdata, RequestUpdateUserData.class);
+
+        User currentUser = userService.updateUser(file, updateUserData);
         if (currentUser == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         } else {
-            return "User data is updated";
+            return ResponseEntity.noContent().build();
         }
     }
     @PostMapping(value = "/update-user-password")

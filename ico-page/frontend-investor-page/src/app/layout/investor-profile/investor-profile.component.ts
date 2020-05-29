@@ -8,6 +8,7 @@ import {RequestUpdateUserData} from './request-update-user-data';
 import {RequestUpdateUserPassword} from './request-update-user-password';
 import {Router} from '@angular/router';
 import * as Noty from 'noty';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
     selector: 'app-investor-profile',
@@ -41,11 +42,13 @@ export class InvestorProfileComponent implements OnInit {
         private investorProfileService: InvestorProfileService,
         private modalService: NgbModal,
         private spinner: NgxSpinnerService,
-        private router: Router
+        private router: Router,
+        private sanitizer: DomSanitizer
     ) {
     }
 
     ngOnInit() {
+        this.clearUploadParams();
         this.getUserData();
     }
 
@@ -56,6 +59,9 @@ export class InvestorProfileComponent implements OnInit {
             .toPromise()
             .then((response: any) => {
                     this.userData = response as RespUserData;
+                    if (this.userData.imageContent) {
+                        this.imgSrc = this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + this.userData.imageContent);
+                    }
                     this.alertBody = 'Successfully loaded';
                         this.spinner.hide();
                     this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
@@ -97,6 +103,7 @@ export class InvestorProfileComponent implements OnInit {
     }
 
     onReset() {
+        this.clearUploadParams();
         this.getUserData();
 
     }
@@ -115,9 +122,11 @@ export class InvestorProfileComponent implements OnInit {
         request.lastName = this.userData.lastName;
         request.phone = this.userData.phone;
         this.alertTitle = 'Investor Profile Update';
-        this.investorProfileService.updateUserData(request)
+        this.spinner.show();
+        this.investorProfileService.updateUserData(this.fileToUpload, request)
             .toPromise()
             .then((response: any) => {
+                    this.clearUploadParams();
                     this.spinner.hide();
                     this.alertBody = 'Successfully updated';
                     // this.modal = this.modalService.open(this.templateAlertRef);
@@ -130,6 +139,12 @@ export class InvestorProfileComponent implements OnInit {
                     // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 });
+    }
+
+    clearUploadParams() {
+        this.fileToUpload = null;
+        this.imgSrc = null;
+        this.uploadEl.nativeElement.value = null;
     }
 
     checkPasswordContent(): boolean {

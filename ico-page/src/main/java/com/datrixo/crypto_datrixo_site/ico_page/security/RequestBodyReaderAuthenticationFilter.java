@@ -47,10 +47,10 @@ public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthe
                 throw new AuthenticationCredentialsNotFoundException(StatusResponseAuth.PASSWORD_INVALID.toString());
             }
 
-            Optional<User> optionalUser = userService.findByUsername(username);
-            if (!optionalUser.isPresent()) {
+            User user = userService.findByUsername(username);
+            if (user == null) {
                 throw new UsernameNotFoundException(StatusResponseAuth.LOGIN_NOT_FOUND.toString());
-            } else if (!optionalUser.get().getPassword().equals(password)) {
+            } else if (!user.getPassword().equals(password)) {
                 throw new AuthenticationCredentialsNotFoundException(StatusResponseAuth.PASSWORD_INVALID.toString());
             }
 
