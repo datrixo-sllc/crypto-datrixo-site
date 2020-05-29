@@ -5,46 +5,61 @@
             <h4>Personal Information</h4>
             <form role="form">
                 <div class="row">
-                    <!--<div class="col-lg-1">
-                        <fieldset class="form-group">
-                            <label>Title</label>
-                            <select class="form-control" [(ngModel)]="userData.title" name="title">
-                                <option value="MR">Mr.</option>
-                                <option value="MRS">Mrs.</option>
-                            </select>
-                        </fieldset>
-                    </div>-->
-                    <div class="col-lg-3">
-                        <fieldset class="form-group">
-                            <label>First Name</label>
-                            <input class="form-control" [(ngModel)]="userData.firstName" name="firstName" />
-                        </fieldset>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <!--<div class="col-lg-1">
+                                <fieldset class="form-group">
+                                    <label>Title</label>
+                                    <select class="form-control" [(ngModel)]="userData.title" name="title">
+                                        <option value="MR">Mr.</option>
+                                        <option value="MRS">Mrs.</option>
+                                    </select>
+                                </fieldset>
+                            </div>-->
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>First Name</label>
+                                    <input class="form-control" [(ngModel)]="userData.firstName" name="firstName"/>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Last Name</label>
+                                    <input class="form-control" [(ngModel)]="userData.lastName" name="lastName"/>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Business Email</label>
+                                    <input class="form-control" [value]="userData.username" disabled/>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Phone</label>
+                                    <input class="form-control" [(ngModel)]="userData.phone" name="phone"/>
+                                </fieldset>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-3">
-                        <fieldset class="form-group">
-                            <label>Last Name</label>
-                            <input class="form-control"[(ngModel)]="userData.lastName"name="lastName" />
-                        </fieldset>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <fieldset class="form-group">
-                            <label>Business Email</label>
-                            <input class="form-control" [value]="userData.username" disabled />
-                        </fieldset>
-                    </div>
-                    <div class="col-lg-3">
-                        <fieldset class="form-group">
-                            <label>Phone</label>
-                            <input class="form-control" [(ngModel)]="userData.phone" name="phone" />
-                        </fieldset>
+                    <div class="col-6 col-lg-3 col-xl-2 col-sm-4">
+                        <div class="text-center mb-2">
+                            <img [src]="imgSrc || '/assets/images/placeholder.png'" class="img-fluid" alt=""
+                                 name="imgToUpload">
+                        </div>
+                        <div class="text-center col-lg-12 mx-auto">
+                            <input #uploadFile type="file" class="form-control-file mt-1" id="agreementFile"
+                                   (change)="handleFileInput($event.target.files)"/>
+                        </div>
+
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-lg-12">
             <h4>Company Information</h4>
             <form role="form">
@@ -52,7 +67,8 @@
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Company Name</label>
-                            <input class="form-control" [(ngModel)]="userData.organizationName" disabled name="organizationName" />
+                            <input class="form-control" [(ngModel)]="userData.organizationName" disabled
+                                   name="organizationName"/>
                         </fieldset>
                     </div>
                     <div class="col-lg-3">
@@ -61,13 +77,14 @@
                             <input class="form-control"
                                    [ngModel]="userData.incorporateDate | date:'yyyy-MM-dd'"
                                    (ngModelChange)="userData.incorporateDate = $event"
-                                   disabled name="incorporateDate" />
+                                   disabled name="incorporateDate"/>
                         </fieldset>
                     </div>
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Phone</label>
-                            <input class="form-control" [(ngModel)]="userData.organizationPhone" disabled name="organizationPhone" />
+                            <input class="form-control" [(ngModel)]="userData.organizationPhone" disabled
+                                   name="organizationPhone"/>
                         </fieldset>
                     </div>
                 </div>
@@ -75,25 +92,26 @@
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Street Address</label>
-                            <input class="form-control" [(ngModel)]="userData.streetAddress" disabled name="streetAddress" />
+                            <input class="form-control" [(ngModel)]="userData.streetAddress" disabled
+                                   name="streetAddress"/>
                         </fieldset>
                     </div>
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>City</label>
-                            <input class="form-control" [(ngModel)]="userData.city" disabled name="city" />
+                            <input class="form-control" [(ngModel)]="userData.city" disabled name="city"/>
                         </fieldset>
                     </div>
                     <div class="col-lg-2">
                         <fieldset class="form-group">
                             <label>State</label>
-                            <input class="form-control" [(ngModel)]="userData.state" disabled name="state" />
+                            <input class="form-control" [(ngModel)]="userData.state" disabled name="state"/>
                         </fieldset>
                     </div>
                     <div class="col-lg-2">
                         <fieldset class="form-group">
                             <label>Zip</label>
-                            <input class="form-control" [(ngModel)]="userData.zip" disabled name="zip" />
+                            <input class="form-control" [(ngModel)]="userData.zip" disabled name="zip"/>
                         </fieldset>
                     </div>
                 </div>
@@ -101,12 +119,18 @@
                     <div class="col-lg-3">
                         <fieldset class="form-group">
                             <label>Country</label>
-                            <input class="form-control" [(ngModel)]="userData.country" disabled name="country" />
+                            <input class="form-control" [(ngModel)]="userData.country" disabled name="country"/>
                         </fieldset>
                     </div>
                 </div>
-                <button type="submit" class="mr-2 btn btn-secondary" (click)="onConfirmUpdateUserData()">Save Profile</button>
-                <button type="reset" class="btn btn-secondary" (click)="onReset()">Reset to Original</button>
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+                        <button type="submit" class="mr-2 btn btn-secondary" (click)="onConfirmUpdateUserData()">Save
+                            Profile
+                        </button>
+                        <button type="reset" class="btn btn-secondary" (click)="onReset()">Reset to Original</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -126,24 +150,28 @@
                             <div class="col-lg-12">
                                 <fieldset class="form-group">
                                     <label>New Password</label>
-                                    <input type="password" [(ngModel)]="newPassword" name="newPassword" #newPasswordF="ngModel" class="form-control" required />
+                                    <input type="password" [(ngModel)]="newPassword" name="newPassword"
+                                           #newPasswordF="ngModel" class="form-control" required/>
                                     <div *ngIf="!newPasswordF.valid" class="help-block">Field is required</div>
-                                    <div *ngIf="!checkPasswordContent()" class="help-block">Password must contain at least 1 lowercase alphabetical character, <br />
-                                                                                            must contain at least 1 uppercase alphabetical character, <br />
-                                                                                            must contain at least 1 numeric character, <br />
-                                                                                            must contain at least one special character in list: !@#$%^&* <br />
-                                                                                            and must be eight characters or longer.
+                                    <div *ngIf="!checkPasswordContent()" class="help-block">Password must contain at
+                                        least 1 lowercase alphabetical character, <br/>
+                                        must contain at least 1 uppercase alphabetical character, <br/>
+                                        must contain at least 1 numeric character, <br/>
+                                        must contain at least one special character in list: !@#$%^&* <br/>
+                                        and must be eight characters or longer.
                                     </div>
                                 </fieldset>
                                 <fieldset class="form-group">
                                     <label>Reenter New Password</label>
-                                    <input type="password" [(ngModel)]="newPasswordReent" name="newPasswordReent" #newPasswordReentF="ngModel" class="form-control"  required />
+                                    <input type="password" [(ngModel)]="newPasswordReent" name="newPasswordReent"
+                                           #newPasswordReentF="ngModel" class="form-control" required/>
                                     <div *ngIf="!newPasswordReentF.valid" class="help-block">Field is required</div>
                                     <div *ngIf="!checkPassword()" class="help-block">Reenter password is not same</div>
                                 </fieldset>
                                 <fieldset class="form-group">
                                     <label>Current Password</label>
-                                    <input type="password" [(ngModel)]="currentPassword" name="currentPassword" #currentPasswordF="ngModel" class="form-control"  required />
+                                    <input type="password" [(ngModel)]="currentPassword" name="currentPassword"
+                                           #currentPasswordF="ngModel" class="form-control" required/>
                                     <div *ngIf="!currentPasswordF.valid" class="help-block">Field is required</div>
                                 </fieldset>
                             </div>
@@ -152,7 +180,9 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                         <button type="button" class="btn btn-primary" ngbAutofocus (click)="f.ngSubmit.emit()"
-                                [disabled]="!f.form.valid || !checkPassword() || !checkPasswordContent()">Change Password</button>
+                                [disabled]="!f.form.valid || !checkPassword() || !checkPasswordContent()">Change
+                            Password
+                        </button>
                     </div>
                 </form>
             </ng-template>
@@ -186,7 +216,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
-            <button type="button" class="btn btn-primary" ngbAutofocus (click)="onUpdateUserData()" >Save</button>
+            <button type="button" class="btn btn-primary" ngbAutofocus (click)="onUpdateUserData()">Save</button>
         </div>
     </ng-template>
 
@@ -202,7 +232,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
-            <button type="button" class="btn btn-primary" ngbAutofocus (click)="onResetPassword()" >Save</button>
+            <button type="button" class="btn btn-primary" ngbAutofocus (click)="onResetPassword()">Save</button>
         </div>
     </ng-template>
 
