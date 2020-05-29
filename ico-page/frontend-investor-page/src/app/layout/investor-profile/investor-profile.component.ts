@@ -1,4 +1,4 @@
-import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {NgxSpinnerService} from 'ngx-spinner';
@@ -31,6 +31,10 @@ export class InvestorProfileComponent implements OnInit {
     confirmTitle: string;
     alertBody: string;
     confirmBody: string;
+
+    fileToUpload: File = null;
+    imgSrc: any;
+    @ViewChild('uploadFile') uploadEl: ElementRef;
 
 
     constructor(
@@ -202,4 +206,13 @@ export class InvestorProfileComponent implements OnInit {
             localStorage.removeItem('isLoggedin');
         }
     }
+
+    handleFileInput(files: FileList) {
+        this.fileToUpload = files.item(0);
+        const reader = new FileReader();
+        // @ts-ignore
+        reader.onload = ev => this.imgSrc = reader.result;
+        reader.readAsDataURL(this.fileToUpload);
+    }
+
 }
