@@ -17,4 +17,5 @@ export class RespUserData {
     zip: string;
     state: string;
     country: string;
+    imageContent: any;
 }

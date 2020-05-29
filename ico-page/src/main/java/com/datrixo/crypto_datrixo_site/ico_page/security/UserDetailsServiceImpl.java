@@ -17,10 +17,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        Optional<User> optionalUser = userService.findByUsername(username);
-        if (optionalUser.isPresent()) {
-            return new MediUser(optionalUser.get().getUsername(), optionalUser.get().getPassword(),
-                    optionalUser.get().getRole(), optionalUser.get().getAccounts());
+        User user = userService.findByUsername(username);
+        if (user != null) {
+            return new MediUser(user.getUsername(), user.getPassword(),
+                    user.getRole(), user.getAccounts());
         } else {
             throw new UsernameNotFoundException("user not found");
         }

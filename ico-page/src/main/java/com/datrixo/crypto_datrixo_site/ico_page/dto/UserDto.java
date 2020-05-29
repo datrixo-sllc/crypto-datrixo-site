@@ -22,13 +22,14 @@ public class UserDto {
     private String state;
     private String zip;
     private String country;
+    private byte[] imageContent;
 
     public UserDto() {
     }
 
     public UserDto(String username, String role, String title, String firstName, String lastName, String phone,
                    String organizationName, Date incorporateDate, String organizationPhone,
-                   String streetAddress, String city, String state, String zip, String country) {
+                   String streetAddress, String city, String state, String zip, String country, byte[] imageContent) {
         this.username = username;
         this.role = role;
         this.title = title;
@@ -43,6 +44,7 @@ public class UserDto {
         this.state = state;
         this.zip = zip;
         this.country = country;
+        this.imageContent = imageContent;
     }
 
     public String getUsername() {
@@ -155,5 +157,13 @@ public class UserDto {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public byte[] getImageContent() {
+        return imageContent;
+    }
+
+    public void setImageContent(byte[] imageContent) {
+        this.imageContent = imageContent;
     }
 }

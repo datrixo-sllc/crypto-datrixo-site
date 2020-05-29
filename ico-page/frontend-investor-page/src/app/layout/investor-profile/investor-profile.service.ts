@@ -7,9 +7,10 @@ import {Inject, Injectable} from '@angular/core';
 import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {RequestUpdateUserData} from './request-update-user-data';
 import {RequestUpdateUserPassword} from './request-update-user-password';
+import {RequestOptions} from '@angular/http';
 
 @Injectable()
 export class InvestorProfileService {
@@ -33,11 +34,25 @@ export class InvestorProfileService {
             .get(url, {withCredentials: true});
     }
 
-    updateUserData(request: RequestUpdateUserData): Observable<any> {
+    updateUserData(fileToUpload: File, request: RequestUpdateUserData): Observable<any> {
         const url = this.config.apiEndpoint + InvestorProfileService.INVESTOR + InvestorProfileService.SLASH +
             InvestorProfileService.UPDATE_USER_DATA;
-        return this.http
+        return this.putDataToURL(url, fileToUpload, request);
+        /*return this.http
             .post(url, request, {withCredentials: true, responseType: 'text'} );
+    */
+    }
+
+    private putDataToURL(url: string, fileToUpload: File, request: RequestUpdateUserData): Observable<any> {
+        const formData: FormData = new FormData();
+        if (fileToUpload != null) {
+            formData.append('file', fileToUpload, fileToUpload.name);
+        }
+        formData.append('userdata', JSON.stringify(request));
+        const headers = new HttpHeaders()
+            /*.set('content-type', 'multipart/form-data')*/;
+        return this.http.put(url, formData, {withCredentials: true, headers: headers});
+
     }
 
     updateUserPassword(request: RequestUpdateUserPassword): Observable<any> {

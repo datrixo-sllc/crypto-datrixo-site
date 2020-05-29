@@ -31,6 +31,9 @@ public class User extends AbstractPersistable<Long> {
     private String firstName;
     private String lastName;
     private String phone;
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "image_content_id")
+    private ImageContent imageContent;
     @ManyToOne(fetch = FetchType.EAGER,cascade = {})
     @JoinColumn(name = "organization_id")
     private Organization organization;
@@ -102,6 +105,14 @@ public class User extends AbstractPersistable<Long> {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public ImageContent getImageContent() {
+        return imageContent;
+    }
+
+    public void setImageContent(ImageContent imageContent) {
+        this.imageContent = imageContent;
     }
 
     public Organization getOrganization() {
