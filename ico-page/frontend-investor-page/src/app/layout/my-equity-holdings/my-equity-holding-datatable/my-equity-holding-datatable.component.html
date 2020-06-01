@@ -3,17 +3,27 @@
     class='bootstrap'
     style="margin-top: 1.2em; word-wrap: break-word; white-space: normal;"
     [columnMode]="'force'"
-    [headerHeight]="20"
+    [headerHeight]="'auto'"
     [footerHeight]="20"
     [rowHeight]="'auto'"
     [limit]="10"
     [rows]='rows'>
-    <ngx-datatable-column name="address">
-        <ng-template let-column="column" ngx-datatable-header-template>
-            <div class="header-class"></div>
+
+    <!-- Row Detail Template -->
+    <ngx-datatable-row-detail [rowHeight]="'auto'"
+                              #myDetailRow (toggle)="onDetailToggle($event)">
+        <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
+            <div><a href="javascript:void(0)">Document 1</a></div>
+            <div><a href="javascript:void(0)">Document 1</a></div>
         </ng-template>
-        <ng-template let-row="row" ngx-datatable-cell-template>
-            <a href="https://etherscan.io/address/{{row.address}}" target="_blank"><i class="fa fa-external-link-square"></i></a>
+    </ngx-datatable-row-detail>
+
+    <ngx-datatable-column name="asset">
+        <ng-template let-column="column" ngx-datatable-header-template>
+            <div class="header-class">Asset</div>
+        </ng-template>
+        <ng-template let-row="row " ngx-datatable-cell-template>
+            Datrixo Equity
         </ng-template>
     </ngx-datatable-column>
     <ngx-datatable-column name="timeDate">
@@ -24,12 +34,60 @@
             {{row.timeDate | date}}
         </ng-template>
     </ngx-datatable-column>
-    <ngx-datatable-column name="share">
+    <ngx-datatable-column name="shareTokens">
         <ng-template let-column="column" ngx-datatable-header-template>
-            <div class="header-class">Equity (%)</div>
+            <div class="header-class">Equity Units (Equity %)</div>
         </ng-template>
         <ng-template let-row="row" ngx-datatable-cell-template>
-            {{row.share}}
+            {{row.shareTokens}} ({{row.share}})
+        </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="paidPrice">
+        <ng-template let-column="column" ngx-datatable-header-template>
+            <div class="header-class">Paid Price</div>
+        </ng-template>
+        <ng-template let-row="row" ngx-datatable-cell-template>
+
+        </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="valuePerToken">
+        <ng-template let-column="column" ngx-datatable-header-template>
+            <div class="header-class">Value per Unit</div>
+        </ng-template>
+        <ng-template let-row="row" ngx-datatable-cell-template>
+            $300
+        </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="totalValueEstimate">
+        <ng-template let-column="column" ngx-datatable-header-template>
+            <div class="header-class">Total Ownership Estimate</div>
+        </ng-template>
+        <ng-template let-row="row" ngx-datatable-cell-template>
+            ${{300 * row.shareTokens}}
+        </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="docs">
+        <ng-template let-column="column" ngx-datatable-header-template>
+            <div class="header-class">Docs</div>
+        </ng-template>
+        <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+            <i class="fa fa-briefcase"></i>&nbsp;
+            <a onMouseOver="style='text-decoration:none'"
+               href="javascript:void(0)"
+               [class.datatable-icon-right]="!expanded"
+               [class.datatable-icon-down]="expanded"
+               title="Expand/Collapse Documents"
+               (click)="toggleExpandRow(row)"
+            >
+            </a>
+        </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="address">
+        <ng-template let-column="column" ngx-datatable-header-template>
+            <div class="header-class">Public Ledger</div>
+        </ng-template>
+        <ng-template let-row="row" ngx-datatable-cell-template>
+            <a href="https://etherscan.io/address/{{row.address}}" target="_blank" class="button">View ></a>
         </ng-template>
     </ngx-datatable-column>
 </ngx-datatable>
