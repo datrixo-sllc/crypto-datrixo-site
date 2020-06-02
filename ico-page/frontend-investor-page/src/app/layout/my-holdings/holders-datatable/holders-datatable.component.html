@@ -19,7 +19,7 @@
             </ng-template>
         </ngx-datatable-row-detail>
 
-        <ngx-datatable-column name="asset" [width]="100">
+        <ngx-datatable-column name="asset">
             <ng-template let-column="column" ngx-datatable-header-template>
                 <div class="header-class">Asset</div>
             </ng-template>
@@ -27,7 +27,7 @@
                 Datrixo Equity
             </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column name="address" [width]="220" [style]="'word-break: break-all;'">
+        <ngx-datatable-column name="address" [style]="'word-break: break-all;'">
             <ng-template let-column="column" ngx-datatable-header-template>
                 <div class="header-class">Address</div>
             </ng-template>
@@ -38,7 +38,7 @@
                     {{row.address | slice:0:10}}...</a>
             </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column name="timeDate" [width]="100">
+        <ngx-datatable-column name="timeDate">
             <ng-template let-column="column" ngx-datatable-header-template>
                 <div class="header-class">Date</div>
             </ng-template>
