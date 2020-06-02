@@ -7,13 +7,13 @@
 }
 
 :host ::ng-deep .datatable-body-cell {
-    text-align: right !important;
+    text-align: center !important;
 }
 
 :host ::ng-deep .datatable-header-cell {
     word-wrap: break-word !important;
     text-align: center !important;
-    padding: 0 1em !important;
+    padding: 0 0.75em !important;
 }
 
 :host ::ng-deep .datatable-header-cell-template-wrap {
@@ -23,7 +23,7 @@
 }
 
 :host ::ng-deep .datatable-row-detail {
-    text-align: right !important;
-    padding: 1em !important;
+    text-align: center !important;
+    padding: 0.75em !important;
     width: 98% !important;
 }
