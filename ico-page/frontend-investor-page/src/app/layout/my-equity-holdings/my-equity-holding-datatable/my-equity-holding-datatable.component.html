@@ -37,7 +37,7 @@
         </ngx-datatable-column>
         <ngx-datatable-column name="shareTokens">
             <ng-template let-column="column" ngx-datatable-header-template>
-                <div class="header-class">Equity Units (Equity %)</div>
+                <div class="header-class">Equity Units (%)</div>
             </ng-template>
             <ng-template let-row="row" ngx-datatable-cell-template>
                 <strong>{{row.shareTokens | number}}</strong> ({{row.share}}%)
@@ -61,7 +61,7 @@
         </ngx-datatable-column>
         <ngx-datatable-column name="totalValueEstimate">
             <ng-template let-column="column" ngx-datatable-header-template>
-                <div class="header-class">Total Ownership Estimate</div>
+                <div class="header-class">Total Ownership Value Estimate</div>
             </ng-template>
             <ng-template let-row="row" ngx-datatable-cell-template>
                 ${{(300 * row.shareTokens) | number:'1.1-2'}}
