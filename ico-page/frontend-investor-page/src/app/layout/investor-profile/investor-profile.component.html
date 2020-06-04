@@ -45,15 +45,18 @@
                         </div>
                     </div>
                     <div class="col-6 col-lg-3 col-xl-2 col-sm-4">
-                        <div class="text-center mb-2">
-                            <img [src]="imgSrc || '/assets/images/placeholder.png'" class="img-fluid" alt=""
-                                 name="imgToUpload">
-                        </div>
-                        <div class="text-center col-lg-12 mx-auto">
-                            <input #uploadFile type="file" class="form-control-file mt-1" id="agreementFile"
-                                   (change)="handleFileInput($event.target.files)"/>
-                        </div>
-
+                        <fieldset class="form-group">
+                            <label>Image or Corp Logo</label>
+                            <div class="text-center mb-2 w-75">
+                                <img [src]="imgSrc || '/assets/images/placeholder.png'" class="img-fluid" alt=""
+                                     name="imgToUpload">
+                            </div>
+                            <div class="text-center">
+                                <input #uploadFile type="file" class="form-control-file form-control-sm mt-1"
+                                       id="agreementFile"
+                                       (change)="handleFileInput($event.target.files)"/>
+                            </div>
+                        </fieldset>
                     </div>
                 </div>
             </form>
