@@ -3,6 +3,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.controller;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.UserDto;
+import com.datrixo.crypto_datrixo_site.ico_page.dto.UserMainDataDto;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
@@ -55,6 +56,8 @@ public class InvestorPageController {
     IcoPageService icoPageService;
     @Autowired
     UserService userService;
+
+    private final static int UNIT_VALUE = 300;
 
     @RequestMapping(value = "/ppm", method = RequestMethod.GET)
     public ResponseEntity<Resource> getIcoPage() throws IOException {
@@ -146,5 +149,15 @@ public class InvestorPageController {
         return userService.updateUserPassword(updateUserPassword);
     }
 
+    @GetMapping(value = "/user-main-data", produces = "application/json")
+    public @ResponseBody
+    UserMainDataDto getUserMainData() {
+        IcoPageDto icoPageDto = getHoldings();
+
+        Integer shareTokens = icoPageDto.getHolders().parallelStream()
+                .reduce(0, (partialResult, holder) -> Integer.valueOf(holder.getShareTokens()), Integer::sum);
+        return new UserMainDataDto(shareTokens * UNIT_VALUE, 0,
+                shareTokens * UNIT_VALUE, 0);
+    }
 
 }

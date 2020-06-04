@@ -1,3 +1,23 @@
 <div [@routerTransition]>
 <app-page-header [heading]="'Dashboard'" [icon]="'fa-diamond'"></app-page-header>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">Total Invested</div>
+                <div class="card-body">
+                    <h2 class="card-title">${{userData.totalInvestedInt | number}}<small>.{{userData.totalInvestedDec}}</small></h2>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Current Value Estimate</div>
+                <div class="card-body">
+                    <h2 class="card-title">${{userData.valueEstimateInt | number}}<small>.{{userData.valueEstimateDec}}</small></h2>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
