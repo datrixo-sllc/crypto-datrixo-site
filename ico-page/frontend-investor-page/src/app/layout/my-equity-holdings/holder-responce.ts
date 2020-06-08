@@ -7,5 +7,6 @@ export class HolderResponce {
   address: string;
   timeDate: Date;
   shareTokens: string;
+  paidPrice: string;
   share: string;
 }
