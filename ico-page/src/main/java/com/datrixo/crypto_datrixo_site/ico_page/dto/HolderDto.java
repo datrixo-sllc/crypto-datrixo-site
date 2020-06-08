@@ -11,15 +11,17 @@ public class HolderDto {
     private String address;
     private Date timeDate;
     private String shareTokens;
+    private String paidPrice;
     private String share;
 
     public HolderDto() {
     }
 
-    public HolderDto(String address, Date timeDate, String shareTokens, String share) {
+    public HolderDto(String address, Date timeDate, String shareTokens, String paidPrice, String share) {
         this.address = address;
         this.timeDate = timeDate;
         this.shareTokens = shareTokens;
+        this.paidPrice = paidPrice;
         this.share = share;
     }
 
@@ -45,6 +47,14 @@ public class HolderDto {
 
     public void setShareTokens(String shareTokens) {
         this.shareTokens = shareTokens;
+    }
+
+    public String getPaidPrice() {
+        return paidPrice;
+    }
+
+    public void setPaidPrice(String paidPrice) {
+        this.paidPrice = paidPrice;
     }
 
     public String getShare() {

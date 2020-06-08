@@ -4,6 +4,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -18,15 +19,17 @@ public class Holder extends AbstractPersistable<Long> {
     private String address;
     private Date timeDate;
     private BigInteger shareTokens;
+    private BigDecimal paidPrice;
     private double share;
 
     public Holder() {
     }
 
-    public Holder(String address, Date timeDate, BigInteger shareTokens, double share) {
+    public Holder(String address, Date timeDate, BigInteger shareTokens, BigDecimal paidPrice, double share) {
         this.address = address;
         this.timeDate = timeDate;
         this.shareTokens = shareTokens;
+        this.paidPrice = paidPrice;
         this.share = share;
     }
 
@@ -48,6 +51,14 @@ public class Holder extends AbstractPersistable<Long> {
 
     public BigInteger getShareTokens() {
         return shareTokens;
+    }
+
+    public BigDecimal getPaidPrice() {
+        return paidPrice;
+    }
+
+    public void setPaidPrice(BigDecimal paidPrice) {
+        this.paidPrice = paidPrice;
     }
 
     public void setShareTokens(BigInteger shareTokens) {

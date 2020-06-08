@@ -44,11 +44,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors()
 
                 // for h2 console - comment for production
-                .and()
-                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
-                .and()
-                .headers().frameOptions().sameOrigin()
-                //
+                // .and()
+                // .authorizeRequests().antMatchers("/h2-console/**").permitAll()
+                // .and()
+                // .headers().frameOptions().sameOrigin()
+                // -------
                 .and()
                 .authorizeRequests()
                 .antMatchers("/ico/**").permitAll()
