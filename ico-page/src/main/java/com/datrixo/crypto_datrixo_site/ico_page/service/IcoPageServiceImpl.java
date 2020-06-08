@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,8 @@ import java.util.List;
 public class IcoPageServiceImpl implements IcoPageService {
     @Autowired
     private HolderService holderService;
-    private static DecimalFormat df2 = new DecimalFormat("#.00");
+    private static DecimalFormat df2 = new DecimalFormat("0.00");
+    private static DecimalFormat df1 = new DecimalFormat("0.0");
 
     @Override
     public IcoPageDto getAllData() {
@@ -39,7 +41,8 @@ public class IcoPageServiceImpl implements IcoPageService {
         List<HolderDto> holderDtoList = new ArrayList<>();
         holders.forEach(holder -> {
             HolderDto holderDto = new HolderDto(holder.getAddress(), holder.getTimeDate(),
-                    String.valueOf(holder.getShareTokens()), df2.format(holder.getShare()));
+                    String.valueOf(holder.getShareTokens()), df1.format(holder.getPaidPrice()),
+                    df2.format(holder.getShare()));
             holderDtoList.add(holderDto);
         });
         icoPageDto.setHolders(holderDtoList);

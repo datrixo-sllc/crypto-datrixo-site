@@ -3,6 +3,8 @@ package com.datrixo.crypto_datrixo_site.ico_page.service;
 import com.datrixo.crypto_datrixo_site.ico_page.contract.DatrixoContract;
 import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
 import com.datrixo.crypto_datrixo_site.ico_page.h2.repository.HolderRepository;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.HolderAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -29,6 +31,9 @@ import java.util.List;
 public class HolderServiceImpl implements HolderService {
     @Autowired
     private HolderRepository holderRepository;
+
+    @Autowired
+    private HolderAccountRepository holderAccountRepository;
 
     @Autowired
     private Web3j web3j;
@@ -111,7 +116,16 @@ public class HolderServiceImpl implements HolderService {
                         share = balance.doubleValue() / totalSupply.doubleValue() * 100d;
                     }
                     Date date = new Date(datrixoContract.firstPurchaseTime(s).send().longValue() * 1000);
-                    holderRepository.save(new Holder(s, date, balance, share));
+                    HolderAccount holderAccount = holderAccountRepository.findFirstByAddress(s);
+                    BigDecimal paidPrice = null;
+                    if (holderAccount != null) {
+                        if (!holderAccount.getInitialInvest()) {
+                            paidPrice = holderAccount.getPaidPrice();
+                        } else {
+                            paidPrice = BigDecimal.ZERO;
+                        }
+                    }
+                    holderRepository.save(new Holder(s, date, balance, paidPrice, share));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
