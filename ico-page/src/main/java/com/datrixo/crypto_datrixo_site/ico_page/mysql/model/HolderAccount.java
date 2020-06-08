@@ -3,6 +3,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -18,6 +19,8 @@ public class HolderAccount extends AbstractPersistable<Long> {
     @JoinColumn(name = "user_id")
     private User user;
     private Date createDate;
+    private BigDecimal paidPrice;
+    private Boolean initialInvest;
 
     public String getAddress() {
         return address;
@@ -41,5 +44,21 @@ public class HolderAccount extends AbstractPersistable<Long> {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public BigDecimal getPaidPrice() {
+        return paidPrice;
+    }
+
+    public void setPaidPrice(BigDecimal paidPrice) {
+        this.paidPrice = paidPrice;
+    }
+
+    public Boolean getInitialInvest() {
+        return initialInvest;
+    }
+
+    public void setInitialInvest(Boolean initialInvest) {
+        this.initialInvest = initialInvest;
     }
 }
