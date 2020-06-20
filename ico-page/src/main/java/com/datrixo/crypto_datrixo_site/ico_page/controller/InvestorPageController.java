@@ -154,9 +154,12 @@ public class InvestorPageController {
     UserMainDataDto getUserMainData() {
         IcoPageDto icoPageDto = getHoldings();
 
+        Integer investedTokens = icoPageDto.getHolders().parallelStream()
+                .reduce(0, (partialResult, holder) -> Integer.valueOf(holder.getPaidPrice()), Integer::sum);
+
         Integer shareTokens = icoPageDto.getHolders().parallelStream()
                 .reduce(0, (partialResult, holder) -> Integer.valueOf(holder.getShareTokens()), Integer::sum);
-        return new UserMainDataDto(shareTokens * UNIT_VALUE, 0,
+        return new UserMainDataDto(investedTokens * UNIT_VALUE, 0,
                 shareTokens * UNIT_VALUE, 0);
     }
 
