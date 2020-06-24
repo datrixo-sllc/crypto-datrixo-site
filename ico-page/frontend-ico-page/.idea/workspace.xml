@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c317a48e-93b6-408b-b9d9-213f3ffcc3f1" name="Default Changelist" comment="share to equity" />
+    <list id="606bdd34-1809-4391-9bcd-47b257a99737" name="Revert: invest layout first section" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="SCSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>accests/</find>
+      <find>img/</find>
+      <find>accets</find>
+      <find>download</find>
+      <find>Download</find>
+      <find>features</find>
+      <find>colapse</find>
+      <find>bor</find>
+      <find>#4e555b</find>
+      <find>vendor.js</find>
+      <find>#95999c</find>
+      <find>102</find>
+      <find>section</find>
+      <find>my</find>
+      <find>my-auto</find>
+      <find>.btn</find>
+      <find>.section</find>
+      <find>investment</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>accests/</replace>
+      <replace>accets/</replace>
+      <replace>accets/img/</replace>
+      <replace>assets</replace>
+      <replace>investment</replace>
+      <replace>holders</replace>
+      <replace>#95999c</replace>
+      <replace>#545b62</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectId" id="1VQygOoZaEM7BjFQGmGg0NlWHF2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend-investor-page" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\node_modules\tslint" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../../../../Program Files/nodejs/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\src\app" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\src\assets\vendor" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\src\assets\styles" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\src\assets" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\src\assets" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="install" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="install" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.install" />
+      <item itemvalue="Protractor.E2E Tests" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c317a48e-93b6-408b-b9d9-213f3ffcc3f1" name="Default Changelist" comment="" />
+      <changelist id="606bdd34-1809-4391-9bcd-47b257a99737" name="Revert: invest layout first section" comment="" />
+      <created>1549284718366</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549284718366</updated>
+      <workItem from="1549284722173" duration="1409000" />
+      <workItem from="1549287012181" duration="4929000" />
+      <workItem from="1549296329569" duration="26467000" />
+      <workItem from="1549383463321" duration="4666000" />
+      <workItem from="1551470123083" duration="28521000" />
+      <workItem from="1554803794793" duration="6423000" />
+      <workItem from="1554953149747" duration="599000" />
+      <workItem from="1555068172212" duration="1967000" />
+      <workItem from="1555397671491" duration="750000" />
+      <workItem from="1555700599863" duration="562000" />
+      <workItem from="1555778672705" duration="590000" />
+      <workItem from="1555782617222" duration="598000" />
+      <workItem from="1555807918556" duration="4000" />
+      <workItem from="1555808380395" duration="7000" />
+      <workItem from="1555808439882" duration="12000" />
+      <workItem from="1555808766028" duration="595000" />
+      <workItem from="1555985775351" duration="427000" />
+      <workItem from="1556640961743" duration="61000" />
+      <workItem from="1556811272974" duration="1308000" />
+      <workItem from="1557052209448" duration="9000" />
+      <workItem from="1557160168774" duration="3892000" />
+      <workItem from="1557234786356" duration="1060000" />
+      <workItem from="1557412685505" duration="1246000" />
+      <workItem from="1557422806744" duration="598000" />
+      <workItem from="1557928778691" duration="3102000" />
+      <workItem from="1557976550751" duration="7071000" />
+      <workItem from="1558160210071" duration="89000" />
+      <workItem from="1558365601250" duration="12389000" />
+      <workItem from="1559798931296" duration="8316000" />
+      <workItem from="1561555611831" duration="685000" />
+      <workItem from="1577199724771" duration="666000" />
+      <workItem from="1577457665855" duration="2763000" />
+      <workItem from="1578123408652" duration="5000" />
+      <workItem from="1578682020315" duration="799000" />
+      <workItem from="1578859343753" duration="2573000" />
+      <workItem from="1578925227610" duration="18000" />
+      <workItem from="1578925265011" duration="927000" />
+      <workItem from="1582139240332" duration="3809000" />
+      <workItem from="1587054032201" duration="4764000" />
+      <workItem from="1587488205951" duration="30000" />
+      <workItem from="1587658536456" duration="3105000" />
+      <workItem from="1588098646971" duration="1295000" />
+      <workItem from="1588161768733" duration="1801000" />
+      <workItem from="1588320715433" duration="200000" />
+    </task>
+    <task id="LOCAL-00001" summary="create angulare cli project frontend-ico-page">
+      <created>1549286462091</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549286462091</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add bootstap template">
+      <created>1549297531899</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549297531899</updated>
+    </task>
+    <task id="LOCAL-00003" summary="page layout">
+      <created>1549305104146</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1549305104146</updated>
+    </task>
+    <task id="LOCAL-00004" summary="page layout static">
+      <created>1549311190744</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1549311190744</updated>
+    </task>
+    <task id="LOCAL-00005" summary="page layout static">
+      <created>1549352133936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1549352133936</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update TOTAL SUPPLY / SOLD dinamically&#10;add cors disable FOR TEST">
+      <created>1549371461762</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1549371461763</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add holders datatable">
+      <created>1549386995848</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549386995848</updated>
+    </task>
+    <task id="LOCAL-00008" summary="correction layout">
+      <created>1551476977159</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551476977159</updated>
+    </task>
+    <task id="LOCAL-00009" summary="correction layout">
+      <created>1551477017386</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551477017386</updated>
+    </task>
+    <task id="LOCAL-00010" summary="correction layout">
+      <created>1551554373788</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551554373788</updated>
+    </task>
+    <task id="LOCAL-00011" summary="correction layout">
+      <created>1551554445365</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1551554445365</updated>
+    </task>
+    <task id="LOCAL-00012" summary="correction layout">
+      <created>1551554519739</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1551554519739</updated>
+    </task>
+    <task id="LOCAL-00013" summary="correction layout - section headers">
+      <created>1551652039851</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1551652039851</updated>
+    </task>
+    <task id="LOCAL-00014" summary="correction layout - section headers">
+      <created>1551652480117</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1551652480117</updated>
+    </task>
+    <task id="LOCAL-00015" summary="connect to new contract version">
+      <created>1556811947807</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556811947807</updated>
+    </task>
+    <task id="LOCAL-00016" summary="connect to new contract version">
+      <created>1557161627138</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1557161627138</updated>
+    </task>
+    <task id="LOCAL-00017" summary="connect to new contract version">
+      <created>1557164967353</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1557164967353</updated>
+    </task>
+    <task id="LOCAL-00018" summary="connect to new contract version">
+      <created>1557165374673</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1557165374673</updated>
+    </task>
+    <task id="LOCAL-00019" summary="frontpage refactor">
+      <created>1558427944716</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1558427944716</updated>
+    </task>
+    <task id="LOCAL-00020" summary="frontpage link to datrixo subdomain">
+      <created>1558888910553</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1558888910553</updated>
+    </task>
+    <task id="LOCAL-00021" summary="link to holder account">
+      <created>1559799338689</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1559799338689</updated>
+    </task>
+    <task id="LOCAL-00022" summary="add share column">
+      <created>1559883221006</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1559883221006</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add share column">
+      <created>1578682082422</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1578682082422</updated>
+    </task>
+    <task id="LOCAL-00024" summary="share to equity">
+      <created>1582140724996</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1582140724996</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create angulare cli project frontend-ico-page" />
+    <MESSAGE value="add bootstap template" />
+    <MESSAGE value="page layout" />
+    <MESSAGE value="page layout static" />
+    <MESSAGE value="update TOTAL SUPPLY / SOLD dinamically&#10;add cors disable FOR TEST" />
+    <MESSAGE value="add holders datatable" />
+    <MESSAGE value="correction layout" />
+    <MESSAGE value="correction layout - section headers" />
+    <MESSAGE value="connect to new contract version" />
+    <MESSAGE value="frontpage refactor" />
+    <MESSAGE value="frontpage link to datrixo subdomain" />
+    <MESSAGE value="link to holder account" />
+    <MESSAGE value="add share column" />
+    <MESSAGE value="share to equity" />
+    <option name="LAST_COMMIT_MESSAGE" value="share to equity" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="398" y="126" key="CommitChangelistDialog2" timestamp="1587726146092">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="398" y="126" key="CommitChangelistDialog2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587726146092" />
+    <state width="1881" height="149" key="GridCell.Tab.0.bottom" timestamp="1587731189279">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1881" height="149" key="GridCell.Tab.0.bottom/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1587138708776" />
+    <state width="1881" height="546" key="GridCell.Tab.0.bottom/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587137951084" />
+    <state width="1881" height="149" key="GridCell.Tab.0.bottom/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587731189279" />
+    <state width="1497" height="413" key="GridCell.Tab.0.bottom/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@1920.8.1536.840" timestamp="1582141259832" />
+    <state width="1881" height="149" key="GridCell.Tab.0.center" timestamp="1587731189279">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1881" height="149" key="GridCell.Tab.0.center/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1587138708775" />
+    <state width="1881" height="546" key="GridCell.Tab.0.center/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587137951084" />
+    <state width="1881" height="149" key="GridCell.Tab.0.center/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587731189279" />
+    <state width="1497" height="413" key="GridCell.Tab.0.center/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@1920.8.1536.840" timestamp="1582141259832" />
+    <state width="1881" height="149" key="GridCell.Tab.0.left" timestamp="1587731189279">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1881" height="149" key="GridCell.Tab.0.left/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1587138708775" />
+    <state width="1881" height="546" key="GridCell.Tab.0.left/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587137951084" />
+    <state width="1881" height="149" key="GridCell.Tab.0.left/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587731189279" />
+    <state width="1497" height="413" key="GridCell.Tab.0.left/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@1920.8.1536.840" timestamp="1582141259832" />
+    <state width="1881" height="149" key="GridCell.Tab.0.right" timestamp="1587731189279">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1881" height="149" key="GridCell.Tab.0.right/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1587138708776" />
+    <state width="1881" height="546" key="GridCell.Tab.0.right/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587137951084" />
+    <state width="1881" height="149" key="GridCell.Tab.0.right/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587731189279" />
+    <state width="1497" height="413" key="GridCell.Tab.0.right/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@1920.8.1536.840" timestamp="1582141259832" />
+    <state x="552" y="262" key="Vcs.Push.Dialog.v2" timestamp="1582140808079">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="262" key="Vcs.Push.Dialog.v2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1582140808079" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/holders.service.ts</url>
+          <line>23</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>this.http.get(url)</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.http.get(url);</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>frontend-ico-page</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -10,7 +10,6 @@
 package-lock.json
 
 # IDEs and editors
-/.idea
 .project
 .classpath
 .history

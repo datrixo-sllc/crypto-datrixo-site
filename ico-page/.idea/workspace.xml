@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a707f61-328b-452c-b059-b157c028b03f" name="Default Changelist" comment="add paidPrice for initial investors and sample investors">
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-equity-holdings/holder-responce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-equity-holdings/holder-responce.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-equity-holdings/my-equity-holding-datatable/my-equity-holding-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-equity-holdings/my-equity-holding-datatable/my-equity-holding-datatable.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holder-responce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holder-responce.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ENABLE" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/app/apache-maven-3.5.0" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="deploy-on-aws" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="1cUmak0Qbqet4xLjbGpTEwLnyc7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ARTDATA" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+    <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.IcoPageServiceImplTest.getAllData">
+    <configuration name="IcoPageServiceImplTest.getAllData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ico-page-site" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.datrixo.crypto_datrixo_site.ico_page.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.datrixo.crypto_datrixo_site.ico_page.service" />
+      <option name="MAIN_CLASS_NAME" value="com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImplTest" />
+      <option name="METHOD_NAME" value="getAllData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ico-page-site" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.datrixo.crypto_datrixo_site.ico_page.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a707f61-328b-452c-b059-b157c028b03f" name="Default Changelist" comment="" />
+      <created>1590591611848</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590591611848</updated>
+      <workItem from="1590591616523" duration="7296000" />
+      <workItem from="1590668305034" duration="19119000" />
+      <workItem from="1591016232098" duration="596000" />
+      <workItem from="1591028848667" duration="12623000" />
+      <workItem from="1591607605615" duration="11942000" />
+    </task>
+    <task id="LOCAL-00001" summary="interface for traditional investors. change user-data get request">
+      <created>1590592907568</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590592907568</updated>
+    </task>
+    <task id="LOCAL-00002" summary="interface for traditional investors. change login response with role">
+      <created>1590595660897</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590595660897</updated>
+    </task>
+    <task id="LOCAL-00003" summary="interface for traditional investors. change login response with role">
+      <created>1590596600546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590596600546</updated>
+    </task>
+    <task id="LOCAL-00004" summary="interface for traditional investors. main-page component">
+      <created>1590599092600</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590599092600</updated>
+    </task>
+    <task id="LOCAL-00005" summary="interface for traditional investor dinamic menu">
+      <created>1590600257852</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590600257852</updated>
+    </task>
+    <task id="LOCAL-00006" summary="interface for traditional investor invest in equity page">
+      <created>1590685495075</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590685495075</updated>
+    </task>
+    <task id="LOCAL-00007" summary="interface for traditional investor invest in equity page">
+      <created>1590688659929</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1590688659929</updated>
+    </task>
+    <task id="LOCAL-00008" summary="interface for traditional investor my equity holdings page">
+      <created>1590690607310</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590690607310</updated>
+    </task>
+    <task id="LOCAL-00009" summary="image component on the investor profile page">
+      <created>1590747824894</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590747824894</updated>
+    </task>
+    <task id="LOCAL-00010" summary="loading of the investor profile image">
+      <created>1590773488978</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1590773488978</updated>
+    </task>
+    <task id="LOCAL-00011" summary="new holding tables">
+      <created>1591034376827</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591034376828</updated>
+    </task>
+    <task id="LOCAL-00012" summary="new holding tables">
+      <created>1591120700370</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1591120700370</updated>
+    </task>
+    <task id="LOCAL-00013" summary="new holding tables">
+      <created>1591125114566</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1591125114567</updated>
+    </task>
+    <task id="LOCAL-00014" summary="new main page">
+      <created>1591289894448</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591289894448</updated>
+    </task>
+    <task id="LOCAL-00015" summary="new main page">
+      <created>1591297755028</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1591297755028</updated>
+    </task>
+    <task id="LOCAL-00016" summary="enable h2 console">
+      <created>1591611584543</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1591611584543</updated>
+    </task>
+    <task id="LOCAL-00017" summary="enable h2 console finish version">
+      <created>1591611629730</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591611629730</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add paidPrice for initial investors and sample investors">
+      <created>1591625191327</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591625191327</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="interface for traditional investors. change user-data get request" />
+    <MESSAGE value="interface for traditional investors. change login response with role" />
+    <MESSAGE value="interface for traditional investors. main-page component" />
+    <MESSAGE value="interface for traditional investor dinamic menu" />
+    <MESSAGE value="interface for traditional investor invest in equity page" />
+    <MESSAGE value="interface for traditional investor my equity holdings page" />
+    <MESSAGE value="image component on the investor profile page" />
+    <MESSAGE value="loading of the investor profile image" />
+    <MESSAGE value="new holding tables" />
+    <MESSAGE value="new main page" />
+    <MESSAGE value="enable h2 console" />
+    <MESSAGE value="enable h2 console finish version" />
+    <MESSAGE value="add paidPrice for initial investors and sample investors" />
+    <option name="LAST_COMMIT_MESSAGE" value="add paidPrice for initial investors and sample investors" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="360" y="79" key="#Chrome_Settings" timestamp="1590768865112">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="360" y="79" key="#Chrome_Settings/0.0.1536.834@0.0.1536.834" timestamp="1590768865112" />
+    <state x="223" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591610003232">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="223" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1591610003232" />
+    <state x="574" y="110" key="#com.intellij.ide.util.MemberChooser" timestamp="1591621603287">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="574" y="110" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1591621603287" />
+    <state x="524" y="127" key="#xdebugger.evaluate" timestamp="1590595435676">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="524" y="127" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1590595435676" />
+    <state x="283" y="17" key="CommitChangelistDialog2" timestamp="1591630986351">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="283" y="17" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1591630986351" />
+    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1590593010485">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1590593010485" />
+    <state width="1497" height="207" key="GridCell.Tab.0.bottom" timestamp="1591629506431">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="207" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591629506431" />
+    <state width="1497" height="207" key="GridCell.Tab.0.center" timestamp="1591629506431">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="207" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1591629506431" />
+    <state width="1497" height="207" key="GridCell.Tab.0.left" timestamp="1591629506431">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="207" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1591629506431" />
+    <state width="1497" height="207" key="GridCell.Tab.0.right" timestamp="1591629506431">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="207" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1591629506431" />
+    <state width="1497" height="257" key="GridCell.Tab.1.bottom" timestamp="1591624932098">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
+    <state width="1497" height="257" key="GridCell.Tab.1.center" timestamp="1591624932098">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
+    <state width="1497" height="257" key="GridCell.Tab.1.left" timestamp="1591624932098">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
+    <state width="1497" height="257" key="GridCell.Tab.1.right" timestamp="1591624932098">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
+    <state width="1497" height="257" key="GridCell.Tab.2.bottom" timestamp="1591624932098">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
+    <state width="1497" height="257" key="GridCell.Tab.2.center" timestamp="1591624932098">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
+    <state width="1497" height="257" key="GridCell.Tab.2.left" timestamp="1591624932098">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
+    <state width="1497" height="257" key="GridCell.Tab.2.right" timestamp="1591624932098">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
+    <state x="279" y="63" key="SettingsEditor" timestamp="1590768868878">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="279" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590768868878" />
+    <state x="361" y="153" key="Vcs.Push.Dialog.v2" timestamp="1591631038502">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="153" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1591631038502" />
+    <state x="489" y="137" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591622367679">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="489" y="137" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.834@0.0.1536.834" timestamp="1591622367679" />
+    <state x="320" y="156" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1591623088718">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="320" y="156" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834@0.0.1536.834" timestamp="1591623088718" />
+    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1590763652055">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1590763652055" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
