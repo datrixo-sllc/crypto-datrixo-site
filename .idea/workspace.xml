@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ico-page-site:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/crypto-datrixo-site.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/yuri.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datrixo-contract/datrixo-contract.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/artifacts/ico_page_site_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/artifacts/ico_page_site_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jffi_1_2_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jffi_native_1_2_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_constants_0_9_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_enxio_0_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_ffi_2_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_posix_3_0_33.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_unixsocket_0_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_x86asm_1_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_squareup_okhttp3_logging_interceptor_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_squareup_okio_okio_1_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__io_reactivex_rxjava2_rxjava_2_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_54.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_7_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_14_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_java_websocket_Java_WebSocket_1_3_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_javassist_javassist_3_23_1_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_5_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_analysis_5_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_commons_5_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_tree_5_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_util_5_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_aop_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_aspects_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_beans_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_context_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_core_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_expression_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_orm_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_test_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_tx_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_web_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_abi_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_core_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_crypto_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_rlp_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_tuples_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_utils_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_web3j_spring_boot_starter_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/frontend-ico-page.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/frontend-investor-page.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-ico-page/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="e1a6e549-8b62-437e-a1c4-54de07b0fad1" />
+    </checked>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit4 Test Class" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../app/apache-maven-3.5.0" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="lookForNested" value="true" />
+      </MavenImportingSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="deploy-on-aws" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectId" id="1UkYxs9wtZ5HtD9lZbCPvjSLOIC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../../Program Files/nodejs/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
+    <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\resources\static" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\resources" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\webapp" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model" />
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.IcoPageServiceImplTest.getAllData">
+    <configuration name="IcoPageServiceImplTest.getAllData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ico-page-site" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.datrixo.crypto_datrixo_site.ico_page.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.datrixo.crypto_datrixo_site.ico_page.service" />
+      <option name="MAIN_CLASS_NAME" value="com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImplTest" />
+      <option name="METHOD_NAME" value="getAllData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ico-page-site" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.datrixo.crypto_datrixo_site.ico_page.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.20" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="ico-page-site:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_crypto-datrixo-site" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62192" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
+      <item itemvalue="Spring Boot.App" />
+      <item itemvalue="Tomcat Server.Tomcat" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_PROPERTIES,SHOW_INTERFACES,SHOW_INHERITED" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="" />
+      <created>1549283438260</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549283438260</updated>
+      <workItem from="1549283442571" duration="2558000" />
+      <workItem from="1549287001669" duration="591000" />
+      <workItem from="1549296326425" duration="22075000" />
+      <workItem from="1549383590007" duration="17109000" />
+      <workItem from="1549402926608" duration="9225000" />
+      <workItem from="1551463607944" duration="326000" />
+      <workItem from="1551468523016" duration="6710000" />
+      <workItem from="1554801671149" duration="2315000" />
+      <workItem from="1554981488015" duration="1243000" />
+      <workItem from="1555051005427" duration="1220000" />
+      <workItem from="1555397665193" duration="595000" />
+      <workItem from="1555700594154" duration="568000" />
+      <workItem from="1555778665376" duration="591000" />
+      <workItem from="1555782612453" duration="598000" />
+      <workItem from="1555807915532" duration="7000" />
+      <workItem from="1555808374899" duration="13000" />
+      <workItem from="1555808437020" duration="15000" />
+      <workItem from="1555808761541" duration="613000" />
+      <workItem from="1555985769167" duration="433000" />
+      <workItem from="1556640970972" duration="43000" />
+      <workItem from="1557160581403" duration="5324000" />
+      <workItem from="1557422806865" duration="1272000" />
+      <workItem from="1557928775076" duration="592000" />
+      <workItem from="1558113368546" duration="467000" />
+      <workItem from="1558160220700" duration="75000" />
+      <workItem from="1558432658254" duration="22767000" />
+      <workItem from="1559756282232" duration="49861000" />
+      <workItem from="1560191356189" duration="2409000" />
+      <workItem from="1560655053843" duration="1226000" />
+      <workItem from="1561487655424" duration="408000" />
+      <workItem from="1561553781991" duration="3752000" />
+      <workItem from="1561802427268" duration="106000" />
+      <workItem from="1564673376766" duration="339000" />
+      <workItem from="1575902314211" duration="3405000" />
+      <workItem from="1577118144747" duration="5406000" />
+      <workItem from="1577191644934" duration="9047000" />
+      <workItem from="1577457659442" duration="3178000" />
+      <workItem from="1578123389160" duration="94000" />
+      <workItem from="1578125005771" duration="3000" />
+      <workItem from="1578125113145" duration="25000" />
+      <workItem from="1578125703220" duration="48000" />
+      <workItem from="1578125862856" duration="108000" />
+      <workItem from="1578478187607" duration="302000" />
+      <workItem from="1578478532089" duration="779000" />
+      <workItem from="1578479723374" duration="823000" />
+      <workItem from="1578681279298" duration="575000" />
+      <workItem from="1578681875783" duration="745000" />
+      <workItem from="1578823368544" duration="8804000" />
+      <workItem from="1578925296643" duration="898000" />
+      <workItem from="1581966113883" duration="4138000" />
+      <workItem from="1582129359428" duration="70000" />
+      <workItem from="1582129548614" duration="23000" />
+      <workItem from="1582135123519" duration="251000" />
+      <workItem from="1582136441499" duration="3298000" />
+      <workItem from="1584818966230" duration="106000" />
+      <workItem from="1586780116983" duration="1277000" />
+      <workItem from="1586791435981" duration="4485000" />
+      <workItem from="1586878828697" duration="5082000" />
+      <workItem from="1586974281865" duration="7789000" />
+      <workItem from="1587488213661" duration="20000" />
+      <workItem from="1587658225111" duration="4502000" />
+      <workItem from="1588098647570" duration="1609000" />
+      <workItem from="1588161767203" duration="1198000" />
+      <workItem from="1588320715503" duration="198000" />
+      <workItem from="1590466260713" duration="1883000" />
+      <workItem from="1590586831337" duration="3095000" />
+      <workItem from="1591016232570" duration="693000" />
+      <workItem from="1591028841045" duration="1882000" />
+      <workItem from="1591607606497" duration="630000" />
+      <workItem from="1591861519423" duration="30000" />
+      <workItem from="1592669540870" duration="6867000" />
+      <workItem from="1593007750147" duration="24000" />
+      <workItem from="1593007851326" duration="153000" />
+      <workItem from="1593008032064" duration="135000" />
+      <workItem from="1593008320673" duration="59000" />
+      <workItem from="1593008701139" duration="51000" />
+      <workItem from="1593008891484" duration="51000" />
+      <workItem from="1593009670151" duration="135000" />
+      <workItem from="1593010135811" duration="38000" />
+      <workItem from="1593010445928" duration="84000" />
+      <workItem from="1593010848287" duration="42000" />
+      <workItem from="1593011059579" duration="96000" />
+      <workItem from="1593011397568" duration="70000" />
+      <workItem from="1593011574119" duration="116000" />
+      <workItem from="1593013564630" duration="684000" />
+    </task>
+    <task id="LOCAL-00028" summary="user holdings list">
+      <created>1560002557667</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1560002557667</updated>
+    </task>
+    <task id="LOCAL-00029" summary="user holdings list">
+      <created>1560003268854</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1560003268854</updated>
+    </task>
+    <task id="LOCAL-00030" summary="user profile">
+      <created>1560021831777</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1560021831777</updated>
+    </task>
+    <task id="LOCAL-00031" summary="user profile">
+      <created>1560023876076</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1560023876076</updated>
+    </task>
+    <task id="LOCAL-00032" summary="user profile without backend">
+      <created>1560026427864</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1560026427864</updated>
+    </task>
+    <task id="LOCAL-00033" summary="user profile without backend">
+      <created>1560080014638</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1560080014638</updated>
+    </task>
+    <task id="LOCAL-00034" summary="user profile with backend">
+      <created>1560086966146</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1560086966146</updated>
+    </task>
+    <task id="LOCAL-00035" summary="reset password dialog without backend">
+      <created>1560175040408</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1560175040408</updated>
+    </task>
+    <task id="LOCAL-00036" summary="reset password dialog without backend">
+      <created>1560187864820</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1560187864820</updated>
+    </task>
+    <task id="LOCAL-00037" summary="reset password dialog without backend">
+      <created>1560187894690</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1560187894690</updated>
+    </task>
+    <task id="LOCAL-00038" summary="reset password dialog backend">
+      <created>1560190127139</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1560190127139</updated>
+    </task>
+    <task id="LOCAL-00039" summary="reset password dialog final">
+      <created>1560194040603</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1560194040603</updated>
+    </task>
+    <task id="LOCAL-00040" summary="h2 console false">
+      <created>1561553876821</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1561553876821</updated>
+    </task>
+    <task id="LOCAL-00041" summary="h2 console false">
+      <created>1561553922236</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1561553922236</updated>
+    </task>
+    <task id="LOCAL-00042" summary="new database on adm.datrixo AWS">
+      <created>1561555049505</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1561555049505</updated>
+    </task>
+    <task id="LOCAL-00043" summary="new datrixo contract DRXT">
+      <created>1577192101521</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1577192101521</updated>
+    </task>
+    <task id="LOCAL-00044" summary="new datrixo contract DRXT">
+      <created>1577193013722</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1577193013722</updated>
+    </task>
+    <task id="LOCAL-00045" summary="new datrixo contract DRXT">
+      <created>1577194358061</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1577194358061</updated>
+    </task>
+    <task id="LOCAL-00046" summary="new datrixo contract DRXT">
+      <created>1577195914587</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1577195914587</updated>
+    </task>
+    <task id="LOCAL-00047" summary="new datrixo contract DRXT">
+      <created>1577200735312</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1577200735312</updated>
+    </task>
+    <task id="LOCAL-00048" summary="new datrixo contract DRXT">
+      <created>1577461116123</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1577461116123</updated>
+    </task>
+    <task id="LOCAL-00049" summary="new datrixo contract DRXT">
+      <created>1577461854686</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1577461854686</updated>
+    </task>
+    <task id="LOCAL-00050" summary="js file for datrixo.com wordpress">
+      <created>1578823653491</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1578823653492</updated>
+    </task>
+    <task id="LOCAL-00051" summary="js file for datrixo.com wordpress">
+      <created>1578868202198</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1578868202198</updated>
+    </task>
+    <task id="LOCAL-00052" summary="js file for datrixo.com wordpress">
+      <created>1578925551900</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1578925551904</updated>
+    </task>
+    <task id="LOCAL-00053" summary="total amount 800000000&#10;remove check of first year">
+      <created>1582135341809</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1582135341809</updated>
+    </task>
+    <task id="LOCAL-00054" summary="total amount 800000000&#10;remove check of first year">
+      <created>1582136667265</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1582136667265</updated>
+    </task>
+    <task id="LOCAL-00055" summary="total amount 800 00000&#10;remove check of first year">
+      <created>1582139145998</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1582139145998</updated>
+    </task>
+    <task id="LOCAL-00056" summary="total amount 800 00000&#10;remove check of first year">
+      <created>1586780784088</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1586780784089</updated>
+    </task>
+    <task id="LOCAL-00057" summary="total amount 4 000 00000">
+      <created>1586791560431</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1586791560431</updated>
+    </task>
+    <task id="LOCAL-00058" summary="total amount 4 000 00000">
+      <created>1586798535426</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1586798535426</updated>
+    </task>
+    <task id="LOCAL-00059" summary="total amount 4 000 00000">
+      <created>1586801589029</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1586801589029</updated>
+    </task>
+    <task id="LOCAL-00060" summary="comments was edited">
+      <created>1586878458556</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1586878458556</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Connect backend to main net Ethereum with the deploying smart contract here">
+      <created>1586975806568</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1586975806568</updated>
+    </task>
+    <task id="LOCAL-00062" summary="change frontend investor page for new live smart contract">
+      <created>1587053594680</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1587053594680</updated>
+    </task>
+    <task id="LOCAL-00063" summary="change frontend STO page for new live smart contract">
+      <created>1587055591926</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1587055591926</updated>
+    </task>
+    <task id="LOCAL-00064" summary="change frontend STO page on the datrixo.com site for new live smart contract">
+      <created>1587133596579</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1587133596579</updated>
+    </task>
+    <task id="LOCAL-00065" summary="fix responsive to datatables in angular apps">
+      <created>1587138944741</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1587138944741</updated>
+    </task>
+    <task id="LOCAL-00066" summary="add logout and language to the dashboard sidebar">
+      <created>1587141074785</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1587141074785</updated>
+    </task>
+    <task id="LOCAL-00067" summary="fix https blocker to ico-page-backend after http to https redirection of the datrixo.com site">
+      <created>1587658472442</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1587658472442</updated>
+    </task>
+    <task id="LOCAL-00068" summary="fix the dashboard older text">
+      <created>1587660862734</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1587660862734</updated>
+    </task>
+    <task id="LOCAL-00069" summary="fix the https dashboard backend URL">
+      <created>1587661112972</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1587661112972</updated>
+    </task>
+    <task id="LOCAL-00070" summary="fix the https dashboard backend URL">
+      <created>1587661324594</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1587661324594</updated>
+    </task>
+    <task id="LOCAL-00071" summary="new text for sto page">
+      <created>1587726229345</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1587726229345</updated>
+    </task>
+    <task id="LOCAL-00072" summary="new text for sto page">
+      <created>1587731355003</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1587731355003</updated>
+    </task>
+    <task id="LOCAL-00073" summary="new text for sto page">
+      <created>1591125639714</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1591125639715</updated>
+    </task>
+    <task id="LOCAL-00074" summary="transaction id text">
+      <created>1592670946178</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1592670946179</updated>
+    </task>
+    <task id="LOCAL-00075" summary="total invested for initial persons">
+      <created>1592673253780</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1592673253780</updated>
+    </task>
+    <task id="LOCAL-00076" summary="total invested for initial persons">
+      <created>1592676600900</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1592676600900</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bin" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="user profile without backend" />
+    <MESSAGE value="user profile with backend" />
+    <MESSAGE value="reset password dialog without backend" />
+    <MESSAGE value="reset password dialog backend" />
+    <MESSAGE value="reset password dialog final" />
+    <MESSAGE value="h2 console false" />
+    <MESSAGE value="new database on adm.datrixo AWS" />
+    <MESSAGE value="new datrixo contract DRXT" />
+    <MESSAGE value="js file for datrixo.com wordpress" />
+    <MESSAGE value="total amount 800000000&#10;remove check of first year" />
+    <MESSAGE value="total amount 800 00000&#10;remove check of first year" />
+    <MESSAGE value="total amount 4 000 00000" />
+    <MESSAGE value="comments was edited" />
+    <MESSAGE value="Connect backend to main net Ethereum with the deploying smart contract here" />
+    <MESSAGE value="change frontend investor page for new live smart contract" />
+    <MESSAGE value="change frontend STO page for new live smart contract" />
+    <MESSAGE value="change frontend STO page on the datrixo.com site for new live smart contract" />
+    <MESSAGE value="fix responsive to datatables in angular apps" />
+    <MESSAGE value="add logout and language to the dashboard sidebar" />
+    <MESSAGE value="fix https blocker to ico-page-backend after http to https redirection of the datrixo.com site" />
+    <MESSAGE value="fix the dashboard older text" />
+    <MESSAGE value="fix the https dashboard backend URL" />
+    <MESSAGE value="new text for sto page" />
+    <MESSAGE value="transaction id text" />
+    <MESSAGE value="total invested for initial persons" />
+    <option name="LAST_COMMIT_MESSAGE" value="total invested for initial persons" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="524" y="127" key="#xdebugger.evaluate" timestamp="1592674364051">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="524" y="127" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1592674364051" />
+    <state x="378" y="35" key="CommitChangelistDialog2" timestamp="1592676598813">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="378" y="35" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1592676598813" />
+    <state x="473" y="47" key="CommitChangelistDialog2/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587661324061" />
+    <state x="-1447" y="47" key="CommitChangelistDialog2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1587731975519" />
+    <state x="473" y="47" key="CommitChangelistDialog2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1584819030889" />
+    <state x="592" y="225" key="FileChooserDialogImpl" timestamp="1590591611077">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="592" y="225" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1590591611077" />
+    <state width="1497" height="207" key="GridCell.Tab.0.bottom" timestamp="1592762440672">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="207" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592762440672" />
+    <state width="1881" height="521" key="GridCell.Tab.0.bottom/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586975681321" />
+    <state width="1497" height="207" key="GridCell.Tab.0.center" timestamp="1592762440671">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="207" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1592762440671" />
+    <state width="1881" height="521" key="GridCell.Tab.0.center/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586975681321" />
+    <state width="1497" height="207" key="GridCell.Tab.0.left" timestamp="1592762440671">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="207" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1592762440671" />
+    <state width="1881" height="521" key="GridCell.Tab.0.left/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586975681321" />
+    <state width="1497" height="207" key="GridCell.Tab.0.right" timestamp="1592762440672">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="207" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1592762440672" />
+    <state width="1881" height="521" key="GridCell.Tab.0.right/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586975681321" />
+    <state width="1497" height="257" key="GridCell.Tab.1.bottom" timestamp="1592762440653">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592762440653" />
+    <state width="1497" height="257" key="GridCell.Tab.1.center" timestamp="1592762440653">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1592762440653" />
+    <state width="1497" height="257" key="GridCell.Tab.1.left" timestamp="1592762440653">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1592762440653" />
+    <state width="1497" height="257" key="GridCell.Tab.1.right" timestamp="1592762440653">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1592762440653" />
+    <state width="1497" height="257" key="GridCell.Tab.2.bottom" timestamp="1592762440654">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592762440654" />
+    <state width="1497" height="257" key="GridCell.Tab.2.center" timestamp="1592762440654">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1592762440654" />
+    <state width="1497" height="257" key="GridCell.Tab.2.left" timestamp="1592762440653">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1592762440653" />
+    <state width="1497" height="257" key="GridCell.Tab.2.right" timestamp="1592762440654">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1497" height="257" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1592762440654" />
+    <state x="-1380" y="267" key="IDE.errors.dialog" timestamp="1587732193053">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1380" y="267" key="IDE.errors.dialog/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1587732193053" />
+    <state x="369" y="126" key="SettingsEditor" timestamp="1593009714309">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="369" y="126" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1593009714309" />
+    <state x="461" y="169" key="SettingsEditor/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586974263386" />
+    <state x="442" y="208" key="Vcs.Push.Dialog.v2" timestamp="1592676626558">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="442" y="208" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1592676626558" />
+    <state x="553" y="262" key="Vcs.Push.Dialog.v2/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587658494019" />
+    <state x="-1367" y="262" key="Vcs.Push.Dialog.v2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1587731981875" />
+    <state x="304" y="160" key="com.intellij.ide.util.TipDialog" timestamp="1593011574712">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="304" y="160" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1593011574712" />
+    <state x="615" y="184" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1584819022911">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="615" y="184" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1584819022911" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ico-page/src/test/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImplTest.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>ico-page:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web (ico-page)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8_181</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>crypto-datrixo-site</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
