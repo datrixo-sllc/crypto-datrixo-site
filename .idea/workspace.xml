@@ -7,177 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/crypto-datrixo-site.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/yuri.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datrixo-contract/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datrixo-contract/datrixo-contract.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/artifacts/ico_page_site_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/artifacts/ico_page_site_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jffi_1_2_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jffi_native_1_2_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_constants_0_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_enxio_0_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_ffi_2_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_posix_3_0_33.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_unixsocket_0_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_github_jnr_jnr_x86asm_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_squareup_okhttp3_logging_interceptor_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_squareup_okio_okio_1_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__io_reactivex_rxjava2_rxjava_2_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_54.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_7_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_14_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_java_websocket_Java_WebSocket_1_3_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_javassist_javassist_3_23_1_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_5_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_analysis_5_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_commons_5_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_tree_5_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_ow2_asm_asm_util_5_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_aop_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_aspects_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_beans_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_context_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_core_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_expression_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_orm_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_test_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_tx_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_web_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_abi_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_core_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_crypto_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_rlp_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_tuples_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_utils_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_web3j_web3j_spring_boot_starter_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/frontend-ico-page.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/frontend-investor-page.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-ico-page/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -513,14 +344,7 @@
       <workItem from="1593011059579" duration="96000" />
       <workItem from="1593011397568" duration="70000" />
       <workItem from="1593011574119" duration="116000" />
-      <workItem from="1593013564630" duration="684000" />
-    </task>
-    <task id="LOCAL-00028" summary="user holdings list">
-      <created>1560002557667</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1560002557667</updated>
+      <workItem from="1593013564630" duration="2398000" />
     </task>
     <task id="LOCAL-00029" summary="user holdings list">
       <created>1560003268854</created>
@@ -858,7 +682,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592676600900</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="project settings">
+      <created>1593014404173</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1593014404174</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -894,7 +725,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user profile without backend" />
     <MESSAGE value="user profile with backend" />
     <MESSAGE value="reset password dialog without backend" />
     <MESSAGE value="reset password dialog backend" />
@@ -919,17 +749,18 @@
     <MESSAGE value="new text for sto page" />
     <MESSAGE value="transaction id text" />
     <MESSAGE value="total invested for initial persons" />
-    <option name="LAST_COMMIT_MESSAGE" value="total invested for initial persons" />
+    <MESSAGE value="project settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="project settings" />
   </component>
   <component name="WindowStateProjectService">
     <state x="524" y="127" key="#xdebugger.evaluate" timestamp="1592674364051">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="524" y="127" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1592674364051" />
-    <state x="378" y="35" key="CommitChangelistDialog2" timestamp="1592676598813">
+    <state x="378" y="0" key="CommitChangelistDialog2" timestamp="1593014399318">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="378" y="35" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1592676598813" />
+    <state x="378" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1593014399318" />
     <state x="473" y="47" key="CommitChangelistDialog2/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587661324061" />
     <state x="-1447" y="47" key="CommitChangelistDialog2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1587731975519" />
     <state x="473" y="47" key="CommitChangelistDialog2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1584819030889" />
@@ -998,10 +829,10 @@
     </state>
     <state x="369" y="126" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1593009714309" />
     <state x="461" y="169" key="SettingsEditor/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586974263386" />
-    <state x="442" y="208" key="Vcs.Push.Dialog.v2" timestamp="1592676626558">
+    <state x="442" y="208" key="Vcs.Push.Dialog.v2" timestamp="1593015162122">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="442" y="208" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1592676626558" />
+    <state x="442" y="208" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1593015162122" />
     <state x="553" y="262" key="Vcs.Push.Dialog.v2/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587658494019" />
     <state x="-1367" y="262" key="Vcs.Push.Dialog.v2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1587731981875" />
     <state x="304" y="160" key="com.intellij.ide.util.TipDialog" timestamp="1593011574712">
