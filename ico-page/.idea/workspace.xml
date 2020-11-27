@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin_senti" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8a707f61-328b-452c-b059-b157c028b03f" name="Default Changelist" comment="add paidPrice for initial investors and sample investors">
-      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-equity-holdings/holder-responce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-equity-holdings/holder-responce.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-equity-holdings/my-equity-holding-datatable/my-equity-holding-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-equity-holdings/my-equity-holding-datatable/my-equity-holding-datatable.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holder-responce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holder-responce.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_20_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_20__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_24_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_24__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,9 +44,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -48,10 +77,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="JupyterTrust" id="c87d8aa2-fa30-4665-a0aa-0c98fb093791" />
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:/app/apache-maven-3.5.0" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../../app/apache-maven-3.5.0" />
       </MavenGeneralSettings>
     </option>
     <option name="enabledProfiles">
@@ -69,7 +99,6 @@
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -83,8 +112,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ARTDATA" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../../../Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -283,13 +313,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="interface for traditional investors. change user-data get request" />
