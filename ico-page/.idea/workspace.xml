@@ -28,15 +28,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a707f61-328b-452c-b059-b157c028b03f" name="Default Changelist" comment="add paidPrice for initial investors and sample investors">
-      <change afterPath="$PROJECT_DIR$/../.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_20_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_20__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_24_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_24__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,20 +42,6 @@
   </component>
   <component name="ComposerSettings">
     <execution />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,11 +67,6 @@
         <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../../app/apache-maven-3.5.0" />
       </MavenGeneralSettings>
     </option>
-    <option name="enabledProfiles">
-      <list>
-        <option value="deploy-on-aws" />
-      </list>
-    </option>
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
@@ -102,12 +80,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -116,6 +96,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ARTDATA" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../../../Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -130,7 +111,19 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IcoPageServiceImplTest.getAllData">
+  <component name="RunManager" selected="Database Script.insert_user.sql">
+    <configuration name="country_vocabulary_init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/database/country_vocabulary_init.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="2613f838-86fa-45c0-980b-e6825c7088c1" namespace="schema/&quot;datrixo&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="insert_user.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/database/insert_user.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="2613f838-86fa-45c0-980b-e6825c7088c1" namespace="schema/&quot;datrixo&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="IcoPageServiceImplTest.getAllData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ico-page-site" />
       <extension name="coverage">
@@ -156,6 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.insert_user.sql" />
+        <item itemvalue="Database Script.country_vocabulary_init.sql" />
         <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
       </list>
     </recent_temporary>
@@ -337,98 +332,50 @@
     <option name="LAST_COMMIT_MESSAGE" value="add paidPrice for initial investors and sample investors" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="360" y="79" key="#Chrome_Settings" timestamp="1590768865112">
+    <state x="206" y="258" key="#SQL_Dialects" timestamp="1606492930424">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="360" y="79" key="#Chrome_Settings/0.0.1536.834@0.0.1536.834" timestamp="1590768865112" />
-    <state x="223" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591610003232">
+    <state x="206" y="258" key="#SQL_Dialects/0.0.1536.834@0.0.1536.834" timestamp="1606492930424" />
+    <state x="566" y="96" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606493156448">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="223" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1591610003232" />
-    <state x="574" y="110" key="#com.intellij.ide.util.MemberChooser" timestamp="1591621603287">
+    <state x="566" y="96" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1606493156448" />
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1606494974044">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="574" y="110" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1591621603287" />
-    <state x="524" y="127" key="#xdebugger.evaluate" timestamp="1590595435676">
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606494974044" />
+    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1606494974044">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="524" y="127" key="#xdebugger.evaluate/0.0.1536.834@0.0.1536.834" timestamp="1590595435676" />
-    <state x="283" y="17" key="CommitChangelistDialog2" timestamp="1591630986351">
+    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606494974044" />
+    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1606494974044">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="283" y="17" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1591630986351" />
-    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1590593010485">
+    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606494974044" />
+    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1606494974044">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1590593010485" />
-    <state width="1497" height="207" key="GridCell.Tab.0.bottom" timestamp="1591629506431">
+    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606494974044" />
+    <state width="1493" height="230" key="GridCell.Tab.1.bottom" timestamp="1606493274831">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="207" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591629506431" />
-    <state width="1497" height="207" key="GridCell.Tab.0.center" timestamp="1591629506431">
+    <state width="1493" height="230" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606493274831" />
+    <state width="1493" height="230" key="GridCell.Tab.1.center" timestamp="1606493274831">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="207" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1591629506431" />
-    <state width="1497" height="207" key="GridCell.Tab.0.left" timestamp="1591629506431">
+    <state width="1493" height="230" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1606493274831" />
+    <state width="1493" height="230" key="GridCell.Tab.1.left" timestamp="1606493274831">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="207" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1591629506431" />
-    <state width="1497" height="207" key="GridCell.Tab.0.right" timestamp="1591629506431">
+    <state width="1493" height="230" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1606493274831" />
+    <state width="1493" height="230" key="GridCell.Tab.1.right" timestamp="1606493274831">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="207" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1591629506431" />
-    <state width="1497" height="257" key="GridCell.Tab.1.bottom" timestamp="1591624932098">
+    <state width="1493" height="230" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1606493274831" />
+    <state x="424" y="119" key="RollbackChangesDialog" timestamp="1606494935881">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1497" height="257" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
-    <state width="1497" height="257" key="GridCell.Tab.1.center" timestamp="1591624932098">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1497" height="257" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
-    <state width="1497" height="257" key="GridCell.Tab.1.left" timestamp="1591624932098">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1497" height="257" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
-    <state width="1497" height="257" key="GridCell.Tab.1.right" timestamp="1591624932098">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1497" height="257" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
-    <state width="1497" height="257" key="GridCell.Tab.2.bottom" timestamp="1591624932098">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1497" height="257" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
-    <state width="1497" height="257" key="GridCell.Tab.2.center" timestamp="1591624932098">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1497" height="257" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
-    <state width="1497" height="257" key="GridCell.Tab.2.left" timestamp="1591624932098">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1497" height="257" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
-    <state width="1497" height="257" key="GridCell.Tab.2.right" timestamp="1591624932098">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1497" height="257" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1591624932098" />
-    <state x="279" y="63" key="SettingsEditor" timestamp="1590768868878">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="279" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1590768868878" />
-    <state x="361" y="153" key="Vcs.Push.Dialog.v2" timestamp="1591631038502">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="361" y="153" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1591631038502" />
-    <state x="489" y="137" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591622367679">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="489" y="137" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.834@0.0.1536.834" timestamp="1591622367679" />
-    <state x="320" y="156" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1591623088718">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="320" y="156" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834@0.0.1536.834" timestamp="1591623088718" />
-    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1590763652055">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1590763652055" />
+    <state x="424" y="119" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1606494935881" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

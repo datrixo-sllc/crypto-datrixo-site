@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="datrixo@datrixo-db.cn2pnzondob4.us-east-1.rds.amazonaws.com" uuid="2613f838-86fa-45c0-980b-e6825c7088c1">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://datrixo-db.cn2pnzondob4.us-east-1.rds.amazonaws.com:3306/datrixo</jdbc-url>
+    </data-source>
+  </component>
+</project>
