@@ -1,1 +1,1 @@
-﻿INSERT INTO USERS(id, password, username) VALUES(1,"user@mail.com","1234");
+﻿INSERT INTO USERS(id, username, password, role, title) VALUES(1,"user@mail.com","1234","USER_CRYPTO", "MR");

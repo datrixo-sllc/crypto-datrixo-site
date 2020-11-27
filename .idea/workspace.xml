@@ -32,13 +32,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="generate new contract wrapper">
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="new database on datrixosllc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/datrixo-contract/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/database/insert_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/database/insert_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/app.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -402,20 +402,6 @@
       <workItem from="1606413534506" duration="630000" />
       <workItem from="1606414455543" duration="2466000" />
     </task>
-    <task id="LOCAL-00030" summary="user profile">
-      <created>1560021831777</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1560021831777</updated>
-    </task>
-    <task id="LOCAL-00031" summary="user profile">
-      <created>1560023876076</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1560023876076</updated>
-    </task>
     <task id="LOCAL-00032" summary="user profile without backend">
       <created>1560026427864</created>
       <option name="number" value="00032" />
@@ -745,7 +731,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606486983285</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="new database on datrixosllc">
+      <created>1606495118565</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1606495118565</updated>
+    </task>
+    <task id="LOCAL-00080" summary="new database on datrixosllc">
+      <created>1606495142796</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1606495142796</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -781,7 +781,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reset password dialog without backend" />
     <MESSAGE value="reset password dialog backend" />
     <MESSAGE value="reset password dialog final" />
     <MESSAGE value="h2 console false" />
@@ -806,7 +805,8 @@
     <MESSAGE value="total invested for initial persons" />
     <MESSAGE value="project settings" />
     <MESSAGE value="generate new contract wrapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="generate new contract wrapper" />
+    <MESSAGE value="new database on datrixosllc" />
+    <option name="LAST_COMMIT_MESSAGE" value="new database on datrixosllc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="153" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606413567914">
@@ -817,26 +817,30 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="592" y="225" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606414768481" />
-    <state width="1493" height="206" key="GridCell.Tab.0.bottom" timestamp="1606488088267">
+    <state width="1493" height="206" key="GridCell.Tab.0.bottom" timestamp="1606495221179">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606488088267" />
-    <state width="1493" height="206" key="GridCell.Tab.0.center" timestamp="1606488088267">
+    <state width="1493" height="206" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606495221179" />
+    <state width="1493" height="206" key="GridCell.Tab.0.center" timestamp="1606495221179">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606488088267" />
-    <state width="1493" height="206" key="GridCell.Tab.0.left" timestamp="1606488088267">
+    <state width="1493" height="206" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606495221179" />
+    <state width="1493" height="206" key="GridCell.Tab.0.left" timestamp="1606495221178">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606488088267" />
-    <state width="1493" height="206" key="GridCell.Tab.0.right" timestamp="1606488088267">
+    <state width="1493" height="206" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606495221178" />
+    <state width="1493" height="206" key="GridCell.Tab.0.right" timestamp="1606495221179">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606488088267" />
+    <state width="1493" height="206" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606495221179" />
     <state x="369" y="0" key="SettingsEditor" timestamp="1606414839994">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="369" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1606414839994" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1606495165801">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1606495165801" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
