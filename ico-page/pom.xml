@@ -63,6 +63,10 @@
             <id>java-net-repo</id>
             <url>https://maven.java.net/content/repositories/public/</url>
         </repository>
+        <repository>
+            <id>jcenter-bintary</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
     </repositories>
 
     <build>

@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin_senti" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b4468857-1f44-43f8-8e78-e67e2b84753d" name="Default Changelist" comment="new contract modification">
-      <change beforePath="$PROJECT_DIR$/../ico-page/frontend-ico-page/src/app/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ico-page/frontend-ico-page/src/app/holders-datatable/holders-datatable.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ico-page/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ico-page/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contracts/notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/DatrixoToken.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/DatrixoToken.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ico-page/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ico-page/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,9 +39,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -40,6 +66,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="JupyterTrust" id="c87d8aa2-fa30-4665-a0aa-0c98fb093791" />
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
@@ -52,19 +79,20 @@
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../../../Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
+    <property name="nodejs_package_manager_path" value="$PROJECT_DIR$/../../../../../../../Program Files/nodejs/node_modules/npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -121,6 +149,7 @@
       <item itemvalue="npm.test" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -178,6 +207,7 @@
       <workItem from="1582633498170" duration="1267000" />
       <workItem from="1584815516459" duration="5000" />
       <workItem from="1584815844069" duration="503000" />
+      <workItem from="1606415982541" duration="3185000" />
     </task>
     <task id="LOCAL-00001" summary="initial truffle project">
       <created>1549456157402</created>
@@ -365,16 +395,14 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -393,6 +421,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
