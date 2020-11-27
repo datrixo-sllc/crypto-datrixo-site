@@ -1,0 +1,30 @@
+Apr 13 2020 00:00:00 ---- new Date(2020, 3, 13).getTime()/1000 = 1586725200
+
+/* This creates an array with all balances */
+
+/* This balance structure is
+*  account address -> value of sold Tokens - balanceOf
+*  account address -> time of first purchase - firstPurchaseTime
+*  transfer check firstPurchseTime if 0 - free sale
+*/
+
+/* Initializes contract with the original (DRX tokens) supply. All supply is assigned to the creator of the contract */
+
+/* Only a contract owner can perform the transfer (only the first transfer) */
+/* Only a contract owner can perform the transferFrom for that account _from */
+/* Remove the shareholder from teh list and return DRX tokens to the original owner account (owner ballance) */
+/* First the DRXT tokens are sent to the shareholder by the contract owner*/
+/* Send some of of the shareholder tokens to others (by the owner)*/
+
+//require(firstPurchaseTime[_from] == 0 || now >=firstPurchaseTime[_from] + 365 days, "First year is not expired.");
+// when contract will be burned contract owner will spend all tokens to address 0x0
+
+/*
+* The getter for whole shareholders array, not any array member as default getter, which generated compiler
+*/
+
+/**
+* Allows the STO contract to set the start date/time fro trading to the earlier point of time.
+* (In case the soft cap has been reached)
+* @param _newStart the new start date
+**/
