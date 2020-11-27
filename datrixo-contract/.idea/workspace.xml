@@ -25,11 +25,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4468857-1f44-43f8-8e78-e67e2b84753d" name="Default Changelist" comment="first">
-      <change afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_27_11_2020_15_20__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ico-page/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ico-page/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ico-page/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ico-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ico-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ico-page/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ico-page/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
