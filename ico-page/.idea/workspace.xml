@@ -28,12 +28,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a707f61-328b-452c-b059-b157c028b03f" name="Default Changelist" comment="add paidPrice for initial investors and sample investors">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/insert_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/insert_user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/app.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +111,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.insert_user.sql">
+  <component name="RunManager" selected="Spring Boot.App">
     <configuration name="country_vocabulary_init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/database/country_vocabulary_init.sql" />
       <script-mode>FILE</script-mode>
@@ -340,38 +340,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="566" y="96" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1606493156448" />
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1606494974044">
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1606497975234">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606494974044" />
-    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1606494974044">
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
+    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1606497975234">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606494974044" />
-    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1606494974044">
+    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
+    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1606497975234">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606494974044" />
-    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1606494974044">
+    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
+    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1606497975234">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606494974044" />
-    <state width="1493" height="230" key="GridCell.Tab.1.bottom" timestamp="1606493274831">
+    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
+    <state width="1493" height="230" key="GridCell.Tab.1.bottom" timestamp="1606497975235">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606493274831" />
-    <state width="1493" height="230" key="GridCell.Tab.1.center" timestamp="1606493274831">
+    <state width="1493" height="230" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606497975235" />
+    <state width="1493" height="230" key="GridCell.Tab.1.center" timestamp="1606497975234">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1606493274831" />
-    <state width="1493" height="230" key="GridCell.Tab.1.left" timestamp="1606493274831">
+    <state width="1493" height="230" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
+    <state width="1493" height="230" key="GridCell.Tab.1.left" timestamp="1606497975234">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1606493274831" />
-    <state width="1493" height="230" key="GridCell.Tab.1.right" timestamp="1606493274831">
+    <state width="1493" height="230" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
+    <state width="1493" height="230" key="GridCell.Tab.1.right" timestamp="1606497975234">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1606493274831" />
+    <state width="1493" height="230" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
     <state x="424" y="119" key="RollbackChangesDialog" timestamp="1606494935881">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
