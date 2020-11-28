@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../datrixo-contract/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/insert_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/insert_user.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/equity-holders-datatable/equity-holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/equity-holders-datatable/equity-holders-datatable.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/holders-datatable/holders-datatable.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +84,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\invest" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -202,7 +206,7 @@
       <workItem from="1593010448295" duration="82000" />
       <workItem from="1593010849364" duration="42000" />
       <workItem from="1593015367203" duration="1971000" />
-      <workItem from="1606496029436" duration="2690000" />
+      <workItem from="1606496029436" duration="6181000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -469,22 +473,42 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix layout Signed subscription agreement" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="206" key="GridCell.Tab.0.bottom" timestamp="1606498503598">
+    <state width="1493" height="206" key="GridCell.Tab.0.bottom" timestamp="1606507233678">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606498503598" />
-    <state width="1493" height="206" key="GridCell.Tab.0.center" timestamp="1606498503597">
+    <state width="1493" height="206" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606507233678" />
+    <state width="1493" height="206" key="GridCell.Tab.0.center" timestamp="1606507233677">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606498503597" />
-    <state width="1493" height="206" key="GridCell.Tab.0.left" timestamp="1606498503597">
+    <state width="1493" height="206" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606507233677" />
+    <state width="1493" height="206" key="GridCell.Tab.0.left" timestamp="1606507233677">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606498503597" />
-    <state width="1493" height="206" key="GridCell.Tab.0.right" timestamp="1606498503597">
+    <state width="1493" height="206" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606507233677" />
+    <state width="1493" height="206" key="GridCell.Tab.0.right" timestamp="1606507233678">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606498503597" />
+    <state width="1493" height="206" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606507233678" />
+    <state width="1493" height="256" key="GridCell.Tab.1.bottom" timestamp="1606502751225">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="256" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606502751225" />
+    <state width="1493" height="256" key="GridCell.Tab.1.center" timestamp="1606502751225">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="256" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1606502751225" />
+    <state width="1493" height="256" key="GridCell.Tab.1.left" timestamp="1606502751225">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="256" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1606502751225" />
+    <state width="1493" height="256" key="GridCell.Tab.1.right" timestamp="1606502751225">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="256" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1606502751225" />
+    <state x="477" y="150" width="631" height="534" key="find.popup" timestamp="1606507229256">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="477" y="150" width="631" height="534" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1606507229256" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

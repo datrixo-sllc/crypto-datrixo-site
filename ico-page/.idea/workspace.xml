@@ -28,12 +28,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a707f61-328b-452c-b059-b157c028b03f" name="Default Changelist" comment="add paidPrice for initial investors and sample investors">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/insert_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/insert_user.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest-in-equity/equity-holders-datatable/equity-holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest-in-equity/equity-holders-datatable/equity-holders-datatable.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest/holders-datatable/holders-datatable.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest/invest.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,38 +344,54 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="566" y="96" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1606493156448" />
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1606497975234">
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1606505579139">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
-    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1606497975234">
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606505579139" />
+    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1606505579139">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
-    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1606497975234">
+    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606505579139" />
+    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1606505579139">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
-    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1606497975234">
+    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606505579139" />
+    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1606505579139">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
-    <state width="1493" height="230" key="GridCell.Tab.1.bottom" timestamp="1606497975235">
+    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606505579139" />
+    <state width="1493" height="230" key="GridCell.Tab.1.bottom" timestamp="1606505579140">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606497975235" />
-    <state width="1493" height="230" key="GridCell.Tab.1.center" timestamp="1606497975234">
+    <state width="1493" height="230" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606505579140" />
+    <state width="1493" height="230" key="GridCell.Tab.1.center" timestamp="1606505579139">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
-    <state width="1493" height="230" key="GridCell.Tab.1.left" timestamp="1606497975234">
+    <state width="1493" height="230" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1606505579139" />
+    <state width="1493" height="230" key="GridCell.Tab.1.left" timestamp="1606505579139">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
-    <state width="1493" height="230" key="GridCell.Tab.1.right" timestamp="1606497975234">
+    <state width="1493" height="230" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1606505579139" />
+    <state width="1493" height="230" key="GridCell.Tab.1.right" timestamp="1606505579140">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1606497975234" />
+    <state width="1493" height="230" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1606505579140" />
+    <state width="1493" height="256" key="GridCell.Tab.2.bottom" timestamp="1606505579117">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="256" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606505579117" />
+    <state width="1493" height="256" key="GridCell.Tab.2.center" timestamp="1606505579117">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="256" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1606505579117" />
+    <state width="1493" height="256" key="GridCell.Tab.2.left" timestamp="1606505579117">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="256" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1606505579117" />
+    <state width="1493" height="256" key="GridCell.Tab.2.right" timestamp="1606505579117">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="256" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1606505579117" />
     <state x="424" y="119" key="RollbackChangesDialog" timestamp="1606494935881">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -394,6 +414,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java</url>
           <line>49</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java</url>
+          <line>224</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
