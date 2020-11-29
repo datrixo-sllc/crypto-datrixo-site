@@ -22,3 +22,7 @@
 /.nb-gradle/
 /build/
 /ico-page/target/
+/.idea/
+/ico-page/.idea/
+/ico-page/frontend-ico-page/.idea/
+/ico-page/frontend-investor-page/.idea/
