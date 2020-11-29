@@ -58,7 +58,7 @@ public class InvestorPageController {
     @Autowired
     UserService userService;
 
-    private final static int UNIT_VALUE = 300;
+    private final static int UNIT_VALUE = 150;
 
     @RequestMapping(value = "/ppm", method = RequestMethod.GET)
     public ResponseEntity<Resource> getIcoPage() throws IOException {
