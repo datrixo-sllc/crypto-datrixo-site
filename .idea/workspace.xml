@@ -32,17 +32,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="datrixosllc fix debugs">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment=".idea in ignore">
+      <change afterPath="$PROJECT_DIR$/ico-page/ico-page-site.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/datrixo-contract/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datrixo-contract/contracts/DatrixoToken.sol" beforeDir="false" afterPath="$PROJECT_DIR$/datrixo-contract/contracts/DatrixoToken.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/.idea/dataSources/2613f838-86fa-45c0-980b-e6825c7088c1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/.idea/dataSources/2613f838-86fa-45c0-980b-e6825c7088c1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/contract-wrapper-generate/datrixoContract.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/contract-wrapper-generate/datrixoContract.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest-in-equity/invest-in-equity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest-in-equity/invest-in-equity.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/holders-datatable/holders-datatable.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/my-equity-holdings/my-equity-holding-datatable/my-equity-holding-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/my-equity-holdings/my-equity-holding-datatable/my-equity-holding-datatable.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/my-holdings/my-holdings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/my-holdings/my-holdings.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -405,21 +410,7 @@
       <workItem from="1606328254277" duration="1203000" />
       <workItem from="1606413534506" duration="630000" />
       <workItem from="1606414455543" duration="2466000" />
-      <workItem from="1606665315485" duration="646000" />
-    </task>
-    <task id="LOCAL-00033" summary="user profile without backend">
-      <created>1560080014638</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1560080014638</updated>
-    </task>
-    <task id="LOCAL-00034" summary="user profile with backend">
-      <created>1560086966146</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1560086966146</updated>
+      <workItem from="1606665315485" duration="3048000" />
     </task>
     <task id="LOCAL-00035" summary="reset password dialog without backend">
       <created>1560175040408</created>
@@ -750,7 +741,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606499087321</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="datrixosllc https and total amount 8 000 and $150 per unit">
+      <created>1606666251906</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1606666251906</updated>
+    </task>
+    <task id="LOCAL-00083" summary=".idea in ignore">
+      <created>1606666528723</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1606666528723</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -786,8 +791,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reset password dialog final" />
-    <MESSAGE value="h2 console false" />
     <MESSAGE value="new database on adm.datrixo AWS" />
     <MESSAGE value="new datrixo contract DRXT" />
     <MESSAGE value="js file for datrixo.com wordpress" />
@@ -811,17 +814,19 @@
     <MESSAGE value="generate new contract wrapper" />
     <MESSAGE value="new database on datrixosllc" />
     <MESSAGE value="datrixosllc fix debugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="datrixosllc fix debugs" />
+    <MESSAGE value="datrixosllc https and total amount 8 000 and $150 per unit" />
+    <MESSAGE value=".idea in ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea in ignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="153" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606413567914">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="449" y="153" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.834@0.0.1536.834" timestamp="1606413567914" />
-    <state x="592" y="225" key="FileChooserDialogImpl" timestamp="1606414768481">
+    <state x="592" y="225" key="FileChooserDialogImpl" timestamp="1606671282064">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="592" y="225" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606414768481" />
+    <state x="592" y="225" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606671282064" />
     <state width="1493" height="206" key="GridCell.Tab.0.bottom" timestamp="1606495221179">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -842,10 +847,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="369" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1606414839994" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1606499126885">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1606666553193">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1606499126885" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1606666553193" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

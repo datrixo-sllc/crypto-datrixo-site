@@ -26,7 +26,7 @@ contract DatrixoToken is SafeMath {
     string constant public name = "DatrixoToken";
     string constant public symbol = "DRX";
     uint8 constant public decimals = 5;
-    uint public totalSupply = 400000000;
+    uint public totalSupply = 800000000;
     address public owner;
     uint public startTime;
     mapping(address => uint) public balanceOf;
