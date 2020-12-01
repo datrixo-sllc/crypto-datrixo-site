@@ -1,5 +1,7 @@
 Apr 13 2020 00:00:00 ---- new Date(2020, 3, 13).getTime()/1000 = 1586725200
 
+new Date(2020, 11, 29).getTime()/1000 = 1609189200
+
 /* This creates an array with all balances */
 
 /* This balance structure is
