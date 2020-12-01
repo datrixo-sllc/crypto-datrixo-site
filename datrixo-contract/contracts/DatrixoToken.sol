@@ -20,10 +20,10 @@ contract SafeMath {
     }
 }
 
-contract DatrixoToken is SafeMath {
+contract DatrixoEquityToken is SafeMath {
 
     string constant public standard = "ERC20";
-    string constant public name = "DatrixoToken";
+    string constant public name = "DatrixoEquityToken";
     string constant public symbol = "DRX";
     uint8 constant public decimals = 5;
     uint public totalSupply = 800000000;

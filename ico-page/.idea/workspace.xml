@@ -30,9 +30,13 @@
     <list default="true" id="be48c758-679b-42e7-9588-255404fa8f7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../datrixo-contract/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../datrixo-contract/contracts/DatrixoToken.sol" beforeDir="false" afterPath="$PROJECT_DIR$/../datrixo-contract/contracts/DatrixoToken.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest-in-equity/invest-in-equity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest-in-equity/invest-in-equity.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/invest/invest.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-investor-page/src/app/layout/layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page-site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page-site.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +102,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606671285414</updated>
-      <workItem from="1606671286565" duration="2234000" />
+      <workItem from="1606671286565" duration="2943000" />
+      <workItem from="1606753513881" duration="593000" />
+      <workItem from="1606843757750" duration="383000" />
     </task>
     <servers />
   </component>
@@ -115,24 +121,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="206" key="GridCell.Tab.0.bottom" timestamp="1606673257434">
+    <state width="1493" height="206" key="GridCell.Tab.0.bottom" timestamp="1606676849259">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606673257434" />
-    <state width="1493" height="206" key="GridCell.Tab.0.center" timestamp="1606673257434">
+    <state width="1493" height="206" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1606676849259" />
+    <state width="1493" height="206" key="GridCell.Tab.0.center" timestamp="1606676849259">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606673257434" />
-    <state width="1493" height="206" key="GridCell.Tab.0.left" timestamp="1606673257434">
+    <state width="1493" height="206" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1606676849259" />
+    <state width="1493" height="206" key="GridCell.Tab.0.left" timestamp="1606676849258">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606673257434" />
-    <state width="1493" height="206" key="GridCell.Tab.0.right" timestamp="1606673257434">
+    <state width="1493" height="206" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1606676849258" />
+    <state width="1493" height="206" key="GridCell.Tab.0.right" timestamp="1606676849259">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606673257434" />
+    <state width="1493" height="206" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1606676849259" />
     <state x="607" y="162" width="581" height="614" key="find.popup" timestamp="1606673135457">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

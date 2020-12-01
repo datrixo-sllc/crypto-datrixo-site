@@ -8,6 +8,7 @@
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" />
           <factory-entry name="h2EntityManagerFactory" />
+          <factory-entry name="ico-page-site" />
           <factory-entry name="mySqlEntityManagerFactory" />
         </datasource-mapping>
         <naming-strategy-map />
