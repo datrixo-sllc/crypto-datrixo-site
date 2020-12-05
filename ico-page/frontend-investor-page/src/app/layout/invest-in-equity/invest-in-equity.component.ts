@@ -12,6 +12,7 @@ import {interval, Subscription} from 'rxjs';
 import {switchMap} from 'rxjs/internal/operators/switchMap';
 import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import * as Noty from 'noty';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-invest-in-equity',
@@ -43,6 +44,7 @@ export class InvestInEquityComponent implements OnInit, OnDestroy {
         private investUploadService: InvestInEquityUploadService,
         private spinner: NgxSpinnerService,
         private recieveUtils: RecieveUtils,
+        private _router: Router,
         private modalService: NgbModal) {}
 
     ngOnInit() {
@@ -55,7 +57,9 @@ export class InvestInEquityComponent implements OnInit, OnDestroy {
                 this.response = value as IcoPageResponse;
                 this.fillValues();
             }
-        }, error => this.unSubscribe());
+        }, error => {this.unSubscribe();
+            this._router.navigate(['/login']);
+        });
     }
 
     onNavigate() {

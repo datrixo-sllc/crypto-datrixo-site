@@ -72,6 +72,7 @@ export class InvestorProfileComponent implements OnInit {
                     this.spinner.hide();
                     // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                    this.router.navigate(['/login']);
                 });
 
     }

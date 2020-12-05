@@ -4,6 +4,7 @@ import {NgxSpinnerService} from 'ngx-spinner';
 import {MainPageService} from './main-page.service';
 import {RespUserMainData} from './resp-user-main-data';
 import * as Noty from 'noty';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-main-page',
@@ -18,6 +19,7 @@ export class MainPageComponent implements OnInit {
     alertBody: string;
 
     constructor(private spinner: NgxSpinnerService,
+                private _router: Router,
                 private mainPageService: MainPageService) {
     }
 
@@ -37,6 +39,7 @@ export class MainPageComponent implements OnInit {
                     this.alertBody = 'Server error: ' + reason;
                     this.spinner.hide();
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                    this._router.navigate(['/login']);
                 });
 
     }
