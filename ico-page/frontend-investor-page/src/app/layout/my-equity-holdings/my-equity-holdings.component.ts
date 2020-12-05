@@ -7,6 +7,7 @@ import {HolderResponce} from './holder-responce';
 import {IcoPageResponse} from './ico-page-response';
 import {interval, Subscription} from 'rxjs';
 import {switchMap} from 'rxjs/internal/operators/switchMap';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-my-equity-holdings',
@@ -23,6 +24,7 @@ export class MyEquityHoldingsComponent implements OnInit, OnDestroy {
 
     constructor(
         private myHoldingsService: MyEquityHoldingsService,
+        private _router: Router,
         private spinner: NgxSpinnerService) {}
 
     ngOnInit() {
@@ -35,7 +37,9 @@ export class MyEquityHoldingsComponent implements OnInit, OnDestroy {
                 this.response = value as IcoPageResponse;
                 this.fillValues();
             }
-        }, error => this.unSubscribe());
+        }, error => {this.unSubscribe();
+            this._router.navigate(['/login']);
+        });
     }
 
 

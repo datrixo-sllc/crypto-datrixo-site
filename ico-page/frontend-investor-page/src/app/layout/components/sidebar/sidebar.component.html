@@ -8,7 +8,7 @@
             <i class="fa fa-fw fa-user"></i>&nbsp;
             <span>{{ 'Investor Profile' | translate }}</span>
         </a>
-        <div *ngIf="app.localStorageItem('userRole') === 'USER_CRYPTO'">
+        <div *ngIf="app.localStorageItem('userRole') === 'USER_CRYPTO' || app.localStorageItem('userRole') === 'ADMIN'">
             <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-fw fa-money"></i>&nbsp;
                 <span>{{ 'Invest DRX' | translate }}</span>
