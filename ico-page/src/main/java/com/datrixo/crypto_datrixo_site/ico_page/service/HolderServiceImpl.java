@@ -105,7 +105,9 @@ public class HolderServiceImpl implements HolderService {
             }
             hareholders = datrixoContract.getShareholdersArray().send();
             holderRepository.deleteAll();
-            hareholders.forEach(s -> {
+            hareholders.stream()
+                    .filter(s -> !s.equalsIgnoreCase("0x0000000000000000000000000000000000000000"))
+                    .forEach(s -> {
                 try {
                     BigInteger balance = datrixoContract.balanceOf(s).send();
                     if (balance != null && balance.signum() == 1 ) {
