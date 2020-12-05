@@ -25,18 +25,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/DocumentForDownloadDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/DocumentForDownloadListDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/DocumentForDownload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/SignedDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/util/DocumentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/DocumentForDownloadRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/SignedDocumentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../datrixo-contract/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/main-page/main-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/main-page/main-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holdings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holdings.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holdings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holdings.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ico-page-site.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/HolderAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/HolderAccountRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
