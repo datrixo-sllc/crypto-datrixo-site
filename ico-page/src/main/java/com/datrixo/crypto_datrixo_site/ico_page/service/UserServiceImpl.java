@@ -2,6 +2,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.service;
 
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.ImageContent;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.Role;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserTitle;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.ImageContentRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.UserRepository;
@@ -10,6 +11,8 @@ import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserPassword;
 import org.apache.commons.io.IOUtils;
 import org.hibernate.Hibernate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -29,6 +32,8 @@ import java.util.regex.Pattern;
  **/
 @Service
 public class UserServiceImpl implements UserService {
+    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+
     @Autowired
     private UserRepository userRepository;
 
@@ -136,5 +141,28 @@ public class UserServiceImpl implements UserService {
         } else {
             return USER_NOT_FOUND;
         }
+    }
+
+    @Override
+    public Optional<Role> getRoleForCurrentUser() {
+        Optional<User> optionalUser = getCurrentUser();
+        return optionalUser.isPresent() ? Optional.of(optionalUser.get().getRole()) : Optional.empty();
+    }
+
+    @Override
+    public boolean checkRoleForCurrentUser(Role role) {
+        Optional<Role> optionalRole = getRoleForCurrentUser();
+        if (!optionalRole.isPresent()) {
+            return false;
+        }
+        return role.equals(optionalRole.get());
+    }
+
+    @Override
+    public Optional<User> getCurrentUser() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        MediUser currentUser = (MediUser) auth.getPrincipal();
+        Optional<User> optionalUser = userRepository.findByUsername(currentUser.getUsername());
+        return optionalUser;
     }
 }
