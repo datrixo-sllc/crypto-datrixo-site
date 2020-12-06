@@ -32,20 +32,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="redirect to login if error">
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/DocumentForDownloadDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/DocumentForDownloadListDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentListDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/DocumentForDownload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/SignedDocument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/util/DocumentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/DocumentForDownloadRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/SignedDocumentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadService.java" afterDir="false" />
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="user documents">
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/HolderAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/HolderAccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/DocumentForDownloadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/DocumentForDownloadRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,14 +156,14 @@
     <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.datrixo.crypto_datrixo_site.ico_page" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.service" />
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\webapp" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util" />
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -174,12 +171,12 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\resources" />
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\webapp" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util" />
+      <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model" />
-      <recent name="com.datrixo.crypto_datrixo_site.ico_page.service" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.IcoPageServiceImplTest.getAllData">
@@ -419,14 +416,11 @@
       <workItem from="1606843747539" duration="3173000" />
       <workItem from="1606913263982" duration="595000" />
       <workItem from="1607178987068" duration="877000" />
-      <workItem from="1607180254576" duration="8837000" />
-    </task>
-    <task id="LOCAL-00042" summary="new database on adm.datrixo AWS">
-      <created>1561555049505</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1561555049505</updated>
+      <workItem from="1607180254576" duration="16541000" />
+      <workItem from="1607202419659" duration="594000" />
+      <workItem from="1607204773741" duration="118000" />
+      <workItem from="1607204935294" duration="607000" />
+      <workItem from="1607237622129" duration="11768000" />
     </task>
     <task id="LOCAL-00043" summary="new datrixo contract DRXT">
       <created>1577192101521</created>
@@ -764,7 +758,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607184624659</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="user documents">
+      <created>1607193822284</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1607193822284</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -800,7 +801,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="total amount 800000000&#10;remove check of first year" />
     <MESSAGE value="total amount 800 00000&#10;remove check of first year" />
     <MESSAGE value="total amount 4 000 00000" />
     <MESSAGE value="comments was edited" />
@@ -825,7 +825,8 @@
     <MESSAGE value="new contract with totalSupply 8000 $150" />
     <MESSAGE value="new contract name DatrixoEquityToken" />
     <MESSAGE value="redirect to login if error" />
-    <option name="LAST_COMMIT_MESSAGE" value="redirect to login if error" />
+    <MESSAGE value="user documents" />
+    <option name="LAST_COMMIT_MESSAGE" value="user documents" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -842,12 +843,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
-          <line>107</line>
+          <line>112</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
-          <line>127</line>
+          <line>132</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

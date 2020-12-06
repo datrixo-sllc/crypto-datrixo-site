@@ -15,4 +15,5 @@ import java.util.Optional;
 @Repository
 public interface DocumentForDownloadRepository extends JpaRepository<DocumentForDownload, Long> {
     Optional<DocumentForDownload> findFirstByDocTypeOrderByStartDateDesc(DocumentType documentType);
+    Optional<DocumentForDownload> findFirstById(Long id);
 }

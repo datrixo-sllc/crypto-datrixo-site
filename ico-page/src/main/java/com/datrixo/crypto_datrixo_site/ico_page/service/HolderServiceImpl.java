@@ -5,6 +5,8 @@ import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
 import com.datrixo.crypto_datrixo_site.ico_page.h2.repository.HolderRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.HolderAccountRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -29,6 +31,8 @@ import java.util.List;
  */
 @Service
 public class HolderServiceImpl implements HolderService {
+    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+
     @Autowired
     private HolderRepository holderRepository;
 

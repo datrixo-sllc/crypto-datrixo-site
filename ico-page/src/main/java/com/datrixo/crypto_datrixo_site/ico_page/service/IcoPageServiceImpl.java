@@ -3,6 +3,8 @@ package com.datrixo.crypto_datrixo_site.ico_page.service;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
 import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,8 @@ import java.util.List;
  */
 @Service
 public class IcoPageServiceImpl implements IcoPageService {
+    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+
     @Autowired
     private HolderService holderService;
     private static DecimalFormat df2 = new DecimalFormat("0.00");
