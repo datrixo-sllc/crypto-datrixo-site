@@ -1,8 +1,12 @@
 package com.datrixo.crypto_datrixo_site.ico_page.mysql.repository;
 
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Yuri Nikiforov.
@@ -12,4 +16,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HolderAccountRepository extends JpaRepository<HolderAccount, Long> {
     HolderAccount findFirstByAddress(String address);
+    Optional<List<HolderAccount>> findHolderAccountsByUser(User user);
 }

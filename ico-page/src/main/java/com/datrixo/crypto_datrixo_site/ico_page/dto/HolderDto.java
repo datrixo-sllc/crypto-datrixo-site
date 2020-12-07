@@ -17,6 +17,10 @@ public class HolderDto {
     public HolderDto() {
     }
 
+    public HolderDto(String address) {
+        this.address = address;
+    }
+
     public HolderDto(String address, Date timeDate, String shareTokens, String paidPrice, String share) {
         this.address = address;
         this.timeDate = timeDate;

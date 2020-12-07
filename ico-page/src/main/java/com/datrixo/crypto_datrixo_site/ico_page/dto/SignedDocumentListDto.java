@@ -9,24 +9,23 @@ import java.util.List;
  * Time: 21:40
  **/
 public class SignedDocumentListDto {
-    private List<SignedDocumentDto> documents;
+    private List<SignedDocumentListByHolderAccountDto> documents;
 
     public SignedDocumentListDto() {
     }
 
-    public SignedDocumentListDto(List<SignedDocumentDto> documents) {
+    public SignedDocumentListDto(List<SignedDocumentListByHolderAccountDto> documents) {
         this.documents = documents;
     }
 
-    public List<SignedDocumentDto> getDocuments() {
+    public List<SignedDocumentListByHolderAccountDto> getDocuments() {
         if (documents == null) {
             documents = new ArrayList<>();
         }
-
         return documents;
     }
 
-    public void setDocuments(List<SignedDocumentDto> documents) {
+    public void setDocuments(List<SignedDocumentListByHolderAccountDto> documents) {
         this.documents = documents;
     }
 }

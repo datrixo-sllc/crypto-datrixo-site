@@ -4,6 +4,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.contract.DatrixoContract;
 import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
 import com.datrixo.crypto_datrixo_site.ico_page.h2.repository.HolderRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.HolderAccountRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ import java.math.BigInteger;
 import java.math.MathContext;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Yuri Nikiforov.
@@ -141,5 +143,10 @@ public class HolderServiceImpl implements HolderService {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public Optional<List<HolderAccount>> findHolderAccountsByUser(User user) {
+        return holderAccountRepository.findHolderAccountsByUser(user);
     }
 }

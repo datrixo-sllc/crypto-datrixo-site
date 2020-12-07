@@ -25,16 +25,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentListByHolderAccountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/DocumentForDownloadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/DocumentForDownloadRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentListDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/SignedDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/SignedDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/HolderAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/HolderAccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/SignedDocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/SignedDocumentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +247,8 @@
       <workItem from="1607204776296" duration="114000" />
       <workItem from="1607204935812" duration="586000" />
       <workItem from="1607237622995" duration="591000" />
+      <workItem from="1607335293456" duration="418000" />
+      <workItem from="1607335743082" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
