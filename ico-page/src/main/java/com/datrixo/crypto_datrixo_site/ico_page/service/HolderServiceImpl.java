@@ -21,7 +21,6 @@ import org.web3j.tx.gas.DefaultGasProvider;
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.math.MathContext;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -148,5 +147,10 @@ public class HolderServiceImpl implements HolderService {
     @Override
     public Optional<List<HolderAccount>> findHolderAccountsByUser(User user) {
         return holderAccountRepository.findHolderAccountsByUser(user);
+    }
+
+    @Override
+    public Optional<HolderAccount> findByAddress(String address) {
+        return Optional.of(holderAccountRepository.findFirstByAddress(address));
     }
 }
