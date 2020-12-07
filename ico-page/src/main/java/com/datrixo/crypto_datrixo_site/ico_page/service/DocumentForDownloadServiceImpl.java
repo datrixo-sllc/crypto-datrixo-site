@@ -12,6 +12,7 @@ import org.apache.commons.lang3.EnumUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
  * Date: 05.12.2020
  * Time: 22:07
  **/
+@Service
 public class DocumentForDownloadServiceImpl implements DocumentForDownloadService {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 

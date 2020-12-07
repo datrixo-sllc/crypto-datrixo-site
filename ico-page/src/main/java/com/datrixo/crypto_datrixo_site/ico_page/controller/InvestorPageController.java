@@ -110,7 +110,7 @@ public class InvestorPageController {
         User user = userService.findByUsernameWithImage(currentUser.getUsername());
         UserDto userDto = null;
         if (user != null) {
-            userDto = new UserDto(user.getUsername(), user.getRole().name(), user.getTitle().name(),
+            userDto = new UserDto(null, user.getUsername(), user.getRole().name(), user.getTitle().name(),
                     user.getFirstName(), user.getLastName(),
                     user.getPhone(),
                     user.getOrganization() != null ? user.getOrganization().getCompanyName() : "",

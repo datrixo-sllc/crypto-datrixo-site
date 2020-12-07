@@ -1,5 +1,6 @@
 package com.datrixo.crypto_datrixo_site.ico_page.mysql.repository;
 
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.SignedDocument;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,5 +18,6 @@ import java.util.Optional;
 @Repository
 public interface SignedDocumentRepository extends JpaRepository<SignedDocument, Long> {
     Optional<List<SignedDocument>> findAllByUser(User user);
+    Optional<List<SignedDocument>> findAllByHolderAccount(HolderAccount holderAccount);
     Optional<SignedDocument> findById(Long id);
 }

@@ -8,6 +8,7 @@ import java.util.Date;
  * Time: 19:14
  **/
 public class UserDto {
+    private Long id;
     private String username;
     private String role;
     private String title;
@@ -27,9 +28,14 @@ public class UserDto {
     public UserDto() {
     }
 
-    public UserDto(String username, String role, String title, String firstName, String lastName, String phone,
+    public UserDto(Long id) {
+        this.id = id;
+    }
+
+    public UserDto(Long id, String username, String role, String title, String firstName, String lastName, String phone,
                    String organizationName, Date incorporateDate, String organizationPhone,
                    String streetAddress, String city, String state, String zip, String country, byte[] imageContent) {
+        this.id = id;
         this.username = username;
         this.role = role;
         this.title = title;
@@ -45,6 +51,14 @@ public class UserDto {
         this.zip = zip;
         this.country = country;
         this.imageContent = imageContent;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {

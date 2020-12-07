@@ -10,6 +10,7 @@ import java.util.Date;
 public class SignedDocumentDto {
     private Long id;
     private UserDto user;
+    private HolderDto holderAccount;
     private String docType;
     private Date loadDate;
     private byte[] content;
@@ -17,9 +18,11 @@ public class SignedDocumentDto {
     public SignedDocumentDto() {
     }
 
-    public SignedDocumentDto(Long id, UserDto user, String docType, Date loadDate, byte[] content) {
+    public SignedDocumentDto(Long id, UserDto user, HolderDto holderAccount, String docType,
+                             Date loadDate, byte[] content) {
         this.id = id;
         this.user = user;
+        this.holderAccount = holderAccount;
         this.docType = docType;
         this.loadDate = loadDate;
         this.content = content;
@@ -39,6 +42,14 @@ public class SignedDocumentDto {
 
     public void setUser(UserDto user) {
         this.user = user;
+    }
+
+    public HolderDto getHolderAccount() {
+        return holderAccount;
+    }
+
+    public void setHolderAccount(HolderDto holderAccount) {
+        this.holderAccount = holderAccount;
     }
 
     public String getDocType() {
