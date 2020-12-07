@@ -18,6 +18,10 @@ public class SignedDocumentDto {
     public SignedDocumentDto() {
     }
 
+    public SignedDocumentDto(Long id) {
+        this.id = id;
+    }
+
     public SignedDocumentDto(Long id, UserDto user, HolderDto holderAccount, String docType,
                              Date loadDate, byte[] content) {
         this.id = id;

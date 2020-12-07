@@ -25,6 +25,17 @@ public class SignedDocument extends AbstractPersistable<Long> {
     @Lob
     private byte[] content;
 
+    public SignedDocument() {
+    }
+
+    public SignedDocument(User user, HolderAccount holderAccount, DocumentType docType, Date loadDate, byte[] content) {
+        this.user = user;
+        this.holderAccount = holderAccount;
+        this.docType = docType;
+        this.loadDate = loadDate;
+        this.content = content;
+    }
+
     public User getUser() {
         return user;
     }
