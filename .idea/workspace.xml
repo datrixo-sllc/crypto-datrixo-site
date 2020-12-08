@@ -33,13 +33,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="user documents">
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/add-documents-for-download-upload.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/document-for-download-list.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/document-for-download.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-add/documents-for-download-add.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-add/documents-for-download-add.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-add/documents-for-download-add.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-datatable/ingredients-datatable.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-datatable/ingredients-datatable.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-datatable/ingredients-datatable.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-detail/ingredient-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-detail/ingredient-detail.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-detail/ingredient-detail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-edit/ingredient-edit.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-edit/ingredient-edit.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-edit/ingredient-edit.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/documents-for-download.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/redirect-documents-for-download.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/documents-for-download/update-documents-for-download-upload.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/add-ingredient-upload.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/ingredient-list.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/ingredient.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/ingredients-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/ingredients.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/ingredients.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/ingredients.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/ingredients.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/ingredients.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/redirect-ingredients.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-add/ingredient-add.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-add/ingredient-add.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-add/ingredient-add.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-datatable/ingredients-datatable.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-datatable/ingredients-datatable.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-datatable/ingredients-datatable.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-detail/ingredient-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-detail/ingredient-detail.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-detail/ingredient-detail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-edit/ingredient-edit.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-edit/ingredient-edit.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/signed-documents-edit/ingredient-edit.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/signed-documents/update-ingredient-upload.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/modules/page-header/dinamic-header/dinamic-page-header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/modules/page-header/dinamic-header/dinamic-page-header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/utilites/Utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/utilites/global-app.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/SignedDocumentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/SignedDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/SignedDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/modules/page-header/page-header.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/modules/page-header/page-header.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,6 +467,8 @@
       <workItem from="1607237622129" duration="12480000" />
       <workItem from="1607335292462" duration="418000" />
       <workItem from="1607335742406" duration="16436000" />
+      <workItem from="1607445102243" duration="925000" />
+      <workItem from="1607447671943" duration="1883000" />
     </task>
     <task id="LOCAL-00045" summary="new datrixo contract DRXT">
       <created>1577194358061</created>

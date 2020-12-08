@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-lg-6 mb-3">
+        <button class="btn btn-outline-secondary mr-3" (click)="onBackList()">Back to List</button>
+        <button class="btn btn-outline-secondary mr-3" (click)="onBackItem()">Back to Item</button>
+        <button class="btn btn-outline-secondary mr-3" (click)="init()">Revert</button>
+        <button class="btn btn-outline-success mr-3" (click)="onSubmitItemUpdate()">Update Item</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-7 my-0">
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Name<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="name" [(ngModel)]="requestItemData.name"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Description<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="name" [(ngModel)]="requestItemData.description"/>
+            </div>
+        </div>
+    </div>
+
+
+</div>
