@@ -1,0 +1,11 @@
+/**
+ * Created by Yuri Nikiforov.
+ * Date: 07.10.2020
+ * Time: 13:13
+ */
+import {Ingredient} from './ingredient';
+
+export class IngredientList {
+    ingredients: Ingredient[];
+
+}

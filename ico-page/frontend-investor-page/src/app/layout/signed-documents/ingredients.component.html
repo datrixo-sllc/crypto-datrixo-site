@@ -1,0 +1,23 @@
+<div [@routerTransition]>
+    <app-dinamic-page-header [header]="header" [heading]="headingStr" [icon]="'fa-money'"></app-dinamic-page-header>
+    <div class="row">
+        <div class="col-lg-12" *ngIf="viewList&& !itemForAdd && items">
+        <app-ingredients-datatable [items]="items"
+                            (onSelectedItem)="onSelect($event)"
+                            (onAddItemEmit) = "onAddItem($event)"></app-ingredients-datatable>
+        </div>
+        <div class="col-lg-12" *ngIf="!viewList && !itemForAdd && !itemForEdit && selectedItem">
+            <app-ingredient-detail [id]="selectedItem.id"
+                            (closeEmit)="onCloseDetail($event)"
+                            (editEmit)="onEditDetail($event)"></app-ingredient-detail>
+        </div>
+        <div class="col-lg-12" *ngIf="!viewList && !itemForAdd && itemForEdit && selectedItem">
+            <app-ingredient-edit [id]="selectedItem.id"
+                          (backListEmit)="onBackList($event)"
+                          (backItemEmit)="onBackItem($event)"></app-ingredient-edit>
+        </div>
+        <div class="col-lg-12" *ngIf="viewList && itemForAdd">
+            <app-ingredient-add (backListEmit)="onBackList($event)"></app-ingredient-add>
+        </div>
+    </div>
+</div>
