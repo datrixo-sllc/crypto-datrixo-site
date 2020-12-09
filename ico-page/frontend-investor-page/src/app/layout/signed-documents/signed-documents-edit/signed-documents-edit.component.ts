@@ -10,10 +10,10 @@ import {
 import {HttpResponse} from '@angular/common/http';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {DomSanitizer} from '@angular/platform-browser';
-import {Ingredient} from '../ingredient';
-import {IngredientsService} from '../ingredients.service';
-import {UpdateIngredientUploadService} from '../update-ingredient-upload.service';
-import {AddIngredientUploadService} from '../add-ingredient-upload.service';
+import {SignedDocument} from '../signed-document';
+import {SignedDocumentsService} from '../signed-documents.service';
+import {UpdateSignedDocumentsUploadService} from '../update-signed-documents-upload.service';
+import {AddSignedDocumentsUploadService} from '../add-signed-documents-upload.service';
 
 /**
  * Created by Yuri Nikiforov.
@@ -22,24 +22,24 @@ import {AddIngredientUploadService} from '../add-ingredient-upload.service';
  */
 
 @Component({
-    selector: 'app-ingredient-edit',
-    templateUrl: './ingredient-edit.component.html',
-    styleUrls: ['./ingredient-edit.component.scss']
+    selector: 'app-signed-documents-edit',
+    templateUrl: './documets-for-download-edit.component.html',
+    styleUrls: ['./signed-documents-edit.component.scss']
 })
-export class IngredientEditComponent implements OnInit, OnChanges {
+export class SignedDocumentsEditComponent implements OnInit, OnChanges {
     @Input() id: number;
     @Output() backListEmit = new EventEmitter<string>();
     @Output() backItemEmit = new EventEmitter<string>();
 
 
-    requestItemData: Ingredient;
+    requestItemData: SignedDocument;
 
     username: string;
 
     constructor(
-        private updateItemUploadService: UpdateIngredientUploadService,
-        private addItemUploadService: AddIngredientUploadService,
-        private listService: IngredientsService,
+        private updateItemUploadService: UpdateSignedDocumentsUploadService,
+        private addItemUploadService: AddSignedDocumentsUploadService,
+        private listService: SignedDocumentsService,
         private spinner: NgxSpinnerService,
         private sanitizer: DomSanitizer
     ) {
@@ -59,7 +59,7 @@ export class IngredientEditComponent implements OnInit, OnChanges {
             this.spinner.show();
             this.listService.getItemDetail(this.id)
                 .subscribe(value => {
-                    this.requestItemData = value as Ingredient;
+                    this.requestItemData = value as SignedDocument;
                     this.spinner.hide();
                 }, error => {
                     this.spinner.hide();
@@ -68,8 +68,8 @@ export class IngredientEditComponent implements OnInit, OnChanges {
     }
 
     onSubmitItemUpdate() {
-        if (!this.requestItemData || !this.requestItemData.name
-            || !this.requestItemData.description
+        if (!this.requestItemData || !this.requestItemData.docType
+            || !this.requestItemData.loadDate
         ) {
             alert('Fill form, please');
         } else {
@@ -93,7 +93,7 @@ export class IngredientEditComponent implements OnInit, OnChanges {
     }
 
     clearUploadParams() {
-        this.requestItemData = new Ingredient();
+        this.requestItemData = new SignedDocument();
 
     }
 

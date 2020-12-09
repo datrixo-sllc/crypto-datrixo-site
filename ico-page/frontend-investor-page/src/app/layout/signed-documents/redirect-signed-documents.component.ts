@@ -7,16 +7,16 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-    selector: 'app-redirect-ingredients',
+    selector: 'app-redirect-signed-documents',
     template: ''
 })
-export class RedirectIngredientsComponent implements OnInit {
+export class RedirectSignedDocumentsComponent implements OnInit {
 
     constructor(private router: Router) {
     }
 
     ngOnInit() {
-        this.router.navigate(['/ingredients']);
+        this.router.navigate(['/signed-documents']);
     }
 
 }

@@ -22,11 +22,11 @@ import {AddDocumentsForDownloadUploadService} from '../add-documents-for-downloa
  */
 
 @Component({
-    selector: 'app-ingredient-edit',
-    templateUrl: './ingredient-edit.component.html',
-    styleUrls: ['./ingredient-edit.component.scss']
+    selector: 'app-documents-for-download-edit',
+    templateUrl: './documets-for-download-edit.component.html',
+    styleUrls: ['./documents-for-download-edit.component.scss']
 })
-export class IngredientEditComponent implements OnInit, OnChanges {
+export class DocumentsForDownloadEditComponent implements OnInit, OnChanges {
     @Input() id: number;
     @Output() backListEmit = new EventEmitter<string>();
     @Output() backItemEmit = new EventEmitter<string>();
@@ -68,8 +68,8 @@ export class IngredientEditComponent implements OnInit, OnChanges {
     }
 
     onSubmitItemUpdate() {
-        if (!this.requestItemData || !this.requestItemData.name
-            || !this.requestItemData.description
+        if (!this.requestItemData || !this.requestItemData.docType
+            || !this.requestItemData.startDate
         ) {
             alert('Fill form, please');
         } else {

@@ -8,6 +8,7 @@ import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import {RedirectDocumentsForDownloadComponent} from './documents-for-download/redirect-documents-for-download.component';
+import {RedirectSignedDocumentsComponent} from './signed-documents/redirect-signed-documents.component';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import {RedirectDocumentsForDownloadComponent} from './documents-for-download/re
         LayoutComponent,
         SidebarComponent,
         HeaderComponent,
-        RedirectDocumentsForDownloadComponent
+        RedirectDocumentsForDownloadComponent,
+        RedirectSignedDocumentsComponent
     ]
 })
 export class LayoutModule {}

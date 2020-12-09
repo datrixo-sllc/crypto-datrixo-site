@@ -10,10 +10,10 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable()
-export class IngredientsService {
+export class SignedDocumentsService {
 
     private static readonly SLASH: string = '/';
-    private static readonly INGREDIENT: string = 'ingredient';
+    private static readonly URL: string = 'signed-documents';
     private static readonly LIST: string = 'list';
     private static readonly DETAIL: string = 'detail';
 
@@ -24,17 +24,18 @@ export class IngredientsService {
     }
 
     getList(): Observable<any> {
-        const url = this.config.apiEndpoint + IngredientsService.INGREDIENT + IngredientsService.SLASH + IngredientsService.LIST;
+        const url = this.config.apiEndpoint +
+            SignedDocumentsService.URL + SignedDocumentsService.SLASH + SignedDocumentsService.LIST;
         return this.http.get(url, {withCredentials: true});
     }
 
     getItemDetail(id: number): Observable<any> {
-        const url = this.config.apiEndpoint + IngredientsService.INGREDIENT + IngredientsService.SLASH + id;
+        const url = this.config.apiEndpoint + SignedDocumentsService.URL + SignedDocumentsService.SLASH + id;
         return this.http.get(url, {withCredentials: true});
     }
 
     deleteItem(id: number): Observable<any> {
-        const url = this.config.apiEndpoint + IngredientsService.INGREDIENT + IngredientsService.SLASH + id;
+        const url = this.config.apiEndpoint + SignedDocumentsService.URL + SignedDocumentsService.SLASH + id;
         return this.http.delete(url, {withCredentials: true});
     }
 }

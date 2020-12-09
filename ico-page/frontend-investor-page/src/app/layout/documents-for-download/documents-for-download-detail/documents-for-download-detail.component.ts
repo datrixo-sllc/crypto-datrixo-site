@@ -6,21 +6,21 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {DomSanitizer} from '@angular/platform-browser';
-import {Ingredient} from '../ingredient';
-import {IngredientsService} from '../ingredients.service';
+import {DocumentForDownload} from '../document-for-download';
+import {DocumentsForDownloadService} from '../documents-for-download.service';
 
 @Component({
-    selector: 'app-ingredient-detail',
-    templateUrl: './ingredient-detail.component.html',
-    styleUrls: ['./ingredient-detail.component.scss']
+    selector: 'app-documents-for-download-detail',
+    templateUrl: './documents-for-download-detail.component.html',
+    styleUrls: ['./documents-for-download-detail.component.scss']
 })
-export class IngredientDetailComponent implements OnChanges {
+export class DocumentsForDownloadDetailComponent implements OnChanges {
     @Input() id: number;
     @Output() closeEmit = new EventEmitter<string>();
     @Output() editEmit = new EventEmitter<string>();
-    item: Ingredient;
+    item: DocumentForDownload;
 
-    constructor(private listService: IngredientsService,
+    constructor(private listService: DocumentsForDownloadService,
                 private spinner: NgxSpinnerService,
                 private sanitizer: DomSanitizer
     ) {
@@ -31,7 +31,7 @@ export class IngredientDetailComponent implements OnChanges {
             this.spinner.show();
             this.listService.getItemDetail(this.id)
                 .subscribe(value => {
-                    this.item = value as Ingredient;
+                    this.item = value as DocumentForDownload;
                     this.spinner.hide();
                 }, error => {
                     this.spinner.hide();

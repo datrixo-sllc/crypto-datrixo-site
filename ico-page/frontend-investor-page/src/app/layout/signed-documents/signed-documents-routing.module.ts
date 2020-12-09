@@ -1,6 +1,6 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {IngredientsComponent} from './ingredients.component';
+import {SignedDocumentsComponent} from './signed-documents.component';
 
 /**
  * Created by Yuri Nikiforov.
@@ -12,7 +12,7 @@ import {IngredientsComponent} from './ingredients.component';
 const routes: Routes = [
     {
         path: '',
-        component: IngredientsComponent
+        component: SignedDocumentsComponent
     }
 ];
 
@@ -20,6 +20,6 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class IngredientsRoutingModule {
+export class SignedDocumentsRoutingModule {
 
 }
