@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
+import {RedirectDocumentsForDownloadComponent} from './documents-for-download/redirect-documents-for-download.component';
+import {RedirectSignedDocumentsComponent} from './signed-documents/redirect-signed-documents.component';
 
 const routes: Routes = [
     {
@@ -13,8 +15,13 @@ const routes: Routes = [
             { path: 'invest', loadChildren: './invest/invest.module#InvestModule' },
             { path: 'invest-in-equity', loadChildren: './invest-in-equity/invest-in-equity.module#InvestInEquityModule' },
             { path: 'my-holdings', loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule' },
-            { path: 'my-equity-holdings', loadChildren: './my-equity-holdings/my-equity-holdings.module#MyEquityHoldingsModule' }
-
+            { path: 'my-equity-holdings', loadChildren: './my-equity-holdings/my-equity-holdings.module#MyEquityHoldingsModule' },
+            { path: 'documents-for-download',
+                loadChildren: './documents-for-download/documents-for-download.module#DocumentsForDownloadModule' },
+            {path: 'redirect-documents-for-download', component: RedirectDocumentsForDownloadComponent},
+            { path: 'signed-documents',
+                loadChildren: './signed-documents/signed-documents.module#SignedDocumentsModule' },
+            {path: 'redirect-signed-documents', component: RedirectSignedDocumentsComponent}
         ]
     }
 ];
