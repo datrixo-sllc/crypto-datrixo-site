@@ -6,21 +6,21 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {DatatableComponent} from '@swimlane/ngx-datatable';
 import {DomSanitizer} from '@angular/platform-browser';
-import {Ingredient} from '../ingredient';
+import {DocumentForDownload} from '../document-for-download';
 
 @Component({
-    selector: 'app-ingredients-datatable',
-    styleUrls: ['./ingredients-datatable.component.scss'],
-    templateUrl: './ingredients-datatable.component.html'
+    selector: 'app-documents-for-download-datatable',
+    styleUrls: ['./documents-for-download-datatable.component.scss'],
+    templateUrl: './documents-for-download-datatable.component.html'
 })
-export class IngredientsDatatableComponent implements OnChanges {
-    @Input() items: Ingredient[];
-    @Output() onSelectedItem = new EventEmitter<Ingredient>();
+export class DocumentsForDownloadDatatableComponent implements OnChanges {
+    @Input() items: DocumentForDownload[];
+    @Output() onSelectedItem = new EventEmitter<DocumentForDownload>();
     @Output() onAddItemEmit = new EventEmitter<string>();
     rows = [];
     temp = [];
 
-    selected: Ingredient[] = [];
+    selected: DocumentForDownload[] = [];
     @ViewChild(DatatableComponent) table: DatatableComponent;
 
     constructor(public sanitizer: DomSanitizer) {
@@ -66,10 +66,10 @@ export class IngredientsDatatableComponent implements OnChanges {
         // filter our data
         const temp = this.temp.filter(function (d) {
             let returnData: any;
-            if (d.name && d.name.toLowerCase().indexOf(val) !== -1 || !val) {
-                returnData = d.name.toLowerCase().indexOf(val) !== -1 || !val;
-            } else if (d.description && d.description.toLowerCase().indexOf(val) !== -1 || !val) {
-                returnData = d.description.toLowerCase().indexOf(val) !== -1 || !val;
+            if (d.docType && d.docType.toLowerCase().indexOf(val) !== -1 || !val) {
+                returnData = d.docType.toLowerCase().indexOf(val) !== -1 || !val;
+            } else if (d.startDate && d.startDate.toLowerCase().indexOf(val) !== -1 || !val) {
+                returnData = d.startDate.toLowerCase().indexOf(val) !== -1 || !val;
             }
             return returnData;
         });

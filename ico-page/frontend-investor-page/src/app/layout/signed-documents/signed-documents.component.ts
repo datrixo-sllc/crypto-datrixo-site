@@ -6,34 +6,35 @@
 import {Component, OnInit} from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import {NgxSpinnerService} from 'ngx-spinner';
-import {Ingredient} from './ingredient';
+import {SignedDocument} from './signed-document';
 import {NavigationEnd, Router} from '@angular/router';
 import {Utils} from '../../shared/utilites/Utils';
-import {IngredientsService} from './ingredients.service';
-import {IngredientList} from './ingredient-list';
+import {SignedDocumentsService} from './signed-documents.service';
+import {SignedDocumentList} from './signed-document-list';
 
 @Component({
-    selector: 'app-ingredients',
-    templateUrl: './ingredients.component.html',
-    styleUrls: ['./ingredients.component.scss'],
+    selector: 'app-signed-documents',
+    templateUrl: './signed-documents.component.html',
+    styleUrls: ['./signed-documents.component.scss'],
     animations: [routerTransition()]
 })
-export class IngredientsComponent implements OnInit {
-    readonly header = 'Ingredients';
-    readonly headingStr1 = 'Ingredients';
+export class SignedDocumentsComponent implements OnInit {
+    readonly header = 'Signed Documents';
+    readonly headingStr1 = 'Signed Documents';
+    readonly headingIcon = 'fa-money';
     headingStr = this.headingStr1;
-    redirect = '/redirect-ingredients';
+    redirect = '/redirect-signed-documents';
 
-    items: Ingredient[];
-    response: IngredientList;
-    selectedItem: Ingredient;
+    items: SignedDocument[];
+    response: SignedDocumentList;
+    selectedItem: SignedDocument;
     itemForEdit = false;
     viewList: boolean;
     itemForAdd = false;
     username: string;
 
     constructor(
-        private listService: IngredientsService,
+        private listService: SignedDocumentsService,
         private spinner: NgxSpinnerService,
         private _router: Router,
         private utils: Utils
@@ -60,8 +61,8 @@ export class IngredientsComponent implements OnInit {
         this.listService.getList()
             .subscribe(value => {
                 if (value) {
-                    this.response = value as IngredientList;
-                    this.items = this.response.ingredients;
+                    this.response = value as SignedDocumentList;
+                    this.items = this.response.documents;
                     // this.onSelect(this.selectedItem);
                     this.spinner.hide();
                 }
@@ -73,13 +74,13 @@ export class IngredientsComponent implements OnInit {
             });
     }
 
-    onSelect(item: Ingredient): void {
+    onSelect(item: SignedDocument): void {
         if (this.items.includes(item)) {
             this.selectedItem = item;
         } else {
             this.selectedItem = this.items[0];
         }
-        this.headingStr = this.headingStr1 + ' / ' + this.selectedItem.name + ' / '/* + this.selectedItem.name*/;
+        this.headingStr = this.headingStr1 + ' / ' + this.selectedItem.docType + ' / '/* + this.selectedItem.name*/;
         this.viewList = false;
     }
 

@@ -8,26 +8,29 @@ import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs';
-import {Ingredient} from './ingredient';
+import {SignedDocument} from './signed-document';
 
 @Injectable()
-export class AddIngredientUploadService {
+export class AddSignedDocumentsUploadService {
 
-    private static readonly URL_INGREDIENT: string = 'ingredient';
+    private static readonly URL: string = 'signed-documents';
     private static readonly SLASH: string = '/';
     private static readonly CHECK: string = 'check';
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
     }
 
-    public postItemAdd(itemData: Ingredient): Observable<any> {
-        const urlString = AddIngredientUploadService.URL_INGREDIENT;
-        return this.postDataToURL(urlString, itemData);
+    public postItemAdd(fileToUpload: File, itemData: SignedDocument): Observable<any> {
+        const urlString = AddSignedDocumentsUploadService.URL;
+        return this.postDataToURL(urlString, fileToUpload, itemData);
     }
 
-    private postDataToURL(partUrl: string, itemData: Ingredient): Observable<any> {
+    private postDataToURL(partUrl: string, fileToUpload: File, itemData: SignedDocument): Observable<any> {
         const url = this.config.apiEndpoint + partUrl;
         const formData: FormData = new FormData();
+        if (fileToUpload != null) {
+            formData.append('file', fileToUpload, fileToUpload.name);
+        }
         formData.append('itemdata', JSON.stringify(itemData));
         const urlOptions = this.createUrlOptions();
         return this.http.post(url, formData, urlOptions);
@@ -41,8 +44,8 @@ export class AddIngredientUploadService {
     }
 
     getCheck(): Observable<any> {
-        const url = this.config.apiEndpoint + AddIngredientUploadService.URL_INGREDIENT +
-            AddIngredientUploadService.SLASH + AddIngredientUploadService.CHECK;
+        const url = this.config.apiEndpoint + AddSignedDocumentsUploadService.URL +
+            AddSignedDocumentsUploadService.SLASH + AddSignedDocumentsUploadService.CHECK;
         return this.http.get(url, {withCredentials: true});
     }
 }

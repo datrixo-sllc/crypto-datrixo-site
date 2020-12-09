@@ -2,7 +2,7 @@
     <div class="col-lg-5">
         <input class="form-control"
                type='text'
-               placeholder='Filter by Name and Description'
+               placeholder='Filter by Document Type and Start Date'
                (keyup)='updateFilter($event)'
         />
     </div>
@@ -25,20 +25,20 @@
             [selectionType]="'single'"
             (select)='onSelect($event)'
             [rows]='rows'>
-            <ngx-datatable-column name="name">
+            <ngx-datatable-column name="docType">
                 <ng-template let-column="column" ngx-datatable-header-template>
-                    <div class="header-class">Name</div>
+                    <div class="header-class">Document Type</div>
                 </ng-template>
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                    {{row.name}}
+                    {{row.docType}}
                 </ng-template>
             </ngx-datatable-column>
-            <ngx-datatable-column name="description">
+            <ngx-datatable-column name="startDate">
                 <ng-template let-column="column" ngx-datatable-header-template>
-                    <div class="header-class">Description</div>
+                    <div class="header-class">Start Date</div>
                 </ng-template>
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                    {{row.description}}
+                    {{row.startDate}}
                 </ng-template>
             </ngx-datatable-column>
         </ngx-datatable>

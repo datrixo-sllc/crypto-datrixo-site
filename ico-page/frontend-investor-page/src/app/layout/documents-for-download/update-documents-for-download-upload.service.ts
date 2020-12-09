@@ -14,7 +14,7 @@ import {DocumentForDownload} from './document-for-download';
 @Injectable()
 export class UpdateDocumentsForDownloadUploadService {
 
-    private static readonly URL: string = 'ingredient';
+    private static readonly URL: string = 'documents-for-download';
 
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
