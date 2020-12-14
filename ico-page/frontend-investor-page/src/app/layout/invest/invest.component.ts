@@ -22,6 +22,8 @@ import {Router} from '@angular/router';
 })
 export class InvestComponent implements OnInit, OnDestroy {
     private static readonly  FN_PPM: string = 'ppm.pdf';
+    private static readonly  FN_SUBSCR_AGRMNT: string = 'subscr_agrmnt.pdf';
+    private static readonly  FN_SAFE_T: string = 'safe_t.pdf';
     fileToUpload: File = null;
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
@@ -81,6 +83,40 @@ export class InvestComponent implements OnInit, OnDestroy {
             .toPromise()
             .then((response: Response) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_PPM);
+                    this.spinner.hide();
+                },
+                (error: Error) => {
+                    this.alertBody = 'Server pull error: ' + error.message;
+                    this.spinner.hide();
+                    // this.modal = this.modalService.open(this.templateAlertRef);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                });
+    }
+
+    onSubmitSubAgrmtDownload() {
+        this.spinner.show();
+        this.alertTitle = 'Subscription Agreement Download';
+        this.investDownloadService.getSubscrAgrmnt()
+            .toPromise()
+            .then((response: Response) => {
+                    this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_SUBSCR_AGRMNT);
+                    this.spinner.hide();
+                },
+                (error: Error) => {
+                    this.alertBody = 'Server pull error: ' + error.message;
+                    this.spinner.hide();
+                    // this.modal = this.modalService.open(this.templateAlertRef);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                });
+    }
+
+    onSubmitSafeTDownload() {
+        this.spinner.show();
+        this.alertTitle = 'SAFE-T Download';
+        this.investDownloadService.getSafeT()
+            .toPromise()
+            .then((response: Response) => {
+                    this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_SAFE_T);
                     this.spinner.hide();
                 },
                 (error: Error) => {

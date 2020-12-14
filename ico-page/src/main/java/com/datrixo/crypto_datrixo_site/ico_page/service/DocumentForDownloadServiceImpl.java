@@ -158,21 +158,17 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
     }
 
     @Override
-    public void delete(DocumentForDownloadDto document) {
+    public void delete(Long id) {
         if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
             User currentUser = userService.getCurrentUser().orElse(null);
             LOGGER.error("Current user do not have admin privileges: {}",
                     currentUser != null ? currentUser.getUsername() : "");
             return;
         }
-        if (document == null) {
-            LOGGER.error("document == null");
+        if (id == null) {
+            LOGGER.error("document id == nul");
             return;
         }
-        if (document.getId() == null) {
-            LOGGER.error("document.getId() == null: {}", document);
-            return;
-        }
-        documentForDownloadRepository.deleteById(document.getId());
+        documentForDownloadRepository.deleteById(id);
     }
 }

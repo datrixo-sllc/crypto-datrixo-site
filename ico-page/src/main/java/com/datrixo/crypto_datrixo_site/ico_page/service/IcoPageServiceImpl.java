@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Yuri Nikiforov.
@@ -25,8 +27,9 @@ public class IcoPageServiceImpl implements IcoPageService {
 
     @Autowired
     private HolderService holderService;
-    private static DecimalFormat df2 = new DecimalFormat("0.00");
-    private static DecimalFormat df1 = new DecimalFormat("0.0");
+    private static DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+    private static DecimalFormat df2 = new DecimalFormat("0.00", symbols);
+    private static DecimalFormat df1 = new DecimalFormat("0.0", symbols);
 
     @Override
     public IcoPageDto getAllData() {
