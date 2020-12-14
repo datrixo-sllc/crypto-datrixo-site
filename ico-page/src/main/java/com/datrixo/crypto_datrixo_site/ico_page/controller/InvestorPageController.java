@@ -61,8 +61,44 @@ public class InvestorPageController {
     private final static int UNIT_VALUE = 150;
 
     @RequestMapping(value = "/ppm", method = RequestMethod.GET)
-    public ResponseEntity<Resource> getIcoPage() throws IOException {
+    public ResponseEntity<Resource> getPPM() throws IOException {
         Resource fileResource = resourceLoader.getResource("classpath:ppm.pdf");
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+        headers.add("Pragma", "no-cache");
+        headers.add("Expires", "0");
+
+        InputStreamResource resource = new InputStreamResource(fileResource.getInputStream());
+
+
+        return ResponseEntity.ok()
+                .headers(headers)
+                .contentLength(fileResource.contentLength())
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .body(resource);
+    }
+
+    @RequestMapping(value = "/subscr_agrmnt", method = RequestMethod.GET)
+    public ResponseEntity<Resource> getSubscrAgrmnt() throws IOException {
+        Resource fileResource = resourceLoader.getResource("classpath:subscr_agrmnt.pdf");
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+        headers.add("Pragma", "no-cache");
+        headers.add("Expires", "0");
+
+        InputStreamResource resource = new InputStreamResource(fileResource.getInputStream());
+
+
+        return ResponseEntity.ok()
+                .headers(headers)
+                .contentLength(fileResource.contentLength())
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .body(resource);
+    }
+
+    @RequestMapping(value = "/safe_t", method = RequestMethod.GET)
+    public ResponseEntity<Resource> getIcoPage() throws IOException {
+        Resource fileResource = resourceLoader.getResource("classpath:safe_t.pdf");
         HttpHeaders headers = new HttpHeaders();
         headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
         headers.add("Pragma", "no-cache");

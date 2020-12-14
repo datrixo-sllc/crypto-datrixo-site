@@ -33,7 +33,7 @@
             </a>
         </div>
         <div *ngIf="app.localStorageItem('userRole') === 'ADMIN'" class="bordtop">
-            <div class="list-group-item text-secondary bg-light border-0 font-weight-lighter pt-0 pb-0">admin panel</div>
+            <div class="list-group-item text-secondary bg-light border-0 font-weight-lighter pt-0 pb-0">Admin Panel</div>
             <a [routerLink]="['/redirect-documents-for-download']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-fw fa-money"></i>&nbsp;
                 <span>{{ 'Docs For Download' | translate }}</span>

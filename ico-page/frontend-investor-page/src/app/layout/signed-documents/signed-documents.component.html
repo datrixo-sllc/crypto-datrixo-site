@@ -2,22 +2,22 @@
     <app-dinamic-page-header [header]="header" [heading]="headingStr" [icon]="headingIcon"></app-dinamic-page-header>
     <div class="row">
         <div class="col-lg-12" *ngIf="viewList&& !itemForAdd && items">
-        <app-documents-for-download-datatable [items]="items"
+        <app-signed-documents-datatable [items]="items"
                             (onSelectedItem)="onSelect($event)"
-                            (onAddItemEmit) = "onAddItem($event)"></app-documents-for-download-datatable>
+                            (onAddItemEmit) = "onAddItem($event)"></app-signed-documents-datatable>
         </div>
         <div class="col-lg-12" *ngIf="!viewList && !itemForAdd && !itemForEdit && selectedItem">
-            <app-documents-for-download-detail [id]="selectedItem.id"
+            <app-signed-documents-detail [id]="selectedItem.id"
                             (closeEmit)="onCloseDetail($event)"
-                            (editEmit)="onEditDetail($event)"></app-documents-for-download-detail>
+                            (editEmit)="onEditDetail($event)"></app-signed-documents-detail>
         </div>
         <div class="col-lg-12" *ngIf="!viewList && !itemForAdd && itemForEdit && selectedItem">
-            <app-documents-for-download-edit [id]="selectedItem.id"
+            <app-signed-documents-edit [id]="selectedItem.id"
                           (backListEmit)="onBackList($event)"
-                          (backItemEmit)="onBackItem($event)"></app-documents-for-download-edit>
+                          (backItemEmit)="onBackItem($event)"></app-signed-documents-edit>
         </div>
         <div class="col-lg-12" *ngIf="viewList && itemForAdd">
-            <app-documents-for-download-add (backListEmit)="onBackList($event)"></app-documents-for-download-add>
+            <app-signed-documents-add (backListEmit)="onBackList($event)"></app-signed-documents-add>
         </div>
     </div>
 </div>
