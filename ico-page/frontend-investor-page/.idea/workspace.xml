@@ -25,26 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/DocumentForDownloadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/resources/safe_t.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/resources/subscr_agrmnt.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity-download.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity-download.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest-download.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest-download.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/signed-documents/signed-documents-edit/documets-for-download-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/signed-documents/signed-documents-edit/documets-for-download-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/signed-documents/signed-documents.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/signed-documents/signed-documents.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/DocumentForDownloadServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/ppm.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/resources/ppm.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +99,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -260,7 +241,7 @@
       <workItem from="1607710442976" duration="593000" />
       <workItem from="1607718703124" duration="1186000" />
       <workItem from="1607741038163" duration="594000" />
-      <workItem from="1607965089350" duration="1241000" />
+      <workItem from="1607965089350" duration="2414000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
