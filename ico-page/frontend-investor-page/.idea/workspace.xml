@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="fix layout Signed subscription agreement">
-      <change beforePath="$PROJECT_DIR$/../../.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo-black-on-black-320-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo-black-on-black-320-1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/favicon.ico" afterDir="false" />
-    </list>
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="fix layout Signed subscription agreement" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,7 +195,7 @@
       <workItem from="1593010448295" duration="82000" />
       <workItem from="1593010849364" duration="42000" />
       <workItem from="1593015367203" duration="730000" />
-      <workItem from="1608227551053" duration="980000" />
+      <workItem from="1608227551053" duration="1844000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
