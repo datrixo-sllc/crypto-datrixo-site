@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="fix layout Signed subscription agreement" />
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="fix layout Signed subscription agreement">
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,6 +199,10 @@
       <workItem from="1593010849364" duration="42000" />
       <workItem from="1593015367203" duration="730000" />
       <workItem from="1608227551053" duration="1844000" />
+      <workItem from="1609349924437" duration="716000" />
+      <workItem from="1609352155124" duration="1845000" />
+      <workItem from="1609355328700" duration="373000" />
+      <workItem from="1609356077482" duration="883000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
