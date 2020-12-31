@@ -32,10 +32,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="new logo">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="new favicon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -427,14 +426,7 @@
       <workItem from="1607718695153" duration="1793000" />
       <workItem from="1607741030362" duration="762000" />
       <workItem from="1607965083759" duration="1255000" />
-      <workItem from="1608222933292" duration="700000" />
-    </task>
-    <task id="LOCAL-00049" summary="new datrixo contract DRXT">
-      <created>1577461854686</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1577461854686</updated>
+      <workItem from="1608222933292" duration="1950000" />
     </task>
     <task id="LOCAL-00050" summary="js file for datrixo.com wordpress">
       <created>1578823653491</created>
@@ -772,7 +764,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607967421101</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="new favicon">
+      <created>1608224177597</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1608224177598</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -808,7 +807,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="comments was edited" />
     <MESSAGE value="Connect backend to main net Ethereum with the deploying smart contract here" />
     <MESSAGE value="change frontend investor page for new live smart contract" />
     <MESSAGE value="change frontend STO page for new live smart contract" />
@@ -833,7 +831,8 @@
     <MESSAGE value="user documents" />
     <MESSAGE value="user documents admin frontend" />
     <MESSAGE value="new logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="new logo" />
+    <MESSAGE value="new favicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="new favicon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
