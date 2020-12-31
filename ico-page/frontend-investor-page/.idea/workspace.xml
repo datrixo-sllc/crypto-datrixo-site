@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="fix layout Signed subscription agreement">
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="change header Dashboard to Datrixo Equity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="show.migrate.to.gradle.popup" value="false" />
-    <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\Old\crypto-datrixo-site\ico-page\frontend-investor-page\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -203,6 +202,7 @@
       <workItem from="1609352155124" duration="1845000" />
       <workItem from="1609355328700" duration="373000" />
       <workItem from="1609356077482" duration="883000" />
+      <workItem from="1609434185955" duration="720000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -414,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588785965287</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="change header Dashboard to Datrixo Equity">
+      <created>1609434491531</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1609434491531</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +466,8 @@
     <MESSAGE value="modal noty alerts" />
     <MESSAGE value="fix layout holders datatable and Signed subscription agreement" />
     <MESSAGE value="fix layout Signed subscription agreement" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix layout Signed subscription agreement" />
+    <MESSAGE value="change header Dashboard to Datrixo Equity" />
+    <option name="LAST_COMMIT_MESSAGE" value="change header Dashboard to Datrixo Equity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
