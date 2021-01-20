@@ -73,7 +73,13 @@
                 <h4 class="card-header">Buy DRX</h4>
                 <div class="card-body">
                     <h5 class="card-title">$150 minimum</h5>
-                    <p class="card-text">Please, chose a number of share tokens to purchase, download the appropriate invoice that includes (payment) instructions and remit a payment to Datrixo LLC.</p>
+                    <p class="card-text">Please, chose a number of share tokens to purchase, download the appropriate invoice that includes (payment) instructions and remit a payment to Datrixo SLLC. To Pay:</p>
+                    <div class="text-center mb-4">
+                        <div>Chase ABA Routing/ Transit</div>
+                        <div>021000021</div>
+                        <div>Datrixo Series LLC</div>
+                        <div>Account: 696918777</div>
+                    </div>
                     <fieldset class="form-group pl-5 pr-5">
                         <div class="row">
                             <div class="col-lg-6">
@@ -112,6 +118,11 @@
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="optAmounts" id="opt6000" value="opt6000"> $6,000
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="optOther" value="optOther"> Other
                                     </label>
                                 </div>
                             </div>
@@ -158,16 +169,10 @@
             <div class="col-lg-9 mx-auto">
                 <table style="margin: 0 auto;">
                     <tr>
-                        <td class="text-center"><h4>Total Supply</h4></td>
-                        <td class="text-center"><h4>/</h4></td>
-                        <td class="text-center"><h4>Sold</h4></td>
-                        <td></td>
+                        <td class="text-center"><h4>Total Supply/Sold</h4></td>
                     </tr>
                     <tr>
-                        <td class="text-right pr-1">{{totalSupply}}</td>
-                        <td class="text-center">/</td>
-                        <td class="text-center">{{sold}}</td>
-                        <td>(tokens sold)</td>
+                        <td class="text-center">{{totalSupply}}/{{sold}}</td>
                     </tr>
                 </table>
             </div>

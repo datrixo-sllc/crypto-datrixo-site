@@ -24,12 +24,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="change header Dashboard to Datrixo Equity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/main-page/main-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/modules/page-header/page-header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/modules/page-header/page-header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -247,7 +245,8 @@
       <workItem from="1607741038163" duration="594000" />
       <workItem from="1607965089350" duration="2414000" />
       <workItem from="1608222942680" duration="2106000" />
-      <workItem from="1609434851459" duration="376000" />
+      <workItem from="1609434851459" duration="1185000" />
+      <workItem from="1611161307424" duration="2698000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -466,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593020362297</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="change header Dashboard to Datrixo Equity">
+      <created>1609435403900</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1609435403900</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +517,8 @@
     <MESSAGE value="modal noty alerts" />
     <MESSAGE value="fix layout holders datatable and Signed subscription agreement" />
     <MESSAGE value="fix layout Signed subscription agreement" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix layout Signed subscription agreement" />
+    <MESSAGE value="change header Dashboard to Datrixo Equity" />
+    <option name="LAST_COMMIT_MESSAGE" value="change header Dashboard to Datrixo Equity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
