@@ -25,9 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4468857-1f44-43f8-8e78-e67e2b84753d" name="Default Changelist" comment="first">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ico-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ico-page/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,15 +88,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../datrixo-options/brocco-option" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../../../Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="$PROJECT_DIR$/../../../../../../../Program Files/nodejs/node_modules/npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.Solidity" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -216,6 +215,8 @@
       <workItem from="1606843752216" duration="2359000" />
       <workItem from="1606913261001" duration="1311000" />
       <workItem from="1607178991176" duration="671000" />
+      <workItem from="1613065376549" duration="2127000" />
+      <workItem from="1613067691864" duration="3415000" />
     </task>
     <task id="LOCAL-00001" summary="initial truffle project">
       <created>1549456157402</created>
@@ -450,23 +451,9 @@
     <MESSAGE value="first" />
     <option name="LAST_COMMIT_MESSAGE" value="first" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="520" y="241" key="#Notifications" timestamp="1607179002634">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="520" y="241" key="#Notifications/0.0.1536.834@0.0.1536.834" timestamp="1607179002634" />
-    <state x="449" y="153" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607179017329">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="449" y="153" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.834@0.0.1536.834" timestamp="1607179017329" />
-    <state x="400" y="119" key="RollbackChangesDialog" timestamp="1606479928053">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="400" y="119" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1606479928053" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1606479940479">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1606479940479" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="masterDetails">
     <states>
