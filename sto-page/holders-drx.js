@@ -1,10 +1,10 @@
 jQuery(document).ready( function() {
 	
-	jQuery.getJSON('https://api-backend.datrixo.com/ico/ico-page', function (data) {
+	jQuery.getJSON('https://api2-backend.datrixo.com/ico/ico-page', function (data) {
 
-		document.getElementById("totalSupply").textContent = data.totalSupplyTokens;
-		document.getElementById("sold").textContent = data.soldTokens;
-		document.getElementById("holdersCount").textContent = data.holdersCount;
+		document.getElementById("totalSupply-drx").textContent = data.totalSupplyTokens;
+		document.getElementById("sold-drx").textContent = data.soldTokens;
+		document.getElementById("holdersCount-drx").textContent = data.holdersCount;
 		var holders = [];
 		for (ind in data.holders) {
 			var item = [];
@@ -18,6 +18,6 @@ jQuery(document).ready( function() {
 		}
 		console.log(holders);
 
-		jQuery('#tableHolders').DataTable({data: holders});
+		jQuery('#tableHolders-drx').DataTable({data: holders});
 	});
 });
