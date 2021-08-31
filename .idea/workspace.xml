@@ -33,9 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="new favicon">
-      <change beforePath="$PROJECT_DIR$/datrixo-contract/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/datrixo-contract/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sto-page/holders-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/sto-page/holders-menu-drx.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sto-page/holders.js" beforeDir="false" afterPath="$PROJECT_DIR$/sto-page/holders-drx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,6 +427,10 @@
       <workItem from="1607965083759" duration="1255000" />
       <workItem from="1608222933292" duration="1950000" />
       <workItem from="1614173885271" duration="419000" />
+      <workItem from="1615306491088" duration="471000" />
+      <workItem from="1615307006349" duration="6498000" />
+      <workItem from="1615469181552" duration="11000" />
+      <workItem from="1630411569579" duration="407000" />
     </task>
     <task id="LOCAL-00050" summary="js file for datrixo.com wordpress">
       <created>1578823653491</created>
