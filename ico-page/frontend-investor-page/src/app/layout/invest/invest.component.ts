@@ -2,7 +2,7 @@ import {Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild} from '
 import {routerTransition} from '../../router.animations';
 import {InvestDownloadService} from './invest-download.service';
 import {Response} from '@angular/http';
-import { NgxSpinnerService } from 'ngx-spinner';
+import {NgxSpinnerService} from 'ngx-spinner';
 import {RecieveUtils} from './recieve-utils';
 import {InvestUploadService} from './invest-upload.service';
 import {InvestService} from './invest.service';
@@ -13,6 +13,9 @@ import {switchMap} from 'rxjs/internal/operators/switchMap';
 import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import * as Noty from 'noty';
 import {Router} from '@angular/router';
+import {InvestStripeService} from './invest-stripe.service';
+import {environment} from 'src/environments/environment';
+import {loadStripe} from '@stripe/stripe-js';
 
 @Component({
     selector: 'app-invest',
@@ -21,9 +24,9 @@ import {Router} from '@angular/router';
     animations: [routerTransition()]
 })
 export class InvestComponent implements OnInit, OnDestroy {
-    private static readonly  FN_PPM: string = 'ppm.pdf';
-    private static readonly  FN_SUBSCR_AGRMNT: string = 'subscr_agrmnt.pdf';
-    private static readonly  FN_SAFE_T: string = 'safe_t.pdf';
+    private static readonly FN_PPM: string = 'ppm.pdf';
+    private static readonly FN_SUBSCR_AGRMNT: string = 'subscr_agrmnt.pdf';
+    private static readonly FN_SAFE_T: string = 'safe_t.pdf';
     fileToUpload: File = null;
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
@@ -40,14 +43,21 @@ export class InvestComponent implements OnInit, OnDestroy {
     alertTitle: string;
     alertBody: string;
 
+    selectedDRXNum = 4;
+
+    stripePromise = loadStripe(environment.stripe);
+
     constructor(
         private investService: InvestService,
         private investDownloadService: InvestDownloadService,
         private investUploadService: InvestUploadService,
+        private investStripeService: InvestStripeService,
         private spinner: NgxSpinnerService,
         private recieveUtils: RecieveUtils,
         private _router: Router,
-        private modalService: NgbModal) {}
+        private modalService: NgbModal
+    ) {
+    }
 
     ngOnInit() {
         this.getIcoPage();
@@ -59,7 +69,8 @@ export class InvestComponent implements OnInit, OnDestroy {
                 this.response = value as IcoPageResponse;
                 this.fillValues();
             }
-        }, error => {this.unSubscribe();
+        }, error => {
+            this.unSubscribe();
             this._router.navigate(['/login']);
         });
     }
@@ -195,5 +206,72 @@ export class InvestComponent implements OnInit, OnDestroy {
             this.holdersCount = this.response.holdersCount;
             this.holders = this.response.holders;
         }
+    }
+
+    onSubmitGetDRX() {
+        let name: string;
+        let amount: number;
+
+        switch (this.selectedDRXNum) {
+            case 4: {
+                name = '4 DRX';
+                amount = 60000;
+                break;
+            }
+            case 8: {
+                name = '8 DRX';
+                amount = 120000;
+                break;
+            }
+            case 16: {
+                name = '16 DRX';
+                amount = 240000;
+                break;
+            }
+            case 32: {
+                name = '32 DRX';
+                amount = 480000;
+                break;
+            }
+            case 40: {
+                name = '40 DRX';
+                amount = 600000;
+                break;
+            }
+
+        }
+
+
+        this.pay(name, amount);
+    }
+
+
+    async pay(name: string, amount: number): Promise<void> {
+        // here we create a payment object
+        const payment = {
+            name: name,
+            currency: 'usd',
+            // amount on cents *10 => to be on dollar
+            amount: amount,
+            quantity: '1',
+            cancelUrl: `${environment.serverUrl}#/invest`,
+            successUrl: `${environment.serverUrl}#/invest`,
+        };
+
+        const stripe = await this.stripePromise;
+        this.spinner.show();
+        this.alertTitle = 'Stripe Payment';
+        this.investStripeService.payment(payment)
+            .subscribe((data: any) => {
+                // Use stripe to redirect To Checkout page of Stripe platform
+                this.spinner.hide();
+                stripe.redirectToCheckout({
+                    sessionId: data.id,
+                });
+            }, (error: Error) => {
+                this.spinner.hide();
+                this.alertBody = 'Server pull error: ' + error.message;
+                this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+            });
     }
 }

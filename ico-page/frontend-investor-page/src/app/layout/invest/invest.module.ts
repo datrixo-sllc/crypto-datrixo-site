@@ -13,6 +13,7 @@ import {HoldersDatatableComponent} from './holders-datatable/holders-datatable.c
 import {InvestService} from './invest.service';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {InvestStripeService} from './invest-stripe.service';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         PageHeaderModule,
         FileSaverModule,
         NgxDatatableModule,
-        NgbModule
+        NgbModule,
+        FormsModule
     ],
     declarations: [
         InvestComponent,
@@ -31,6 +33,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         InvestService,
         InvestDownloadService,
         InvestUploadService,
+        InvestStripeService,
         RecieveUtils
     ]
 })

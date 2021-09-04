@@ -32,8 +32,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="new favicon">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="StripeController added">
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest-stripe.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/nikname_generator/NiknameGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/nikname_generator/NiknameGeneratorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-ico-page/src/assets/img/app-store-badge.svg" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/src/assets/img/app-store-badge.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-ico-page/src/assets/img/google-play-badge.svg" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-ico-page/src/assets/img/google-play-badge.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,14 +94,30 @@
         <option value="JUnit4 Test Class" />
         <option value="HTML File" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
+      </map>
+    </option>
   </component>
   <component name="JupyterTrust" id="c87d8aa2-fa30-4665-a0aa-0c98fb093791" />
   <component name="LogFilters">
@@ -132,7 +165,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -142,7 +175,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\node_modules\typescript\lib" />
   </component>
@@ -152,6 +185,7 @@
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\java\com\datrixo\crypto_datrixo_site\ico_page\dto" />
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\webapp" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -163,6 +197,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.service" />
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util" />
       <recent name="" />
     </key>
@@ -173,7 +208,20 @@
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.App">
+  <component name="RunManager" selected="Application.NiknameGeneratorImpl">
+    <configuration name="NiknameGeneratorImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.datrixo.crypto_datrixo_site.ico_page.service.nikname_generator.NiknameGeneratorImpl" />
+      <module name="ico-page-site" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.datrixo.crypto_datrixo_site.ico_page.service.nikname_generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="IcoPageServiceImplTest.getAllData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ico-page-site" />
       <extension name="coverage">
@@ -268,9 +316,11 @@
       <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
       <item itemvalue="Spring Boot.App" />
       <item itemvalue="Tomcat Server.Tomcat" />
+      <item itemvalue="Application.NiknameGeneratorImpl" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NiknameGeneratorImpl" />
         <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
       </list>
     </recent_temporary>
@@ -430,14 +480,15 @@
       <workItem from="1615306491088" duration="471000" />
       <workItem from="1615307006349" duration="6498000" />
       <workItem from="1615469181552" duration="11000" />
-      <workItem from="1630411569579" duration="407000" />
-    </task>
-    <task id="LOCAL-00050" summary="js file for datrixo.com wordpress">
-      <created>1578823653491</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1578823653492</updated>
+      <workItem from="1630411569579" duration="2335000" />
+      <workItem from="1630414071319" duration="371000" />
+      <workItem from="1630414483321" duration="1878000" />
+      <workItem from="1630418033758" duration="589000" />
+      <workItem from="1630418980193" duration="266000" />
+      <workItem from="1630419299424" duration="83000" />
+      <workItem from="1630479445495" duration="11120000" />
+      <workItem from="1630749748772" duration="592000" />
+      <workItem from="1630764275722" duration="17347000" />
     </task>
     <task id="LOCAL-00051" summary="js file for datrixo.com wordpress">
       <created>1578868202198</created>
@@ -775,7 +826,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608224177598</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="StripeController added">
+      <created>1630412312874</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1630412312874</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -811,7 +869,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Connect backend to main net Ethereum with the deploying smart contract here" />
     <MESSAGE value="change frontend investor page for new live smart contract" />
     <MESSAGE value="change frontend STO page for new live smart contract" />
     <MESSAGE value="change frontend STO page on the datrixo.com site for new live smart contract" />
@@ -836,42 +893,31 @@
     <MESSAGE value="user documents admin frontend" />
     <MESSAGE value="new logo" />
     <MESSAGE value="new favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="new favicon" />
+    <MESSAGE value="StripeController added" />
+    <option name="LAST_COMMIT_MESSAGE" value="StripeController added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/StripeController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java</url>
-          <line>148</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/test/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImplTest.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java</url>
-          <line>194</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImpl.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/nikname_generator/NiknameGeneratorImpl.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+        <breakpoint type="dart-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
