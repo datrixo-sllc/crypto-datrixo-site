@@ -164,6 +164,39 @@
             </div>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">Buy DRX (Stripe)</h4>
+                <div class="card-body">
+                    <h5 class="card-title">$150 minimum</h5>
+                    <p class="card-text">Please, chose a number of share tokens to purchase and remit a payment to Datrixo SLLC. To Pay:</p>
+                    <div class="text-center mb-4">
+                        <div>Chase ABA Routing/ Transit</div>
+                        <div>021000021</div>
+                        <div>Datrixo Series LLC</div>
+                        <div>Account: 696918777</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="form-group">
+                            <label>DRX Number</label>
+                            <select class="form-control" [(ngModel)]="selectedDRXNum">
+                                <option [ngValue]="4">4 DRX ($600)</option>
+                                <option [ngValue]="8">8 DRX ($1,200)</option>
+                                <option [ngValue]="16">16 DRX ($2,400)</option>
+                                <option [ngValue]="32">32 DRX ($4,800)</option>
+                                <option [ngValue]="40">40 DRX ($6,000)</option>
+                            </select>
+                        </div>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitGetDRX()">
+                            Get DRX
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="card col-lg-12 mt-3 p-4 border-top-0 border-left-0 border-right-0">
         <div class="row">
             <div class="col-lg-9 mx-auto">

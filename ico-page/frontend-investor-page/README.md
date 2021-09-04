@@ -1,4 +1,5 @@
 # SB Admin rewritten in Angular7 and Bootstrap 4
+node: 11.2.0
 
 Simple Dashboard Admin App built using Angular 7 and Bootstrap 4
 
