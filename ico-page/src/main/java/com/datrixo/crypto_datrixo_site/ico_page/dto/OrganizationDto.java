@@ -1,18 +1,16 @@
-package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
+package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
-import org.springframework.data.jpa.domain.AbstractPersistable;
+import com.datrixo.crypto_datrixo_site.ico_page.dto.CountryDto;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by Yuri Nikiforov.
- * Date: 07.06.2019
- * Time: 9:25
+ * Date: 05.09.2021
+ * Time: 11:42
  **/
-@Entity
-@Table(name="organization")
-public class Organization extends AbstractPersistable<Long> {
+public class OrganizationDto {
+    private Long id;
     private String companyName;
     private Date incorporateDate;
     private String opencorporatesId;
@@ -22,23 +20,14 @@ public class Organization extends AbstractPersistable<Long> {
     private String city;
     private String state;
     private String zip;
-    @ManyToOne(fetch = FetchType.EAGER,cascade = {})
-    @JoinColumn(name = "country_id")
-    private Country country;
+    private CountryDto country;
 
-    public Organization() {
+    public Long getId() {
+        return id;
     }
 
-    public Organization(String companyName, String email, String phone,
-                        String streetAddress, String city, String state, String zip, Country country) {
-        this.companyName = companyName;
-        this.email = email;
-        this.phone = phone;
-        this.streetAddress = streetAddress;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.country = country;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCompanyName() {
@@ -113,11 +102,11 @@ public class Organization extends AbstractPersistable<Long> {
         this.zip = zip;
     }
 
-    public Country getCountry() {
+    public CountryDto getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(CountryDto country) {
         this.country = country;
     }
 }

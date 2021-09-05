@@ -1,12 +1,18 @@
 package com.datrixo.crypto_datrixo_site.ico_page.service;
 
+import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderAccountDto;
+import com.datrixo.crypto_datrixo_site.ico_page.dto.OrganizationDto;
+import com.datrixo.crypto_datrixo_site.ico_page.dto.UserDataDto;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.ImageContent;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Organization;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.Role;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserTitle;
-import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.ImageContentRepository;
-import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.UserRepository;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserType;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.*;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
+import com.datrixo.crypto_datrixo_site.ico_page.service.nikname_generator.NiknameGenerator;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserPassword;
 import org.apache.commons.io.IOUtils;
@@ -21,6 +27,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,9 +44,16 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
-
+    @Autowired
+    private OrganizationRepository organizationRepository;
+    @Autowired
+    private CountryRepository countryRepository;
+    @Autowired
+    private HolderAccountRepository holderAccountRepository;
     @Autowired
     private ImageContentRepository imageContentRepository;
+    @Autowired
+    private NiknameGenerator niknameGenerator;
 
     private static final String USER_NOT_FOUND = "User not found";
     private static final String USER_PASSWORD_UPDATED = "User password is updated";
@@ -159,10 +174,69 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    @Override
     public Optional<User> getCurrentUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         MediUser currentUser = (MediUser) auth.getPrincipal();
         Optional<User> optionalUser = userRepository.findByUsername(currentUser.getUsername());
         return optionalUser;
+    }
+
+    @Override
+    @Transactional
+    public Optional<User> createUserByAdmin(MultipartFile file, UserDataDto userDataDto) {
+        if (userDataDto == null) {
+            LOGGER.error("providerDto == null");
+            return Optional.empty();
+        }
+        if (checkRoleForCurrentUser(Role.ADMIN)) {
+            User user = new User(userDataDto.getUsername(), userDataDto.getPassword(),
+                    Role.valueOf(userDataDto.getRole()), UserType.valueOf(userDataDto.getUserType()),
+                    userDataDto.getFirstName(), userDataDto.getLastName(), userDataDto.getEmail(), userDataDto.getPhone());
+
+            if (userDataDto.getUserType().equals(UserType.COMPANY.name()) && userDataDto.getOrganization() != null
+                    && userDataDto.getOrganization().getCountry() != null
+                    && userDataDto.getOrganization().getCountry().getId() != null) {
+                OrganizationDto orgDto = userDataDto.getOrganization();
+                Organization org = new Organization(orgDto.getCompanyName(), orgDto.getEmail(), orgDto.getPhone(), orgDto.getStreetAddress(),
+                        orgDto.getCity(), orgDto.getState(), orgDto.getZip(),
+                        countryRepository.findById(orgDto.getCountry().getId()).orElse(null));
+                user.setOrganization(organizationRepository.save(org));
+            }
+            user = userRepository.save(user);
+
+            if (userDataDto.getAccounts() != null && userDataDto.getAccounts().size() > 0) {
+                List<HolderAccount> accounts = new ArrayList<>();
+                for (HolderAccountDto accountDto : userDataDto.getAccounts()) {
+                    accounts.add(holderAccountRepository.save(new HolderAccount(accountDto.getAddress(), user,
+                            accountDto.getCreateDate(), accountDto.getPaidPrice(), accountDto.getInitialInvest())));
+                }
+                user.setAccounts(accounts);
+            }
+            user = userRepository.save(user);
+
+            return Optional.of(user);
+        } else {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            MediUser currentUser = (MediUser) auth.getPrincipal();
+            LOGGER.error("Current user is not ADMIN: {}", currentUser.getUsername());
+            return Optional.empty();
+        }
+
+    }
+
+    @Override
+    public String generateUserName(String keyword) {
+        String name = niknameGenerator.generate(keyword);
+        Optional<User> optionalUser = userRepository.findByUsername(name);
+        if (!optionalUser.isPresent()) {
+            return name;
+        } else {
+            return generateUserName(keyword);
+        }
     }
 }
