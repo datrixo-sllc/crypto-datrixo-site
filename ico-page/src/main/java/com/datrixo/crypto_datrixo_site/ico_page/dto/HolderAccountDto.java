@@ -1,36 +1,32 @@
-package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
+package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
-import org.springframework.data.jpa.domain.AbstractPersistable;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 
-import javax.persistence.*;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
  * Created by Yuri Nikiforov.
- * Date: 07.06.2019
- * Time: 9:56
+ * Date: 05.09.2021
+ * Time: 11:43
  **/
-@Entity
-@Table(name="holder_account")
-public class HolderAccount extends AbstractPersistable<Long> {
+public class HolderAccountDto {
+    private Long id;
     private String address;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private User user;
+    private Long userId;
     private Date createDate;
     private BigDecimal paidPrice;
     private Boolean initialInvest;
 
-    public HolderAccount() {
+    public Long getId() {
+        return id;
     }
 
-    public HolderAccount(String address, User user, Date createDate, BigDecimal paidPrice, Boolean initialInvest) {
-        this.address = address;
-        this.user = user;
-        this.createDate = createDate;
-        this.paidPrice = paidPrice;
-        this.initialInvest = initialInvest;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getAddress() {
@@ -41,12 +37,12 @@ public class HolderAccount extends AbstractPersistable<Long> {
         this.address = address;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Date getCreateDate() {

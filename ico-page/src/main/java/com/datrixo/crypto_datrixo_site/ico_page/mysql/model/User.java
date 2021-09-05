@@ -2,6 +2,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
 
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.Role;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserTitle;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserType;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,9 +28,12 @@ public class User extends AbstractPersistable<Long> {
     @Enumerated(EnumType.STRING)
     private Role role;
     @Enumerated(EnumType.STRING)
+    private UserType userType;
+    @Enumerated(EnumType.STRING)
     private UserTitle title;
     private String firstName;
     private String lastName;
+    private String email;
     private String phone;
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "image_content_id")
@@ -48,11 +52,15 @@ public class User extends AbstractPersistable<Long> {
         this.password = password;
     }
 
-    public User(String username, String password, Role role, List<HolderAccount> accounts) {
-        this.username = username;
-        this.password = password;
+    public User(String username, String password, Role role, UserType userType,
+                String firstName, String lastName, String email, String phone) {
+        this(username, password);
         this.role = role;
-        this.accounts = accounts;
+        this.userType = userType;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
     }
 
     public String getUsername() {
@@ -65,6 +73,14 @@ public class User extends AbstractPersistable<Long> {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 
     public Role getRole() {
@@ -97,6 +113,14 @@ public class User extends AbstractPersistable<Long> {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
