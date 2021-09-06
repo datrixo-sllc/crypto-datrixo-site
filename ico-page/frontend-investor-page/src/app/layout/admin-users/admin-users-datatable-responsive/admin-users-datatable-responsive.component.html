@@ -1,6 +1,6 @@
 <div class="row mb-0">
     <div class="col-auto">
-        <button class="btn btn-outline-secondary form-control" (click)="onAddItem()">Add Restaurant</button>
+        <button class="btn btn-outline-secondary form-control" (click)="onAddItem()">Add User</button>
     </div>
     <div class="col-auto">
         <button class="btn btn-outline-secondary form-control mr-3"
@@ -17,32 +17,45 @@
                     <th mat-header-cell *matHeaderCellDef> Image</th>
                     <td mat-cell *matCellDef="let element" data-label='imageContent'>
                         <img [src]="sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + element.imageContent)"
-                             width="33px" height="33px" class="img-fluid" alt="" *ngIf="element.imageContent">
+                             width="33px" height="33px" class="img-fluid" alt="" *ngIf="element.imageContent"/>
                     </td>
                 </ng-container>
 
                 <ng-container matColumnDef="username">
                     <th mat-header-cell *matHeaderCellDef> Username</th>
-                    <td mat-cell *matCellDef="let element" data-label='Name'>
-                        <span  class="m-card-title">{{element.username | truncate:[90]}}</span></td>
+                    <td mat-cell *matCellDef="let element" data-label='username'>
+                        <span  class="m-card-title" *ngIf="element.username">{{element.username | truncate:[90]}}</span></td>
                 </ng-container>
 
-                <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef> Name</th>
-                    <td mat-cell *matCellDef="let element" data-label='Name'>
-                        <span  class="m-card-title">{{element.name | truncate:[90]}}</span></td>
+                <ng-container matColumnDef="firstName">
+                    <th mat-header-cell *matHeaderCellDef> First Name</th>
+                    <td mat-cell *matCellDef="let element" data-label='firstName'>
+                        <span  class="m-card-text" *ngIf="element.firstName">{{element.firstName | truncate:[90]}}</span></td>
                 </ng-container>
 
-                <ng-container matColumnDef="zipcode">
-                    <th mat-header-cell *matHeaderCellDef> Zip</th>
-                    <td mat-cell *matCellDef="let element"
-                        data-label='Form type'> {{element.zipcode}} </td>
+                <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef> Last Name</th>
+                    <td mat-cell *matCellDef="let element" data-label='lastName'>
+                        <span  class="m-card-text" *ngIf="element.lastName">{{element.lastName | truncate:[90]}}</span></td>
+                </ng-container>
+
+                <ng-container matColumnDef="userType">
+                    <th mat-header-cell *matHeaderCellDef> User Type</th>
+                    <td mat-cell *matCellDef="let element" data-label='userType'>
+                        <span  class="m-card-text text-lowercase" *ngIf="element.userType">{{element.userType}}</span></td>
+                </ng-container>
+
+                <ng-container matColumnDef="companyName">
+                    <th mat-header-cell *matHeaderCellDef> Company Name</th>
+                    <td mat-cell *matCellDef="let element" data-label='companyName'>
+                        <span  class="m-card-text" *ngIf="element.organization && element.organization.companyName">
+                            {{element.organization.companyName | truncate:[90]}}</span></td>
                 </ng-container>
 
                 <ng-container matColumnDef="phone">
                     <th mat-header-cell *matHeaderCellDef> Phone</th>
-                    <td mat-cell *matCellDef="let element"
-                        data-label='Form type'> {{element.phone}} </td>
+                    <td mat-cell *matCellDef="let element" data-label='phone'>
+                        <span  class="m-card-text" *ngIf="element.phone">{{element.phone}}</span></td>
                 </ng-container>
 
                 <!-- Symbol Column -->

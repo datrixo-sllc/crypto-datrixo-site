@@ -23,7 +23,7 @@ export class AdminUsersDatatableResponsiveComponent implements OnInit, OnChanges
     @Output() onRefreshEmit = new EventEmitter<string>();
 
 
-    displayedColumns: string[] = ['imageContent', 'status', 'zipcode', 'name', 'phone', 'star'];
+    displayedColumns: string[] = ['imageContent', 'username', 'firstName', 'lastName', 'userType', 'companyName', 'phone', 'star'];
     dataSource = new MatTableDataSource<User>();
     dataSourceLenth: number;
 

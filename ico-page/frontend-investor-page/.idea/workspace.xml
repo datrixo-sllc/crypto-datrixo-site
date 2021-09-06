@@ -27,53 +27,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Pay ABA">
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/account.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/add-admin-user-upload.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/country.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/organization.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/redirect-admin-users.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/update-admin-users-upload.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/user-list.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/admin-users/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/shared/modules/material/material.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/shared/pipes/truncate-pipe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDataListDto.java" afterDir="false" />
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Admin of users. Compilable ver.">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/layout-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/layout-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/layout.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/modules/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/modules/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/pipes/shared-pipes.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/pipes/shared-pipes.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/utilites/Utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/utilites/Utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/bootstrap/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/bootstrap/_code.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/CountryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/CountryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/OrganizationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/OrganizationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDataDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDataDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +265,7 @@
       <workItem from="1611423133000" duration="640000" />
       <workItem from="1630482483820" duration="13548000" />
       <workItem from="1630749747484" duration="590000" />
-      <workItem from="1630764275108" duration="14229000" />
+      <workItem from="1630764275108" duration="18530000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -539,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611164352936</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Admin of users. Compilable ver.">
+      <created>1630919850436</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1630919850436</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +527,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="initialize commit" />
     <MESSAGE value="investor-profile layout" />
     <MESSAGE value="invest layout first section" />
     <MESSAGE value="invest layout" />
@@ -586,7 +551,8 @@
     <MESSAGE value="fix layout Signed subscription agreement" />
     <MESSAGE value="change header Dashboard to Datrixo Equity" />
     <MESSAGE value="Pay ABA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pay ABA" />
+    <MESSAGE value="Admin of users. Compilable ver." />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin of users. Compilable ver." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
