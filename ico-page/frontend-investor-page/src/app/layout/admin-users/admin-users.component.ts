@@ -23,7 +23,7 @@ import {UpdateAdminUsersUploadService} from './update-admin-users-upload.service
 export class AdminUsersComponent implements OnInit {
     readonly header = 'Users';
     readonly headingStr1 = 'Users';
-    readonly icon = 'fa-cutlery';
+    readonly icon = 'fa-user';
     headingStr = this.headingStr1;
     redirect = '/redirect-admin-users';
 

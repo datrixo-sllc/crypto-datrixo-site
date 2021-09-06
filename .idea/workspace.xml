@@ -32,8 +32,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Create User backend">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Query with fetch objects with lazy fetch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -474,14 +477,7 @@
       <workItem from="1630419299424" duration="83000" />
       <workItem from="1630479445495" duration="11120000" />
       <workItem from="1630749748772" duration="592000" />
-      <workItem from="1630764275722" duration="52753000" />
-    </task>
-    <task id="LOCAL-00053" summary="total amount 800000000&#10;remove check of first year">
-      <created>1582135341809</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1582135341809</updated>
+      <workItem from="1630764275722" duration="55632000" />
     </task>
     <task id="LOCAL-00054" summary="total amount 800000000&#10;remove check of first year">
       <created>1582136667265</created>
@@ -819,7 +815,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630853765351</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Query with fetch objects with lazy fetch">
+      <created>1630934522876</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1630934522876</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -855,7 +858,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change frontend STO page on the datrixo.com site for new live smart contract" />
     <MESSAGE value="fix responsive to datatables in angular apps" />
     <MESSAGE value="add logout and language to the dashboard sidebar" />
     <MESSAGE value="fix https blocker to ico-page-backend after http to https redirection of the datrixo.com site" />
@@ -880,7 +882,8 @@
     <MESSAGE value="StripeController added" />
     <MESSAGE value="Nikname Generator" />
     <MESSAGE value="Create User backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create User backend" />
+    <MESSAGE value="Query with fetch objects with lazy fetch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Query with fetch objects with lazy fetch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -894,6 +897,11 @@
           <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/nikname_generator/NiknameGeneratorImpl.java</url>
           <line>25</line>
           <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
