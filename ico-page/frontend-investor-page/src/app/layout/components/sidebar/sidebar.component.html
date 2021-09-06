@@ -34,8 +34,12 @@
         </div>
         <div *ngIf="app.localStorageItem('userRole') === 'ADMIN'" class="bordtop">
             <div class="list-group-item text-secondary bg-light border-0 font-weight-lighter pt-0 pb-0">Admin Panel</div>
+            <a [routerLink]="['/redirect-admin-users']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-user"></i>&nbsp;
+                <span>{{ 'Users' | translate }}</span>
+            </a>
             <a [routerLink]="['/redirect-documents-for-download']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-                <i class="fa fa-fw fa-money"></i>&nbsp;
+                <i class="fa fa-fw fa-address-book"></i>&nbsp;
                 <span>{{ 'Docs For Download' | translate }}</span>
             </a>
             <a [routerLink]="['/redirect-signed-documents']" [routerLinkActive]="['router-link-active']" class="list-group-item">

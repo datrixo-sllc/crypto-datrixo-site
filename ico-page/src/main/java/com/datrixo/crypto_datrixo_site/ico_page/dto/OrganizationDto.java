@@ -22,6 +22,25 @@ public class OrganizationDto {
     private String zip;
     private CountryDto country;
 
+    public OrganizationDto() {
+    }
+
+    public OrganizationDto(Long id, String companyName, Date incorporateDate, String opencorporatesId,
+                           String email, String phone, String streetAddress, String city, String state,
+                           String zip, CountryDto country) {
+        this.id = id;
+        this.companyName = companyName;
+        this.incorporateDate = incorporateDate;
+        this.opencorporatesId = opencorporatesId;
+        this.email = email;
+        this.phone = phone;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.country = country;
+    }
+
     public Long getId() {
         return id;
     }

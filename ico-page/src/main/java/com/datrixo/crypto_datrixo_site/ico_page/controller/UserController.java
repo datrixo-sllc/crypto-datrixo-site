@@ -1,6 +1,9 @@
 package com.datrixo.crypto_datrixo_site.ico_page.controller;
 
-import com.datrixo.crypto_datrixo_site.ico_page.dto.UserDataDto;
+import com.datrixo.crypto_datrixo_site.ico_page.dto.*;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Country;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Organization;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -13,9 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * Created by Yuri Nikiforov.
@@ -55,5 +56,36 @@ public class UserController {
         HashMap<String, String> map = new HashMap<>();
         map.put("name", userService.generateUserName(keyword));
         return map;
+    }
+
+    @GetMapping(value = "/list", produces = "application/json")
+    public @ResponseBody
+    UserDataListDto getUserList() {
+        List<User> users = userService.findAll();
+        UserDataListDto listDto = new UserDataListDto();
+        for (User user : users) {
+            UserDataDto userDto = new UserDataDto(user.getId(), user.getUsername(), user.getRole().name(),
+                    user.getUserType().name(), user.getTitle().name(), user.getFirstName(), user.getLastName(),
+                    user.getEmail(), user.getPhone(),
+                    user.getImageContent() != null ? user.getImageContent().getContent() : null);
+            List<HolderAccountDto> accountDtoList = new ArrayList<>();
+            for (HolderAccount account : user.getAccounts()) {
+                HolderAccountDto accountDto = new HolderAccountDto(account.getId(), account.getAddress(),
+                        account.getUser().getId(), account.getCreateDate(), account.getPaidPrice(), account.getInitialInvest());
+                accountDtoList.add(accountDto);
+            }
+            userDto.setAccounts(accountDtoList);
+            if (user.getOrganization() != null) {
+                Organization org = user.getOrganization();
+                Country country = org.getCountry();
+                OrganizationDto organizationDto = new OrganizationDto(org.getId(), org.getCompanyName(), org.getIncorporateDate(),
+                        org.getOpencorporatesId(), org.getEmail(), org.getPhone(), org.getStreetAddress(), org.getCity(),
+                        org.getState(), org.getZip(),
+                        new CountryDto(country.getId(), country.getName(), country.getCode()));
+            }
+            listDto.getUsers().add(userDto);
+        }
+
+        return listDto;
     }
 }

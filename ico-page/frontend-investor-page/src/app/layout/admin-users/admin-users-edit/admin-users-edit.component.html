@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-lg-6 mb-3">
+        <button class="btn btn-outline-secondary mr-3" (click)="onBackList()">Back to List</button>
+        <button class="btn btn-outline-success mr-3" (click)="onSubmitItemUpdate()">Update Restaurant</button>
+        <button class="btn btn-secondary" (click)="onDelete()">Delete Restaurant</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-3 my-0">
+        <div class="header-content mx-auto">
+            <div class="text-center mb-3">
+                <img [src]="imgSrc || '/assets/images/placeholder.png'" class="img-fluid" alt="" name="imgToUpload">
+            </div>
+            <div class="text-center col-lg-10 mx-auto">
+                <label for="uplFile" class="btn btn-outline-secondary  text-dark">Upload Image</label>
+                <input #uploadFile type="file" class="form-control-file" id="uplFile" style="visibility:hidden; height:1px; overflow: hidden;"
+                       (change)="handleFileInput($event.target.files)"/>
+            </div>
+            <div class="text-center mt-0">
+                Please, use squire Images with max size - 1 Mb.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 my-0">
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Username<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="username" [(ngModel)]="requestItemData.username" [disabled]="true"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Password</label>
+            <div class="col-lg-10">
+                <input class="form-control" name="name" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+
+    </div>
+</div>
