@@ -24,15 +24,81 @@
         <div class="form-group row">
             <label class="col-lg-2 col-form-label">Username<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
-            <div class="col-lg-10">
+            <div class="col-lg-4">
                 <input class="form-control" name="username" [(ngModel)]="requestItemData.username" [disabled]="true"/>
             </div>
+            <div class="col-lg-3">
+                <button class="btn btn-outline-secondary form-control" (click)="onGenUsername()">Generate</button>
+            </div>
         </div>
-
         <div class="form-group row">
-            <label class="col-lg-2 col-form-label">Password</label>
+            <label class="col-lg-2 col-form-label">Password<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
-                <input class="form-control" name="name" [(ngModel)]="requestItemData.password"/>
+                <input class="form-control" name="password" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Role<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="role" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">User Type<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="userType" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Title<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="title" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">First Name<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="firstName" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Last Name<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="lastName" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Email<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="email" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Phone<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="phone" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Accounts<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="accounts" [(ngModel)]="requestItemData.password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Organization<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="organization" [(ngModel)]="requestItemData.password"/>
             </div>
         </div>
 

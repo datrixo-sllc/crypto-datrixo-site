@@ -2,11 +2,6 @@
     <app-dinamic-page-header [header]="header" [heading]="headingStr" [icon]="icon"></app-dinamic-page-header>
     <div class="row">
         <div class="col-12" *ngIf="viewList&& !itemForAdd && items">
-            <!--<app-admin-users-datatable [items]="items"
-                                       (onEditItemEmit)="onEdit($event)"
-                                       (onAddItemEmit)="onAddItem($event)"
-                                       (onRefreshEmit)="onRefresh($event)"
-                                       (onChangeStatusEmit)="onChangeItemStatus($event)"></app-restaurants-datatable>-->
             <app-admin-users-datatable-responsive [items]="items"
                                             (onEditItemEmit)="onEdit($event)"
                                             (onAddItemEmit)="onAddItem($event)"
