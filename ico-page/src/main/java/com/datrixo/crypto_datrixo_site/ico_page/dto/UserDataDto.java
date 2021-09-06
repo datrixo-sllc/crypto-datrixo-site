@@ -26,6 +26,22 @@ public class UserDataDto {
     private OrganizationDto organization;
     private List<HolderAccountDto> accounts;
 
+    public UserDataDto() {
+    }
+
+    public UserDataDto(Long id, String username, String role, String userType, String title,
+                       String firstName, String lastName, String email, String phone, byte[] imageContent) {
+        this.id = id;
+        this.username = username;
+        this.role = role;
+        this.userType = userType;
+        this.title = title;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.imageContent = imageContent;
+    }
 
     public Long getId() {
         return id;

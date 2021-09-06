@@ -9,6 +9,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import {RedirectDocumentsForDownloadComponent} from './documents-for-download/redirect-documents-for-download.component';
 import {RedirectSignedDocumentsComponent} from './signed-documents/redirect-signed-documents.component';
+import {RedirectAdminUsersComponent} from './admin-users/redirect-admin-users.component';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import {RedirectSignedDocumentsComponent} from './signed-documents/redirect-sign
         SidebarComponent,
         HeaderComponent,
         RedirectDocumentsForDownloadComponent,
-        RedirectSignedDocumentsComponent
+        RedirectSignedDocumentsComponent,
+        RedirectAdminUsersComponent
     ]
 })
 export class LayoutModule {}

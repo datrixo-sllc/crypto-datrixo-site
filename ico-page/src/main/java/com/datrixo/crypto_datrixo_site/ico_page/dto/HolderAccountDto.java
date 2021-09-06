@@ -21,6 +21,18 @@ public class HolderAccountDto {
     private BigDecimal paidPrice;
     private Boolean initialInvest;
 
+    public HolderAccountDto() {
+    }
+
+    public HolderAccountDto(Long id, String address, Long userId, Date createDate, BigDecimal paidPrice, Boolean initialInvest) {
+        this.id = id;
+        this.address = address;
+        this.userId = userId;
+        this.createDate = createDate;
+        this.paidPrice = paidPrice;
+        this.initialInvest = initialInvest;
+    }
+
     public Long getId() {
         return id;
     }

@@ -32,25 +32,53 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Nikname Generator">
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/CountryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/OrganizationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDataDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/util/UserType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/CountryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/OrganizationRepository.java" afterDir="false" />
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Create User backend">
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/account.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/add-admin-user-upload.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-add/admin-users-add.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-add/admin-users-add.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-add/admin-users-add.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/country.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/organization.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/redirect-admin-users.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/update-admin-users-upload.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/user-list.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/modules/material/material.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/pipes/truncate-pipe.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDataListDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/HolderAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/HolderAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/Organization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/layout.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/modules/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/modules/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/pipes/shared-pipes.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/pipes/shared-pipes.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/utilites/Utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/shared/utilites/Utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/styles/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/styles/bootstrap/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/styles/bootstrap/_code.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/CountryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/CountryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/OrganizationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/OrganizationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDataDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDataDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,8 +122,8 @@
         <option value="JUnit4 Test Class" />
         <option value="HTML File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -181,6 +209,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.dto" />
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.service" />
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model" />
     </key>
@@ -489,14 +518,7 @@
       <workItem from="1630419299424" duration="83000" />
       <workItem from="1630479445495" duration="11120000" />
       <workItem from="1630749748772" duration="592000" />
-      <workItem from="1630764275722" duration="37928000" />
-    </task>
-    <task id="LOCAL-00052" summary="js file for datrixo.com wordpress">
-      <created>1578925551900</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1578925551904</updated>
+      <workItem from="1630764275722" duration="46595000" />
     </task>
     <task id="LOCAL-00053" summary="total amount 800000000&#10;remove check of first year">
       <created>1582135341809</created>
@@ -834,7 +856,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630785119495</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Create User backend">
+      <created>1630853765351</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1630853765351</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -870,7 +899,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change frontend STO page for new live smart contract" />
     <MESSAGE value="change frontend STO page on the datrixo.com site for new live smart contract" />
     <MESSAGE value="fix responsive to datatables in angular apps" />
     <MESSAGE value="add logout and language to the dashboard sidebar" />
@@ -895,7 +923,8 @@
     <MESSAGE value="new favicon" />
     <MESSAGE value="StripeController added" />
     <MESSAGE value="Nikname Generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nikname Generator" />
+    <MESSAGE value="Create User backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create User backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
