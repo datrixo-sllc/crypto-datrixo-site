@@ -13,15 +13,16 @@ import {User} from './user';
 @Injectable()
 export class AddAdminUserUploadService {
 
-    private static readonly URL_PROVIDER: string = 'provider';
+    private static readonly URL_USER: string = 'user';
     private static readonly SLASH: string = '/';
     private static readonly CHECK: string = 'check';
+    private static readonly NAME: string = 'name';
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
     }
 
     public postItemAdd(fileToUpload: File, itemData: User): Observable<any> {
-        const urlSignedAgreement = AddAdminUserUploadService.URL_PROVIDER;
+        const urlSignedAgreement = AddAdminUserUploadService.URL_USER;
         return this.postDataToURL(urlSignedAgreement, fileToUpload, itemData);
     }
 
@@ -44,8 +45,14 @@ export class AddAdminUserUploadService {
     }
 
     getCheck(): Observable<any> {
-        const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_PROVIDER +
+        const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_USER +
             AddAdminUserUploadService.SLASH + AddAdminUserUploadService.CHECK;
         return this.http.get(url, {withCredentials: true});
+    }
+
+    getUsername(): Observable<any> {
+        const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_USER +
+            AddAdminUserUploadService.SLASH + AddAdminUserUploadService.NAME;
+        return this.http.post(url, '', {withCredentials: true});
     }
 }

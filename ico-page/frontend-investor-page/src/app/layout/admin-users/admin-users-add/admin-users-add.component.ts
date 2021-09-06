@@ -142,8 +142,20 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         this.backListEmit.emit('backList');
     }
 
-    onInputCleared() {
-
+    onGenUsername() {
+        this.spinner.show();
+        this.addItemUploadService.getUsername()
+            .subscribe(value => {
+                if (value) {
+                    this.requestItemData.username = value.json().name;
+                    this.spinner.hide();
+                }
+            }, error => {
+                this.spinner.hide();
+                // alert('Server error: ' + error.message);
+                this.utils.clearLocalStorage();
+                this._router.navigate(['/login']);
+                });
     }
 
 }

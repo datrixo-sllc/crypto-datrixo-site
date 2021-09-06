@@ -42,7 +42,8 @@
                 <ng-container matColumnDef="userType">
                     <th mat-header-cell *matHeaderCellDef> User Type</th>
                     <td mat-cell *matCellDef="let element" data-label='userType'>
-                        <span  class="m-card-text text-lowercase" *ngIf="element.userType">{{element.userType}}</span></td>
+                        <span  class="m-card-text" *ngIf="element.userType && element.userType == 'INDIVIDUAL'">Person</span>
+                        <span  class="m-card-text" *ngIf="element.userType && element.userType == 'COMPANY'">Company</span></td>
                 </ng-container>
 
                 <ng-container matColumnDef="companyName">

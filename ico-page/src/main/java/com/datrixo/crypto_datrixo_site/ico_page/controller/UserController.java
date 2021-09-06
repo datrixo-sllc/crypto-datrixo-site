@@ -88,4 +88,9 @@ public class UserController {
 
         return listDto;
     }
+
+    @GetMapping(value = "/check", produces = "application/json")
+    public @ResponseBody String getCheck() {
+        return "success";
+    }
 }
