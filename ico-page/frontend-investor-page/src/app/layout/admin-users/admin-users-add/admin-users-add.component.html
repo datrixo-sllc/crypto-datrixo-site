@@ -54,7 +54,8 @@
             <label class="col-lg-2 col-form-label">User Type<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-auto">
-                <select class="form-control" [(ngModel)]="requestItemData.userType" name="userType">
+                <select class="form-control" [(ngModel)]="requestItemData.userType" name="userType"
+                        (ngModelChange)="onChangeUserType()">
                     <option value="INDIVIDUAL">Person</option>
                     <option value="COMPANY">Company</option>
                 </select>
@@ -103,7 +104,7 @@
                     Add account
                 </button>
             </div>
-            <div class="col-lg-10 mt-1" >
+            <div class="col-lg-10 mt-1">
                 <table class="table table-striped" *ngIf="requestItemData.accounts.length > 0">
                     <thead>
                     <tr>
@@ -138,45 +139,89 @@
                     </tr>
                     </tbody>
                 </table>
-
-
-
             </div>
         </div>
-        <div *ngIf="requestItemData.userType == 'COMPANY'" class="mt-lg-5">
-        <div class="form-group row">
-            <div class="col-lg-12">
-                <h5 class="breadcrumb">Company</h5>
+        <div *ngIf="requestItemData.organization != null" class="mt-lg-5">
+            <div class="form-group row">
+                <div class="col-lg-12">
+                    <h5 class="breadcrumb">Company</h5>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-lg-2 col-form-label">First Name<sup
-                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
-            <div class="col-lg-10">
-                <input class="form-control" name="firstName" [(ngModel)]="requestItemData.password"/>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Comp Name<sup
+                    class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="companyName"
+                           [(ngModel)]="requestItemData.organization.companyName"/>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-lg-2 col-form-label">First Name<sup
-                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
-            <div class="col-lg-10">
-                <input class="form-control" name="firstName" [(ngModel)]="requestItemData.password"/>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Icorp Date</label>
+                <form class="col-auto">
+                    <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd"
+                               name="incorpDate" [(ngModel)]="requestItemData.organization.incorporateDate"
+                               ngbDatepicker #incorpDateF="ngbDatepicker">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="incorpDateF.toggle()"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-lg-2 col-form-label">First Name<sup
-                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
-            <div class="col-lg-10">
-                <input class="form-control" name="firstName" [(ngModel)]="requestItemData.password"/>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Opencorp Id</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="opencorpId"
+                           [(ngModel)]="requestItemData.organization.opencorporatesId"/>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-lg-2 col-form-label">First Name<sup
-                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
-            <div class="col-lg-10">
-                <input class="form-control" name="firstName" [(ngModel)]="requestItemData.password"/>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Corp Email</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="corpEmail" [(ngModel)]="requestItemData.organization.email"/>
+                </div>
             </div>
-        </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Corp Phone</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="corpPhone" [(ngModel)]="requestItemData.organization.phone"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Street Address</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="strAddress"
+                           [(ngModel)]="requestItemData.organization.strAddress"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">City</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="city" [(ngModel)]="requestItemData.organization.city"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">State</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="state" [(ngModel)]="requestItemData.organization.state"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Zip</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="zip" [(ngModel)]="requestItemData.organization.zip"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Country</label>
+                <div class="col-auto">
+                    <select class="form-control" [(ngModel)]="requestItemData.organization.country" name="country">
+                        <option value="US">USA</option>
+                        <option value="UK">United Kindom</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -207,9 +252,11 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <input class="form-control" placeholder="yyyy-mm-dd"
-                                           name="newEthereumCreateDate" [(ngModel)]="newEthereumCreateDate" ngbDatepicker #newEthereumCreateDateF="ngbDatepicker">
+                                           name="newEthereumCreateDate" [(ngModel)]="newEthereumCreateDate"
+                                           ngbDatepicker #newEthereumCreateDateF="ngbDatepicker">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary calendar" (click)="newEthereumCreateDateF.toggle()" type="button"></button>
+                                        <button class="btn btn-outline-secondary calendar"
+                                                (click)="newEthereumCreateDateF.toggle()" type="button"></button>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +264,7 @@
                     </fieldset>
                     <fieldset class="form-group">
                         <label>Paid Price</label>
-                        <input type="number" min="0.01"  step="0.01" oninput="validity.valid||(value='');"
+                        <input type="number" min="0.01" step="0.01" oninput="validity.valid||(value='');"
                                [(ngModel)]="newEthereumPaidPrice" name="newEthereumPaidPrice"
                                #newEthereumPaidPriceF="ngModel" class="form-control"/>
                         <div *ngIf="!checkPaidPrice()" class="help-block">Field must be number</div>
