@@ -177,7 +177,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     }
 
     onRemoveAccount(i: number) {
-
+        this.requestItemData.accounts.splice(i, 1);
     }
 
     onAddNewEthereumAccount() {
@@ -197,5 +197,15 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         this.newEthereumCreateDate = this.calendar.getToday();
         this.newEthereumPaidPrice = null;
         this.newEthereumInitialInvest = false;
+    }
+
+    checkAddress() {
+        const regex = new RegExp('0[xX][0-9a-fA-F]+');
+        return regex.test(this.newEthereumAddress);
+    }
+
+    checkPaidPrice() {
+        const regex = new RegExp('^[0-9]*\.?[0-9]*$');
+        return this.newEthereumPaidPrice != null ? regex.test(this.newEthereumPaidPrice.toString()) : false;
     }
 }
