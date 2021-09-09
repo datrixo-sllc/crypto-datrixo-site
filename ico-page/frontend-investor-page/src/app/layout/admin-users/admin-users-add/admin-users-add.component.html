@@ -103,20 +103,44 @@
                     Add account
                 </button>
             </div>
-            <div class="col-lg-10 mt-1">
-                <div class="row px-3" *ngIf="requestItemData.accounts.length > 0">
-                    <ul class="list-group list-group-horizontal-lg"
-                        *ngFor="let el of requestItemData.accounts; let i = index">
-                        <li class="list-group-item p-2 mr-1 mb-1">
+            <div class="col-lg-10 mt-1" >
+                <table class="table table-striped" *ngIf="requestItemData.accounts.length > 0">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Create Date</th>
+                        <th scope="col">Paid Price</th>
+                        <th scope="col">Initial Invest</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let el of requestItemData.accounts; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>
                             <a href="https://{{etherNet}}/address/{{el.address}}"
                                title="{{el.address}}"
-                               target="_blank">{{el.address | slice:0:10}}...</a>&nbsp;
+                               target="_blank">{{el.address | slice:0:10}}...</a>
+                        </td>
+                        <td>{{ el.createDate | date }}</td>
+                        <td>{{ el.paidPrice | number }}</td>
+                        <td>
+                            <span *ngIf="el.initialInvest" class="text-danger">YES</span>
+                            <span *ngIf="!el.initialInvest">NO</span>
+                        </td>
+
+                        <td>
                             <button type="button" class="close" aria-label="Close"
                                     (click)="onRemoveAccount(i)"><span aria-hidden="true">&times;</span>
                             </button>
-                        </li>
-                    </ul>
-                </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+
             </div>
         </div>
         <div *ngIf="requestItemData.userType == 'COMPANY'" class="mt-lg-5">
@@ -171,10 +195,35 @@
             <div class="row">
                 <div class="col-lg-12">
                     <fieldset class="form-group">
-                        <label>Adress</label>
-                        <input type="text" [(ngModel)]="newEthereumAdress" name="newEthereumAdress"
-                               #newEthereumAdressF="ngModel" class="form-control" required/>
-                        <div *ngIf="!newEthereumAdressF.valid" class="help-block">Field is required</div>
+                        <label>Address</label>
+                        <input type="text" [(ngModel)]="newEthereumAddress" name="newEthereumAdress"
+                               #newEthereumAddressF="ngModel" class="form-control" required/>
+                        <div *ngIf="!newEthereumAddressF.valid" class="help-block">Field is required</div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>Create Date</label>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="yyyy-mm-dd"
+                                           name="newEthereumCreateDate" [(ngModel)]="newEthereumCreateDate" ngbDatepicker #newEthereumCreateDateF="ngbDatepicker">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="newEthereumCreateDateF.toggle()" type="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>Paid Price</label>
+                        <input type="number" [(ngModel)]="newEthereumPaidPrice" name="newEthereumPaidPrice"
+                               #newEthereumPaidPriceF="ngModel" class="form-control"/>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label class="btn-outline-secondary" ngbButtonLabel>
+                            <input class="btn-outline-secondary" type="checkbox" name="newEthereumInitialInvest"
+                                   ngbButton [(ngModel)]="newEthereumInitialInvest">&nbsp;&nbsp;Initial Invest
+                        </label>
                     </fieldset>
                 </div>
             </div>

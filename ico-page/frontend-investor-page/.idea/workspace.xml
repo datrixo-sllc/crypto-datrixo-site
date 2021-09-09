@@ -27,13 +27,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Admin of users. User List">
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Admin of users. User adding">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/account.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/account.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/user.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +270,7 @@
       <workItem from="1631081622516" duration="56000" />
       <workItem from="1631105539410" duration="1165000" />
       <workItem from="1631115370558" duration="1249000" />
-      <workItem from="1631169087296" duration="10426000" />
+      <workItem from="1631169087296" duration="17725000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -519,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630940362202</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Admin of users. User adding">
+      <created>1631184802011</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1631184802011</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +546,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="invest layout first section" />
     <MESSAGE value="invest layout" />
     <MESSAGE value="login" />
     <MESSAGE value="username on header section of layout" />
@@ -566,7 +570,8 @@
     <MESSAGE value="Pay ABA" />
     <MESSAGE value="Admin of users. Compilable ver." />
     <MESSAGE value="Admin of users. User List" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin of users. User List" />
+    <MESSAGE value="Admin of users. User adding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin of users. User adding" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

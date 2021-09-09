@@ -23,7 +23,7 @@ import {Organization} from '../organization';
 import {el} from '@angular/platform-browser/testing/src/browser_util';
 import {FormControl} from '@angular/forms';
 import {Account} from '../account';
-import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalRef, NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 /**
  * Created by Yuri Nikiforov.
@@ -53,7 +53,10 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
 
     username: string;
     etherNet = 'etherscan.io';
-    newEthereumAdress: string;
+    newEthereumAddress: string;
+    newEthereumCreateDate: NgbDateStruct;
+    newEthereumPaidPrice: number;
+    newEthereumInitialInvest: boolean;
     modal: NgbModalRef;
     @ViewChild('modalAddEthereumAccountWindow') templateAddEthereumAccountRef: TemplateRef<any>;
 
@@ -66,7 +69,8 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         private spinner: NgxSpinnerService,
         private sanitizer: DomSanitizer,
         private _router: Router,
-        private utils: Utils
+        private utils: Utils,
+        private calendar: NgbCalendar
     ) {
 
     }
@@ -76,6 +80,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit(): void {
+        this.clearNewEthAccountData();
         this.clearUploadParams();
         this.spinner.show();
         this.addItemUploadService.getCheck()
@@ -142,7 +147,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         this.imgSrc = null;
         this.uploadEl.nativeElement.value = null;
         this.requestItemData = new User();
-        this.requestItemData.init("USER_CRYPTO", "INDIVIDUAL", "MR", null, []);
+        this.requestItemData.init('USER_CRYPTO', 'INDIVIDUAL', 'MR', null, []);
 
 
     }
@@ -178,9 +183,19 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     onAddNewEthereumAccount() {
         this.modal.close();
         const newEthereumAcc = new Account();
-        newEthereumAcc.address = this.newEthereumAdress;
-        this.newEthereumAdress = null;
+        newEthereumAcc.address = this.newEthereumAddress;
+        newEthereumAcc.createDate =
+            new Date(this.newEthereumCreateDate.year, this.newEthereumCreateDate.month - 1, this.newEthereumCreateDate.day);
+        newEthereumAcc.paidPrice = this.newEthereumPaidPrice;
+        newEthereumAcc.initialInvest = this.newEthereumInitialInvest;
         this.requestItemData.accounts.push(newEthereumAcc);
+        this.clearNewEthAccountData();
+    }
 
+    clearNewEthAccountData() {
+        this.newEthereumAddress = null;
+        this.newEthereumCreateDate = this.calendar.getToday();
+        this.newEthereumPaidPrice = null;
+        this.newEthereumInitialInvest = false;
     }
 }
