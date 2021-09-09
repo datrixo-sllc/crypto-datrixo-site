@@ -208,4 +208,13 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         const regex = new RegExp('^[0-9]*\.?[0-9]*$');
         return this.newEthereumPaidPrice != null ? regex.test(this.newEthereumPaidPrice.toString()) : false;
     }
+
+    onChangeUserType() {
+        if (this.requestItemData.userType === 'INDIVIDUAL') {
+            this.requestItemData.organization = null;
+        } else {
+            this.requestItemData.organization = new Organization();
+            this.requestItemData.organization.country = 'US';
+        }
+    }
 }

@@ -16,5 +16,5 @@ export class Organization {
     city: string;
     state: string;
     zip: string;
-    country: Country;
+    country: string;
 }
