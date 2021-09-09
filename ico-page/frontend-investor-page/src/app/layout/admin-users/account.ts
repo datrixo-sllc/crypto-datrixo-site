@@ -4,5 +4,10 @@
  * Time: 20:54
  */
 export class Account {
-
+    id: number;
+    address: string;
+    userId: number;
+    createDate: Date;
+    paidPrice: number;
+    initialInvest: boolean;
 }
