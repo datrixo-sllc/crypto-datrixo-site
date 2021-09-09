@@ -7,7 +7,7 @@ import {
     OnChanges,
     OnInit,
     Output,
-    SimpleChanges,
+    SimpleChanges, TemplateRef,
     ViewChild
 } from '@angular/core';
 import {HttpResponse} from '@angular/common/http';
@@ -22,6 +22,8 @@ import {Utils} from '../../../shared/utilites/Utils';
 import {Organization} from '../organization';
 import {el} from '@angular/platform-browser/testing/src/browser_util';
 import {FormControl} from '@angular/forms';
+import {Account} from '../account';
+import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 
 /**
  * Created by Yuri Nikiforov.
@@ -50,11 +52,17 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     keyword = 'name';
 
     username: string;
+    etherNet = 'etherscan.io';
+    newEthereumAdress: string;
+    modal: NgbModalRef;
+    @ViewChild('modalAddEthereumAccountWindow') templateAddEthereumAccountRef: TemplateRef<any>;
+
 
     constructor(
         private updateItemUploadService: UpdateAdminUsersUploadService,
         private addItemUploadService: AddAdminUserUploadService,
         private listService: AdminUsersService,
+        private modalService: NgbModal,
         private spinner: NgxSpinnerService,
         private sanitizer: DomSanitizer,
         private _router: Router,
@@ -134,6 +142,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         this.imgSrc = null;
         this.uploadEl.nativeElement.value = null;
         this.requestItemData = new User();
+        this.requestItemData.init("USER_CRYPTO", "INDIVIDUAL", "MR", null, []);
 
 
     }
@@ -158,4 +167,20 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
                 });
     }
 
+    onCallAddEthAccount() {
+        this.modal = this.modalService.open(this.templateAddEthereumAccountRef);
+    }
+
+    onRemoveAccount(i: number) {
+
+    }
+
+    onAddNewEthereumAccount() {
+        this.modal.close();
+        const newEthereumAcc = new Account();
+        newEthereumAcc.address = this.newEthereumAdress;
+        this.newEthereumAdress = null;
+        this.requestItemData.accounts.push(newEthereumAcc);
+
+    }
 }

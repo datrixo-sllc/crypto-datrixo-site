@@ -21,4 +21,11 @@ export class User {
     organization: Organization;
     accounts: Account[];
 
+    init (role: string, userType: string, title: string, organization: Organization, accounts: Account[]) {
+        this.role = role;
+        this.userType = userType;
+        this.title = title;
+        this.organization = organization;
+        this.accounts = accounts;
+    }
 }
