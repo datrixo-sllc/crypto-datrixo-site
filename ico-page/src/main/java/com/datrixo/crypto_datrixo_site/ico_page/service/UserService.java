@@ -25,7 +25,7 @@ public interface UserService {
     Optional<Role> getRoleForCurrentUser();
     boolean checkRoleForCurrentUser(Role role);
     List<User> findAll();
-    Optional<User> createUserByAdmin(MultipartFile file, UserDataDto userDataDto);
+    Optional<User> createUserByAdmin(MultipartFile file, UserDataDto userDataDto) throws IOException;
     String generateUserName(String keyword);
 
     String generatePassword();
