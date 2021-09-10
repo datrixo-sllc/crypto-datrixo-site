@@ -27,4 +27,6 @@ public interface UserService {
     List<User> findAll();
     Optional<User> createUserByAdmin(MultipartFile file, UserDataDto userDataDto);
     String generateUserName(String keyword);
+
+    String generatePassword();
 }

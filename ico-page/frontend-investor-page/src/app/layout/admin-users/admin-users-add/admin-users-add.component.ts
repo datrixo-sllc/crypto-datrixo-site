@@ -24,6 +24,7 @@ import {el} from '@angular/platform-browser/testing/src/browser_util';
 import {FormControl} from '@angular/forms';
 import {Account} from '../account';
 import {NgbModal, NgbModalRef, NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import {Country} from '../country';
 
 /**
  * Created by Yuri Nikiforov.
@@ -172,6 +173,22 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
                 });
     }
 
+    onGenPassword() {
+        this.spinner.show();
+        this.addItemUploadService.getPassword()
+            .subscribe(value => {
+                if (value) {
+                    this.requestItemData.password = value.json().password;
+                    this.spinner.hide();
+                }
+            }, error => {
+                this.spinner.hide();
+                // alert('Server error: ' + error.message);
+                this.utils.clearLocalStorage();
+                this._router.navigate(['/login']);
+            });
+    }
+
     onCallAddEthAccount() {
         this.modal = this.modalService.open(this.templateAddEthereumAccountRef);
     }
@@ -214,7 +231,14 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
             this.requestItemData.organization = null;
         } else {
             this.requestItemData.organization = new Organization();
-            this.requestItemData.organization.country = 'US';
+            this.requestItemData.organization.country = new Country();
+            this.requestItemData.organization.country.code = 'US';
+        }
+    }
+
+    onInitialInvest() {
+        if (this.newEthereumInitialInvest === true) {
+            this.newEthereumPaidPrice = 0;
         }
     }
 }

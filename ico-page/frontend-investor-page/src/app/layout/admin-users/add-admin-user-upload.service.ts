@@ -17,6 +17,7 @@ export class AddAdminUserUploadService {
     private static readonly SLASH: string = '/';
     private static readonly CHECK: string = 'check';
     private static readonly NAME: string = 'name';
+    private static readonly PASSWORD: string = 'password';
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
     }
@@ -55,4 +56,10 @@ export class AddAdminUserUploadService {
             AddAdminUserUploadService.SLASH + AddAdminUserUploadService.NAME;
         return this.http.post(url, '', {withCredentials: true});
     }
+    getPassword(): Observable<any> {
+        const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_USER +
+            AddAdminUserUploadService.SLASH + AddAdminUserUploadService.PASSWORD;
+        return this.http.get(url, {withCredentials: true});
+    }
+
 }

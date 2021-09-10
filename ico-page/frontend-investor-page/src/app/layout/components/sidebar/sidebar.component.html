@@ -11,7 +11,7 @@
         <div *ngIf="app.localStorageItem('userRole') === 'USER_CRYPTO' || app.localStorageItem('userRole') === 'ADMIN'">
             <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-fw fa-money"></i>&nbsp;
-                <span>{{ 'Invest DRX' | translate }}</span>
+                <span>{{ 'Invest in DRX' | translate }}</span>
             </a>
             <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                 <i class="fa fa-fw fa-pie-chart"></i>&nbsp;

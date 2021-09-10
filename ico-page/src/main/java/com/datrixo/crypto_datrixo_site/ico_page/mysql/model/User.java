@@ -30,7 +30,7 @@ public class User extends AbstractPersistable<Long> {
     @Enumerated(EnumType.STRING)
     private UserType userType;
     @Enumerated(EnumType.STRING)
-    private UserTitle title;
+    private UserTitle title = UserTitle.MR;
     private String firstName;
     private String lastName;
     private String email;

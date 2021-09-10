@@ -6,7 +6,6 @@ import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Organization;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,8 +31,8 @@ public class UserController {
 
     @PostMapping()
     public ResponseEntity<Object> createUser(@RequestParam(required = false, name = "file") MultipartFile file,
-                                             @RequestParam("userdata") String userData) throws IOException {
-        UserDataDto userDto = readData(userData);
+                                             @RequestParam("itemdata") String itemData) throws IOException {
+        UserDataDto userDto = readData(itemData);
         Optional<User> optionalUser = userService.createUserByAdmin(file, userDto);
         if (optionalUser.isPresent()) {
             URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -55,6 +54,14 @@ public class UserController {
     Map<String, String> generateName(@RequestParam(required = false, name = "keyword") String keyword) {
         HashMap<String, String> map = new HashMap<>();
         map.put("name", userService.generateUserName(keyword));
+        return map;
+    }
+
+    @GetMapping(value = "/password", produces = "application/json")
+    public @ResponseBody
+    Map<String, String> generatePassword() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("password", userService.generatePassword());
         return map;
     }
 
