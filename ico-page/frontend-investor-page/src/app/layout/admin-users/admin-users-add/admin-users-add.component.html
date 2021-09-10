@@ -164,7 +164,8 @@
                 <form class="col-auto">
                     <div class="input-group">
                         <input class="form-control" placeholder="yyyy-mm-dd"
-                               name="incorpDate" [(ngModel)]="requestItemData.organization.incorporateDate"
+                               name="incorpDate" [(ngModel)]="orgIncorpDate"
+                               (change)="setIncorpDate()"
                                ngbDatepicker #incorpDateF="ngbDatepicker">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary calendar" (click)="incorpDateF.toggle()"

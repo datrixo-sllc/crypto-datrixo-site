@@ -46,6 +46,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
     requestItemData: User;
+    orgIncorpDate: NgbDateStruct;
 
     show = false;
 
@@ -227,6 +228,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     }
 
     onChangeUserType() {
+        this.orgIncorpDate = this.calendar.getToday();
         if (this.requestItemData.userType === 'INDIVIDUAL') {
             this.requestItemData.organization = null;
         } else {
@@ -240,5 +242,10 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         if (this.newEthereumInitialInvest === true) {
             this.newEthereumPaidPrice = 0;
         }
+    }
+
+    setIncorpDate() {
+        this.requestItemData.organization.incorporateDate =
+            new Date(this.orgIncorpDate.year, this.orgIncorpDate.month - 1, this.orgIncorpDate.day);
     }
 }
