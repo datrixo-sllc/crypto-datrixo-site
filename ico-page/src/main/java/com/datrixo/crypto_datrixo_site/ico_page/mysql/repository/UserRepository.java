@@ -18,7 +18,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String email);
 
-    @Query("from User u " +
+    @Query("select distinct u from User u " +
             "left join fetch u.imageContent im " +
             "left join fetch u.organization o " +
             "left join fetch o.country c " +

@@ -17,7 +17,7 @@
                        (change)="handleFileInput($event.target.files)"/>
             </div>
             <div class="text-center mt-0">
-                Please, use squire Images with max size - 1 Mb.
+                Please, use square Images with max size - 1 Mb.
             </div>
         </div>
     </div>
@@ -33,10 +33,13 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-lg-2 col-form-label">Password<sup
+            <label class="col-lg-2 col-form-label mt-1">Password<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
-            <div class="col-lg-10">
+            <div class="col-lg-3 mt-1">
                 <input class="form-control" name="password" [(ngModel)]="requestItemData.password"/>
+            </div>
+            <div class="col-auto mt-1">
+                <button class="btn btn-outline-secondary form-control" (click)="onGenPassword()">Generate</button>
             </div>
         </div>
         <div class="form-group row">
@@ -56,12 +59,12 @@
             <div class="col-auto">
                 <select class="form-control" [(ngModel)]="requestItemData.userType" name="userType"
                         (ngModelChange)="onChangeUserType()">
-                    <option value="INDIVIDUAL">Person</option>
-                    <option value="COMPANY">Company</option>
+                    <option value="INDIVIDUAL">Individual</option>
+                    <option value="COMPANY">Corporate</option>
                 </select>
             </div>
         </div>
-        <div class="form-group row">
+        <!--<div class="form-group row">
             <label class="col-lg-2 col-form-label">Title</label>
             <div class="col-auto">
                 <select class="form-control" [(ngModel)]="requestItemData.title" name="title">
@@ -69,33 +72,33 @@
                     <option value="MRS">Mrs.</option>
                 </select>
             </div>
-        </div>
+        </div>-->
         <div class="form-group row">
             <label class="col-lg-2 col-form-label">First Name<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
-                <input class="form-control" name="firstName" [(ngModel)]="requestItemData.password"/>
+                <input class="form-control" name="firstName" [(ngModel)]="requestItemData.firstName"/>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-2 col-form-label">Last Name<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
-                <input class="form-control" name="lastName" [(ngModel)]="requestItemData.password"/>
+                <input class="form-control" name="lastName" [(ngModel)]="requestItemData.lastName"/>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-2 col-form-label">Email<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
-                <input class="form-control" name="email" [(ngModel)]="requestItemData.password"/>
+                <input class="form-control" name="email" [(ngModel)]="requestItemData.email"/>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-lg-2 col-form-label">Phone<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
-                <input class="form-control" name="phone" [(ngModel)]="requestItemData.password"/>
+                <input class="form-control" name="phone" [(ngModel)]="requestItemData.phone"/>
             </div>
         </div>
         <div class="form-group row">
@@ -156,7 +159,8 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-lg-2 col-form-label">Icorp Date</label>
+                <label class="col-lg-2 col-form-label">Incorp Date<sup
+                    class="h6 text-danger font-weight-bold">&lowast;</sup></label>
                 <form class="col-auto">
                     <div class="input-group">
                         <input class="form-control" placeholder="yyyy-mm-dd"
@@ -192,7 +196,7 @@
                 <label class="col-lg-2 col-form-label">Street Address</label>
                 <div class="col-lg-10">
                     <input class="form-control" name="strAddress"
-                           [(ngModel)]="requestItemData.organization.strAddress"/>
+                           [(ngModel)]="requestItemData.organization.streetAddress"/>
                 </div>
             </div>
             <div class="form-group row">
@@ -216,7 +220,7 @@
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">Country</label>
                 <div class="col-auto">
-                    <select class="form-control" [(ngModel)]="requestItemData.organization.country" name="country">
+                    <select class="form-control" [(ngModel)]="requestItemData.organization.country.code" name="country">
                         <option value="US">USA</option>
                         <option value="UK">United Kindom</option>
                     </select>
@@ -264,7 +268,7 @@
                     </fieldset>
                     <fieldset class="form-group">
                         <label>Paid Price</label>
-                        <input type="number" min="0.01" step="0.01" oninput="validity.valid||(value='');"
+                        <input type="number" min="0.00" step="0.01" oninput="validity.valid||(value='');"
                                [(ngModel)]="newEthereumPaidPrice" name="newEthereumPaidPrice"
                                #newEthereumPaidPriceF="ngModel" class="form-control"/>
                         <div *ngIf="!checkPaidPrice()" class="help-block">Field must be number</div>
@@ -272,7 +276,8 @@
                     <fieldset class="form-group">
                         <label class="btn-outline-secondary" ngbButtonLabel>
                             <input class="btn-outline-secondary" type="checkbox" name="newEthereumInitialInvest"
-                                   ngbButton [(ngModel)]="newEthereumInitialInvest">&nbsp;&nbsp;Initial Invest
+                                   ngbButton [(ngModel)]="newEthereumInitialInvest"
+                                    (change)="onInitialInvest()">&nbsp;&nbsp;Initial Invest
                         </label>
                     </fieldset>
                 </div>

@@ -13,6 +13,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserType;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.*;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
 import com.datrixo.crypto_datrixo_site.ico_page.service.nikname_generator.NiknameGenerator;
+import com.datrixo.crypto_datrixo_site.ico_page.service.password_generator.PasswordGenerator;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserPassword;
 import org.apache.commons.io.IOUtils;
@@ -54,6 +55,8 @@ public class UserServiceImpl implements UserService {
     private ImageContentRepository imageContentRepository;
     @Autowired
     private NiknameGenerator niknameGenerator;
+    @Autowired
+    private PasswordGenerator passwordGenerator;
 
     private static final String USER_NOT_FOUND = "User not found";
     private static final String USER_PASSWORD_UPDATED = "User password is updated";
@@ -190,7 +193,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public Optional<User> createUserByAdmin(MultipartFile file, UserDataDto userDataDto) {
         if (userDataDto == null) {
-            LOGGER.error("providerDto == null");
+            LOGGER.error("userDto == null");
             return Optional.empty();
         }
         if (checkRoleForCurrentUser(Role.ADMIN)) {
@@ -200,11 +203,11 @@ public class UserServiceImpl implements UserService {
 
             if (userDataDto.getUserType().equals(UserType.COMPANY.name()) && userDataDto.getOrganization() != null
                     && userDataDto.getOrganization().getCountry() != null
-                    && userDataDto.getOrganization().getCountry().getId() != null) {
+                    && userDataDto.getOrganization().getCountry().getCode() != null) {
                 OrganizationDto orgDto = userDataDto.getOrganization();
                 Organization org = new Organization(orgDto.getCompanyName(), orgDto.getEmail(), orgDto.getPhone(), orgDto.getStreetAddress(),
                         orgDto.getCity(), orgDto.getState(), orgDto.getZip(),
-                        countryRepository.findById(orgDto.getCountry().getId()).orElse(null));
+                        countryRepository.findByCode(orgDto.getCountry().getCode()).orElse(null));
                 user.setOrganization(organizationRepository.save(org));
             }
             user = userRepository.save(user);
@@ -216,6 +219,8 @@ public class UserServiceImpl implements UserService {
                             accountDto.getCreateDate(), accountDto.getPaidPrice(), accountDto.getInitialInvest())));
                 }
                 user.setAccounts(accounts);
+            } else {
+                user.getAccounts().clear(); // fix error with orphanRemoval = true for accounts
             }
             user = userRepository.save(user);
 
@@ -238,5 +243,10 @@ public class UserServiceImpl implements UserService {
         } else {
             return generateUserName(keyword);
         }
+    }
+
+    @Override
+    public String generatePassword() {
+        return passwordGenerator.generate();
     }
 }

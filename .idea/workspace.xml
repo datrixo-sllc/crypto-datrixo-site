@@ -33,11 +33,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Query with fetch objects with lazy fetch">
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/password_generator/PasswordGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/password_generator/PasswordGeneratorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/add-admin-user-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/add-admin-user-upload.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-add/admin-users-add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-add/admin-users-add.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-add/admin-users-add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-add/admin-users-add.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/organization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/admin-users/organization.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +179,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.datrixo.crypto_datrixo_site.ico_page.service.password_generator" />
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.dto" />
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.service" />
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model" />
@@ -204,6 +216,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.datrixo.crypto_datrixo_site.ico_page.service.nikname_generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasswordGeneratorImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.datrixo.crypto_datrixo_site.ico_page.service.password_generator.PasswordGeneratorImpl" />
+      <module name="ico-page-site" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.datrixo.crypto_datrixo_site.ico_page.service.password_generator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -306,9 +331,11 @@
       <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
       <item itemvalue="Spring Boot.App" />
       <item itemvalue="Tomcat Server.Tomcat" />
+      <item itemvalue="Application.PasswordGeneratorImpl" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PasswordGeneratorImpl" />
         <item itemvalue="Application.NiknameGeneratorImpl" />
         <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
       </list>
@@ -482,6 +509,7 @@
       <workItem from="1631105885618" duration="674000" />
       <workItem from="1631115363697" duration="584000" />
       <workItem from="1631169107925" duration="2897000" />
+      <workItem from="1631271115189" duration="11920000" />
     </task>
     <task id="LOCAL-00055" summary="total amount 800 00000&#10;remove check of first year">
       <created>1582139145998</created>
@@ -898,14 +926,19 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/nikname_generator/NiknameGeneratorImpl.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="50" />
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
+          <line>212</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="51" />
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
+          <line>224</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
+          <line>216</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -919,7 +952,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="icoPageDto.holders" />
+        <watch expression="icoPageDto.holders" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
