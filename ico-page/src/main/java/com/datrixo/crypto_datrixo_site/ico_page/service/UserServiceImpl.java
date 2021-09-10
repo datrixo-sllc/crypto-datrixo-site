@@ -191,7 +191,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public Optional<User> createUserByAdmin(MultipartFile file, UserDataDto userDataDto) {
+    public Optional<User> createUserByAdmin(MultipartFile file, UserDataDto userDataDto) throws IOException {
         if (userDataDto == null) {
             LOGGER.error("userDto == null");
             return Optional.empty();
@@ -200,7 +200,7 @@ public class UserServiceImpl implements UserService {
             User user = new User(userDataDto.getUsername(), userDataDto.getPassword(),
                     Role.valueOf(userDataDto.getRole()), UserType.valueOf(userDataDto.getUserType()),
                     userDataDto.getFirstName(), userDataDto.getLastName(), userDataDto.getEmail(), userDataDto.getPhone());
-
+            user = userRepository.save(user);
             if (userDataDto.getUserType().equals(UserType.COMPANY.name()) && userDataDto.getOrganization() != null
                     && userDataDto.getOrganization().getCountry() != null
                     && userDataDto.getOrganization().getCountry().getCode() != null) {
@@ -210,8 +210,12 @@ public class UserServiceImpl implements UserService {
                         countryRepository.findByCode(orgDto.getCountry().getCode()).orElse(null));
                 user.setOrganization(organizationRepository.save(org));
             }
-            user = userRepository.save(user);
-
+            if (file != null) {
+                ImageContent imageContent = new ImageContent();
+                imageContent.setContent(IOUtils.toByteArray(file.getInputStream()));
+                imageContent = imageContentRepository.save(imageContent);
+                user.setImageContent(imageContent);
+            }
             if (userDataDto.getAccounts() != null && userDataDto.getAccounts().size() > 0) {
                 List<HolderAccount> accounts = new ArrayList<>();
                 for (HolderAccountDto accountDto : userDataDto.getAccounts()) {
