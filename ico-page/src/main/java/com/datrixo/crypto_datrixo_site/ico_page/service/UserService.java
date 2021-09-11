@@ -1,5 +1,6 @@
 package com.datrixo.crypto_datrixo_site.ico_page.service;
 
+import com.datrixo.crypto_datrixo_site.ico_page.dto.UserDto;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.Role;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
@@ -29,4 +30,10 @@ public interface UserService {
     String generateUserName(String keyword);
 
     String generatePassword();
+
+    Optional<UserDataDto> getUserDetail(Long id);
+
+    Optional<User> findById(Long id);
+
+    void deleteUser(Long id);
 }

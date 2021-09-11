@@ -100,4 +100,20 @@ public class UserController {
     public @ResponseBody String getCheck() {
         return "success";
     }
+
+    @GetMapping(value = "/{id}", produces = "application/json")
+    public ResponseEntity<UserDataDto> getMealDetail(@PathVariable("id") Long id) {
+        Optional<UserDataDto> optionalUserDto = userService.getUserDetail(id);
+        if (optionalUserDto.isPresent()) {
+            return ResponseEntity.ok(optionalUserDto.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteMeal(@PathVariable("id") Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
 }
