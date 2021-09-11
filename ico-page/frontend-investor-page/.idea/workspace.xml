@@ -31,7 +31,6 @@
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-add/admin-users-add.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +270,8 @@
       <workItem from="1631105539410" duration="1165000" />
       <workItem from="1631115370558" duration="1249000" />
       <workItem from="1631169087296" duration="27781000" />
-      <workItem from="1631271116337" duration="9094000" />
+      <workItem from="1631271116337" duration="9658000" />
+      <workItem from="1631342569290" duration="969000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>

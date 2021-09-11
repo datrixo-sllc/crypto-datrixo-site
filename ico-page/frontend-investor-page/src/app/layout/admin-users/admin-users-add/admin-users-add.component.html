@@ -108,40 +108,42 @@
                 </button>
             </div>
             <div class="col-lg-10 mt-1">
-                <table class="table table-striped" *ngIf="requestItemData.accounts.length > 0">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Create Date</th>
-                        <th scope="col">Paid Price</th>
-                        <th scope="col">Initial Invest</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let el of requestItemData.accounts; index as i">
-                        <th scope="row">{{ i + 1 }}</th>
-                        <td>
-                            <a href="https://{{etherNet}}/address/{{el.address}}"
-                               title="{{el.address}}"
-                               target="_blank">{{el.address | slice:0:10}}...</a>
-                        </td>
-                        <td>{{ el.createDate | date }}</td>
-                        <td>{{ el.paidPrice | number }}</td>
-                        <td>
-                            <span *ngIf="el.initialInvest" class="text-danger">YES</span>
-                            <span *ngIf="!el.initialInvest">NO</span>
-                        </td>
+                <div class="table-responsive">
+                    <table class="table table-striped" *ngIf="requestItemData.accounts.length > 0">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Create Date</th>
+                            <th scope="col">Paid Price</th>
+                            <th scope="col">Initial Invest</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let el of requestItemData.accounts; index as i">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>
+                                <a href="https://{{etherNet}}/address/{{el.address}}"
+                                   title="{{el.address}}"
+                                   target="_blank">{{el.address | slice:0:10}}...</a>
+                            </td>
+                            <td>{{ el.createDate | date }}</td>
+                            <td>{{ el.paidPrice | number }}</td>
+                            <td>
+                                <span *ngIf="el.initialInvest" class="text-danger">YES</span>
+                                <span *ngIf="!el.initialInvest">NO</span>
+                            </td>
 
-                        <td>
-                            <button type="button" class="close" aria-label="Close"
-                                    (click)="onRemoveAccount(i)"><span aria-hidden="true">&times;</span>
-                            </button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                            <td>
+                                <button type="button" class="close" aria-label="Close"
+                                        (click)="onRemoveAccount(i)"><span aria-hidden="true">&times;</span>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div *ngIf="requestItemData.organization != null" class="mt-lg-5">
@@ -278,7 +280,7 @@
                         <label class="btn-outline-secondary" ngbButtonLabel>
                             <input class="btn-outline-secondary" type="checkbox" name="newEthereumInitialInvest"
                                    ngbButton [(ngModel)]="newEthereumInitialInvest"
-                                    (change)="onInitialInvest()">&nbsp;&nbsp;Initial Invest
+                                   (change)="onInitialInvest()">&nbsp;&nbsp;Initial Invest
                         </label>
                     </fieldset>
                 </div>
