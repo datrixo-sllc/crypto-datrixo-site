@@ -24,4 +24,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
             "left join fetch o.country c " +
             "left join fetch u.accounts a")
     List<User> findAll();
+
+    @Query("from User u left join fetch u.imageContent where u.id = ?1")
+    Optional<User> findById(Long id);
 }

@@ -1,8 +1,6 @@
 package com.datrixo.crypto_datrixo_site.ico_page.service;
 
-import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderAccountDto;
-import com.datrixo.crypto_datrixo_site.ico_page.dto.OrganizationDto;
-import com.datrixo.crypto_datrixo_site.ico_page.dto.UserDataDto;
+import com.datrixo.crypto_datrixo_site.ico_page.dto.*;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.ImageContent;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Organization;
@@ -205,7 +203,10 @@ public class UserServiceImpl implements UserService {
                     && userDataDto.getOrganization().getCountry() != null
                     && userDataDto.getOrganization().getCountry().getCode() != null) {
                 OrganizationDto orgDto = userDataDto.getOrganization();
-                Organization org = new Organization(orgDto.getCompanyName(), orgDto.getEmail(), orgDto.getPhone(), orgDto.getStreetAddress(),
+                Organization org = new Organization(orgDto.getCompanyName(), orgDto.getIncorporateDate(),
+                        orgDto.getOpencorporatesId(),
+                        orgDto.getEmail(),
+                        orgDto.getPhone(), orgDto.getStreetAddress(),
                         orgDto.getCity(), orgDto.getState(), orgDto.getZip(),
                         countryRepository.findByCode(orgDto.getCountry().getCode()).orElse(null));
                 user.setOrganization(organizationRepository.save(org));
@@ -253,4 +254,78 @@ public class UserServiceImpl implements UserService {
     public String generatePassword() {
         return passwordGenerator.generate();
     }
+
+    @Override
+    @Transactional
+    public Optional<UserDataDto> getUserDetail(Long id) {
+        Optional<User> optionalUser = findById(id);
+        if (optionalUser.isPresent()) {
+            UserDataDto userDto = new UserDataDto();
+            User user = optionalUser.get();
+            if (user.getOrganization() != null) {
+                OrganizationDto organizationDto = new OrganizationDto(user.getOrganization().getId(),
+                        user.getOrganization().getCompanyName(),
+                        user.getOrganization().getIncorporateDate(),
+                        user.getOrganization().getOpencorporatesId(),
+                        user.getOrganization().getEmail(),
+                        user.getOrganization().getPhone(),
+                        user.getOrganization().getStreetAddress(),
+                        user.getOrganization().getCity(),
+                        user.getOrganization().getState(),
+                        user.getOrganization().getZip(),
+                        user.getOrganization().getCountry() != null ?
+                        new CountryDto(user.getOrganization().getCountry().getId(),
+                                user.getOrganization().getCountry().getName(),
+                                user.getOrganization().getCountry().getCode()) : null);
+
+                userDto.setOrganization(organizationDto);
+            }
+            userDto.setId(user.getId());
+            userDto.setUsername(user.getUsername());
+            userDto.setPassword(user.getPassword());
+            userDto.setRole(user.getRole() != null ? user.getRole().name() : null);
+            userDto.setUserType(user.getUserType() != null ? user.getUserType().name() : null);
+            userDto.setTitle(user.getTitle() != null ? user.getTitle().name() : null);
+            userDto.setFirstName(user.getFirstName());
+            userDto.setLastName(user.getLastName());
+            userDto.setEmail(user.getEmail());
+            userDto.setPhone(user.getPhone());
+            if (user.getAccounts().size() > 0) {
+                List<HolderAccountDto> accountDtos = new ArrayList<>();
+                user.getAccounts()
+                        .forEach(account -> {
+                            HolderAccountDto accountDto = new HolderAccountDto(account.getId(),
+                                    account.getAddress(),
+                                    account.getUser() != null ? account.getUser().getId() : null,
+                                    account.getCreateDate(), account.getPaidPrice(), account.getInitialInvest());
+                            accountDtos.add(accountDto);
+                        });
+                userDto.setAccounts(accountDtos);
+            }
+
+            if (user.getImageContent() != null && user.getImageContent().getId() != null) {
+                userDto.setImageContent(user.getImageContent().getContent());
+                userDto.setImageContentId(user.getImageContent().getId());
+            }
+
+            return Optional.of(userDto);
+        } else {
+            LOGGER.error("User with ID = {} not found", id);
+            return Optional.empty();
+        }
+    }
+
+    @Transactional
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        if (checkRoleForCurrentUser(Role.ADMIN)) {
+            userRepository.deleteById(id);
+        }
+    }
+
+
 }

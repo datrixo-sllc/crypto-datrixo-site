@@ -29,9 +29,11 @@ public class Organization extends AbstractPersistable<Long> {
     public Organization() {
     }
 
-    public Organization(String companyName, String email, String phone,
+    public Organization(String companyName, Date incorporateDate, String opencorporatesId, String email, String phone,
                         String streetAddress, String city, String state, String zip, Country country) {
         this.companyName = companyName;
+        this.incorporateDate = incorporateDate;
+        this.opencorporatesId = opencorporatesId;
         this.email = email;
         this.phone = phone;
         this.streetAddress = streetAddress;

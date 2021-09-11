@@ -22,6 +22,7 @@ public class UserDataDto {
     private String lastName;
     private String email;
     private String phone;
+    private Long imageContentId;
     private byte[] imageContent;
     private OrganizationDto organization;
     private List<HolderAccountDto> accounts;
@@ -121,6 +122,14 @@ public class UserDataDto {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Long getImageContentId() {
+        return imageContentId;
+    }
+
+    public void setImageContentId(Long imageContentId) {
+        this.imageContentId = imageContentId;
     }
 
     public byte[] getImageContent() {

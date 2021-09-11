@@ -38,7 +38,7 @@ public class User extends AbstractPersistable<Long> {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "image_content_id")
     private ImageContent imageContent;
-    @ManyToOne(fetch = FetchType.EAGER,cascade = {})
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "organization_id")
     private Organization organization;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.MERGE, orphanRemoval = true)

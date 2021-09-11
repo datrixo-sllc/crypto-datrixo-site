@@ -7,7 +7,7 @@ import {
     OnChanges,
     OnInit,
     Output,
-    SimpleChanges,
+    SimpleChanges, TemplateRef,
     ViewChild
 } from '@angular/core';
 import {HttpResponse} from '@angular/common/http';
@@ -19,6 +19,10 @@ import {UpdateAdminUsersUploadService} from '../update-admin-users-upload.servic
 import {AddAdminUserUploadService} from '../add-admin-user-upload.service';
 import {Utils} from '../../../shared/utilites/Utils';
 import {FormControl} from '@angular/forms';
+import {NgbCalendar, NgbDateStruct, NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import {Router} from '@angular/router';
+import {Organization} from '../organization';
+import {Country} from '../country';
 
 /**
  * Created by Yuri Nikiforov.
@@ -42,6 +46,7 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
     requestItemData: User;
+    orgIncorpDate: NgbDateStruct;
 
     show = false;
 
@@ -49,14 +54,24 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
     keyword = 'name';
 
     username: string;
+    etherNet = 'etherscan.io';
+    newEthereumAddress: string;
+    newEthereumCreateDate: NgbDateStruct;
+    newEthereumPaidPrice: number;
+    newEthereumInitialInvest: boolean;
+    modal: NgbModalRef;
+    @ViewChild('modalAddEthereumAccountWindow') templateAddEthereumAccountRef: TemplateRef<any>;
 
     constructor(
         private updateItemUploadService: UpdateAdminUsersUploadService,
         private addItemUploadService: AddAdminUserUploadService,
         private listService: AdminUsersService,
+        private modalService: NgbModal,
         private spinner: NgxSpinnerService,
         private sanitizer: DomSanitizer,
-        private utils: Utils
+        private _router: Router,
+        private utils: Utils,
+        private calendar: NgbCalendar
     ) {
 
     }
@@ -83,10 +98,19 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
                     if (this.requestItemData.imageContent) {
                         this.imgSrc = this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + this.requestItemData.imageContent);
                     }
+                    if (this.requestItemData.organization && this.requestItemData.organization.incorporateDate) {
+                        const date = new Date(this.requestItemData.organization.incorporateDate);
+                        this.orgIncorpDate = { day: date.getDate(), month: date.getMonth() + 1, year: date.getFullYear()};
+                        /*this.orgIncorpDate = this.calendar.getToday();*/
+                    }
+
 
                     this.spinner.hide();
                 }, error => {
                     this.spinner.hide();
+                    // alert('Server error: ' + error.message);
+                    this.utils.clearLocalStorage();
+                    this._router.navigate(['/login']);
                 });
         }
     }
@@ -131,10 +155,12 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
     }
 
     clearUploadParams() {
+        this.orgIncorpDate = this.calendar.getToday();
         this.fileToUpload = null;
         this.imgSrc = null;
         this.uploadEl.nativeElement.value = null;
         this.requestItemData = new User();
+        this.requestItemData.init('USER_CRYPTO', 'INDIVIDUAL', 'MR', null, []);
     }
 
 
@@ -156,16 +182,55 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
                 this.spinner.show();
                 this.listService.deleteItem(this.id)
                     .subscribe(value => {
-                        alert('Restaurant is deleted');
+                        alert('User is deleted');
                         this.spinner.hide();
-                        this.onBackItem();
+                        this.onBackList();
                     }, error => {
                         this.spinner.hide();
+                        // alert('Server error: ' + error.message);
+                        this.utils.clearLocalStorage();
+                        this._router.navigate(['/login']);
                     });
             }
         }
     }
 
+    onGenPassword() {
+        this.spinner.show();
+        this.addItemUploadService.getPassword()
+            .subscribe(value => {
+                if (value) {
+                    this.requestItemData.password = value.json().password;
+                    this.spinner.hide();
+                }
+            }, error => {
+                this.spinner.hide();
+                // alert('Server error: ' + error.message);
+                this.utils.clearLocalStorage();
+                this._router.navigate(['/login']);
+            });
+    }
 
+    onChangeUserType() {
+        this.orgIncorpDate = this.calendar.getToday();
+        if (this.requestItemData.userType === 'INDIVIDUAL') {
+            this.requestItemData.organization = null;
+        } else {
+            this.requestItemData.organization = new Organization();
+            this.requestItemData.organization.country = new Country();
+            this.requestItemData.organization.country.code = 'US';
+        }
+    }
+
+    onInitialInvest() {
+        /*if (this.newEthereumInitialInvest === true) {
+            this.newEthereumPaidPrice = 0;
+        }*/
+    }
+
+    setIncorpDate() {
+        this.requestItemData.organization.incorporateDate =
+            new Date(this.orgIncorpDate.year, this.orgIncorpDate.month - 1, this.orgIncorpDate.day);
+    }
 
 }

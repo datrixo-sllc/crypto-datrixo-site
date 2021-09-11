@@ -233,15 +233,16 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
             this.requestItemData.organization = null;
         } else {
             this.requestItemData.organization = new Organization();
+            this.setIncorpDate();
             this.requestItemData.organization.country = new Country();
             this.requestItemData.organization.country.code = 'US';
         }
     }
 
     onInitialInvest() {
-        if (this.newEthereumInitialInvest === true) {
+        /*if (this.newEthereumInitialInvest === true) {
             this.newEthereumPaidPrice = 0;
-        }
+        }*/
     }
 
     setIncorpDate() {

@@ -13,7 +13,7 @@ import {HttpClient} from '@angular/common/http';
 export class AdminUsersService {
 
     private static readonly SLASH: string = '/';
-    private static readonly PROVIDER: string = 'user';
+    private static readonly USER: string = 'user';
     private static readonly LIST: string = 'list';
     private static readonly SHORT_LIST: string = 'shortlist';
     private static readonly SHORT: string = 'short';
@@ -25,26 +25,26 @@ export class AdminUsersService {
     }
 
     getList(): Observable<any> {
-        const url = this.config.apiEndpoint + AdminUsersService.PROVIDER + AdminUsersService.SLASH + AdminUsersService.LIST;
+        const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + AdminUsersService.LIST;
         return this.http.get(url, {withCredentials: true});
     }
     getShortList(): Observable<any> {
-        const url = this.config.apiEndpoint + AdminUsersService.PROVIDER + AdminUsersService.SLASH + AdminUsersService.SHORT_LIST;
+        const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + AdminUsersService.SHORT_LIST;
         return this.http.get(url, {withCredentials: true});
     }
     getItemDetail(id: number): Observable<any> {
-        const url = this.config.apiEndpoint + AdminUsersService.PROVIDER + AdminUsersService.SLASH + id;
+        const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + id;
         return this.http.get(url, {withCredentials: true});
     }
 
     getItemShortDetail(id: number): Observable<any> {
-        const url = this.config.apiEndpoint + AdminUsersService.PROVIDER +
+        const url = this.config.apiEndpoint + AdminUsersService.USER +
             AdminUsersService.SLASH + AdminUsersService.SHORT + AdminUsersService.SLASH + id;
         return this.http.get(url, {withCredentials: true});
     }
 
     deleteItem(id: number): Observable<any> {
-        const url = this.config.apiEndpoint + AdminUsersService.PROVIDER + AdminUsersService.SLASH + id;
+        const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + id;
         return this.http.delete(url, {withCredentials: true});
     }
 }
