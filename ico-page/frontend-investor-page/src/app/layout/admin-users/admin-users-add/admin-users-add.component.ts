@@ -25,6 +25,7 @@ import {FormControl} from '@angular/forms';
 import {Account} from '../account';
 import {NgbModal, NgbModalRef, NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 import {Country} from '../country';
+import * as Noty from 'noty';
 
 /**
  * Created by Yuri Nikiforov.
@@ -62,6 +63,10 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     modal: NgbModalRef;
     @ViewChild('modalAddEthereumAccountWindow') templateAddEthereumAccountRef: TemplateRef<any>;
 
+    alertTitle: string;
+    confirmTitle: string;
+    alertBody: string;
+    confirmBody: string;
 
     constructor(
         private updateItemUploadService: UpdateAdminUsersUploadService,
@@ -70,7 +75,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         private modalService: NgbModal,
         private spinner: NgxSpinnerService,
         private sanitizer: DomSanitizer,
-        private _router: Router,
+        private router: Router,
         private utils: Utils,
         private calendar: NgbCalendar
     ) {
@@ -92,9 +97,8 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
                 }
             }, error => {
                 this.spinner.hide();
-                // alert('Server error: ' + error.message);
                 this.utils.clearLocalStorage();
-                this._router.navigate(['/login']);
+                this.router.navigate(['/login']);
             });
     }
 
@@ -122,26 +126,35 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         if (conf) {
 
             this.spinner.show();
+            this.alertTitle = 'Add User';
             this.addItemUploadService.postItemAdd(this.fileToUpload, this.requestItemData)
                 .toPromise()
                 .then((value: HttpResponse<Object>) => {
-                        this.spinner.hide();
-                        alert('User is added');
-                        /*alert('Server pull response: status: ' + value.status +
-                            ' status text: ' + value.statusText +
-                            ' location: ' + value.headers.get('Location'));*/
+                        this.alertBody = 'Successfully loaded';
                         this.clearUploadParams();
                         this.spinner.hide();
+                        this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                         this.onBackList();
                     },
                     (reason: Error) => {
+                        this.alertTitle = 'Edit User';
+                        this.alertBody = 'Server error: ' + reason;
                         this.spinner.hide();
-                        alert('Server pull error: ' + reason.message);
                         this.clearUploadParams();
+                        this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                        this.router.navigate(['/login']);
                     });
 
 
         }
+    }
+
+    notyMessage(alertTitle: string, alertBody: string, messageType: Noty.Type): Noty {
+        return new Noty({
+            type: messageType,
+            text: '<strong>' + alertTitle + '</strong><br /> ' + alertBody,
+            timeout: 3000
+        });
     }
 
     clearUploadParams() {
@@ -160,33 +173,43 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
 
     onGenUsername() {
         this.spinner.show();
+        this.alertTitle = 'Add User';
         this.addItemUploadService.getUsername()
             .subscribe(value => {
                 if (value) {
                     this.requestItemData.username = value.json().name;
+                    this.alertBody = 'Successfully generated';
                     this.spinner.hide();
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                 }
             }, error => {
+                this.alertTitle = 'Add User';
+                this.alertBody = 'Server error: ' + error;
                 this.spinner.hide();
-                // alert('Server error: ' + error.message);
+                this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 this.utils.clearLocalStorage();
-                this._router.navigate(['/login']);
-                });
+                this.router.navigate(['/login']);
+            });
     }
 
     onGenPassword() {
         this.spinner.show();
+        this.alertTitle = 'Add User';
         this.addItemUploadService.getPassword()
             .subscribe(value => {
                 if (value) {
                     this.requestItemData.password = value.json().password;
+                    this.alertBody = 'Successfully generated';
                     this.spinner.hide();
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                 }
             }, error => {
+                this.alertTitle = 'Add User';
+                this.alertBody = 'Server error: ' + error;
                 this.spinner.hide();
-                // alert('Server error: ' + error.message);
+                this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 this.utils.clearLocalStorage();
-                this._router.navigate(['/login']);
+                this.router.navigate(['/login']);
             });
     }
 
@@ -240,9 +263,9 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     }
 
     onInitialInvest() {
-        /*if (this.newEthereumInitialInvest === true) {
+        if (this.newEthereumInitialInvest === true) {
             this.newEthereumPaidPrice = 0;
-        }*/
+        }
     }
 
     setIncorpDate() {

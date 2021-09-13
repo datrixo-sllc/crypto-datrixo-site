@@ -11,8 +11,8 @@ import {NavigationEnd, Router} from '@angular/router';
 import {Utils} from '../../shared/utilites/Utils';
 import {AdminUsersService} from './admin-users.service';
 import {UserList} from './user-list';
-import {HttpResponse} from '@angular/common/http';
 import {UpdateAdminUsersUploadService} from './update-admin-users-upload.service';
+import * as Noty from 'noty';
 
 @Component({
     selector: 'app-admin-users',
@@ -35,11 +35,16 @@ export class AdminUsersComponent implements OnInit {
     itemForAdd = false;
     username: string;
 
+    alertTitle: string;
+    confirmTitle: string;
+    alertBody: string;
+    confirmBody: string;
+
     constructor(
         private listService: AdminUsersService,
         private updateItemUploadService: UpdateAdminUsersUploadService,
         private spinner: NgxSpinnerService,
-        private _router: Router,
+        private router: Router,
         private utils: Utils
     ) {
     }
@@ -51,7 +56,7 @@ export class AdminUsersComponent implements OnInit {
         }
         this.getListPage();
 
-        this._router.events.subscribe((evt) => {
+        this.router.events.subscribe((evt) => {
             if (!(evt instanceof NavigationEnd)) {
                 return;
             }
@@ -61,19 +66,32 @@ export class AdminUsersComponent implements OnInit {
 
     getListPage(): void {
         this.spinner.show();
+        this.alertTitle = 'Users';
         this.listService.getList()
             .subscribe(value => {
                 if (value) {
                     this.response = value as UserList;
                     this.items = this.response.users;
+                    this.alertBody = 'Successfully loaded';
                     this.spinner.hide();
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                 }
             }, error => {
+                this.alertTitle = 'Users';
+                this.alertBody = 'Server error: ' + error;
                 this.spinner.hide();
-                // alert('Server error: ' + error.message);
                 this.utils.clearLocalStorage();
-                this._router.navigate(['/login']);
+                this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                this.router.navigate(['/login']);
             });
+    }
+
+    notyMessage(alertTitle: string, alertBody: string, messageType: Noty.Type): Noty {
+        return new Noty({
+            type: messageType,
+            text: '<strong>' + alertTitle + '</strong><br /> ' + alertBody,
+            timeout: 3000
+        });
     }
 
     onSelect(item: User): void {
@@ -98,7 +116,7 @@ export class AdminUsersComponent implements OnInit {
     onCloseDetail(str: string) {
         this.viewList = true;
         this.headingStr = this.headingStr1;
-        this._router.navigate([this.redirect]);
+        this.router.navigate([this.redirect]);
     }
 
     onEditDetail(str: string) {
@@ -114,7 +132,7 @@ export class AdminUsersComponent implements OnInit {
         this.itemForEdit = false;
         this.itemForAdd = false;
         this.headingStr = this.headingStr1;
-        this._router.navigate([this.redirect]);
+        this.router.navigate([this.redirect]);
     }
 
     onBackItem(str: string) {

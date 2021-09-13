@@ -1,44 +1,203 @@
-<div class="row">
-    <div class="col-lg-6 mb-3">
-        <button class="btn btn-outline-secondary mr-3" (click)="onClose()">Back to List</button>
-        <button class="btn btn-primary mr-3" (click)="onEdit()">Edit Restaurant</button>
-        <button class="btn btn-secondary" (click)="onDelete()">Delete Restaurant</button>
+<div [@routerTransition]>
+    <div class="row">
+        <div class="col-lg-6 mb-3">
+            <button class="btn btn-outline-secondary mr-3" (click)="onClose()">Back to List</button>
+            <button class="btn btn-primary mr-3" (click)="onEdit()">Edit User</button>
+        </div>
     </div>
-</div>
-<div class="row mt-3" *ngIf="item">
-    <div class="col-lg-3 my-0">
-        <div class="header-content mx-auto">
-            <div class="text-center mb-5">
-                <img [src]="imgSrc" class="img-fluid" alt="" name="itemImage" *ngIf="imgSrc">
-            </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>Personal Information</h4>
+            <form role="form">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <!--<div class="col-lg-1">
+                                <fieldset class="form-group">
+                                    <label>Title</label>
+                                    <select class="form-control" [(ngModel)]="userData.title" name="title">
+                                        <option value="MR">Mr.</option>
+                                        <option value="MRS">Mrs.</option>
+                                    </select>
+                                </fieldset>
+                            </div>-->
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>First Name</label>
+                                    <input class="form-control" [(ngModel)]="userData.firstName" name="firstName" disabled/>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Last Name</label>
+                                    <input class="form-control" [(ngModel)]="userData.lastName" name="lastName" disabled/>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Username</label>
+                                    <input class="form-control" [value]="userData.username" disabled/>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Phone</label>
+                                    <input class="form-control" [(ngModel)]="userData.phone" name="phone" disabled/>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <fieldset class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control" [(ngModel)]="userData.email" name="email" disabled/>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-xl-2 col-sm-4">
+                        <fieldset class="form-group">
+                            <label>Image or Corp Logo</label>
+                            <div class="text-center mb-2 w-75">
+                                <img [src]="imgSrc || '/assets/images/placeholder.png'" class="img-fluid" alt="">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row mt-3" *ngIf="userData.organizationName">
+        <div class="col-lg-12">
+            <h4>Holdings Information</h4>
+            <form role="form">
+                <div class="table-responsive">
+                    <table class="table table-striped" *ngIf="userData.holders.length > 0">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Create Date</th>
+                            <th scope="col">Paid Price</th>
+                            <th scope="col">Initial Invest</th>
+                            <th scope="col">Equity Tokens</th>
+                            <th scope="col">Share(%)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let el of userData.holders; index as i">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>
+                                <a href="https://{{etherNet}}/address/{{el.address}}"
+                                   title="{{el.address}}"
+                                   target="_blank">{{el.address | slice:0:10}}...</a>
+                            </td>
+                            <td>{{ el.createDate | date }}</td>
+                            <td>{{ el.paidPrice | number }}</td>
+                            <td>
+                                <span *ngIf="el.initialInvest" class="text-danger">YES</span>
+                                <span *ngIf="!el.initialInvest">NO</span>
+                            </td>
 
+                            <td>{{ el.shareTokens}}</td>
+                            <td>{{ el.share}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="col-lg-9 my-0 pl-lg-5">
-        <div class="form-group row pt-0">
-            <label class="col-lg-3 col-form-label pt-0">Username</label>
-            <div class="col-lg-9">
-                <input class="form-control-plaintext" readonly name="zipcode" [value]="item.username"/>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-lg-3 col-form-label">User Type</label>
-            <div class="col-lg-9">
-                <input class="form-control-plaintext" readonly name="name" [value]="item.userType"/>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-lg-3 col-form-label">Email</label>
-            <div class="col-lg-9">
-                <input class="form-control-plaintext" readonly name="description" [value]="item.email"/>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-lg-3 col-form-label">Phone</label>
-            <div class="col-lg-9">
-                <input class="form-control-plaintext" readonly name="phone" [value]="item.phone"/>
-            </div>
+    <div class="row mt-3" *ngIf="userData.organizationName">
+        <div class="col-lg-12">
+            <h4>Company Information</h4>
+            <form role="form">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <fieldset class="form-group">
+                            <label>Company Name</label>
+                            <input class="form-control" [(ngModel)]="userData.organizationName" disabled
+                                   name="organizationName"/>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-3">
+                        <fieldset class="form-group">
+                            <label>Incorporate Date</label>
+                            <input class="form-control"
+                                   [ngModel]="userData.incorporateDate | date"
+                                   (ngModelChange)="userData.incorporateDate = $event"
+                                   disabled name="incorporateDate"/>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-3">
+                        <fieldset class="form-group">
+                            <label>Opencorporates ID</label>
+                            <input class="form-control" [(ngModel)]="userData.opencorporatesId" disabled
+                                   name="opencorporateId"/>
+                        </fieldset>
+                    </div>
+                    <div class="col-auto">
+                        <fieldset class="form-group">
+                            <label>&nbsp;</label>
+                            <a href="{{opencorp + userData.opencorporatesId}}"
+                               target="_blank" class="btn btn-outline-primary form-control" role="button"
+                               aria-pressed="true">Open</a>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <fieldset class="form-group">
+                            <label>Phone</label>
+                            <input class="form-control" [(ngModel)]="userData.organizationPhone" disabled
+                                   name="organizationPhone"/>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-3">
+                        <fieldset class="form-group">
+                            <label>Email</label>
+                            <input class="form-control" [(ngModel)]="userData.organizationEmail" disabled
+                                   name="organizationEmail"/>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-3">
+                        <fieldset class="form-group">
+                            <label>Street Address</label>
+                            <input class="form-control" [(ngModel)]="userData.streetAddress" disabled
+                                   name="streetAddress"/>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-3">
+                        <fieldset class="form-group">
+                            <label>City</label>
+                            <input class="form-control" [(ngModel)]="userData.city" disabled name="city"/>
+                        </fieldset>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <fieldset class="form-group">
+                            <label>State</label>
+                            <input class="form-control" [(ngModel)]="userData.state" disabled name="state"/>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-2">
+                        <fieldset class="form-group">
+                            <label>Zip</label>
+                            <input class="form-control" [(ngModel)]="userData.zip" disabled name="zip"/>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-3">
+                        <fieldset class="form-group">
+                            <label>Country</label>
+                            <input class="form-control" [(ngModel)]="userData.country" disabled name="country"/>
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<

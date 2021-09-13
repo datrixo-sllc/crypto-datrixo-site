@@ -17,6 +17,8 @@ export class AdminUsersService {
     private static readonly LIST: string = 'list';
     private static readonly SHORT_LIST: string = 'shortlist';
     private static readonly SHORT: string = 'short';
+    private static readonly INVESTOR: string = 'investor';
+    private static readonly USER_DATA: string = 'user-data';
 
     constructor(
         @Inject(APP_CONFIG) private config: IAppConfig,
@@ -46,5 +48,12 @@ export class AdminUsersService {
     deleteItem(id: number): Observable<any> {
         const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + id;
         return this.http.delete(url, {withCredentials: true});
+    }
+
+    getUserData(): Observable<any> {
+        const url = this.config.apiEndpoint + AdminUsersService.INVESTOR + AdminUsersService.SLASH +
+            AdminUsersService.USER_DATA;
+        return this.http
+            .get(url, {withCredentials: true});
     }
 }
