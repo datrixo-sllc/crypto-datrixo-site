@@ -21,4 +21,6 @@ public interface HolderService {
     void dbMemoryUpdate();
     Optional<List<HolderAccount>> findHolderAccountsByUser(User user);
     Optional<HolderAccount> findByAddress(String address);
+    Optional<Holder> findHolderByAddress(String address);
+
 }
