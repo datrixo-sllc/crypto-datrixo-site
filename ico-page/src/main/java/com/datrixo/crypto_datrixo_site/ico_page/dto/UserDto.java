@@ -1,6 +1,8 @@
 package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Yuri Nikiforov.
@@ -15,6 +17,7 @@ public class UserDto {
     private String firstName;
     private String lastName;
     private String phone;
+    private String email;
     private String organizationName;
     private Date incorporateDate;
     private String organizationPhone;
@@ -24,6 +27,7 @@ public class UserDto {
     private String zip;
     private String country;
     private byte[] imageContent;
+    private List<HolderAccountDto> holders;
 
     public UserDto() {
     }
@@ -33,8 +37,9 @@ public class UserDto {
     }
 
     public UserDto(Long id, String username, String role, String title, String firstName, String lastName, String phone,
-                   String organizationName, Date incorporateDate, String organizationPhone,
-                   String streetAddress, String city, String state, String zip, String country, byte[] imageContent) {
+                   String email, String organizationName, Date incorporateDate, String organizationPhone,
+                   String streetAddress, String city, String state, String zip, String country, byte[] imageContent,
+                   List<HolderAccountDto> holders) {
         this.id = id;
         this.username = username;
         this.role = role;
@@ -42,6 +47,7 @@ public class UserDto {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
+        this.email = email;
         this.organizationName = organizationName;
         this.incorporateDate = incorporateDate;
         this.organizationPhone = organizationPhone;
@@ -51,6 +57,7 @@ public class UserDto {
         this.zip = zip;
         this.country = country;
         this.imageContent = imageContent;
+        this.holders = holders;
     }
 
     public Long getId() {
@@ -107,6 +114,14 @@ public class UserDto {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getOrganizationName() {
@@ -180,4 +195,16 @@ public class UserDto {
     public void setImageContent(byte[] imageContent) {
         this.imageContent = imageContent;
     }
+
+    public List<HolderAccountDto> getHolders() {
+        if(holders == null) {
+            holders = new ArrayList<>();
+        }
+        return holders;
+    }
+
+    public void setHolders(List<HolderAccountDto> holders) {
+        this.holders = holders;
+    }
+
 }

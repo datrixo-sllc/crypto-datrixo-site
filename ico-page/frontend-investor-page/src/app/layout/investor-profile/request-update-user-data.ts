@@ -8,4 +8,5 @@ export class RequestUpdateUserData {
     firstName: string;
     lastName: string;
     phone: string;
+    email: string;
 }

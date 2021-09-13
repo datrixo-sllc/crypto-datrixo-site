@@ -22,6 +22,7 @@ export class InvestorProfileComponent implements OnInit {
     currentPassword: string;
     newPassword: string;
     newPasswordReent: string;
+    etherNet = 'etherscan.io';
 
     modal: NgbModalRef;
     @ViewChild('modalResetPasswordWindow') templateRef: TemplateRef<any>;
@@ -122,6 +123,7 @@ export class InvestorProfileComponent implements OnInit {
         request.firstName = this.userData.firstName;
         request.lastName = this.userData.lastName;
         request.phone = this.userData.phone;
+        request.email = this.userData.email;
         this.alertTitle = 'Investor Profile Update';
         this.spinner.show();
         this.investorProfileService.updateUserData(this.fileToUpload, request)

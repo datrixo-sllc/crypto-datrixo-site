@@ -20,6 +20,8 @@ public class HolderAccountDto {
     private Date createDate;
     private BigDecimal paidPrice;
     private Boolean initialInvest;
+    private String shareTokens;
+    private String share;
 
     public HolderAccountDto() {
     }
@@ -31,6 +33,13 @@ public class HolderAccountDto {
         this.createDate = createDate;
         this.paidPrice = paidPrice;
         this.initialInvest = initialInvest;
+    }
+
+    public HolderAccountDto(Long id, String address, Long userId, Date createDate, BigDecimal paidPrice, Boolean initialInvest,
+                            String shareTokens, String share) {
+        this(id, address, userId, createDate, paidPrice, initialInvest);
+        this.shareTokens = shareTokens;
+        this.share = share;
     }
 
     public Long getId() {
@@ -79,5 +88,21 @@ public class HolderAccountDto {
 
     public void setInitialInvest(Boolean initialInvest) {
         this.initialInvest = initialInvest;
+    }
+
+    public String getShareTokens() {
+        return shareTokens;
+    }
+
+    public void setShareTokens(String shareTokens) {
+        this.shareTokens = shareTokens;
+    }
+
+    public String getShare() {
+        return share;
+    }
+
+    public void setShare(String share) {
+        this.share = share;
     }
 }

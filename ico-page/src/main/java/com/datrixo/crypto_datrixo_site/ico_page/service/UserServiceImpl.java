@@ -113,6 +113,7 @@ public class UserServiceImpl implements UserService {
             user.setFirstName(updateUserData.getFirstName());
             user.setLastName(updateUserData.getLastName());
             user.setPhone(updateUserData.getPhone());
+            user.setEmail(updateUserData.getEmail());
             Hibernate.initialize(user.getImageContent());
             if (file != null) {
                 if (user.getImageContent() != null) {

@@ -1,12 +1,11 @@
 package com.datrixo.crypto_datrixo_site.ico_page.controller;
 
-import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderDto;
-import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
-import com.datrixo.crypto_datrixo_site.ico_page.dto.UserDto;
-import com.datrixo.crypto_datrixo_site.ico_page.dto.UserMainDataDto;
+import com.datrixo.crypto_datrixo_site.ico_page.dto.*;
+import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
+import com.datrixo.crypto_datrixo_site.ico_page.service.HolderService;
 import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
@@ -38,8 +37,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
-import java.util.List;
-import java.util.Optional;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -57,8 +57,13 @@ public class InvestorPageController {
     IcoPageService icoPageService;
     @Autowired
     UserService userService;
+    @Autowired
+    HolderService holderService;
 
     private final static int UNIT_VALUE = 150;
+    private static DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+    private static DecimalFormat df2 = new DecimalFormat("0.00", symbols);
+    private static DecimalFormat df1 = new DecimalFormat("0.0", symbols);
 
     @RequestMapping(value = "/ppm", method = RequestMethod.GET)
     public ResponseEntity<Resource> getPPM() throws IOException {
@@ -124,7 +129,7 @@ public class InvestorPageController {
     IcoPageDto getHoldings() {
         IcoPageDto icoPageDto = icoPageService.getAllData();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        MediUser currentUser = (MediUser)auth.getPrincipal();
+        MediUser currentUser = (MediUser) auth.getPrincipal();
         List<HolderDto> holderDtoList = icoPageDto.getHolders();
         icoPageDto.setHolders(holderDtoList.stream()
                 .filter(holderDto -> hasAccount(holderDto.getAddress(), currentUser.getAccounts()))
@@ -142,13 +147,40 @@ public class InvestorPageController {
     public @ResponseBody
     UserDto getUserData() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        MediUser currentUser = (MediUser)auth.getPrincipal();
+        MediUser currentUser = (MediUser) auth.getPrincipal();
         User user = userService.findByUsernameWithImage(currentUser.getUsername());
         UserDto userDto = null;
         if (user != null) {
+            List<HolderAccountDto> holderAccountDtos = new ArrayList<>();
+            Optional<List<HolderAccount>> optionalHolderAccounts = holderService.findHolderAccountsByUser(user);
+            if (optionalHolderAccounts.isPresent() && optionalHolderAccounts.get().size() > 0) {
+                optionalHolderAccounts.get().forEach(account -> {
+                    Optional<Holder> optionalHolder = holderService.findHolderByAddress(account.getAddress().toLowerCase());
+                    BigDecimal paidPrice = null;
+                    if (account != null) {
+                        if (!account.getInitialInvest()) {
+                            paidPrice = account.getPaidPrice();
+                        } else {
+                            paidPrice = BigDecimal.ZERO;
+                        }
+                    }
+                    String shareTokens = null;
+                    String share = null;
+                    Date createDate = null;
+                    if (optionalHolder.isPresent()) {
+                        createDate = optionalHolder.get().getTimeDate();
+                        shareTokens = String.valueOf(optionalHolder.get().getShareTokens());
+                        share = df2.format(optionalHolder.get().getShare());
+                    }
+                    HolderAccountDto holderAccountDto = new HolderAccountDto(account.getId(), account.getAddress(), null, createDate,
+                            paidPrice, account.getInitialInvest(), shareTokens, share);
+                    holderAccountDtos.add(holderAccountDto);
+                });
+            }
             userDto = new UserDto(null, user.getUsername(), user.getRole().name(), user.getTitle().name(),
                     user.getFirstName(), user.getLastName(),
                     user.getPhone(),
+                    user.getEmail(),
                     user.getOrganization() != null ? user.getOrganization().getCompanyName() : "",
                     user.getOrganization() != null ? user.getOrganization().getIncorporateDate() : null,
                     user.getOrganization() != null ? user.getOrganization().getPhone() : "",
@@ -159,8 +191,8 @@ public class InvestorPageController {
                     user.getOrganization() != null ? user.getOrganization().getCountry() != null ?
                             user.getOrganization().getCountry().getName() : ""
                             : "",
-                    user.getImageContent() != null ? user.getImageContent().getContent() : null
-                    );
+                    user.getImageContent() != null ? user.getImageContent().getContent() : null,
+                    holderAccountDtos.size() > 0 ? holderAccountDtos : null);
         } else {
             throw new UsernameNotFoundException("user not found");
         }
@@ -168,7 +200,7 @@ public class InvestorPageController {
     }
 
     @PutMapping(value = "/update-user-data")
-    public ResponseEntity<Void> updateUser(@RequestParam(required = false, name="file") MultipartFile file,
+    public ResponseEntity<Void> updateUser(@RequestParam(required = false, name = "file") MultipartFile file,
                                            @RequestParam("userdata") String userdata) throws IOException {
 
         ObjectMapper mapper = new ObjectMapper();
@@ -181,8 +213,10 @@ public class InvestorPageController {
             return ResponseEntity.noContent().build();
         }
     }
+
     @PostMapping(value = "/update-user-password")
-    public @ResponseBody String updateUserPassword(@RequestBody RequestUpdateUserPassword updateUserPassword) {
+    public @ResponseBody
+    String updateUserPassword(@RequestBody RequestUpdateUserPassword updateUserPassword) {
         return userService.updateUserPassword(updateUserPassword);
     }
 
@@ -193,7 +227,7 @@ public class InvestorPageController {
 
         Integer investedTokens = icoPageDto.getHolders().parallelStream()
                 .reduce(0, (partialResult, holder) ->
-                        new BigDecimal(holder.getPaidPrice()).intValue() * Integer.valueOf(holder.getShareTokens()),
+                                new BigDecimal(holder.getPaidPrice()).intValue() * Integer.valueOf(holder.getShareTokens()),
                         Integer::sum);
 
         Integer shareTokens = icoPageDto.getHolders().parallelStream()

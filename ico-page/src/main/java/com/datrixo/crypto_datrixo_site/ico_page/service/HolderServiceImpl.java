@@ -151,6 +151,11 @@ public class HolderServiceImpl implements HolderService {
 
     @Override
     public Optional<HolderAccount> findByAddress(String address) {
-        return Optional.of(holderAccountRepository.findFirstByAddress(address));
+        return Optional.ofNullable(holderAccountRepository.findFirstByAddress(address));
+    }
+
+    @Override
+    public Optional<Holder> findHolderByAddress(String address) {
+        return Optional.ofNullable(holderRepository.findFirstByAddress(address));
     }
 }
