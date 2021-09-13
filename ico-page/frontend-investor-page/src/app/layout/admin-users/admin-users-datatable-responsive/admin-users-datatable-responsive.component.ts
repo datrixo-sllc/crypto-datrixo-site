@@ -18,7 +18,7 @@ import {User} from '../user';
 export class AdminUsersDatatableResponsiveComponent implements OnInit, OnChanges {
     @Input() items: User[];
     @Output() onAddItemEmit = new EventEmitter<string>();
-    @Output() onChangeStatusEmit = new EventEmitter<number>();
+    @Output() onViewItemEmit = new EventEmitter<number>();
     @Output() onEditItemEmit = new EventEmitter<number>();
     @Output() onRefreshEmit = new EventEmitter<string>();
 
@@ -57,7 +57,7 @@ export class AdminUsersDatatableResponsiveComponent implements OnInit, OnChanges
     }
 
     onItemView(id: number) {
-        // this.onChangeStatusEmit.emit(id);
+        this.onViewItemEmit.emit(id);
 
     }
 

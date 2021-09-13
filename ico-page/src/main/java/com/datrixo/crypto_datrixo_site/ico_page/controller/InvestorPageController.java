@@ -183,6 +183,7 @@ public class InvestorPageController {
                     user.getEmail(),
                     user.getOrganization() != null ? user.getOrganization().getCompanyName() : "",
                     user.getOrganization() != null ? user.getOrganization().getIncorporateDate() : null,
+                    user.getOrganization() != null ? user.getOrganization().getOpencorporatesId() : null,
                     user.getOrganization() != null ? user.getOrganization().getPhone() : "",
                     user.getOrganization() != null ? user.getOrganization().getStreetAddress() : "",
                     user.getOrganization() != null ? user.getOrganization().getCity() : "",

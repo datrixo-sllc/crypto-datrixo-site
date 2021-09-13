@@ -121,8 +121,12 @@ export class AdminUsersComponent implements OnInit {
         this.itemForEdit = false;
     }
 
-    onChangeItemStatus(id: number) {
-
+    onViewItem(id: number) {
+        const index = this.items.findIndex(value => value.id === id);
+        this.selectedItem = this.items[index];
+        this.headingStr = this.headingStr1 + ' / ' + this.selectedItem.username + ' / ' + this.selectedItem.userType;
+        this.viewList = false;
+        this.itemForEdit = false;
     }
 
     onRefresh(str: string) {

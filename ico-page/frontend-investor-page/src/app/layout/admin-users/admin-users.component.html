@@ -6,7 +6,7 @@
                                             (onEditItemEmit)="onEdit($event)"
                                             (onAddItemEmit)="onAddItem($event)"
                                             (onRefreshEmit)="onRefresh($event)"
-                                            (onChangeStatusEmit)="onChangeItemStatus($event)"></app-admin-users-datatable-responsive>
+                                            (onViewItemEmit)="onViewItem($event)"></app-admin-users-datatable-responsive>
         </div>
         <div class="col-12" *ngIf="!viewList && !itemForAdd && !itemForEdit && selectedItem">
             <app-admin-users-detail [id]="selectedItem.id"
