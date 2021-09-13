@@ -23,6 +23,7 @@ import {NgbCalendar, NgbDateStruct, NgbModal, NgbModalRef} from '@ng-bootstrap/n
 import {Router} from '@angular/router';
 import {Organization} from '../organization';
 import {Country} from '../country';
+import * as Noty from 'noty';
 
 /**
  * Created by Yuri Nikiforov.
@@ -36,7 +37,7 @@ import {Country} from '../country';
     styleUrls: ['./admin-users-edit.component.scss']
 })
 export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit {
-    @Input() id: number; // TODO Добавить представление пользователей
+    @Input() id: number;
     @Output() backListEmit = new EventEmitter<string>();
     @Output() backItemEmit = new EventEmitter<string>();
 
@@ -62,6 +63,11 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
     modal: NgbModalRef;
     @ViewChild('modalAddEthereumAccountWindow') templateAddEthereumAccountRef: TemplateRef<any>;
 
+    alertTitle: string;
+    confirmTitle: string;
+    alertBody: string;
+    confirmBody: string;
+
     constructor(
         private updateItemUploadService: UpdateAdminUsersUploadService,
         private addItemUploadService: AddAdminUserUploadService,
@@ -69,7 +75,7 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
         private modalService: NgbModal,
         private spinner: NgxSpinnerService,
         private sanitizer: DomSanitizer,
-        private _router: Router,
+        private router: Router,
         private utils: Utils,
         private calendar: NgbCalendar
     ) {
@@ -92,6 +98,7 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
         this.clearUploadParams();
         if (this.id) {
             this.spinner.show();
+            this.alertTitle = 'Edit User';
             this.listService.getItemDetail(this.id)
                 .subscribe(value => {
                     this.requestItemData = value as User;
@@ -100,19 +107,27 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
                     }
                     if (this.requestItemData.organization && this.requestItemData.organization.incorporateDate) {
                         const date = new Date(this.requestItemData.organization.incorporateDate);
-                        this.orgIncorpDate = { day: date.getDate(), month: date.getMonth() + 1, year: date.getFullYear()};
-                        /*this.orgIncorpDate = this.calendar.getToday();*/
+                        this.orgIncorpDate = {day: date.getDate(), month: date.getMonth() + 1, year: date.getFullYear()};
                     }
-
-
+                    this.alertBody = 'Successfully loaded';
                     this.spinner.hide();
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                 }, error => {
+                    this.alertTitle = 'Edit User';
+                    this.alertBody = 'Server error: ' + error;
                     this.spinner.hide();
-                    // alert('Server error: ' + error.message);
-                    this.utils.clearLocalStorage();
-                    this._router.navigate(['/login']);
+                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                    this.router.navigate(['/login']);
                 });
         }
+    }
+
+    notyMessage(alertTitle: string, alertBody: string, messageType: Noty.Type): Noty {
+        return new Noty({
+            type: messageType,
+            text: '<strong>' + alertTitle + '</strong><br /> ' + alertBody,
+            timeout: 3000
+        });
     }
 
     handleFileInput(files: FileList) {
@@ -137,20 +152,23 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
         }
 
         this.spinner.show();
+        this.alertTitle = 'Edit User';
         this.updateItemUploadService.putItemUpdate(this.fileToUpload, this.requestItemData)
             .toPromise()
             .then((value: HttpResponse<Object>) => {
+                    this.alertBody = 'Successfully updated';
                     this.spinner.hide();
-                    alert('Restaurant is updated');
-                    /*alert('Server pull response: status: ' + value.status +
-                        ' status text: ' + value.statusText);*/
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                     this.clearUploadParams();
                     this.onBackList();
                 },
                 (reason: Error) => {
+                    this.alertTitle = 'Edit User';
+                    this.alertBody = 'Server error: ' + reason;
                     this.spinner.hide();
-                    alert('Server pull error: ' + reason.message);
                     this.clearUploadParams();
+                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                    this.router.navigate(['/login']);
                 });
     }
 
@@ -180,16 +198,20 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
         if (confirm('Are you sure to delete user?')) {
             if (this.id) {
                 this.spinner.show();
+                this.alertTitle = 'Edit User';
                 this.listService.deleteItem(this.id)
                     .subscribe(value => {
-                        alert('User is deleted');
+                        this.alertBody = 'Successfully deleted';
                         this.spinner.hide();
+                        this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                         this.onBackList();
                     }, error => {
+                        this.alertTitle = 'Edit User';
+                        this.alertBody = 'Server error: ' + error;
                         this.spinner.hide();
-                        // alert('Server error: ' + error.message);
                         this.utils.clearLocalStorage();
-                        this._router.navigate(['/login']);
+                        this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                        this.router.navigate(['/login']);
                     });
             }
         }
@@ -197,17 +219,22 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
 
     onGenPassword() {
         this.spinner.show();
+        this.alertTitle = 'Edit User';
         this.addItemUploadService.getPassword()
             .subscribe(value => {
                 if (value) {
                     this.requestItemData.password = value.json().password;
+                    this.alertBody = 'Successfully generated';
                     this.spinner.hide();
+                    this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                 }
             }, error => {
+                this.alertTitle = 'Edit User';
+                this.alertBody = 'Server error: ' + error;
                 this.spinner.hide();
-                // alert('Server error: ' + error.message);
                 this.utils.clearLocalStorage();
-                this._router.navigate(['/login']);
+                this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                this.router.navigate(['/login']);
             });
     }
 
@@ -223,9 +250,9 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
     }
 
     onInitialInvest() {
-        /*if (this.newEthereumInitialInvest === true) {
+        if (this.newEthereumInitialInvest === true) {
             this.newEthereumPaidPrice = 0;
-        }*/
+        }
     }
 
     setIncorpDate() {
