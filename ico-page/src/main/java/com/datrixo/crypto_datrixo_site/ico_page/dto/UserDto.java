@@ -20,6 +20,7 @@ public class UserDto {
     private String email;
     private String organizationName;
     private Date incorporateDate;
+    private String opencorporatesId;
     private String organizationPhone;
     private String streetAddress;
     private String city;
@@ -37,7 +38,7 @@ public class UserDto {
     }
 
     public UserDto(Long id, String username, String role, String title, String firstName, String lastName, String phone,
-                   String email, String organizationName, Date incorporateDate, String organizationPhone,
+                   String email, String organizationName, Date incorporateDate, String opencorporatesId, String organizationPhone,
                    String streetAddress, String city, String state, String zip, String country, byte[] imageContent,
                    List<HolderAccountDto> holders) {
         this.id = id;
@@ -50,6 +51,7 @@ public class UserDto {
         this.email = email;
         this.organizationName = organizationName;
         this.incorporateDate = incorporateDate;
+        this.opencorporatesId = opencorporatesId;
         this.organizationPhone = organizationPhone;
         this.streetAddress = streetAddress;
         this.city = city;
@@ -138,6 +140,14 @@ public class UserDto {
 
     public void setIncorporateDate(Date incorporateDate) {
         this.incorporateDate = incorporateDate;
+    }
+
+    public String getOpencorporatesId() {
+        return opencorporatesId;
+    }
+
+    public void setOpencorporatesId(String opencorporatesId) {
+        this.opencorporatesId = opencorporatesId;
     }
 
     public String getOrganizationPhone() {

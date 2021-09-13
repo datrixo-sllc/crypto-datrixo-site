@@ -14,7 +14,7 @@ export class RespUserData {
     email: string;
     organizationName: string;
     incorporateDate: Date = new Date();
-    opencorporateId: string;
+    opencorporatesId: string;
     organizationPhone: string;
     organizationEmail: string;
     streetAddress: string;

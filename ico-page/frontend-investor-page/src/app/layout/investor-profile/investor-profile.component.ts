@@ -23,6 +23,7 @@ export class InvestorProfileComponent implements OnInit {
     newPassword: string;
     newPasswordReent: string;
     etherNet = 'etherscan.io';
+    opencorp = 'https://opencorporates.com/companies/';
 
     modal: NgbModalRef;
     @ViewChild('modalResetPasswordWindow') templateRef: TemplateRef<any>;

@@ -14,8 +14,8 @@ import {AdminUsersService} from '../admin-users.service';
     templateUrl: './admin-users-detail.component.html',
     styleUrls: ['./admin-users-detail.component.scss']
 })
-export class AdminUsersDetailComponent implements OnChanges { //TODO Добавить представление периодов активности
-    @Input() id: number; //TODO Добавить представление пользователей
+export class AdminUsersDetailComponent implements OnChanges {
+    @Input() id: number;
     @Output() closeEmit = new EventEmitter<string>();
     @Output() editEmit = new EventEmitter<string>();
     item: User;

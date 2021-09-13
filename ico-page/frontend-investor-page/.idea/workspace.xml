@@ -27,25 +27,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Admin of users. User adding">
-      <change afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/holder.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.xml" beforeDir="false" />
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Investor profile">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/request-update-user-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/request-update-user-data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/resp-user-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/resp-user-data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/util/RequestUpdateUserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/util/RequestUpdateUserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +285,7 @@
       <workItem from="1631442765032" duration="1944000" />
       <workItem from="1631453685032" duration="6124000" />
       <workItem from="1631543602579" duration="167000" />
-      <workItem from="1631551139378" duration="2428000" />
+      <workItem from="1631551139378" duration="6525000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -567,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631202105585</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Investor profile">
+      <created>1631554997276</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1631554997276</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +589,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="invest layout" />
     <MESSAGE value="login" />
     <MESSAGE value="username on header section of layout" />
     <MESSAGE value="frontend refactor" />
@@ -614,7 +613,8 @@
     <MESSAGE value="Admin of users. Compilable ver." />
     <MESSAGE value="Admin of users. User List" />
     <MESSAGE value="Admin of users. User adding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin of users. User adding" />
+    <MESSAGE value="Investor profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Investor profile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -631,7 +631,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.ts</url>
-          <line>62</line>
+          <line>63</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
