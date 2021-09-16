@@ -15,16 +15,14 @@ import {UserShortDto} from '../../shared/dto/user-short-dto';
 @Injectable()
 export class UpdateAdminUsersUploadService {
 
-    private static readonly URL_PROVIDER: string = 'provider';
+    private static readonly URL_USER: string = 'user';
     private static readonly SLASH: string = '/';
-    private static readonly STATUS: string = 'status';
-
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
     }
 
     public putItemUpdate(fileToUpload: File, itemData: User): Observable<HttpResponse<Object>> {
-        const urlArts = UpdateAdminUsersUploadService.URL_PROVIDER;
+        const urlArts = UpdateAdminUsersUploadService.URL_USER;
         return this.putDataToURL(urlArts, fileToUpload, itemData);
     }
 
@@ -45,26 +43,5 @@ export class UpdateAdminUsersUploadService {
         const urlOptions = new RequestOptions({headers: urlHeaders});
         urlOptions.withCredentials = true;
         return urlOptions;
-    }
-
-    updateStatus(id: number, status: boolean): Observable<HttpResponse<Object>> {
-        const itemData = new UserShortDto();
-        itemData.id = id;
-        // itemData.activeOnline = status;
-        return this.putItemStatusUpdate(itemData);
-    }
-
-    public putItemStatusUpdate(itemData: UserShortDto): Observable<HttpResponse<Object>> {
-        const urlArts = UpdateAdminUsersUploadService.URL_PROVIDER + UpdateAdminUsersUploadService.SLASH +
-                        UpdateAdminUsersUploadService.STATUS;
-        return this.putStatusDataToURL(urlArts, itemData);
-    }
-
-    private putStatusDataToURL(partUrl: string, itemData: UserShortDto): Observable<any> {
-        const url = this.config.apiEndpoint + partUrl;
-        const formData: FormData = new FormData();
-        formData.append('itemdata', JSON.stringify(itemData));
-        const urlOptions = this.createUrlOptions();
-        return this.http.put(url, formData, urlOptions);
     }
 }

@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -61,12 +62,12 @@ public class UserServiceImpl implements UserService {
     private static final String CURRENT_PASSWORD_NOT_VALIDE = "Current password is not valid";
     private static final String REENTER_PASSWORD_IS_NOT_SAME = "Reenter password is not same";
     private static final String NEW_PASSWORD_IS_NOT_VALID = "Password must contain at least 1 lowercase alphabetical character, " +
-                                                            "must contain at least 1 uppercase alphabetical character, " +
-                                                            "must contain at least 1 numeric character, " +
-                                                            "must contain at least one special character in list: !@#$%^&* " +
-                                                            "and must be eight characters or longer.";
+            "must contain at least 1 uppercase alphabetical character, " +
+            "must contain at least 1 numeric character, " +
+            "must contain at least one special character in list: !@#$%^&* " +
+            "and must be eight characters or longer.";
 
-//             ^	The password string will start this way.
+    //             ^	The password string will start this way.
 //            (?=.*[a-z])	The string must contain at least 1 lowercase alphabetical character.
 //            (?=.*[A-Z])	The string must contain at least 1 uppercase alphabetical character.
 //            (?=.*[0-9])	The string must contain at least 1 numeric character.
@@ -74,8 +75,8 @@ public class UserServiceImpl implements UserService {
 //                                  reserved RegEx characters to avoid conflict.
 //            (?=.{8,})	The string must be eight characters or longer.
     private static final String PASSWORD_PATTERN =
-        "((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&*]).{8,})";
-           // "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})";
+            "((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&*]).{8,})";
+    // "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})";
 
     @Override
     @Transactional(readOnly = true)
@@ -105,7 +106,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User updateUser(MultipartFile file, RequestUpdateUserData updateUserData) throws IOException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        MediUser currentUser = (MediUser)auth.getPrincipal();
+        MediUser currentUser = (MediUser) auth.getPrincipal();
         Optional<User> optionalUser = userRepository.findByUsername(currentUser.getUsername());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
@@ -136,7 +137,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String updateUserPassword(RequestUpdateUserPassword updateUserPassword) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        MediUser currentUser = (MediUser)auth.getPrincipal();
+        MediUser currentUser = (MediUser) auth.getPrincipal();
         Optional<User> optionalUser = userRepository.findByUsername(currentUser.getUsername());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
@@ -204,13 +205,19 @@ public class UserServiceImpl implements UserService {
                     && userDataDto.getOrganization().getCountry() != null
                     && userDataDto.getOrganization().getCountry().getCode() != null) {
                 OrganizationDto orgDto = userDataDto.getOrganization();
-                Organization org = new Organization(orgDto.getCompanyName(), orgDto.getIncorporateDate(),
-                        orgDto.getOpencorporatesId(),
-                        orgDto.getEmail(),
-                        orgDto.getPhone(), orgDto.getStreetAddress(),
-                        orgDto.getCity(), orgDto.getState(), orgDto.getZip(),
-                        countryRepository.findByCode(orgDto.getCountry().getCode()).orElse(null));
-                user.setOrganization(organizationRepository.save(org));
+                Optional<Organization> optionalOrganization =
+                        organizationRepository.findFirstByCompanyName(orgDto.getCompanyName());
+                if (optionalOrganization.isPresent()) {
+                    user.setOrganization(optionalOrganization.get());
+                } else {
+                    Organization org = new Organization(orgDto.getCompanyName(), orgDto.getIncorporateDate(),
+                            orgDto.getOpencorporatesId(),
+                            orgDto.getEmail(),
+                            orgDto.getPhone(), orgDto.getStreetAddress(),
+                            orgDto.getCity(), orgDto.getState(), orgDto.getZip(),
+                            countryRepository.findByCode(orgDto.getCountry().getCode()).orElse(null));
+                    user.setOrganization(organizationRepository.save(org));
+                }
             }
             if (file != null) {
                 ImageContent imageContent = new ImageContent();
@@ -275,9 +282,9 @@ public class UserServiceImpl implements UserService {
                         user.getOrganization().getState(),
                         user.getOrganization().getZip(),
                         user.getOrganization().getCountry() != null ?
-                        new CountryDto(user.getOrganization().getCountry().getId(),
-                                user.getOrganization().getCountry().getName(),
-                                user.getOrganization().getCountry().getCode()) : null);
+                                new CountryDto(user.getOrganization().getCountry().getId(),
+                                        user.getOrganization().getCountry().getName(),
+                                        user.getOrganization().getCountry().getCode()) : null);
 
                 userDto.setOrganization(organizationDto);
             }
@@ -326,6 +333,138 @@ public class UserServiceImpl implements UserService {
         if (checkRoleForCurrentUser(Role.ADMIN)) {
             userRepository.deleteById(id);
         }
+    }
+
+    @Override
+    @Transactional
+    public User updateUserByAdmin(MultipartFile file, UserDataDto userDto) throws IOException {
+        if (!checkRoleForCurrentUser(Role.ADMIN)) {
+            return null;
+        }
+        Optional<User> optionalUser = findById(userDto.getId());
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            user.setPassword(userDto.getPassword());
+            user.setRole(Role.valueOf(userDto.getRole()));
+            user.setUserType(UserType.valueOf(userDto.getUserType()));
+            user.setFirstName(userDto.getFirstName());
+            user.setLastName(userDto.getLastName());
+            user.setEmail(userDto.getEmail());
+            user.setPhone(userDto.getPhone());
+            if (userDto.getUserType().equals(UserType.COMPANY.name()) && userDto.getOrganization() != null
+                    && userDto.getOrganization().getCountry() != null
+                    && userDto.getOrganization().getCountry().getCode() != null) {
+                if (userDto.getOrganization().getId() != null) {
+                    Optional<Organization> optionalOrganization = organizationRepository.findById(userDto.getId());
+                    if (optionalOrganization.isPresent()) {
+                        Organization organization = optionalOrganization.get();
+                        organization.setCompanyName(userDto.getOrganization().getCompanyName());
+                        organization.setIncorporateDate(userDto.getOrganization().getIncorporateDate());
+                        organization.setOpencorporatesId(userDto.getOrganization().getOpencorporatesId());
+                        organization.setEmail(userDto.getOrganization().getEmail());
+                        organization.setPhone(userDto.getOrganization().getPhone());
+                        organization.setStreetAddress(userDto.getOrganization().getStreetAddress());
+                        organization.setCity(userDto.getOrganization().getCity());
+                        organization.setState(userDto.getOrganization().getState());
+                        organization.setZip(userDto.getOrganization().getZip());
+                        organization.setCountry(countryRepository
+                                .findByCode(userDto.getOrganization().getCountry().getCode()).orElse(null));
+                    } else {
+                        user = createOrganization(user, userDto);
+                    }
+                } else {
+                    user = createOrganization(user, userDto);
+                }
+            } else if (userDto.getUserType().equals(UserType.INDIVIDUAL.name()) && user.getOrganization() != null) {
+                user.setOrganization(null);
+                user = userRepository.save(user);
+            }
+            if (file != null) {
+                ImageContent imageContent = new ImageContent();
+                imageContent.setContent(IOUtils.toByteArray(file.getInputStream()));
+                imageContent = imageContentRepository.save(imageContent);
+                user.setImageContent(imageContent);
+            }
+            Optional<List<HolderAccount>> optionalExistAccounts = holderAccountRepository.findHolderAccountsByUser(user);
+            if (optionalExistAccounts.isPresent()) {
+                List<HolderAccount> existAccounts = optionalExistAccounts.get();
+                if (userDto.getAccounts() != null && userDto.getAccounts().size() > 0) {
+                    AtomicInteger flag = new AtomicInteger();
+                    List<HolderAccount> accountsForDel = new ArrayList<>();
+                    existAccounts.forEach(holderAccount -> {
+                        userDto.getAccounts().forEach(holderAccountDto -> {
+                            if (holderAccount.getAddress().equalsIgnoreCase(holderAccountDto.getAddress())) {
+                                flag.getAndIncrement();
+                            }
+                        });
+                        if (flag.get() == 0) {
+                            accountsForDel.add(holderAccount);
+                        }
+                    });
+                    for (HolderAccount holderAccount : accountsForDel) {
+                        user.getAccounts().remove(holderAccount);
+                        user = userRepository.save(user);
+                    }
+                    for (HolderAccountDto accountDto : userDto.getAccounts()) {
+                        HolderAccount account = holderAccountRepository.findFirstByAddress(accountDto.getAddress());
+                        if (account != null) {
+                            if (account.getUser() == null ||
+                                    account.getUser() != null && account.getUser().getId() == user.getId()) {
+                                account.setCreateDate(accountDto.getCreateDate());
+                                account.setPaidPrice(accountDto.getPaidPrice());
+                                account.setInitialInvest(accountDto.getInitialInvest());
+                                if (account.getUser() == null) {
+                                    account.setUser(user);
+                                    user.getAccounts().add(holderAccountRepository.save(account));
+                                } else {
+                                    holderAccountRepository.save(account);
+                                }
+                            } else {
+                                LOGGER.error("an attempt to add account {} to user {} owned by user {}",
+                                        accountDto.getAddress(), user.getUsername(), account.getUser().getUsername());
+                            }
+                        } else {
+                            user.getAccounts().add(holderAccountRepository.save(new HolderAccount(accountDto.getAddress(), user,
+                                    accountDto.getCreateDate(), accountDto.getPaidPrice(), accountDto.getInitialInvest())));
+                        }
+                    }
+                } else {
+                    user.getAccounts().clear();
+                    user = userRepository.save(user);
+                }
+            } else {
+                if (userDto.getAccounts() != null && userDto.getAccounts().size() > 0) {
+                    List<HolderAccount> accounts = new ArrayList<>();
+                    for (HolderAccountDto accountDto : userDto.getAccounts()) {
+                        accounts.add(holderAccountRepository.save(new HolderAccount(accountDto.getAddress(), user,
+                                accountDto.getCreateDate(), accountDto.getPaidPrice(), accountDto.getInitialInvest())));
+                    }
+                    user.setAccounts(accounts);
+                }
+            }
+            return userRepository.save(user);
+        } else {
+            LOGGER.error("User with ID = {} not found", userDto.getId());
+            return null;
+        }
+    }
+
+    private User createOrganization(User user, UserDataDto userDto) {
+        OrganizationDto orgDto = userDto.getOrganization();
+        Optional<Organization> optionalOrganization =
+                organizationRepository.findFirstByCompanyName(orgDto.getCompanyName());
+        if (optionalOrganization.isPresent()) {
+            user.setOrganization(optionalOrganization.get());
+        } else {
+            Organization org = new Organization(orgDto.getCompanyName(), orgDto.getIncorporateDate(),
+                    orgDto.getOpencorporatesId(),
+                    orgDto.getEmail(),
+                    orgDto.getPhone(), orgDto.getStreetAddress(),
+                    orgDto.getCity(), orgDto.getState(), orgDto.getZip(),
+                    countryRepository.findByCode(orgDto.getCountry().getCode()).orElse(null));
+            user.setOrganization(organizationRepository.save(org));
+        }
+        return user;
     }
 
 
