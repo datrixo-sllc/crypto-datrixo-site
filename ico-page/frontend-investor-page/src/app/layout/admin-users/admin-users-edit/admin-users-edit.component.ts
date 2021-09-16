@@ -24,6 +24,7 @@ import {Router} from '@angular/router';
 import {Organization} from '../organization';
 import {Country} from '../country';
 import * as Noty from 'noty';
+import {Account} from '../account';
 
 /**
  * Created by Yuri Nikiforov.
@@ -236,6 +237,43 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
                 this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 this.router.navigate(['/login']);
             });
+    }
+
+    onCallAddEthAccount() {
+        this.modal = this.modalService.open(this.templateAddEthereumAccountRef);
+    }
+
+    onRemoveAccount(i: number) {
+        this.requestItemData.accounts.splice(i, 1);
+    }
+
+    onAddNewEthereumAccount() {
+        this.modal.close();
+        const newEthereumAcc = new Account();
+        newEthereumAcc.address = this.newEthereumAddress;
+        newEthereumAcc.createDate =
+            new Date(this.newEthereumCreateDate.year, this.newEthereumCreateDate.month - 1, this.newEthereumCreateDate.day);
+        newEthereumAcc.paidPrice = this.newEthereumPaidPrice;
+        newEthereumAcc.initialInvest = this.newEthereumInitialInvest;
+        this.requestItemData.accounts.push(newEthereumAcc);
+        this.clearNewEthAccountData();
+    }
+
+    clearNewEthAccountData() {
+        this.newEthereumAddress = null;
+        this.newEthereumCreateDate = this.calendar.getToday();
+        this.newEthereumPaidPrice = null;
+        this.newEthereumInitialInvest = false;
+    }
+
+    checkAddress() {
+        const regex = new RegExp('0[xX][0-9a-fA-F]+');
+        return regex.test(this.newEthereumAddress);
+    }
+
+    checkPaidPrice() {
+        const regex = new RegExp('^[0-9]*\.?[0-9]*$');
+        return this.newEthereumPaidPrice != null ? regex.test(this.newEthereumPaidPrice.toString()) : false;
     }
 
     onChangeUserType() {

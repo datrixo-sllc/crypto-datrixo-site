@@ -30,10 +30,12 @@
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="admin of users">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/update-admin-users-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/update-admin-users-upload.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-datatable-responsive/admin-users-datatable-responsive.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-detail/admin-users-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/admin-users/admin-users.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/OrganizationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/repository/OrganizationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -283,7 +285,7 @@
       <workItem from="1631543602579" duration="167000" />
       <workItem from="1631551139378" duration="11595000" />
       <workItem from="1631612725664" duration="2069000" />
-      <workItem from="1631784696752" duration="2410000" />
+      <workItem from="1631784696752" duration="4267000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -631,7 +633,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.ts</url>
-          <line>108</line>
+          <line>109</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

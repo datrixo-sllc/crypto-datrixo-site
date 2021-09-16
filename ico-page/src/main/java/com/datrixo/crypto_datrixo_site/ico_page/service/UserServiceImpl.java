@@ -389,9 +389,9 @@ public class UserServiceImpl implements UserService {
             if (optionalExistAccounts.isPresent()) {
                 List<HolderAccount> existAccounts = optionalExistAccounts.get();
                 if (userDto.getAccounts() != null && userDto.getAccounts().size() > 0) {
-                    AtomicInteger flag = new AtomicInteger();
                     List<HolderAccount> accountsForDel = new ArrayList<>();
                     existAccounts.forEach(holderAccount -> {
+                        AtomicInteger flag = new AtomicInteger();
                         userDto.getAccounts().forEach(holderAccountDto -> {
                             if (holderAccount.getAddress().equalsIgnoreCase(holderAccountDto.getAddress())) {
                                 flag.getAndIncrement();
@@ -403,7 +403,7 @@ public class UserServiceImpl implements UserService {
                     });
                     for (HolderAccount holderAccount : accountsForDel) {
                         user.getAccounts().remove(holderAccount);
-                        user = userRepository.save(user);
+                        user = userRepository.saveAndFlush(user);
                     }
                     for (HolderAccountDto accountDto : userDto.getAccounts()) {
                         HolderAccount account = holderAccountRepository.findFirstByAddress(accountDto.getAddress());
@@ -430,7 +430,7 @@ public class UserServiceImpl implements UserService {
                     }
                 } else {
                     user.getAccounts().clear();
-                    user = userRepository.save(user);
+                    user = userRepository.saveAndFlush(user);
                 }
             } else {
                 if (userDto.getAccounts() != null && userDto.getAccounts().size() > 0) {
