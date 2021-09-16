@@ -36,4 +36,6 @@ public interface UserService {
     Optional<User> findById(Long id);
 
     void deleteUser(Long id);
+
+    User updateUserByAdmin(MultipartFile file, UserDataDto userDto) throws IOException;
 }

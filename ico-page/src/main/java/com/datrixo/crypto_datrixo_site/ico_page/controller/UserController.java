@@ -6,6 +6,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Organization;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
+import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +43,20 @@ public class UserController {
             return ResponseEntity.badRequest().build();
         }
 
+    }
+
+    @PutMapping()
+    public ResponseEntity<Void> updateUser(@RequestParam(required = false, name = "file") MultipartFile file,
+                                           @RequestParam("itemdata") String itemData) throws IOException {
+
+        UserDataDto userDto = readData(itemData);
+
+        User currentUser = userService.updateUserByAdmin(file, userDto);
+        if (currentUser == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.noContent().build();
+        }
     }
 
     private UserDataDto readData(String data) throws IOException {
