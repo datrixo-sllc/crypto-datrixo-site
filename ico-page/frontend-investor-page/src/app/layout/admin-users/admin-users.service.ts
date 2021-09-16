@@ -50,9 +50,9 @@ export class AdminUsersService {
         return this.http.delete(url, {withCredentials: true});
     }
 
-    getUserData(): Observable<any> {
-        const url = this.config.apiEndpoint + AdminUsersService.INVESTOR + AdminUsersService.SLASH +
-            AdminUsersService.USER_DATA;
+    getUserData(id: number): Observable<any> {
+        const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH +
+            AdminUsersService.USER_DATA + AdminUsersService.SLASH + id;
         return this.http
             .get(url, {withCredentials: true});
     }

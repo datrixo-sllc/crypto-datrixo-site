@@ -45,7 +45,7 @@ export class AdminUsersDetailComponent implements OnChanges {
         if (this.id) {
             this.spinner.show();
             this.alertTitle = 'User Detail';
-            this.listService.getUserData()
+            this.listService.getUserData(this.id)
                 .toPromise()
                 .then((response: any) => {
                         this.userData = response as RespUserData;

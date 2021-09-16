@@ -41,7 +41,7 @@ public class User extends AbstractPersistable<Long> {
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "organization_id")
     private Organization organization;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("createDate")
     private List<HolderAccount> accounts;
 
