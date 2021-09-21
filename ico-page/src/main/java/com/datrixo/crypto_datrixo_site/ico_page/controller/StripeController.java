@@ -20,8 +20,14 @@ import java.util.Map;
 @RequestMapping(value = "/stripe")
 public class StripeController {
 	private static Gson gson = new Gson();
+
+	// Yuri
+	/*private static final String API_SECRET_KEY =
+			"sk_test_51JSlryH9ApoYBcMsrIeaSN5qjoUTXKoC1EJLpcTpnc5vwZnruBl4RXK5yDm6CVZhu7yAsmRopC3WSduhle4oBGiS00oRh3a5SJ";*/
+
+	// Milla
 	private static final String API_SECRET_KEY =
-			"sk_test_51JSlryH9ApoYBcMsrIeaSN5qjoUTXKoC1EJLpcTpnc5vwZnruBl4RXK5yDm6CVZhu7yAsmRopC3WSduhle4oBGiS00oRh3a5SJ";
+			"sk_test_51IyIIFEiwPl6jGSOC7wed29eNT2zqlAQxq7NjMJKS0MO7Dv6LVmR7d5GJRtZ9Rypa9ikaJfIDx6V2XotdhWFhnOt00ms9eqnOC";
 
 	@PostMapping("/payment")
 	/**
