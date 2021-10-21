@@ -32,7 +32,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="stripe" />
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="stripe">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -503,14 +507,8 @@
       <workItem from="1631612725664" duration="4067000" />
       <workItem from="1631784696752" duration="25293000" />
       <workItem from="1632212947506" duration="593000" />
-      <workItem from="1632242329847" duration="412000" />
-    </task>
-    <task id="LOCAL-00064" summary="change frontend STO page on the datrixo.com site for new live smart contract">
-      <created>1587133596579</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1587133596579</updated>
+      <workItem from="1632242329847" duration="1230000" />
+      <workItem from="1634834001277" duration="727000" />
     </task>
     <task id="LOCAL-00065" summary="fix responsive to datatables in angular apps">
       <created>1587138944741</created>
@@ -848,7 +846,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632242538625</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="stripe">
+      <created>1632242934132</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1632242934132</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
