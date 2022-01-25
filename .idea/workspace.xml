@@ -33,9 +33,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="stripe">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest-in-equity/invest-in-equity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest-in-equity/invest-in-equity.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/styles/my-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/styles/my-styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +98,7 @@
         <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
@@ -101,6 +106,7 @@
         <entry key="JPA Inspector" value="false" />
         <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
   </component>
@@ -111,6 +117,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -509,6 +518,14 @@
       <workItem from="1632212947506" duration="593000" />
       <workItem from="1632242329847" duration="1230000" />
       <workItem from="1634834001277" duration="727000" />
+      <workItem from="1634837985968" duration="226000" />
+      <workItem from="1635963638202" duration="513000" />
+      <workItem from="1635966395317" duration="170000" />
+      <workItem from="1636282903975" duration="1306000" />
+      <workItem from="1636286699591" duration="1185000" />
+      <workItem from="1636291903351" duration="1195000" />
+      <workItem from="1642878860977" duration="1638000" />
+      <workItem from="1643139593143" duration="1765000" />
     </task>
     <task id="LOCAL-00065" summary="fix responsive to datatables in angular apps">
       <created>1587138944741</created>
@@ -1006,7 +1023,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="transaction id text" />
