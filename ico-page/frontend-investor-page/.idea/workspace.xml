@@ -301,7 +301,7 @@
       <workItem from="1636286698682" duration="590000" />
       <workItem from="1636291865958" duration="35000" />
       <workItem from="1642877471385" duration="3702000" />
-      <workItem from="1643139593143" duration="7074000" />
+      <workItem from="1643139593143" duration="7915000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -618,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643146429877</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Buy DRX on coinbase">
+      <created>1643148653355</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1643148653355</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
