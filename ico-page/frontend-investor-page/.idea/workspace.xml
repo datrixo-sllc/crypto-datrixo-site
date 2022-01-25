@@ -27,13 +27,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="admin of users">
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Buy DRX on coinbase">
+      <change beforePath="$PROJECT_DIR$/../../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/main-page/main-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/modules/page-header/page-header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/modules/page-header/page-header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/my-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/my-styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +59,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="JupyterTrust" id="c87d8aa2-fa30-4665-a0aa-0c98fb093791" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -115,7 +119,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -285,7 +289,15 @@
       <workItem from="1631784696752" duration="7140000" />
       <workItem from="1632212948588" duration="1034000" />
       <workItem from="1632242761624" duration="849000" />
-      <workItem from="1634834102169" duration="1635000" />
+      <workItem from="1634834102169" duration="2263000" />
+      <workItem from="1634837986675" duration="224000" />
+      <workItem from="1635963638202" duration="513000" />
+      <workItem from="1635966395109" duration="169000" />
+      <workItem from="1636282903301" duration="603000" />
+      <workItem from="1636286698682" duration="590000" />
+      <workItem from="1636291865958" duration="35000" />
+      <workItem from="1642877471385" duration="3702000" />
+      <workItem from="1643139593143" duration="4050000" />
     </task>
     <task id="LOCAL-00001" summary="initialize commit">
       <created>1557977504761</created>
@@ -574,7 +586,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631564293864</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="improvement">
+      <created>1634837194341</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1634837194341</updated>
+    </task>
+    <task id="LOCAL-00043" summary="improvement">
+      <created>1634837330725</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1634837330725</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,14 +616,11 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="username on header section of layout" />
-    <MESSAGE value="frontend refactor" />
     <MESSAGE value="download ppm" />
     <MESSAGE value="upload signed agreement angular" />
     <MESSAGE value="holders datatable" />
@@ -621,7 +644,9 @@
     <MESSAGE value="Admin of users. User adding" />
     <MESSAGE value="Investor profile" />
     <MESSAGE value="admin of users" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin of users" />
+    <MESSAGE value="improvement" />
+    <MESSAGE value="Buy DRX on coinbase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buy DRX on coinbase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

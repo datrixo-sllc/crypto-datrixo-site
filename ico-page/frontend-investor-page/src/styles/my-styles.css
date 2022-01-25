@@ -23,3 +23,14 @@
     padding: 10px 25px;
     color: #868e96;
 }
+
+.my-btn-l {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 12px;
+    color: #868e96;
+}
+
+.nounderline {
+    text-decoration: none !important
+}
