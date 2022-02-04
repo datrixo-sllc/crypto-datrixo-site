@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
 //                                  reserved RegEx characters to avoid conflict.
 //            (?=.{8,})	The string must be eight characters or longer.
     private static final String PASSWORD_PATTERN =
-            "((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&*]).{8,})";
+            "((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,})";
     // "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})";
 
     @Override
