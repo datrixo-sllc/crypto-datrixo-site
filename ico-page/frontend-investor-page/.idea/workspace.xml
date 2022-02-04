@@ -27,10 +27,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Buy DRX on coinbase bloks order changed">
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="Logo">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/logo-320-grey.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo-320-grey.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/logo-320-grey.psd" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo-320-grey.psd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +125,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -302,14 +304,7 @@
       <workItem from="1636291865958" duration="35000" />
       <workItem from="1642877471385" duration="3702000" />
       <workItem from="1643139593143" duration="8164000" />
-      <workItem from="1643989046547" duration="4016000" />
-    </task>
-    <task id="LOCAL-00001" summary="initialize commit">
-      <created>1557977504761</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1557977504761</updated>
+      <workItem from="1643989046547" duration="6783000" />
     </task>
     <task id="LOCAL-00002" summary="investor-profile layout">
       <created>1558028018472</created>
@@ -640,7 +635,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643994585274</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Logo">
+      <created>1644002994867</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1644002994867</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Logo">
+      <created>1644003062061</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1644003062061</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,7 +670,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="upload signed agreement angular" />
     <MESSAGE value="holders datatable" />
     <MESSAGE value="my-holdings" />
     <MESSAGE value="add share column" />
@@ -686,7 +694,8 @@
     <MESSAGE value="improvement" />
     <MESSAGE value="Buy DRX on coinbase" />
     <MESSAGE value="Buy DRX on coinbase bloks order changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Buy DRX on coinbase bloks order changed" />
+    <MESSAGE value="Logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
