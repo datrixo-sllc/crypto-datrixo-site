@@ -74,35 +74,6 @@
         </div>
         <div class="col-lg-4">
             <div class="card mb-3">
-                <h4 class="card-header">Agreement</h4>
-                <div class="card-body">
-                    <h5 class="card-title">Subscription Agreement</h5>
-                    <p class="card-text mb-3">Please, download, sign and upload back to us the PDF of the (signed)
-                        Subscription Agreement or SAFE-T.</p>
-                    <div class="text-center mb-2">
-                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSubAgrmtDownload()">
-                            Subscr Agreement
-                        </button>
-                    </div>
-                    <div class="text-center">
-                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSafeTDownload()">
-                            SAFE-T
-                        </button>
-                    </div>
-                    <h5 class="card-title mt-4">Signed Subscription Agreement</h5>
-                    <p class="card-text">Upload your signed Subscription Agreement here.</p>
-                    <div class="text-center">
-                        <input #uploadFile type="file" class="form-control-file mt-3" id="agreementFile"
-                               (change)="handleFileInput($event.target.files)"/>
-                        <button class="my-btn my-btn-outline my-btn-xl mt-3"
-                                (click)="onSubmitSignedAgreementUpload()">Upload
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card mb-3">
                 <h4 class="card-header">Buy DRX</h4>
                 <div class="card-body">
                     <h5 class="card-title">$150 minimum</h5>
@@ -139,6 +110,35 @@
                             Get Invoice
                         </button>
                     </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">Agreement</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Subscription Agreement</h5>
+                    <p class="card-text mb-3">Please, download, sign and upload back to us the PDF of the (signed)
+                        Subscription Agreement or SAFE-T.</p>
+                    <div class="text-center mb-2">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSubAgrmtDownload()">
+                            Subscr Agreement
+                        </button>
+                    </div>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSafeTDownload()">
+                            SAFE-T
+                        </button>
+                    </div>
+                    <h5 class="card-title mt-4">Signed Subscription Agreement</h5>
+                    <p class="card-text">Upload your signed Subscription Agreement here.</p>
+                    <div class="text-center">
+                        <input #uploadFile type="file" class="form-control-file mt-3" id="agreementFile"
+                               (change)="handleFileInput($event.target.files)"/>
+                        <button class="my-btn my-btn-outline my-btn-xl mt-3"
+                                (click)="onSubmitSignedAgreementUpload()">Upload
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
