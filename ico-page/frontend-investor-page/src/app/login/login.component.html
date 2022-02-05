@@ -9,14 +9,24 @@
                 <div class="form-content">
                     <div class="form-group">
                         <input type="text" [(ngModel)]="model.username" #username="ngModel" required class="form-control input-underline input-lg"
-                               name="username" placeholder="Email">
+                               name="username" placeholder="Username">
                         <div *ngIf="f.submitted && !username.valid" class="help-block">Email is required</div>
                     </div>
 
-                    <div class="form-group">
-                        <input type="password" [(ngModel)]="model.password" #password="ngModel" required class="form-control input-underline input-lg"
-                               name="password" placeholder="Password">
-                        <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                        <div class="row">
+                        <div class="col-md-10 col-9">
+                            <div class="form-group">
+                            <input [type]="hide ? 'password' : 'text'" [(ngModel)]="model.password" #password="ngModel" required class="form-control input-underline input-lg"
+                                   name="password" placeholder="Password">
+                            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-3">
+                            <div class="btn p-0">
+                                <mat-icon class=" mt-3 float-left" (click)="eyeFunction()">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <button class="btn rounded-btn" (click)="f.ngSubmit.emit()" [disabled]="!f.form.valid">{{ 'Login' | translate }}</button>

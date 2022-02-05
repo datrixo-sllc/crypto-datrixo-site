@@ -15,6 +15,7 @@ import {StatusResponseAuth} from './status-response-auth';
 export class LoginComponent implements OnInit {
     model: any = {};
     varStatus: string;
+    hide = true;
 
     constructor(
       public router: Router,
@@ -101,5 +102,9 @@ export class LoginComponent implements OnInit {
         if (localStorage.getItem('isLoggedin') != null) {
             localStorage.removeItem('isLoggedin');
         }
+    }
+
+    eyeFunction() {
+        this.hide = !this.hide;
     }
 }
