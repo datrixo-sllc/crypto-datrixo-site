@@ -1,6 +1,6 @@
 <div class="login-page" [@routerTransition]>
     <div class="row justify-content-md-center">
-        <div class="col-md-4 p-3 bg-white rounded">
+        <div class="col-lg-4 p-3 bg-white rounded">
             <img src="assets/images/logo-320-grey.png" class="img-fluid mt-3" />
             <h4 class="mt-2 font-weight-light">Investor Portal</h4>
             <div *ngIf="varStatus === 'LOGIN_NOT_FOUND'">Login not found</div>
@@ -14,14 +14,14 @@
                     </div>
 
                         <div class="row">
-                        <div class="col-md-10 col-9">
+                        <div class="col-lg-10 col-9">
                             <div class="form-group">
                             <input [type]="hide ? 'password' : 'text'" [(ngModel)]="model.password" #password="ngModel" required class="form-control input-underline input-lg"
                                    name="password" placeholder="Password">
                             <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
                             </div>
                         </div>
-                        <div class="col-md-2 col-3">
+                        <div class="col-lg-2 col-3">
                             <div class="btn p-0">
                                 <mat-icon class=" mt-3 float-left" (click)="eyeFunction()">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </div>
