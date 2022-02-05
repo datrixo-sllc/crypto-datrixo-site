@@ -28,9 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="password field with eye">
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/layout.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +125,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -308,14 +307,7 @@
       <workItem from="1643989046547" duration="6783000" />
       <workItem from="1644006562157" duration="371000" />
       <workItem from="1644079123266" duration="314000" />
-      <workItem from="1644079551761" duration="10206000" />
-    </task>
-    <task id="LOCAL-00004" summary="invest layout">
-      <created>1558028715399</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1558028715399</updated>
+      <workItem from="1644079551761" duration="10561000" />
     </task>
     <task id="LOCAL-00005" summary="invest layout first section">
       <created>1558069473200</created>
@@ -653,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644089551637</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="password field with eye">
+      <created>1644090367166</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1644090367166</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
