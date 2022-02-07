@@ -27,11 +27,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="password field with eye">
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new profile layout">
+      <change afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,14 +313,7 @@
       <workItem from="1644006562157" duration="371000" />
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
-      <workItem from="1644227021078" duration="2321000" />
-    </task>
-    <task id="LOCAL-00006" summary="invest layout">
-      <created>1558113075102</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1558113075102</updated>
+      <workItem from="1644227021078" duration="10607000" />
     </task>
     <task id="LOCAL-00007" summary="login">
       <created>1558376401274</created>
@@ -655,7 +651,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644090949346</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="new profile layout">
+      <created>1644229403622</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1644229403623</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +679,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="my-holdings" />
     <MESSAGE value="add share column" />
     <MESSAGE value="investor profile" />
     <MESSAGE value="investor profile update" />
@@ -701,7 +703,8 @@
     <MESSAGE value="Buy DRX on coinbase bloks order changed" />
     <MESSAGE value="Logo" />
     <MESSAGE value="password field with eye" />
-    <option name="LAST_COMMIT_MESSAGE" value="password field with eye" />
+    <MESSAGE value="new profile layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="new profile layout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
