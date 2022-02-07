@@ -2,8 +2,19 @@
     <app-page-header [heading]="'Investor Profile'" [icon]="'fa-user'"></app-page-header>
     <div class="row">
         <div class="col-lg-12">
-            <h4>Personal Information</h4>
             <form role="form">
+                <div class="row mt-2 mb-4">
+                    <div class="col-lg-12">
+                        <button type="submit" class="mr-2 mt-2 btn btn-secondary" (click)="onConfirmUpdateUserData()">
+                            Save
+                            Profile
+                        </button>
+                        <button type="reset" class="mr-5 mt-2 btn btn-secondary" (click)="onReset()">Reset to Original
+                        </button>
+                        <button class=" mt-2 btn btn-primary" (click)="openResetPassword()">Change Password</button>
+                    </div>
+                </div>
+                <h4>Personal Information</h4>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="row">
@@ -72,45 +83,6 @@
     </div>
     <div class="row mt-3" *ngIf="userData.organizationName">
         <div class="col-lg-12">
-            <h4>Holdings Information</h4>
-            <div class="table-responsive">
-                <table class="table table-striped" *ngIf="userData.holders.length > 0">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Create Date</th>
-                        <th scope="col">Paid Price</th>
-                        <th scope="col">Initial Invest</th>
-                        <th scope="col">Equity Tokens</th>
-                        <th scope="col">Share(%)</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let el of userData.holders; index as i">
-                        <th scope="row">{{ i + 1 }}</th>
-                        <td>
-                            <a href="https://{{etherNet}}/address/{{el.address}}"
-                               title="{{el.address}}"
-                               target="_blank">{{el.address | slice:0:10}}...</a>
-                        </td>
-                        <td>{{ el.createDate | date }}</td>
-                        <td>{{ el.paidPrice | number }}</td>
-                        <td>
-                            <span *ngIf="el.initialInvest" class="text-danger">YES</span>
-                            <span *ngIf="!el.initialInvest">NO</span>
-                        </td>
-
-                        <td>{{ el.shareTokens}}</td>
-                        <td>{{ el.share}}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-3" *ngIf="userData.organizationName">
-        <div class="col-lg-12">
             <h4>Company Information</h4>
             <form role="form">
                 <div class="row">
@@ -130,20 +102,23 @@
                                    disabled name="incorporateDate"/>
                         </fieldset>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
                         <fieldset class="form-group">
                             <label>Opencorporates ID</label>
-                            <input class="form-control" [(ngModel)]="userData.opencorporatesId" disabled
-                                   name="opencorporateId"/>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input class="mb-2 form-control" [(ngModel)]="userData.opencorporatesId" disabled
+                                           name="opencorporateId"/>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="{{opencorp + userData.opencorporatesId}}"
+                                       target="_blank" class="btn btn-outline-primary form-control" role="button"
+                                       aria-pressed="true">Open</a>
+                                </div>
+                            </div>
                         </fieldset>
                     </div>
-                    <div class="col-auto">
-                        <fieldset class="form-group">
-                            <label>&nbsp;</label>
-                            <a href="{{opencorp + userData.opencorporatesId}}"
-                               target="_blank" class="btn btn-outline-primary form-control" role="button" aria-pressed="true">Open</a>
-                        </fieldset>
-                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
@@ -195,71 +170,98 @@
                         </fieldset>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-lg-12">
-                        <button type="submit" class="mr-2 btn btn-secondary" (click)="onConfirmUpdateUserData()">Save
-                            Profile
-                        </button>
-                        <button type="reset" class="btn btn-secondary" (click)="onReset()">Reset to Original</button>
-                    </div>
-                </div>
             </form>
         </div>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-3" *ngIf="userData.organizationName">
         <div class="col-lg-12">
-            <button class="btn btn-primary" (click)="openResetPassword()">Change Password</button>
-            <ng-template #modalResetPasswordWindow let-c="close" let-d="dismiss">
-                <div class="modal-header">
-                    <h4 class="modal-title">Change Password</h4>
-                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form name="form" (ngSubmit)="onConfirmResetPassword()" #f="ngForm" novalidate>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <fieldset class="form-group">
-                                    <label>New Password</label>
-                                    <input type="password" [(ngModel)]="newPassword" name="newPassword"
-                                           #newPasswordF="ngModel" class="form-control" required/>
-                                    <div *ngIf="!newPasswordF.valid" class="help-block">Field is required</div>
-                                    <div *ngIf="!checkPasswordContent()" class="help-block">Password must contain at
-                                        least 1 lowercase alphabetical character, <br/>
-                                        must contain at least 1 uppercase alphabetical character, <br/>
-                                        must contain at least 1 numeric character, <br/>
-                                        must contain at least one special character in list: !@#$%^&* <br/>
-                                        and must be eight characters or longer.
-                                    </div>
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <label>Reenter New Password</label>
-                                    <input type="password" [(ngModel)]="newPasswordReent" name="newPasswordReent"
-                                           #newPasswordReentF="ngModel" class="form-control" required/>
-                                    <div *ngIf="!newPasswordReentF.valid" class="help-block">Field is required</div>
-                                    <div *ngIf="!checkPassword()" class="help-block">Reenter password is not same</div>
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <label>Current Password</label>
-                                    <input type="password" [(ngModel)]="currentPassword" name="currentPassword"
-                                           #currentPasswordF="ngModel" class="form-control" required/>
-                                    <div *ngIf="!currentPasswordF.valid" class="help-block">Field is required</div>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
-                        <button type="button" class="btn btn-primary" ngbAutofocus (click)="f.ngSubmit.emit()"
-                                [disabled]="!f.form.valid || !checkPassword() || !checkPasswordContent()">Change
-                            Password
-                        </button>
-                    </div>
-                </form>
-            </ng-template>
+            <h4>Holdings Information</h4>
+            <div class="table-responsive">
+                <table class="table table-striped" *ngIf="userData.holders.length > 0">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Create Date</th>
+                        <th scope="col">Paid Price</th>
+                        <th scope="col">Initial Invest</th>
+                        <th scope="col">Equity Tokens</th>
+                        <th scope="col">Share(%)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let el of userData.holders; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>
+                            <a href="https://{{etherNet}}/address/{{el.address}}"
+                               title="{{el.address}}"
+                               target="_blank">{{el.address | slice:0:10}}...</a>
+                        </td>
+                        <td>{{ el.createDate | date }}</td>
+                        <td>{{ el.paidPrice | number }}</td>
+                        <td>
+                            <span *ngIf="el.initialInvest" class="text-danger">YES</span>
+                            <span *ngIf="!el.initialInvest">NO</span>
+                        </td>
+
+                        <td>{{ el.shareTokens}}</td>
+                        <td>{{ el.share}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+
+    <ng-template #modalResetPasswordWindow let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Change Password</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form name="form" (ngSubmit)="onConfirmResetPassword()" #f="ngForm" novalidate>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <fieldset class="form-group">
+                            <label>New Password</label>
+                            <input type="password" [(ngModel)]="newPassword" name="newPassword"
+                                   #newPasswordF="ngModel" class="form-control" required/>
+                            <div *ngIf="!newPasswordF.valid" class="help-block">Field is required</div>
+                            <div *ngIf="!checkPasswordContent()" class="help-block">Password must contain at
+                                least 1 lowercase alphabetical character, <br/>
+                                must contain at least 1 uppercase alphabetical character, <br/>
+                                must contain at least 1 numeric character, <br/>
+                                must contain at least one special character in list: !@#$%^&* <br/>
+                                and must be eight characters or longer.
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label>Reenter New Password</label>
+                            <input type="password" [(ngModel)]="newPasswordReent" name="newPasswordReent"
+                                   #newPasswordReentF="ngModel" class="form-control" required/>
+                            <div *ngIf="!newPasswordReentF.valid" class="help-block">Field is required</div>
+                            <div *ngIf="!checkPassword()" class="help-block">Reenter password is not same</div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" [(ngModel)]="currentPassword" name="currentPassword"
+                                   #currentPasswordF="ngModel" class="form-control" required/>
+                            <div *ngIf="!currentPasswordF.valid" class="help-block">Field is required</div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+                <button type="button" class="btn btn-primary" ngbAutofocus (click)="f.ngSubmit.emit()"
+                        [disabled]="!f.form.valid || !checkPassword() || !checkPasswordContent()">Change
+                    Password
+                </button>
+            </div>
+        </form>
+    </ng-template>
 
     <ng-template #modalAlertWindow let-c="close" let-d="dismiss">
         <div class="modal-header">
