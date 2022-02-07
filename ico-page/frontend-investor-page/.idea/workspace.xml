@@ -27,19 +27,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new profile layout responsive table">
-      <change afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/equity-holders-datatable-responsive/equity-holders-datatable-responsive.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/equity-holders-datatable-responsive/equity-holders-datatable-responsive.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/equity-holders-datatable-responsive/equity-holders-datatable-responsive.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/invest/holders-datatable-responsive/holders-datatable-responsive.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/invest/holders-datatable-responsive/holders-datatable-responsive.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout/invest/holders-datatable-responsive/holders-datatable-responsive.component.ts" afterDir="false" />
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new invest layout responsive table">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/equity-holders-datatable-responsive/equity-holders-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/equity-holders-datatable-responsive/equity-holders-datatable-responsive.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/holders-datatable-responsive/holders-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/holders-datatable-responsive/holders-datatable-responsive.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +128,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -318,14 +311,7 @@
       <workItem from="1644006562157" duration="371000" />
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
-      <workItem from="1644227021078" duration="14896000" />
-    </task>
-    <task id="LOCAL-00011" summary="download ppm">
-      <created>1558692464850</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1558692464850</updated>
+      <workItem from="1644227021078" duration="16064000" />
     </task>
     <task id="LOCAL-00012" summary="download ppm">
       <created>1558693475699</created>
@@ -663,7 +649,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644241202385</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="new invest layout responsive table">
+      <created>1644244059986</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1644244059986</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +677,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="investor profile update" />
     <MESSAGE value="investor page rename to investor portal" />
     <MESSAGE value="share to equity" />
     <MESSAGE value="change login page background color" />
@@ -709,7 +701,8 @@
     <MESSAGE value="new profile layout" />
     <MESSAGE value="new profile layout responcive table" />
     <MESSAGE value="new profile layout responsive table" />
-    <option name="LAST_COMMIT_MESSAGE" value="new profile layout responsive table" />
+    <MESSAGE value="new invest layout responsive table" />
+    <option name="LAST_COMMIT_MESSAGE" value="new invest layout responsive table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
