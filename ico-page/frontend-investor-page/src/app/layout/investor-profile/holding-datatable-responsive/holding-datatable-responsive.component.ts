@@ -17,10 +17,6 @@ import {Holder} from '../holder';
 })
 export class HoldingDatatableResponsiveComponent implements OnInit, OnChanges {
     @Input() items: Holder[];
-    /*@Output() onAddItemEmit = new EventEmitter<string>();
-    @Output() onChangeStatusEmit = new EventEmitter<number>();
-    @Output() onEditItemEmit = new EventEmitter<number>();*/
-
     etherNet = 'etherscan.io';
     displayedColumns: string[] = ['address', 'createDate', 'paidPrice', 'initialInvest', 'equityTokens', 'sharePercent'];
     dataSource = new MatTableDataSource<Holder>();
@@ -50,23 +46,6 @@ export class HoldingDatatableResponsiveComponent implements OnInit, OnChanges {
             this.dataSource.paginator.firstPage();
         }
     }
-
-    /*onEditItem(id: number) {
-        this.onEditItemEmit.emit(id);
-    }
-
-    onChangeStatus(id: number) {
-        this.onChangeStatusEmit.emit(id);
-
-    }
-
-    onAddItem() {
-        this.onAddItemEmit.emit('addItem');
-    }*/
-
-    /*generateIngredientsString(ingredientPositions: IngredientPosition[]): string {
-        return  ingredientPositions.map(value => value.ingredient.name).join(', ');
-    }*/
 }
 
 
