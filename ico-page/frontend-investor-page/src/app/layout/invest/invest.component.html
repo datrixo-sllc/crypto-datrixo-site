@@ -207,10 +207,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12">
-                        <div class="text-center" *ngIf="holders">
-                            <app-holders-datatable [holders]="holders"></app-holders-datatable>
-                        </div>
+                    <div class="col-12" *ngIf="holders">
+                        <app-holders-datatable-responsive [items]="holders"></app-holders-datatable-responsive>
                     </div>
                 </div>
             </div>

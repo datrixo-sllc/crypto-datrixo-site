@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { InvestRoutingModule } from './invest-routing.module';
 import { InvestComponent } from './invest.component';
-import { PageHeaderModule } from './../../shared';
+import { MaterialModule, PageHeaderModule, SharedPipesModule} from './../../shared';
 import {FormsModule} from '@angular/forms';
 import {InvestDownloadService} from './invest-download.service';
 import { FileSaverModule } from 'ngx-filesaver';
@@ -14,6 +14,7 @@ import {InvestService} from './invest.service';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {InvestStripeService} from './invest-stripe.service';
+import {HoldersDatatableResponsiveComponent} from './holders-datatable-responsive/holders-datatable-responsive.component';
 
 @NgModule({
     imports: [
@@ -23,11 +24,14 @@ import {InvestStripeService} from './invest-stripe.service';
         FileSaverModule,
         NgxDatatableModule,
         NgbModule,
-        FormsModule
+        FormsModule,
+        MaterialModule,
+        SharedPipesModule,
     ],
     declarations: [
         InvestComponent,
-        HoldersDatatableComponent
+        HoldersDatatableComponent,
+        HoldersDatatableResponsiveComponent
     ],
     providers: [
         InvestService,

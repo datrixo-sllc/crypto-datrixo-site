@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { InvestInEquityRoutingModule } from './invest-in-equity-routing.module';
 import { InvestInEquityComponent } from './invest-in-equity.component';
-import { PageHeaderModule } from './../../shared';
+import { MaterialModule, PageHeaderModule, SharedPipesModule} from './../../shared';
 import {FormsModule} from '@angular/forms';
 import {InvestInEquityDownloadService} from './invest-in-equity-download.service';
 import { FileSaverModule } from 'ngx-filesaver';
@@ -13,6 +13,9 @@ import {EquityHoldersDatatableComponent} from './equity-holders-datatable/equity
 import {InvestInEquityService} from './invest-in-equity.service';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {
+    EquityHoldersDatatableResponsiveComponent
+} from './equity-holders-datatable-responsive/equity-holders-datatable-responsive.component';
 
 @NgModule({
     imports: [
@@ -21,11 +24,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         PageHeaderModule,
         FileSaverModule,
         NgxDatatableModule,
-        NgbModule
+        NgbModule,
+        MaterialModule,
+        SharedPipesModule,
     ],
     declarations: [
         InvestInEquityComponent,
-        EquityHoldersDatatableComponent
+        EquityHoldersDatatableComponent,
+        EquityHoldersDatatableResponsiveComponent
     ],
     providers: [
         InvestInEquityService,
