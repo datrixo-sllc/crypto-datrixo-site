@@ -28,9 +28,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new my drx holdings layout responsive table">
+      <change afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holding-datatable-responsive/my-equity-holding-datatable-responsive.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holding-datatable-responsive/my-equity-holding-datatable-responsive.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holding-datatable-responsive/my-equity-holding-datatable-responsive.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/holder-responce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/holder-responce.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holdings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holdings.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holdings.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holdings.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holding-datatable-responsive/my-holding-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holding-datatable-responsive/my-holding-datatable-responsive.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +104,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/layout/my-holdings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/layout/my-equity-holdings" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -117,17 +123,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\my-equity-holdings" />
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\my-holdings" />
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\invest-in-equity" />
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\invest" />
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\investor-profile" />
-      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\shared\pipes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -310,14 +316,7 @@
       <workItem from="1644006562157" duration="371000" />
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
-      <workItem from="1644227021078" duration="28235000" />
-    </task>
-    <task id="LOCAL-00016" summary="holders datatable">
-      <created>1559845482018</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1559845482018</updated>
+      <workItem from="1644227021078" duration="29939000" />
     </task>
     <task id="LOCAL-00017" summary="my-holdings">
       <created>1559847415858</created>
@@ -655,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644256841268</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="new my drx holdings layout responsive table">
+      <created>1644257373557</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1644257373557</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
