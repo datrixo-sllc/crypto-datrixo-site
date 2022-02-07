@@ -27,7 +27,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new profile layout responcive table">
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new profile layout responsive table">
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +127,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -307,14 +310,7 @@
       <workItem from="1644006562157" duration="371000" />
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
-      <workItem from="1644227021078" duration="10920000" />
-    </task>
-    <task id="LOCAL-00008" summary="login">
-      <created>1558389859031</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1558389859031</updated>
+      <workItem from="1644227021078" duration="11599000" />
     </task>
     <task id="LOCAL-00009" summary="username on header section of layout">
       <created>1558422639733</created>
@@ -652,7 +648,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644239525587</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="new profile layout responsive table">
+      <created>1644239947159</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1644239947159</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +676,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="investor profile" />
     <MESSAGE value="investor profile update" />
     <MESSAGE value="investor page rename to investor portal" />
     <MESSAGE value="share to equity" />
@@ -698,7 +700,8 @@
     <MESSAGE value="password field with eye" />
     <MESSAGE value="new profile layout" />
     <MESSAGE value="new profile layout responcive table" />
-    <option name="LAST_COMMIT_MESSAGE" value="new profile layout responcive table" />
+    <MESSAGE value="new profile layout responsive table" />
+    <option name="LAST_COMMIT_MESSAGE" value="new profile layout responsive table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
