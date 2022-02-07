@@ -19,7 +19,7 @@
                     <td mat-cell *matCellDef="let element" class="has_label_on_mobile" data-label="Address: ">
                         <a href="https://{{etherNet}}/address/{{element.address}}"
                            title="{{element.address}}"
-                           target="_blank">{{element.address | slice:0:10}}...</a>
+                           target="_blank">...{{element.address | slice:-10}}</a>
                     </td>
                 </ng-container>
 
