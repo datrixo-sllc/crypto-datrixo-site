@@ -27,7 +27,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new my drx holdings layout responsive table without expanding" />
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new my drx holdings layout responsive table without expanding">
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/holder-responce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/holder-responce.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holding-datatable-responsive/my-holding-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holding-datatable-responsive/my-holding-datatable-responsive.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holding-datatable-responsive/my-holding-datatable-responsive.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holding-datatable-responsive/my-holding-datatable-responsive.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holdings.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holdings.module.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -305,14 +312,7 @@
       <workItem from="1644006562157" duration="371000" />
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
-      <workItem from="1644227021078" duration="20099000" />
-    </task>
-    <task id="LOCAL-00014" summary="upload signed agreement angular">
-      <created>1558883335271</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1558883335271</updated>
+      <workItem from="1644227021078" duration="27558000" />
     </task>
     <task id="LOCAL-00015" summary="holders datatable">
       <created>1559801200293</created>
@@ -650,7 +650,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644248365016</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="new my drx holdings layout responsive table without expanding">
+      <created>1644249306190</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1644249306190</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
