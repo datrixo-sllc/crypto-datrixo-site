@@ -1,0 +1,94 @@
+<div class="row mt-3 mb-0">
+    <!--<div class="col-lg-5">
+        <input class="form-control"
+               type='text'
+               placeholder='Filter by Name and Description'
+               (keyup)='updateFilter($event)'
+        />
+    </div>-->
+    <!--<div class="col-auto">
+        <button class="btn btn-outline-secondary form-control mr-3" (click)="onAddItem()">Add Menu Item</button>
+    </div>-->
+</div>
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+                <ng-container matColumnDef="address">
+                    <th mat-header-cell *matHeaderCellDef> Address</th>
+                    <td mat-cell *matCellDef="let element" class="has_label_on_mobile" data-label="Address: ">
+                        <a href="https://{{etherNet}}/address/{{element.address}}"
+                           title="{{element.address}}"
+                           target="_blank">{{element.address | slice:0:10}}...</a>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="createDate">
+                    <th mat-header-cell *matHeaderCellDef> Create Date</th>
+                    <td mat-cell *matCellDef="let element" class="has_label_on_mobile" data-label="Create Date:">
+                        {{ element.createDate | date }}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="paidPrice">
+                    <th mat-header-cell *matHeaderCellDef> Paid Price, USD</th>
+                    <td mat-cell *matCellDef="let element" class="has_label_on_mobile" data-label="Paid Price, USD:">
+                        {{ element.paidPrice | number }}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="initialInvest">
+                    <th mat-header-cell *matHeaderCellDef> Initial Invest</th>
+                    <td mat-cell *matCellDef="let element" class="has_label_on_mobile" data-label="Initial Invest:">
+                        <span *ngIf="element.initialInvest" class="text-danger">YES</span>
+                        <span *ngIf="!element.initialInvest">NO</span>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="equityTokens">
+                    <th mat-header-cell *matHeaderCellDef> Equity Tokens</th>
+                    <td mat-cell *matCellDef="let element" class="has_label_on_mobile" data-label='Equity Tokens:'>
+                        {{ element.shareTokens}}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="sharePercent">
+                    <th mat-header-cell *matHeaderCellDef> Share(%)</th>
+                    <td mat-cell *matCellDef="let element" class="has_label_on_mobile" data-label='Share(%):'>
+                        {{ element.share}}
+                    </td>
+                </ng-container>
+                <!-- Symbol Column -->
+                <!--<ng-container matColumnDef="star">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button [matMenuTriggerFor]="menu"
+                                [matMenuTriggerData]="{elementId: element.id}">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>-->
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <mat-paginator [ngStyle]="{display: dataSourceLenth > 5 ? 'block' : 'none'}"
+                       [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+    </div>
+
+
+    <!--<mat-menu #menu="matMenu">
+        <ng-template matMenuContent let-elementId="elementId">
+            <button mat-menu-item
+                    (click)="$event.preventDefault(); $event.stopPropagation(); onChangeStatus(elementId)">
+                <mat-icon>grade</mat-icon>
+                <span>Change Status</span>
+            </button>
+            <button mat-menu-item (click)="$event.preventDefault(); $event.stopPropagation(); onEditItem(elementId)">
+                <mat-icon>build</mat-icon>
+                <span>Edit</span>
+            </button>
+        </ng-template>
+    </mat-menu>-->
+</div>
