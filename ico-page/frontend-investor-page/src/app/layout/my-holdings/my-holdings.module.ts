@@ -9,6 +9,7 @@ import {HoldersDatatableComponent} from './holders-datatable/holders-datatable.c
 import {MyHoldingsService} from './my-holdings.service';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {MyHoldingDatatableResponsiveComponent} from './my-holding-datatable-responsive/my-holding-datatable-responsive.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
@@ -19,6 +20,7 @@ import {MyHoldingDatatableResponsiveComponent} from './my-holding-datatable-resp
         NgxDatatableModule,
         MaterialModule,
         SharedPipesModule,
+        NgbModule
     ],
     declarations: [
         MyHoldingsComponent,

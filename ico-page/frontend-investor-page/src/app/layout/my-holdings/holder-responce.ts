@@ -9,4 +9,5 @@ export class HolderResponce {
   shareTokens: string;
   paidPrice: string;
   share: string;
+  docs: string[] = [];
 }
