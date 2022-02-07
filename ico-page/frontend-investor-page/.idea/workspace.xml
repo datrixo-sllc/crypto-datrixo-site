@@ -32,6 +32,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/investor-profile/holding-datatable-responsive/holding-datatable-responsive.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +128,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -310,14 +311,7 @@
       <workItem from="1644006562157" duration="371000" />
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
-      <workItem from="1644227021078" duration="11599000" />
-    </task>
-    <task id="LOCAL-00009" summary="username on header section of layout">
-      <created>1558422639733</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1558422639733</updated>
+      <workItem from="1644227021078" duration="12340000" />
     </task>
     <task id="LOCAL-00010" summary="frontend refactor">
       <created>1558427885008</created>
@@ -655,7 +649,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644239947159</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="new profile layout responsive table">
+      <created>1644240551254</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1644240551254</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
