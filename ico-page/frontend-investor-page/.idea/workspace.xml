@@ -27,14 +27,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="new my holdings layout responsive table">
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="little things">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/layout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/main-page/main-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/modules/page-header/page-header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/modules/page-header/page-header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +127,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -313,14 +310,7 @@
       <workItem from="1644006562157" duration="371000" />
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
-      <workItem from="1644227021078" duration="32305000" />
-    </task>
-    <task id="LOCAL-00018" summary="add share column">
-      <created>1559883565407</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1559883565407</updated>
+      <workItem from="1644227021078" duration="37246000" />
     </task>
     <task id="LOCAL-00019" summary="investor profile">
       <created>1560022013011</created>
@@ -658,7 +648,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644259269077</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="little things">
+      <created>1644262157774</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1644262157774</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +676,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="editing" />
     <MESSAGE value="fix packages versions" />
     <MESSAGE value="modal alerts and confirmation" />
     <MESSAGE value="modal noty alerts" />
@@ -704,7 +700,8 @@
     <MESSAGE value="new my drx holdings layout responsive table without expanding" />
     <MESSAGE value="new my drx holdings layout responsive table" />
     <MESSAGE value="new my holdings layout responsive table" />
-    <option name="LAST_COMMIT_MESSAGE" value="new my holdings layout responsive table" />
+    <MESSAGE value="little things" />
+    <option name="LAST_COMMIT_MESSAGE" value="little things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
