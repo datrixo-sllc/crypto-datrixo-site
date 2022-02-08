@@ -14,6 +14,8 @@ import org.apache.commons.lang3.EnumUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -27,6 +29,7 @@ import java.util.stream.Collectors;
  * Date: 07.12.2020
  * Time: 13:14
  **/
+@Service
 public class SignedDocumentServiceImpl implements SignedDocumentService {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
@@ -117,6 +120,28 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
     }
 
     @Override
+    @Transactional
+    public SignedDocumentDto saveSafeTOrSaByCurrentUser(MultipartFile file) throws IOException {
+        if (file == null) {
+            LOGGER.error("file == null");
+            return null;
+        }
+        User curUser = userService.getCurrentUser().orElse(null);
+        if (curUser == null) {
+            LOGGER.error("Current user == null");
+            return null;
+        }
+        SignedDocument signedDocument =
+                new SignedDocument(curUser, null,
+                        DocumentType.SAFE_T_OR_SA, new Date(),
+                        IOUtils.toByteArray(file.getInputStream()));
+        signedDocument = signedDocumentRepository.save(signedDocument);
+        SignedDocumentDto signedDocumentDto = new SignedDocumentDto(signedDocument.getId());
+        return signedDocumentDto;
+    }
+
+    @Override
+    @Transactional
     public SignedDocumentDto save(MultipartFile file, SignedDocumentDto document) throws IOException {
         if (document == null) {
             LOGGER.error("document == null");

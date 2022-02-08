@@ -19,6 +19,7 @@ public interface SignedDocumentService {
     SignedDocumentListByHolderAccountDto findAllForHolderAccount(HolderAccount holderAccount, boolean getUser, boolean getHolder, boolean getContent);
     SignedDocumentListDto findAllByUser(User user, boolean getUser, boolean getHolder, boolean getContent);
     SignedDocumentDto findById(Long id, boolean getUser, boolean getHolder, boolean getContent);
+    SignedDocumentDto saveSafeTOrSaByCurrentUser(MultipartFile file) throws IOException;
     SignedDocumentDto save(MultipartFile file, SignedDocumentDto document) throws IOException;
     SignedDocumentDto update(MultipartFile file, SignedDocumentDto document) throws IOException;
     void delete(SignedDocumentDto document);

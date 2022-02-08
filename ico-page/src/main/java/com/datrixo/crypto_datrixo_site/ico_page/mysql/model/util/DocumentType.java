@@ -8,5 +8,6 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util;
 public enum DocumentType {
     PPM,
     SUBSCRIPTION_AGREEMENT,
-    SAFE_T
+    SAFE_T,
+    SAFE_T_OR_SA
 }
