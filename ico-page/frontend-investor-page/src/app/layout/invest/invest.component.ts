@@ -153,18 +153,21 @@ export class InvestComponent implements OnInit, OnDestroy {
             // this.modal = this.modalService.open(this.templateAlertRef);
             this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
         } else {
+            this.spinner.show();
             this.investUploadService.postSignedAgreement(this.fileToUpload)
                 .toPromise()
                 .then((value: Response) => {
                         // this.alertBody = 'Server pull response' + value.text();
                         this.alertTitle = 'Success';
                         this.alertBody = 'A Doc was uploaded successfully';
+                        this.spinner.hide();
                         // this.modal = this.modalService.open(this.templateAlertRef);
                         this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                         this.clearUploadParams();
                     },
                     (reason: Error) => {
                         this.alertBody = 'Server pull error: ' + reason.message;
+                        this.spinner.hide();
                         // this.modal = this.modalService.open(this.templateAlertRef);
                         this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                         this.clearUploadParams();

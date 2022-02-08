@@ -7,6 +7,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
 import com.datrixo.crypto_datrixo_site.ico_page.service.HolderService;
 import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
+import com.datrixo.crypto_datrixo_site.ico_page.service.SignedDocumentService;
 import com.datrixo.crypto_datrixo_site.ico_page.service.UserService;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserData;
 import com.datrixo.crypto_datrixo_site.ico_page.util.RequestUpdateUserPassword;
@@ -59,6 +60,8 @@ public class InvestorPageController {
     UserService userService;
     @Autowired
     HolderService holderService;
+    @Autowired
+    SignedDocumentService signedDocumentService;
 
     private final static int UNIT_VALUE = 150;
     private static DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
@@ -120,8 +123,13 @@ public class InvestorPageController {
     }
 
     @PostMapping(value = "/signed-agreement")
-    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
-        return new UploadFileResponse("success");
+    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
+        SignedDocumentDto signedDocument = signedDocumentService.saveSafeTOrSaByCurrentUser(file);
+        if (signedDocument != null && signedDocument.getId() > 0) {
+            return new UploadFileResponse("success");
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
     }
 
     @GetMapping(value = "/holdings", produces = "application/json")
