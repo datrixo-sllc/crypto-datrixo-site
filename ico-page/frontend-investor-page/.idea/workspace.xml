@@ -30,10 +30,9 @@
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="little things">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/my-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/my-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/util/DocumentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/util/DocumentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +99,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/layout/my-equity-holdings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../ARTDATA/artdata-dashboard" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -313,14 +312,7 @@
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
       <workItem from="1644227021078" duration="37542000" />
-      <workItem from="1644334270696" duration="3254000" />
-    </task>
-    <task id="LOCAL-00020" summary="investor profile update">
-      <created>1560087258457</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1560087258457</updated>
+      <workItem from="1644334270696" duration="6440000" />
     </task>
     <task id="LOCAL-00021" summary="investor page rename to investor portal">
       <created>1577118512784</created>
@@ -658,7 +650,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644267027427</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="little things">
+      <created>1644337761944</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1644337761945</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
