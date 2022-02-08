@@ -30,7 +30,8 @@
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="little things">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +127,7 @@
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -310,14 +311,7 @@
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551761" duration="11412000" />
       <workItem from="1644227021078" duration="37542000" />
-      <workItem from="1644334270696" duration="9125000" />
-    </task>
-    <task id="LOCAL-00021" summary="investor page rename to investor portal">
-      <created>1577118512784</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1577118512784</updated>
+      <workItem from="1644334270696" duration="10775000" />
     </task>
     <task id="LOCAL-00022" summary="share to equity">
       <created>1582141640342</created>
@@ -655,7 +649,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644337761945</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="little things">
+      <created>1644348062075</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1644348062075</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
