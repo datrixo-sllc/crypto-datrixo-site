@@ -32,12 +32,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="add ! in password pattern">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="save signed document and little things">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/util/DocumentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/model/util/DocumentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/SignedDocumentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/src/app/layout/invest/invest.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -534,14 +532,7 @@
       <workItem from="1644079123266" duration="314000" />
       <workItem from="1644079551742" duration="1824000" />
       <workItem from="1644227021078" duration="2710000" />
-      <workItem from="1644334270667" duration="5667000" />
-    </task>
-    <task id="LOCAL-00066" summary="add logout and language to the dashboard sidebar">
-      <created>1587141074785</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1587141074785</updated>
+      <workItem from="1644334270667" duration="6862000" />
     </task>
     <task id="LOCAL-00067" summary="fix https blocker to ico-page-backend after http to https redirection of the datrixo.com site">
       <created>1587658472442</created>
@@ -879,7 +870,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643992357287</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="save signed document and little things">
+      <created>1644344158676</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1644344158676</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1034,7 +1032,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="total invested for initial persons" />
     <MESSAGE value="project settings" />
     <MESSAGE value="generate new contract wrapper" />
     <MESSAGE value="new database on datrixosllc" />
@@ -1059,7 +1056,8 @@
     <MESSAGE value="update user" />
     <MESSAGE value="stripe" />
     <MESSAGE value="add ! in password pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ! in password pattern" />
+    <MESSAGE value="save signed document and little things" />
+    <option name="LAST_COMMIT_MESSAGE" value="save signed document and little things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
