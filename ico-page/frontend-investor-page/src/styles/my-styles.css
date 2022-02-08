@@ -1,4 +1,4 @@
-.my-btn-outline {
+.my-btn-outline, .my-btn-outline-primary {
     border: 1px solid;
 }
 
@@ -6,6 +6,13 @@
     color: white;
     border-color: #95999c;
     background-color: #95999c;
+    outline: 0;
+}
+
+.my-btn-outline-primary:hover, .my-btn-outline-primary:focus, .my-btn-outline-primary:active, .my-btn-outline-primary.active {
+    color: white;
+    border-color: #007bff;
+    background-color: #007bff;
     outline: 0;
 }
 

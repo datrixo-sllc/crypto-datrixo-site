@@ -88,19 +88,19 @@
                         <div>Datrixo Series LLC</div>
                         <div>Account: 696918777</div>
                     </div>
-                    <h6 class="card-text mb-2">With crypto:</h6>
+                    <h6 class="card-text mb-2">With Crypto (ETH, BTC):</h6>
                     <div class="row pl-3">
                         <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
                         </script>
-                        <a class="my-btn my-btn-outline my-btn-l nounderline mt-1"
+                        <a class="my-btn my-btn-outline-primary my-btn-l nounderline mt-1 mr-2"
                            href="https://commerce.coinbase.com/checkout/de6ac3a7-c802-459e-b7a5-947f42053f80">
                             1 DRX ($150)
                         </a>
-                        <a class="my-btn my-btn-outline my-btn-l nounderline ml-3 mt-1"
+                        <a class="my-btn my-btn-outline-primary my-btn-l nounderline mt-1 mr-2"
                            href="https://commerce.coinbase.com/checkout/59131a69-a9ce-4bfd-88da-f361676e6a65">
                             2 DRX ($300)
                         </a>
-                        <a class="my-btn my-btn-outline my-btn-l nounderline ml-3 mt-1"
+                        <a class="my-btn my-btn-outline-primary my-btn-l nounderline mt-1"
                            href="https://commerce.coinbase.com/checkout/179ba5d0-7eee-4a96-89c1-41ca8645645d">
                             4 DRX ($600)
                         </a>
@@ -117,22 +117,22 @@
         </div>
         <div class="col-lg-4">
             <div class="card mb-3">
-                <h4 class="card-header">Agreement</h4>
+                <h4 class="card-header">Investor Docs</h4>
                 <div class="card-body">
-                    <h5 class="card-title">Subscription Agreement</h5>
+                    <h5 class="card-title">Safe-T or Subscr Agreement</h5>
                     <p class="card-text mb-3">Please, download, sign and upload back to us the PDF of the (signed)
-                        Subscription Agreement or SAFE-T.</p>
+                        SAFE-T or Subscription Agreement.</p>
                     <div class="text-center mb-2">
-                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSubAgrmtDownload()">
-                            Subscr Agreement
-                        </button>
-                    </div>
-                    <div class="text-center">
                         <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSafeTDownload()">
                             SAFE-T
                         </button>
                     </div>
-                    <h5 class="card-title mt-4">Signed Subscription Agreement</h5>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSubAgrmtDownload()">
+                            Subscr Agreement
+                        </button>
+                    </div>
+                    <h5 class="card-title mt-4">Your Signed Doc</h5>
                     <p class="card-text">Upload your signed Subscription Agreement here.</p>
                     <div class="text-center">
                         <input #uploadFile type="file" class="form-control-file mt-3" id="agreementFile"
@@ -185,10 +185,10 @@
             <div class="col-9 mx-auto">
                 <table style="margin: 0 auto;">
                     <tr>
-                        <td class="text-center"><h4>Total Supply/Sold</h4></td>
+                        <td class="text-center"><h4>Total Supply/ Sold</h4></td>
                     </tr>
                     <tr>
-                        <td class="text-center">{{totalSupply}}/{{sold}}</td>
+                        <td class="text-center"><strong>{{totalSupply}}</strong>/ <strong class="text-primary">{{sold}}</strong></td>
                     </tr>
                 </table>
             </div>

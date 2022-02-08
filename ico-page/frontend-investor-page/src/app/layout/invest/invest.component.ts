@@ -148,7 +148,7 @@ export class InvestComponent implements OnInit, OnDestroy {
 
     onSubmitSignedAgreementUpload() {
         if (this.fileToUpload === null) {
-            this.alertTitle = 'Signed Agreement Upload';
+            this.alertTitle = 'Upload Your Signed Doc';
             this.alertBody = 'File for uploading is not selected';
             // this.modal = this.modalService.open(this.templateAlertRef);
             this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
@@ -156,7 +156,9 @@ export class InvestComponent implements OnInit, OnDestroy {
             this.investUploadService.postSignedAgreement(this.fileToUpload)
                 .toPromise()
                 .then((value: Response) => {
-                        this.alertBody = 'Server pull response' + value.text();
+                        // this.alertBody = 'Server pull response' + value.text();
+                        this.alertTitle = 'Success';
+                        this.alertBody = 'A Doc was uploaded successfully';
                         // this.modal = this.modalService.open(this.templateAlertRef);
                         this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                         this.clearUploadParams();
