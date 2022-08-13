@@ -43,7 +43,7 @@ public class MySqlConfig {
     public DataSource dataSource() {
         DataSource dataSource = DataSourceBuilder
                 .create()
-                .driverClassName(env.getProperty("mySql.driverClassName"))
+                .driverClassName(env.getProperty("mysql.jdbc.driverClassName"))
                 .url(env.getProperty("mysql.jdbc.url"))
                 .username(env.getProperty("mysql.jdbc.user"))
                 .password(env.getProperty("mysql.jdbc.pass"))
