@@ -40,7 +40,7 @@ public class UserController {
     @Autowired
     HolderService holderService;
 
-    private final static int UNIT_VALUE = 150;
+    private final static int UNIT_VALUE = 187;
     private static DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
     private static DecimalFormat df2 = new DecimalFormat("0.00", symbols);
     private static DecimalFormat df1 = new DecimalFormat("0.0", symbols);
