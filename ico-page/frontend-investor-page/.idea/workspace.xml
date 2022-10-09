@@ -27,17 +27,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="little things">
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="set $187">
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest-in-equity/invest-in-equity.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/invest/invest.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holding-datatable-responsive/my-equity-holding-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holding-datatable-responsive/my-equity-holding-datatable-responsive.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holding-datatable/my-equity-holding-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-equity-holdings/my-equity-holding-datatable/my-equity-holding-datatable.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/holders-datatable/holders-datatable.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holding-datatable-responsive/my-holding-datatable-responsive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/my-holdings/my-holding-datatable-responsive/my-holding-datatable-responsive.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/InvestorPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/datrixo/crypto_datrixo_site/ico_page/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,14 +299,7 @@
       <workItem from="1645435263216" duration="512000" />
       <workItem from="1646315977367" duration="258000" />
       <workItem from="1646316271782" duration="47000" />
-      <workItem from="1665338020561" duration="3308000" />
-    </task>
-    <task id="LOCAL-00022" summary="share to equity">
-      <created>1582141640342</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1582141640342</updated>
+      <workItem from="1665338020561" duration="4600000" />
     </task>
     <task id="LOCAL-00023" summary="change login page background color">
       <created>1584818086244</created>
@@ -652,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644348062075</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="set $187">
+      <created>1665341936301</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1665341936302</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +665,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fix packages versions" />
     <MESSAGE value="modal alerts and confirmation" />
     <MESSAGE value="modal noty alerts" />
     <MESSAGE value="fix layout holders datatable and Signed subscription agreement" />
@@ -698,7 +689,8 @@
     <MESSAGE value="new my drx holdings layout responsive table" />
     <MESSAGE value="new my holdings layout responsive table" />
     <MESSAGE value="little things" />
-    <option name="LAST_COMMIT_MESSAGE" value="little things" />
+    <MESSAGE value="set $187" />
+    <option name="LAST_COMMIT_MESSAGE" value="set $187" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
