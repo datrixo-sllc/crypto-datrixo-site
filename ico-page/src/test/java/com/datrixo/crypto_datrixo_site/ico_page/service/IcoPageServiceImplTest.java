@@ -2,6 +2,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.service;
 
 import com.datrixo.crypto_datrixo_site.ico_page.App;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import static org.junit.Assert.*;
 public class IcoPageServiceImplTest {
     @Autowired
     private IcoPageService icoPageService;
+    @Ignore
     @Test
     public void getAllData() {
         IcoPageDto icoPageDto = icoPageService.getAllData();
