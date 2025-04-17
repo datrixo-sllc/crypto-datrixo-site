@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c317a48e-93b6-408b-b9d9-213f3ffcc3f1" name="Default Changelist" comment="share to equity" />
+    <list default="true" id="c317a48e-93b6-408b-b9d9-213f3ffcc3f1" name="Default Changelist" comment="share to equity">
+      <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-investor-page/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-investor-page/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-investor-page/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="606bdd34-1809-4391-9bcd-47b257a99737" name="Revert: invest layout first section" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="ComposerSettings">
     <execution />
@@ -58,8 +68,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="PhpServers">
     <servers />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="1VQygOoZaEM7BjFQGmGg0NlWHF2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,28 +85,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend-investor-page" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\node_modules\tslint" />
-    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../../../../Program Files/nodejs/node" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
-    <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\node_modules\typescript\lib" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/nik/IdeaProjects/_Milla/crypto-datrixo-site/ico-page/frontend-investor-page",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-ico-page\src\app" />
@@ -151,6 +156,7 @@
       <item itemvalue="Protractor.E2E Tests" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -206,6 +212,7 @@
       <workItem from="1588098646971" duration="1295000" />
       <workItem from="1588161768733" duration="1801000" />
       <workItem from="1588320715433" duration="200000" />
+      <workItem from="1744013256744" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="create angulare cli project frontend-ico-page">
       <created>1549286462091</created>
@@ -379,7 +386,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -405,7 +412,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create angulare cli project frontend-ico-page" />
@@ -423,44 +429,6 @@
     <MESSAGE value="add share column" />
     <MESSAGE value="share to equity" />
     <option name="LAST_COMMIT_MESSAGE" value="share to equity" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="398" y="126" key="CommitChangelistDialog2" timestamp="1587726146092">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="398" y="126" key="CommitChangelistDialog2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587726146092" />
-    <state width="1881" height="149" key="GridCell.Tab.0.bottom" timestamp="1587731189279">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1881" height="149" key="GridCell.Tab.0.bottom/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1587138708776" />
-    <state width="1881" height="546" key="GridCell.Tab.0.bottom/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587137951084" />
-    <state width="1881" height="149" key="GridCell.Tab.0.bottom/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587731189279" />
-    <state width="1497" height="413" key="GridCell.Tab.0.bottom/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@1920.8.1536.840" timestamp="1582141259832" />
-    <state width="1881" height="149" key="GridCell.Tab.0.center" timestamp="1587731189279">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1881" height="149" key="GridCell.Tab.0.center/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1587138708775" />
-    <state width="1881" height="546" key="GridCell.Tab.0.center/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587137951084" />
-    <state width="1881" height="149" key="GridCell.Tab.0.center/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587731189279" />
-    <state width="1497" height="413" key="GridCell.Tab.0.center/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@1920.8.1536.840" timestamp="1582141259832" />
-    <state width="1881" height="149" key="GridCell.Tab.0.left" timestamp="1587731189279">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1881" height="149" key="GridCell.Tab.0.left/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1587138708775" />
-    <state width="1881" height="546" key="GridCell.Tab.0.left/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587137951084" />
-    <state width="1881" height="149" key="GridCell.Tab.0.left/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587731189279" />
-    <state width="1497" height="413" key="GridCell.Tab.0.left/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@1920.8.1536.840" timestamp="1582141259832" />
-    <state width="1881" height="149" key="GridCell.Tab.0.right" timestamp="1587731189279">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1881" height="149" key="GridCell.Tab.0.right/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1587138708776" />
-    <state width="1881" height="546" key="GridCell.Tab.0.right/1920.8.1536.840/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587137951084" />
-    <state width="1881" height="149" key="GridCell.Tab.0.right/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1587731189279" />
-    <state width="1497" height="413" key="GridCell.Tab.0.right/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@1920.8.1536.840" timestamp="1582141259832" />
-    <state x="552" y="262" key="Vcs.Push.Dialog.v2" timestamp="1582140808079">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="262" key="Vcs.Push.Dialog.v2/1920.8.1536.840/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1582140808079" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

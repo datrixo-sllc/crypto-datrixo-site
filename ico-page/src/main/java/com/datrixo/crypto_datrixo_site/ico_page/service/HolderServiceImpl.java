@@ -1,3 +1,4 @@
+/*
 package com.datrixo.crypto_datrixo_site.ico_page.service;
 
 import com.datrixo.crypto_datrixo_site.ico_page.contract.DatrixoContract;
@@ -25,11 +26,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+*/
 /**
  * Created by Yuri Nikiforov.
  * Date: 05.02.2019
  * Time: 13:05
- */
+ *//*
+
 @Service
 public class HolderServiceImpl implements HolderService {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
@@ -75,7 +78,8 @@ public class HolderServiceImpl implements HolderService {
         return holderRepository.findAll();
     }
 
-    /*
+    */
+/*
     @Override
     @Scheduled(fixedRate = 10000)
     @Transactional
@@ -88,7 +92,8 @@ public class HolderServiceImpl implements HolderService {
             holderRepository.deleteAll();
             holderRepository.save(new Holder("0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee", new Date(), 100));
         }
-    }*/
+    }*//*
+
 
 
     @PostConstruct
@@ -159,3 +164,4 @@ public class HolderServiceImpl implements HolderService {
         return Optional.ofNullable(holderRepository.findFirstByAddress(address));
     }
 }
+*/

@@ -3,15 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.datrixo</groupId>
+        <groupId>com.datrixo.crypto</groupId>
         <artifactId>crypto-datrixo-site</artifactId>
-        <version>1.0</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.datrixo</groupId>
     <artifactId>ico-page-site</artifactId>
     <packaging>war</packaging>
+
+    <repositories>
+        <repository>
+            <id>java-net-repo</id>
+            <url>https://maven.java.net/content/repositories/public/</url>
+        </repository>
+        <repository>
+            <id>jcenter-bintary</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+
 
     <properties>
         <start-class>com.datrixo.crypto_datrixo_site.ico_page.App</start-class>
@@ -52,11 +64,11 @@
         </dependency>
 
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.web3j</groupId>
             <artifactId>web3j-spring-boot-starter</artifactId>
             <version>4.0.3</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>commons-io</groupId>
@@ -86,23 +98,13 @@
 
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>java-net-repo</id>
-            <url>https://maven.java.net/content/repositories/public/</url>
-        </repository>
-        <repository>
-            <id>jcenter-bintary</id>
-            <url>https://jcenter.bintray.com/</url>
-        </repository>
-    </repositories>
-
     <build>
         <finalName>ico-page-site</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
             </plugin>
             <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -133,18 +135,18 @@
 
     <profiles>
 
-        <profile>
+        <!--<profile>
             <id>deploy-on-aws</id>
             <build>
                 <plugins>
-                    <!--deploy to amazon elastic beanstalk-->
+                    &lt;!&ndash;deploy to amazon elastic beanstalk&ndash;&gt;
                     <plugin>
                         <artifactId>maven-deploy-plugin</artifactId>
                         <configuration>
                             <skip>true</skip>
                         </configuration>
                     </plugin>
-                    <!--deploy on AWS beanstalk config crypto-datrixo-site-->
+                    &lt;!&ndash;deploy on AWS beanstalk config crypto-datrixo-site&ndash;&gt;
                     <plugin>
                         <groupId>br.com.ingenieux</groupId>
                         <artifactId>beanstalk-maven-plugin</artifactId>
@@ -160,7 +162,7 @@
                                 </goals>
                             </execution>
                         </executions>
-                        <!--ico-page-site-backend-->
+                        &lt;!&ndash;ico-page-site-backend&ndash;&gt;
                         <configuration>
                             <applicationName>crypto-datrixo-site</applicationName>
                             <environmentName>ico-page-site-backend</environmentName>
@@ -177,7 +179,7 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
+        </profile>-->
 
     </profiles>
 
