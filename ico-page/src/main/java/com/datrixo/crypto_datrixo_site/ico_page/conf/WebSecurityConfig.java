@@ -7,16 +7,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.CorsUtils;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import jakarta.servlet.Filter;
@@ -33,6 +34,52 @@ import java.util.HashMap;
  **/
 @Configuration
 @EnableWebSecurity
+public class WebSecurityConfig {
+
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csfr -> csfr.disable())
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .authorizeHttpRequests(auth -> auth
+                        // for h2 - comment for production
+                        .requestMatchers("/h2-console/**").permitAll()
+
+                        .requestMatchers("/ico/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessHandler(this::logoutSuccessHandler))
+                .exceptionHandling(exception -> exception
+                        .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+                );
+        return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        return source;
+    }
+
+    private void logoutSuccessHandler(HttpServletRequest request,
+                                      HttpServletResponse response,
+                                      Authentication authentication) throws IOException {
+        ResponseAuth resp = new ResponseAuth();
+        response.setStatus(HttpStatus.OK.value());
+        resp.setStatusResponseAuth(StatusResponseAuth.OK.toString());
+        resp.setRole(((MediUser)authentication.getPrincipal()).getRole().name());
+        objectMapper.writeValue(response.getWriter(), resp);
+    }
+
+}
+
+/*
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -127,3 +174,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
+*/
