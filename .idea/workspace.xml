@@ -32,7 +32,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="start migrate to Spring Boot 3">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="WebSecurityConfig not complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java" afterDir="false" />
     </list>
@@ -602,14 +602,7 @@
       <workItem from="1744874261982" duration="1825000" />
       <workItem from="1744883714589" duration="3514000" />
       <workItem from="1744890147341" duration="5627000" />
-      <workItem from="1745220584053" duration="3381000" />
-    </task>
-    <task id="LOCAL-00072" summary="new text for sto page">
-      <created>1587731355003</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1587731355003</updated>
+      <workItem from="1745220584053" duration="4421000" />
     </task>
     <task id="LOCAL-00073" summary="new text for sto page">
       <created>1591125639714</created>
@@ -947,7 +940,14 @@
       <option name="project" value="LOCAL" />
       <updated>1744894248978</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="WebSecurityConfig not complete">
+      <created>1745225426365</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1745225426365</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1114,7 +1114,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new database on datrixosllc" />
     <MESSAGE value="datrixosllc fix debugs" />
     <MESSAGE value="datrixosllc https and total amount 8 000 and $150 per unit" />
     <MESSAGE value=".idea in ignore" />
@@ -1139,7 +1138,8 @@
     <MESSAGE value="save signed document and little things" />
     <MESSAGE value="set $187" />
     <MESSAGE value="start migrate to Spring Boot 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="start migrate to Spring Boot 3" />
+    <MESSAGE value="WebSecurityConfig not complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="WebSecurityConfig not complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

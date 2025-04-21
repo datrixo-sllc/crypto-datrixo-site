@@ -2,9 +2,12 @@ package com.datrixo.crypto_datrixo_site.ico_page.conf;
 
 import com.datrixo.crypto_datrixo_site.ico_page.security.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.ServletException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.Authentication;
@@ -13,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
@@ -24,8 +28,10 @@ import jakarta.servlet.Filter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Yuri Nikiforov.
@@ -55,6 +61,18 @@ public class WebSecurityConfig {
                         .logoutSuccessHandler(this::logoutSuccessHandler))
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+                        .accessDeniedHandler(((request, response, ex) -> {
+                            response.setStatus(HttpStatus.FORBIDDEN.value());
+                            response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+
+                            Map<String, String> errorDetails = new HashMap<>();
+                                    errorDetails.put("timestamp", Instant.now().toString());
+                                    errorDetails.put("status", String.valueOf(HttpStatus.FORBIDDEN.value()));
+                                    errorDetails.put("error", "Forbidden");
+                                    errorDetails.put("message", ex.getMessage());
+                                    errorDetails.put("path", request.getRequestURI());
+                                    objectMapper.writeValue(response.getWriter(), errorDetails);
+                        }))
                 );
         return http.build();
     }
