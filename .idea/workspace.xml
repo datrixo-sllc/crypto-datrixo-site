@@ -32,11 +32,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="javax.sql.DataSource">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/H2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/H2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="EntityManagerFactory autoware error fixed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -603,14 +599,7 @@
       <workItem from="1744883714589" duration="3514000" />
       <workItem from="1744890147341" duration="5627000" />
       <workItem from="1745220584053" duration="4421000" />
-      <workItem from="1745330823880" duration="2672000" />
-    </task>
-    <task id="LOCAL-00077" summary="project settings">
-      <created>1593014404173</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1593014404174</updated>
+      <workItem from="1745330823880" duration="3088000" />
     </task>
     <task id="LOCAL-00078" summary="generate new contract wrapper">
       <created>1606486983284</created>
@@ -948,7 +937,14 @@
       <option name="project" value="LOCAL" />
       <updated>1745332560764</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="EntityManagerFactory autoware error fixed">
+      <created>1745333690459</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1745333690459</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1121,7 +1117,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new contract with totalSupply 8000 $150" />
     <MESSAGE value="new contract name DatrixoEquityToken" />
     <MESSAGE value="redirect to login if error" />
     <MESSAGE value="user documents" />
@@ -1146,7 +1141,8 @@
     <MESSAGE value="WebSecurityConfig plus passwordEncoder" />
     <MESSAGE value="javax -&gt; jakarta" />
     <MESSAGE value="javax.sql.DataSource" />
-    <option name="LAST_COMMIT_MESSAGE" value="javax.sql.DataSource" />
+    <MESSAGE value="EntityManagerFactory autoware error fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="EntityManagerFactory autoware error fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
