@@ -55,7 +55,7 @@ public class H2Config {
     @Primary
     @DependsOn({"h2DataSource"})
     @Bean(name = "h2EntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    public EntityManagerFactory entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan(new String[] {"com.datrixo.crypto_datrixo_site.ico_page.h2.model"});
@@ -64,7 +64,7 @@ public class H2Config {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
-        return em;
+        return em.getObject();
     }
 
     @Primary
