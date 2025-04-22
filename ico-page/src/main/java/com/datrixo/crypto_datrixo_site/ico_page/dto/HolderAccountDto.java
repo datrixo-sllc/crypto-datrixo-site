@@ -2,9 +2,9 @@ package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.util.Date;
 

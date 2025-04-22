@@ -3,10 +3,10 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.DocumentType;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Lob;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Lob;
 import java.util.Date;
 
 /**

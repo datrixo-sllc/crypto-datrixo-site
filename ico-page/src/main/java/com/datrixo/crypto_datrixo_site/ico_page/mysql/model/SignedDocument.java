@@ -3,7 +3,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.DocumentType;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 /**
