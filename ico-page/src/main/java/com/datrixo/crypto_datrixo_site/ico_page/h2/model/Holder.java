@@ -2,8 +2,8 @@ package com.datrixo.crypto_datrixo_site.ico_page.h2.model;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;

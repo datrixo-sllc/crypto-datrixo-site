@@ -2,8 +2,8 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 /**
  * Created by Yuri Nikiforov.

@@ -58,6 +58,11 @@
 			<version>${spring-security-test.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>jakarta.jws</groupId>
+			<artifactId>jakarta.jws-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
