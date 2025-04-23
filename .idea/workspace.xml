@@ -32,9 +32,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Solution to missing jakarta.jws.soap.SOAPBinding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="EntityManagerFactory autoware error fixed" />
+>>>>>>> 836d49856783c57ace9a4f36c3bb4d7debeb2762
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,9 +116,8 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="alwaysUpdateSnapshots" value="true" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../app/apache-maven-3.9.6" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../app/apache-maven-3.9.9" />
         <option name="useMavenConfig" value="true" />
-        <option name="userSettingsFile" value="C:\app\apache-maven-3.9.6\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -139,6 +142,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
@@ -162,6 +166,31 @@
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;70114987fee95340d4c49f8d5946063b&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/nik/IdeaProjects/_Milla/crypto-datrixo-site/ico-page/pom.xml",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "ruby.rails.projectView.checked": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "show.migrate.to.gradle.popup": "false",
+    "spring.configuration.checksum": "38bcf7505cd5d65276fb216f0e1440f1",
+    "ts.external.directory.path": "C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib"
+>>>>>>> 836d49856783c57ace9a4f36c3bb4d7debeb2762
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -600,6 +629,7 @@
       <workItem from="1744874261982" duration="1825000" />
       <workItem from="1744883714589" duration="3514000" />
       <workItem from="1744890147341" duration="5627000" />
+<<<<<<< HEAD
       <workItem from="1745220584053" duration="5094000" />
       <workItem from="1745388424329" duration="1665000" />
     </task>
@@ -623,6 +653,10 @@
       <option name="presentableId" value="LOCAL-00077" />
       <option name="project" value="LOCAL" />
       <updated>1593014404174</updated>
+=======
+      <workItem from="1745220584053" duration="4421000" />
+      <workItem from="1745330823880" duration="3088000" />
+>>>>>>> 836d49856783c57ace9a4f36c3bb4d7debeb2762
     </task>
     <task id="LOCAL-00078" summary="generate new contract wrapper">
       <created>1606486983284</created>
@@ -932,6 +966,7 @@
       <option name="project" value="LOCAL" />
       <updated>1745225426365</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00122" summary="WebSecurityConfig not complete">
       <created>1745226408094</created>
       <option name="number" value="00122" />
@@ -947,6 +982,44 @@
       <updated>1745389720286</updated>
     </task>
     <option name="localTasksCounter" value="124" />
+=======
+    <task id="LOCAL-00122" summary="WebSecurityConfig plus passwordEncoder">
+      <created>1745329510545</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1745329510546</updated>
+    </task>
+    <task id="LOCAL-00123" summary="javax -&gt; jakarta">
+      <created>1745331556766</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1745331556767</updated>
+    </task>
+    <task id="LOCAL-00124" summary="javax.sql.DataSource">
+      <created>1745332479190</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1745332479190</updated>
+    </task>
+    <task id="LOCAL-00125" summary="javax.sql.DataSource">
+      <created>1745332560764</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1745332560764</updated>
+    </task>
+    <task id="LOCAL-00126" summary="EntityManagerFactory autoware error fixed">
+      <created>1745333690459</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1745333690459</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
+>>>>>>> 836d49856783c57ace9a4f36c3bb4d7debeb2762
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1086,7 +1159,11 @@
                   <entry key="branch">
                     <value>
                       <list>
+<<<<<<< HEAD
                         <option value="origin2/mirate-spring-boot3" />
+=======
+                        <option value="mirate-spring-boot3" />
+>>>>>>> 836d49856783c57ace9a4f36c3bb4d7debeb2762
                       </list>
                     </value>
                   </entry>
@@ -1101,7 +1178,13 @@
       <map>
         <entry key="Branch">
           <value>
-            <list />
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/mirate-spring-boot3" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
         <entry key="User">
@@ -1113,9 +1196,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
     <MESSAGE value="datrixosllc https and total amount 8 000 and $150 per unit" />
     <MESSAGE value=".idea in ignore" />
     <MESSAGE value="new contract with totalSupply 8000 $150" />
+=======
+>>>>>>> 836d49856783c57ace9a4f36c3bb4d7debeb2762
     <MESSAGE value="new contract name DatrixoEquityToken" />
     <MESSAGE value="redirect to login if error" />
     <MESSAGE value="user documents" />
@@ -1137,20 +1223,28 @@
     <MESSAGE value="set $187" />
     <MESSAGE value="start migrate to Spring Boot 3" />
     <MESSAGE value="WebSecurityConfig not complete" />
+<<<<<<< HEAD
     <MESSAGE value="Solution to missing jakarta.jws.soap.SOAPBinding" />
     <option name="LAST_COMMIT_MESSAGE" value="Solution to missing jakarta.jws.soap.SOAPBinding" />
+=======
+    <MESSAGE value="WebSecurityConfig plus passwordEncoder" />
+    <MESSAGE value="javax -&gt; jakarta" />
+    <MESSAGE value="javax.sql.DataSource" />
+    <MESSAGE value="EntityManagerFactory autoware error fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="EntityManagerFactory autoware error fixed" />
+>>>>>>> 836d49856783c57ace9a4f36c3bb4d7debeb2762
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
-          <line>405</line>
+          <line>408</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
-          <line>431</line>
+          <line>434</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>

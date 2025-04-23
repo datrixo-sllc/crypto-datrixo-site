@@ -12,6 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,6 +29,8 @@ public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthe
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -50,12 +53,11 @@ public class RequestBodyReaderAuthenticationFilter extends UsernamePasswordAuthe
             User user = userService.findByUsername(username);
             if (user == null) {
                 throw new UsernameNotFoundException(StatusResponseAuth.LOGIN_NOT_FOUND.toString());
-            } else if (!user.getPassword().equals(password)) {
+            } else if (!passwordEncoder.matches(password, user.getPassword())) {
                 throw new AuthenticationCredentialsNotFoundException(StatusResponseAuth.PASSWORD_INVALID.toString());
             }
 
-            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username,
-                    /*SecurityUtils.passwordEncode(username, password)*/ password);
+            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, passwordEncoder.encode(password));
             this.setDetails(request, token);
             return this.getAuthenticationManager().authenticate(token);
         }

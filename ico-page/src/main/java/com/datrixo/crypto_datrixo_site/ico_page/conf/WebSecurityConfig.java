@@ -8,16 +8,21 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
+import org.springframework.security.web.header.writers.XXssProtectionHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -45,14 +50,55 @@ public class WebSecurityConfig {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public PasswordEncoder passwordEncoder() {
+        return Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsServiceImpl();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(
+            UserDetailsService userDetailsService,
+            PasswordEncoder passwordEncoder) {
+
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(userDetailsService);
+        provider.setPasswordEncoder(passwordEncoder);
+
+        return new ProviderManager(provider);
+    }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, AuthenticationManager authenticationManager) throws Exception {
         http
+                .headers(headers -> headers
+                        .frameOptions(frame -> frame
+                                .sameOrigin())
+                        .xssProtection(xss -> xss
+                                .disable()
+                        )
+                        .contentSecurityPolicy(csp -> csp
+                                .policyDirectives(
+                                        "default-src 'self' : " +
+                                        "script-src 'self' 'unsafe-inline' 'unsave-eval' ; " +
+                                        "style-src 'self' 'unsafe-inline' ; " +
+                                        "img-src 'self' data:; " +
+                                        "frame-ancestors 'self'; " +
+                                        "form-action 'self'"
+
+                                )
+                        )
+                )
                 .csrf(csfr -> csfr.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .addFilter(authenticationFilter(authenticationManager))
                 .authorizeHttpRequests(auth -> auth
                         // for h2 - comment for production
                         .requestMatchers("/h2-console/**").permitAll()
-
+                        // page for datrixo site
                         .requestMatchers("/ico/**").permitAll()
                         .anyRequest().authenticated()
                 )
@@ -83,6 +129,35 @@ public class WebSecurityConfig {
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         return source;
+    }
+
+    @Bean
+    public RequestBodyReaderAuthenticationFilter authenticationFilter(AuthenticationManager authenticationManager) throws Exception {
+        RequestBodyReaderAuthenticationFilter authenticationFilter =
+                new RequestBodyReaderAuthenticationFilter();
+        authenticationFilter.setAuthenticationSuccessHandler(this::loginSuccessHandler);
+        authenticationFilter.setAuthenticationFailureHandler(this::loginFailureHandler);
+        authenticationFilter.setRequiresAuthenticationRequestMatcher(
+                new AntPathRequestMatcher("/login", "POST"));
+        authenticationFilter.setAuthenticationManager(authenticationManager);
+        return authenticationFilter;
+    }
+
+    private void loginSuccessHandler(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
+                                     Authentication authentication) throws IOException {
+        ResponseAuth resp = new ResponseAuth();
+        httpServletResponse.setStatus(HttpStatus.OK.value());
+        resp.setStatusResponseAuth(StatusResponseAuth.OK.toString());
+        resp.setRole(((MediUser)authentication.getPrincipal()).getRole().name());
+        objectMapper.writeValue(httpServletResponse.getWriter(), resp);
+    }
+
+    private void loginFailureHandler(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
+                                     AuthenticationException e) throws IOException {
+        ResponseAuth resp = new ResponseAuth();
+        httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+        resp.setStatusResponseAuth(e.getMessage());
+        objectMapper.writeValue(httpServletResponse.getWriter(), resp);
     }
 
     private void logoutSuccessHandler(HttpServletRequest request,

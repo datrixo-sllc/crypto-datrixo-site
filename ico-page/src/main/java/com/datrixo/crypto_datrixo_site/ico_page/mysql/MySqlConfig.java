@@ -52,7 +52,7 @@ public class MySqlConfig {
     }
 
     @Bean(name = "mySqlEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    public EntityManagerFactory entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan(new String[] {"com.datrixo.crypto_datrixo_site.ico_page.mysql.model"});
@@ -61,7 +61,7 @@ public class MySqlConfig {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
-        return em;
+        return em.getObject();
     }
 
     @Bean(name = "mySqlTransactionManager")
