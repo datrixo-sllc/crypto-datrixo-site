@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bc38d52-526a-4761-b951-ee5417d5443e" name="Changes" comment="">
+    <list default="true" id="6bc38d52-526a-4761-b951-ee5417d5443e" name="Changes" comment="add github">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +92,16 @@
       <workItem from="1745572104344" duration="601000" />
       <workItem from="1745576303784" duration="2124000" />
       <workItem from="1745585197264" duration="1043000" />
-      <workItem from="1751048326731" duration="378000" />
+      <workItem from="1751048326731" duration="1027000" />
     </task>
+    <task id="LOCAL-00001" summary="add github">
+      <created>1751049345379</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751049345379</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +117,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add github" />
+    <option name="LAST_COMMIT_MESSAGE" value="add github" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
