@@ -28,19 +28,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="set $187">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+=======
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
   <component name="ComposerSettings">
     <execution />
   </component>
@@ -81,9 +88,12 @@
     </option>
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
+<<<<<<< HEAD
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+=======
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
   <component name="ProjectId" id="1VOJaSKHvt5iJ9gw92CV7n9iJZT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -98,7 +108,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
+<<<<<<< HEAD
     "last_opened_file_path": "C:/Users/nik/IdeaProjects/_Milla/crypto-datrixo-site/ico-page/frontend-investor-page",
+=======
+    "last_opened_file_path": "C:/Users/yuri/Documents/workspaceIDEA/_CYBERDUCK/cyberduck",
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
@@ -320,7 +334,10 @@
       <workItem from="1666546333822" duration="1039000" />
       <workItem from="1666601144138" duration="471000" />
       <workItem from="1666601642241" duration="40000" />
+<<<<<<< HEAD
       <workItem from="1744013278949" duration="24000" />
+=======
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
     </task>
     <task id="LOCAL-00026" summary="modal alerts and confirmation">
       <created>1588186775564</created>

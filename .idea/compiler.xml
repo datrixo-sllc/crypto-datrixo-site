@@ -13,7 +13,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
       <module name="crypto-datrixo-site" options="" />
+=======
+      <module name="crypto-datrixo-site" options="-parameters" />
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
       <module name="ico-page" options="-parameters" />
       <module name="ico-page-site" options="-parameters" />
     </option>
