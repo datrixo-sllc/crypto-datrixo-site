@@ -18,8 +18,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../app/apache-maven-3.9.9" />
+        <option name="userSettingsFile" value="C:\app\apache-maven-3.9.9\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -36,10 +47,37 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
+    "nodejs_package_manager_path": "yarn",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "dart.settings",
     "show.migrate.to.gradle.popup": "false",
+    "show.run.dashboard.notification": "false",
     "spring.configuration.checksum": "70114987fee95340d4c49f8d5946063b"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
+    ]
   }
 }]]></component>
+  <component name="RunManager" selected="Spring Boot.CryptoDatrixoSiteApplication">
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ico-page-site" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.datrixo.crypto_datrixo_site.ico_page.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CryptoDatrixoSiteApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="crypto-datrixo-site" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.datrixo.crypto.cryptodatrixosite.CryptoDatrixoSiteApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,6 +87,12 @@
       <option name="presentableId" value="Default" />
       <updated>1745560953306</updated>
       <workItem from="1745560955092" duration="130000" />
+      <workItem from="1745564013043" duration="6042000" />
+      <workItem from="1745571967838" duration="30000" />
+      <workItem from="1745572104344" duration="601000" />
+      <workItem from="1745576303784" duration="2124000" />
+      <workItem from="1745585197264" duration="1043000" />
+      <workItem from="1751048326731" duration="378000" />
     </task>
     <servers />
   </component>
@@ -65,5 +109,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
