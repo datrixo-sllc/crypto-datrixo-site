@@ -32,14 +32,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="set $187">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/test/java/com/datrixo/crypto_datrixo_site/ico_page/IcoPageDtoApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/test/java/com/datrixo/crypto_datrixo_site/ico_page/IcoPageDtoApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/test/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/test/java/com/datrixo/crypto_datrixo_site/ico_page/service/IcoPageServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/test/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/test/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImplTest.java" afterDir="false" />
+    <list default="true" id="24aa601c-ad52-4568-8509-512a7c13109a" name="Changes" comment="fix pom">
+      <change afterPath="$PROJECT_DIR$/ico-page/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/target/classes/ppm.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/target/classes/safe_t.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/target/classes/subscr_agrmnt.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e1a6e549-8b62-437e-a1c4-54de07b0fad1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +88,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="old-datrixo-dashboard" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -131,34 +135,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/yuri/Documents/workspaceIDEA/alkoopt",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "ruby.rails.projectView.checked": "true",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "show.migrate.to.gradle.popup": "false",
-    "spring.configuration.checksum": "38bcf7505cd5d65276fb216f0e1440f1",
-    "ts.external.directory.path": "C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yuri/Documents/workspaceIDEA/alkoopt&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;38bcf7505cd5d65276fb216f0e1440f1&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.service.password_generator" />
@@ -192,7 +196,7 @@
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.App">
+  <component name="RunManager">
     <configuration name="NiknameGeneratorImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.datrixo.crypto_datrixo_site.ico_page.service.nikname_generator.NiknameGeneratorImpl" />
       <module name="ico-page-site" />
@@ -318,9 +322,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
         <item itemvalue="Application.PasswordGeneratorImpl" />
         <item itemvalue="Application.NiknameGeneratorImpl" />
         <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
+        <item itemvalue="Application.PasswordGeneratorImpl" />
       </list>
     </recent_temporary>
   </component>
@@ -570,13 +576,6 @@
       <workItem from="1667999801319" duration="1198000" />
       <workItem from="1672160906028" duration="1049000" />
       <workItem from="1672162582005" duration="3532000" />
-    </task>
-    <task id="LOCAL-00070" summary="fix the https dashboard backend URL">
-      <created>1587661324594</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1587661324594</updated>
     </task>
     <task id="LOCAL-00071" summary="new text for sto page">
       <created>1587726229345</created>
@@ -914,7 +913,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665343591192</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="fix pom">
+      <created>1751051383075</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1751051383075</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1081,7 +1087,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="generate new contract wrapper" />
     <MESSAGE value="new database on datrixosllc" />
     <MESSAGE value="datrixosllc fix debugs" />
     <MESSAGE value="datrixosllc https and total amount 8 000 and $150 per unit" />
@@ -1106,28 +1111,8 @@
     <MESSAGE value="add ! in password pattern" />
     <MESSAGE value="save signed document and little things" />
     <MESSAGE value="set $187" />
-    <option name="LAST_COMMIT_MESSAGE" value="set $187" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
-          <line>405</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/UserServiceImpl.java</url>
-          <line>431</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="icoPageDto.holders" language="JAVA" />
-      </configuration>
-    </watches-manager>
+    <MESSAGE value="fix pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix pom" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
