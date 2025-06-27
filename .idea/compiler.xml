@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="ico-page-site" />
-        <module name="ico-page" />
-      </profile>
-    </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-<<<<<<< HEAD
-      <module name="crypto-datrixo-site" options="" />
-=======
-      <module name="crypto-datrixo-site" options="-parameters" />
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
-      <module name="ico-page" options="-parameters" />
-      <module name="ico-page-site" options="-parameters" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="crypto-datrixo-site" target="1.5" />
+      <module name="ico-page-site" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>
