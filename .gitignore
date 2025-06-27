@@ -11,9 +11,13 @@
 .sts4-cache
 
 ### IntelliJ IDEA ###
+<<<<<<< HEAD
 .idea
 *.iws
 *.iml
+=======
+*.iws
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 *.ipr
 
 ### NetBeans ###
@@ -23,3 +27,11 @@
 /nbdist/
 /.nb-gradle/
 /build/
+<<<<<<< HEAD
+=======
+/ico-page/target/
+/.idea/
+/ico-page/.idea/
+/ico-page/frontend-ico-page/.idea/
+/ico-page/frontend-investor-page/.idea/
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
