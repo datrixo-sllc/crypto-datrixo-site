@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin_senti" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="set $187">
+    <list default="true" id="6580be4d-9386-4eed-aa5f-5036c21623f1" name="Default Changelist" comment="change header Dashboard to Datrixo Equity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +19,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="SCSS File" />
-        <option value="HTML File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -54,27 +26,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="JupyterTrust" id="c87d8aa2-fa30-4665-a0aa-0c98fb093791" />
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../../../app/apache-maven-3.6.3" />
-        <option name="userSettingsFile" value="C:\app\apache-maven-3.6.3\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="ProjectId" id="1VOJaSKHvt5iJ9gw92CV7n9iJZT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -83,31 +38,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/yuri/Documents/workspaceIDEA/_CYBERDUCK/cyberduck",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ruby.rails.projectView.checked": "true",
-    "show.migrate.to.gradle.popup": "false",
-    "ts.external.directory.path": "C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../../../../../Program Files/nodejs/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\Old\crypto-datrixo-site\ico-page\frontend-investor-page\node_modules\typescript\lib" />
+  </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\my-equity-holdings" />
-      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\my-holdings" />
-      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\invest-in-equity" />
-      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\invest" />
-      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\investor-profile" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\assets\images" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\main-page" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\investor-profile" />
+      <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\frontend-investor-page\src\app\layout\invest" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -132,7 +97,6 @@
         <script value="build" />
       </scripts>
       <node-interpreter value="project" />
-      <package-manager value="npm" />
       <envs />
       <method v="2" />
     </configuration>
@@ -146,8 +110,8 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Angular Application" />
-      <item itemvalue="npm.build" />
       <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="npm.build" />
       <item itemvalue="npm.install" />
     </list>
   </component>
@@ -232,85 +196,188 @@
       <workItem from="1593009665884" duration="140000" />
       <workItem from="1593010448295" duration="82000" />
       <workItem from="1593010849364" duration="42000" />
-      <workItem from="1593015367203" duration="1971000" />
-      <workItem from="1606496029436" duration="6181000" />
-      <workItem from="1606665307878" duration="3731000" />
-      <workItem from="1606753512009" duration="2266000" />
-      <workItem from="1606843741108" duration="2948000" />
-      <workItem from="1606913265209" duration="1686000" />
-      <workItem from="1607178982945" duration="1161000" />
-      <workItem from="1607180255726" duration="2091000" />
-      <workItem from="1607202418704" duration="1404000" />
-      <workItem from="1607204776296" duration="114000" />
-      <workItem from="1607204935812" duration="586000" />
-      <workItem from="1607237622995" duration="591000" />
-      <workItem from="1607335293456" duration="418000" />
-      <workItem from="1607335743082" duration="597000" />
-      <workItem from="1607445103010" duration="2503000" />
-      <workItem from="1607447672461" duration="19686000" />
-      <workItem from="1607527141844" duration="6155000" />
-      <workItem from="1607540893560" duration="1592000" />
-      <workItem from="1607710442976" duration="593000" />
-      <workItem from="1607718703124" duration="1186000" />
-      <workItem from="1607741038163" duration="594000" />
-      <workItem from="1607965089350" duration="2414000" />
-      <workItem from="1608222942680" duration="2106000" />
-      <workItem from="1609434851459" duration="1185000" />
-      <workItem from="1611161307424" duration="3438000" />
-      <workItem from="1611236637715" duration="628000" />
-      <workItem from="1611422699504" duration="96000" />
-      <workItem from="1611423133000" duration="640000" />
-      <workItem from="1630482483820" duration="13548000" />
-      <workItem from="1630749747484" duration="590000" />
-      <workItem from="1630764275108" duration="26410000" />
-      <workItem from="1630953779503" duration="590000" />
-      <workItem from="1631079273128" duration="2194000" />
-      <workItem from="1631081622516" duration="56000" />
-      <workItem from="1631105539410" duration="1165000" />
-      <workItem from="1631115370558" duration="1249000" />
-      <workItem from="1631169087296" duration="27781000" />
-      <workItem from="1631271116337" duration="9658000" />
-      <workItem from="1631342569290" duration="7893000" />
-      <workItem from="1631362518582" duration="6912000" />
-      <workItem from="1631435742015" duration="2865000" />
-      <workItem from="1631442765032" duration="1944000" />
-      <workItem from="1631453685032" duration="6124000" />
-      <workItem from="1631543602579" duration="167000" />
-      <workItem from="1631551139378" duration="11595000" />
-      <workItem from="1631612725664" duration="2069000" />
-      <workItem from="1631784696752" duration="7140000" />
-      <workItem from="1632212948588" duration="1034000" />
-      <workItem from="1632242761624" duration="849000" />
-      <workItem from="1634834102169" duration="2263000" />
-      <workItem from="1634837986675" duration="224000" />
-      <workItem from="1635963638202" duration="513000" />
-      <workItem from="1635966395109" duration="169000" />
-      <workItem from="1636282903301" duration="603000" />
-      <workItem from="1636286698682" duration="590000" />
-      <workItem from="1636291865958" duration="35000" />
-      <workItem from="1642877471385" duration="3702000" />
-      <workItem from="1643139593143" duration="8164000" />
-      <workItem from="1643989046547" duration="6783000" />
-      <workItem from="1644006562157" duration="371000" />
-      <workItem from="1644079123266" duration="314000" />
-      <workItem from="1644079551761" duration="11412000" />
-      <workItem from="1644227021078" duration="37542000" />
-      <workItem from="1644334270696" duration="11931000" />
-      <workItem from="1644354131870" duration="154000" />
-      <workItem from="1645435263216" duration="512000" />
-      <workItem from="1646315977367" duration="258000" />
-      <workItem from="1646316271782" duration="47000" />
-      <workItem from="1665338020561" duration="5252000" />
-      <workItem from="1665497877764" duration="835000" />
-      <workItem from="1665515660559" duration="40000" />
-      <workItem from="1665672716786" duration="532000" />
-      <workItem from="1665678222122" duration="1205000" />
-      <workItem from="1665826240250" duration="38000" />
-      <workItem from="1665854166103" duration="696000" />
-      <workItem from="1666540409021" duration="2928000" />
-      <workItem from="1666546333822" duration="1039000" />
-      <workItem from="1666601144138" duration="471000" />
-      <workItem from="1666601642241" duration="40000" />
+      <workItem from="1593015367203" duration="730000" />
+      <workItem from="1608227551053" duration="1844000" />
+      <workItem from="1609349924437" duration="716000" />
+      <workItem from="1609352155124" duration="1845000" />
+      <workItem from="1609355328700" duration="373000" />
+      <workItem from="1609356077482" duration="883000" />
+      <workItem from="1609434185955" duration="720000" />
+    </task>
+    <task id="LOCAL-00001" summary="initialize commit">
+      <created>1557977504761</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557977504761</updated>
+    </task>
+    <task id="LOCAL-00002" summary="investor-profile layout">
+      <created>1558028018472</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1558028018472</updated>
+    </task>
+    <task id="LOCAL-00003" summary="invest layout">
+      <created>1558028189117</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558028189117</updated>
+    </task>
+    <task id="LOCAL-00004" summary="invest layout">
+      <created>1558028715399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558028715399</updated>
+    </task>
+    <task id="LOCAL-00005" summary="invest layout first section">
+      <created>1558069473200</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558069473200</updated>
+    </task>
+    <task id="LOCAL-00006" summary="invest layout">
+      <created>1558113075102</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558113075102</updated>
+    </task>
+    <task id="LOCAL-00007" summary="login">
+      <created>1558376401274</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558376401274</updated>
+    </task>
+    <task id="LOCAL-00008" summary="login">
+      <created>1558389859031</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558389859031</updated>
+    </task>
+    <task id="LOCAL-00009" summary="username on header section of layout">
+      <created>1558422639733</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1558422639733</updated>
+    </task>
+    <task id="LOCAL-00010" summary="frontend refactor">
+      <created>1558427885008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558427885008</updated>
+    </task>
+    <task id="LOCAL-00011" summary="download ppm">
+      <created>1558692464850</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1558692464850</updated>
+    </task>
+    <task id="LOCAL-00012" summary="download ppm">
+      <created>1558693475699</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1558693475699</updated>
+    </task>
+    <task id="LOCAL-00013" summary="upload signed agreement angular">
+      <created>1558696469729</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1558696469729</updated>
+    </task>
+    <task id="LOCAL-00014" summary="upload signed agreement angular">
+      <created>1558883335271</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1558883335271</updated>
+    </task>
+    <task id="LOCAL-00015" summary="holders datatable">
+      <created>1559801200293</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1559801200293</updated>
+    </task>
+    <task id="LOCAL-00016" summary="holders datatable">
+      <created>1559845482018</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1559845482018</updated>
+    </task>
+    <task id="LOCAL-00017" summary="my-holdings">
+      <created>1559847415858</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1559847415858</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add share column">
+      <created>1559883565407</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1559883565407</updated>
+    </task>
+    <task id="LOCAL-00019" summary="investor profile">
+      <created>1560022013011</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1560022013011</updated>
+    </task>
+    <task id="LOCAL-00020" summary="investor profile update">
+      <created>1560087258457</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1560087258457</updated>
+    </task>
+    <task id="LOCAL-00021" summary="investor page rename to investor portal">
+      <created>1577118512784</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1577118512784</updated>
+    </task>
+    <task id="LOCAL-00022" summary="share to equity">
+      <created>1582141640342</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1582141640342</updated>
+    </task>
+    <task id="LOCAL-00023" summary="change login page background color">
+      <created>1584818086244</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1584818086244</updated>
+    </task>
+    <task id="LOCAL-00024" summary="editing">
+      <created>1588102688642</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1588102688642</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix packages versions">
+      <created>1588173997324</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1588173997324</updated>
     </task>
     <task id="LOCAL-00026" summary="modal alerts and confirmation">
       <created>1588186775564</created>
@@ -347,315 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588785965287</updated>
     </task>
-    <task id="LOCAL-00031" summary="fix layout Signed subscription agreement">
-      <created>1593020362297</created>
+    <task id="LOCAL-00031" summary="change header Dashboard to Datrixo Equity">
+      <created>1609434491531</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1593020362297</updated>
+      <updated>1609434491531</updated>
     </task>
-    <task id="LOCAL-00032" summary="change header Dashboard to Datrixo Equity">
-      <created>1609435403900</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1609435403900</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Pay ABA">
-      <created>1611164352935</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1611164352936</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Admin of users. Compilable ver.">
-      <created>1630919850436</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1630919850436</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Admin of users. User List">
-      <created>1630940362202</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1630940362202</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Admin of users. User adding">
-      <created>1631184802011</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1631184802011</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Admin of users. User adding">
-      <created>1631193063406</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1631193063406</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Admin of users. User adding">
-      <created>1631200043347</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1631200043347</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Admin of users. User adding">
-      <created>1631202105585</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1631202105585</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Investor profile">
-      <created>1631554997276</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1631554997276</updated>
-    </task>
-    <task id="LOCAL-00041" summary="admin of users">
-      <created>1631564293864</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1631564293864</updated>
-    </task>
-    <task id="LOCAL-00042" summary="improvement">
-      <created>1634837194341</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1634837194341</updated>
-    </task>
-    <task id="LOCAL-00043" summary="improvement">
-      <created>1634837330725</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1634837330725</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Buy DRX on coinbase">
-      <created>1643145430094</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1643145430094</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Buy DRX on coinbase">
-      <created>1643146429877</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1643146429877</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Buy DRX on coinbase">
-      <created>1643148653355</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1643148653355</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Buy DRX on coinbase">
-      <created>1643149531974</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1643149531974</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Buy DRX on coinbase bloks order changed">
-      <created>1643994585274</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1643994585274</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Logo">
-      <created>1644002994867</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1644002994867</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Logo">
-      <created>1644003062061</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1644003062061</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Logo">
-      <created>1644006730738</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1644006730739</updated>
-    </task>
-    <task id="LOCAL-00052" summary="password field with eye">
-      <created>1644089551637</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1644089551637</updated>
-    </task>
-    <task id="LOCAL-00053" summary="password field with eye">
-      <created>1644090367166</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1644090367166</updated>
-    </task>
-    <task id="LOCAL-00054" summary="password field with eye">
-      <created>1644090949346</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1644090949346</updated>
-    </task>
-    <task id="LOCAL-00055" summary="new profile layout">
-      <created>1644229403622</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1644229403623</updated>
-    </task>
-    <task id="LOCAL-00056" summary="new profile layout responcive table">
-      <created>1644239525587</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1644239525587</updated>
-    </task>
-    <task id="LOCAL-00057" summary="new profile layout responsive table">
-      <created>1644239947159</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1644239947159</updated>
-    </task>
-    <task id="LOCAL-00058" summary="new profile layout responsive table">
-      <created>1644240551254</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1644240551254</updated>
-    </task>
-    <task id="LOCAL-00059" summary="new profile layout responsive table">
-      <created>1644241202385</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1644241202385</updated>
-    </task>
-    <task id="LOCAL-00060" summary="new invest layout responsive table">
-      <created>1644244059986</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1644244059986</updated>
-    </task>
-    <task id="LOCAL-00061" summary="new invest layout responsive table">
-      <created>1644245162821</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1644245162821</updated>
-    </task>
-    <task id="LOCAL-00062" summary="new my drx holdings layout responsive table without expanding">
-      <created>1644248365016</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1644248365016</updated>
-    </task>
-    <task id="LOCAL-00063" summary="new my drx holdings layout responsive table without expanding">
-      <created>1644249306190</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1644249306190</updated>
-    </task>
-    <task id="LOCAL-00064" summary="new my drx holdings layout responsive table">
-      <created>1644256841268</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1644256841268</updated>
-    </task>
-    <task id="LOCAL-00065" summary="new my drx holdings layout responsive table">
-      <created>1644257373557</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1644257373557</updated>
-    </task>
-    <task id="LOCAL-00066" summary="new my holdings layout responsive table">
-      <created>1644259269077</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1644259269077</updated>
-    </task>
-    <task id="LOCAL-00067" summary="little things">
-      <created>1644262157774</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1644262157774</updated>
-    </task>
-    <task id="LOCAL-00068" summary="little things">
-      <created>1644267027427</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1644267027427</updated>
-    </task>
-    <task id="LOCAL-00069" summary="little things">
-      <created>1644337761944</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1644337761945</updated>
-    </task>
-    <task id="LOCAL-00070" summary="little things">
-      <created>1644348062075</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1644348062075</updated>
-    </task>
-    <task id="LOCAL-00071" summary="set $187">
-      <created>1665341936301</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1665341936302</updated>
-    </task>
-    <task id="LOCAL-00072" summary="set $187">
-      <created>1666543457902</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1666543457902</updated>
-    </task>
-    <task id="LOCAL-00073" summary="set $187">
-      <created>1666546726555</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1666546726556</updated>
-    </task>
-    <task id="LOCAL-00074" summary="set $187">
-      <created>1666601583454</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1666601583454</updated>
-    </task>
-    <option name="localTasksCounter" value="75" />
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,62 +437,63 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="initialize commit" />
+    <MESSAGE value="investor-profile layout" />
+    <MESSAGE value="invest layout first section" />
+    <MESSAGE value="invest layout" />
+    <MESSAGE value="login" />
+    <MESSAGE value="username on header section of layout" />
+    <MESSAGE value="frontend refactor" />
+    <MESSAGE value="download ppm" />
+    <MESSAGE value="upload signed agreement angular" />
+    <MESSAGE value="holders datatable" />
+    <MESSAGE value="my-holdings" />
+    <MESSAGE value="add share column" />
+    <MESSAGE value="investor profile" />
+    <MESSAGE value="investor profile update" />
+    <MESSAGE value="investor page rename to investor portal" />
+    <MESSAGE value="share to equity" />
+    <MESSAGE value="change login page background color" />
+    <MESSAGE value="editing" />
+    <MESSAGE value="fix packages versions" />
     <MESSAGE value="modal alerts and confirmation" />
     <MESSAGE value="modal noty alerts" />
     <MESSAGE value="fix layout holders datatable and Signed subscription agreement" />
     <MESSAGE value="fix layout Signed subscription agreement" />
     <MESSAGE value="change header Dashboard to Datrixo Equity" />
-    <MESSAGE value="Pay ABA" />
-    <MESSAGE value="Admin of users. Compilable ver." />
-    <MESSAGE value="Admin of users. User List" />
-    <MESSAGE value="Admin of users. User adding" />
-    <MESSAGE value="Investor profile" />
-    <MESSAGE value="admin of users" />
-    <MESSAGE value="improvement" />
-    <MESSAGE value="Buy DRX on coinbase" />
-    <MESSAGE value="Buy DRX on coinbase bloks order changed" />
-    <MESSAGE value="Logo" />
-    <MESSAGE value="password field with eye" />
-    <MESSAGE value="new profile layout" />
-    <MESSAGE value="new profile layout responcive table" />
-    <MESSAGE value="new profile layout responsive table" />
-    <MESSAGE value="new invest layout responsive table" />
-    <MESSAGE value="new my drx holdings layout responsive table without expanding" />
-    <MESSAGE value="new my drx holdings layout responsive table" />
-    <MESSAGE value="new my holdings layout responsive table" />
-    <MESSAGE value="little things" />
-    <MESSAGE value="set $187" />
-    <option name="LAST_COMMIT_MESSAGE" value="set $187" />
+    <option name="LAST_COMMIT_MESSAGE" value="change header Dashboard to Datrixo Equity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/login/login.component.ts</url>
-          <line>76</line>
+          <line>75</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app/layout/admin-users/admin-users-edit/admin-users-edit.component.ts</url>
-          <line>109</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/src/app/layout/invest/invest.component.ts</url>
+          <line>95</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/layout/invest/invest.component.ts</url>
+          <line>89</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/layout/investor-profile/investor-profile.component.ts</url>
-          <line>63</line>
-          <option name="timeStamp" value="20" />
+          <line>62</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
