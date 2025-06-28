@@ -6,7 +6,11 @@ import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+<<<<<<< HEAD
 import jakarta.jws.soap.SOAPBinding;
+=======
+import javax.jws.soap.SOAPBinding;
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 import java.util.List;
 import java.util.Optional;
 

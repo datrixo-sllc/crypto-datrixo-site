@@ -11,11 +11,18 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/ico-page/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+=======
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8_181" project-jdk-type="JavaSDK">
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">

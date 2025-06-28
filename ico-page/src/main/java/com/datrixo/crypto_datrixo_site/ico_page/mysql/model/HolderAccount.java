@@ -2,7 +2,11 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+<<<<<<< HEAD
 import jakarta.persistence.*;
+=======
+import javax.persistence.*;
+>>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 import java.math.BigDecimal;
 import java.util.Date;
 
