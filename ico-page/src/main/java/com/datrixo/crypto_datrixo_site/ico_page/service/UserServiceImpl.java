@@ -21,10 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-<<<<<<< HEAD
 import org.springframework.security.crypto.password.PasswordEncoder;
-=======
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -60,11 +57,8 @@ public class UserServiceImpl implements UserService {
     private NiknameGenerator niknameGenerator;
     @Autowired
     private PasswordGenerator passwordGenerator;
-<<<<<<< HEAD
     @Autowired
     PasswordEncoder passwordEncoder;
-=======
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 
     private static final String USER_NOT_FOUND = "User not found";
     private static final String USER_PASSWORD_UPDATED = "User password is updated";
@@ -91,11 +85,7 @@ public class UserServiceImpl implements UserService {
     @Transactional(readOnly = true)
     public User findByUsername(String username) {
         Optional<User> optionalUser = userRepository.findByUsername(username);
-        if (optionalUser.isPresent()) {
-            return optionalUser.get();
-        } else {
-            return null;
-        }
+        return optionalUser.orElse(null);
     }
 
     @Override
@@ -162,11 +152,7 @@ public class UserServiceImpl implements UserService {
                 return NEW_PASSWORD_IS_NOT_VALID;
             }
 
-<<<<<<< HEAD
             user.setPassword(passwordEncoder.encode(updateUserPassword.getNewPassword()));
-=======
-            user.setPassword(updateUserPassword.getNewPassword());
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
             userRepository.saveAndFlush(user);
             return USER_PASSWORD_UPDATED;
         } else {
@@ -177,16 +163,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<Role> getRoleForCurrentUser() {
         Optional<User> optionalUser = getCurrentUser();
-        return optionalUser.isPresent() ? Optional.of(optionalUser.get().getRole()) : Optional.empty();
+        return optionalUser.map(User::getRole);
     }
 
     @Override
     public boolean checkRoleForCurrentUser(Role role) {
         Optional<Role> optionalRole = getRoleForCurrentUser();
-        if (!optionalRole.isPresent()) {
-            return false;
-        }
-        return role.equals(optionalRole.get());
+        return optionalRole.filter(role::equals).isPresent();
     }
 
     @Override
@@ -198,8 +181,7 @@ public class UserServiceImpl implements UserService {
     public Optional<User> getCurrentUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         MediUser currentUser = (MediUser) auth.getPrincipal();
-        Optional<User> optionalUser = userRepository.findByUsername(currentUser.getUsername());
-        return optionalUser;
+        return userRepository.findByUsername(currentUser.getUsername());
     }
 
     @Override
@@ -264,7 +246,7 @@ public class UserServiceImpl implements UserService {
     public String generateUserName(String keyword) {
         String name = niknameGenerator.generate(keyword);
         Optional<User> optionalUser = userRepository.findByUsername(name);
-        if (!optionalUser.isPresent()) {
+        if (optionalUser.isEmpty()) {
             return name;
         } else {
             return generateUserName(keyword);
@@ -357,11 +339,7 @@ public class UserServiceImpl implements UserService {
         Optional<User> optionalUser = findById(userDto.getId());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-<<<<<<< HEAD
             user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-=======
-            user.setPassword(userDto.getPassword());
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
             user.setRole(Role.valueOf(userDto.getRole()));
             user.setUserType(UserType.valueOf(userDto.getUserType()));
             user.setFirstName(userDto.getFirstName());

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
 =======
 >>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
@@ -22,31 +22,22 @@ import org.web3j.protocol.Web3j;
 import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.tx.gas.DefaultGasProvider;
 
-<<<<<<< HEAD
 import jakarta.annotation.PostConstruct;
-=======
-import javax.annotation.PostConstruct;
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-<<<<<<< HEAD
 */
-=======
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
+
 /**
  * Created by Yuri Nikiforov.
  * Date: 05.02.2019
  * Time: 13:05
-<<<<<<< HEAD
+
  *//*
 
-=======
- */
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 @Service
 public class HolderServiceImpl implements HolderService {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
@@ -92,12 +83,8 @@ public class HolderServiceImpl implements HolderService {
         return holderRepository.findAll();
     }
 
-<<<<<<< HEAD
     */
 /*
-=======
-    /*
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
     @Override
     @Scheduled(fixedRate = 10000)
     @Transactional
@@ -110,12 +97,8 @@ public class HolderServiceImpl implements HolderService {
             holderRepository.deleteAll();
             holderRepository.save(new Holder("0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee", new Date(), 100));
         }
-<<<<<<< HEAD
     }*//*
 
-=======
-    }*/
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 
 
     @PostConstruct
@@ -186,7 +169,4 @@ public class HolderServiceImpl implements HolderService {
         return Optional.ofNullable(holderRepository.findFirstByAddress(address));
     }
 }
-<<<<<<< HEAD
 */
-=======
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931

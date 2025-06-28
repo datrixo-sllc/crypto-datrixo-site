@@ -3,18 +3,10 @@ package com.datrixo.crypto_datrixo_site.ico_page.mysql.model;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.Role;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserTitle;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.UserType;
-import org.springframework.data.jpa.domain.AbstractPersistable;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-<<<<<<< HEAD
 import jakarta.persistence.*;
-=======
-import javax.persistence.*;
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
