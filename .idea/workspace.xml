@@ -33,7 +33,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/DocumentForDownloadDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/DocumentForDownloadDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/dto/HolderAccountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/H2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/H2Config.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -603,21 +608,7 @@
       <workItem from="1745220584053" duration="5094000" />
       <workItem from="1745388424329" duration="1665000" />
       <workItem from="1751121910191" duration="1386000" />
-      <workItem from="1751123323277" duration="301000" />
-    </task>
-    <task id="LOCAL-00081" summary="datrixosllc fix debugs">
-      <created>1606499087321</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1606499087321</updated>
-    </task>
-    <task id="LOCAL-00082" summary="datrixosllc https and total amount 8 000 and $150 per unit">
-      <created>1606666251906</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1606666251906</updated>
+      <workItem from="1751123323277" duration="1400000" />
     </task>
     <task id="LOCAL-00083" summary=".idea in ignore">
       <created>1606666528723</created>
@@ -948,7 +939,21 @@
       <option name="project" value="LOCAL" />
       <updated>1751123617596</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+      <created>1751123646511</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1751123646511</updated>
+    </task>
+    <task id="LOCAL-00131" summary="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+      <created>1751123803615</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1751123803615</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

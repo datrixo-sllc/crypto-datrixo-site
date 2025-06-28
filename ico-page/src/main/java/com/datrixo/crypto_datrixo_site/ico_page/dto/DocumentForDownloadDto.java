@@ -1,12 +1,5 @@
 package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
-import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.util.DocumentType;
-
-<<<<<<< HEAD
-import jakarta.persistence.Lob;
-=======
-import javax.persistence.Lob;
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 import java.util.Date;
 
 /**

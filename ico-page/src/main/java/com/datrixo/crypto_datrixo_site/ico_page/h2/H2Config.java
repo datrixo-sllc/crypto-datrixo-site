@@ -1,10 +1,10 @@
 package com.datrixo.crypto_datrixo_site.ico_page.h2;
 
+import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
@@ -17,13 +17,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-<<<<<<< HEAD
-import jakarta.persistence.EntityManagerFactory;
-=======
-import javax.persistence.EntityManagerFactory;
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 import javax.sql.DataSource;
-import java.util.HashMap;
 import java.util.Properties;
 
 /**
@@ -46,37 +40,28 @@ public class H2Config {
     @Primary
     @Bean(name = "h2DataSource")
     public DataSource dataSource() {
-        DataSource dataSource = DataSourceBuilder
+        return DataSourceBuilder
                 .create()
                 .driverClassName(env.getProperty("h2.jdbc.driverClassName"))
                 .url(env.getProperty("h2.jdbc.url"))
                 .username(env.getProperty("h2.jdbc.user"))
                 .password(env.getProperty("h2.jdbc.pass"))
                 .build();
-        return dataSource;
     }
 
     @Primary
     @DependsOn({"h2DataSource"})
     @Bean(name = "h2EntityManagerFactory")
-<<<<<<< HEAD
     public EntityManagerFactory entityManagerFactory() {
-=======
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[] {"com.datrixo.crypto_datrixo_site.ico_page.h2.model"});
+        em.setPackagesToScan("com.datrixo.crypto_datrixo_site.ico_page.h2.model");
         em.setPersistenceUnitName("h2");
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
-<<<<<<< HEAD
         return em.getObject();
-=======
-        return em;
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
     }
 
     @Primary

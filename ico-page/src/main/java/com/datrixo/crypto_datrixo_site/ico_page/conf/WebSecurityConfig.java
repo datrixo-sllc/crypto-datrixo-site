@@ -2,67 +2,36 @@ package com.datrixo.crypto_datrixo_site.ico_page.conf;
 
 import com.datrixo.crypto_datrixo_site.ico_page.security.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
-<<<<<<< HEAD
-import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
-import org.springframework.security.web.header.writers.XXssProtectionHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.CorsUtils;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import jakarta.servlet.Filter;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.Instant;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-=======
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.HttpStatusEntryPoint;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import javax.servlet.Filter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
 
 /**
  * Created by Yuri Nikiforov.
@@ -71,7 +40,6 @@ import java.util.HashMap;
  **/
 @Configuration
 @EnableWebSecurity
-<<<<<<< HEAD
 public class WebSecurityConfig {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -102,10 +70,8 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http, AuthenticationManager authenticationManager) throws Exception {
         http
                 .headers(headers -> headers
-                        .frameOptions(frame -> frame
-                                .sameOrigin())
-                        .xssProtection(xss -> xss
-                                .disable()
+                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)
+                        .xssProtection(HeadersConfigurer.XXssConfig::disable
                         )
                         .contentSecurityPolicy(csp -> csp
                                 .policyDirectives(
@@ -119,7 +85,7 @@ public class WebSecurityConfig {
                                 )
                         )
                 )
-                .csrf(csfr -> csfr.disable())
+                .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .addFilter(authenticationFilter(authenticationManager))
                 .authorizeHttpRequests(auth -> auth
@@ -154,12 +120,11 @@ public class WebSecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        return source;
+        return new UrlBasedCorsConfigurationSource();
     }
 
     @Bean
-    public RequestBodyReaderAuthenticationFilter authenticationFilter(AuthenticationManager authenticationManager) throws Exception {
+    public RequestBodyReaderAuthenticationFilter authenticationFilter(AuthenticationManager authenticationManager) {
         RequestBodyReaderAuthenticationFilter authenticationFilter =
                 new RequestBodyReaderAuthenticationFilter();
         authenticationFilter.setAuthenticationSuccessHandler(this::loginSuccessHandler);
@@ -296,7 +261,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
-<<<<<<< HEAD
 */
-=======
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
+
