@@ -33,6 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -602,21 +603,7 @@
       <workItem from="1744890147341" duration="5627000" />
       <workItem from="1745220584053" duration="5094000" />
       <workItem from="1745388424329" duration="1665000" />
-      <workItem from="1751121910191" duration="729000" />
-    </task>
-    <task id="LOCAL-00076" summary="total invested for initial persons">
-      <created>1592676600900</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1592676600900</updated>
-    </task>
-    <task id="LOCAL-00077" summary="project settings">
-      <created>1593014404173</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1593014404174</updated>
+      <workItem from="1751121910191" duration="1386000" />
     </task>
     <task id="LOCAL-00078" summary="generate new contract wrapper">
       <created>1606486983284</created>
@@ -947,7 +934,21 @@
       <option name="project" value="LOCAL" />
       <updated>1751122454504</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+      <created>1751122754087</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1751122754087</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+      <created>1751122960389</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1751122960389</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
