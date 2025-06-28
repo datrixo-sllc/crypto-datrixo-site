@@ -32,8 +32,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Solution to missing jakarta.jws.soap.SOAPBinding">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="fix pom">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="mirate-spring-boot3" />
+        <entry key="$PROJECT_DIR$" value="old-datrixo-dashboard" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -340,8 +341,8 @@
         <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
         <item itemvalue="Application.PasswordGeneratorImpl" />
         <item itemvalue="Application.NiknameGeneratorImpl" />
+        <item itemvalue="JUnit.IcoPageServiceImplTest.getAllData" />
         <item itemvalue="Application.PasswordGeneratorImpl" />
-        <item itemvalue="Application.NiknameGeneratorImpl" />
       </list>
     </recent_temporary>
   </component>
@@ -602,6 +603,7 @@
       <workItem from="1744890147341" duration="5627000" />
       <workItem from="1745220584053" duration="5094000" />
       <workItem from="1745388424329" duration="1665000" />
+      <workItem from="1751121910191" duration="440000" />
     </task>
     <task id="LOCAL-00075" summary="total invested for initial persons">
       <created>1592673253780</created>
