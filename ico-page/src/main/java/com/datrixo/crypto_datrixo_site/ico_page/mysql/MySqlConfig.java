@@ -16,11 +16,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-<<<<<<< HEAD
 import jakarta.persistence.EntityManagerFactory;
-=======
-import javax.persistence.EntityManagerFactory;
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
+
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -56,11 +53,8 @@ public class MySqlConfig {
     }
 
     @Bean(name = "mySqlEntityManagerFactory")
-<<<<<<< HEAD
     public EntityManagerFactory entityManagerFactory() {
-=======
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
+
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan(new String[] {"com.datrixo.crypto_datrixo_site.ico_page.mysql.model"});
@@ -69,11 +63,7 @@ public class MySqlConfig {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
-<<<<<<< HEAD
         return em.getObject();
-=======
-        return em;
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
     }
 
     @Bean(name = "mySqlTransactionManager")
