@@ -33,8 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -604,27 +603,7 @@
       <workItem from="1745220584053" duration="5094000" />
       <workItem from="1745388424329" duration="1665000" />
       <workItem from="1751121910191" duration="1386000" />
-    </task>
-    <task id="LOCAL-00078" summary="generate new contract wrapper">
-      <created>1606486983284</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1606486983285</updated>
-    </task>
-    <task id="LOCAL-00079" summary="new database on datrixosllc">
-      <created>1606495118565</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1606495118565</updated>
-    </task>
-    <task id="LOCAL-00080" summary="new database on datrixosllc">
-      <created>1606495142796</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1606495142796</updated>
+      <workItem from="1751123323277" duration="301000" />
     </task>
     <task id="LOCAL-00081" summary="datrixosllc fix debugs">
       <created>1606499087321</created>
@@ -948,7 +927,28 @@
       <option name="project" value="LOCAL" />
       <updated>1751122960389</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+      <created>1751123349575</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1751123349575</updated>
+    </task>
+    <task id="LOCAL-00128" summary="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+      <created>1751123572038</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1751123572038</updated>
+    </task>
+    <task id="LOCAL-00129" summary="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+      <created>1751123617596</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1751123617596</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
