@@ -81,8 +81,6 @@ public class HolderServiceImpl implements HolderService {
         return holderRepository.findAll();
     }
 
-
-
     @Override
     @Scheduled(fixedRate = 10000)
     @Transactional

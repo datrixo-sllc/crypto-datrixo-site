@@ -15,7 +15,7 @@ import java.util.Optional;
  */
 public interface HolderService {
     BigInteger getTotalSupply();
-    //void demoProcessing();
+    void demoProcessing();
     void addHolder(Holder holder);
     List<Holder> getAll();
     void dbMemoryUpdate();

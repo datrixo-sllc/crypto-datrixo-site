@@ -32,12 +32,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="No qualifying bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' available">
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/resources/solidity/datrixoContract.abi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/resources/solidity/datrixoContract.bin" afterDir="false" />
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Generate of DatrixoContract wrapper">
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/Web3jConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,8 +83,8 @@
         <option value="HTML File" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -613,14 +611,7 @@
       <workItem from="1751177999225" duration="6217000" />
       <workItem from="1751186193764" duration="1993000" />
       <workItem from="1751207506683" duration="2308000" />
-      <workItem from="1751209958597" duration="7986000" />
-    </task>
-    <task id="LOCAL-00085" summary="new contract with totalSupply 8000 $150">
-      <created>1606676193610</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1606676193610</updated>
+      <workItem from="1751209958597" duration="9889000" />
     </task>
     <task id="LOCAL-00086" summary="new contract name DatrixoEquityToken">
       <created>1606844317439</created>
@@ -958,7 +949,14 @@
       <option name="project" value="LOCAL" />
       <updated>1751180671415</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="Generate of DatrixoContract wrapper">
+      <created>1751220532458</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1751220532458</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1125,7 +1123,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new contract with totalSupply 8000 $150" />
     <MESSAGE value="new contract name DatrixoEquityToken" />
     <MESSAGE value="redirect to login if error" />
     <MESSAGE value="user documents" />
@@ -1150,7 +1147,8 @@
     <MESSAGE value="Solution to missing jakarta.jws.soap.SOAPBinding" />
     <MESSAGE value="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found." />
     <MESSAGE value="No qualifying bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' available" />
-    <option name="LAST_COMMIT_MESSAGE" value="No qualifying bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' available" />
+    <MESSAGE value="Generate of DatrixoContract wrapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generate of DatrixoContract wrapper" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
