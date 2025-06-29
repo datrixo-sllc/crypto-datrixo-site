@@ -35,11 +35,13 @@ public class MySqlConfig {
     @Autowired
     private Environment env;
 
+    private LocalContainerEntityManagerFactoryBean entityManagerFactory;
+
     @Bean(name = "mySqlDataSource")
     public DataSource dataSource() {
         return DataSourceBuilder
                 .create()
-                .driverClassName(env.getProperty("mysql.jdbc.driverClassName"))
+                .driverClassName(env.getProperty("mySql.driverClassName"))
                 .url(env.getProperty("mysql.jdbc.url"))
                 .username(env.getProperty("mysql.jdbc.user"))
                 .password(env.getProperty("mysql.jdbc.pass"))
@@ -47,8 +49,7 @@ public class MySqlConfig {
     }
 
     @Bean(name = "mySqlEntityManagerFactory")
-    public EntityManagerFactory entityManagerFactory() {
-
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan("com.datrixo.crypto_datrixo_site.ico_page.mysql.model");
@@ -57,13 +58,13 @@ public class MySqlConfig {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
-        return em.getObject();
+        return em;
     }
 
     @Bean(name = "mySqlTransactionManager")
     public PlatformTransactionManager transactionManager(
-            @Qualifier("mySqlEntityManagerFactory") EntityManagerFactory entityManagerFactory) {
-        return new JpaTransactionManager(entityManagerFactory);
+            @Qualifier("mySqlEntityManagerFactory") LocalContainerEntityManagerFactoryBean entityManagerFactory) {
+        return new JpaTransactionManager((EntityManagerFactory) entityManagerFactory);
     }
 
     private Properties additionalProperties() {
