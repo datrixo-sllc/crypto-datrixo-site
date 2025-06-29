@@ -32,10 +32,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found.">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="No qualifying bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' available">
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/resources/solidity/datrixoContract.abi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ico-page/src/main/resources/solidity/datrixoContract.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/contract/DatrixoContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +131,7 @@
     <servers />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -141,37 +144,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nik/IdeaProjects/_Milla/crypto-datrixo-site/ico-page/pom.xml&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;70114987fee95340d4c49f8d5946063b&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/nik/IdeaProjects/_Milla/crypto-datrixo-site/ico-page/src/main/resources/solidity",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "ruby.rails.projectView.checked": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "show.migrate.to.gradle.popup": "false",
+    "spring.configuration.checksum": "38bcf7505cd5d65276fb216f0e1440f1",
+    "ts.external.directory.path": "C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.service.password_generator" />
@@ -180,6 +183,7 @@
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.mysql.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nik\IdeaProjects\_Milla\crypto-datrixo-site\ico-page\src\main\resources\solidity" />
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\java\com\datrixo\crypto_datrixo_site\ico_page\dto" />
       <recent name="C:\Users\yuri\Documents\workspaceIDEA\_DATRIXO\crypto-datrixo-site\ico-page\src\main\webapp" />
     </key>
@@ -606,14 +610,10 @@
       <workItem from="1745388424329" duration="1665000" />
       <workItem from="1751121910191" duration="1386000" />
       <workItem from="1751123323277" duration="1846000" />
-      <workItem from="1751177999225" duration="2403000" />
-    </task>
-    <task id="LOCAL-00084" summary="new contract with totalSupply 8000 $150">
-      <created>1606673561195</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1606673561195</updated>
+      <workItem from="1751177999225" duration="6217000" />
+      <workItem from="1751186193764" duration="1993000" />
+      <workItem from="1751207506683" duration="2308000" />
+      <workItem from="1751209958597" duration="7986000" />
     </task>
     <task id="LOCAL-00085" summary="new contract with totalSupply 8000 $150">
       <created>1606676193610</created>
@@ -951,7 +951,14 @@
       <option name="project" value="LOCAL" />
       <updated>1751124749555</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="No qualifying bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' available">
+      <created>1751180671414</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1751180671415</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1118,7 +1125,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=".idea in ignore" />
     <MESSAGE value="new contract with totalSupply 8000 $150" />
     <MESSAGE value="new contract name DatrixoEquityToken" />
     <MESSAGE value="redirect to login if error" />
@@ -1143,7 +1149,8 @@
     <MESSAGE value="WebSecurityConfig not complete" />
     <MESSAGE value="Solution to missing jakarta.jws.soap.SOAPBinding" />
     <MESSAGE value="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found." />
-    <option name="LAST_COMMIT_MESSAGE" value="Field holderService in com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageServiceImpl required a bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' that could not be found." />
+    <MESSAGE value="No qualifying bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' available" />
+    <option name="LAST_COMMIT_MESSAGE" value="No qualifying bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' available" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

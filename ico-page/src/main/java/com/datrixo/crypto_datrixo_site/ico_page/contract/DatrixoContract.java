@@ -1,4 +1,3 @@
-/*
 package com.datrixo.crypto_datrixo_site.ico_page.contract;
 
 import io.reactivex.Flowable;
@@ -9,7 +8,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 import org.web3j.abi.EventEncoder;
-import org.web3j.abi.FunctionEncoder;
 import org.web3j.abi.TypeReference;
 import org.web3j.abi.datatypes.Address;
 import org.web3j.abi.datatypes.DynamicArray;
@@ -22,27 +20,27 @@ import org.web3j.abi.datatypes.generated.Uint8;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameter;
-import org.web3j.protocol.core.RemoteCall;
+import org.web3j.protocol.core.RemoteFunctionCall;
 import org.web3j.protocol.core.methods.request.EthFilter;
+import org.web3j.protocol.core.methods.response.BaseEventResponse;
 import org.web3j.protocol.core.methods.response.Log;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.tx.Contract;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 
-*/
 /**
  * <p>Auto generated code.
  * <p><strong>Do not modify!</strong>
  * <p>Please use the <a href="https://docs.web3j.io/command_line.html">web3j command line tools</a>,
  * or the org.web3j.codegen.SolidityFunctionWrapperGenerator in the 
- * <a href="https://github.com/web3j/web3j/tree/master/codegen">codegen module</a> to update.
+ * <a href="https://github.com/LFDT-web3j/web3j/tree/main/codegen">codegen module</a> to update.
  *
- * <p>Generated with web3j version 4.0.1.
- *//*
-
+ * <p>Generated with web3j version 4.14.0.
+ */
+@SuppressWarnings("rawtypes")
 public class DatrixoContract extends Contract {
-    private static final String BINARY = "6080604052632faf080060005534801561001857600080fd5b5060405161206c38038061206c8339818101604052604081101561003b57600080fd5b81019080805190602001909291908051906020019092919050505081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508060028190555060005460036000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050611f55806101176000396000f3fe608060405234801561001057600080fd5b50600436106100f55760003560e01c806370a08231116100975780639babdad6116100665780639babdad6146104c2578063a9059cbb1461051e578063ab377daa14610584578063f6a03ebf146105f2576100f5565b806370a082311461037f57806378e97925146103d75780638da5cb5b146103f557806395d89b411461043f576100f5565b8063313ce567116100d3578063313ce5671461022157806335492503146102455780635a3b7e42146102a457806366c6ac0a14610327576100f5565b806306fdde03146100fa57806318160ddd1461017d57806323b872dd1461019b575b600080fd5b610102610620565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610142578082015181840152602081019050610127565b50505050905090810190601f16801561016f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610185610659565b6040518082815260200191505060405180910390f35b610207600480360360608110156101b157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061065f565b604051808215151515815260200191505060405180910390f35b6102296107af565b604051808260ff1660ff16815260200191505060405180910390f35b61024d6107b4565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b83811015610290578082015181840152602081019050610275565b505050509050019250505060405180910390f35b6102ac610842565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102ec5780820151818401526020810190506102d1565b50505050905090810190601f1680156103195780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6103696004803603602081101561033d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061087b565b6040518082815260200191505060405180910390f35b6103c16004803603602081101561039557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610893565b6040518082815260200191505060405180910390f35b6103df6108ab565b6040518082815260200191505060405180910390f35b6103fd6108b1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6104476108d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561048757808201518184015260208101905061046c565b50505050905090810190601f1680156104b45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610504600480360360208110156104d857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610910565b604051808215151515815260200191505060405180910390f35b61056a6004803603604081101561053457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610d6d565b604051808215151515815260200191505060405180910390f35b6105b06004803603602081101561059a57600080fd5b810190808035906020019092919050505061110c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61061e6004803603602081101561060857600080fd5b8101908080359060200190929190505050611148565b005b6040518060400160405280601281526020017f4461747269786f457175697479546f6b656e000000000000000000000000000081525081565b60005481565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610724576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f596f7520617265206e6f7420636f6e7472616374206f776e65722e000000000081525060200191505060405180910390fd5b600254421161079b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53544f206973206e6f7420737461727465642e0000000000000000000000000081525060200191505060405180910390fd5b6107a684848461126f565b90509392505050565b600581565b6060600580548060200260200160405190810160405280929190818152602001828054801561083857602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116107ee575b5050505050905090565b6040518060400160405280600581526020017f455243323000000000000000000000000000000000000000000000000000000081525081565b60046020528060005260406000206000915090505481565b60036020528060005260406000206000915090505481565b60025481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6040518060400160405280600381526020017f445258000000000000000000000000000000000000000000000000000000000081525081565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146109d5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f596f7520617265206e6f7420636f6e7472616374206f776e65722e000000000081525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415610a78576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f546172676574206164647265737320697320307830000000000000000000000081525060200191505060405180910390fd5b610a818261168f565b610af3576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260198152602001807f5368617265686f6c646572206973206e6f742065786973742e0000000000000081525060200191505060405180910390fd5b60008090505b600580549050811015610bb9578273ffffffffffffffffffffffffffffffffffffffff1660058281548110610b2a57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610bac5760058181548110610b7e57fe5b9060005260206000200160006101000a81549073ffffffffffffffffffffffffffffffffffffffff02191690555b8080600101915050610af9565b506000600460008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541115610c4657600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600090555b60006001905060008090506000600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541115610d0b57600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050610d0884600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1683611731565b91505b81610d1557600080fd5b8373ffffffffffffffffffffffffffffffffffffffff167f775539f018602cb5533761287430a74c8cc49b559ee2fbcd32e086789206382a826040518082815260200191505060405180910390a28192505050919050565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610e32576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f596f7520617265206e6f7420636f6e7472616374206f776e65722e000000000081525060200191505060405180910390fd5b6002544211610ea9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53544f206973206e6f7420737461727465642e0000000000000000000000000081525060200191505060405180910390fd5b8273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610f2e576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526025815260200180611ed36025913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415610fd1576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f546172676574206164647265737320697320307830000000000000000000000081525060200191505060405180910390fd5b6000600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205414611086576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601a8152602001807f5461726765742062616c616e6365206e6f7420657175616c203000000000000081525060200191505060405180910390fd5b61108f8361168f565b6110fa5760058390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b61110483836118bb565b905092915050565b6005818154811061111957fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461120b576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f596f7520617265206e6f7420636f6e7472616374206f776e65722e000000000081525060200191505060405180910390fd5b6002548110611265576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526032815260200180611ea16032913960400191505060405180910390fd5b8060028190555050565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614611334576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f596f7520617265206e6f7420636f6e7472616374206f776e65722e000000000081525060200191505060405180910390fd5b60025442116113ab576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53544f206973206e6f7420737461727465642e0000000000000000000000000081525060200191505060405180910390fd5b60006113f6600360008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205484611cd8565b101561146a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f56616c7565206d6f7265207468656e2062616c616e636520616d6f756e74000081525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614611537576000600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205414611536576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526029815260200180611ef86029913960400191505060405180910390fd5b5b6000600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205411156115c357600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600090555b6115cc8361168f565b6116375760058390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b42600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550611686848484611731565b90509392505050565b600080600090505b600580549050811015611726578273ffffffffffffffffffffffffffffffffffffffff16600582815481106116c857fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16141561171957600191505061172c565b8080600101915050611697565b50600090505b919050565b600061177c600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205483611cd8565b600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550611808600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205483611cef565b600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614611980576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f596f7520617265206e6f7420636f6e7472616374206f776e65722e000000000081525060200191505060405180910390fd5b60025442116119f7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f53544f206973206e6f7420737461727465642e0000000000000000000000000081525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415611a9a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f546172676574206164647265737320697320307830000000000000000000000081525060200191505060405180910390fd5b6000600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205414611b4f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601a8152602001807f5461726765742062616c616e6365206e6f7420657175616c203000000000000081525060200191505060405180910390fd5b6000611b9a600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205484611cd8565b1015611c0e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f56616c7565206d6f7265207468656e20617661696c61626c6520616d6f756e7481525060200191505060405180910390fd5b611c178361168f565b611c825760058390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b42600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550611cd08383611d17565b905092915050565b600082821115611ce457fe5b818303905092915050565b6000808284019050838110158015611d075750828110155b611d0d57fe5b8091505092915050565b6000611d62600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205483611cd8565b600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550611dee600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205483611cef565b600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509291505056fe4e65772073746172742074696d65206d757374206265206561726c6965722063757272656e742073746172742074696d652e54617267657420616464726573732063616e277420626520657175616c20736f757263652e5461726765742062616c616e636520686173206669727374207472616e7366657220616d6f756e742ea265627a7a7231582064c64c9db73998a01d8d08fc8df5fd5cef986e5bf0432027896264516b87d6f064736f6c63430005110032\r\n";
+    public static final String BINARY = "Bin file was not provided";
 
     public static final String FUNC_REMOVESHAREHOLDER = "removeShareholder";
 
@@ -83,32 +81,36 @@ public class DatrixoContract extends Contract {
     ;
 
     @Deprecated
-    protected DatrixoContract(String contractAddress, Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit) {
+    protected DatrixoContract(String contractAddress, Web3j web3j, Credentials credentials,
+            BigInteger gasPrice, BigInteger gasLimit) {
         super(BINARY, contractAddress, web3j, credentials, gasPrice, gasLimit);
     }
 
-    protected DatrixoContract(String contractAddress, Web3j web3j, Credentials credentials, ContractGasProvider contractGasProvider) {
+    protected DatrixoContract(String contractAddress, Web3j web3j, Credentials credentials,
+            ContractGasProvider contractGasProvider) {
         super(BINARY, contractAddress, web3j, credentials, contractGasProvider);
     }
 
     @Deprecated
-    protected DatrixoContract(String contractAddress, Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit) {
+    protected DatrixoContract(String contractAddress, Web3j web3j,
+            TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit) {
         super(BINARY, contractAddress, web3j, transactionManager, gasPrice, gasLimit);
     }
 
-    protected DatrixoContract(String contractAddress, Web3j web3j, TransactionManager transactionManager, ContractGasProvider contractGasProvider) {
+    protected DatrixoContract(String contractAddress, Web3j web3j,
+            TransactionManager transactionManager, ContractGasProvider contractGasProvider) {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
-    public RemoteCall<TransactionReceipt> removeShareholder(String _addr) {
+    public RemoteFunctionCall<TransactionReceipt> removeShareholder(String _addr) {
         final Function function = new Function(
                 FUNC_REMOVESHAREHOLDER, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(_addr)), 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, _addr)), 
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
-    public RemoteCall<TransactionReceipt> setStart(BigInteger _newStart) {
+    public RemoteFunctionCall<TransactionReceipt> setStart(BigInteger _newStart) {
         final Function function = new Function(
                 FUNC_SETSTART, 
                 Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(_newStart)), 
@@ -116,17 +118,18 @@ public class DatrixoContract extends Contract {
         return executeRemoteCallTransaction(function);
     }
 
-    public RemoteCall<TransactionReceipt> transfer(String _to, BigInteger _value) {
+    public RemoteFunctionCall<TransactionReceipt> transfer(String _to, BigInteger _value) {
         final Function function = new Function(
                 FUNC_TRANSFER, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(_to), 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, _to), 
                 new org.web3j.abi.datatypes.generated.Uint256(_value)), 
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
-    public List<ShareholderRemovedEventResponse> getShareholderRemovedEvents(TransactionReceipt transactionReceipt) {
-        List<Contract.EventValuesWithLog> valueList = extractEventParametersWithLog(SHAREHOLDERREMOVED_EVENT, transactionReceipt);
+    public static List<ShareholderRemovedEventResponse> getShareholderRemovedEvents(
+            TransactionReceipt transactionReceipt) {
+        List<Contract.EventValuesWithLog> valueList = staticExtractEventParametersWithLog(SHAREHOLDERREMOVED_EVENT, transactionReceipt);
         ArrayList<ShareholderRemovedEventResponse> responses = new ArrayList<ShareholderRemovedEventResponse>(valueList.size());
         for (Contract.EventValuesWithLog eventValues : valueList) {
             ShareholderRemovedEventResponse typedResponse = new ShareholderRemovedEventResponse();
@@ -138,28 +141,30 @@ public class DatrixoContract extends Contract {
         return responses;
     }
 
-    public Flowable<ShareholderRemovedEventResponse> shareholderRemovedEventFlowable(EthFilter filter) {
-        return web3j.ethLogFlowable(filter).map(new io.reactivex.functions.Function<Log, ShareholderRemovedEventResponse>() {
-            @Override
-            public ShareholderRemovedEventResponse apply(Log log) {
-                Contract.EventValuesWithLog eventValues = extractEventParametersWithLog(SHAREHOLDERREMOVED_EVENT, log);
-                ShareholderRemovedEventResponse typedResponse = new ShareholderRemovedEventResponse();
-                typedResponse.log = log;
-                typedResponse.addr = (String) eventValues.getIndexedValues().get(0).getValue();
-                typedResponse.value = (BigInteger) eventValues.getNonIndexedValues().get(0).getValue();
-                return typedResponse;
-            }
-        });
+    public static ShareholderRemovedEventResponse getShareholderRemovedEventFromLog(Log log) {
+        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(SHAREHOLDERREMOVED_EVENT, log);
+        ShareholderRemovedEventResponse typedResponse = new ShareholderRemovedEventResponse();
+        typedResponse.log = log;
+        typedResponse.addr = (String) eventValues.getIndexedValues().get(0).getValue();
+        typedResponse.value = (BigInteger) eventValues.getNonIndexedValues().get(0).getValue();
+        return typedResponse;
     }
 
-    public Flowable<ShareholderRemovedEventResponse> shareholderRemovedEventFlowable(DefaultBlockParameter startBlock, DefaultBlockParameter endBlock) {
+    public Flowable<ShareholderRemovedEventResponse> shareholderRemovedEventFlowable(
+            EthFilter filter) {
+        return web3j.ethLogFlowable(filter).map(log -> getShareholderRemovedEventFromLog(log));
+    }
+
+    public Flowable<ShareholderRemovedEventResponse> shareholderRemovedEventFlowable(
+            DefaultBlockParameter startBlock, DefaultBlockParameter endBlock) {
         EthFilter filter = new EthFilter(startBlock, endBlock, getContractAddress());
         filter.addSingleTopic(EventEncoder.encode(SHAREHOLDERREMOVED_EVENT));
         return shareholderRemovedEventFlowable(filter);
     }
 
-    public List<TransferEventResponse> getTransferEvents(TransactionReceipt transactionReceipt) {
-        List<Contract.EventValuesWithLog> valueList = extractEventParametersWithLog(TRANSFER_EVENT, transactionReceipt);
+    public static List<TransferEventResponse> getTransferEvents(
+            TransactionReceipt transactionReceipt) {
+        List<Contract.EventValuesWithLog> valueList = staticExtractEventParametersWithLog(TRANSFER_EVENT, transactionReceipt);
         ArrayList<TransferEventResponse> responses = new ArrayList<TransferEventResponse>(valueList.size());
         for (Contract.EventValuesWithLog eventValues : valueList) {
             TransferEventResponse typedResponse = new TransferEventResponse();
@@ -172,63 +177,64 @@ public class DatrixoContract extends Contract {
         return responses;
     }
 
-    public Flowable<TransferEventResponse> transferEventFlowable(EthFilter filter) {
-        return web3j.ethLogFlowable(filter).map(new io.reactivex.functions.Function<Log, TransferEventResponse>() {
-            @Override
-            public TransferEventResponse apply(Log log) {
-                Contract.EventValuesWithLog eventValues = extractEventParametersWithLog(TRANSFER_EVENT, log);
-                TransferEventResponse typedResponse = new TransferEventResponse();
-                typedResponse.log = log;
-                typedResponse.from = (String) eventValues.getIndexedValues().get(0).getValue();
-                typedResponse.to = (String) eventValues.getIndexedValues().get(1).getValue();
-                typedResponse.value = (BigInteger) eventValues.getNonIndexedValues().get(0).getValue();
-                return typedResponse;
-            }
-        });
+    public static TransferEventResponse getTransferEventFromLog(Log log) {
+        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(TRANSFER_EVENT, log);
+        TransferEventResponse typedResponse = new TransferEventResponse();
+        typedResponse.log = log;
+        typedResponse.from = (String) eventValues.getIndexedValues().get(0).getValue();
+        typedResponse.to = (String) eventValues.getIndexedValues().get(1).getValue();
+        typedResponse.value = (BigInteger) eventValues.getNonIndexedValues().get(0).getValue();
+        return typedResponse;
     }
 
-    public Flowable<TransferEventResponse> transferEventFlowable(DefaultBlockParameter startBlock, DefaultBlockParameter endBlock) {
+    public Flowable<TransferEventResponse> transferEventFlowable(EthFilter filter) {
+        return web3j.ethLogFlowable(filter).map(log -> getTransferEventFromLog(log));
+    }
+
+    public Flowable<TransferEventResponse> transferEventFlowable(DefaultBlockParameter startBlock,
+            DefaultBlockParameter endBlock) {
         EthFilter filter = new EthFilter(startBlock, endBlock, getContractAddress());
         filter.addSingleTopic(EventEncoder.encode(TRANSFER_EVENT));
         return transferEventFlowable(filter);
     }
 
-    public RemoteCall<TransactionReceipt> transferFrom(String _from, String _to, BigInteger _value) {
+    public RemoteFunctionCall<TransactionReceipt> transferFrom(String _from, String _to,
+            BigInteger _value) {
         final Function function = new Function(
                 FUNC_TRANSFERFROM, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(_from), 
-                new org.web3j.abi.datatypes.Address(_to), 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, _from), 
+                new org.web3j.abi.datatypes.Address(160, _to), 
                 new org.web3j.abi.datatypes.generated.Uint256(_value)), 
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
-    public RemoteCall<BigInteger> balanceOf(String param0) {
+    public RemoteFunctionCall<BigInteger> balanceOf(String param0) {
         final Function function = new Function(FUNC_BALANCEOF, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(param0)), 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, param0)), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
         return executeRemoteCallSingleValueReturn(function, BigInteger.class);
     }
 
-    public RemoteCall<BigInteger> decimals() {
+    public RemoteFunctionCall<BigInteger> decimals() {
         final Function function = new Function(FUNC_DECIMALS, 
                 Arrays.<Type>asList(), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Uint8>() {}));
         return executeRemoteCallSingleValueReturn(function, BigInteger.class);
     }
 
-    public RemoteCall<BigInteger> firstPurchaseTime(String param0) {
+    public RemoteFunctionCall<BigInteger> firstPurchaseTime(String param0) {
         final Function function = new Function(FUNC_FIRSTPURCHASETIME, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(param0)), 
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, param0)), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
         return executeRemoteCallSingleValueReturn(function, BigInteger.class);
     }
 
-    public RemoteCall<List> getShareholdersArray() {
+    public RemoteFunctionCall<List> getShareholdersArray() {
         final Function function = new Function(FUNC_GETSHAREHOLDERSARRAY, 
                 Arrays.<Type>asList(), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<DynamicArray<Address>>() {}));
-        return new RemoteCall<List>(
+        return new RemoteFunctionCall<List>(function,
                 new Callable<List>() {
                     @Override
                     @SuppressWarnings("unchecked")
@@ -239,49 +245,49 @@ public class DatrixoContract extends Contract {
                 });
     }
 
-    public RemoteCall<String> name() {
+    public RemoteFunctionCall<String> name() {
         final Function function = new Function(FUNC_NAME, 
                 Arrays.<Type>asList(), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
-    public RemoteCall<String> owner() {
+    public RemoteFunctionCall<String> owner() {
         final Function function = new Function(FUNC_OWNER, 
                 Arrays.<Type>asList(), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
-    public RemoteCall<String> shareholders(BigInteger param0) {
+    public RemoteFunctionCall<String> shareholders(BigInteger param0) {
         final Function function = new Function(FUNC_SHAREHOLDERS, 
                 Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(param0)), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Address>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
-    public RemoteCall<String> standard() {
+    public RemoteFunctionCall<String> standard() {
         final Function function = new Function(FUNC_STANDARD, 
                 Arrays.<Type>asList(), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
-    public RemoteCall<BigInteger> startTime() {
+    public RemoteFunctionCall<BigInteger> startTime() {
         final Function function = new Function(FUNC_STARTTIME, 
                 Arrays.<Type>asList(), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
         return executeRemoteCallSingleValueReturn(function, BigInteger.class);
     }
 
-    public RemoteCall<String> symbol() {
+    public RemoteFunctionCall<String> symbol() {
         final Function function = new Function(FUNC_SYMBOL, 
                 Arrays.<Type>asList(), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
         return executeRemoteCallSingleValueReturn(function, String.class);
     }
 
-    public RemoteCall<BigInteger> totalSupply() {
+    public RemoteFunctionCall<BigInteger> totalSupply() {
         final Function function = new Function(FUNC_TOTALSUPPLY, 
                 Arrays.<Type>asList(), 
                 Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
@@ -289,60 +295,34 @@ public class DatrixoContract extends Contract {
     }
 
     @Deprecated
-    public static DatrixoContract load(String contractAddress, Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit) {
+    public static DatrixoContract load(String contractAddress, Web3j web3j, Credentials credentials,
+            BigInteger gasPrice, BigInteger gasLimit) {
         return new DatrixoContract(contractAddress, web3j, credentials, gasPrice, gasLimit);
     }
 
     @Deprecated
-    public static DatrixoContract load(String contractAddress, Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit) {
+    public static DatrixoContract load(String contractAddress, Web3j web3j,
+            TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit) {
         return new DatrixoContract(contractAddress, web3j, transactionManager, gasPrice, gasLimit);
     }
 
-    public static DatrixoContract load(String contractAddress, Web3j web3j, Credentials credentials, ContractGasProvider contractGasProvider) {
+    public static DatrixoContract load(String contractAddress, Web3j web3j, Credentials credentials,
+            ContractGasProvider contractGasProvider) {
         return new DatrixoContract(contractAddress, web3j, credentials, contractGasProvider);
     }
 
-    public static DatrixoContract load(String contractAddress, Web3j web3j, TransactionManager transactionManager, ContractGasProvider contractGasProvider) {
+    public static DatrixoContract load(String contractAddress, Web3j web3j,
+            TransactionManager transactionManager, ContractGasProvider contractGasProvider) {
         return new DatrixoContract(contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
-    public static RemoteCall<DatrixoContract> deploy(Web3j web3j, Credentials credentials, ContractGasProvider contractGasProvider, String _ownerAddr, BigInteger _startTime) {
-        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(_ownerAddr), 
-                new org.web3j.abi.datatypes.generated.Uint256(_startTime)));
-        return deployRemoteCall(DatrixoContract.class, web3j, credentials, contractGasProvider, BINARY, encodedConstructor);
-    }
-
-    public static RemoteCall<DatrixoContract> deploy(Web3j web3j, TransactionManager transactionManager, ContractGasProvider contractGasProvider, String _ownerAddr, BigInteger _startTime) {
-        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(_ownerAddr), 
-                new org.web3j.abi.datatypes.generated.Uint256(_startTime)));
-        return deployRemoteCall(DatrixoContract.class, web3j, transactionManager, contractGasProvider, BINARY, encodedConstructor);
-    }
-
-    @Deprecated
-    public static RemoteCall<DatrixoContract> deploy(Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit, String _ownerAddr, BigInteger _startTime) {
-        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(_ownerAddr), 
-                new org.web3j.abi.datatypes.generated.Uint256(_startTime)));
-        return deployRemoteCall(DatrixoContract.class, web3j, credentials, gasPrice, gasLimit, BINARY, encodedConstructor);
-    }
-
-    @Deprecated
-    public static RemoteCall<DatrixoContract> deploy(Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit, String _ownerAddr, BigInteger _startTime) {
-        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(_ownerAddr), 
-                new org.web3j.abi.datatypes.generated.Uint256(_startTime)));
-        return deployRemoteCall(DatrixoContract.class, web3j, transactionManager, gasPrice, gasLimit, BINARY, encodedConstructor);
-    }
-
-    public static class ShareholderRemovedEventResponse {
-        public Log log;
-
+    public static class ShareholderRemovedEventResponse extends BaseEventResponse {
         public String addr;
 
         public BigInteger value;
     }
 
-    public static class TransferEventResponse {
-        public Log log;
-
+    public static class TransferEventResponse extends BaseEventResponse {
         public String from;
 
         public String to;
@@ -350,4 +330,3 @@ public class DatrixoContract extends Contract {
         public BigInteger value;
     }
 }
-*/

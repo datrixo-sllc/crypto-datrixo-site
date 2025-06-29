@@ -63,11 +63,20 @@
         </dependency>
 
 
-        <!--<dependency>
+        <!-- Основная библиотека Web3j -->
+        <dependency>
             <groupId>org.web3j</groupId>
-            <artifactId>web3j-spring-boot-starter</artifactId>
-            <version>4.0.3</version>
-        </dependency>-->
+            <artifactId>core</artifactId>
+            <version>4.10.0</version>
+        </dependency>
+
+        <!-- Для тестирования (по желанию) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>commons-io</groupId>
@@ -104,6 +113,32 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
+            </plugin>
+            <!-- Плагин для генерации Java-классов из ABI -->
+            <plugin>
+                <groupId>org.web3j</groupId>
+                <artifactId>web3j-maven-plugin</artifactId>
+                <version>4.14.0</version>
+                <configuration>
+                    <packageName>com.datrixo.crypto_datrixo_site.ico_page.contract</packageName>
+                    <sourceDestination>${project.basedir}/src/main/java</sourceDestination>
+                    <outputFormat>java</outputFormat>
+                    <nativeJavaType>true</nativeJavaType>
+                    <abiSourceFiles>
+                                <directory>${project.basedir}/src/main/resources/solidity</directory>
+                                <includes>
+                                    <include>datrixoContract.abi</include>
+                                </includes>
+                    </abiSourceFiles>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate-sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
