@@ -32,12 +32,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="errors in db configs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/H2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/H2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/repository/HolderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/repository/HolderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="backend was started" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -613,14 +608,7 @@
       <workItem from="1751207506683" duration="2308000" />
       <workItem from="1751209958597" duration="10038000" />
       <workItem from="1751354118715" duration="4745000" />
-      <workItem from="1751365581566" duration="3599000" />
-    </task>
-    <task id="LOCAL-00088" summary="new contract name DatrixoEquityToken">
-      <created>1606851128414</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1606851128414</updated>
+      <workItem from="1751365581566" duration="3900000" />
     </task>
     <task id="LOCAL-00089" summary="new contract name DatrixoEquityToken">
       <created>1607179190848</created>
@@ -958,7 +946,14 @@
       <option name="project" value="LOCAL" />
       <updated>1751367337979</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="backend was started">
+      <created>1751377622983</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1751377622983</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1125,7 +1120,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user documents" />
     <MESSAGE value="user documents admin frontend" />
     <MESSAGE value="new logo" />
     <MESSAGE value="new favicon" />
@@ -1150,7 +1144,8 @@
     <MESSAGE value="Generate of DatrixoContract wrapper" />
     <MESSAGE value="Web3jConfig" />
     <MESSAGE value="errors in db configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="errors in db configs" />
+    <MESSAGE value="backend was started" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend was started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
