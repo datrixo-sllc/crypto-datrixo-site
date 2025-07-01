@@ -1,6 +1,7 @@
 package com.datrixo.crypto_datrixo_site.ico_page.h2;
 
 import jakarta.persistence.EntityManagerFactory;
+import org.hibernate.jpa.boot.spi.EntityManagerFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -39,7 +40,7 @@ public class H2Config {
 
     @Primary
     @Bean(name = "h2DataSource")
-    public DataSource dataSource() {
+    public DataSource h2DataSource() {
         return DataSourceBuilder
                 .create()
                 .driverClassName(env.getProperty("h2.jdbc.driverClassName"))
@@ -52,7 +53,22 @@ public class H2Config {
     @Primary
     @DependsOn({"h2DataSource"})
     @Bean(name = "h2EntityManagerFactory")
-    public EntityManagerFactory entityManagerFactory() {
+    public LocalContainerEntityManagerFactoryBean h2EntityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
+
+        emf.setDataSource(h2DataSource());
+        emf.setPackagesToScan("com.datrixo.crypto_datrixo_site.ico_page.h2.entity");
+        emf.setPersistenceUnitName("h2");
+
+        Properties properties = additionalProperties();
+        emf.setJpaProperties(properties);
+
+        return emf;
+    }
+
+
+
+    /*public EntityManagerFactory entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan("com.datrixo.crypto_datrixo_site.ico_page.h2.model");
@@ -62,13 +78,13 @@ public class H2Config {
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
         return em.getObject();
-    }
+    }*/
 
     @Primary
     @Bean(name = "h2TransactionManager")
     public PlatformTransactionManager transactionManager(
-            @Qualifier("h2EntityManagerFactory") EntityManagerFactory entityManagerFactory) {
-        return new JpaTransactionManager(entityManagerFactory);
+            @Qualifier("h2EntityManagerFactory") LocalContainerEntityManagerFactoryBean entityManagerFactory) {
+        return new JpaTransactionManager((EntityManagerFactory)entityManagerFactory);
     }
 
     private Properties additionalProperties() {

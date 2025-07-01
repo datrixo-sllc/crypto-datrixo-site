@@ -38,6 +38,7 @@ import java.util.Optional;
 
 @Service
 public class HolderServiceImpl implements HolderService {
+    private static final long TOTAL_SUPPLY = 5000;
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
     @Autowired
@@ -86,12 +87,16 @@ public class HolderServiceImpl implements HolderService {
     @Transactional
     public void demoProcessing() {
         List<Holder> holders = holderRepository.findAll();
-        int totalShareTokens = holders.stream().mapToInt(value -> value.getShareTokens()).sum();
-        if (totalShareTokens < TOTAL_SUPPLY - 100) {
-            holderRepository.save(new Holder("0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee", new Date(), 100));
+        long totalShareTokens = holders.stream()
+                .mapToLong(holder -> holder.getShareTokens().longValue())
+                .sum();
+        if (totalShareTokens < TOTAL_SUPPLY - 100L) {
+            holderRepository.save(new Holder("0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee", new Date(),
+                    new BigInteger("100"), BigDecimal.ZERO, 0.0));
         } else {
             holderRepository.deleteAll();
-            holderRepository.save(new Holder("0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee", new Date(), 100));
+            holderRepository.save(new Holder("0xe5b25213d2F1cE8a998B632dc9d6c9719Eb993Ee", new Date(),
+                    new BigInteger("100"), BigDecimal.ZERO, 0.0));
         }
     }
 
