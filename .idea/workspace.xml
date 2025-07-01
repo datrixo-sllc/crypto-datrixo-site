@@ -32,12 +32,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="Web3jConfig">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="errors in db configs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/H2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/H2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/service/HolderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/repository/HolderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/h2/repository/HolderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/mysql/MySqlConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -614,14 +613,7 @@
       <workItem from="1751207506683" duration="2308000" />
       <workItem from="1751209958597" duration="10038000" />
       <workItem from="1751354118715" duration="4745000" />
-      <workItem from="1751365581566" duration="1319000" />
-    </task>
-    <task id="LOCAL-00087" summary="new contract name DatrixoEquityToken">
-      <created>1606848894889</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1606848894889</updated>
+      <workItem from="1751365581566" duration="3599000" />
     </task>
     <task id="LOCAL-00088" summary="new contract name DatrixoEquityToken">
       <created>1606851128414</created>
@@ -959,7 +951,14 @@
       <option name="project" value="LOCAL" />
       <updated>1751221988847</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="errors in db configs">
+      <created>1751367337978</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1751367337979</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1126,7 +1125,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="redirect to login if error" />
     <MESSAGE value="user documents" />
     <MESSAGE value="user documents admin frontend" />
     <MESSAGE value="new logo" />
@@ -1151,7 +1149,8 @@
     <MESSAGE value="No qualifying bean of type 'com.datrixo.crypto_datrixo_site.ico_page.service.HolderService' available" />
     <MESSAGE value="Generate of DatrixoContract wrapper" />
     <MESSAGE value="Web3jConfig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Web3jConfig" />
+    <MESSAGE value="errors in db configs" />
+    <option name="LAST_COMMIT_MESSAGE" value="errors in db configs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

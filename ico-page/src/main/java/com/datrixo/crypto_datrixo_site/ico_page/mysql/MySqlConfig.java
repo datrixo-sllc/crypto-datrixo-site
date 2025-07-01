@@ -64,7 +64,7 @@ public class MySqlConfig {
     @Bean(name = "mySqlTransactionManager")
     public PlatformTransactionManager transactionManager(
             @Qualifier("mySqlEntityManagerFactory") LocalContainerEntityManagerFactoryBean entityManagerFactory) {
-        return new JpaTransactionManager((EntityManagerFactory) entityManagerFactory);
+        return new JpaTransactionManager(entityManagerFactory.getObject());
     }
 
     private Properties additionalProperties() {
@@ -77,15 +77,4 @@ public class MySqlConfig {
         //hibernateProperties.setProperty("hibernate.cache.use_query_cache", env.getProperty("hibernate.cache.use_query_cache"));
         return hibernateProperties;
     }
-
-//    @Bean
-//    public DataSourceInitializer dataSourceInitializer(@Qualifier("MysqlDataSource") DataSource dataSource) {
-//        DataSourceInitializer dataSourceInitializer = new DataSourceInitializer();
-//        dataSourceInitializer.setDataSource(dataSource);
-//        ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
-//        databasePopulator.addScript(new ClassPathResource("schema-mysql.sql"));
-//        dataSourceInitializer.setDatabasePopulator(databasePopulator);
-//        dataSourceInitializer.setEnabled(Boolean.parseBoolean(String.valueOf(false)));
-//        return dataSourceInitializer;
-//    }
 }

@@ -1,5 +1,6 @@
 package com.datrixo.crypto_datrixo_site.ico_page.h2.repository;
 
+
 import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
