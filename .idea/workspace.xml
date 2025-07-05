@@ -34,9 +34,7 @@
   <component name="ChangeListManager">
     <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="backend was started">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -618,7 +616,8 @@
       <workItem from="1751481076512" duration="695000" />
       <workItem from="1751485024948" duration="595000" />
       <workItem from="1751486025991" duration="606000" />
-      <workItem from="1751642374798" duration="320000" />
+      <workItem from="1751642374798" duration="969000" />
+      <workItem from="1751654706812" duration="67000" />
     </task>
     <task id="LOCAL-00090" summary="redirect to login if error">
       <created>1607184624658</created>
