@@ -63,7 +63,7 @@ export class AppTotalIncomeComponent {
             },
             series: [
                 {
-                    name: "Total Income",
+                    name: "Total Investment",
                     color: "#16cdc7",
                     data: [25, 66, 20, 40, 12, 58, 20],
                 },

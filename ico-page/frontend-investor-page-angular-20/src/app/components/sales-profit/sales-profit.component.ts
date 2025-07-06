@@ -1,3 +1,5 @@
+// noinspection AngularMissingOrInvalidDeclarationInModule
+
 import { Component, ViewChild } from '@angular/core';
 import { MaterialModule } from '../../material.module';
 import { TablerIconsModule } from 'angular-tabler-icons';
@@ -47,7 +49,7 @@ interface month {
     templateUrl: './sales-profit.component.html',
 })
 export class AppSalesProfitComponent {
-    @ViewChild('chart') chart: ChartComponent = Object.create(null);
+    //@ViewChild('chart') chart: ChartComponent = Object.create(null);
     public salesprofitChart!: Partial<salesprofitChart> | any;
 
     months: month[] = [
