@@ -1,0 +1,23 @@
+<div [@routerTransition]>
+    <app-dinamic-page-header [header]="header" [heading]="headingStr" [icon]="headingIcon"></app-dinamic-page-header>
+    <div class="row">
+        <div class="col-lg-12" *ngIf="viewList&& !itemForAdd && items">
+        <app-signed-documents-datatable [items]="items"
+                            (onSelectedItem)="onSelect($event)"
+                            (onAddItemEmit) = "onAddItem($event)"></app-signed-documents-datatable>
+        </div>
+        <div class="col-lg-12" *ngIf="!viewList && !itemForAdd && !itemForEdit && selectedItem">
+            <app-signed-documents-detail [id]="selectedItem.id"
+                            (closeEmit)="onCloseDetail($event)"
+                            (editEmit)="onEditDetail($event)"></app-signed-documents-detail>
+        </div>
+        <div class="col-lg-12" *ngIf="!viewList && !itemForAdd && itemForEdit && selectedItem">
+            <app-signed-documents-edit [id]="selectedItem.id"
+                          (backListEmit)="onBackList($event)"
+                          (backItemEmit)="onBackItem($event)"></app-signed-documents-edit>
+        </div>
+        <div class="col-lg-12" *ngIf="viewList && itemForAdd">
+            <app-signed-documents-add (backListEmit)="onBackList($event)"></app-signed-documents-add>
+        </div>
+    </div>
+</div>

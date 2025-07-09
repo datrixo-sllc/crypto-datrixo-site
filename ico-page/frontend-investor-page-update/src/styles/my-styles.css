@@ -1,0 +1,43 @@
+.my-btn-outline, .my-btn-outline-primary {
+    border: 1px solid;
+}
+
+.my-btn-outline:hover, .my-btn-outline:focus, .my-btn-outline:active, .my-btn-outline.active {
+    color: white;
+    border-color: #95999c;
+    background-color: #95999c;
+    outline: 0;
+}
+
+.my-btn-outline-primary:hover, .my-btn-outline-primary:focus, .my-btn-outline-primary:active, .my-btn-outline-primary.active {
+    color: white;
+    border-color: #007bff;
+    background-color: #007bff;
+    outline: 0;
+}
+
+.my-btn {
+    border-radius: 300px;
+    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+
+.my-btn-xl {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 25px;
+    color: #868e96;
+}
+
+.my-btn-l {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 12px;
+    color: #868e96;
+}
+
+.nounderline {
+    text-decoration: none !important
+}

@@ -1,0 +1,21 @@
+:host /deep/ .autocomplete-container {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    height: auto;
+}
+
+.fa-question-circle-o:before {
+    font-size: 1.4rem;
+}
+
+.form-control.is-invalid{
+    background-image: none;
+}
+
+input::placeholder {
+    color: #868e96;
+    font-size: 1rem;
+    font-style: italic;
+}
+

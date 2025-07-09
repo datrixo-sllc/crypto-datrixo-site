@@ -1,0 +1,297 @@
+<div class="row">
+    <div class="col-lg-6 mb-3">
+        <button class="btn btn-outline-secondary mr-3" (click)="onBackList()">Back to List</button>
+        <button class="btn btn-success mr-3" (click)="onSubmitItemAdd()">Save User</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-3 my-0">
+        <div class="header-content mx-auto">
+            <div class="text-center mb-3">
+                <img [src]="imgSrc || '/assets/images/placeholder.png'" class="img-fluid" alt="" name="imgToUpload">
+            </div>
+            <div class="text-center col-lg-10 mx-auto">
+                <label for="uplFile" class="btn btn-outline-secondary  text-dark">Upload Image</label>
+                <input #uploadFile type="file" class="form-control-file" id="uplFile"
+                       style="visibility:hidden; height:1px; overflow: hidden;"
+                       (change)="handleFileInput($event.target.files)"/>
+            </div>
+            <div class="text-center mt-0">
+                Please, use square Images with max size - 1 Mb.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 my-0">
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label mt-1">Username<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-3 mt-1">
+                <input class="form-control" name="username" [(ngModel)]="requestItemData.username" [disabled]="true"/>
+            </div>
+            <div class="col-auto mt-1">
+                <button class="btn btn-outline-secondary form-control" (click)="onGenUsername()">Generate</button>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label mt-1">Password<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-3 mt-1">
+                <input class="form-control" name="password" [(ngModel)]="requestItemData.password"/>
+            </div>
+            <div class="col-auto mt-1">
+                <button class="btn btn-outline-secondary form-control" (click)="onGenPassword()">Generate</button>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Role<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-auto">
+                <select class="form-control" [(ngModel)]="requestItemData.role" name="role">
+                    <option value="ADMIN">Administrator</option>
+                    <option value="USER_CRYPTO">Crypto User</option>
+                    <option value="USER_TRADITIONAL">Traditional User</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">User Type<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-auto">
+                <select class="form-control" [(ngModel)]="requestItemData.userType" name="userType"
+                        (ngModelChange)="onChangeUserType()">
+                    <option value="INDIVIDUAL">Individual</option>
+                    <option value="COMPANY">Corporate</option>
+                </select>
+            </div>
+        </div>
+        <!--<div class="form-group row">
+            <label class="col-lg-2 col-form-label">Title</label>
+            <div class="col-auto">
+                <select class="form-control" [(ngModel)]="requestItemData.title" name="title">
+                    <option value="MR">Mr.</option>
+                    <option value="MRS">Mrs.</option>
+                </select>
+            </div>
+        </div>-->
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">First Name<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="firstName" [(ngModel)]="requestItemData.firstName"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Last Name<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="lastName" [(ngModel)]="requestItemData.lastName"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Email<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="email" [(ngModel)]="requestItemData.email"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-2 col-form-label">Phone<sup
+                class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+            <div class="col-lg-10">
+                <input class="form-control" name="phone" [(ngModel)]="requestItemData.phone"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-2 pr-0 mt-1">
+                <button class="btn btn-outline-secondary text-dark" (click)="onCallAddEthAccount()">
+                    Add account
+                </button>
+            </div>
+            <div class="col-lg-10 mt-1">
+                <div class="table-responsive">
+                    <table class="table table-striped" *ngIf="requestItemData.accounts.length > 0">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Create Date</th>
+                            <th scope="col">Paid Price</th>
+                            <th scope="col">Initial Invest</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let el of requestItemData.accounts; index as i">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>
+                                <a href="https://{{etherNet}}/address/{{el.address}}"
+                                   title="{{el.address}}"
+                                   target="_blank">{{el.address | slice:0:10}}...</a>
+                            </td>
+                            <td>{{ el.createDate | date }}</td>
+                            <td>{{ el.paidPrice | number }}</td>
+                            <td>
+                                <span *ngIf="el.initialInvest" class="text-danger">YES</span>
+                                <span *ngIf="!el.initialInvest">NO</span>
+                            </td>
+
+                            <td>
+                                <button type="button" class="close" aria-label="Close"
+                                        (click)="onRemoveAccount(i)"><span aria-hidden="true">&times;</span>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="requestItemData.organization != null" class="mt-lg-5">
+            <div class="form-group row">
+                <div class="col-lg-12">
+                    <h5 class="breadcrumb">Company</h5>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Comp Name<sup
+                    class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="companyName"
+                           [(ngModel)]="requestItemData.organization.companyName"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Incorp Date<sup
+                    class="h6 text-danger font-weight-bold">&lowast;</sup></label>
+                <form class="col-auto">
+                    <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd"
+                               name="incorpDate" [(ngModel)]="orgIncorpDate"
+                               (change)="setIncorpDate()"
+                               ngbDatepicker #incorpDateF="ngbDatepicker">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="incorpDateF.toggle()"
+                                    type="button"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Opencorp Id</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="opencorpId"
+                           [(ngModel)]="requestItemData.organization.opencorporatesId"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Corp Email</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="corpEmail" [(ngModel)]="requestItemData.organization.email"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Corp Phone</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="corpPhone" [(ngModel)]="requestItemData.organization.phone"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Street Address</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="strAddress"
+                           [(ngModel)]="requestItemData.organization.streetAddress"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">City</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="city" [(ngModel)]="requestItemData.organization.city"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">State</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="state" [(ngModel)]="requestItemData.organization.state"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Zip</label>
+                <div class="col-lg-10">
+                    <input class="form-control" name="zip" [(ngModel)]="requestItemData.organization.zip"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-2 col-form-label">Country</label>
+                <div class="col-auto">
+                    <select class="form-control" [(ngModel)]="requestItemData.organization.country.code" name="country">
+                        <option value="US">USA</option>
+                        <option value="UK">United Kindom</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<ng-template #modalAddEthereumAccountWindow let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Add Ethereum Account</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form name="form" (ngSubmit)="onAddNewEthereumAccount()" #f="ngForm" novalidate>
+            <div class="row">
+                <div class="col-lg-12">
+                    <fieldset class="form-group">
+                        <label>Address</label>
+                        <input type="text" [(ngModel)]="newEthereumAddress" name="newEthereumAdress"
+                               #newEthereumAddressF="ngModel" class="form-control" required/>
+                        <div *ngIf="!newEthereumAddressF.valid" class="help-block">Field is required</div>
+                        <div *ngIf="!checkAddress()" class="help-block">Field must be hexadecimal</div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>Create Date</label>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="yyyy-mm-dd"
+                                           name="newEthereumCreateDate" [(ngModel)]="newEthereumCreateDate"
+                                           ngbDatepicker #newEthereumCreateDateF="ngbDatepicker">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar"
+                                                (click)="newEthereumCreateDateF.toggle()" type="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>Paid Price</label>
+                        <input type="number" min="0.00" step="0.01" oninput="validity.valid||(value='');"
+                               [(ngModel)]="newEthereumPaidPrice" name="newEthereumPaidPrice"
+                               #newEthereumPaidPriceF="ngModel" class="form-control"/>
+                        <div *ngIf="!checkPaidPrice()" class="help-block">Field must be number</div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label class="btn-outline-secondary" ngbButtonLabel>
+                            <input class="btn-outline-secondary" type="checkbox" name="newEthereumInitialInvest"
+                                   ngbButton [(ngModel)]="newEthereumInitialInvest"
+                                   (change)="onInitialInvest()">&nbsp;&nbsp;Initial Invest
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+        <button type="button" class="btn btn-primary" ngbAutofocus (click)="f.ngSubmit.emit()"
+                [disabled]="!f.form.valid || !checkAddress() || !checkPaidPrice()">Add
+        </button>
+    </div>
+</ng-template>
+

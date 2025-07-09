@@ -1,0 +1,220 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Invest In Equity'" [icon]="'fa-money'"></app-page-header>
+    <div class="row">
+        <div class="col-lg-5 my-auto">
+            <div class="header-content mx-auto">
+                <div class="text-center mb-4">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <img src="assets/images/logo-black-on-black-320-1.png" class="img-fluid" alt="">
+                </div>
+                <div class="text-center">
+                    <button class="my-btn my-btn-outline my-btn-xl mb-2" (click)="onNavigate()">
+                        More info
+                    </button>
+                </div>
+                <div class="text-center mb-3 mt-3">
+                    <img src="assets/images/sec.png" alt="">
+                </div>
+                <div class="text-center">
+                    <p class="mb-4">Filed with<br>SEC</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 my-auto">
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo Equity Units</h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Unit Price - $187</h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo is a NY-based holding firm
+                focused on applications of AI in biotech. Owning the Datrixo holding equity means  ownership in all our Portfolio I
+                companies. Any funds raised via Datrixo holding equity are invested  in Portfolio I of AI ventures. <span class="h6"><a
+                    href="https://datrixo.com/" target="_blank">[Website]</a></span></h5>
+            <div class="mt-4">
+                <div>
+                    <ul class="list-inline list-social">
+                        <li class="list-inline-item">
+                            <h5 class="font-weight-normal">Links:</h5>
+                        </li>
+                        <!--<li class="list-inline-item social-twitter">
+                          <a href="#">
+                            <i class="fab fa-twitter"></i>
+                          </a>
+                        </li>-->
+                        <li class="list-inline-item social-facebook">
+                            <a href="https://datrixo.com/" target="_blank">
+                                [Website]
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">PPM</h4>
+                <div class="card-body">
+                    <h5 class="card-title">The Offering </h5>
+                    <p class="card-text">Prior to making an investment, please, review the Offering’s Terms in PPM
+                        (private placement memorandum).</p>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitPPMDownload()">
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">Agreement</h4>
+                <div class="card-body">
+                    <h5 class="card-title">Subscription Agreement</h5>
+                    <p class="card-text mb-3">Please, download, sign and upload back to us the PDF of the (signed) Subscription Agreement or SAFE-T.</p>
+                    <div class="text-center mb-2">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSubAgrmtDownload()">
+                            Subscr Agreement
+                        </button>
+                    </div>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSafeTDownload()">
+                            SAFE-T
+                        </button>
+                    </div>
+                    <h5 class="card-title mt-4">Signed Subscription Agreement</h5>
+                    <p class="card-text">Upload your signed Subscription Agreement here.</p>
+                    <div class="text-center">
+                        <input #uploadFile type="file" class="form-control-file mt-3" id="agreementFile"
+                               (change)="handleFileInput($event.target.files)"/>
+                        <button class="my-btn my-btn-outline my-btn-xl mt-3"
+                                (click)="onSubmitSignedAgreementUpload()">Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">Buy Equity</h4>
+                <div class="card-body">
+                    <h5 class="card-title">$187 minimum</h5>
+                    <p class="card-text">Please, chose a number of equity units to purchase, download the appropriate
+                        invoice that includes (payment) instructions and remit a payment to Datrixo SLLC. To Pay:</p>
+                    <div class="text-center mb-4">
+                        <div>Chase ABA Routing/ Transit</div>
+                        <div>021000021</div>
+                        <div>Datrixo Series LLC</div>
+                        <div>Account: 696918777</div>
+                    </div>
+                    <fieldset class="form-group pl-5 pr-5">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="opt150" value="opt150" checked="">
+                                        $187
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="opt300" value="opt300"> $374
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="opt600" value="opt600"> $748
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="opt1200" value="opt1200"> $1,496
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="opt2400" value="opt2400"> $2,992
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="opt4800" value="opt4800"> $5,984
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="opt6000" value="opt6000"> $7,480
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optAmounts" id="optOther" value="optOther"> Other
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <!--<div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitGetInvoice()">
+                            Get Invoice
+                        </button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-12 mt-3 p-4 border-top-0 border-left-0 border-right-0">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="text-center"><h4>Total Supply/Sold</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">100 %/{{sold}} % </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-12 mt-3 p-4 border-top-0 border-left-0 border-right-0">
+        <div class="row">
+            <div class="container mx-auto">
+                <h4 class="text-center">Holders</h4>
+                <div class="row">
+                    <div class="col-md-2">
+                        Holders: <a href="">{{holdersCount}}</a>
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                    <div class="col-md-2">
+                        <!--<a href="">View all</a>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="col-12" *ngIf="holders">
+                            <app-equity-holders-datatable-responsive [items]="holders"></app-equity-holders-datatable-responsive>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #modalAlertWindow let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">{{alertTitle}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>{{alertBody}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+
+</div>

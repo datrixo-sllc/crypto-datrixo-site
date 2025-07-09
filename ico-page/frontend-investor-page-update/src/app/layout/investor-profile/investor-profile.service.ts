@@ -1,0 +1,66 @@
+/**
+ * Created by Yuri Nikiforov.
+ * Date: 06.06.2019
+ * Time: 8:59
+ */
+import {Inject, Injectable} from '@angular/core';
+import {APP_CONFIG} from '../../app.config';
+import {IAppConfig} from '../../i-app-config';
+import {Observable} from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {RequestUpdateUserData} from './request-update-user-data';
+import {RequestUpdateUserPassword} from './request-update-user-password';
+import {RequestOptions} from '@angular/http';
+
+@Injectable()
+export class InvestorProfileService {
+
+    private static readonly SLASH: string = '/';
+    private static readonly INVESTOR: string = 'investor';
+    private static readonly USER_DATA: string = 'user-data';
+    private static readonly UPDATE_USER_DATA: string = 'update-user-data';
+    private static readonly UPDATE_USER_PASSWORD: string = 'update-user-password';
+
+    constructor(
+        @Inject(APP_CONFIG) private config: IAppConfig,
+        private http: HttpClient
+    ) {
+    }
+
+    getUserData(): Observable<any> {
+        const url = this.config.apiEndpoint + InvestorProfileService.INVESTOR + InvestorProfileService.SLASH +
+            InvestorProfileService.USER_DATA;
+        return this.http
+            .get(url, {withCredentials: true});
+    }
+
+    updateUserData(fileToUpload: File, request: RequestUpdateUserData): Observable<any> {
+        const url = this.config.apiEndpoint + InvestorProfileService.INVESTOR + InvestorProfileService.SLASH +
+            InvestorProfileService.UPDATE_USER_DATA;
+        return this.putDataToURL(url, fileToUpload, request);
+        /*return this.http
+            .post(url, request, {withCredentials: true, responseType: 'text'} );
+    */
+    }
+
+    private putDataToURL(url: string, fileToUpload: File, request: RequestUpdateUserData): Observable<any> {
+        const formData: FormData = new FormData();
+        if (fileToUpload != null) {
+            formData.append('file', fileToUpload, fileToUpload.name);
+        }
+        formData.append('userdata', JSON.stringify(request));
+        const headers = new HttpHeaders()
+            /*.set('content-type', 'multipart/form-data')*/;
+        return this.http.put(url, formData, {withCredentials: true, headers: headers});
+
+    }
+
+    updateUserPassword(request: RequestUpdateUserPassword): Observable<any> {
+        const url = this.config.apiEndpoint + InvestorProfileService.INVESTOR + InvestorProfileService.SLASH +
+            InvestorProfileService.UPDATE_USER_PASSWORD;
+        return this.http
+            .post(url, request, {withCredentials: true, responseType: 'text'} );
+    }
+
+
+}

@@ -1,0 +1,61 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+        <a routerLink="/main-page" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-line-chart"></i>&nbsp;
+            <span>{{ 'Datrixo Equity' | translate }}</span>
+        </a>
+        <a routerLink="/investor-profile" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-user"></i>&nbsp;
+            <span>{{ 'Investor Profile' | translate }}</span>
+        </a>
+        <div *ngIf="app.localStorageItem('userRole') === 'USER_CRYPTO' || app.localStorageItem('userRole') === 'ADMIN'">
+            <a [routerLink]="['/invest']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-money"></i>&nbsp;
+                <span>{{ 'Invest in DRX' | translate }}</span>
+            </a>
+            <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
+                <span>{{ 'My DRX Holdings' | translate }}</span>
+            </a>
+        </div>
+        <div *ngIf="app.localStorageItem('userRole') === 'USER_TRADITIONAL'">
+            <a [routerLink]="['/invest-in-equity']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-money"></i>&nbsp;
+                <span>{{ 'Buy Datrixo Equity' | translate }}</span>
+            </a>
+            <a [routerLink]="['/my-equity-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
+                <span>{{ 'My Equity Holdings' | translate }}</span>
+            </a>
+            <a [routerLink]="['/my-holdings']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-pie-chart"></i>&nbsp;
+                <span>{{ 'My DRX Holdings' | translate }}</span>
+            </a>
+        </div>
+        <div *ngIf="app.localStorageItem('userRole') === 'ADMIN'" class="bordtop">
+            <div class="list-group-item text-secondary bg-light border-0 font-weight-lighter pt-0 pb-0">Admin Panel</div>
+            <a [routerLink]="['/redirect-admin-users']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-cubes"></i>&nbsp;
+                <span>{{ 'Users' | translate }}</span>
+            </a>
+            <a [routerLink]="['/redirect-documents-for-download']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-address-book"></i>&nbsp;
+                <span>{{ 'Docs For Download' | translate }}</span>
+            </a>
+            <a [routerLink]="['/redirect-signed-documents']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-money"></i>&nbsp;
+                <span>{{ 'Signed Docs' | translate }}</span>
+            </a>
+        </div>
+        <div class="header-fields">
+            <a [routerLink]="['/login']" class="list-group-item"
+               (click)="onLoggedout()">
+                <i class="fa fa-fw fa-power-off"></i> <span>{{ 'Log Out' | translate }}</span>
+            </a>
+        </div>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+        <span>{{ 'Collapse Sidebar' | translate }}</span>
+    </div>
+</nav>

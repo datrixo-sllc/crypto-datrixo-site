@@ -1,0 +1,25 @@
+<div [@routerTransition]>
+    <app-dinamic-page-header [header]="header" [heading]="headingStr" [icon]="icon"></app-dinamic-page-header>
+    <div class="row">
+        <div class="col-12" *ngIf="viewList&& !itemForAdd && items">
+            <app-admin-users-datatable-responsive [items]="items"
+                                            (onEditItemEmit)="onEdit($event)"
+                                            (onAddItemEmit)="onAddItem($event)"
+                                            (onRefreshEmit)="onRefresh($event)"
+                                            (onViewItemEmit)="onViewItem($event)"></app-admin-users-datatable-responsive>
+        </div>
+        <div class="col-12" *ngIf="!viewList && !itemForAdd && !itemForEdit && selectedItem">
+            <app-admin-users-detail [id]="selectedItem.id"
+                                   (closeEmit)="onCloseDetail($event)"
+                                   (editEmit)="onEditDetail($event)"></app-admin-users-detail>
+        </div>
+        <div class="col-12" *ngIf="!viewList && !itemForAdd && itemForEdit && selectedItem">
+            <app-admin-users-edit [id]="selectedItem.id"
+                                 (backListEmit)="onBackList($event)"
+                                 (backItemEmit)="onBackItem($event)"></app-admin-users-edit>
+        </div>
+        <div class="col-12" *ngIf="viewList && itemForAdd">
+            <app-admin-users-add (backListEmit)="onBackList($event)"></app-admin-users-add>
+        </div>
+    </div>
+</div>

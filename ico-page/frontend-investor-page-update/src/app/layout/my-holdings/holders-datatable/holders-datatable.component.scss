@@ -1,0 +1,29 @@
+.red {
+    color: red;
+}
+
+.header-сlass {
+    color: #2e6da4;
+}
+
+:host ::ng-deep .datatable-body-cell {
+    text-align: center !important;
+}
+
+:host ::ng-deep .datatable-header-cell {
+    word-wrap: break-word !important;
+    text-align: center !important;
+    padding: 0 0.75em !important;
+}
+
+:host ::ng-deep .datatable-header-cell-template-wrap {
+    height: auto !important;
+    font-weight: bold;
+    padding: 0 !important;
+}
+
+:host ::ng-deep .datatable-row-detail {
+    text-align: right !important;
+    padding: 0.75em !important;
+    width: 98% !important;
+}

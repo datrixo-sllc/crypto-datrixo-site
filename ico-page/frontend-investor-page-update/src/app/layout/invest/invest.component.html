@@ -1,0 +1,242 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Invest'" [icon]="'fa-money'"></app-page-header>
+    <div class="row">
+        <div class="col-lg-5 my-auto">
+            <div class="header-content mx-auto">
+                <div class="text-center mb-4">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <img src="assets/images/logo-black-on-black-320-1.png" class="img-fluid" alt="">
+                </div>
+                <div class="text-center">
+                    <button class="my-btn my-btn-outline my-btn-xl mb-2" (click)="onNavigate()">
+                        More info
+                    </button>
+                </div>
+                <div class="text-center mb-3 mt-3">
+                    <img src="assets/images/sec.png" alt="">
+                </div>
+                <div class="text-center">
+                    <p class="mb-4">Filed with<br>SEC</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 my-auto">
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo Equity Token (DRX)</h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Token Price - $187</h5>
+            <h5 class="text-justify border-bottom pb-lg-3 mb-3 font-weight-normal">Datrixo is a NY-based holding firm
+                focused on applications of AI to biotech. DRX is an equity token representing the Datrixo’s equity
+                and backed by the portfolio assets. Owning the Datrixo holding equity means ownership
+                in all our Portfolio I companies. Any funds raised via this Equity Token Offering (of DRX)
+                are invested in Portfolio I of AI ventures. <span class="h6"><a
+                    href="https://datrixo.com/" target="_blank">[Website]</a></span></h5>
+            <div class="mt-4">
+                <div class="border-bottom pb-lg-1 mb-3">
+                    <h5 class="font-weight-normal">On-chain cap table is: <span class="h6"><a
+                        href="https://etherscan.io/address/0x94dc7EcFc05e1a30F06349cFff8214028f04E1C4"
+                        title="0x94dc7EcFc05e1a30F06349cFff8214028f04E1C4"
+                        target="_blank">
+                        ...028f04E1C4</a></span></h5>
+                </div>
+                <div>
+                    <ul class="list-inline list-social">
+                        <li class="list-inline-item">
+                            <h5 class="font-weight-normal">Links:</h5>
+                        </li>
+                        <!--<li class="list-inline-item social-twitter">
+                          <a href="#">
+                            <i class="fab fa-twitter"></i>
+                          </a>
+                        </li>-->
+                        <li class="list-inline-item social-facebook">
+                            <a href="https://datrixo.com/" target="_blank">
+                                [Website]
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">PPM</h4>
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">The Offering</h5>
+                    <p class="card-text">Prior to making an investment, please, review
+                       the Offering’s Terms in PPM (private placement memorandum).</p>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitPPMDownload()">
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">DRX Equity Token</h4>
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Buy DRX</h5>
+                    <p class="card-text">Please, chose a number of equity tokens to purchase and remit a payment
+                        to Datrixo SLLC. By buying the equity tokens, you have confirmed the offering terms.
+                        (Below, you can upload to us a signed "Agreement" or "SEFE-T").</p>
+                    <h6 class="card-text font-weight-bold mb-2">Card Payments:</h6>
+                    <div class="row pl-3">
+                        <a class="my-btn my-btn-outline-primary my-btn-l nounderline mt-2 mb-4"
+                           href="https://buy.stripe.com/bIYcOH3uK0axeR28wx">
+                            &nbsp;&nbsp;DRX&nbsp;&nbsp;
+                        </a>
+                    </div>
+                    <h6 class="card-text font-weight-bold mb-1">With ACH:</h6>
+                    <div class="text-center mt-0 mb-3">
+                        <div>Chase ABA Routing/ Transit</div>
+                        <div>021000021</div>
+                        <div>Datrixo Series LLC</div>
+                        <div>Account: 696918777</div>
+                    </div>
+                    <h6 class="card-text font-weight-bold mb-2">With Crypto (ETH, BTC):</h6>
+                    <div class="row pl-3">
+                        <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+                        </script>
+                        <a class="my-btn my-btn-outline-primary my-btn-l nounderline mt-1 mr-2"
+                           href="https://commerce.coinbase.com/checkout/de6ac3a7-c802-459e-b7a5-947f42053f80">
+                            1 DRX ($187)
+                        </a>
+                        <a class="my-btn my-btn-outline-primary my-btn-l nounderline mt-1 mr-2"
+                           href="https://commerce.coinbase.com/checkout/59131a69-a9ce-4bfd-88da-f361676e6a65">
+                            2 DRX ($374)
+                        </a>
+                        <a class="my-btn my-btn-outline-primary my-btn-l nounderline mt-1"
+                           href="https://commerce.coinbase.com/checkout/179ba5d0-7eee-4a96-89c1-41ca8645645d">
+                            4 DRX ($748)
+                        </a>
+                    </div>
+
+                    <!--<div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitGetInvoice()">
+                            Get Invoice
+                        </button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">Investor Docs</h4>
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">SAFE-T or Subscr Agreement</h5>
+                    <p class="card-text mb-2">Please, download, sign and upload back to us the PDF of the (signed) either
+                        SAFE-T or Subscription Agreement.</p>
+                    <div class="text-center mb-2">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSafeTDownload()">
+                            SAFE-T
+                        </button>
+                    </div>
+                    <div class="text-center">
+                        <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitSubAgrmtDownload()">
+                            Subscr Agreement
+                        </button>
+                    </div>
+                    <h5 class="card-title font-weight-bold mt-4">Your Signed Doc</h5>
+                    <p class="card-text">Upload your signed Subscription Agreement here.</p>
+                    <div class="text-center">
+                        <input #uploadFile type="file" class="form-control-file mt-3" id="agreementFile"
+                               (change)="handleFileInput($event.target.files)"/>
+                        <button class="my-btn my-btn-outline my-btn-xl mt-3"
+                                (click)="onSubmitSignedAgreementUpload()">Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row mt-3">
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <h4 class="card-header">Buy DRX (Stripe)</h4>
+                <div class="card-body">
+                    <h5 class="card-title">$187 minimum</h5>
+                    <p class="card-text">Please, chose a number of share tokens to purchase and remit a payment to
+                        Datrixo SLLC. To Pay:</p>
+                    <div class="text-center mb-4">
+                        <div>Chase ABA Routing/ Transit</div>
+                        <div>021000021</div>
+                        <div>Datrixo Series LLC</div>
+                        <div>Account: 696918777</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="form-group">
+                            <label>DRX Number</label>
+                            <select class="form-control" [(ngModel)]="selectedDRXNum">
+                                <option [ngValue]="4">4 DRX ($600)</option>
+                                <option [ngValue]="8">8 DRX ($1,200)</option>
+                                <option [ngValue]="16">16 DRX ($2,400)</option>
+                                <option [ngValue]="32">32 DRX ($4,800)</option>
+                                <option [ngValue]="40">40 DRX ($6,000)</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button class="my-btn my-btn-outline my-btn-xl" (click)="onSubmitGetDRX()">
+                                Get DRX
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="card col-12 mt-3 p-4 border-top-0 border-left-0 border-right-0">
+        <div class="row">
+            <div class="col-9 mx-auto">
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="text-center"><h4>Total Supply/ Sold</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><strong>{{totalSupply}}</strong>/ <strong class="text-primary">{{sold}}</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card col-12 mt-3 p-4 border-top-0 border-left-0 border-right-0">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <h4 class="text-center">Holders</h4>
+                <div class="row">
+                    <div class="col-md-2">
+                        Holders: <a href="">{{holdersCount}}</a>
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                    <div class="col-md-2">
+                        <!--<a href="">View all</a>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" *ngIf="holders">
+                        <app-holders-datatable-responsive [items]="holders"></app-holders-datatable-responsive>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #modalAlertWindow let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">{{alertTitle}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>{{alertBody}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+
+</div>
+

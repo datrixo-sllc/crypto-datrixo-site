@@ -1,0 +1,32 @@
+.red {
+    color: red;
+}
+
+.text-color-dan {
+    color: #bd2130;
+}
+
+.header-сlass {
+    color: #2e6da4;
+}
+
+:host ::ng-deep .datatable-body-cell {
+    /*text-align: right !important;*/
+    padding: 0.3em !important;
+}
+
+:host ::ng-deep .datatable-header-cell {
+    /* text-align: right !important;*/
+    padding: 0.75em !important;
+}
+
+:host ::ng-deep .datatable-header-cell-template-wrap {
+    height: 23px !important;
+    font-weight: bold;
+}
+
+:host ::ng-deep .ngx-datatable.bootstrap:not(.cell-selection) .datatable-body-row:hover,
+.ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
+    background: skyblue !important;
+}
+
