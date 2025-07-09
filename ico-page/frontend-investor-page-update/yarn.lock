@@ -10,7 +10,7 @@
     "@angular-devkit/core" "7.0.4"
     rxjs "6.3.3"
 
-"@angular-devkit/build-angular@0.10.4":
+"@angular-devkit/build-angular@^0.10.4":
   version "0.10.4"
   resolved "https://registry.npmjs.org/@angular-devkit/build-angular/-/build-angular-0.10.4.tgz"
   integrity sha512-dMM7wyZ6mLt27kKaqjnXWv38m+J0bURJncZ8XVOK6qivwEsCTxbWoiDAkx8Rv5Rt1FU1a8zjSG2I47a+HLz4EA==
