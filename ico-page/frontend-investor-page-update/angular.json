@@ -3,30 +3,27 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-ng7": {
+    "frontend-investor-page": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "architect": {
+      "targets": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/frontend-investor-page",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
-              "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "node_modules/font-awesome/css/font-awesome.css",
-              "src/styles/app.scss"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/chart.js/dist/Chart.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -39,7 +36,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -58,18 +54,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-ng12:build"
+            "buildTarget": "frontend-investor-page:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-ng12:build:production"
+              "buildTarget": "frontend-investor-page:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-ng12:build"
+            "buildTarget": "frontend-investor-page:build"
           }
         },
         "test": {
@@ -106,20 +102,20 @@
         }
       }
     },
-    "test-ng7-e2e": {
+    "test-ng20-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
-      "architect": {
+      "targets": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test-ng12:serve"
+            "devServerTarget": "test-ng20-e2e:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test-ng7:serve:production"
+              "devServerTarget": "test-ng20-e2e:serve:production"
             }
           }
         },
@@ -137,11 +133,13 @@
   },
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "scss"
+      "prefix": "app"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
