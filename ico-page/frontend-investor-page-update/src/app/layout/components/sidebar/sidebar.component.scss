@@ -1,3 +1,4 @@
+@use 'sass:color';
 $topnav-background-color: #f8f9fa;
 .sidebar {
     border-radius: 0;
@@ -34,18 +35,18 @@ $topnav-background-color: #f8f9fa;
             }
         }
         a:hover {
-            background: darken($topnav-background-color, 5%);
+            background: color.adjust($topnav-background-color, $lightness: -5%);
             color: #555555;
         }
         a.router-link-active {
-            background: darken($topnav-background-color, 5%);
+            background: color.adjust($topnav-background-color, $lightness: -5%);
             color: #555555;
         }
         .header-fields {
             padding-top: 10px;
 
             > .list-group-item:first-child {
-                border-top: 1px solid darken($topnav-background-color, 30%);
+                border-top: 1px solid color.adjust($topnav-background-color, $lightness: -30%);
             }
         }
     }
@@ -78,7 +79,7 @@ $topnav-background-color: #f8f9fa;
             }
         }
         .panel-title:hover {
-            background: darken($topnav-background-color, 5%);
+            background: color.adjust($topnav-background-color, $lightness: -5%);
         }
         .panel-collapse {
             border-radious: 0;
@@ -96,7 +97,7 @@ $topnav-background-color: #f8f9fa;
                     }
                 }
                 .list-group-item:hover {
-                    background: darken($topnav-background-color, 5%);
+                    background: color.adjust($topnav-background-color, $lightness: -5%);
                 }
             }
         }
@@ -131,7 +132,7 @@ $topnav-background-color: #f8f9fa;
 }
 
 .bordtop {
-    border-top: 1px solid darken($topnav-background-color, 30%);
+    border-top: 1px solid color.adjust($topnav-background-color, $lightness: -30%);
 }
 
 @media screen and (max-width: 992px) {
@@ -172,12 +173,12 @@ $topnav-background-color: #f8f9fa;
     padding: 12px;
     bottom: 0;
     color: #999;
-    background: darken($topnav-background-color, 5%);
+    background: color.adjust($topnav-background-color, $lightness: -5%);
     i {
         font-size: 23px;
     }
     &:hover {
-        background: darken($topnav-background-color, 10%);
+        background: color.adjust($topnav-background-color, $lightness: -10%);
         color: #555555;
     }
     border-top: 1px solid #dddddd;
