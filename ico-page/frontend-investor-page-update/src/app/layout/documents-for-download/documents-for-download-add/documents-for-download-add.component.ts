@@ -14,6 +14,8 @@ import {UpdateDocumentsForDownloadUploadService} from '../update-documents-for-d
 import {AddDocumentsForDownloadUploadService} from '../add-documents-for-download-upload.service';
 import {Router} from '@angular/router';
 import {Utils} from '../../../shared/utilites/Utils';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Created by Yuri Nikiforov.
@@ -23,6 +25,8 @@ import {Utils} from '../../../shared/utilites/Utils';
 
 @Component({
     selector: 'app-documents-for-download-add',
+    standalone: true,
+    imports: [CommonModule, FormsModule],
     templateUrl: './documents-for-download-add.component.html',
     styleUrls: ['./documents-for-download-add.component.scss']
 })

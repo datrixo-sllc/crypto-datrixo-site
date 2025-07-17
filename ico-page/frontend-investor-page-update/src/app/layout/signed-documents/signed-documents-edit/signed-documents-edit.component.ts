@@ -14,6 +14,7 @@ import {SignedDocument} from '../signed-document';
 import {SignedDocumentsService} from '../signed-documents.service';
 import {UpdateSignedDocumentsUploadService} from '../update-signed-documents-upload.service';
 import {AddSignedDocumentsUploadService} from '../add-signed-documents-upload.service';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Created by Yuri Nikiforov.
@@ -23,6 +24,8 @@ import {AddSignedDocumentsUploadService} from '../add-signed-documents-upload.se
 
 @Component({
     selector: 'app-signed-documents-edit',
+    standalone: true,
+    imports: [FormsModule],
     templateUrl: './documets-for-download-edit.component.html',
     styleUrls: ['./signed-documents-edit.component.scss']
 })

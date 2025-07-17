@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { APP_CONFIG, AppConfig } from './app.config';
 import { AuthGuard } from './shared';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { Http, HttpModule } from '@angular/http';
 import {GlobalApp} from './helpers/global-app';
 
 @NgModule({
@@ -22,9 +21,8 @@ import {GlobalApp} from './helpers/global-app';
         LanguageTranslationModule,
         AppRoutingModule,
         NgxSpinnerModule,
-        HttpModule
+        AppComponent
     ],
-    declarations: [AppComponent],
     providers: [
         AuthGuard,
         { provide: APP_CONFIG, useValue: AppConfig },

@@ -8,9 +8,13 @@ import {NgxSpinnerService} from 'ngx-spinner';
 import {DomSanitizer} from '@angular/platform-browser';
 import {DocumentForDownload} from '../document-for-download';
 import {DocumentsForDownloadService} from '../documents-for-download.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-documents-for-download-detail',
+    standalone: true,
+    imports: [CommonModule, FormsModule],
     templateUrl: './documents-for-download-detail.component.html',
     styleUrls: ['./documents-for-download-detail.component.scss']
 })

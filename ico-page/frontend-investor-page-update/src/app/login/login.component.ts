@@ -3,11 +3,16 @@ import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {LoginService} from './login.service';
-import {Response} from '@angular/http';
 import {StatusResponseAuth} from './status-response-auth';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
     selector: 'app-login',
+    standalone: true,
+    imports: [TranslateModule, RouterModule, FormsModule, MatIconModule],
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     animations: [routerTransition()]
@@ -30,19 +35,19 @@ export class LoginComponent implements OnInit {
     onLoggedin() {
         this.spinner.show();
         this.loginService.login(this.model.username, this.model.password)
-            .subscribe((response: Response) => {
-                if (response && response.json().statusResponseAuth) {
-                    if (response.json().statusResponseAuth === StatusResponseAuth.OK) {
+            .subscribe((response) => {
+                if (response && response.statusResponseAuth) {
+                    if (response.statusResponseAuth === StatusResponseAuth.OK) {
                         this.varStatus = StatusResponseAuth.OK;
-                        localStorage.setItem('authorityStatus', JSON.stringify(response.json()));
+                        localStorage.setItem('authorityStatus', JSON.stringify(response));
                         localStorage.setItem('username', this.model.username);
-                        localStorage.setItem('userRole', response.json().role);
+                        localStorage.setItem('userRole', response.role);
                         localStorage.setItem('isLoggedin', 'true');
                         this.router.navigate(['/main-page']);
-                    } else if (response.json().statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
+                    } else if (response.statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
                         this.varStatus = StatusResponseAuth.LOGIN_NOT_FOUND;
                         this.clearLocalStorage();
-                    } else if (response.json().statusResponseAuth === StatusResponseAuth.PASSWORD_INVALID) {
+                    } else if (response.statusResponseAuth === StatusResponseAuth.PASSWORD_INVALID) {
                         this.varStatus = StatusResponseAuth.PASSWORD_INVALID;
                         this.clearLocalStorage();
                     } else {
@@ -50,22 +55,13 @@ export class LoginComponent implements OnInit {
                         this.clearLocalStorage();
                     }
                     this.spinner.hide();
-                    /*alert('Server вернул ответ ' +
-                        'на запрос по URL: ' + response.url +
-                        '\n--------' +
-                        '\nСтатус ответа: ' + response.status +
-                        '\nТекст статуса ответа: ' + response.statusText +
-                        '\nOk ответа: ' + response.ok +
-                        '\nТип ответа: ' + response.type +
-                        '\nЗаголовки ответа: ' + this.getStringFromHeaders(response) +
-                        '\nТело ответа: ' + response.text());*/
                 }
             }, error => {
-                if (error && error.json().statusResponseAuth) {
-                    if (error.json().statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
+                if (error && error.error && error.error.statusResponseAuth) {
+                    if (error.error.statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
                         this.varStatus = StatusResponseAuth.LOGIN_NOT_FOUND;
                         this.clearLocalStorage();
-                    } else if (error.json().statusResponseAuth === StatusResponseAuth.PASSWORD_INVALID) {
+                    } else if (error.error.statusResponseAuth === StatusResponseAuth.PASSWORD_INVALID) {
                         this.varStatus = StatusResponseAuth.PASSWORD_INVALID;
                         this.clearLocalStorage();
                     } else {
@@ -74,19 +70,8 @@ export class LoginComponent implements OnInit {
                     }
                 }
                 this.spinner.hide();
-                /*alert('Server вернул ошибку: ' + error);*/
-
             });
 
-    }
-
-    private getStringFromHeaders(response: Response) {
-        let result = '';
-        response.headers.keys().forEach(value => {
-            result = result + ('\n' + value + ' : ' + response.headers.get(value));
-        });
-
-        return result;
     }
 
     private clearLocalStorage() {

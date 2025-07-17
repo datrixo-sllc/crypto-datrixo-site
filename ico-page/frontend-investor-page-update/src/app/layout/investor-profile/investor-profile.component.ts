@@ -9,9 +9,23 @@ import {RequestUpdateUserPassword} from './request-update-user-password';
 import {Router} from '@angular/router';
 import * as Noty from 'noty';
 import {DomSanitizer} from '@angular/platform-browser';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import { PageHeaderComponent } from 'src/app/shared/modules/page-header/page-header.component';
+import { HoldingDatatableResponsiveComponent } from './holding-datatable-responsive/holding-datatable-responsive.component';
 
 @Component({
     selector: 'app-investor-profile',
+    standalone: true,
+    imports: [
+        // Angular modules
+        CommonModule,
+        FormsModule,
+        // Standalone/shared components
+        PageHeaderComponent,
+        HoldingDatatableResponsiveComponent,
+        // Любые другие необходимые модули
+    ],
     templateUrl: './investor-profile.component.html',
     styleUrls: ['./investor-profile.component.scss'],
     animations: [routerTransition()]

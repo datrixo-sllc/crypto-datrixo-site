@@ -20,6 +20,8 @@ import {SignedDocumentsDetailComponent} from './signed-documents-detail/signed-d
 import {UpdateSignedDocumentsUploadService} from './update-signed-documents-upload.service';
 import {AddSignedDocumentsUploadService} from './add-signed-documents-upload.service';
 import {SignedDocumentsAddComponent} from './signed-documents-add/signed-documents-add.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {MaterialModule} from '../../shared/modules/material/material.module';
 
 @NgModule({
     imports: [
@@ -29,14 +31,16 @@ import {SignedDocumentsAddComponent} from './signed-documents-add/signed-documen
         NgxDatatableModule,
         FormsModule,
         // AutocompleteLibModule,
-        NgbModule
+        NgbModule,
+        TranslateModule,
+        MaterialModule,
+        SignedDocumentsAddComponent,
+        SignedDocumentsEditComponent,
+        SignedDocumentsDetailComponent,
+        SignedDocumentsDatatableComponent,
+        SignedDocumentsComponent
     ],
     declarations: [
-        SignedDocumentsComponent,
-        SignedDocumentsDatatableComponent,
-        SignedDocumentsDetailComponent,
-        SignedDocumentsEditComponent,
-        SignedDocumentsAddComponent
     ],
     providers: [
         SignedDocumentsService,

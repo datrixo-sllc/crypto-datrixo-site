@@ -21,12 +21,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         FileSaverModule,
         NgxDatatableModule,
         MaterialModule,
-        NgbModule
+        NgbModule,
+        MyEquityHoldingDatatableResponsiveComponent,
+        MyEquityHoldingDatatableComponent,
+        MyEquityHoldingsComponent
     ],
     declarations: [
-        MyEquityHoldingsComponent,
-        MyEquityHoldingDatatableComponent,
-        MyEquityHoldingDatatableResponsiveComponent
     ],
     providers: [
         MyEquityHoldingsService

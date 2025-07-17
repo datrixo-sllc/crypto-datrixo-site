@@ -33,7 +33,11 @@
     "ngx-spinner": "^16.0.0",
     "noty": "^3.2.0-beta",
     "rxjs": "^7.8.1",
-    "zone.js": "^0.15.0"
+    "zone.js": "^0.15.0",
+    "@swimlane/ngx-datatable": "^21.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^19.0.1"
+
+
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^20.0.0",

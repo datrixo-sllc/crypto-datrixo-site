@@ -6,34 +6,24 @@
 import {Inject, Injectable} from '@angular/core';
 import { APP_CONFIG } from '../app.config';
 import {IAppConfig} from '../i-app-config';
-import {Http, Headers, Response, RequestOptions} from '@angular/http';
-import {Observable} from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class LoginService {
     private static AUTH_URL = 'login';
-    private static headers = new Headers({'content-type': 'text/plain'});
 
-    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {}
+    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {}
 
-    login(email: string, password: string): Observable<Response> {
-        const url = this.config.apiEndpoint + LoginService.AUTH_URL
-        const headers: Headers =  new Headers({'content-type': 'text/plain'});
-        headers.append('Authorization', btoa(email + ':' + password));
-        const body = {'username': email, 'password': password};
-        const options = new RequestOptions({ headers: headers });
-        options.withCredentials = true;
-        return this.http
-            .post(url, body, options);
+    login(email: string, password: string): Observable<any> {
+        const url = this.config.apiEndpoint + LoginService.AUTH_URL;
+        const headers = new HttpHeaders({
+            'Content-Type': 'text/plain',
+            'Authorization': btoa(email + ':' + password)
+        });
+        const body = { 'username': email, 'password': password };
+        return this.http.post(url, body, { headers, withCredentials: true });
     }
 
-    private extractData(res: Response) {
-        const body = res.json();
-        return body || {};
-    }
-    private handleErrorObservable (error: Response) {
-        console.error(error.status);
-        return error;
-    }
-
+    // extractData и handleErrorObservable больше не нужны с HttpClient, их можно удалить
 }

@@ -20,6 +20,8 @@ import {DocumentsForDownloadDetailComponent} from './documents-for-download-deta
 import {UpdateDocumentsForDownloadUploadService} from './update-documents-for-download-upload.service';
 import {AddDocumentsForDownloadUploadService} from './add-documents-for-download-upload.service';
 import {DocumentsForDownloadAddComponent} from './documents-for-download-add/documents-for-download-add.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {MaterialModule} from '../../shared/modules/material/material.module';
 
 @NgModule({
     imports: [
@@ -29,9 +31,9 @@ import {DocumentsForDownloadAddComponent} from './documents-for-download-add/doc
         NgxDatatableModule,
         FormsModule,
         // AutocompleteLibModule,
-        NgbModule
-    ],
-    declarations: [
+        NgbModule,
+        TranslateModule,
+        MaterialModule,
         DocumentsForDownloadComponent,
         DocumentsForDownloadDatatableComponent,
         DocumentsForDownloadDetailComponent,

@@ -7,11 +7,12 @@
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { loadStripe } from '@stripe/stripe-js';
-import {Inject} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
 import {Observable} from 'rxjs/internal/Observable';
 
+@Injectable()
 export class InvestStripeService {
     private static readonly SLASH: string = '/';
     private static readonly PAYMENT: string = 'payment';

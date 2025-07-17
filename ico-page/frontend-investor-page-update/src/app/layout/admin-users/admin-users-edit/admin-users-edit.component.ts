@@ -25,6 +25,8 @@ import {Organization} from '../organization';
 import {Country} from '../country';
 import * as Noty from 'noty';
 import {Account} from '../account';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Created by Yuri Nikiforov.
@@ -34,6 +36,8 @@ import {Account} from '../account';
 
 @Component({
     selector: 'app-admin-users-edit',
+    standalone: true,
+    imports: [CommonModule, FormsModule],
     templateUrl: './admin-users-edit.component.html',
     styleUrls: ['./admin-users-edit.component.scss']
 })

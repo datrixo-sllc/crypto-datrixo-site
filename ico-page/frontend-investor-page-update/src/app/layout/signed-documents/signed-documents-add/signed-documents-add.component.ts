@@ -14,6 +14,7 @@ import {UpdateSignedDocumentsUploadService} from '../update-signed-documents-upl
 import {AddSignedDocumentsUploadService} from '../add-signed-documents-upload.service';
 import {Router} from '@angular/router';
 import {Utils} from '../../../shared/utilites/Utils';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Created by Yuri Nikiforov.
@@ -23,6 +24,8 @@ import {Utils} from '../../../shared/utilites/Utils';
 
 @Component({
     selector: 'app-signed-documents-add',
+    standalone: true,
+    imports: [FormsModule],
     templateUrl: './signed-documents-add.component.html',
     styleUrls: ['./signed-documents-add.component.scss']
 })

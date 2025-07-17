@@ -5,13 +5,20 @@
  */
 
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Holder} from '../holder';
 
 
 @Component({
     selector: 'app-holding-datatable-responsive',
+    standalone: true,
+    imports: [CommonModule, MatTableModule, MatPaginatorModule],
     styleUrls: ['holding-datatable-responsive.component.scss'],
     templateUrl: 'holding-datatable-responsive.component.html',
 })

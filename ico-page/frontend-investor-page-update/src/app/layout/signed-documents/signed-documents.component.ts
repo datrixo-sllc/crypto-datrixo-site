@@ -11,9 +11,12 @@ import {NavigationEnd, Router} from '@angular/router';
 import {Utils} from '../../shared/utilites/Utils';
 import {SignedDocumentsService} from './signed-documents.service';
 import {SignedDocumentList} from './signed-document-list';
+import { DinamicPageHeaderComponent } from '../../shared/modules/page-header/dinamic-header/dinamic-page-header.component';
 
 @Component({
     selector: 'app-signed-documents',
+    standalone: true,
+    imports: [DinamicPageHeaderComponent],
     templateUrl: './signed-documents.component.html',
     styleUrls: ['./signed-documents.component.scss'],
     animations: [routerTransition()]

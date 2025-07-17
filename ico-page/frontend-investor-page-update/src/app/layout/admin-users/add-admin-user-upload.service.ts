@@ -6,9 +6,9 @@
 import {Inject, Injectable} from '@angular/core';
 import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
-import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs';
 import {User} from './user';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class AddAdminUserUploadService {
@@ -19,7 +19,7 @@ export class AddAdminUserUploadService {
     private static readonly NAME: string = 'name';
     private static readonly PASSWORD: string = 'password';
 
-    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
+    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {
     }
 
     public postItemAdd(fileToUpload: File, itemData: User): Observable<any> {
@@ -34,17 +34,11 @@ export class AddAdminUserUploadService {
             formData.append('file', fileToUpload, fileToUpload.name);
         }
         formData.append('itemdata', JSON.stringify(itemData));
-        const urlOptions = this.createUrlOptions();
-        return this.http.post(url, formData, urlOptions);
+        // Новый способ: просто передаём withCredentials в options
+        return this.http.post(url, formData, { withCredentials: true });
     }
 
-    private createUrlOptions(): RequestOptions {
-        const urlHeaders = new Headers(/*{'content-type': 'multipart/form-data'}*/);
-        const urlOptions = new RequestOptions({headers: urlHeaders});
-        urlOptions.withCredentials = true;
-        return urlOptions;
-    }
-
+    // Удаляю createUrlOptions и RequestOptions/Headers как устаревшие
     getCheck(): Observable<any> {
         const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_USER +
             AddAdminUserUploadService.SLASH + AddAdminUserUploadService.CHECK;

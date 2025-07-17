@@ -2,9 +2,14 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import {GlobalApp} from '../../../helpers/global-app';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-sidebar',
+    standalone: true,
+    imports: [CommonModule, RouterModule, TranslateModule],
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })

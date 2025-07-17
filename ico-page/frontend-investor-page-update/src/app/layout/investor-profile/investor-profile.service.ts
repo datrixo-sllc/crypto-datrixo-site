@@ -10,7 +10,6 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {RequestUpdateUserData} from './request-update-user-data';
 import {RequestUpdateUserPassword} from './request-update-user-password';
-import {RequestOptions} from '@angular/http';
 
 @Injectable()
 export class InvestorProfileService {
@@ -49,10 +48,8 @@ export class InvestorProfileService {
             formData.append('file', fileToUpload, fileToUpload.name);
         }
         formData.append('userdata', JSON.stringify(request));
-        const headers = new HttpHeaders()
-            /*.set('content-type', 'multipart/form-data')*/;
-        return this.http.put(url, formData, {withCredentials: true, headers: headers});
-
+        // Для FormData не нужно явно указывать headers, Angular сам выставит boundary
+        return this.http.put(url, formData, { withCredentials: true });
     }
 
     updateUserPassword(request: RequestUpdateUserPassword): Observable<any> {

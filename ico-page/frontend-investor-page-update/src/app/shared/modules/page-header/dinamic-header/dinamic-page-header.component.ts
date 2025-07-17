@@ -5,9 +5,12 @@
  */
 import {PageHeaderComponent} from '../page-header.component';
 import {Component, Input} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 @Component({
     selector: 'app-dinamic-page-header',
+    standalone: true,
+    imports: [RouterModule],
     templateUrl: './dinamic-page-header.component.html'
 })
 export class DinamicPageHeaderComponent extends PageHeaderComponent {

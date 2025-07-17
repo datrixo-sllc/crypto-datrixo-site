@@ -4,11 +4,11 @@ import {TruncatePipe} from './truncate-pipe';
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        TruncatePipe
     ],
     exports: [
         TruncatePipe
-    ],
-    declarations: [TruncatePipe]
+    ]
 })
 export class SharedPipesModule { }

@@ -20,12 +20,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         NgxDatatableModule,
         MaterialModule,
         SharedPipesModule,
-        NgbModule
+        NgbModule,
+        MyHoldingDatatableResponsiveComponent,
+        HoldersDatatableComponent,
+        MyHoldingsComponent
     ],
     declarations: [
-        MyHoldingsComponent,
-        HoldersDatatableComponent,
-        MyHoldingDatatableResponsiveComponent
     ],
     providers: [
         MyHoldingsService

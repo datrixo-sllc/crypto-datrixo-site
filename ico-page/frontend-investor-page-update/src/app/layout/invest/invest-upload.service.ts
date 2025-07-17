@@ -6,8 +6,8 @@
 import {Inject, Injectable} from '@angular/core';
 import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
-import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class InvestUploadService {
@@ -17,7 +17,7 @@ export class InvestUploadService {
     private static readonly  URL_SIGNED_AGREEMENT: string = 'signed-agreement';
 
 
-    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
+    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {
     }
 
     public postSignedAgreement(fileToUpload: File): Observable<any> {
@@ -29,15 +29,8 @@ export class InvestUploadService {
         const url = this.config.apiEndpoint + partUrl;
         const formData: FormData = new FormData();
         formData.append('file', fileToUpload, fileToUpload.name);
-        const urlOptions = this.createUrlOptions();
-        return this.http.post(url, formData, urlOptions);
-    }
-
-    private createUrlOptions(): RequestOptions {
-        const urlHeaders = new Headers(/*{'content-type': 'multipart/form-data'}*/);
-        const urlOptions = new RequestOptions({headers: urlHeaders});
-        urlOptions.withCredentials = true;
-        return urlOptions;
+        // Новый способ: просто передаём withCredentials в options
+        return this.http.post(url, formData, { withCredentials: true });
     }
 
 }

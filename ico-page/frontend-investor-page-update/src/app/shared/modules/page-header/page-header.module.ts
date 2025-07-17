@@ -6,12 +6,7 @@ import { PageHeaderComponent } from './page-header.component';
 import {DinamicPageHeaderComponent} from './dinamic-header/dinamic-page-header.component';
 
 @NgModule({
-    imports: [CommonModule, RouterModule],
-    declarations: [PageHeaderComponent,
-        DinamicPageHeaderComponent
-    ],
-    exports: [PageHeaderComponent,
-        DinamicPageHeaderComponent
-    ]
+    imports: [CommonModule, RouterModule, PageHeaderComponent, DinamicPageHeaderComponent],
+    exports: [PageHeaderComponent, DinamicPageHeaderComponent]
 })
 export class PageHeaderModule {}

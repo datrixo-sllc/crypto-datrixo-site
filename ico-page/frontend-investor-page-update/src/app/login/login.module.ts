@@ -14,9 +14,9 @@ import {MatIconModule} from '@angular/material/icon';
         TranslateModule,
         FormsModule,
         LoginRoutingModule,
-        MatIconModule
+        MatIconModule,
+        LoginComponent
     ],
-    declarations: [LoginComponent],
     providers: [LoginService]
 })
 export class LoginModule {}

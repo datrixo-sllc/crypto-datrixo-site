@@ -12,9 +12,13 @@ import {routerTransition} from '../../../router.animations';
 import {RespUserData} from '../../investor-profile/resp-user-data';
 import * as Noty from 'noty';
 import {Router} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-admin-users-detail',
+    standalone: true,
+    imports: [CommonModule, FormsModule],
     templateUrl: './admin-users-detail.component.html',
     styleUrls: ['./admin-users-detail.component.scss'],
     animations: [routerTransition()]

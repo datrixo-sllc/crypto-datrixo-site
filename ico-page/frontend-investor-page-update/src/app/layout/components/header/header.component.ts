@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-header',
+    standalone: true,
+    imports: [RouterModule, TranslateModule],
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })

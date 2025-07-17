@@ -5,7 +5,11 @@
  */
 
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HolderResponce} from '../holder-responce';
 
@@ -14,6 +18,8 @@ import {HolderResponce} from '../holder-responce';
     selector: 'app-holders-datatable-responsive',
     styleUrls: ['holders-datatable-responsive.component.scss'],
     templateUrl: 'holders-datatable-responsive.component.html',
+    standalone: true,
+    imports: [CommonModule, MatTableModule, MatPaginatorModule, MatSortModule],
 })
 export class HoldersDatatableResponsiveComponent implements OnInit, OnChanges {
     @Input() items: HolderResponce[];

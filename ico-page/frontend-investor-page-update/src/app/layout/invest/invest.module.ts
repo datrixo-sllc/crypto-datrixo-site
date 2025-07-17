@@ -27,12 +27,11 @@ import {HoldersDatatableResponsiveComponent} from './holders-datatable-responsiv
         FormsModule,
         MaterialModule,
         SharedPipesModule,
-    ],
-    declarations: [
         InvestComponent,
         HoldersDatatableComponent,
         HoldersDatatableResponsiveComponent
     ],
+    // declarations удалён
     providers: [
         InvestService,
         InvestDownloadService,

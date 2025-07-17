@@ -1,7 +1,6 @@
 import {Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import {InvestInEquityDownloadService} from './invest-in-equity-download.service';
-import {Response} from '@angular/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {RecieveUtils} from './recieve-utils';
 import {InvestInEquityUploadService} from './invest-in-equity-upload.service';
@@ -13,12 +12,15 @@ import {switchMap} from 'rxjs/internal/operators/switchMap';
 import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import * as Noty from 'noty';
 import {Router} from '@angular/router';
+import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
 
 @Component({
     selector: 'app-invest-in-equity',
     templateUrl: './invest-in-equity.component.html',
     styleUrls: ['./invest-in-equity.component.scss'],
-    animations: [routerTransition()]
+    animations: [routerTransition()],
+    standalone: true,
+    imports: [PageHeaderComponent],
 })
 export class InvestInEquityComponent implements OnInit, OnDestroy {
     private static readonly  FN_PPM: string = 'ppm.pdf';
@@ -81,7 +83,7 @@ export class InvestInEquityComponent implements OnInit, OnDestroy {
         this.alertTitle = 'PPM Download';
         this.investDownloadService.getPPM()
             .toPromise()
-            .then((response: Response) => {
+            .then((response: Blob) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestInEquityComponent.FN_PPM);
                     this.spinner.hide();
                 },
@@ -98,7 +100,7 @@ export class InvestInEquityComponent implements OnInit, OnDestroy {
         this.alertTitle = 'Subscription Agreement Download';
         this.investDownloadService.getSubscrAgrmnt()
             .toPromise()
-            .then((response: Response) => {
+            .then((response: Blob) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestInEquityComponent.FN_SUBSCR_AGRMNT);
                     this.spinner.hide();
                 },
@@ -115,7 +117,7 @@ export class InvestInEquityComponent implements OnInit, OnDestroy {
         this.alertTitle = 'SAFE-T Download';
         this.investDownloadService.getSafeT()
             .toPromise()
-            .then((response: Response) => {
+            .then((response: Blob) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestInEquityComponent.FN_SAFE_T);
                     this.spinner.hide();
                 },

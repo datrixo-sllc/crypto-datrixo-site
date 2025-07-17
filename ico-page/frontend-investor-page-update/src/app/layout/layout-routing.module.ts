@@ -11,22 +11,19 @@ const routes: Routes = [
         component: LayoutComponent,
         children: [
             { path: '', redirectTo: 'main-page' },
-            { path: 'main-page', loadChildren: './main-page/main-page.module#MainPageModule' },
-            { path: 'investor-profile', loadChildren: './investor-profile/investor-profile.module#InvestorProfileModule' },
-            { path: 'invest', loadChildren: './invest/invest.module#InvestModule' },
-            { path: 'invest-in-equity', loadChildren: './invest-in-equity/invest-in-equity.module#InvestInEquityModule' },
-            { path: 'my-holdings', loadChildren: './my-holdings/my-holdings.module#MyHoldingsModule' },
-            { path: 'my-equity-holdings', loadChildren: './my-equity-holdings/my-equity-holdings.module#MyEquityHoldingsModule' },
+            { path: 'main-page', loadChildren: () => import('./main-page/main-page.module').then(m => m.MainPageModule) },
+            { path: 'investor-profile', loadChildren: () => import('./investor-profile/investor-profile.module').then(m => m.InvestorProfileModule) },
+            { path: 'invest', loadChildren: () => import('./invest/invest.module').then(m => m.InvestModule) },
+            { path: 'invest-in-equity', loadChildren: () => import('./invest-in-equity/invest-in-equity.module').then(m => m.InvestInEquityModule) },
+            { path: 'my-holdings', loadChildren: () => import('./my-holdings/my-holdings.module').then(m => m.MyHoldingsModule) },
+            { path: 'my-equity-holdings', loadChildren: () => import('./my-equity-holdings/my-equity-holdings.module').then(m => m.MyEquityHoldingsModule) },
 
 
-            { path: 'admin-users',
-                loadChildren: './admin-users/admin-users.module#AdminUsersModule' },
+            { path: 'admin-users', loadChildren: () => import('./admin-users/admin-users.module').then(m => m.AdminUsersModule) },
             {path: 'redirect-admin-users', component: RedirectAdminUsersComponent},
-            { path: 'documents-for-download',
-                loadChildren: './documents-for-download/documents-for-download.module#DocumentsForDownloadModule' },
+            { path: 'documents-for-download', loadChildren: () => import('./documents-for-download/documents-for-download.module').then(m => m.DocumentsForDownloadModule) },
             {path: 'redirect-documents-for-download', component: RedirectDocumentsForDownloadComponent},
-            { path: 'signed-documents',
-                loadChildren: './signed-documents/signed-documents.module#SignedDocumentsModule' },
+            { path: 'signed-documents', loadChildren: () => import('./signed-documents/signed-documents.module').then(m => m.SignedDocumentsModule) },
             {path: 'redirect-signed-documents', component: RedirectSignedDocumentsComponent}
         ]
     }

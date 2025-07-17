@@ -1,6 +1,5 @@
 import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {routerTransition} from '../../router.animations';
-import {Response} from '@angular/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {MyEquityHoldingsService} from './my-equity-holdings.service';
 import {HolderResponce} from './holder-responce';
@@ -8,9 +7,12 @@ import {IcoPageResponse} from './ico-page-response';
 import {interval, Subscription} from 'rxjs';
 import {switchMap} from 'rxjs/internal/operators/switchMap';
 import {Router} from '@angular/router';
+import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
 
 @Component({
     selector: 'app-my-equity-holdings',
+    standalone: true,
+    imports: [PageHeaderComponent],
     templateUrl: './my-equity-holdings.component.html',
     styleUrls: ['./my-equity-holdings.component.scss'],
     animations: [routerTransition()]

@@ -5,9 +5,12 @@
  */
 import {Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import {HolderResponce} from '../holder-responce';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @Component({
     selector: 'app-holders-datatable',
+    standalone: true,
+    imports: [NgxDatatableModule],
     styleUrls: ['./holders-datatable.component.scss'],
     templateUrl: './holders-datatable.component.html'
 })

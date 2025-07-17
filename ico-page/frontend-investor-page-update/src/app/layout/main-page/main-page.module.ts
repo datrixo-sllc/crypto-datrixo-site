@@ -7,8 +7,7 @@ import {PageHeaderModule} from '../../shared/modules';
 import {MainPageService} from './main-page.service';
 
 @NgModule({
-    imports: [CommonModule, MainPageRoutingModule, PageHeaderModule],
-    declarations: [MainPageComponent],
+    imports: [CommonModule, MainPageRoutingModule, PageHeaderModule, MainPageComponent],
     providers: [MainPageService]
 })
 export class MainPageModule {}

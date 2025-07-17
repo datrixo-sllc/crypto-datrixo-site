@@ -27,8 +27,6 @@ import {
         NgbModule,
         MaterialModule,
         SharedPipesModule,
-    ],
-    declarations: [
         InvestInEquityComponent,
         EquityHoldersDatatableComponent,
         EquityHoldersDatatableResponsiveComponent

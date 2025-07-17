@@ -13,9 +13,12 @@ import {AdminUsersService} from './admin-users.service';
 import {UserList} from './user-list';
 import {UpdateAdminUsersUploadService} from './update-admin-users-upload.service';
 import * as Noty from 'noty';
+import { DinamicPageHeaderComponent } from 'src/app/shared/modules/page-header/dinamic-header/dinamic-page-header.component';
 
 @Component({
     selector: 'app-admin-users',
+    standalone: true,
+    imports: [DinamicPageHeaderComponent],
     templateUrl: './admin-users.component.html',
     styleUrls: ['./admin-users.component.scss'],
     animations: [routerTransition()]

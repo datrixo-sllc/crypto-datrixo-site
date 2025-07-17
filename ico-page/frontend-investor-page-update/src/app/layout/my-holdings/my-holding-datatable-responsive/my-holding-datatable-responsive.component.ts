@@ -5,14 +5,21 @@
  */
 
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HolderResponce} from '../holder-responce';
 import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
     selector: 'app-my-holding-datatable-responsive',
+    standalone: true,
+    imports: [CommonModule, MatPaginatorModule, MatTableModule],
     styleUrls: ['my-holding-datatable-responsive.component.scss'],
     templateUrl: 'my-holding-datatable-responsive.component.html',
 })

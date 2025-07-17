@@ -7,8 +7,8 @@ import { ServerErrorComponent } from './server-error.component';
 @NgModule({
   imports: [
     CommonModule,
-    ServerErrorRoutingModule
+    ServerErrorRoutingModule,
+    ServerErrorComponent
   ],
-  declarations: [ServerErrorComponent]
 })
 export class ServerErrorModule { }

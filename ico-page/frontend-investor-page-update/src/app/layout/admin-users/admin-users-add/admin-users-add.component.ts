@@ -20,12 +20,13 @@ import {AddAdminUserUploadService} from '../add-admin-user-upload.service';
 import {Router} from '@angular/router';
 import {Utils} from '../../../shared/utilites/Utils';
 import {Organization} from '../organization';
-import {el} from '@angular/platform-browser/testing/src/browser_util';
 import {FormControl} from '@angular/forms';
 import {Account} from '../account';
 import {NgbModal, NgbModalRef, NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 import {Country} from '../country';
 import * as Noty from 'noty';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Created by Yuri Nikiforov.
@@ -35,6 +36,8 @@ import * as Noty from 'noty';
 
 @Component({
     selector: 'app-admin-users-add',
+    standalone: true,
+    imports: [CommonModule, FormsModule],
     templateUrl: './admin-users-add.component.html',
     styleUrls: ['./admin-users-add.component.scss']
 })

@@ -5,9 +5,13 @@ import {MainPageService} from './main-page.service';
 import {RespUserMainData} from './resp-user-main-data';
 import * as Noty from 'noty';
 import {Router} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
 
 @Component({
     selector: 'app-main-page',
+    standalone: true,
+    imports: [CommonModule, PageHeaderComponent],
     templateUrl: './main-page.component.html',
     styleUrls: ['./main-page.component.scss'],
     animations: [routerTransition()]

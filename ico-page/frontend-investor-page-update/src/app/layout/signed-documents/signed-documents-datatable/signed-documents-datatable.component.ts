@@ -7,9 +7,12 @@ import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewCh
 import {DatatableComponent} from '@swimlane/ngx-datatable';
 import {DomSanitizer} from '@angular/platform-browser';
 import {SignedDocument} from '../signed-document';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @Component({
     selector: 'app-signed-documents-datatable',
+    standalone: true,
+    imports: [NgxDatatableModule],
     styleUrls: ['./signed-documents-datatable.component.scss'],
     templateUrl: './signed-documents-datatable.component.html'
 })

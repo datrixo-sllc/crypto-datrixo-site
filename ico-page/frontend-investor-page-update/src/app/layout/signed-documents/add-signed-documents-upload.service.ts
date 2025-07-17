@@ -6,9 +6,9 @@
 import {Inject, Injectable} from '@angular/core';
 import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
-import {Http, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs';
 import {SignedDocument} from './signed-document';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class AddSignedDocumentsUploadService {
@@ -17,7 +17,7 @@ export class AddSignedDocumentsUploadService {
     private static readonly SLASH: string = '/';
     private static readonly CHECK: string = 'check';
 
-    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: Http) {
+    constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {
     }
 
     public postItemAdd(fileToUpload: File, itemData: SignedDocument): Observable<any> {
@@ -32,15 +32,8 @@ export class AddSignedDocumentsUploadService {
             formData.append('file', fileToUpload, fileToUpload.name);
         }
         formData.append('itemdata', JSON.stringify(itemData));
-        const urlOptions = this.createUrlOptions();
-        return this.http.post(url, formData, urlOptions);
-    }
-
-    private createUrlOptions(): RequestOptions {
-        const urlHeaders = new Headers(/*{'content-type': 'multipart/form-data'}*/);
-        const urlOptions = new RequestOptions({headers: urlHeaders});
-        urlOptions.withCredentials = true;
-        return urlOptions;
+        // Новый способ: просто передаём withCredentials в options
+        return this.http.post(url, formData, { withCredentials: true });
     }
 
     getCheck(): Observable<any> {

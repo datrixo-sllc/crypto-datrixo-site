@@ -11,9 +11,14 @@ import {NavigationEnd, Router} from '@angular/router';
 import {Utils} from '../../shared/utilites/Utils';
 import {DocumentsForDownloadService} from './documents-for-download.service';
 import {DocumentForDownloadList} from './document-for-download-list';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { DinamicPageHeaderComponent } from 'src/app/shared/modules/page-header/dinamic-header/dinamic-page-header.component';
 
 @Component({
     selector: 'app-documents-for-download',
+    standalone: true,
+    imports: [CommonModule, FormsModule, DinamicPageHeaderComponent],
     templateUrl: './documents-for-download.component.html',
     styleUrls: ['./documents-for-download.component.scss'],
     animations: [routerTransition()]

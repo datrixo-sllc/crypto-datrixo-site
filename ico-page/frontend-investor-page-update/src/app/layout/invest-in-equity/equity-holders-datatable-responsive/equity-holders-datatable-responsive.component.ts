@@ -5,13 +5,20 @@
  */
 
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HolderResponce} from '../holder-responce';
 
 
 @Component({
     selector: 'app-equity-holders-datatable-responsive',
+    standalone: true,
+    imports: [CommonModule, MatTableModule, MatPaginatorModule],
     styleUrls: ['equity-holders-datatable-responsive.component.scss'],
     templateUrl: 'equity-holders-datatable-responsive.component.html',
 })

@@ -5,9 +5,12 @@
  */
 import {Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import {HolderResponce} from '../holder-responce';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @Component({
     selector: 'app-my-equity-holding-datatable',
+    standalone: true,
+    imports: [NgxDatatableModule],
     styleUrls: ['./my-equity-holding-datatable.component.scss'],
     templateUrl: './my-equity-holding-datatable.component.html'
 })
