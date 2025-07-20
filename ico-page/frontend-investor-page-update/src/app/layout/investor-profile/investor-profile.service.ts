@@ -29,8 +29,9 @@ export class InvestorProfileService {
     getUserData(): Observable<any> {
         const url = this.config.apiEndpoint + InvestorProfileService.INVESTOR + InvestorProfileService.SLASH +
             InvestorProfileService.USER_DATA;
+        const headers = this.createHeaders();
         return this.http
-            .get(url, {withCredentials: true});
+            .get(url, {headers});
     }
 
     updateUserData(fileToUpload: File, request: RequestUpdateUserData): Observable<any> {
@@ -49,15 +50,25 @@ export class InvestorProfileService {
         }
         formData.append('userdata', JSON.stringify(request));
         // Для FormData не нужно явно указывать headers, Angular сам выставит boundary
-        return this.http.put(url, formData, { withCredentials: true });
+        const headers = this.createHeaders();
+        return this.http.put(url, formData, { headers });
     }
 
     updateUserPassword(request: RequestUpdateUserPassword): Observable<any> {
         const url = this.config.apiEndpoint + InvestorProfileService.INVESTOR + InvestorProfileService.SLASH +
             InvestorProfileService.UPDATE_USER_PASSWORD;
+        const headers = this.createHeaders();
         return this.http
-            .post(url, request, {withCredentials: true, responseType: 'text'} );
+            .post(url, request, {headers, responseType: 'text'} );
     }
 
+    private createHeaders(): HttpHeaders {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            throw new Error('Authentication token not found');
+        }
+        return new HttpHeaders()
+            .set('Authorization', `Bearer ${token}`);
+    }
 
 }

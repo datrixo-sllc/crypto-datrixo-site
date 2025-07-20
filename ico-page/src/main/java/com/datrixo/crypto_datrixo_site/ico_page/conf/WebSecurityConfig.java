@@ -18,9 +18,6 @@ import org.springframework.security.config.annotation.web.configurers.HeadersCon
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -47,6 +44,12 @@ import java.util.Map;
 public class WebSecurityConfig {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
+    private final JwtTokenProvider jwtTokenProvider;
+    // Удалить поле JwtAuthenticationFilter
+
+    public WebSecurityConfig(JwtTokenProvider jwtTokenProvider) {
+        this.jwtTokenProvider = jwtTokenProvider;
+    }
 
     @SuppressWarnings("deprecation")
     @Bean
@@ -86,6 +89,11 @@ public class WebSecurityConfig {
     }
 
     @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+        return new JwtAuthenticationFilter();
+    }
+
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, AuthenticationManager authenticationManager) throws Exception {
         http
                 .headers(headers -> headers
@@ -107,6 +115,7 @@ public class WebSecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .addFilter(authenticationFilter(authenticationManager))
+                .addFilterBefore(jwtAuthenticationFilter(), org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(auth -> auth
                         // for h2 - comment for production
                         .requestMatchers("/h2-console/**").permitAll()
@@ -176,10 +185,13 @@ public class WebSecurityConfig {
 
     private void loginSuccessHandler(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
                                      Authentication authentication) throws IOException {
-        ResponseAuth resp = new ResponseAuth();
+        String token = jwtTokenProvider.generateToken(authentication);
+        Map<String, Object> resp = new HashMap<>();
+        resp.put("statusResponseAuth", StatusResponseAuth.OK.toString());
+        resp.put("role", ((MediUser)authentication.getPrincipal()).getRole().name());
+        resp.put("token", token);
         httpServletResponse.setStatus(HttpStatus.OK.value());
-        resp.setStatusResponseAuth(StatusResponseAuth.OK.toString());
-        resp.setRole(((MediUser)authentication.getPrincipal()).getRole().name());
+        httpServletResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);
         objectMapper.writeValue(httpServletResponse.getWriter(), resp);
     }
 
@@ -202,103 +214,4 @@ public class WebSecurityConfig {
     }
 
 }
-
-/*
-=======
->>>>>>> 3099b2d1a06eafa6afbfc2bac1a9186c5afb0931
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-    private final ObjectMapper objectMapper = new ObjectMapper();
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
-                .cors()
-
-                // for h2 console - comment for production
-                //.and()
-                //.authorizeRequests().antMatchers("/h2-console/**").permitAll()
-                //.and()
-                //.headers().frameOptions().sameOrigin()
-                // -------
-                .and()
-                .authorizeRequests()
-                .antMatchers("/ico/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .addFilter(authenticationFilter())
-                .logout().logoutUrl("/logout").logoutSuccessHandler(this::logoutSeccessHandler)
-                .and().exceptionHandling().authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-        ;
-    }
-
-    @Bean
-    public RequestBodyReaderAuthenticationFilter authenticationFilter() throws Exception {
-        RequestBodyReaderAuthenticationFilter authenticationFilter
-                = new RequestBodyReaderAuthenticationFilter();
-        authenticationFilter.setAuthenticationSuccessHandler(this::loginSuccessHandler);
-        authenticationFilter.setAuthenticationFailureHandler(this::loginFailureHandler);
-        authenticationFilter.setRequiresAuthenticationRequestMatcher(
-                new AntPathRequestMatcher("/login", "POST"));
-        authenticationFilter.setAuthenticationManager(authenticationManagerBean());
-        return authenticationFilter;
-    }
-
-    private void loginFailureHandler(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e)
-            throws IOException {
-        ResponseAuth resp = new ResponseAuth();
-        httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
-
-        resp.setStatusResponseAuth(e.getMessage());
-        objectMapper.writeValue(httpServletResponse.getWriter(), resp);
-    }
-
-    private void loginSuccessHandler(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication)
-            throws IOException {
-        ResponseAuth resp = new ResponseAuth();
-        httpServletResponse.setStatus(HttpStatus.OK.value());
-        resp.setStatusResponseAuth(StatusResponseAuth.OK.toString());
-        resp.setRole(((MediUser)authentication.getPrincipal()).getRole().name());
-        objectMapper.writeValue(httpServletResponse.getWriter(), resp);
-    }
-
-    private void logoutSeccessHandler(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication)
-            throws IOException {
-        httpServletResponse.setStatus(HttpStatus.OK.value());
-        objectMapper.writeValue(httpServletResponse.getWriter(), new HashMap<String, String>() {{
-            put("statusResponseAuth", "DONE");
-        }});
-    }
-
-    @Bean
-    public UserDetailsService getUserDetailsService() {
-        return new UserDetailsServiceImpl();
-    }
-
-    @SuppressWarnings("deprecation")
-    @Bean
-    public static NoOpPasswordEncoder passwordEncoder() {
-        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
-    }
-
-
-    @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("*"));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS", "PUT", "DELETE"));
-        configuration.setAllowCredentials(true);
-        // строка ниже необходима чтобы не было ошибки при авторизации
-//        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        configuration.addExposedHeader("Authorization, x-xsrf-token, Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, " +
-                "Content-Type, Access-Control-Request-Method, Custom-Filter-Header, Location");
-        configuration.setAllowedHeaders(Arrays.asList("*"));
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
-
-}
-*/
 

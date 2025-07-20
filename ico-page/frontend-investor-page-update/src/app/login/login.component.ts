@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
                         localStorage.setItem('authorityStatus', JSON.stringify(response));
                         localStorage.setItem('username', this.model.username);
                         localStorage.setItem('userRole', response.role);
+                        localStorage.setItem('token', response.token);
                         localStorage.setItem('isLoggedin', 'true');
                         this.router.navigate(['/main-page']);
                     } else if (response.statusResponseAuth === StatusResponseAuth.LOGIN_NOT_FOUND) {
@@ -88,6 +89,10 @@ export class LoginComponent implements OnInit {
         if (localStorage.getItem('isLoggedin') != null) {
             localStorage.removeItem('isLoggedin');
         }
+        if (localStorage.getItem('token') != null) {
+            localStorage.removeItem('token');
+        }
+
     }
 
     eyeFunction() {

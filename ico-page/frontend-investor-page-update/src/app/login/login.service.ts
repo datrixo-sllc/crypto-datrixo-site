@@ -22,7 +22,7 @@ export class LoginService {
             'Authorization': btoa(email + ':' + password)
         });
         const body = { 'username': email, 'password': password };
-        return this.http.post(url, body, { headers, withCredentials: true });
+        return this.http.post(url, body, { headers });
     }
 
     // extractData и handleErrorObservable больше не нужны с HttpClient, их можно удалить

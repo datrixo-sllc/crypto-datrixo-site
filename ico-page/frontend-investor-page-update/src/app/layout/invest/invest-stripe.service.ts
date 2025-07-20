@@ -4,7 +4,7 @@
  * Time: 13:40
  */
 
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { loadStripe } from '@stripe/stripe-js';
 import {Inject, Injectable} from '@angular/core';
@@ -24,9 +24,19 @@ export class InvestStripeService {
     ) {}
 
     payment(payment: object): Observable<any> {
+        const headers = this.createHeaders();
         return this.http
             .post(this.config.apiEndpoint + InvestStripeService.STRIPE + InvestStripeService.SLASH + InvestStripeService.PAYMENT,
-                payment, {withCredentials: true});
+                payment, {headers});
+    }
+
+    private createHeaders(): HttpHeaders {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            throw new Error('Authentication token not found');
+        }
+        return new HttpHeaders()
+            .set('Authorization', `Bearer ${token}`);
     }
 
 }
