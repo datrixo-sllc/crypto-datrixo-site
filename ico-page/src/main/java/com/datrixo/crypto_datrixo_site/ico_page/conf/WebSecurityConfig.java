@@ -19,6 +19,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
@@ -30,6 +33,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -44,9 +48,24 @@ public class WebSecurityConfig {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
+    @SuppressWarnings("deprecation")
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8();
+        //return Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8();
+
+        /*
+        * Для корректной работы пароли в базе должны иметь префикс:
+            {argon2} для Argon2
+            {bcrypt} для BCrypt
+            {noop} для обычного текста
+        */
+        /*String idForEncode = "argon2";
+        Map<String, PasswordEncoder> encoders = new HashMap<>();
+        encoders.put(idForEncode, Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8());
+        encoders.put("bcrypt", new BCryptPasswordEncoder());
+        encoders.put("noop", NoOpPasswordEncoder.getInstance());
+        return new DelegatingPasswordEncoder(idForEncode, encoders);*/
+        return NoOpPasswordEncoder.getInstance();
     }
 
     @Bean
@@ -120,7 +139,27 @@ public class WebSecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        return new UrlBasedCorsConfigurationSource();
+        // Разрешаем доступ с этого источника
+        configuration.setAllowedOrigins(List.of("http://localhost:4200"));
+
+        // Разрешаем следующие HTTP-методы
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+
+        // Разрешаем заголовки
+        configuration.setAllowedHeaders(List.of("Content-Type", "Authorization", "X-Requested-With", "Cache-Control"));
+        configuration.addExposedHeader("Authorization, x-xsrf-token, Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, " +
+                "Content-Type, Access-Control-Request-Method, Custom-Filter-Header, Location");
+
+        // Разрешаем передачу cookies/токенов
+        configuration.setAllowCredentials(true);
+
+        // Устанавливаем максимальное время жизни предварительного запроса (preflight)
+        configuration.setMaxAge(3600L);
+
+        // Регистрируем настройки для всех эндпоинтов
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 
     @Bean

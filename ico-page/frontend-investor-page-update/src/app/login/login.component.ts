@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -12,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
     selector: 'app-login',
     standalone: true,
-    imports: [TranslateModule, RouterModule, FormsModule, MatIconModule],
+    imports: [TranslateModule, RouterModule, FormsModule, MatIconModule, CommonModule],
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     animations: [routerTransition()]

@@ -26,6 +26,12 @@
             "scripts": []
           },
           "configurations": {
+              "development": {
+                  "optimization": false,
+                  "sourceMap": true,
+                  "vendorChunk": true,
+                  "buildOptimizer": false
+              },
             "production": {
               "fileReplacements": [
                 {
@@ -59,7 +65,10 @@
           "configurations": {
             "production": {
               "buildTarget": "frontend-investor-page:build:production"
-            }
+            },
+              "development": {
+                  "buildTarget": "frontend-investor-page:build:development"
+              }
           }
         },
         "extract-i18n": {

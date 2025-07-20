@@ -10,7 +10,7 @@ const routes: Routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'main-page' },
+            { path: '', redirectTo: 'main-page', pathMatch: 'full' },
             { path: 'main-page', loadChildren: () => import('./main-page/main-page.module').then(m => m.MainPageModule) },
             { path: 'investor-profile', loadChildren: () => import('./investor-profile/investor-profile.module').then(m => m.InvestorProfileModule) },
             { path: 'invest', loadChildren: () => import('./invest/invest.module').then(m => m.InvestModule) },
