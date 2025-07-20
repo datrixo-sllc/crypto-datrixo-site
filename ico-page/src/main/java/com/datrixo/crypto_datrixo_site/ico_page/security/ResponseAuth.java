@@ -8,6 +8,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.security;
 public class ResponseAuth {
     private String statusResponseAuth;
     private String role;
+    private String token;
 
     public String getStatusResponseAuth() {
         return statusResponseAuth;
@@ -23,5 +24,13 @@ public class ResponseAuth {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

@@ -8,7 +8,7 @@ import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
 import {Observable} from 'rxjs';
 import {User} from './user';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class AddAdminUserUploadService {
@@ -34,26 +34,38 @@ export class AddAdminUserUploadService {
             formData.append('file', fileToUpload, fileToUpload.name);
         }
         formData.append('itemdata', JSON.stringify(itemData));
-        // Новый способ: просто передаём withCredentials в options
-        return this.http.post(url, formData, { withCredentials: true });
+        const headers = this.createHeaders();
+
+        return this.http.post(url, formData, { headers });
     }
 
     // Удаляю createUrlOptions и RequestOptions/Headers как устаревшие
     getCheck(): Observable<any> {
         const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_USER +
             AddAdminUserUploadService.SLASH + AddAdminUserUploadService.CHECK;
-        return this.http.get(url, {withCredentials: true});
+        const headers = this.createHeaders();
+        return this.http.get(url, {headers});
     }
 
     getUsername(): Observable<any> {
         const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_USER +
             AddAdminUserUploadService.SLASH + AddAdminUserUploadService.NAME;
-        return this.http.post(url, '', {withCredentials: true});
+        const headers = this.createHeaders();
+        return this.http.post(url, '', {headers});
     }
     getPassword(): Observable<any> {
         const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_USER +
             AddAdminUserUploadService.SLASH + AddAdminUserUploadService.PASSWORD;
-        return this.http.get(url, {withCredentials: true});
+        const headers = this.createHeaders();
+        return this.http.get(url, {headers});
     }
 
+    private createHeaders(): HttpHeaders {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            throw new Error('Authentication token not found');
+        }
+        return new HttpHeaders()
+            .set('Authorization', `Bearer ${token}`);
+    }
 }

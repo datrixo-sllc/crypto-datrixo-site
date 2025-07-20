@@ -7,7 +7,7 @@ import {Inject, Injectable} from '@angular/core';
 import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class AdminUsersService {
@@ -28,32 +28,48 @@ export class AdminUsersService {
 
     getList(): Observable<any> {
         const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + AdminUsersService.LIST;
-        return this.http.get(url, {withCredentials: true});
+        const headers = this.createHeaders();
+        return this.http.get(url, {headers});
     }
     getShortList(): Observable<any> {
         const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + AdminUsersService.SHORT_LIST;
-        return this.http.get(url, {withCredentials: true});
+        const headers = this.createHeaders();
+        return this.http.get(url, {headers});
     }
     getItemDetail(id: number): Observable<any> {
         const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + id;
-        return this.http.get(url, {withCredentials: true});
+        const headers = this.createHeaders();
+        return this.http.get(url, {headers});
     }
 
     getItemShortDetail(id: number): Observable<any> {
         const url = this.config.apiEndpoint + AdminUsersService.USER +
             AdminUsersService.SLASH + AdminUsersService.SHORT + AdminUsersService.SLASH + id;
-        return this.http.get(url, {withCredentials: true});
+        const headers = this.createHeaders();
+        return this.http.get(url, {headers});
     }
 
     deleteItem(id: number): Observable<any> {
         const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH + id;
-        return this.http.delete(url, {withCredentials: true});
+        const headers = this.createHeaders();
+        return this.http.delete(url, {headers});
     }
 
     getUserData(id: number): Observable<any> {
         const url = this.config.apiEndpoint + AdminUsersService.USER + AdminUsersService.SLASH +
             AdminUsersService.USER_DATA + AdminUsersService.SLASH + id;
+        const headers = this.createHeaders();
         return this.http
-            .get(url, {withCredentials: true});
+            .get(url, {headers});
     }
+
+    private createHeaders(): HttpHeaders {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            throw new Error('Authentication token not found');
+        }
+        return new HttpHeaders()
+            .set('Authorization', `Bearer ${token}`);
+    }
+
 }
