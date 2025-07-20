@@ -32,7 +32,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="token authorisation is ok">
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="token not write">
       <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/security/JwtAuthenticationFilter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/security/JwtTokenProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -641,7 +641,14 @@
       <workItem from="1751486025991" duration="606000" />
       <workItem from="1751642374798" duration="969000" />
       <workItem from="1751654706812" duration="67000" />
-      <workItem from="1752847125098" duration="21628000" />
+      <workItem from="1752847125098" duration="21220000" />
+    </task>
+    <task id="LOCAL-00091" summary="user documents">
+      <created>1607193822284</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1607193822284</updated>
     </task>
     <task id="LOCAL-00092" summary="user documents">
       <created>1607275993348</created>
@@ -979,14 +986,7 @@
       <option name="project" value="LOCAL" />
       <updated>1753020268247</updated>
     </task>
-    <task id="LOCAL-00140" summary="token authorisation is ok">
-      <created>1753027823745</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1753027823745</updated>
-    </task>
-    <option name="localTasksCounter" value="141" />
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1153,6 +1153,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="new logo" />
     <MESSAGE value="new favicon" />
     <MESSAGE value="StripeController added" />
     <MESSAGE value="Nikname Generator" />
@@ -1177,8 +1178,7 @@
     <MESSAGE value="errors in db configs" />
     <MESSAGE value="backend was started" />
     <MESSAGE value="token not write" />
-    <MESSAGE value="token authorisation is ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="token authorisation is ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="token not write" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
