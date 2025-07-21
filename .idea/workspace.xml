@@ -32,33 +32,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="token not write">
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/security/JwtTokenProvider.java" afterDir="false" />
+    <list default="true" id="162a5ce6-3423-454d-9fe0-0f017bec8f15" name="Default Changelist" comment="token authorisation is ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/admin-users/add-admin-user-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/admin-users/add-admin-user-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/admin-users/admin-users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/admin-users/admin-users.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/admin-users/update-admin-users-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/admin-users/update-admin-users-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/documents-for-download/add-documents-for-download-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/documents-for-download/add-documents-for-download-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/documents-for-download/documents-for-download.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/documents-for-download/documents-for-download.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/documents-for-download/update-documents-for-download-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/documents-for-download/update-documents-for-download-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest-in-equity/invest-in-equity-download.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest-in-equity/invest-in-equity-download.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest-in-equity/invest-in-equity-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest-in-equity/invest-in-equity-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest/invest-download.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest/invest-download.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest/invest-stripe.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest/invest-stripe.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest/invest-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/invest/invest-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/investor-profile/investor-profile.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/investor-profile/investor-profile.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/main-page/main-page.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/main-page/main-page.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/my-equity-holdings/my-equity-holdings.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/my-equity-holdings/my-equity-holdings.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/my-holdings/my-holdings.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/my-holdings/my-holdings.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/signed-documents/add-signed-documents-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/signed-documents/add-signed-documents-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/signed-documents/signed-documents.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/signed-documents/signed-documents.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/signed-documents/update-signed-documents-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/layout/signed-documents/update-signed-documents-upload.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/frontend-investor-page-update/src/app/login/login.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/security/ResponseAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/security/ResponseAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,37 +139,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/nik/IdeaProjects/_Milla/crypto-datrixo-site/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "ruby.rails.projectView.checked": "true",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "show.migrate.to.gradle.popup": "false",
-    "spring.configuration.checksum": "38bcf7505cd5d65276fb216f0e1440f1",
-    "ts.external.directory.path": "C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nik/IdeaProjects/_Milla/crypto-datrixo-site/ico-page/src/main/java/com/datrixo/crypto_datrixo_site/ico_page/conf/WebSecurityConfig.java&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;38bcf7505cd5d65276fb216f0e1440f1&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\yuri\\Documents\\workspaceIDEA\\_DATRIXO\\crypto-datrixo-site\\ico-page\\frontend-investor-page\\node_modules\\typescript\\lib&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.datrixo.crypto_datrixo_site.ico_page.service.password_generator" />
@@ -1126,7 +1101,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin2/mirate-spring-boot3" />
+                        <option value="origin/mirate-spring-boot3" />
                       </list>
                     </value>
                   </entry>
