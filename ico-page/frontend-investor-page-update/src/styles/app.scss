@@ -1,6 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* Глобальные стили и импорты */
+@use "/node_modules/noty/src/noty.scss";
+@use "/node_modules/noty/src/themes/mint.scss";
+
+/* Импортируйте только существующие файлы ngx-datatable */
+@import "/node_modules/@swimlane/ngx-datatable/index.css";
+@import "/node_modules/@swimlane/ngx-datatable/themes/bootstrap.css";
+@import "/node_modules/@swimlane/ngx-datatable/assets/icons.css";
+
+/* Остальные ваши импорты */
 @import "../assets/vendor/bootstrap/css/bootstrap";
-// @import "bootstrap/bootstrap";
 @import "spinner";
 @import "utils";
 @import "rtl";
@@ -13,12 +21,5 @@
     }
 }
 
-@import '~@swimlane/ngx-datatable/release/index.css';
-@import '~@swimlane/ngx-datatable/release/themes/bootstrap.css';
-@import '~@swimlane/ngx-datatable/release/assets/icons.css';
-
-@import "~noty/src/noty.scss";
-@import "~noty/src/themes/mint.scss";
-
-@import "~material-design-icons/iconfont/material-icons.css";
+//@import "~material-design-icons/iconfont/material-icons.css";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
