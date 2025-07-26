@@ -26,7 +26,7 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
+import java.util.stream.Collectors;
 
 
 /**
@@ -83,7 +83,7 @@ public class HolderServiceImpl implements HolderService {
     }
 
     @Override
-    @Scheduled(fixedRate = 10000)
+    //@Scheduled(fixedRate = 10000)
     @Transactional
     public void demoProcessing() {
         List<Holder> holders = holderRepository.findAll();
