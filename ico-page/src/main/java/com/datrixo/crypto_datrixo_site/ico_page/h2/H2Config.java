@@ -74,6 +74,10 @@ public class H2Config {
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("h2.hibernate.hbm2ddl.auto"));
         hibernateProperties.setProperty("hibernate.show_sql", env.getProperty("h2.hibernate.show_sql"));
+        hibernateProperties.setProperty("hibernate.format_sql", env.getProperty("h2.hibernate.format_sql"));
+        hibernateProperties.setProperty("hibernate.use_sql_comments", env.getProperty("h2.hibernate.use_sql_comments"));
+        hibernateProperties.setProperty("hibernate.transaction.jta.platform", env.getProperty("h2.hibernate.transaction.jta.platform"));
+
         return hibernateProperties;
     }
 }
