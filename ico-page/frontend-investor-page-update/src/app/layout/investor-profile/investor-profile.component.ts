@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, AfterViewInit, TemplateRef, ViewChild} from '@angular/core';
 import {routerTransition} from '../../router.animations';
 import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {NgxSpinnerService} from 'ngx-spinner';
@@ -30,7 +30,7 @@ import { HoldingDatatableResponsiveComponent } from './holding-datatable-respons
     styleUrls: ['./investor-profile.component.scss'],
     animations: [routerTransition()]
 })
-export class InvestorProfileComponent implements OnInit {
+export class InvestorProfileComponent implements AfterViewInit {
     closeResult: string;
     userData: RespUserData = new RespUserData();
     currentPassword: string;
@@ -63,7 +63,7 @@ export class InvestorProfileComponent implements OnInit {
     ) {
     }
 
-    ngOnInit() {
+    ngAfterViewInit() {
         this.clearUploadParams();
         this.getUserData();
     }
