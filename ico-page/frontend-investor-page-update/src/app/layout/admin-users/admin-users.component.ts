@@ -4,6 +4,7 @@
  * Time: 20:05
  */
 import {Component, OnInit} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {routerTransition} from '../../router.animations';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {User} from './user';
@@ -18,7 +19,7 @@ import { DinamicPageHeaderComponent } from 'src/app/shared/modules/page-header/d
 @Component({
     selector: 'app-admin-users',
     standalone: true,
-    imports: [DinamicPageHeaderComponent],
+    imports: [DinamicPageHeaderComponent, CommonModule],
     templateUrl: './admin-users.component.html',
     styleUrls: ['./admin-users.component.scss'],
     animations: [routerTransition()]

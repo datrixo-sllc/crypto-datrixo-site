@@ -4,6 +4,7 @@
  * Time: 20:05
  */
 import {Component, OnInit} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {routerTransition} from '../../router.animations';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {SignedDocument} from './signed-document';
@@ -16,7 +17,7 @@ import { DinamicPageHeaderComponent } from '../../shared/modules/page-header/din
 @Component({
     selector: 'app-signed-documents',
     standalone: true,
-    imports: [DinamicPageHeaderComponent],
+    imports: [DinamicPageHeaderComponent, CommonModule],
     templateUrl: './signed-documents.component.html',
     styleUrls: ['./signed-documents.component.scss'],
     animations: [routerTransition()]

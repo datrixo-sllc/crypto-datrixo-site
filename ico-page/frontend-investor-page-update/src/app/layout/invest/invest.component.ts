@@ -1,4 +1,5 @@
 import {Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {routerTransition} from '../../router.animations';
 import {InvestDownloadService} from './invest-download.service';
 import {NgxSpinnerService} from 'ngx-spinner';
@@ -19,10 +20,11 @@ import { PageHeaderComponent } from '../../shared/modules/page-header/page-heade
 
 @Component({
     selector: 'app-invest',
+    standalone: true,
     templateUrl: './invest.component.html',
     styleUrls: ['./invest.component.scss'],
     animations: [routerTransition()],
-    imports: [PageHeaderComponent],
+    imports: [PageHeaderComponent, CommonModule],
 })
 export class InvestComponent implements OnInit, OnDestroy {
     private static readonly FN_PPM: string = 'ppm.pdf';
