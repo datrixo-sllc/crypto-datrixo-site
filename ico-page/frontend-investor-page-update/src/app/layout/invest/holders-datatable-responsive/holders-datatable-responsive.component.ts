@@ -4,7 +4,7 @@
  * Time: 21:38
  */
 
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild, AfterViewInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
@@ -21,7 +21,7 @@ import {HolderResponce} from '../holder-responce';
     standalone: true,
     imports: [CommonModule, MatTableModule, MatPaginatorModule, MatSortModule],
 })
-export class HoldersDatatableResponsiveComponent implements OnInit, OnChanges {
+export class HoldersDatatableResponsiveComponent implements OnInit, OnChanges, AfterViewInit {
     @Input() items: HolderResponce[];
     etherNet = 'etherscan.io';
     displayedColumns: string[] = ['address', 'createDate', 'equityTokens', 'sharePercent'];
@@ -35,14 +35,19 @@ export class HoldersDatatableResponsiveComponent implements OnInit, OnChanges {
 
     ngOnInit() {
         this.dataSource = new MatTableDataSource<HolderResponce>(this.items);
-        this.dataSource.paginator = this.paginator;
         this.dataSourceLenth = this.dataSource.data.length;
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         this.dataSource = new MatTableDataSource<HolderResponce>(this.items);
-        this.dataSource.paginator = this.paginator;
         this.dataSourceLenth = this.dataSource.data.length;
+        if (this.paginator) {
+            this.dataSource.paginator = this.paginator;
+        }
+    }
+
+    ngAfterViewInit() {
+        this.dataSource.paginator = this.paginator;
     }
 
     applyFilter(filterValue: string) {
