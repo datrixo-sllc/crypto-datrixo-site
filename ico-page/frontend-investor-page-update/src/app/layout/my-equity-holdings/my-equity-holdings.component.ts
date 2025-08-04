@@ -8,11 +8,15 @@ import {interval, Subscription} from 'rxjs';
 import {switchMap} from 'rxjs/internal/operators/switchMap';
 import {Router} from '@angular/router';
 import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
+import { MyEquityHoldingDatatableResponsiveComponent } from './my-equity-holding-datatable-responsive/my-equity-holding-datatable-responsive.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-my-equity-holdings',
     standalone: true,
-    imports: [PageHeaderComponent],
+    imports: [PageHeaderComponent, CommonModule,
+        MyEquityHoldingDatatableResponsiveComponent
+    ],
     templateUrl: './my-equity-holdings.component.html',
     styleUrls: ['./my-equity-holdings.component.scss'],
     animations: [routerTransition()]
