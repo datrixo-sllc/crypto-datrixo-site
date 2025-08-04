@@ -13,11 +13,20 @@ import {Utils} from '../../shared/utilites/Utils';
 import {SignedDocumentsService} from './signed-documents.service';
 import {SignedDocumentList} from './signed-document-list';
 import { DinamicPageHeaderComponent } from '../../shared/modules/page-header/dinamic-header/dinamic-page-header.component';
+import { SignedDocumentsDatatableComponent } from './signed-documents-datatable/signed-documents-datatable.component';
+import { SignedDocumentsAddComponent } from './signed-documents-add/signed-documents-add.component';
+import { SignedDocumentsEditComponent } from './signed-documents-edit/signed-documents-edit.component';
+import { SignedDocumentsDetailComponent } from './signed-documents-detail/signed-documents-detail.component';
 
 @Component({
     selector: 'app-signed-documents',
     standalone: true,
-    imports: [DinamicPageHeaderComponent, CommonModule],
+    imports: [DinamicPageHeaderComponent, CommonModule,
+        SignedDocumentsAddComponent,
+        SignedDocumentsEditComponent,
+        SignedDocumentsDetailComponent,
+        SignedDocumentsDatatableComponent
+    ],
     templateUrl: './signed-documents.component.html',
     styleUrls: ['./signed-documents.component.scss'],
     animations: [routerTransition()]
