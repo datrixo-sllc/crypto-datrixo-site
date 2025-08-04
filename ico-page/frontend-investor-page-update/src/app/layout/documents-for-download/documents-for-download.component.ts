@@ -14,11 +14,20 @@ import {DocumentForDownloadList} from './document-for-download-list';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DinamicPageHeaderComponent } from 'src/app/shared/modules/page-header/dinamic-header/dinamic-page-header.component';
+import { DocumentsForDownloadDatatableComponent } from './documents-for-download-datatable/documents-for-download-datatable.component';
+import { DocumentsForDownloadDetailComponent } from './documents-for-download-detail/documents-for-download-detail.component';
+import { DocumentsForDownloadEditComponent } from './documents-for-download-edit/documents-for-download-edit.component';
+import { DocumentsForDownloadAddComponent } from './documents-for-download-add/documents-for-download-add.component';
 
 @Component({
     selector: 'app-documents-for-download',
     standalone: true,
-    imports: [CommonModule, FormsModule, DinamicPageHeaderComponent],
+    imports: [CommonModule, FormsModule, DinamicPageHeaderComponent,
+        DocumentsForDownloadDatatableComponent,
+        DocumentsForDownloadDetailComponent,
+        DocumentsForDownloadEditComponent,
+        DocumentsForDownloadAddComponent
+    ],
     templateUrl: './documents-for-download.component.html',
     styleUrls: ['./documents-for-download.component.scss'],
     animations: [routerTransition()]
