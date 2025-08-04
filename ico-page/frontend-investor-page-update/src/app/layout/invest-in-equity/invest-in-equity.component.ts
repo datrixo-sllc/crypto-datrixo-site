@@ -13,6 +13,9 @@ import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import * as Noty from 'noty';
 import {Router} from '@angular/router';
 import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
+import { SharedPipesModule } from '../../shared/pipes/shared-pipes.module';
+import { EquityHoldersDatatableResponsiveComponent } from './equity-holders-datatable-responsive/equity-holders-datatable-responsive.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-invest-in-equity',
@@ -20,7 +23,10 @@ import { PageHeaderComponent } from '../../shared/modules/page-header/page-heade
     styleUrls: ['./invest-in-equity.component.scss'],
     animations: [routerTransition()],
     standalone: true,
-    imports: [PageHeaderComponent],
+    imports: [PageHeaderComponent, CommonModule,
+        SharedPipesModule,
+        EquityHoldersDatatableResponsiveComponent
+    ],
 })
 export class InvestInEquityComponent implements OnInit, OnDestroy {
     private static readonly  FN_PPM: string = 'ppm.pdf';
