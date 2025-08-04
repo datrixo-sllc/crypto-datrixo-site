@@ -15,11 +15,24 @@ import {UserList} from './user-list';
 import {UpdateAdminUsersUploadService} from './update-admin-users-upload.service';
 import * as Noty from 'noty';
 import { DinamicPageHeaderComponent } from 'src/app/shared/modules/page-header/dinamic-header/dinamic-page-header.component';
+import { AdminUsersDatatableResponsiveComponent } from './admin-users-datatable-responsive/admin-users-datatable-responsive.component';
+import { AdminUsersDetailComponent } from './admin-users-detail/admin-users-detail.component';
+import { AdminUsersEditComponent } from './admin-users-edit/admin-users-edit.component';
+import { AdminUsersAddComponent } from './admin-users-add/admin-users-add.component';
+import { SharedPipesModule } from 'src/app/shared';
 
 @Component({
     selector: 'app-admin-users',
     standalone: true,
-    imports: [DinamicPageHeaderComponent, CommonModule],
+    imports: [
+        DinamicPageHeaderComponent, 
+        CommonModule, 
+        AdminUsersDatatableResponsiveComponent,
+        AdminUsersDetailComponent,
+        AdminUsersEditComponent,
+        AdminUsersAddComponent,
+        SharedPipesModule
+    ],
     templateUrl: './admin-users.component.html',
     styleUrls: ['./admin-users.component.scss'],
     animations: [routerTransition()]

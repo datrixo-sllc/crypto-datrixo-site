@@ -34,8 +34,100 @@ td.mat-column-star {
 }
 
 .mat-icon-button {
-    background: aliceblue;
-    outline: none;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    
+    // Убираем все стандартные стили Material
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: inherit !important;
+    
+    &::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        width: 0 !important;
+        height: 0 !important;
+        background: rgba(62, 117, 255, 0.1) !important;
+        border-radius: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        transition: all 0.3s ease !important;
+        z-index: 0 !important;
+    }
+    
+    &:hover {
+        transform: scale(1.05) !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        
+        &::before {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+    
+    &:focus {
+        transform: scale(1.02) !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        
+        &::before {
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(62, 117, 255, 0.15) !important;
+        }
+    }
+    
+    &:active {
+        transform: scale(0.98) !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+}
+
+.mat-icon {
+    color: #3e75ff !important;
+    font-size: 22px !important;
+    width: 22px !important;
+    height: 22px !important;
+    line-height: 22px !important;
+    position: relative !important;
+    z-index: 1 !important;
+    transition: color 0.3s ease !important;
+}
+
+.mat-icon-button:hover .mat-icon {
+    color: #2c5fd9 !important;
+}
+
+// Дополнительные стили для полного переопределения Material Design
+button.mat-icon-button, button.mat-mdc-menu-trigger {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    
+    &:hover, &:focus, &:active {
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+    }
 }
 
 .mat-header-cell {
@@ -168,21 +260,26 @@ td.mat-column-star {
         }
     }
 
-    /*.mat-icon-button {
-        width: 3rem !important;
-        height: 3rem !important;
-        line-height: 3rem !important;
+    .mat-icon-button {
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        
+        &:hover {
+            transform: scale(1.08) !important;
+        }
+        
+        &:focus {
+            transform: scale(1.05) !important;
+        }
     }
 
     .mat-icon {
-        height: 1.5rem !important;
-        width: 1.5rem !important;
-        line-height: 1.5rem !important;
+        font-size: 26px !important;
+        width: 26px !important;
+        height: 26px !important;
+        line-height: 26px !important;
     }
-
-    .material-icons {
-        font-size: 1.5rem !important;
-    }*/
 
     .mat-paginator {
         margin-top: 24px;
