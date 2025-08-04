@@ -17,6 +17,7 @@ import {InvestStripeService} from './invest-stripe.service';
 import {environment} from 'src/environments/environment';
 import {loadStripe} from '@stripe/stripe-js';
 import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
+import { HoldersDatatableResponsiveComponent } from './holders-datatable-responsive/holders-datatable-responsive.component';
 
 @Component({
     selector: 'app-invest',
@@ -24,7 +25,7 @@ import { PageHeaderComponent } from '../../shared/modules/page-header/page-heade
     templateUrl: './invest.component.html',
     styleUrls: ['./invest.component.scss'],
     animations: [routerTransition()],
-    imports: [PageHeaderComponent, CommonModule],
+    imports: [PageHeaderComponent, CommonModule, HoldersDatatableResponsiveComponent],
 })
 export class InvestComponent implements OnInit, OnDestroy {
     private static readonly FN_PPM: string = 'ppm.pdf';
