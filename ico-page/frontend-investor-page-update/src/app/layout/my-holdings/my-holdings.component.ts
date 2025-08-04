@@ -9,11 +9,12 @@ import {switchMap} from 'rxjs/internal/operators/switchMap';
 import {Router} from '@angular/router';
 import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
 import { CommonModule } from '@angular/common';
+import { MyHoldingDatatableResponsiveComponent } from './my-holding-datatable-responsive/my-holding-datatable-responsive.component';
 
 @Component({
     selector: 'app-my-holdings',
     standalone: true,
-    imports: [PageHeaderComponent, CommonModule],
+    imports: [PageHeaderComponent, CommonModule, MyHoldingDatatableResponsiveComponent],
     templateUrl: './my-holdings.component.html',
     styleUrls: ['./my-holdings.component.scss'],
     animations: [routerTransition()]
