@@ -11,8 +11,10 @@ import * as Noty from 'noty';
 import {DomSanitizer} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import { PageHeaderComponent } from 'src/app/shared/modules/page-header/page-header.component';
-import { HoldingDatatableResponsiveComponent } from './holding-datatable-responsive/holding-datatable-responsive.component';
+import {PageHeaderComponent} from 'src/app/shared/modules/page-header/page-header.component';
+import {
+    HoldingDatatableResponsiveComponent
+} from './holding-datatable-responsive/holding-datatable-responsive.component';
 
 @Component({
     selector: 'app-investor-profile',
@@ -72,24 +74,26 @@ export class InvestorProfileComponent implements AfterViewInit {
         this.spinner.show();
         this.alertTitle = 'Investor Profile';
         this.investorProfileService.getUserData()
-            .toPromise()
-            .then((response: any) => {
+            .pipe()
+            .subscribe({
+                next: (response: any) => {
                     this.userData = response as RespUserData;
                     if (this.userData.imageContent) {
                         this.imgSrc = this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + this.userData.imageContent);
                     }
                     this.alertBody = 'Successfully loaded';
-                        this.spinner.hide();
+                    this.spinner.hide();
                     this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.alertTitle = 'Investor Profile';
                     this.alertBody = 'Server error: ' + error;
                     this.spinner.hide();
                     // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                     this.router.navigate(['/login']);
-                });
+                }
+            });
 
     }
 
@@ -142,8 +146,9 @@ export class InvestorProfileComponent implements AfterViewInit {
         this.alertTitle = 'Investor Profile Update';
         this.spinner.show();
         this.investorProfileService.updateUserData(this.fileToUpload, request)
-            .toPromise()
-            .then((response: any) => {
+            .pipe()
+            .subscribe({
+                next: (response: any) => {
                     this.clearUploadParams();
                     this.spinner.hide();
                     this.alertBody = 'Successfully updated';
@@ -151,12 +156,13 @@ export class InvestorProfileComponent implements AfterViewInit {
                     this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                     this.getUserData();
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.spinner.hide();
                     this.alertBody = 'Server error: ' + error;
                     // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                });
+                }
+            });
     }
 
     clearUploadParams() {
@@ -207,8 +213,9 @@ export class InvestorProfileComponent implements AfterViewInit {
         request.currentPassword = this.currentPassword;
         this.alertTitle = 'Change Password';
         this.investorProfileService.updateUserPassword(request)
-            .toPromise()
-            .then((response: any) => {
+            .pipe()
+            .subscribe({
+                next: (response: any) => {
                     this.spinner.hide();
                     this.alertBody = 'Successfully updated';
                     // this.modal = this.modalService.open(this.templateAlertRef);
@@ -216,12 +223,13 @@ export class InvestorProfileComponent implements AfterViewInit {
                     this.clearLocalStorage();
                     this.router.navigate(['/login']);
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.spinner.hide();
                     this.alertBody = 'Server error: ' + error;
                     // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                });
+                }
+            });
 
     }
 
