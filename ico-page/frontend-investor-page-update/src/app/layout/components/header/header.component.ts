@@ -3,11 +3,12 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-header',
     standalone: true,
-    imports: [RouterModule, TranslateModule],
+    imports: [RouterModule, TranslateModule, NgbDropdownModule],
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
