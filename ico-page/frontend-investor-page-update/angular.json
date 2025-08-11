@@ -35,6 +35,7 @@
                             "buildOptimizer": false
                         },
                         "production": {
+                            "baseHref": "/investors/",
                             "fileReplacements": [
                                 {
                                     "replace": "src/environments/environment.ts",

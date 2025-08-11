@@ -118,9 +118,10 @@ public class WebSecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter(), org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(auth -> auth
                         // for h2 - comment for production
-                        .requestMatchers("/h2-console/**").permitAll()
+                        //.requestMatchers("/h2-console/**").permitAll()
                         // page for datrixo site
                         .requestMatchers("/ico/**").permitAll()
+                        .requestMatchers( "/investors/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .logout(logout -> logout

@@ -25,14 +25,21 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["src/assets/vendor/jquery/jquery.min.js",
+            "scripts": [
+              "src/assets/vendor/jquery/jquery.min.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
               "src/assets/vendor/jquery-easing/jquery.easing.min.js"
-            ],
-            "es5BrowserSupport": true
+            ]
           },
           "configurations": {
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "vendorChunk": true,
+              "buildOptimizer": false
+            },
             "production": {
+              "baseHref": "/ico/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -42,7 +49,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -61,18 +67,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "frontend-ico-page:build"
+            "buildTarget": "frontend-ico-page:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "frontend-ico-page:build:production"
+              "buildTarget": "frontend-ico-page:build:production"
+            },
+            "development": {
+              "buildTarget": "frontend-ico-page:build:development"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontend-ico-page:build"
+            "buildTarget": "frontend-ico-page:build"
           }
         },
         "test": {
@@ -135,5 +144,7 @@
       }
     }
   },
-  "defaultProject": "frontend-ico-page"
+  "cli": {
+    "analytics": false
+  }
 }

@@ -161,18 +161,18 @@
             <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.6</version>
+                <version>3.3.1</version>
                 <configuration>
                     <webResources>
                         <resource>
-                            <directory>${basedir}/frontend-ico-page/dist/frontend-ico-page</directory>
+                            <directory>${basedir}/frontend-ico-page-update/dist/frontend-ico-page</directory>
                             <targetPath>/WEB-INF/classes/static/</targetPath>
                             <includes>
                                 <include>**</include>
                             </includes>
                         </resource>
                         <resource>
-                            <directory>${basedir}/frontend-investor-page/dist</directory>
+                            <directory>${basedir}/frontend-investor-page-update/dist</directory>
                             <targetPath>/WEB-INF/classes/static/investor-page/</targetPath>
                             <includes>
                                 <include>**</include>

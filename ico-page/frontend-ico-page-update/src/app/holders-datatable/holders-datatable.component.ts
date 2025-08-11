@@ -8,6 +8,7 @@ import {HolderResponce} from '../holder-responce';
 
 @Component({
   selector: 'app-holders-datatable',
+  standalone: false,
   styleUrls: ['./holders-datatable.component.scss'],
   templateUrl: './holders-datatable.component.html'
 })

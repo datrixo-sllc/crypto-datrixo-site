@@ -4,6 +4,6 @@
 
 @import "assets/styles/app.scss";
 
-@import '~@swimlane/ngx-datatable/release/index.css';
-@import '~@swimlane/ngx-datatable/release/themes/bootstrap.css';
-@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import "/node_modules/@swimlane/ngx-datatable/index.css";
+@import "/node_modules/@swimlane/ngx-datatable/themes/bootstrap.css";
+@import "/node_modules/@swimlane/ngx-datatable/assets/icons.css";

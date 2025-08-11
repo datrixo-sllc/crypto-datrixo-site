@@ -7,6 +7,7 @@ import {HolderResponce} from './holder-responce';
 
 @Component({
   selector: 'app-root',
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
