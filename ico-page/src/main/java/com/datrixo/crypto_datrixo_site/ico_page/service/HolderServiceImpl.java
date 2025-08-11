@@ -111,7 +111,8 @@ public class HolderServiceImpl implements HolderService {
 
 
     @Override
-    @Scheduled(fixedRate = 3600000)
+    // @Scheduled(fixedRate = 3600000)
+    @Scheduled(cron = "0 0 0 * * MON#1,MON#3") // Выполняется в 00:00 в 1-й и 3-й понедельник каждого месяца
     @Transactional
     public void dbMemoryUpdate() {
         try {
