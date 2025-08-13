@@ -4,6 +4,7 @@ package com.datrixo.crypto_datrixo_site.ico_page.conf;
  * Created by Yuri Nikiforov.
  * Date: 13.08.2025
  * Time: 18:00
+ *
  **/
 
 import org.springframework.context.annotation.Configuration;
