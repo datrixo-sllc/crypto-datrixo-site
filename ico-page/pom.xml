@@ -158,7 +158,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
@@ -166,14 +166,14 @@
                     <webResources>
                         <resource>
                             <directory>${basedir}/frontend-ico-page-update/dist/frontend-ico-page</directory>
-                            <targetPath>/WEB-INF/classes/static/</targetPath>
+                            <targetPath>/WEB-INF/classes/static/ico/</targetPath>
                             <includes>
                                 <include>**</include>
                             </includes>
                         </resource>
                         <resource>
-                            <directory>${basedir}/frontend-investor-page-update/dist</directory>
-                            <targetPath>/WEB-INF/classes/static/investor-page/</targetPath>
+                            <directory>${basedir}/frontend-investor-page-update/dist/frontend-investor-page/</directory>
+                            <targetPath>/WEB-INF/classes/static/investors/</targetPath>
                             <includes>
                                 <include>**</include>
                             </includes>
@@ -181,7 +181,7 @@
                     </webResources>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
-            </plugin>-->
+            </plugin>
         </plugins>
     </build>
 
