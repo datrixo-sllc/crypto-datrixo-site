@@ -5,5 +5,5 @@ export const environment = {
     // Milla
     stripe: 'pk_test_51IyIIFEiwPl6jGSOKZSutYRPZMH93irxNqWIRmOeeb7qbLKRUMcdfih5dJ4IJoi8oQor9DGTE6h5J8H3Fvnrcoby00KyA8hoJN',
     // serverUrl: 'https://dashboard.datrixo.com/'
-    serverUrl: 'http://datrixo-dashboard-env.eba-abhtfurz.us-east-1.elasticbeanstalk.com/'
+    serverUrl: 'http://datrixo-dashboard-env.eba-abhtfurz.us-east-1.elasticbeanstalk.com/investors/'
 };
