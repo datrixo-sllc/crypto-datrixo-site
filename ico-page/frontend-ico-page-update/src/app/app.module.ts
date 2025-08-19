@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { APP_CONFIG, AppConfig } from './app.config';
@@ -14,6 +15,7 @@ import {HoldersDatatableComponent} from './holders-datatable/holders-datatable.c
     HoldersDatatableComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     HttpClientModule,
     NgxDatatableModule

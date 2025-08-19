@@ -7,7 +7,7 @@ import {Inject, Injectable} from '@angular/core';
 import {IAppConfig} from '../../i-app-config';
 import {APP_CONFIG} from '../../app.config';
 import { Observable } from 'rxjs';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 
 @Injectable()
 export class InvestDownloadService {
@@ -19,25 +19,25 @@ export class InvestDownloadService {
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {}
 
-    getPPM(): Observable<Blob>  {
+    getPPM(): Observable<HttpResponse<Blob>>  {
         const url = this.config.apiEndpoint + InvestDownloadService.URL_INVESTOR +
             InvestDownloadService.SLASH + InvestDownloadService.URL_PPM;
         const headers = this.createHeaders();
-        return this.http.get(url, { responseType: 'blob', headers });
+        return this.http.get(url, { observe: 'response', responseType: 'blob', headers });
     }
 
-    getSubscrAgrmnt(): Observable<Blob>  {
+    getSubscrAgrmnt(): Observable<HttpResponse<Blob>>  {
         const url = this.config.apiEndpoint + InvestDownloadService.URL_INVESTOR +
             InvestDownloadService.SLASH + InvestDownloadService.URL_SUBSCR_AGRMNT;
         const headers = this.createHeaders();
-        return this.http.get(url, { responseType: 'blob', headers });
+        return this.http.get(url, {observe: 'response', responseType: 'blob', headers });
     }
 
-    getSafeT(): Observable<Blob>  {
+    getSafeT(): Observable<HttpResponse<Blob>>  {
         const url = this.config.apiEndpoint + InvestDownloadService.URL_INVESTOR +
             InvestDownloadService.SLASH + InvestDownloadService.URL_SAFE_T;
         const headers = this.createHeaders();
-        return this.http.get(url, { responseType: 'blob', headers });
+        return this.http.get(url, {observe: 'response', responseType: 'blob', headers });
     }
 
     private createHeaders(): HttpHeaders {

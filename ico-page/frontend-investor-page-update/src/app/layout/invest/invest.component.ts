@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {routerTransition} from '../../router.animations';
 import {InvestDownloadService} from './invest-download.service';
 import {NgxSpinnerService} from 'ngx-spinner';
@@ -16,8 +16,11 @@ import {Router} from '@angular/router';
 import {InvestStripeService} from './invest-stripe.service';
 import {environment} from 'src/environments/environment';
 import {loadStripe} from '@stripe/stripe-js';
-import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
-import { HoldersDatatableResponsiveComponent } from './holders-datatable-responsive/holders-datatable-responsive.component';
+import {PageHeaderComponent} from '../../shared/modules/page-header/page-header.component';
+import {
+    HoldersDatatableResponsiveComponent
+} from './holders-datatable-responsive/holders-datatable-responsive.component';
+import {HttpResponse} from "@angular/common/http";
 
 @Component({
     selector: 'app-invest',
@@ -95,51 +98,57 @@ export class InvestComponent implements OnInit, OnDestroy {
         this.spinner.show();
         this.alertTitle = 'PPM Download';
         this.investDownloadService.getPPM()
-            .toPromise()
-            .then((response: Blob) => {
+            .pipe()
+            .subscribe({
+                next: (response: HttpResponse<Blob>) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_PPM);
                     this.spinner.hide();
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
                     // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                });
+                }
+            });
     }
 
     onSubmitSubAgrmtDownload() {
         this.spinner.show();
         this.alertTitle = 'Subscription Agreement Download';
         this.investDownloadService.getSubscrAgrmnt()
-            .toPromise()
-            .then((response: Blob) => {
+            .pipe()
+            .subscribe({
+                next: (response: HttpResponse<Blob>) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_SUBSCR_AGRMNT);
                     this.spinner.hide();
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
                     // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                });
+                }
+            });
     }
 
     onSubmitSafeTDownload() {
         this.spinner.show();
         this.alertTitle = 'SAFE-T Download';
         this.investDownloadService.getSafeT()
-            .toPromise()
-            .then((response: Blob) => {
+            .pipe()
+            .subscribe({
+                next: (response: HttpResponse<Blob>) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_SAFE_T);
                     this.spinner.hide();
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
                     // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                });
+                }
+            });
     }
 
     onSubmitGetInvoice() {

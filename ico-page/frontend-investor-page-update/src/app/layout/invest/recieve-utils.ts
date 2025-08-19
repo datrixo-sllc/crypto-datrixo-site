@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {FileSaverService} from 'ngx-filesaver';
+import {HttpResponse} from '@angular/common/http';
 
 @Injectable()
 export class RecieveUtils {
@@ -7,10 +8,11 @@ export class RecieveUtils {
     constructor(private fileSaverService: FileSaverService) {
     }
 
-    public recieveResponseBinaryFile(response: any, fileName: string) {
-        if (response && response.status === 200 && response.blob() && response.blob().size > 0) {
+    public recieveResponseBinaryFile(response: HttpResponse<Blob>, fileName: string) {
+        if (response && response.status === 200 && response.body?.size > 0) {
             // alert('Server pull file');
-            this.fileSaverService.save(response.blob(), fileName);
+            const blob = new Blob([response.body], { type: response.headers.get('Content-Type') || 'application/octet-stream' });
+            this.fileSaverService.save(blob, fileName);
         } else {
             alert('Server do not pull file');
         }
