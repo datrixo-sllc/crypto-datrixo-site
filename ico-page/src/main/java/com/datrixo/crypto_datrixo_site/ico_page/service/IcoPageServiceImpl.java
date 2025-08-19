@@ -2,7 +2,8 @@ package com.datrixo.crypto_datrixo_site.ico_page.service;
 
 import com.datrixo.crypto_datrixo_site.ico_page.dto.HolderDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.IcoPageDto;
-import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
+// import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Holder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

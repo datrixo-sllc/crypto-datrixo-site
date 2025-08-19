@@ -1,6 +1,7 @@
 package com.datrixo.crypto_datrixo_site.ico_page.service;
 
-import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
+// import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Holder;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 

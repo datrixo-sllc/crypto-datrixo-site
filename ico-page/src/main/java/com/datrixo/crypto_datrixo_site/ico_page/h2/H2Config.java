@@ -26,6 +26,8 @@ import java.util.Properties;
  * Date: 18.05.2019
  * Time: 16:57
  **/
+
+/*
 @Configuration
 @EntityScan(basePackages = {"com.datrixo.crypto_datrixo_site.ico_page.h2.model"})
 @EnableTransactionManagement
@@ -80,4 +82,4 @@ public class H2Config {
 
         return hibernateProperties;
     }
-}
+}*/
