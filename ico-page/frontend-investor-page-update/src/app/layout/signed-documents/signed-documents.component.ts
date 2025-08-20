@@ -72,18 +72,21 @@ export class SignedDocumentsComponent implements OnInit {
     getListPage(): void {
         this.spinner.show();
         this.listService.getList()
-            .subscribe(value => {
-                if (value) {
+            .pipe()
+            .subscribe({
+                next: (value: any) => {
+
                     this.response = value as SignedDocumentList;
                     this.items = this.response.documents;
                     // this.onSelect(this.selectedItem);
                     this.spinner.hide();
+                },
+                error: error => {
+                    this.spinner.hide();
+                    // alert('Server error: ' + error.message);
+                    this.utils.clearLocalStorage();
+                    this._router.navigate(['/login']);
                 }
-            }, error => {
-                this.spinner.hide();
-                // alert('Server error: ' + error.message);
-                this.utils.clearLocalStorage();
-                this._router.navigate(['/login']);
             });
     }
 
