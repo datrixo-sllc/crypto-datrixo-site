@@ -19,7 +19,7 @@ import {UpdateAdminUsersUploadService} from '../update-admin-users-upload.servic
 import {AddAdminUserUploadService} from '../add-admin-user-upload.service';
 import {Utils} from '../../../shared/utilites/Utils';
 import {FormControl} from '@angular/forms';
-import {NgbCalendar, NgbDateStruct, NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import {NgbCalendar, NgbDateStruct, NgbModal, NgbModalRef, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {Router} from '@angular/router';
 import {Organization} from '../organization';
 import {Country} from '../country';
@@ -37,7 +37,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-admin-users-edit',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, NgbModule],
     templateUrl: './admin-users-edit.component.html',
     styleUrls: ['./admin-users-edit.component.scss']
 })
@@ -236,7 +236,7 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
         this.addItemUploadService.getPassword()
             .subscribe(value => {
                 if (value) {
-                    this.requestItemData.password = value.json().password;
+                    this.requestItemData.password = value.password;
                     this.alertBody = 'Successfully generated';
                     this.spinner.hide();
                     this.notyMessage(this.alertTitle, this.alertBody, 'success').show();

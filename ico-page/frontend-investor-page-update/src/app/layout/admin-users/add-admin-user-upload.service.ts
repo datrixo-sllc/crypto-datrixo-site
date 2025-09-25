@@ -40,11 +40,11 @@ export class AddAdminUserUploadService {
     }
 
     // Удаляю createUrlOptions и RequestOptions/Headers как устаревшие
-    getCheck(): Observable<any> {
+    getCheck(): Observable<string> {
         const url = this.config.apiEndpoint + AddAdminUserUploadService.URL_USER +
             AddAdminUserUploadService.SLASH + AddAdminUserUploadService.CHECK;
         const headers = this.createHeaders();
-        return this.http.get(url, {headers});
+        return this.http.get(url, { headers, responseType: 'text' });
     }
 
     getUsername(): Observable<any> {
@@ -62,10 +62,10 @@ export class AddAdminUserUploadService {
 
     private createHeaders(): HttpHeaders {
         const token = localStorage.getItem('token');
-        if (!token) {
-            throw new Error('Authentication token not found');
+        let headers = new HttpHeaders();
+        if (token) {
+            headers = headers.set('Authorization', `Bearer ${token}`);
         }
-        return new HttpHeaders()
-            .set('Authorization', `Bearer ${token}`);
+        return headers;
     }
 }

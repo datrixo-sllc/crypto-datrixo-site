@@ -22,7 +22,7 @@ import {Utils} from '../../../shared/utilites/Utils';
 import {Organization} from '../organization';
 import {FormControl} from '@angular/forms';
 import {Account} from '../account';
-import {NgbModal, NgbModalRef, NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalRef, NgbDateStruct, NgbCalendar, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {Country} from '../country';
 import * as Noty from 'noty';
 import { CommonModule } from '@angular/common';
@@ -37,7 +37,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-admin-users-add',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, NgbModule],
     templateUrl: './admin-users-add.component.html',
     styleUrls: ['./admin-users-add.component.scss']
 })
@@ -49,7 +49,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     imgSrc: any;
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
-    requestItemData: User;
+    requestItemData: User = new User();
     orgIncorpDate: NgbDateStruct;
 
     show = false;
@@ -71,6 +71,8 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     alertBody: string;
     confirmBody: string;
 
+    isReady: boolean = false;
+
     constructor(
         private updateItemUploadService: UpdateAdminUsersUploadService,
         private addItemUploadService: AddAdminUserUploadService,
@@ -86,12 +88,15 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.uploadEl.nativeElement.value = null;
+        if (this.uploadEl && this.uploadEl.nativeElement) {
+            this.uploadEl.nativeElement.value = null;
+        }
     }
 
     ngOnInit(): void {
         this.clearNewEthAccountData();
         this.clearUploadParams();
+        this.isReady = true;
         this.spinner.show();
         this.addItemUploadService.getCheck()
             .subscribe(value => {
@@ -108,7 +113,9 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     handleFileInput(files: FileList) {
         if (files.item(0).size > 1000000) {
             alert('Image file must be less then 1Mb');
-            this.uploadEl.nativeElement.value = null;
+            if (this.uploadEl && this.uploadEl.nativeElement) {
+                this.uploadEl.nativeElement.value = null;
+            }
             return;
         }
         this.fileToUpload = files.item(0);
@@ -163,7 +170,9 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
     clearUploadParams() {
         this.fileToUpload = null;
         this.imgSrc = null;
-        this.uploadEl.nativeElement.value = null;
+        if (this.uploadEl && this.uploadEl.nativeElement) {
+            this.uploadEl.nativeElement.value = null;
+        }
         this.requestItemData = new User();
         this.requestItemData.init('USER_CRYPTO', 'INDIVIDUAL', 'MR', null, []);
 
@@ -180,7 +189,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         this.addItemUploadService.getUsername()
             .subscribe(value => {
                 if (value) {
-                    this.requestItemData.username = value.json().name;
+                    this.requestItemData.username = value.name;
                     this.alertBody = 'Successfully generated';
                     this.spinner.hide();
                     this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
@@ -201,7 +210,7 @@ export class AdminUsersAddComponent implements OnInit, AfterViewInit {
         this.addItemUploadService.getPassword()
             .subscribe(value => {
                 if (value) {
-                    this.requestItemData.password = value.json().password;
+                    this.requestItemData.password = value.password;
                     this.alertBody = 'Successfully generated';
                     this.spinner.hide();
                     this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
