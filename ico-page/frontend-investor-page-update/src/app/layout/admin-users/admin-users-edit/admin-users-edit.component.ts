@@ -51,7 +51,7 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
     imgSrc: any;
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
-    requestItemData: User;
+    requestItemData: User = new User();
     orgIncorpDate: NgbDateStruct;
 
     show = false;
@@ -88,7 +88,9 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
     }
 
     ngAfterViewInit(): void {
-        this.uploadEl.nativeElement.value = null;
+        if (this.uploadEl && this.uploadEl.nativeElement) {
+            this.uploadEl.nativeElement.value = null;
+        }
     }
 
     ngOnInit(): void {
@@ -105,8 +107,10 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
             this.spinner.show();
             this.alertTitle = 'Edit User';
             this.listService.getItemDetail(this.id)
-                .subscribe(value => {
-                    this.requestItemData = value as User;
+                .pipe()
+                .subscribe({
+                    next: (response: any) => {
+                    this.requestItemData = response as User;
                     if (this.requestItemData.imageContent) {
                         this.imgSrc = this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + this.requestItemData.imageContent);
                     }
@@ -117,12 +121,14 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
                     this.alertBody = 'Successfully loaded';
                     this.spinner.hide();
                     this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
-                }, error => {
-                    this.alertTitle = 'Edit User';
-                    this.alertBody = 'Server error: ' + error;
-                    this.spinner.hide();
-                    this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                    this.router.navigate(['/login']);
+                },
+                    error: (error: Error) => {
+                        this.alertTitle = 'Edit User';
+                        this.alertBody = 'Server error: ' + error;
+                        this.spinner.hide();
+                        this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
+                        this.router.navigate(['/login']);
+                    }
                 });
         }
     }
@@ -181,7 +187,9 @@ export class AdminUsersEditComponent implements OnInit, OnChanges, AfterViewInit
         this.orgIncorpDate = this.calendar.getToday();
         this.fileToUpload = null;
         this.imgSrc = null;
-        this.uploadEl.nativeElement.value = null;
+        if (this.uploadEl && this.uploadEl.nativeElement) {
+            this.uploadEl.nativeElement.value = null;
+        }
         this.requestItemData = new User();
         this.requestItemData.init('USER_CRYPTO', 'INDIVIDUAL', 'MR', null, []);
     }
