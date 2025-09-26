@@ -194,7 +194,8 @@ public class UserServiceImpl implements UserService {
         if (checkRoleForCurrentUser(Role.ADMIN)) {
             User user = new User(userDataDto.getUsername(), userDataDto.getPassword(),
                     Role.valueOf(userDataDto.getRole()), UserType.valueOf(userDataDto.getUserType()),
-                    userDataDto.getFirstName(), userDataDto.getLastName(), userDataDto.getEmail(), userDataDto.getPhone());
+                    userDataDto.getFirstName(), userDataDto.getLastName(), userDataDto.getAccountAddress(),
+                    userDataDto.getEmail(), userDataDto.getPhone());
             user = userRepository.save(user);
             if (userDataDto.getUserType().equals(UserType.COMPANY.name()) && userDataDto.getOrganization() != null
                     && userDataDto.getOrganization().getCountry() != null

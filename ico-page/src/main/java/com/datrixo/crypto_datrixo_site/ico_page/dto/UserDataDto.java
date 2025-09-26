@@ -20,6 +20,7 @@ public class UserDataDto {
     private String title;
     private String firstName;
     private String lastName;
+    private String accountAddress;
     private String email;
     private String phone;
     private Long imageContentId;
@@ -31,7 +32,8 @@ public class UserDataDto {
     }
 
     public UserDataDto(Long id, String username, String role, String userType, String title,
-                       String firstName, String lastName, String email, String phone, byte[] imageContent) {
+                       String firstName, String lastName, String accountAddress, String email,
+                       String phone, byte[] imageContent) {
         this.id = id;
         this.username = username;
         this.role = role;
@@ -39,6 +41,7 @@ public class UserDataDto {
         this.title = title;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.accountAddress = accountAddress;
         this.email = email;
         this.phone = phone;
         this.imageContent = imageContent;
@@ -106,6 +109,14 @@ public class UserDataDto {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getAccountAddress() {
+        return accountAddress;
+    }
+
+    public void setAccountAddress(String accountAddress) {
+        this.accountAddress = accountAddress;
     }
 
     public String getEmail() {

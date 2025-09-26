@@ -29,6 +29,7 @@ public class User extends AbstractPersistable<Long> {
     private UserTitle title = UserTitle.MR;
     private String firstName;
     private String lastName;
+    private String accountAddress;
     private String email;
     private String phone;
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -49,12 +50,13 @@ public class User extends AbstractPersistable<Long> {
     }
 
     public User(String username, String password, Role role, UserType userType,
-                String firstName, String lastName, String email, String phone) {
+                String firstName, String lastName, String accountAddress, String email, String phone) {
         this(username, password);
         this.role = role;
         this.userType = userType;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.accountAddress = accountAddress;
         this.email = email;
         this.phone = phone;
     }
@@ -109,6 +111,14 @@ public class User extends AbstractPersistable<Long> {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public void setAccountAddress(String accountAddress) {
+        this.accountAddress = accountAddress;
+    }
+
+    public String getAccountAddress() {
+        return accountAddress;
     }
 
     public String getEmail() {

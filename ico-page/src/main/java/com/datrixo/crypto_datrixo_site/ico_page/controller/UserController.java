@@ -105,7 +105,7 @@ public class UserController {
         for (User user : users) {
             UserDataDto userDto = new UserDataDto(user.getId(), user.getUsername(), user.getRole().name(),
                     user.getUserType().name(), user.getTitle().name(), user.getFirstName(), user.getLastName(),
-                    user.getEmail(), user.getPhone(),
+                    user.getAccountAddress(), user.getEmail(), user.getPhone(),
                     user.getImageContent() != null ? user.getImageContent().getContent() : null);
             List<HolderAccountDto> accountDtoList = new ArrayList<>();
             for (HolderAccount account : user.getAccounts()) {
