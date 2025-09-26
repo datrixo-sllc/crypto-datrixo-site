@@ -15,6 +15,7 @@ export class User {
     title: string;
     firstName: string;
     lastName: string;
+    accountAddress: string;
     email: string;
     phone: string;
     imageContentId: number;

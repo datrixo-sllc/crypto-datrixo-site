@@ -10,6 +10,7 @@ export class RespUserData {
     title: string;
     firstName: string;
     lastName: string;
+    accountAddress: string;
     phone: string;
     email: string;
     organizationName: string;

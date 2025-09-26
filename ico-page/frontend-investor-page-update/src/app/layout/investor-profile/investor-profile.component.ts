@@ -78,6 +78,9 @@ export class InvestorProfileComponent implements AfterViewInit {
             .subscribe({
                 next: (response: any) => {
                     this.userData = response as RespUserData;
+                    if (!this.userData.accountAddress) {
+                        this.userData.accountAddress = "";
+                    }
                     if (this.userData.imageContent) {
                         this.imgSrc = this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + this.userData.imageContent);
                     }
