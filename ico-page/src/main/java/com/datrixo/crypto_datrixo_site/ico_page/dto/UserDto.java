@@ -16,6 +16,7 @@ public class UserDto {
     private String title;
     private String firstName;
     private String lastName;
+    private String accountAddress;
     private String phone;
     private String email;
     private String organizationName;
@@ -37,7 +38,8 @@ public class UserDto {
         this.id = id;
     }
 
-    public UserDto(Long id, String username, String role, String title, String firstName, String lastName, String phone,
+    public UserDto(Long id, String username, String role, String title, String firstName, String lastName,
+                   String accountAddress, String phone,
                    String email, String organizationName, Date incorporateDate, String opencorporatesId, String organizationPhone,
                    String streetAddress, String city, String state, String zip, String country, byte[] imageContent,
                    List<HolderAccountDto> holders) {
@@ -47,6 +49,7 @@ public class UserDto {
         this.title = title;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.accountAddress = accountAddress;
         this.phone = phone;
         this.email = email;
         this.organizationName = organizationName;
@@ -108,6 +111,14 @@ public class UserDto {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getAccountAddress() {
+        return accountAddress;
+    }
+
+    public void setAccountAddress(String accountAddress) {
+        this.accountAddress = accountAddress;
     }
 
     public String getPhone() {

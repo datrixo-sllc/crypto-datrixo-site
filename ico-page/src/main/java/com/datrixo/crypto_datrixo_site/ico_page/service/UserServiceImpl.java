@@ -292,6 +292,7 @@ public class UserServiceImpl implements UserService {
             userDto.setTitle(user.getTitle() != null ? user.getTitle().name() : null);
             userDto.setFirstName(user.getFirstName());
             userDto.setLastName(user.getLastName());
+            userDto.setAccountAddress(user.getAccountAddress());
             userDto.setEmail(user.getEmail());
             userDto.setPhone(user.getPhone());
             if (user.getAccounts().size() > 0) {
@@ -345,6 +346,7 @@ public class UserServiceImpl implements UserService {
             user.setUserType(UserType.valueOf(userDto.getUserType()));
             user.setFirstName(userDto.getFirstName());
             user.setLastName(userDto.getLastName());
+            user.setAccountAddress(userDto.getAccountAddress());
             user.setEmail(userDto.getEmail());
             user.setPhone(userDto.getPhone());
             if (userDto.getUserType().equals(UserType.COMPANY.name()) && userDto.getOrganization() != null

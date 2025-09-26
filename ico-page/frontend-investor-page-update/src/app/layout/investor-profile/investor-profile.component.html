@@ -64,7 +64,11 @@
                             <div class="col-lg-6">
                                 <fieldset class="form-group">
                                     <label>Account Address</label>
-                                    <input class="form-control" [value]="userData.accountAddress" disabled/>
+                                    @if (userData.accountAddress) {
+                                        <a href="https://{{etherNet}}/address/{{userData.accountAddress}}"
+                                                title="{{userData.accountAddress}}"
+                                                target="_blank">{{userData.accountAddress | slice:0:30}}...</a>
+                                    }                                   
                                 </fieldset>
                             </div>
                         </div>

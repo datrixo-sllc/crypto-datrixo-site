@@ -186,7 +186,7 @@ public class UserController {
                 });
             }
             userDto = new UserDto(null, user.getUsername(), user.getRole().name(), user.getTitle().name(),
-                    user.getFirstName(), user.getLastName(),
+                    user.getFirstName(), user.getLastName(), user.getAccountAddress(),
                     user.getPhone(),
                     user.getEmail(),
                     user.getOrganization() != null ? user.getOrganization().getCompanyName() : "",
