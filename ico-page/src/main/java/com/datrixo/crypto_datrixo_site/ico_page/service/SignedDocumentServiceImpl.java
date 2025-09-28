@@ -103,17 +103,47 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
         Optional<SignedDocument> optional = signedDocumentRepository.findById(id);
         if (optional.isPresent()) {
             SignedDocument signedDocument = optional.get();
-            UserDto userDto = null;
+            UserDto userDto;
             if (getUser && signedDocument.getUser() != null && signedDocument.getUser().getId() != null) {
                 userDto = new UserDto(signedDocument.getUser().getId());
+            } else {
+                userDto = null;
             }
-            HolderDto holderDto = null;
+            HolderDto holderDto;
             if (getHolder && signedDocument.getHolderAccount() != null && !signedDocument.getHolderAccount().getAddress().isEmpty()) {
                 holderDto = new HolderDto(signedDocument.getHolderAccount().getAddress());
+            } else {
+                holderDto = null;
             }
            return new SignedDocumentDto(signedDocument.getId(), userDto, holderDto,
                     signedDocument.getDocType().name(), signedDocument.getLoadDate(),
                    getContent ? signedDocument.getContent() : null);
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public SignedDocumentDto findById(Long id) {
+        Optional<SignedDocument> optional = signedDocumentRepository.findById(id);
+        if (optional.isPresent()) {
+            SignedDocument signedDocument = optional.get();
+            UserDto userDto;
+            if (signedDocument.getUser() != null && signedDocument.getUser().getId() != null) {
+                userDto = new UserDto(signedDocument.getUser().getId());
+            } else {
+                userDto = null;
+            }
+            HolderDto holderDto;
+            if (signedDocument.getHolderAccount() != null && !signedDocument.getHolderAccount().getAddress().isEmpty()) {
+                holderDto = new HolderDto(signedDocument.getHolderAccount().getAddress());
+            } else {
+                holderDto = null;
+            }
+            return new SignedDocumentDto(signedDocument.getId(), userDto, holderDto,
+                    signedDocument.getDocType().name(), signedDocument.getLoadDate(),
+                    signedDocument.getContent() != null && signedDocument.getContent().length > 0 ?
+                            signedDocument.getContent() : null);
         } else {
             return null;
         }
@@ -246,5 +276,21 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
         }
         signedDocumentRepository.deleteById(document.getId());
 
+    }
+
+    @Override
+    public void delete(Long id) throws IOException {
+        if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
+            User currentUser = userService.getCurrentUser().orElse(null);
+            LOGGER.error("Current user do not have admin privileges: {}",
+                    currentUser != null ? currentUser.getUsername() : "");
+            return;
+        }
+        signedDocumentRepository.deleteById(id);
+    }
+
+    @Override
+    public SignedDocumentAdmListDto findAllAdm() {
+        return new SignedDocumentAdmListDto();
     }
 }

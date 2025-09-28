@@ -26,7 +26,7 @@ public class HolderAccountDto {
         this.address = address;
         this.userId = userId;
         this.createDate = createDate;
-        this.paidPrice = paidPrice;
+        this.paidPrice = paidPrice == null ? BigDecimal.ZERO : paidPrice;
         this.initialInvest = initialInvest;
     }
 
