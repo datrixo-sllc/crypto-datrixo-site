@@ -8,6 +8,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.HolderAccountRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.HolderRepository;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.UserRepository;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,6 +47,9 @@ public class HolderServiceImpl implements HolderService {
 
     @Autowired
     private HolderAccountRepository holderAccountRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private Web3j web3j;
@@ -193,7 +197,13 @@ public class HolderServiceImpl implements HolderService {
                         validHoldersCount++;
                         try {
                             LOGGER.debug("Processing holder {}: {}", processedCount, s);
-                            
+
+                            User user = userRepository.findFirstByAccountAddress(s);
+                            if (user == null || user.getAccountAddress() == null || user.getAccountAddress().isEmpty()) {
+                                LOGGER.debug("Skipping holder without user: {}", s);
+                                continue;
+                            }
+
                             // Добавляем задержку между запросами для избежания rate limiting
                             if (processedCount > 1) {
                                 Thread.sleep(200); // 200ms задержка между запросами
@@ -208,11 +218,11 @@ public class HolderServiceImpl implements HolderService {
                             if (totalSupply != null && totalSupply.signum() == 1) {
                                 share = balance.doubleValue() / totalSupply.doubleValue() * 100d;
                             }
-                            
+
                             BigInteger firstPurchaseTime = processHolderWithRetry(s, "firstPurchaseTime");
                             Date date = new Date(firstPurchaseTime.longValue() * 1000);
                             
-                            HolderAccount holderAccount = holderAccountRepository.findFirstByAddress(s);
+                            HolderAccount holderAccount = holderAccountRepository.findFirstByUser(user);
                             BigDecimal paidPrice = null;
                             if (holderAccount != null) {
                                 if (!holderAccount.getInitialInvest()) {

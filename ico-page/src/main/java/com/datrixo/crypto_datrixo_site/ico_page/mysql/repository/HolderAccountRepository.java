@@ -16,5 +16,6 @@ import java.util.Optional;
 @Repository
 public interface HolderAccountRepository extends JpaRepository<HolderAccount, Long> {
     HolderAccount findFirstByAddress(String address);
+    HolderAccount findFirstByUser(User user);
     Optional<List<HolderAccount>> findHolderAccountsByUser(User user);
 }
