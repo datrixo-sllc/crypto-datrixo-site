@@ -5,6 +5,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.dto.*;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Holder;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.HolderAccountRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
 import com.datrixo.crypto_datrixo_site.ico_page.service.HolderService;
 import com.datrixo.crypto_datrixo_site.ico_page.service.IcoPageService;
@@ -61,6 +62,8 @@ public class InvestorPageController {
     UserService userService;
     @Autowired
     HolderService holderService;
+    @Autowired
+    HolderAccountRepository holderAccountRepository;
     @Autowired
     SignedDocumentService signedDocumentService;
 
@@ -149,7 +152,7 @@ public class InvestorPageController {
     private boolean hasAccount(String holderAccountAddress, List<HolderAccount> principalAccounts) {
         boolean result = false;
         return principalAccounts.stream()
-                .anyMatch(holderAccount1 -> holderAccount1.getAddress().equalsIgnoreCase(holderAccountAddress));
+                .anyMatch(holderAccount1 -> holderAccount1.getUser().getAccountAddress().equalsIgnoreCase(holderAccountAddress));
     }
 
     @GetMapping(value = "/user-data", produces = "application/json")
@@ -237,7 +240,7 @@ public class InvestorPageController {
 
         Integer investedTokens = icoPageDto.getHolders().parallelStream()
                 .reduce(0, (partialResult, holder) ->
-                                new BigDecimal(holder.getPaidPrice()).intValue() * Integer.valueOf(holder.getShareTokens()),
+                                getPaidPrice(holder.getAddress()).intValue() * Integer.valueOf(holder.getShareTokens()),
                         Integer::sum);
 
         Integer shareTokens = icoPageDto.getHolders().parallelStream()
@@ -246,4 +249,13 @@ public class InvestorPageController {
                 shareTokens * UNIT_VALUE, 0);
     }
 
+    private  BigDecimal getPaidPrice(String address) {
+        if (address != null) {
+            Optional<User> user = userService.findFirstByAccountAddress(address);
+            if (user.isPresent()) {
+                return holderAccountRepository.findFirstByUser(user.get()).getPaidPrice();
+            }
+        }
+        return BigDecimal.ZERO;
+    }
 }

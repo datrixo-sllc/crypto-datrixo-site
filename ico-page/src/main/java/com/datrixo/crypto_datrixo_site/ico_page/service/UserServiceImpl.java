@@ -102,6 +102,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findUserByAccountAddress(String accountAddress) {
+
+        return userRepository.findFirstByAccountAddress(accountAddress);
+    }
+
+    @Override
     @Transactional
     public User updateUser(MultipartFile file, RequestUpdateUserData updateUserData) throws IOException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -445,6 +451,11 @@ public class UserServiceImpl implements UserService {
             LOGGER.error("User with ID = {} not found", userDto.getId());
             return null;
         }
+    }
+
+    @Override
+    public Optional<User> findFirstByAccountAddress(String accountAddress) {
+        return Optional.of(userRepository.findFirstByAccountAddress(accountAddress));
     }
 
     private User createOrganization(User user, UserDataDto userDto) {

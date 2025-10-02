@@ -20,6 +20,7 @@ import java.util.Optional;
 public interface UserService {
     User findByUsername(String username);
     User findByUsernameWithImage(String username);
+    User findUserByAccountAddress(String accountAddress);
     User updateUser(MultipartFile file, RequestUpdateUserData updateUserData) throws IOException;
     String updateUserPassword(RequestUpdateUserPassword updateUserPassword);
     Optional<User> getCurrentUser();
@@ -38,4 +39,6 @@ public interface UserService {
     void deleteUser(Long id);
 
     User updateUserByAdmin(MultipartFile file, UserDataDto userDto) throws IOException;
+
+    Optional<User> findFirstByAccountAddress(String accountAddress);
 }
