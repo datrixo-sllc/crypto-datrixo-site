@@ -69,8 +69,8 @@ export class SignedDocumentsDatatableComponent implements OnChanges {
         // filter our data
         const temp = this.temp.filter(function (d) {
             let returnData: any;
-            if (d.docType && d.docType.toLowerCase().indexOf(val) !== -1 || !val) {
-                returnData = d.docType.toLowerCase().indexOf(val) !== -1 || !val;
+            if (d.username && d.username.toLowerCase().indexOf(val) !== -1 || !val) {
+                returnData = d.username.toLowerCase().indexOf(val) !== -1 || !val;
             } else if (d.loadDate && d.loadDate.toLowerCase().indexOf(val) !== -1 || !val) {
                 returnData = d.loadDate.toLowerCase().indexOf(val) !== -1 || !val;
             }
