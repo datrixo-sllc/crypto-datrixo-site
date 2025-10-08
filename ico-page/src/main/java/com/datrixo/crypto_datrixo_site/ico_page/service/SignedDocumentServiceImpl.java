@@ -67,7 +67,7 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
 
     @Override
     public SignedDocumentListDto findAllByUser(User user, boolean getUser, boolean getHolder, boolean getContent) {
-        Optional<List<HolderAccount>> optional =  holderService.findHolderAccountsByUser(user);
+        Optional<List<HolderAccount>> optional = holderService.findHolderAccountsByUser(user);
         if (optional.isPresent()) {
             List<SignedDocumentListByHolderAccountDto> collect = optional.get().stream()
                     .map(holderAccount -> findAllForHolderAccount(holderAccount, getUser, getHolder, getContent))
@@ -78,8 +78,8 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
         }
     }
 
-    private SignedDocumentDto createSignedDocumentDto (SignedDocument signedDocument,
-                                                       boolean getUser, boolean getHolder, boolean getContent) {
+    private SignedDocumentDto createSignedDocumentDto(SignedDocument signedDocument,
+                                                      boolean getUser, boolean getHolder, boolean getContent) {
         SignedDocumentDto signedDocumentDto = new SignedDocumentDto();
         signedDocumentDto.setId(signedDocument.getId());
         if (getUser && signedDocument.getUser() != null && signedDocument.getUser().getId() != null) {
@@ -115,9 +115,9 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
             } else {
                 holderDto = null;
             }
-           return new SignedDocumentDto(signedDocument.getId(), userDto, holderDto,
+            return new SignedDocumentDto(signedDocument.getId(), userDto, holderDto,
                     signedDocument.getDocType().name(), signedDocument.getLoadDate(),
-                   getContent ? signedDocument.getContent() : null);
+                    getContent ? signedDocument.getContent() : null);
         } else {
             return null;
         }
@@ -196,7 +196,7 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
             return null;
         }
         if (document.getHolderAccount() == null || document.getHolderAccount().getAddress() == null
-        || document.getHolderAccount().getAddress().isEmpty()) {
+                || document.getHolderAccount().getAddress().isEmpty()) {
             LOGGER.error("Holder account == null: {}", document);
             return null;
         }
@@ -219,8 +219,8 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
     }
 
     /*
-    * Update only content and document type
-    * */
+     * Update only content and document type
+     * */
     @Override
     public SignedDocumentDto update(MultipartFile file, SignedDocumentDto document) throws IOException {
         if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
@@ -291,6 +291,24 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
 
     @Override
     public SignedDocumentAdmListDto findAllAdm() {
-        return new SignedDocumentAdmListDto();
+        if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
+            User currentUser = userService.getCurrentUser().orElse(null);
+            LOGGER.error("Current user do not have admin privileges: {}",
+                    currentUser != null ? currentUser.getUsername() : "");
+            return null;
+        }
+        SignedDocumentAdmListDto signedDocumentAdmListDto = new SignedDocumentAdmListDto();
+
+        signedDocumentRepository.findAll().forEach(signedDocument -> {
+            if (signedDocument.getUser() != null) {
+                SignedDocumentAdmDto signedDocumentAdmDto =
+                        new SignedDocumentAdmDto(signedDocument.getId(), signedDocument.getUser().getUsername(),
+                                signedDocument.getDocType().name(), signedDocument.getLoadDate(),
+                                signedDocument.getContent() != null && signedDocument.getContent().length > 0 ?
+                                        signedDocument.getContent() : null);
+                signedDocumentAdmListDto.getDocuments().add(signedDocumentAdmDto);
+            }
+        });
+        return signedDocumentAdmListDto;
     }
 }
