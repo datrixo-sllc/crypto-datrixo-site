@@ -10,5 +10,7 @@ export class SignedDocument {
     accountAddress: string;
     docType: string;
     loadDate: Date;
-    content: any;
+    content?: number[]; // byte[] массив содержимого файла
+    fileName?: string; // имя файла для определения типа
+    mimeType?: string; // MIME тип файла
 }
