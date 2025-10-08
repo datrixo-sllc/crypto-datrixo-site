@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -129,18 +130,47 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
         if (optional.isPresent()) {
             SignedDocument signedDocument = optional.get();
             UserDto userDto;
+            List<HolderAccountDto> holderAccounts = new ArrayList<>();
             if (signedDocument.getUser() != null && signedDocument.getUser().getId() != null) {
-                userDto = new UserDto(signedDocument.getUser().getId());
+                if (signedDocument.getUser().getAccounts().size() > 0) {
+                    for (HolderAccount holderAccount : signedDocument.getUser().getAccounts()) {
+                        holderAccounts.add(new HolderAccountDto(holderAccount.getId(), holderAccount.getAddress(),
+                                holderAccount.getUser().getId(), holderAccount.getCreateDate(), holderAccount.getPaidPrice(),
+                                holderAccount.getInitialInvest()));
+                    }
+                }
+
+                userDto = new UserDto(signedDocument.getUser().getId(), signedDocument.getUser().getUsername(),
+                        signedDocument.getUser().getRole().name(), signedDocument.getUser().getTitle().name(),
+                        signedDocument.getUser().getFirstName(), signedDocument.getUser().getLastName(),
+                        signedDocument.getUser().getAccountAddress(), signedDocument.getUser().getPhone(),
+                        signedDocument.getUser().getEmail(),
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getCompanyName() : null,
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getIncorporateDate() : null,
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getOpencorporatesId() : null,
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getPhone() : null,
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getStreetAddress() : null,
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getCity() : null,
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getState() : null,
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getZip() : null,
+                        signedDocument.getUser().getOrganization() != null ?
+                                signedDocument.getUser().getOrganization().getCountry().getName() : null,
+                        signedDocument.getUser().getImageContent() != null &&
+                                signedDocument.getUser().getImageContent().getContent().length > 0 ?
+                                signedDocument.getUser().getImageContent().getContent() : null,
+                        holderAccounts);
             } else {
                 userDto = null;
             }
-            HolderDto holderDto;
-            if (signedDocument.getHolderAccount() != null && !signedDocument.getHolderAccount().getAddress().isEmpty()) {
-                holderDto = new HolderDto(signedDocument.getHolderAccount().getAddress());
-            } else {
-                holderDto = null;
-            }
-            return new SignedDocumentDto(signedDocument.getId(), userDto, holderDto,
+            return new SignedDocumentDto(signedDocument.getId(), userDto, null,
                     signedDocument.getDocType().name(), signedDocument.getLoadDate(),
                     signedDocument.getContent() != null && signedDocument.getContent().length > 0 ?
                             signedDocument.getContent() : null);

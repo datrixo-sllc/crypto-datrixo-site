@@ -30,11 +30,15 @@ export class SignedDocumentsDetailComponent implements OnChanges {
         if (this.id) {
             this.spinner.show();
             this.listService.getItemDetail(this.id)
-                .subscribe(value => {
+                .pipe()
+                .subscribe({
+                    next: (value: any) => {
                     this.item = value as SignedDocument;
                     this.spinner.hide();
-                }, error => {
+                },
+                error: error => {
                     this.spinner.hide();
+                },
                 });
         }
     }
