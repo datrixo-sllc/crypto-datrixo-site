@@ -11,6 +11,7 @@ import java.util.Date;
  * Date: 07.06.2019
  * Time: 9:56
  **/
+// User transaction addresses
 @Entity
 @Table(name="holder_account")
 public class HolderAccount extends AbstractPersistable<Long> {
