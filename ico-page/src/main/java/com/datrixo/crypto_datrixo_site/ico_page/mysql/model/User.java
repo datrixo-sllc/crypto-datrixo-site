@@ -29,7 +29,7 @@ public class User extends AbstractPersistable<Long> {
     private UserTitle title = UserTitle.MR;
     private String firstName;
     private String lastName;
-    private String accountAddress;
+    private String accountAddress; // address from table HOLDERS (user account address in blockchain (ethereum)
     private String email;
     private String phone;
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
