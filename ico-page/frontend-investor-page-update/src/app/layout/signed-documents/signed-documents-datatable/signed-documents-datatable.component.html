@@ -6,9 +6,9 @@
                (keyup)='updateFilter($event)'
         />
     </div>
-    <div class="col-lg-3">
+    <!--<div class="col-lg-3">
         <button class="btn btn-outline-secondary mr-3" (click)="onAddItem()">Add Item</button>
-    </div>
+    </div>-->
 </div>
 <div class="row">
     <div class="col-lg-12">
@@ -16,7 +16,7 @@
             #table
             class='bootstrap'
             style="margin-top: 1.2em; font-size: 1em;"
-            [columnMode]="'force'"
+            [columnMode]="'flex'"
             [headerHeight]="20"
             [footerHeight]="20"
             [rowHeight]="'auto'"
@@ -25,7 +25,7 @@
             [selectionType]="'single'"
             (select)='onSelect($event)'
             [rows]='rows'>
-            <ngx-datatable-column name="userName">
+            <ngx-datatable-column name="userName" [flexGrow]="20">
                 <ng-template let-column="column" ngx-datatable-header-template>
                     <div class="header-class">User</div>
                 </ng-template>
@@ -33,7 +33,23 @@
                     {{row.username}}
                 </ng-template>
             </ngx-datatable-column>
-            <ngx-datatable-column name="docType">
+            <ngx-datatable-column name="holderAccount" [flexGrow]="30">
+                <ng-template let-column="column" ngx-datatable-header-template>
+                    <div class="header-class">Transaction address</div>
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    @if (row.holderAccount) {
+                    <a href="https://{{etherNet}}/tx/{{row.holderAccount}}"
+                        target="_blank"
+                        title="{{row.holderAccount}}"
+                        (click)="openTransaction(row, $event)">
+                        {{row.holderAccount | slice:0:30}}...</a>
+                    } @else {
+                        no attached transaction address
+                    }
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="docType" [flexGrow]="20">
                 <ng-template let-column="column" ngx-datatable-header-template>
                     <div class="header-class">Document Type</div>
                 </ng-template>
@@ -41,12 +57,12 @@
                     {{row.docType}}
                 </ng-template>
             </ngx-datatable-column>
-            <ngx-datatable-column name="loadDate">
+            <ngx-datatable-column name="loadDate" [flexGrow]="30">
                 <ng-template let-column="column" ngx-datatable-header-template>
                     <div class="header-class">Load Date</div>
                 </ng-template>
                 <ng-template let-row="row" ngx-datatable-cell-template>
-                    {{row.loadDate}}
+                    {{row.loadDate | date:'dd.MM.yyyy HH:mm'}}
                 </ng-template>
             </ngx-datatable-column>
         </ngx-datatable>

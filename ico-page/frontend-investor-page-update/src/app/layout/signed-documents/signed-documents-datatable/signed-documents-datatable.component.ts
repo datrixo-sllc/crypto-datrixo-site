@@ -4,6 +4,7 @@
  * Time: 19:30
  */
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {DatatableComponent} from '@swimlane/ngx-datatable';
 import {DomSanitizer} from '@angular/platform-browser';
 import {SignedDocument} from '../signed-document';
@@ -12,7 +13,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @Component({
     selector: 'app-signed-documents-datatable',
     standalone: true,
-    imports: [NgxDatatableModule],
+    imports: [CommonModule, NgxDatatableModule],
     styleUrls: ['./signed-documents-datatable.component.scss'],
     templateUrl: './signed-documents-datatable.component.html'
 })
@@ -22,6 +23,7 @@ export class SignedDocumentsDatatableComponent implements OnChanges {
     @Output() onAddItemEmit = new EventEmitter<string>();
     rows = [];
     temp = [];
+    etherNet = 'etherscan.io';
 
     selected: SignedDocument[] = [];
     @ViewChild(DatatableComponent) table: DatatableComponent;
@@ -86,5 +88,10 @@ export class SignedDocumentsDatatableComponent implements OnChanges {
 
     onAddItem() {
         this.onAddItemEmit.emit('addItem');
+    }
+
+    openTransaction(row: SignedDocument, event: MouseEvent) {
+        event.stopPropagation();
+        event.stopImmediatePropagation();
     }
 }

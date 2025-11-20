@@ -18,7 +18,7 @@ public class SignedDocument extends AbstractPersistable<Long> {
     private User user;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "holder_account_id")
-    private HolderAccount holderAccount;
+    private HolderAccount holderAccount; // User transaction addresses
     @Enumerated(EnumType.STRING)
     private DocumentType docType;
     private Date loadDate;
