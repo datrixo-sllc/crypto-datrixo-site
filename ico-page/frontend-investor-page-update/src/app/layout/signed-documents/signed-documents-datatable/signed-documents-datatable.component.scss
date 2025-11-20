@@ -30,3 +30,36 @@
     background: skyblue !important;
 }
 
+:host ::ng-deep .ngx-datatable.bootstrap datatable-footer {
+    background: none !important;
+}
+
+:host ::ng-deep .custom-datatable-footer {
+    background-color: #f3f3f3;
+    color: #2b2b2b;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 0 1rem;
+}
+
+:host ::ng-deep .custom-datatable-footer .page-count {
+    color: #2b2b2b;
+    font-weight: 500;
+}
+
+:host ::ng-deep .custom-datatable-pager .pager li a {
+    color: #2b2b2b;
+    background-color: transparent;
+}
+
+:host ::ng-deep .custom-datatable-pager .pager li.disabled a {
+    color: #a5a5a5;
+}
+
+:host ::ng-deep .custom-datatable-pager .pager li.active a {
+    background-color: #dcdcdc !important;
+    border-color: #c0c0c0 !important;
+    color: #1a1a1a !important;
+    border-radius: 4px;
+}
+
