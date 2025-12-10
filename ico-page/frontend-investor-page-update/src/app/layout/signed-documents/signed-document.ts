@@ -8,6 +8,7 @@ export class SignedDocument {
     id: number;
     username: string;
     accountAddress?: string;
+    holderAccount?: any;
     docType: string;
     loadDate: Date;
     content?: number[]; // byte[] массив содержимого файла

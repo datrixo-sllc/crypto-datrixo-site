@@ -23,6 +23,7 @@ export class SignedDocumentsDetailComponent implements OnChanges {
     @Output() editEmit = new EventEmitter<string>();
     item: SignedDocument;
     loadingError: boolean = false;
+    etherNet = 'etherscan.io';
 
     constructor(private listService: SignedDocumentsService,
                 private spinner: NgxSpinnerService,

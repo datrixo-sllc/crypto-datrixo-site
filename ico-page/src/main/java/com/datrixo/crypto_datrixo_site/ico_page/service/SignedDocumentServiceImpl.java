@@ -170,7 +170,11 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
             } else {
                 userDto = null;
             }
-            return new SignedDocumentDto(signedDocument.getId(), userDto, null,
+            HolderDto holderAccount = null;
+            if (signedDocument.getHolderAccount() != null && !signedDocument.getHolderAccount().getAddress().isEmpty()) {
+                holderAccount = new HolderDto(signedDocument.getHolderAccount().getAddress());
+            }
+            return new SignedDocumentDto(signedDocument.getId(), userDto, holderAccount,
                     signedDocument.getDocType().name(), signedDocument.getLoadDate(),
                     signedDocument.getContent() != null && signedDocument.getContent().length > 0 ?
                             signedDocument.getContent() : null);
