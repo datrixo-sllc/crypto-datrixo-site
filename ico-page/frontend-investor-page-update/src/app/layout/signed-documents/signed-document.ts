@@ -4,9 +4,11 @@
  * Time: 12:13
  */
 
+import { User } from "../admin-users/user";
+
 export class SignedDocument {
     id: number;
-    username: string;
+    user?: User;
     accountAddress?: string;
     holderAccount?: any;
     docType: string;

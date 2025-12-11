@@ -126,6 +126,8 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
      * Открывает модальное окно со списком holdings
      */
     openHoldingsModal() {
+        console.log('Открытие модального окна holdings');
+        console.log('requestItemData:', this.requestItemData);
         this.showHoldingsModal = true;
         this.loadHoldings();
     }
@@ -142,17 +144,30 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
      * Загружает данные holdings через getUserHoldings
      */
     loadHoldings() {
-        const docUsername = this.requestItemData.username;
-        
-        if (!docUsername) {
-            alert('Не удалось определить username');
+        // Проверяем наличие данных
+        if (!this.requestItemData) {
+            alert('Данные документа не загружены');
             return;
         }
 
+        if (!this.requestItemData.user) {
+            alert('Информация о пользователе не найдена в документе');
+            return;
+        }
+
+        if (!this.requestItemData.user.id) {
+            alert('ID пользователя не найден');
+            return;
+        }
+
+        const docUserId = this.requestItemData.user.id;
+        console.log('Загрузка holdings для пользователя с ID:', docUserId);
+        
         this.loadingHoldings = true;
-        this.myHoldingsService.getUserHoldings(docUsername)
+        this.myHoldingsService.getUserHoldings(docUserId)
             .subscribe({
                 next: (response: any) => {
+                    console.log('Ответ от getUserHoldings:', response);
                     // Обрабатываем ответ - может быть массив или объект с массивом
                     if (Array.isArray(response)) {
                         this.holdingsData = response;
@@ -164,6 +179,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
                         // Если структура другая, пытаемся преобразовать
                         this.holdingsData = response ? [response] : [];
                     }
+                    console.log('Обработанные данные holdings:', this.holdingsData);
                     this.loadingHoldings = false;
                 },
                 error: (error: any) => {

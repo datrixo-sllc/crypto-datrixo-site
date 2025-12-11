@@ -155,15 +155,15 @@ public class InvestorPageController {
                 .anyMatch(holderAccount1 -> holderAccount1.getUser().getAccountAddress().equalsIgnoreCase(holderAccountAddress));
     }
 
-    @GetMapping(value = "/user-holdings/{username}", produces = "application/json")
+    @GetMapping(value = "/user-holdings/{id}", produces = "application/json")
     public @ResponseBody
-    IcoPageDto getHoldingsByUser(@PathVariable("username") String username) {
+    IcoPageDto getHoldingsByUser(@PathVariable("id") Long id) {
         IcoPageDto icoPageDto = icoPageService.getAllData();
-        User user = userService.findByUsername(username);
-        if (user != null) {
+        Optional<User> user = userService.findById(id);
+        if (user.isPresent()) {
             List<HolderDto> holderDtoList = icoPageDto.getHolders();
             icoPageDto.setHolders(holderDtoList.stream()
-                    .filter(holderDto -> hasAccount(holderDto.getAddress(), user.getAccounts()))
+                    .filter(holderDto -> hasAccount(holderDto.getAddress(), user.get().getAccounts()))
                     .collect(Collectors.toList()));
             return icoPageDto;
         } else {
