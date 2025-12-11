@@ -15,6 +15,7 @@ export class MyHoldingsService {
     private static readonly SLASH: string = '/';
     private static readonly INVESTOR: string = 'investor';
     private static readonly HOLDINGS: string = 'holdings';
+    private static readonly USER_HOLDINGS: string = 'user-holdings';
 
     constructor(
         @Inject(APP_CONFIG) private config: IAppConfig,
@@ -24,6 +25,13 @@ export class MyHoldingsService {
 
     getIcoPage(): Observable<any> {
         const url = this.config.apiEndpoint + MyHoldingsService.INVESTOR + MyHoldingsService.SLASH + MyHoldingsService.HOLDINGS;
+        const headers = this.createHeaders();
+        return this.http.get(url, {headers});
+    }
+
+
+    getUserHoldings(username: string): Observable<any> {
+        const url = this.config.apiEndpoint + MyHoldingsService.INVESTOR + MyHoldingsService.SLASH + MyHoldingsService.USER_HOLDINGS + MyHoldingsService.SLASH + username;
         const headers = this.createHeaders();
         return this.http.get(url, {headers});
     }
