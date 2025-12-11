@@ -98,13 +98,29 @@ export class SignedDocumentsDetailComponent implements OnChanges {
             
             // Определяем MIME тип на основе заголовков файла
             const mimeType = this.getMimeType(byteArray);
+            console.log('Определенный MIME тип для просмотра:', mimeType);
+            
+            // Для SVG создаем blob с правильным типом
             const blob = new Blob([new Uint8Array(byteArray)], { type: mimeType });
+            
+            // Проверяем размер blob
+            if (blob.size === 0) {
+                alert('Ошибка: Документ имеет нулевой размер');
+                return;
+            }
             
             // Создаем URL для blob
             const url = URL.createObjectURL(blob);
             
             // Открываем в новой вкладке
-            window.open(url, '_blank');
+            const newWindow = window.open(url, '_blank');
+            
+            // Если окно заблокировано, показываем сообщение
+            if (!newWindow) {
+                alert('Пожалуйста, разрешите открытие всплывающих окон для просмотра документа');
+                URL.revokeObjectURL(url);
+                return;
+            }
             
             // Очищаем URL через некоторое время (опционально)
             setTimeout(() => {
@@ -113,7 +129,7 @@ export class SignedDocumentsDetailComponent implements OnChanges {
             
         } catch (error) {
             console.error('Ошибка при открытии документа:', error);
-            alert('Ошибка при открытии документа');
+            alert('Не удалось загрузить документ: ' + (error.message || 'Неизвестная ошибка'));
         }
     }
 
@@ -126,8 +142,22 @@ export class SignedDocumentsDetailComponent implements OnChanges {
             return this.item.mimeType;
         }
 
-        // Проверяем заголовки файла для определения типа
-        if (byteArray && byteArray.length > 4) {
+        // Проверяем содержимое на SVG (текстовый формат)
+        if (byteArray && byteArray.length > 10) {
+            // Преобразуем первые байты в строку для проверки текстовых форматов
+            const textStart = Array.from(byteArray.slice(0, Math.min(100, byteArray.length)))
+                .map(b => String.fromCharCode(b))
+                .join('');
+            
+            console.log('Начало декодированного содержимого:', textStart.substring(0, 50));
+            
+            // SVG файлы начинаются с <svg или <?xml
+            if (textStart.trim().startsWith('<svg') || textStart.trim().startsWith('<?xml')) {
+                console.log('Обнаружен SVG файл по содержимому');
+                return 'image/svg+xml';
+            }
+            
+            // Проверяем бинарные заголовки
             const header = String.fromCharCode(byteArray[0], byteArray[1], byteArray[2], byteArray[3]);
             console.log('Заголовок файла:', header);
             
@@ -166,6 +196,8 @@ export class SignedDocumentsDetailComponent implements OnChanges {
                     return 'image/gif';
                 case 'webp':
                     return 'image/webp';
+                case 'svg':
+                    return 'image/svg+xml';
                 default:
                     return 'application/octet-stream';
             }
@@ -175,6 +207,9 @@ export class SignedDocumentsDetailComponent implements OnChanges {
         if (this.item.docType) {
             const docTypeLower = this.item.docType.toLowerCase();
             console.log('Тип документа:', docTypeLower);
+            if (docTypeLower.includes('svg')) {
+                return 'image/svg+xml';
+            }
             if (docTypeLower.includes('pdf') || docTypeLower.includes('document')) {
                 return 'application/pdf';
             }
@@ -309,6 +344,9 @@ export class SignedDocumentsDetailComponent implements OnChanges {
                         break;
                     case 'image/webp':
                         fileName += '.webp';
+                        break;
+                    case 'image/svg+xml':
+                        fileName += '.svg';
                         break;
                 }
             }

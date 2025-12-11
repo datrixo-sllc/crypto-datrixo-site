@@ -33,10 +33,10 @@
 
     </div>
     <div class="col-lg-7 my-0 pl-lg-5">
-        <div class="form-group row" *ngIf="item.holderAccount.address">
+        <div class="form-group row" *ngIf="item.holderAccount && item.holderAccount.address">
             <label class="col-lg-3 col-form-label">Transaction Address</label>
             <div class="col-lg-9">
-                @if (item.holderAccount.address) {
+                @if (item.holderAccount && item.holderAccount.address) {
                     <a href="https://{{etherNet}}/tx/{{item.holderAccount.address}}"
                         target="_blank"
                         title="{{item.holderAccount.address}}">
