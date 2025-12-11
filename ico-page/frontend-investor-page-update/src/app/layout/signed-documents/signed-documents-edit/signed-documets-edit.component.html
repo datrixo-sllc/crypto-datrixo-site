@@ -12,11 +12,13 @@
             <label class="col-lg-2 col-form-label">Transaction Address<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
-                <input class="form-control" name="docType" [(ngModel)]="requestItemData.docType"/>
-                <div class="input-group-append">
-                    <button class="btn btn-outline-primary" type="button" (click)="openHoldingsModal()">
-                        <i class="fa fa-list"></i> Выбрать из списка
-                    </button>
+                <div class="input-group">
+                    <input class="form-control" name="docType" [(ngModel)]="requestItemData.docType"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" (click)="openHoldingsModal()">
+                            <i class="fa fa-list"></i> Выбрать из списка
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,6 +30,80 @@
             </div>
         </div>
     </div>
-
-
 </div>
+
+<!-- Модальное окно для списка holdings -->
+<div class="modal fade" [class.show]="showHoldingsModal" [style.display]="showHoldingsModal ? 'block' : 'none'" 
+     tabindex="-1" role="dialog" *ngIf="showHoldingsModal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Список Holdings</h5>
+                <button type="button" class="close" (click)="closeHoldingsModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="loadingHoldings" class="text-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Загрузка...</span>
+                    </div>
+                    <p>Загрузка данных...</p>
+                </div>
+                <div *ngIf="!loadingHoldings">
+                    <div *ngIf="holdingsData.length === 0" class="alert alert-info">
+                        Данные не найдены
+                    </div>
+                    <div *ngIf="holdingsData.length > 0">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ID</th>
+                                        <th>Address</th>
+                                        <th>Дополнительная информация</th>
+                                        <th>Действие</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of holdingsData; let i = index">
+                                        <td>{{ i + 1 }}</td>
+                                        <td>{{ item.id || '-' }}</td>
+                                        <td>
+                                            <span *ngIf="item.address" class="text-break">{{ item.address }}</span>
+                                            <span *ngIf="item.transactionAddress" class="text-break">{{ item.transactionAddress }}</span>
+                                            <span *ngIf="!item.address && !item.transactionAddress">-</span>
+                                        </td>
+                                        <td>
+                                            <small class="text-muted">
+                                                <span *ngIf="item.amount">Amount: {{ item.amount }}</span>
+                                                <span *ngIf="item.type">Type: {{ item.type }}</span>
+                                            </small>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary" 
+                                                    (click)="selectHolding(item)"
+                                                    title="Выбрать этот элемент">
+                                                <i class="fa fa-check"></i> Выбрать
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-3">
+                            <small class="text-muted">
+                                <strong>Примечание:</strong> Если структура данных отличается, используйте кнопку "Выбрать" для выбора элемента.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeHoldingsModal()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade" [class.show]="showHoldingsModal" *ngIf="showHoldingsModal"></div>

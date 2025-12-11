@@ -30,8 +30,8 @@ export class MyHoldingsService {
     }
 
 
-    getUserHoldings(username: string): Observable<any> {
-        const url = this.config.apiEndpoint + MyHoldingsService.INVESTOR + MyHoldingsService.SLASH + MyHoldingsService.USER_HOLDINGS + MyHoldingsService.SLASH + username;
+    getUserHoldings(id: number): Observable<any> {
+        const url = this.config.apiEndpoint + MyHoldingsService.INVESTOR + MyHoldingsService.SLASH + MyHoldingsService.USER_HOLDINGS + MyHoldingsService.SLASH + id;
         const headers = this.createHeaders();
         return this.http.get(url, {headers});
     }
