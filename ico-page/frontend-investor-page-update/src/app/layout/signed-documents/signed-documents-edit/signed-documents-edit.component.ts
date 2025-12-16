@@ -13,6 +13,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {SignedDocument} from '../signed-document';
 import {SignedDocumentsService} from '../signed-documents.service';
 import { MyHoldingsService } from '../../my-holdings/my-holdings.service';
+import { HolderResponce } from '../../my-holdings/holder-responce';
 import {UpdateSignedDocumentsUploadService} from '../update-signed-documents-upload.service';
 import {AddSignedDocumentsUploadService} from '../add-signed-documents-upload.service';
 import { FormsModule } from '@angular/forms';
@@ -46,9 +47,9 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
 
     username: string;
     
-    // Модальное окно для списка holdings
+    // Modal window for holdings list
     showHoldingsModal: boolean = false;
-    holdingsData: any[] = [];
+    holdingsData: HolderResponce[] = [];
     loadingHoldings: boolean = false;
 
     constructor(
@@ -76,6 +77,9 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
             this.listService.getItemDetail(this.id)
                 .subscribe(value => {
                     this.requestItemData = value as SignedDocument;
+                    if (!this.requestItemData.holderAccount) {
+                        this.requestItemData.holderAccount = new HolderResponce();
+                    }
                     this.spinner.hide();
                 }, error => {
                     this.spinner.hide();
@@ -123,17 +127,17 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
     }
 
     /**
-     * Открывает модальное окно со списком holdings
+     * Opens modal window with holdings list
      */
     openHoldingsModal() {
-        console.log('Открытие модального окна holdings');
+        console.log('Opening holdings modal window');
         console.log('requestItemData:', this.requestItemData);
         this.showHoldingsModal = true;
         this.loadHoldings();
     }
 
     /**
-     * Закрывает модальное окно
+     * Closes modal window
      */
     closeHoldingsModal() {
         this.showHoldingsModal = false;
@@ -141,50 +145,40 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
     }
 
     /**
-     * Загружает данные holdings через getUserHoldings
+     * Loads holdings data via getUserHoldings
      */
     loadHoldings() {
-        // Проверяем наличие данных
+        // Check if data exists
         if (!this.requestItemData) {
-            alert('Данные документа не загружены');
+            alert('Document data not loaded');
             return;
         }
 
         if (!this.requestItemData.user) {
-            alert('Информация о пользователе не найдена в документе');
+            alert('User information not found in document');
             return;
         }
 
         if (!this.requestItemData.user.id) {
-            alert('ID пользователя не найден');
+            alert('User ID not found');
             return;
         }
 
         const docUserId = this.requestItemData.user.id;
-        console.log('Загрузка holdings для пользователя с ID:', docUserId);
+        console.log('Loading holdings for user with ID:', docUserId);
         
         this.loadingHoldings = true;
         this.myHoldingsService.getUserHoldings(docUserId)
             .subscribe({
                 next: (response: any) => {
-                    console.log('Ответ от getUserHoldings:', response);
-                    // Обрабатываем ответ - может быть массив или объект с массивом
-                    if (Array.isArray(response)) {
-                        this.holdingsData = response;
-                    } else if (response && Array.isArray(response.holdings)) {
-                        this.holdingsData = response.holdings;
-                    } else if (response && Array.isArray(response.data)) {
-                        this.holdingsData = response.data;
-                    } else {
-                        // Если структура другая, пытаемся преобразовать
-                        this.holdingsData = response ? [response] : [];
-                    }
-                    console.log('Обработанные данные holdings:', this.holdingsData);
+                    console.log('Response from getUserHoldings:', response);
+                    this.holdingsData = response.holders;
+                    console.log('Processed holdings data:', this.holdingsData);
                     this.loadingHoldings = false;
                 },
                 error: (error: any) => {
-                    console.error('Ошибка загрузки holdings:', error);
-                    alert('Ошибка загрузки данных: ' + (error.message || 'Неизвестная ошибка'));
+                    console.error('Error loading holdings:', error);
+                    alert('Error loading data: ' + (error.message || 'Unknown error'));
                     this.loadingHoldings = false;
                 }
             });
@@ -192,31 +186,20 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
 
     
     /**
-     * Выбирает элемент из списка holdings и заполняет поле docType
+     * Selects item from holdings list and fills docType field
      */
-    selectHolding(item: any) {
-        // Пытаемся найти адрес или идентификатор в объекте
-        let selectedValue = '';
-        
-        if (item.address) {
-            selectedValue = item.address;
-        } else if (item.transactionAddress) {
-            selectedValue = item.transactionAddress;
-        } else if (item.id) {
-            selectedValue = item.id.toString();
-        } else if (typeof item === 'string') {
-            selectedValue = item;
+    selectHolding(item: HolderResponce) {
+        // Use address from HolderResponce
+        if (item && item.address) {
+            if (this.requestItemData) {
+                this.requestItemData.holderAccount = item;
+            }
         } else {
-            // Если структура сложная, преобразуем в JSON строку
-            selectedValue = JSON.stringify(item);
+            alert('Address not found in selected item');
+            return;
         }
         
-        // Заполняем поле docType
-        if (this.requestItemData) {
-            this.requestItemData.docType = selectedValue;
-        }
-        
-        // Закрываем модальное окно
+        // Close modal window
         this.closeHoldingsModal();
     }
 
