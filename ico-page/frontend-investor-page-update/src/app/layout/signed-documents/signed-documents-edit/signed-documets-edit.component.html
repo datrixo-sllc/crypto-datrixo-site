@@ -72,7 +72,12 @@
                                     <tr *ngFor="let item of holdingsData; let i = index">
                                         <td>{{ i + 1 }}</td>
                                         <td>
-                                            <span *ngIf="item.address" class="text-break">{{ item.address }}</span>
+                                            <span *ngIf="item.address" class="text-break">
+                                                <a href="https://{{etherNet}}/tx/{{item.address}}"
+                                                    target="_blank"
+                                                    title="{{item.address}}">
+                                                    {{item.address | slice:0:30}}...</a>
+                                            </span>
                                             <span *ngIf="!item.address">-</span>
                                         </td>
                                         <td>

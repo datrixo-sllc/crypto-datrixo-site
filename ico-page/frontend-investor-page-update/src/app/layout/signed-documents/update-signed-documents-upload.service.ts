@@ -31,12 +31,16 @@ export class UpdateSignedDocumentsUploadService {
     }
 
 
-    private putDataToURL(partUrl: string, itemData: SignedDocument): Observable<any> {
+    private putDataToURL(partUrl: string, itemData: SignedDocument): Observable<HttpResponse<Object>> {
         const url = this.config.apiEndpoint + partUrl;
         const formData: FormData = new FormData();
         formData.append('itemdata', JSON.stringify(itemData));
         const headers = this.createHeaders();
-        return this.http.put(url, formData, { headers });
+        // Возвращаем полный HttpResponse, чтобы в компоненте были доступны status и statusText
+        return this.http.put<Object>(url, formData, {
+            headers,
+            observe: 'response'
+        });
     }
 
     private createHeaders(): HttpHeaders {

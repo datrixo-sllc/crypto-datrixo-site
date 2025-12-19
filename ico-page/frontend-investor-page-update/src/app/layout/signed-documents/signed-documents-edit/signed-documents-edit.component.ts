@@ -51,6 +51,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
     showHoldingsModal: boolean = false;
     holdingsData: HolderResponce[] = [];
     loadingHoldings: boolean = false;
+    etherNet = 'etherscan.io';
 
     constructor(
         private updateItemUploadService: UpdateSignedDocumentsUploadService,
