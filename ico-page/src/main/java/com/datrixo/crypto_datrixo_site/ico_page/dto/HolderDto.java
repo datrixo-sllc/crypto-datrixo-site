@@ -1,5 +1,7 @@
 package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Date;
  * Date: 05.02.2019
  * Time: 11:17
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class HolderDto {
     private String address;
     private Date timeDate;

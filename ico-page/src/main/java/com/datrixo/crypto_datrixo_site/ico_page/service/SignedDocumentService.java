@@ -25,6 +25,7 @@ public interface SignedDocumentService {
     SignedDocumentDto saveSafeTOrSaByCurrentUser(MultipartFile file) throws IOException;
     SignedDocumentDto save(MultipartFile file, SignedDocumentDto document) throws IOException;
     SignedDocumentDto update(MultipartFile file, SignedDocumentDto document) throws IOException;
+    SignedDocumentDto updateByDocument(SignedDocumentDto document) throws IOException;
     void delete(SignedDocumentDto document);
     void delete(Long id) throws IOException;
     SignedDocumentAdmListDto findAllAdm();

@@ -79,6 +79,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
                     this.requestItemData = value as SignedDocument;
                     if (!this.requestItemData.holderAccount) {
                         this.requestItemData.holderAccount = new HolderResponce();
+                        this.requestItemData.holderAccount.address = ''
                     }
                     this.spinner.hide();
                 }, error => {
@@ -94,7 +95,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
             alert('Fill form, please');
         } else {
             this.spinner.show();
-            this.updateItemUploadService.putItemUpdate(this.requestItemData)
+            this.updateItemUploadService.putItemUpdateByDocument(this.requestItemData)
                 .toPromise()
                 .then((value: HttpResponse<Object>) => {
                         this.spinner.hide();
@@ -114,7 +115,12 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
 
     clearUploadParams() {
         this.requestItemData = new SignedDocument();
-
+        // Гарантируем, что holderAccount всегда инициализирован,
+        // чтобы избежать ошибок вида "Cannot read properties of undefined (reading 'address')" в шаблоне
+        if (!this.requestItemData.holderAccount) {
+            this.requestItemData.holderAccount = new HolderResponce();
+            this.requestItemData.holderAccount.address = '';
+        }
     }
 
 
@@ -172,7 +178,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
             .subscribe({
                 next: (response: any) => {
                     console.log('Response from getUserHoldings:', response);
-                    this.holdingsData = response.holders;
+                    this.holdingsData = response.holderAccountDtoList;
                     console.log('Processed holdings data:', this.holdingsData);
                     this.loadingHoldings = false;
                 },

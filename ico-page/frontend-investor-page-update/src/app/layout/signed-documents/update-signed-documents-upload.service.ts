@@ -14,6 +14,7 @@ import {SignedDocument} from './signed-document';
 export class UpdateSignedDocumentsUploadService {
 
     private static readonly URL: string = 'signed-documents';
+    private static readonly URL_UPDATE: string = 'signed-documents/document';
 
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {
@@ -23,6 +24,12 @@ export class UpdateSignedDocumentsUploadService {
         const urlString = UpdateSignedDocumentsUploadService.URL;
         return this.putDataToURL(urlString, itemData);
     }
+
+    public putItemUpdateByDocument(itemData: SignedDocument): Observable<HttpResponse<Object>> {
+        const urlString = UpdateSignedDocumentsUploadService.URL_UPDATE;
+        return this.putDataToURL(urlString, itemData);
+    }
+
 
     private putDataToURL(partUrl: string, itemData: SignedDocument): Observable<any> {
         const url = this.config.apiEndpoint + partUrl;

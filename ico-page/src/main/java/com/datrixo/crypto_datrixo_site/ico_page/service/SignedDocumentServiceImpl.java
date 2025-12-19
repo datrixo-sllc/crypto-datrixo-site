@@ -293,6 +293,37 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
     }
 
     @Override
+    public SignedDocumentDto updateByDocument(SignedDocumentDto document) throws IOException {
+        if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
+            User currentUser = userService.getCurrentUser().orElse(null);
+            LOGGER.error("Current user do not have admin privileges: {}",
+                    currentUser != null ? currentUser.getUsername() : "");
+            return null;
+        }
+        if (document == null) {
+            LOGGER.error("document == null");
+            return null;
+        }
+        if (document.getId() == null) {
+            LOGGER.error("document.getId() == null: {}", document);
+            return null;
+        }
+        Optional<SignedDocument> optionalSignedDocument =
+                signedDocumentRepository.findById(document.getId());
+        if (!optionalSignedDocument.isPresent()) {
+            LOGGER.error("Document for update not found: {}", document);
+        }
+        SignedDocument signedDocument = optionalSignedDocument.get();
+        signedDocument.setLoadDate(document.getLoadDate());
+        if (document.getHolderAccount() != null && document.getHolderAccount().getAddress() != null) {
+            signedDocument.setHolderAccount(holderService.findByAddress(document.getHolderAccount().getAddress()).orElse(null));
+        }
+        signedDocument = signedDocumentRepository.save(signedDocument);
+        SignedDocumentDto signedDocumentDto = new SignedDocumentDto(signedDocument.getId());
+        return signedDocumentDto;
+    }
+
+    @Override
     public void delete(SignedDocumentDto document) {
         if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
             User currentUser = userService.getCurrentUser().orElse(null);

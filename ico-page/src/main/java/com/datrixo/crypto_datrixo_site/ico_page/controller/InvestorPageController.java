@@ -157,19 +157,23 @@ public class InvestorPageController {
 
     @GetMapping(value = "/user-holdings/{id}", produces = "application/json")
     public @ResponseBody
-    IcoPageDto getHoldingsByUser(@PathVariable("id") Long id) {
-        IcoPageDto icoPageDto = icoPageService.getAllData();
-        Optional<User> user = userService.findById(id);
-        if (user.isPresent()) {
-            List<HolderDto> holderDtoList = icoPageDto.getHolders();
-            icoPageDto.setHolders(holderDtoList.stream()
-                    .filter(holderDto -> hasAccount(holderDto.getAddress(), user.get().getAccounts()))
-                    .collect(Collectors.toList()));
-            return icoPageDto;
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    HolderAccountListDto getHoldingsByUser(@PathVariable("id") Long id) {
+        if (id == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
-
+        Optional<User> user = userService.findById(id);
+        if (!user.isPresent()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        } else {
+            HolderAccountListDto holderAccountListDto = new HolderAccountListDto();
+            Optional<List<HolderAccount>> holderAccounts = holderAccountRepository.findHolderAccountsByUser(user.get());
+            if (holderAccounts.isPresent()) {
+                holderAccountListDto.setHolderAccounts(holderAccounts.get());
+                return holderAccountListDto;
+            } else {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            }
+        }
     }
 
     @GetMapping(value = "/user-data", produces = "application/json")
@@ -266,7 +270,7 @@ public class InvestorPageController {
                 shareTokens * UNIT_VALUE, 0);
     }
 
-    private  BigDecimal getPaidPrice(String address) {
+    private BigDecimal getPaidPrice(String address) {
         if (address != null) {
             Optional<User> user = userService.findFirstByAccountAddress(address);
             if (user.isPresent()) {

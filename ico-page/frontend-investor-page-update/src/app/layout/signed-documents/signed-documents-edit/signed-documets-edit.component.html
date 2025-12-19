@@ -26,7 +26,7 @@
             <label class="col-lg-2 col-form-label">Load Date<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
-                <input class="form-control" name="loadDate" [(ngModel)]="requestItemData.loadDate"/>
+                <input class="form-control" name="loadDate" [(ngModel)]="requestItemData.loadDate" [disabled]="true"/>
             </div>
         </div>
     </div>
@@ -76,8 +76,8 @@
                                             <span *ngIf="!item.address">-</span>
                                         </td>
                                         <td>
-                                            <span *ngIf="item.timeDate">{{ item.timeDate | date:'short' }}</span>
-                                            <span *ngIf="!item.timeDate">-</span>
+                                            <span *ngIf="item.createDate">{{ item.createDate | date:'short' }}</span>
+                                            <span *ngIf="!item.createDate">-</span>
                                         </td>
                                         <td>
                                             <span *ngIf="item.shareTokens">{{ item.shareTokens }}</span>

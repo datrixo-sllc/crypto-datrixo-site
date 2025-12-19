@@ -1,5 +1,7 @@
 package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -100,4 +102,14 @@ public class HolderAccountDto {
     public void setShare(String share) {
         this.share = share;
     }
+
+    public void setHolderAccount(HolderAccount holderAccount) {
+        if (holderAccount != null) {
+            this.id = holderAccount.getId();
+            this.address = holderAccount.getAddress();
+            this.userId = holderAccount.getUserId();
+            this.createDate = holderAccount.getCreateDate();
+            this.paidPrice = holderAccount.getPaidPrice();
+    }
+        }
 }

@@ -56,6 +56,18 @@ public class SignedDocumentController {
         }
         return ResponseEntity.noContent().build();
     }
+    @PutMapping(value = "/document")
+    public ResponseEntity<Void> updateSignedDocumentByDocument(@RequestParam("itemdata") String itemData) throws IOException {
+        SignedDocumentDto signedDocumentDto = readData(itemData);
+        if (signedDocumentDto != null && signedDocumentDto.getId() != null) {
+            signedDocumentDto = signedDocumentService.updateByDocument(signedDocumentDto);
+            if (signedDocumentDto == null || signedDocumentDto.getId() == null)
+                return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.noContent().build();
+    }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<SignedDocumentDto> getDocumentForDownloadDetail(@PathVariable("id") Long id) {

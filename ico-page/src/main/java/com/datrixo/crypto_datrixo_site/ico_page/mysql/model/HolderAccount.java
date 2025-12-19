@@ -73,4 +73,8 @@ public class HolderAccount extends AbstractPersistable<Long> {
     public void setInitialInvest(Boolean initialInvest) {
         this.initialInvest = initialInvest;
     }
+
+    public Long getUserId() {
+        return user.getId();
+    }
 }

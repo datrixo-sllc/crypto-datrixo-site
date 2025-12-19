@@ -1,5 +1,7 @@
 package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Date;
  * Date: 05.12.2020
  * Time: 21:34
  **/
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SignedDocumentDto {
     private Long id;
     private UserDto user;
