@@ -12,9 +12,14 @@ import {SignedDocument} from '../signed-document';
 import {SignedDocumentsService} from '../signed-documents.service';
 import {UpdateSignedDocumentsUploadService} from '../update-signed-documents-upload.service';
 import {AddSignedDocumentsUploadService} from '../add-signed-documents-upload.service';
+import {AdminUsersService} from '../../admin-users/admin-users.service';
+import {UserList} from '../../admin-users/user-list';
+import {User} from '../../admin-users/user';
 import {Router} from '@angular/router';
 import {Utils} from '../../../shared/utilites/Utils';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { APP_CONFIG, AppConfig } from '../../../app.config';
 
 /**
  * Created by Yuri Nikiforov.
@@ -25,7 +30,11 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-signed-documents-add',
     standalone: true,
-    imports: [FormsModule],
+    imports: [FormsModule, CommonModule],
+    providers: [
+        AdminUsersService,
+        { provide: APP_CONFIG, useValue: AppConfig }
+    ],
     templateUrl: './signed-documents-add.component.html',
     styleUrls: ['./signed-documents-add.component.scss']
 })
@@ -37,11 +46,13 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
     requestItemData: SignedDocument;
+    users: User[] = [];
 
     constructor(
         private updateItemUploadService: UpdateSignedDocumentsUploadService,
         private addItemUploadService: AddSignedDocumentsUploadService,
         private listService: SignedDocumentsService,
+        public adminUsersService: AdminUsersService,
         private spinner: NgxSpinnerService,
         private sanitizer: DomSanitizer,
         private _router: Router,
@@ -57,6 +68,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
 
     ngOnInit(): void {
         this.initUploadParams();
+        this.loadUsers();
         this.spinner.show();
         this.addItemUploadService.getCheck()
             .subscribe(value => {
@@ -68,6 +80,46 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
                 // alert('Server error: ' + error.message);
                 this.utils.clearLocalStorage();
                 this._router.navigate(['/login']);
+            });
+    }
+
+    loadUsers(): void {
+        // Проверяем наличие токена перед запросом
+        const token = localStorage.getItem('token');
+        if (!token) {
+            console.warn('Token not found, skipping users load');
+            this.users = [];
+            return;
+        }
+
+        this.adminUsersService.getList()
+            .subscribe({
+                next: (response: any) => {
+                    // Убеждаемся, что response является массивом или объектом с users
+                    if (Array.isArray(response)) {
+                        // Если ответ - массив пользователей напрямую
+                        this.users = response;
+                    } else if (response && response.users && Array.isArray(response.users)) {
+                        // Если ответ - объект с полем users
+                        this.users = response.users;
+                    } else if (response && Array.isArray((response as UserList).users)) {
+                        // Если ответ - UserList
+                        this.users = (response as UserList).users;
+                    } else {
+                        console.warn('Unexpected response format:', response);
+                        this.users = [];
+                    }
+                },
+                error: (error: any) => {
+                    console.error('Error loading users:', error);
+                    // Если ошибка 401 (Unauthorized), возможно токен истек
+                    if (error.status === 401) {
+                        console.warn('Unauthorized access - token may be expired');
+                        // Не перенаправляем на логин здесь, так как это может быть нормальной ситуацией
+                        // Пользователь может не иметь прав на просмотр списка пользователей
+                    }
+                    this.users = [];
+                }
             });
     }
 
@@ -131,6 +183,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
         this.fileToUpload = null;
         this.imgSrc = null;
         this.requestItemData = new SignedDocument();
+        this.requestItemData.docType = 'agreement';
     }
 
     onBackList() {
