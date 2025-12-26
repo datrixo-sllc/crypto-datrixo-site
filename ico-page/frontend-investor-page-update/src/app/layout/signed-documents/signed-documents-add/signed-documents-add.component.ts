@@ -50,12 +50,14 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.uploadEl.nativeElement.value = null;
+        if (this.uploadEl?.nativeElement) {
+            this.uploadEl.nativeElement.value = null;
+        }
     }
 
     ngOnInit(): void {
         this.initUploadParams();
-        this.spinner.show();
+        /*this.spinner.show();
         this.addItemUploadService.getCheck()
             .subscribe(value => {
                 if (value) {
@@ -67,12 +69,15 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
                 this.utils.clearLocalStorage();
                 this._router.navigate(['/login']);
             });
+            */
     }
 
     handleFileInput(files: FileList) {
         if (files.item(0).size > 1000000) {
             alert('Image file must be less then 1Mb');
-            this.uploadEl.nativeElement.value = null;
+            if (this.uploadEl?.nativeElement) {
+                this.uploadEl.nativeElement.value = null;
+            }
             return;
         }
         this.fileToUpload = files.item(0);
@@ -117,7 +122,9 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
     clearUploadParams() {
         this.fileToUpload = null;
         this.imgSrc = null;
-        this.uploadEl.nativeElement.value = null;
+        if (this.uploadEl?.nativeElement) {
+            this.uploadEl.nativeElement.value = null;
+        }
         this.requestItemData = new SignedDocument();
     }
 
