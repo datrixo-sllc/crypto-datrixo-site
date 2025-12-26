@@ -40,7 +40,7 @@ export class AddSignedDocumentsUploadService {
         const url = this.config.apiEndpoint + AddSignedDocumentsUploadService.URL +
             AddSignedDocumentsUploadService.SLASH + AddSignedDocumentsUploadService.CHECK;
         const headers = this.createHeaders();
-        return this.http.get(url, {headers});
+        return this.http.get(url, {headers, responseType: 'text'});
     }
 
     private createHeaders(): HttpHeaders {

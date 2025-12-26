@@ -57,7 +57,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
 
     ngOnInit(): void {
         this.initUploadParams();
-        /*this.spinner.show();
+        this.spinner.show();
         this.addItemUploadService.getCheck()
             .subscribe(value => {
                 if (value) {
@@ -69,7 +69,6 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
                 this.utils.clearLocalStorage();
                 this._router.navigate(['/login']);
             });
-            */
     }
 
     handleFileInput(files: FileList) {
