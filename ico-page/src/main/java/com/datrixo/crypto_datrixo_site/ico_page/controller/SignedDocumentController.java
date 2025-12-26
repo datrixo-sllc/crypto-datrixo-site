@@ -43,6 +43,21 @@ public class SignedDocumentController {
 
     }
 
+    @PostMapping(value = "/byadmin")
+    public ResponseEntity<Object> createSignedDocumentByAdmin(@RequestParam(required = true, name="file") MultipartFile file,
+                                                       @RequestParam("itemdata") String itemData) throws IOException {
+        SignedDocumentDto signedDocumentDto = readData(itemData);
+        signedDocumentDto = signedDocumentService.saveByAdmin(file, signedDocumentDto);
+        if (signedDocumentDto != null && signedDocumentDto.getId() != null) {
+            URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                    .buildAndExpand(signedDocumentDto.getId()).toUri();
+            return ResponseEntity.created(location).build();
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+
+    }
+
     @PutMapping()
     public ResponseEntity<Void> updateSignedDocument(@RequestParam(required = true, name="file") MultipartFile file,
                                                           @RequestParam("itemdata") String itemData) throws IOException {

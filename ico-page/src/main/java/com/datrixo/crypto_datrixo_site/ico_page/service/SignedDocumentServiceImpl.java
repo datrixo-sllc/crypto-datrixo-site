@@ -377,4 +377,38 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
         });
         return signedDocumentAdmListDto;
     }
+
+    @Override
+    @Transactional
+    public SignedDocumentDto saveByAdmin(MultipartFile file, SignedDocumentDto document) throws IOException {
+        if (document == null) {
+            LOGGER.error("document == null");
+            return null;
+        }
+        if (file == null) {
+            LOGGER.error("file == null: {}", document);
+            return null;
+        }
+        User user = userService.findByUsername(document.getUser().getUsername());
+        if (user == null) {
+            if (document.getUser().getId() != null) {
+                user = userService.findById(document.getUser().getId()).orElse(null);
+                if (user == null) {
+                    return null;
+                }
+            } else {
+                LOGGER.error("User not found: {}", document);
+                return null;
+            }
+        }
+
+        SignedDocument signedDocument =
+                new SignedDocument(user, null,
+                        DocumentType.SAFE_T_OR_SA, new Date(),
+                        IOUtils.toByteArray(file.getInputStream()));
+        signedDocument = signedDocumentRepository.save(signedDocument);
+        SignedDocumentDto signedDocumentDto = new SignedDocumentDto(signedDocument.getId());
+        return signedDocumentDto;
+
+    }
 }

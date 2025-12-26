@@ -20,7 +20,7 @@
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
                 <select class="form-control" [(ngModel)]="requestItemData.user" name="user">
-                    <option *ngFor="let user of (users || [])" [value]="user.username">{{ user.username }}</option>
+                    <option *ngFor="let user of (users || [])" [ngValue]="user">{{ user.username }}</option>
                 </select>
             </div>
         </div>

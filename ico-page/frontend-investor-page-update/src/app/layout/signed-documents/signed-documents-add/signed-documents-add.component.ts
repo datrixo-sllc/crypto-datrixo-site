@@ -174,7 +174,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
         if (conf) {
             if (this.fileToUpload === null) {
                 alert('Load file, please');
-            } else if (!this.requestItemData || !this.requestItemData.docType
+            } else if (!this.requestItemData || !this.requestItemData.user
                 || !this.selectedDate
             ) {
                 alert('Fill form, please');
@@ -183,7 +183,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
                 this.requestItemData.loadDate = this.selectedDate;
                 
                 this.spinner.show();
-                this.addItemUploadService.postItemAdd(this.fileToUpload, this.requestItemData)
+                this.addItemUploadService.postItemAddByAdmin(this.fileToUpload, this.requestItemData)
                     .toPromise()
                     .then((value: HttpResponse<Object>) => {
                             this.spinner.hide();

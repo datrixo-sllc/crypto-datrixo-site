@@ -1,5 +1,7 @@
 package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
  * Date: 08.06.2019
  * Time: 19:14
  **/
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDto {
     private Long id;
     private String username;

@@ -29,4 +29,6 @@ public interface SignedDocumentService {
     void delete(SignedDocumentDto document);
     void delete(Long id) throws IOException;
     SignedDocumentAdmListDto findAllAdm();
+
+    SignedDocumentDto saveByAdmin(MultipartFile file, SignedDocumentDto document) throws IOException;
 }
