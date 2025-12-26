@@ -20,6 +20,12 @@ import {Utils} from '../../../shared/utilites/Utils';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { APP_CONFIG, AppConfig } from '../../../app.config';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 /**
  * Created by Yuri Nikiforov.
@@ -30,7 +36,16 @@ import { APP_CONFIG, AppConfig } from '../../../app.config';
 @Component({
     selector: 'app-signed-documents-add',
     standalone: true,
-    imports: [FormsModule, CommonModule],
+    imports: [
+        FormsModule, 
+        CommonModule, 
+        MatDatepickerModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatNativeDateModule,
+        MatIconModule,
+        MatButtonModule
+    ],
     providers: [
         AdminUsersService,
         { provide: APP_CONFIG, useValue: AppConfig }
@@ -47,6 +62,10 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
 
     requestItemData: SignedDocument;
     users: User[] = [];
+    selectedDate: Date;
+    minDate: Date;
+    maxDate: Date;
+    startDate: Date;
 
     constructor(
         private updateItemUploadService: UpdateSignedDocumentsUploadService,
@@ -67,6 +86,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit(): void {
+        this.initDateLimits();
         this.initUploadParams();
         this.loadUsers();
         this.spinner.show();
@@ -81,6 +101,17 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
                 this.utils.clearLocalStorage();
                 this._router.navigate(['/login']);
             });
+    }
+
+    initDateLimits(): void {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        // Минимальная дата - 50 лет назад
+        this.minDate = new Date(currentYear - 50, 0, 1);
+        // Максимальная дата - сегодня
+        this.maxDate = today;
+        // Начальная дата для календаря
+        this.startDate = new Date(currentYear - 10, 0, 1);
     }
 
     loadUsers(): void {
@@ -144,10 +175,13 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
             if (this.fileToUpload === null) {
                 alert('Load file, please');
             } else if (!this.requestItemData || !this.requestItemData.docType
-                || !this.requestItemData.loadDate
+                || !this.selectedDate
             ) {
                 alert('Fill form, please');
             } else {
+                // Используем выбранную дату
+                this.requestItemData.loadDate = this.selectedDate;
+                
                 this.spinner.show();
                 this.addItemUploadService.postItemAdd(this.fileToUpload, this.requestItemData)
                     .toPromise()
@@ -177,6 +211,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
             this.uploadEl.nativeElement.value = null;
         }
         this.requestItemData = new SignedDocument();
+        this.selectedDate = null;
     }
 
     initUploadParams() {
@@ -184,9 +219,17 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
         this.imgSrc = null;
         this.requestItemData = new SignedDocument();
         this.requestItemData.docType = 'agreement';
+        this.selectedDate = null;
     }
 
     onBackList() {
         this.backListEmit.emit('backList');
+    }
+
+    onDateChange(event: any): void {
+        if (event.value) {
+            this.selectedDate = event.value;
+            this.requestItemData.loadDate = event.value;
+        }
     }
 }
