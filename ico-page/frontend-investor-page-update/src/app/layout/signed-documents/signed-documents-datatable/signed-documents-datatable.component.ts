@@ -9,23 +9,26 @@ import {DatatableComponent} from '@swimlane/ngx-datatable';
 import {DomSanitizer} from '@angular/platform-browser';
 import {SignedDocument} from '../signed-document';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
     selector: 'app-signed-documents-datatable',
     standalone: true,
-    imports: [CommonModule, NgxDatatableModule],
+    imports: [CommonModule, NgxDatatableModule, MatMenuModule, MatIconModule, MatButtonModule],
     styleUrls: ['./signed-documents-datatable.component.scss'],
     templateUrl: './signed-documents-datatable.component.html'
 })
 export class SignedDocumentsDatatableComponent implements OnChanges {
     @Input() items: SignedDocument[];
-    @Output() onSelectedItem = new EventEmitter<SignedDocument>();
+    @Output() onViewItem = new EventEmitter<SignedDocument>();
+    @Output() onEditItem = new EventEmitter<SignedDocument>();
     @Output() onAddItemEmit = new EventEmitter<string>();
     rows = [];
     temp = [];
     etherNet = 'etherscan.io';
 
-    selected: SignedDocument[] = [];
     @ViewChild(DatatableComponent) table: DatatableComponent;
 
     constructor(public sanitizer: DomSanitizer) {
@@ -55,10 +58,12 @@ export class SignedDocumentsDatatableComponent implements OnChanges {
         this.onSelectedArt.emit(this.selected[0]);*/
     }
 
-    onSelect({selected}) {
-        this.selected = [];
-        this.selected.push(selected[0]);
-        this.onSelectedItem.emit(selected[0]);
+    handleView(item: SignedDocument) {
+        this.onViewItem.emit(item);
+    }
+
+    handleEdit(item: SignedDocument) {
+        this.onEditItem.emit(item);
     }
 
     updateFilter(event) {

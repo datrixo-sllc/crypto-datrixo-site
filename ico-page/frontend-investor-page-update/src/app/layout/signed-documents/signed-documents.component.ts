@@ -91,13 +91,15 @@ export class SignedDocumentsComponent implements OnInit {
     }
 
     onSelect(item: SignedDocument): void {
-        if (this.items.includes(item)) {
-            this.selectedItem = item;
-        } else {
-            this.selectedItem = this.items[0];
-        }
-        this.headingStr = this.headingStr1 + ' / ' + this.selectedItem.docType + ' / '/* + this.selectedItem.name*/;
+        this.selectedItem = item;
+        this.headingStr = this.headingStr1 + ' / ' + this.selectedItem.docType + ' / ';
         this.viewList = false;
+    }
+
+    onEditItem(item: SignedDocument): void {
+        this.selectedItem = item;
+        this.viewList = false;
+        this.itemForEdit = true;
     }
 
     onCloseDetail(str: string) {

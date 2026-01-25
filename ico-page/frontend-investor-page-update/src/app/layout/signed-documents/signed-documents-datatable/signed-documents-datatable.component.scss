@@ -26,8 +26,8 @@
 }
 
 :host ::ng-deep .ngx-datatable.bootstrap:not(.cell-selection) .datatable-body-row:hover,
-.ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
-    background: skyblue !important;
+:host ::ng-deep .ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
+    background: #e0f4ff !important;
 }
 
 :host ::ng-deep .ngx-datatable.bootstrap datatable-footer {

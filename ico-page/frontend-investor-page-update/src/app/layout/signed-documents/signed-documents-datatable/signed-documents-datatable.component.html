@@ -21,9 +21,6 @@
             [footerHeight]="60"
             [rowHeight]="'auto'"
             [limit]="10"
-            [selected]="selected"
-            [selectionType]="'single'"
-            (select)='onSelect($event)'
             [rows]='rows'>
             <ngx-datatable-column name="userName" [flexGrow]="20">
                 <ng-template let-column="column" ngx-datatable-header-template>
@@ -57,12 +54,23 @@
                     {{row.docType}}
                 </ng-template>
             </ngx-datatable-column>
-            <ngx-datatable-column name="loadDate" [flexGrow]="30">
+            <ngx-datatable-column name="loadDate" [flexGrow]="20">
                 <ng-template let-column="column" ngx-datatable-header-template>
                     <div class="header-class">Load Date</div>
                 </ng-template>
                 <ng-template let-row="row" ngx-datatable-cell-template>
                     {{row.loadDate | date:'dd.MM.yyyy HH:mm'}}
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="star" [flexGrow]="10">
+                <ng-template let-column="column" ngx-datatable-header-template>
+                    <div class="header-class"></div>
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <button mat-icon-button [matMenuTriggerFor]="menu"
+                                [matMenuTriggerData]="{item: row}">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
                 </ng-template>
             </ngx-datatable-column>
             <ngx-datatable-footer>
@@ -87,4 +95,18 @@
             </ngx-datatable-footer>
         </ngx-datatable>
     </div>
+    
+    <mat-menu #menu="matMenu">
+        <ng-template matMenuContent let-item="item">
+            <button mat-menu-item
+                    (click)="$event.preventDefault(); $event.stopPropagation(); handleView(item)">
+                <mat-icon>visibility</mat-icon>
+                <span>View</span>
+            </button>
+            <button mat-menu-item (click)="$event.preventDefault(); $event.stopPropagation(); handleEdit(item)">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+            </button>
+        </ng-template>
+    </mat-menu>
 </div>
