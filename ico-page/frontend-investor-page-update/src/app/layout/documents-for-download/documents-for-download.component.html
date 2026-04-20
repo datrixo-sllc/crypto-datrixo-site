@@ -3,8 +3,10 @@
     <div class="row">
         <div class="col-lg-12" *ngIf="viewList&& !itemForAdd && items">
         <app-documents-for-download-datatable [items]="items"
-                            (onSelectedItem)="onSelect($event)"
-                            (onAddItemEmit) = "onAddItem($event)"></app-documents-for-download-datatable>
+                            (onEditItemEmit)="onEdit($event)"
+                            (onAddItemEmit)="onAddItem($event)"
+                            (onRefreshEmit)="onRefresh($event)"
+                            (onViewtemEmit) = "onVieItem($event)"></app-documents-for-download-datatable>
         </div>
         <div class="col-lg-12" *ngIf="!viewList && !itemForAdd && !itemForEdit && selectedItem">
             <app-documents-for-download-detail [id]="selectedItem.id"

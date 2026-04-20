@@ -42,7 +42,7 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
         List<DocumentForDownloadDto> documentForDownloadDtos =
                 documentForDownloads.stream()
                 .map(s -> new DocumentForDownloadDto(s.getId(), s.getDocType().name(),
-                        s.getStartDate(), null/*s.getContent()*/))
+                        s.getStartDate(), s.getActual(), s.getContent()))
                 .collect(Collectors.toList());
         return new DocumentForDownloadListDto(documentForDownloadDtos);
     }
@@ -53,7 +53,10 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
         documentForDownloadRepository.findFirstByDocTypeOrderByStartDateDesc(documentType);
         DocumentForDownloadDto documentForDownloadDto = null;
         if (optionalDocumentForDownload.isPresent()) {
-            documentForDownloadDto = new DocumentForDownloadDto(null,null,null,
+            documentForDownloadDto = new DocumentForDownloadDto(optionalDocumentForDownload.get().getId(),
+                    optionalDocumentForDownload.get().getDocType().name(),
+                    optionalDocumentForDownload.get().getStartDate(),
+                    optionalDocumentForDownload.get().getActual(),
                     optionalDocumentForDownload.get().getContent());
         }
         return documentForDownloadDto;
@@ -68,6 +71,7 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
             DocumentForDownload documentForDownload = optionalDocumentForDownload.get();
             documentForDownloadDto = new DocumentForDownloadDto(documentForDownload.getId(),
                     documentForDownload.getDocType().name(), documentForDownload.getStartDate(),
+                    documentForDownload.getActual(),
                     documentForDownload.getContent());
         }
         return documentForDownloadDto;
@@ -85,7 +89,7 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
             LOGGER.error("document == null");
             return null;
         }
-        if (document.getDocType() == null || EnumUtils.isValidEnum(DocumentType.class, document.getDocType())) {
+        if (document.getDocType() == null || !EnumUtils.isValidEnum(DocumentType.class, document.getDocType())) {
             LOGGER.error("(document.getDocType() == null or document.getDocType() not in DocumentType: {}", document);
             return null;
         }
@@ -106,7 +110,7 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
         }
         DocumentForDownload documentForDownload =
                 new DocumentForDownload(DocumentType.valueOf(document.getDocType()),
-                        document.getStartDate(), IOUtils.toByteArray(file.getInputStream()));
+                        document.getStartDate(), document.getActual(), IOUtils.toByteArray(file.getInputStream()));
 
         documentForDownload = documentForDownloadRepository.save(documentForDownload);
         DocumentForDownloadDto documentForDownloadDto = new DocumentForDownloadDto();

@@ -6,7 +6,7 @@
 import {Inject, Injectable} from '@angular/core';
 import {APP_CONFIG} from '../../app.config';
 import {IAppConfig} from '../../i-app-config';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {DocumentForDownload} from './document-for-download';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
@@ -36,11 +36,11 @@ export class AddDocumentsForDownloadUploadService {
         return this.http.post(url, formData, { headers });
     }
 
-    getCheck(): Observable<any> {
+    getCheck(): Observable<string> {
         const url = this.config.apiEndpoint + AddDocumentsForDownloadUploadService.URL +
             AddDocumentsForDownloadUploadService.SLASH + AddDocumentsForDownloadUploadService.CHECK;
         const headers = this.createHeaders();
-        return this.http.get(url, {headers});
+        return this.http.get(url, {headers, responseType: 'text'});
     }
 
     private createHeaders(): HttpHeaders {

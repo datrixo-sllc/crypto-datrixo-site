@@ -22,7 +22,9 @@ import { DocumentsForDownloadAddComponent } from './documents-for-download-add/d
 @Component({
     selector: 'app-documents-for-download',
     standalone: true,
-    imports: [CommonModule, FormsModule, DinamicPageHeaderComponent,
+    imports: [CommonModule, 
+        FormsModule, 
+        DinamicPageHeaderComponent,
         DocumentsForDownloadDatatableComponent,
         DocumentsForDownloadDetailComponent,
         DocumentsForDownloadEditComponent,
@@ -96,6 +98,7 @@ export class DocumentsForDownloadComponent implements OnInit {
         }
         this.headingStr = this.headingStr1 + ' / ' + this.selectedItem.docType + ' / '/* + this.selectedItem.name*/;
         this.viewList = false;
+        this.itemForEdit = true;
     }
 
     onCloseDetail(str: string) {
@@ -122,5 +125,17 @@ export class DocumentsForDownloadComponent implements OnInit {
 
     onBackItem(str: string) {
         this.itemForEdit = false;
+    }
+
+    onViewItem(id: number) {
+        const index = this.items.findIndex(value => value.id === id);
+        this.selectedItem = this.items[index];
+        this.headingStr = this.headingStr1 + ' / ' + this.selectedItem.docType + ' / '/* + this.selectedItem.name*/;
+        this.viewList = false;
+        this.itemForEdit = false;
+    }
+
+    onRefresh(str: string) {
+        this.getListPage();
     }
 }

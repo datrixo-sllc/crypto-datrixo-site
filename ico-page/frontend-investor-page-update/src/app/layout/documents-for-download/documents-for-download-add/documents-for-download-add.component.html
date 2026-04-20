@@ -6,7 +6,9 @@
 </div>
 <div class="row mt-3">
     <div class="col-lg-5 my-0">
-
+        <input #uploadFile type="file" class="form-control-file mt-3" 
+             id="uploadFile" name="uploadFile"
+            (change)="handleFileInput($event.target.files)"/>
     </div>
     <div class="col-lg-7 my-0">
         <div class="form-group row">

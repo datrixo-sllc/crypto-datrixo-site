@@ -19,15 +19,17 @@ public class DocumentForDownload extends AbstractPersistable<Long> {
     @Enumerated(EnumType.STRING)
     private DocumentType docType;
     private Date startDate;
+    private Boolean actual;
     @Lob
     private byte[] content;
 
     public DocumentForDownload() {
     }
 
-    public DocumentForDownload(DocumentType docType, Date startDate, byte[] content) {
+    public DocumentForDownload(DocumentType docType, Date startDate, Boolean actual, byte[] content) {
         this.docType = docType;
         this.startDate = startDate;
+        this.actual=actual;
         this.content = content;
     }
 
@@ -45,6 +47,14 @@ public class DocumentForDownload extends AbstractPersistable<Long> {
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
+    }
+
+    public Boolean getActual() {
+        return actual;
+    }
+
+    public void setActual(Boolean actual) {
+        this.actual = actual;
     }
 
     public byte[] getContent() {

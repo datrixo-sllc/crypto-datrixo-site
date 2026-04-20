@@ -8,5 +8,6 @@ export class DocumentForDownload {
     id: number;
     docType: string;
     startDate: Date;
+    actual: boolean = false;
     content: any;
 }

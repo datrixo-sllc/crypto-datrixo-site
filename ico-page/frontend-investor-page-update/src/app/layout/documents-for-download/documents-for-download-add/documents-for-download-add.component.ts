@@ -37,7 +37,7 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
     imgSrc: any = null;
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
-    requestItemData: DocumentForDownload;
+    requestItemData: DocumentForDownload = this.createDefaultRequestItemData();
 
     constructor(
         private updateItemUploadService: UpdateDocumentsForDownloadUploadService,
@@ -51,7 +51,9 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.uploadEl.nativeElement.value = null;
+        if (this.uploadEl && this.uploadEl.nativeElement) {
+            this.uploadEl.nativeElement.value = null;
+        }
     }
 
     ngOnInit(): void {
@@ -119,13 +121,22 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
         this.fileToUpload = null;
         this.imgSrc = null;
         this.uploadEl.nativeElement.value = null;
-        this.requestItemData = new DocumentForDownload();
+        this.requestItemData = this.createDefaultRequestItemData();
     }
 
     initUploadParams() {
         this.fileToUpload = null;
         this.imgSrc = null;
-        this.requestItemData = new DocumentForDownload();
+        this.requestItemData = this.createDefaultRequestItemData();
+    }
+
+    private createDefaultRequestItemData(): DocumentForDownload {
+        const itemData = new DocumentForDownload();
+        itemData.docType = 'SUBSCRIPTION_AGREEMENT';
+        itemData.startDate = new Date();
+        itemData.actual = true;
+        itemData.content = null;
+        return itemData;
     }
 
     onBackList() {

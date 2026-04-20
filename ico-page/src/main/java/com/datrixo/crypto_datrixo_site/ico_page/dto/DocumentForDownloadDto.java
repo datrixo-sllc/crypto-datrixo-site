@@ -11,15 +11,17 @@ public class DocumentForDownloadDto {
     private Long id;
     private String docType;
     private Date startDate;
+    private Boolean actual;
     private byte[] content;
 
     public DocumentForDownloadDto() {
     }
 
-    public DocumentForDownloadDto(Long id, String docType, Date startDate, byte[] content) {
+    public DocumentForDownloadDto(Long id, String docType, Date startDate, Boolean actual, byte[] content) {
         this.id = id;
         this.docType = docType;
         this.startDate = startDate;
+        this.actual=actual;
         this.content = content;
     }
 
@@ -49,6 +51,14 @@ public class DocumentForDownloadDto {
 
     public byte[] getContent() {
         return content;
+    }
+
+    public Boolean getActual() {
+        return actual;
+    }
+
+    public void setActual(Boolean actual) {
+        this.actual = actual;
     }
 
     public void setContent(byte[] content) {
