@@ -18,7 +18,7 @@
             style="margin-top: 1.2em; font-size: 1em;"
             [columnMode]="'force'"
             [headerHeight]="20"
-            [footerHeight]="20"
+            [footerHeight]="60"
             [rowHeight]="'auto'"
             [limit]="10"
             [selected]="selected"
@@ -33,6 +33,14 @@
                     {{row.docType}}
                 </ng-template>
             </ngx-datatable-column>
+            <ngx-datatable-column name="docType">
+                <ng-template let-column="column" ngx-datatable-header-template>
+                    <div class="header-class">Actual</div>
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    {{row.actual}}
+                </ng-template>
+            </ngx-datatable-column>
             <ngx-datatable-column name="startDate">
                 <ng-template let-column="column" ngx-datatable-header-template>
                     <div class="header-class">Start Date</div>
@@ -41,6 +49,51 @@
                     {{row.startDate}}
                 </ng-template>
             </ngx-datatable-column>
+            <ngx-datatable-column name="star" [flexGrow]="10">
+                <ng-template let-column="column" ngx-datatable-header-template>
+                    <div class="header-class"></div>
+                </ng-template>
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <button mat-icon-button [matMenuTriggerFor]="menu"
+                                [matMenuTriggerData]="{item: row}">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-footer>
+                <ng-template
+                    ngx-datatable-footer-template
+                    let-rowCount="rowCount"
+                    let-pageSize="pageSize"
+                    let-offset="offset">
+                    <div class="datatable-footer-inner d-flex justify-content-between align-items-center w-100 custom-datatable-footer">
+                        <div class="page-count">
+                            Всего записей: {{rowCount}}
+                        </div>
+                        <datatable-pager
+                            class="custom-datatable-pager"
+                            [count]="rowCount"
+                            [pageSize]="pageSize"
+                            [offset]="offset"
+                            (change)="table.onFooterPage($event)">
+                        </datatable-pager>
+                    </div>
+                </ng-template>
+            </ngx-datatable-footer>
         </ngx-datatable>
     </div>
+
+    <mat-menu #menu="matMenu">
+        <ng-template matMenuContent let-item="item">
+            <button mat-menu-item
+                    (click)="$event.preventDefault(); $event.stopPropagation(); handleView(item)">
+                <mat-icon>visibility</mat-icon>
+                <span>View</span>
+            </button>
+            <button mat-menu-item (click)="$event.preventDefault(); $event.stopPropagation(); handleEdit(item)">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+            </button>
+        </ng-template>
+    </mat-menu>
 </div>

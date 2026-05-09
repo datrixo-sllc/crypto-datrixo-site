@@ -10,11 +10,15 @@ import {DocumentForDownload} from '../document-for-download';
 import { CommonModule } from '@angular/common';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
     selector: 'app-documents-for-download-datatable',
     standalone: true,
-    imports: [CommonModule, NgxDatatableModule, FormsModule],
+    imports: [CommonModule, NgxDatatableModule, FormsModule, MatMenuModule, MatIconModule, MatButtonModule],
     styleUrls: ['./documents-for-download-datatable.component.scss'],
     templateUrl: './documents-for-download-datatable.component.html'
 })
