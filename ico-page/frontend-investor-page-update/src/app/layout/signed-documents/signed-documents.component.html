@@ -3,8 +3,8 @@
     <div class="row">
         <div class="col-lg-12" *ngIf="viewList&& !itemForAdd && items">
         <app-signed-documents-datatable [items]="items"
-                            (onViewItem)="onSelect($event)"
-                            (onEditItem)="onEditItem($event)"
+                            (onViewItemEmit)="onSelect($event)"
+                            (onEditItemEmit)="onEditItem($event)"
                             (onAddItemEmit)="onAddItem($event)"></app-signed-documents-datatable>
         </div>
         <div class="col-lg-12" *ngIf="!viewList && !itemForAdd && !itemForEdit && selectedItem">

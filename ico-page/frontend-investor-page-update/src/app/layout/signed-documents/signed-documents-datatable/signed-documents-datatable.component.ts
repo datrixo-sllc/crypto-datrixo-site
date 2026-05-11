@@ -5,98 +5,94 @@
  */
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {DatatableComponent} from '@swimlane/ngx-datatable';
 import {DomSanitizer} from '@angular/platform-browser';
 import {SignedDocument} from '../signed-document';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { SharedPipesModule } from '../../../shared/pipes/shared-pipes.module';
 
 @Component({
     selector: 'app-signed-documents-datatable',
     standalone: true,
-    imports: [CommonModule, NgxDatatableModule, MatMenuModule, MatIconModule, MatButtonModule],
+    imports: [CommonModule, MatTableModule, MatPaginatorModule, MatSortModule, MatMenuModule, MatIconModule, MatButtonModule, SharedPipesModule],
     styleUrls: ['./signed-documents-datatable.component.scss'],
     templateUrl: './signed-documents-datatable.component.html'
 })
 export class SignedDocumentsDatatableComponent implements OnChanges {
     @Input() items: SignedDocument[];
-    @Output() onViewItem = new EventEmitter<SignedDocument>();
-    @Output() onEditItem = new EventEmitter<SignedDocument>();
+    @Output() onViewItemEmit = new EventEmitter<SignedDocument>();
+    @Output() onEditItemEmit = new EventEmitter<SignedDocument>();
     @Output() onAddItemEmit = new EventEmitter<string>();
-    rows = [];
-    temp = [];
     etherNet = 'etherscan.io';
 
-    @ViewChild(DatatableComponent) table: DatatableComponent;
+    displayedColumns: string[] = ['userName', 'holderAccount', 'docType', 'loadDate', 'star'];
+    dataSource = new MatTableDataSource<SignedDocument>();
+    dataSourceLenth: number;
+
+
+    @ViewChild(MatPaginator) paginator: MatPaginator;
 
     constructor(public sanitizer: DomSanitizer) {
     }
 
+    ngOnInit() {
+        this.initializeDataSource();
+    }
+
     ngOnChanges(changes: SimpleChanges): void {
-        this.temp = this.items;
-        this.rows = this.items;
-        /*if (this.selected.length === 0) {
-            this.selected.push(this.rows[0]);
-        } else {
-            const art = this.selected[0];
-            this.selected = [];
-            let newArt = null;
-            this.rows.forEach(value => {
-                if (art.id === value.id) {
-                    newArt = value;
-                    return;
-                }
-            });
-            if (newArt != null) {
-                this.selected.push(newArt);
-            } else {
-                this.selected.push(this.rows[0]);
-            }
+        this.initializeDataSource();
+        if (this.paginator) {
+            this.dataSource.paginator = this.paginator;
         }
-        this.onSelectedArt.emit(this.selected[0]);*/
+    }
+  
+    ngAfterViewInit() {
+        this.dataSource.paginator = this.paginator;
     }
 
-    handleView(item: SignedDocument) {
-        this.onViewItem.emit(item);
+    applyFilter(filterValue: string | Event) {
+        const value = typeof filterValue === 'string'
+            ? filterValue
+            : (filterValue.target as HTMLInputElement)?.value || '';
+
+        this.dataSource.filter = value.trim().toLowerCase();
+
+        if (this.dataSource.paginator) {
+            this.dataSource.paginator.firstPage();
+        }
     }
 
-    handleEdit(item: SignedDocument) {
-        this.onEditItem.emit(item);
+    onEditItem(item: SignedDocument) {
+        this.onEditItemEmit.emit(item);
     }
 
-    updateFilter(event) {
-        const val = event.target.value.toLowerCase();
-        // filter our data
-        // const temp = this.temp.filter(function(d) {
-        //    return d.number.toLowerCase().indexOf(val) !== -1 || !val;
-        // });
+    onItemView(item: SignedDocument) {
+        this.onViewItemEmit.emit(item);
 
-        // filter our data
-        const temp = this.temp.filter(function (d) {
-            let returnData: any;
-            if (d.username && d.username.toLowerCase().indexOf(val) !== -1 || !val) {
-                returnData = d.username.toLowerCase().indexOf(val) !== -1 || !val;
-            } else if (d.loadDate && d.loadDate.toLowerCase().indexOf(val) !== -1 || !val) {
-                returnData = d.loadDate.toLowerCase().indexOf(val) !== -1 || !val;
-            }
-            return returnData;
-        });
-
-
-        // update the rows
-        this.rows = temp;
-        // Whenever the filter changes, always go back to the first page
-        this.table.offset = 0;
     }
 
     onAddItem() {
         this.onAddItemEmit.emit('addItem');
     }
 
-    openTransaction(row: SignedDocument, event: MouseEvent) {
-        event.stopPropagation();
-        event.stopImmediatePropagation();
+    private initializeDataSource() {
+        this.dataSource = new MatTableDataSource<SignedDocument>(this.items);
+        this.dataSource.filterPredicate = (data: SignedDocument, filter: string): boolean => {
+            const row = data as SignedDocument & { username?: string };
+            const userName = (row.user?.username || row.username || '').toLowerCase();
+            const loadDate = data.loadDate ? new Date(data.loadDate).toLocaleDateString().toLowerCase() : '';
+            return userName.includes(filter) || loadDate.includes(filter);
+        };
+        this.dataSourceLenth = this.dataSource.data.length;
+    }
+
+    openTransaction(row: SignedDocument, mouseEvent: MouseEvent) {
+        mouseEvent.stopPropagation();
+        mouseEvent.stopImmediatePropagation();
     }
 }
