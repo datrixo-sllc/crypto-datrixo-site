@@ -4,93 +4,87 @@
  * Time: 19:30
  */
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild} from '@angular/core';
-import {DatatableComponent} from '@swimlane/ngx-datatable';
 import {DomSanitizer} from '@angular/platform-browser';
 import {DocumentForDownload} from '../document-for-download';
 import { CommonModule } from '@angular/common';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { FormsModule } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
+import { SharedPipesModule } from '../../../shared/pipes/shared-pipes.module';
 
 @Component({
     selector: 'app-documents-for-download-datatable',
     standalone: true,
-    imports: [CommonModule, NgxDatatableModule, FormsModule, MatMenuModule, MatIconModule, MatButtonModule],
+    imports: [CommonModule, MatTableModule, MatPaginatorModule, MatSortModule, MatMenuModule, MatIconModule, MatButtonModule, SharedPipesModule],
     styleUrls: ['./documents-for-download-datatable.component.scss'],
     templateUrl: './documents-for-download-datatable.component.html'
 })
 export class DocumentsForDownloadDatatableComponent implements OnChanges {
     @Input() items: DocumentForDownload[];
-    @Output() onSelectedItem = new EventEmitter<DocumentForDownload>();
+    @Output() onViewItemEmit = new EventEmitter<number>();
+    @Output() onEditItemEmit = new EventEmitter<number>();
     @Output() onAddItemEmit = new EventEmitter<string>();
-    rows = [];
-    temp = [];
 
-    selected: DocumentForDownload[] = [];
-    @ViewChild(DatatableComponent) table: DatatableComponent;
+    displayedColumns: string[] = ['docType', 'actual', 'startDate', 'star'];
+    dataSource = new MatTableDataSource<DocumentForDownload>();
+    dataSourceLenth: number;
+
+    @ViewChild(MatPaginator) paginator: MatPaginator;
 
     constructor(public sanitizer: DomSanitizer) {
     }
 
+    ngOnInit() {
+        this.initializeDataSource();
+    }
+
     ngOnChanges(changes: SimpleChanges): void {
-        this.temp = this.items;
-        this.rows = this.items;
-        /*if (this.selected.length === 0) {
-            this.selected.push(this.rows[0]);
-        } else {
-            const art = this.selected[0];
-            this.selected = [];
-            let newArt = null;
-            this.rows.forEach(value => {
-                if (art.id === value.id) {
-                    newArt = value;
-                    return;
-                }
-            });
-            if (newArt != null) {
-                this.selected.push(newArt);
-            } else {
-                this.selected.push(this.rows[0]);
-            }
+        this.initializeDataSource();
+        if (this.paginator) {
+            this.dataSource.paginator = this.paginator;
         }
-        this.onSelectedArt.emit(this.selected[0]);*/
+    }
+  
+    ngAfterViewInit() {
+        this.dataSource.paginator = this.paginator;
     }
 
-    onSelect({selected}) {
-        this.selected = [];
-        this.selected.push(selected[0]);
-        this.onSelectedItem.emit(selected[0]);
+    applyFilter(filterValue: string | Event) {
+        const value = typeof filterValue === 'string'
+            ? filterValue
+            : (filterValue.target as HTMLInputElement)?.value || '';
+
+        this.dataSource.filter = value.trim().toLowerCase();
+
+        if (this.dataSource.paginator) {
+            this.dataSource.paginator.firstPage();
+        }
     }
 
-    updateFilter(event) {
-        const val = event.target.value.toLowerCase();
-        // filter our data
-        // const temp = this.temp.filter(function(d) {
-        //    return d.number.toLowerCase().indexOf(val) !== -1 || !val;
-        // });
+    onEditItem(id: number) {
+        this.onEditItemEmit.emit(id);
+    }
 
-        // filter our data
-        const temp = this.temp.filter(function (d) {
-            let returnData: any;
-            if (d.docType && d.docType.toLowerCase().indexOf(val) !== -1 || !val) {
-                returnData = d.docType.toLowerCase().indexOf(val) !== -1 || !val;
-            } else if (d.startDate && d.startDate.toLowerCase().indexOf(val) !== -1 || !val) {
-                returnData = d.startDate.toLowerCase().indexOf(val) !== -1 || !val;
-            }
-            return returnData;
-        });
+    onItemView(id: number) {
+        this.onViewItemEmit.emit(id);
 
-
-        // update the rows
-        this.rows = temp;
-        // Whenever the filter changes, always go back to the first page
-        this.table.offset = 0;
     }
 
     onAddItem() {
         this.onAddItemEmit.emit('addItem');
+    }
+
+    private initializeDataSource() {
+        this.dataSource = new MatTableDataSource<DocumentForDownload>(this.items);
+        this.dataSource.filterPredicate = (data: DocumentForDownload, filter: string): boolean => {
+            const docType = data.docType ? data.docType.toLowerCase() : '';
+            const startDate = data.startDate ? new Date(data.startDate).toLocaleDateString().toLowerCase() : '';
+            return docType.includes(filter) || startDate.includes(filter);
+        };
+        this.dataSourceLenth = this.dataSource.data.length;
     }
 }

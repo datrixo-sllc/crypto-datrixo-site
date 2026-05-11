@@ -3,95 +3,65 @@
         <input class="form-control"
                type='text'
                placeholder='Filter by Document Type and Start Date'
-               (keyup)='updateFilter($event)'
+               (keyup)='applyFilter($event)'
         />
     </div>
     <div class="col-lg-3">
         <button class="btn btn-outline-secondary mr-3" (click)="onAddItem()">Add Item</button>
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-12">
-        <ngx-datatable
-            #table
-            class='bootstrap'
-            style="margin-top: 1.2em; font-size: 1em;"
-            [columnMode]="'force'"
-            [headerHeight]="20"
-            [footerHeight]="60"
-            [rowHeight]="'auto'"
-            [limit]="10"
-            [selected]="selected"
-            [selectionType]="'single'"
-            (select)='onSelect($event)'
-            [rows]='rows'>
-            <ngx-datatable-column name="docType">
-                <ng-template let-column="column" ngx-datatable-header-template>
-                    <div class="header-class">Document Type</div>
-                </ng-template>
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                    {{row.docType}}
-                </ng-template>
-            </ngx-datatable-column>
-            <ngx-datatable-column name="docType">
-                <ng-template let-column="column" ngx-datatable-header-template>
-                    <div class="header-class">Actual</div>
-                </ng-template>
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                    {{row.actual}}
-                </ng-template>
-            </ngx-datatable-column>
-            <ngx-datatable-column name="startDate">
-                <ng-template let-column="column" ngx-datatable-header-template>
-                    <div class="header-class">Start Date</div>
-                </ng-template>
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                    {{row.startDate}}
-                </ng-template>
-            </ngx-datatable-column>
-            <ngx-datatable-column name="star" [flexGrow]="10">
-                <ng-template let-column="column" ngx-datatable-header-template>
-                    <div class="header-class"></div>
-                </ng-template>
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                    <button mat-icon-button [matMenuTriggerFor]="menu"
-                                [matMenuTriggerData]="{item: row}">
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+                <ng-container matColumnDef="docType">
+                    <th mat-header-cell *matHeaderCellDef> Document Type</th>
+                    <td mat-cell *matCellDef="let element" data-label='docType'>
+                        <span  class="m-card-title" *ngIf="element.docType">{{element.docType | truncate:[90]}}</span></td>
+                </ng-container>
+
+                <ng-container matColumnDef="actual">
+                    <th mat-header-cell *matHeaderCellDef> Actual</th>
+                    <td mat-cell *matCellDef="let element" data-label='actual'>
+                        <span  class="m-card-text" *ngIf="element.actual">{{element.actual | truncate:[90]}}</span></td>
+                </ng-container>
+
+                <ng-container matColumnDef="startDate">
+                    <th mat-header-cell *matHeaderCellDef> Last Name</th>
+                    <td mat-cell *matCellDef="let element" data-label='startDate'>
+                        <span  class="m-card-text" *ngIf="element.startDate">{{element.startDate | truncate:[90]}}</span></td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="star">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button [matMenuTriggerFor]="menu"
+                                [matMenuTriggerData]="{elementId: element.id}">
                             <mat-icon>more_vert</mat-icon>
                         </button>
-                </ng-template>
-            </ngx-datatable-column>
-            <ngx-datatable-footer>
-                <ng-template
-                    ngx-datatable-footer-template
-                    let-rowCount="rowCount"
-                    let-pageSize="pageSize"
-                    let-offset="offset">
-                    <div class="datatable-footer-inner d-flex justify-content-between align-items-center w-100 custom-datatable-footer">
-                        <div class="page-count">
-                            Всего записей: {{rowCount}}
-                        </div>
-                        <datatable-pager
-                            class="custom-datatable-pager"
-                            [count]="rowCount"
-                            [pageSize]="pageSize"
-                            [offset]="offset"
-                            (change)="table.onFooterPage($event)">
-                        </datatable-pager>
-                    </div>
-                </ng-template>
-            </ngx-datatable-footer>
-        </ngx-datatable>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <mat-paginator [ngStyle]="{display: dataSourceLenth > 5 ? 'block' : 'none'}"
+                       [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
     </div>
 
+
     <mat-menu #menu="matMenu">
-        <ng-template matMenuContent let-item="item">
+        <ng-template matMenuContent let-elementId="elementId">
             <button mat-menu-item
-                    (click)="$event.preventDefault(); $event.stopPropagation(); handleView(item)">
-                <mat-icon>visibility</mat-icon>
+                    (click)="$event.preventDefault(); $event.stopPropagation(); onItemView(elementId)">
+                <mat-icon>grade</mat-icon>
                 <span>View</span>
             </button>
-            <button mat-menu-item (click)="$event.preventDefault(); $event.stopPropagation(); handleEdit(item)">
-                <mat-icon>edit</mat-icon>
+            <button mat-menu-item (click)="$event.preventDefault(); $event.stopPropagation(); onEditItem(elementId)">
+                <mat-icon>build</mat-icon>
                 <span>Edit</span>
             </button>
         </ng-template>
