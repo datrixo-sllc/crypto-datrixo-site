@@ -135,6 +135,17 @@ export class DocumentsForDownloadComponent implements OnInit {
         this.itemForEdit = false;
     }
 
+    onEdit(id: number) {
+        const index = this.items.findIndex(value => value.id === id);
+        if (index === -1) {
+            return;
+        }
+        this.selectedItem = this.items[index];
+        this.headingStr = this.headingStr1 + ' / ' + this.selectedItem.docType + ' / ';
+        this.viewList = false;
+        this.itemForEdit = true;
+    }
+
     onRefresh(str: string) {
         this.getListPage();
     }
