@@ -2,6 +2,83 @@
     <div class="col-lg-6 mb-3">
         <button class="btn btn-outline-secondary mr-3" (click)="onClose()">Back to List</button>
         <button class="btn btn-primary mr-3" (click)="onEdit()">Edit Item</button>
+        <button class="btn btn-secondary mr-3" (click)="onDelete()">Delete Item</button>
+    </div>
+    <div class="col-lg-6 mb-3 text-right" *ngIf="item && item.content">
+        <button class="btn btn-success mr-3" (click)="onViewDocument()">
+            <i class="fa fa-eye"></i> View
+        </button>
+        <button class="btn btn-info" (click)="onDownloadDocument()">
+            <i class="fa fa-download"></i> Download
+        </button>
+    </div>
+</div>
+<!-- Отладочная информация 
+<div class="alert alert-info" *ngIf="!item && !loadingError">
+    <strong>Отладка:</strong> 
+    <br>ID: {{ id }}
+    <br>Item: {{ item | json }}
+    <br>Загрузка данных...
+</div>
+-->
+<!-- Сообщение об ошибке 
+<div class="alert alert-danger" *ngIf="loadingError">
+    <strong>Ошибка загрузки!</strong> 
+    <br>Не удалось загрузить данные для ID: {{ id }}
+    <br><button class="btn btn-sm btn-primary" (click)="ngOnChanges(null)">Повторить загрузку</button>
+</div>
+-->
+<div class="row mt-3" *ngIf="item">
+    <div class="col-lg-7 my-0 pl-lg-5">
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Document Type</label>
+            <div class="col-lg-9">
+                <input class="form-control-plaintext" readonly name="docType" [value]="item.docType"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Start Date</label>
+            <div class="col-lg-9">
+                <input class="form-control-plaintext" readonly name="loadDate" [value]="item.startDate | date:'dd.MM.yyyy HH:mm'"/>
+            </div>
+        </div>
+        <div class="form-group row" *ngIf="item.fileName">
+            <label class="col-lg-3 col-form-label">File Name</label>
+            <div class="col-lg-9">
+                <input class="form-control-plaintext" readonly name="fileName" [value]="item.fileName"/>
+            </div>
+        </div>
+        <div class="form-group row" *ngIf="item.mimeType">
+            <label class="col-lg-3 col-form-label">File Type</label>
+            <div class="col-lg-9">
+                <input class="form-control-plaintext" readonly name="mimeType" [value]="item.mimeType"/>
+            </div>
+        </div>
+        <div class="form-group row" *ngIf="item.content">
+            <label class="col-lg-3 col-form-label">File Size</label>
+            <div class="col-lg-9">
+                <input class="form-control-plaintext" readonly name="fileSize" [value]="(item.content.length / 1024).toFixed(2) + ' KB'"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row">
+    <div class="col-lg-6 mb-3">
+        <button class="btn btn-outline-secondary mr-3" (click)="onClose()">Back to List</button>
+        <button class="btn btn-primary mr-3" (click)="onEdit()">Edit Item</button>
         <button class="btn btn-secondary" (click)="onDelete()">Delete Item</button>
     </div>
 </div>
@@ -23,5 +100,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
