@@ -37,6 +37,12 @@
             </div>
         </div>
         <div class="form-group row">
+            <label class="col-lg-3 col-form-label">Actual</label>
+            <div class="col-lg-9">
+                <input class="form-control-plaintext" readonly name="actual" [value]="item.actual"/>
+            </div>
+        </div>
+        <div class="form-group row">
             <label class="col-lg-3 col-form-label">Start Date</label>
             <div class="col-lg-9">
                 <input class="form-control-plaintext" readonly name="loadDate" [value]="item.startDate | date:'dd.MM.yyyy HH:mm'"/>
@@ -62,43 +68,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="row">
-    <div class="col-lg-6 mb-3">
-        <button class="btn btn-outline-secondary mr-3" (click)="onClose()">Back to List</button>
-        <button class="btn btn-primary mr-3" (click)="onEdit()">Edit Item</button>
-        <button class="btn btn-secondary" (click)="onDelete()">Delete Item</button>
-    </div>
-</div>
-<div class="row mt-3" *ngIf="item">
-    <div class="col-lg-5 my-0">
-
-    </div>
-    <div class="col-lg-7 my-0 pl-lg-5">
-        <div class="form-group row">
-            <label class="col-lg-3 col-form-label">Document Type</label>
-            <div class="col-lg-9">
-                <input class="form-control-plaintext" readonly name="docType" [value]="item.docType"/>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-lg-3 col-form-label">Start Date</label>
-            <div class="col-lg-9">
-                <input class="form-control-plaintext" readonly name="startDate" [value]="item.startDate"/>
-            </div>
-        </div>
-    </div>
-</div>-->
-
