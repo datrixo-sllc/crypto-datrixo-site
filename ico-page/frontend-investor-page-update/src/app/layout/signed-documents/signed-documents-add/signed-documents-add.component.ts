@@ -37,8 +37,8 @@ import { MatButtonModule } from '@angular/material/button';
     selector: 'app-signed-documents-add',
     standalone: true,
     imports: [
-        FormsModule, 
-        CommonModule, 
+        FormsModule,
+        CommonModule,
         MatDatepickerModule,
         MatInputModule,
         MatFormFieldModule,
@@ -181,7 +181,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
             } else {
                 // Используем выбранную дату
                 this.requestItemData.loadDate = this.selectedDate;
-                
+
                 this.spinner.show();
                 this.addItemUploadService.postItemAddByAdmin(this.fileToUpload, this.requestItemData)
                     .toPromise()
@@ -219,7 +219,7 @@ export class SignedDocumentsAddComponent implements OnInit, AfterViewInit {
         this.imgSrc = null;
         this.requestItemData = new SignedDocument();
         this.requestItemData.docType = 'agreement';
-        this.selectedDate = null;
+        this.selectedDate = new Date;
     }
 
     onBackList() {
