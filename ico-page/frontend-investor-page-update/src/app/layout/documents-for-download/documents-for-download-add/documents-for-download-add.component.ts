@@ -16,6 +16,13 @@ import {Router} from '@angular/router';
 import {Utils} from '../../../shared/utilites/Utils';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { APP_CONFIG, AppConfig } from '../../../app.config';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 /**
  * Created by Yuri Nikiforov.
@@ -26,7 +33,16 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-documents-for-download-add',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [
+        CommonModule,
+        FormsModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatNativeDateModule,
+        MatIconModule,
+        MatButtonModule
+    ],
     templateUrl: './documents-for-download-add.component.html',
     styleUrls: ['./documents-for-download-add.component.scss']
 })
@@ -38,6 +54,10 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
     @ViewChild('uploadFile') uploadEl: ElementRef;
 
     requestItemData: DocumentForDownload = this.createDefaultRequestItemData();
+    selectedDate: Date;
+    minDate: Date;
+    maxDate: Date;
+    startDate: Date;
 
     constructor(
         private updateItemUploadService: UpdateDocumentsForDownloadUploadService,
@@ -57,6 +77,7 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit(): void {
+        this.initDateLimits();
         this.initUploadParams();
         this.spinner.show();
         this.addItemUploadService.getCheck()
@@ -70,6 +91,16 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
                 this.utils.clearLocalStorage();
                 this._router.navigate(['/login']);
             });
+    }
+    initDateLimits(): void {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        // Минимальная дата - 50 лет назад
+        this.minDate = new Date(currentYear - 50, 0, 1);
+        // Максимальная дата - сегодня
+        this.maxDate = today;
+        // Начальная дата для календаря
+        this.startDate = new Date(currentYear - 10, 0, 1);
     }
 
     handleFileInput(files: FileList) {
@@ -95,6 +126,8 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
             ) {
                 alert('Fill form, please');
             } else {
+                // Используем выбранную дату
+                this.requestItemData.startDate = this.selectedDate;
                 this.spinner.show();
                 this.addItemUploadService.postItemAdd(this.fileToUpload, this.requestItemData)
                     .toPromise()
@@ -128,6 +161,7 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
         this.fileToUpload = null;
         this.imgSrc = null;
         this.requestItemData = this.createDefaultRequestItemData();
+        this.selectedDate = new Date;
     }
 
     private createDefaultRequestItemData(): DocumentForDownload {
@@ -141,5 +175,12 @@ export class DocumentsForDownloadAddComponent implements OnInit, AfterViewInit {
 
     onBackList() {
         this.backListEmit.emit('backList');
+    }
+
+    onDateChange(event: any): void {
+        if (event.value) {
+            this.selectedDate = event.value;
+            this.requestItemData.startDate = event.value;
+        }
     }
 }
