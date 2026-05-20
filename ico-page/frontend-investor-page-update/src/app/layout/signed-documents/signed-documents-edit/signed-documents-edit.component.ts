@@ -19,6 +19,12 @@ import {AddSignedDocumentsUploadService} from '../add-signed-documents-upload.se
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { APP_CONFIG, AppConfig } from '../../../app.config';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 /**
  * Created by Yuri Nikiforov.
@@ -29,7 +35,16 @@ import { APP_CONFIG, AppConfig } from '../../../app.config';
 @Component({
     selector: 'app-signed-documents-edit',
     standalone: true,
-    imports: [FormsModule, CommonModule],
+    imports: [
+        FormsModule,
+        CommonModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatNativeDateModule,
+        MatIconModule,
+        MatButtonModule
+    ],
     providers: [
         MyHoldingsService,
         { provide: APP_CONFIG, useValue: AppConfig }
@@ -44,9 +59,12 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
 
 
     requestItemData: SignedDocument;
-
     username: string;
-    
+    selectedDate: Date;
+    minDate: Date;
+    maxDate: Date;
+    startDate: Date;
+
     // Modal window for holdings list
     showHoldingsModal: boolean = false;
     holdingsData: HolderResponce[] = [];
@@ -64,8 +82,21 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
     }
 
     ngOnInit(): void {
+        this.initDateLimits();
         this.username = localStorage.getItem('username');
     }
+
+    initDateLimits(): void {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        // Минимальная дата - 50 лет назад
+        this.minDate = new Date(currentYear - 50, 0, 1);
+        // Максимальная дата - сегодня
+        this.maxDate = today;
+        // Начальная дата для календаря
+        this.startDate = new Date(currentYear - 10, 0, 1);
+    }
+
 
     ngOnChanges(changes: SimpleChanges): void {
         this.init();
@@ -78,9 +109,10 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
             this.listService.getItemDetail(this.id)
                 .subscribe(value => {
                     this.requestItemData = value as SignedDocument;
+                    this.selectedDate = this.requestItemData.loadDate;
                     if (!this.requestItemData.holderAccount) {
                         this.requestItemData.holderAccount = new HolderResponce();
-                        this.requestItemData.holderAccount.address = ''
+                        this.requestItemData.holderAccount.address = '';
                     }
                     this.spinner.hide();
                 }, error => {
@@ -95,6 +127,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
         ) {
             alert('Fill form, please');
         } else {
+            this.requestItemData.loadDate = this.selectedDate;
             this.spinner.show();
             this.updateItemUploadService.putItemUpdateByDocument(this.requestItemData)
                 .toPromise()
@@ -173,7 +206,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
 
         const docUserId = this.requestItemData.user.id;
         console.log('Loading holdings for user with ID:', docUserId);
-        
+
         this.loadingHoldings = true;
         this.myHoldingsService.getUserHoldings(docUserId)
             .subscribe({
@@ -191,7 +224,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
             });
     }
 
-    
+
     /**
      * Selects item from holdings list and fills docType field
      */
@@ -205,9 +238,17 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
             alert('Address not found in selected item');
             return;
         }
-        
+
         // Close modal window
         this.closeHoldingsModal();
     }
+
+    onDateChange(event: any): void {
+        if (event.value) {
+            this.selectedDate = event.value;
+            this.requestItemData.loadDate = event.value;
+        }
+    }
+
 
 }

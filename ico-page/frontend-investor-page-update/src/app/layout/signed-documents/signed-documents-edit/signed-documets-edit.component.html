@@ -26,14 +26,28 @@
             <label class="col-lg-2 col-form-label">Load Date<sup
                 class="h6 text-danger font-weight-bold">&lowast;</sup></label>
             <div class="col-lg-10">
-                <input class="form-control" name="loadDate" [(ngModel)]="requestItemData.loadDate" [disabled]="true"/>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Select Date</mat-label>
+                    <input matInput [matDatepicker]="picker"
+                           [(ngModel)]="selectedDate"
+                           (dateChange)="onDateChange($event)"
+                           name="loadDate"
+                           [min]="minDate"
+                           [max]="maxDate"
+                           readonly>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker
+                                    startView="year"
+                                    [startAt]="startDate">
+                    </mat-datepicker>
+                </mat-form-field>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Modal window for holdings list -->
-<div class="modal fade" [class.show]="showHoldingsModal" [style.display]="showHoldingsModal ? 'block' : 'none'" 
+<div class="modal fade" [class.show]="showHoldingsModal" [style.display]="showHoldingsModal ? 'block' : 'none'"
      tabindex="-1" role="dialog" *ngIf="showHoldingsModal">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -97,7 +111,7 @@
                                             <span *ngIf="!item.share">-</span>
                                         </td>
                                         <td>
-                                            <button class="btn btn-sm btn-primary" 
+                                            <button class="btn btn-sm btn-primary"
                                                     (click)="selectHolding(item)"
                                                     title="Select this item">
                                                 <i class="fa fa-check"></i> Select
