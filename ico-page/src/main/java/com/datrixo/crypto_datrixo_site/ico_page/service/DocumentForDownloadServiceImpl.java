@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -78,6 +79,7 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
     }
 
     @Override
+    @Transactional
     public DocumentForDownloadDto save(MultipartFile file, DocumentForDownloadDto document) throws IOException {
         if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
             User currentUser = userService.getCurrentUser().orElse(null);
@@ -111,7 +113,9 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
         DocumentForDownload documentForDownload =
                 new DocumentForDownload(DocumentType.valueOf(document.getDocType()),
                         document.getStartDate(), document.getActual(), IOUtils.toByteArray(file.getInputStream()));
-
+        if (document.getActual() != null && document.getActual().equals(true)) {
+            documentForDownloadRepository.updateActualToFalseByDocType(DocumentType.valueOf(document.getDocType()));
+        }
         documentForDownload = documentForDownloadRepository.save(documentForDownload);
         DocumentForDownloadDto documentForDownloadDto = new DocumentForDownloadDto();
         documentForDownloadDto.setId(documentForDownload.getId());
@@ -119,6 +123,7 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
     }
 
     @Override
+    @Transactional
     public DocumentForDownloadDto update(MultipartFile file, DocumentForDownloadDto document) throws IOException {
         if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
             User currentUser = userService.getCurrentUser().orElse(null);
@@ -130,14 +135,8 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
             LOGGER.error("document == null");
             return null;
         }
-        if (document.getDocType() == null || EnumUtils.isValidEnum(DocumentType.class, document.getDocType())) {
+        if (document.getDocType() == null || !EnumUtils.isValidEnum(DocumentType.class, document.getDocType())) {
             LOGGER.error("(document.getDocType() == null or document.getDocType() not in DocumentType: {}", document);
-            return null;
-        }
-        Optional<DocumentForDownload> optional = documentForDownloadRepository
-                .findFirstByDocTypeOrderByStartDateDesc(DocumentType.valueOf(document.getDocType()));
-        if (optional.isPresent() && optional.get().getStartDate().after(document.getStartDate())) {
-            LOGGER.error("document.getStartDate() early then exist document: {}", document);
             return null;
         }
         if (document.getId() == null) {
@@ -155,10 +154,54 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
         if (file != null) {
             documentForDownload.setContent(IOUtils.toByteArray(file.getInputStream()));
         }
+        if (document.getActual() != null && document.getActual().equals(true)) {
+            documentForDownloadRepository.updateActualToFalseByDocType(DocumentType.valueOf(document.getDocType()));
+        }
+        documentForDownload.setActual(document.getActual());
         documentForDownload = documentForDownloadRepository.save(documentForDownload);
         DocumentForDownloadDto documentForDownloadDto = new DocumentForDownloadDto();
         documentForDownloadDto.setId(documentForDownload.getId());
         return documentForDownloadDto;
+    }
+
+    @Override
+    @Transactional
+    public DocumentForDownloadDto updateByDocument(DocumentForDownloadDto document) throws IOException {
+        if (!userService.checkRoleForCurrentUser(Role.ADMIN)) {
+            User currentUser = userService.getCurrentUser().orElse(null);
+            LOGGER.error("Current user do not have admin privileges: {}",
+                    currentUser != null ? currentUser.getUsername() : "");
+            return null;
+        }
+        if (document == null) {
+            LOGGER.error("document == null");
+            return null;
+        }
+        if (document.getDocType() == null || !EnumUtils.isValidEnum(DocumentType.class, document.getDocType())) {
+            LOGGER.error("(document.getDocType() == null or document.getDocType() not in DocumentType: {}", document);
+            return null;
+        }
+        if (document.getId() == null) {
+            LOGGER.error("document.getId() == null: {}", document);
+            return null;
+        }
+        Optional<DocumentForDownload> optionalDocumentForDownload =
+                documentForDownloadRepository.findFirstById(document.getId());
+        if (!optionalDocumentForDownload.isPresent()) {
+            LOGGER.error("Document for update not found: {}", document);
+        }
+        DocumentForDownload documentForDownload = optionalDocumentForDownload.get();
+        documentForDownload.setDocType(DocumentType.valueOf(document.getDocType()));
+        documentForDownload.setStartDate(document.getStartDate());
+        if (document.getActual() != null && document.getActual().equals(true)) {
+            documentForDownloadRepository.updateActualToFalseByDocType(DocumentType.valueOf(document.getDocType()));
+        }
+        documentForDownload.setActual(document.getActual());
+        documentForDownload = documentForDownloadRepository.save(documentForDownload);
+        DocumentForDownloadDto documentForDownloadDto = new DocumentForDownloadDto();
+        documentForDownloadDto.setId(documentForDownload.getId());
+        return documentForDownloadDto;
+
     }
 
     @Override

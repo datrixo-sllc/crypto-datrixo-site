@@ -18,5 +18,6 @@ public interface DocumentForDownloadService {
     DocumentForDownloadDto getDocumentById(Long id);
     DocumentForDownloadDto save(MultipartFile file, DocumentForDownloadDto document) throws IOException;
     DocumentForDownloadDto update(MultipartFile file, DocumentForDownloadDto document) throws IOException;
+    DocumentForDownloadDto updateByDocument(DocumentForDownloadDto document) throws IOException;
     void delete(Long id);
 }

@@ -56,6 +56,19 @@ public class DocumentForDownloadController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping(value = "/document")
+    public ResponseEntity<Void> updateDocumentForDownloadByDocument(@RequestParam("itemdata") String itemData) throws IOException {
+        DocumentForDownloadDto documentForDownloadDto = readData(itemData);
+        if (documentForDownloadDto != null && documentForDownloadDto.getId() != null) {
+            documentForDownloadDto = documentForDownloadService.updateByDocument(documentForDownloadDto);
+            if (documentForDownloadDto == null || documentForDownloadDto.getId() == null)
+                return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.noContent().build();
+    }
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<DocumentForDownloadDto> getDocumentForDownloadDetail(@PathVariable("id") Long id) {
         DocumentForDownloadDto documentForDownloadDto = documentForDownloadService.getDocumentById(id);

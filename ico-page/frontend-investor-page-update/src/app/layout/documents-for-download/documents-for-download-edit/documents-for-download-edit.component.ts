@@ -78,7 +78,7 @@ export class DocumentsForDownloadEditComponent implements OnInit, OnChanges {
             alert('Fill form, please');
         } else {
             this.spinner.show();
-            this.updateItemUploadService.putItemUpdate(this.requestItemData)
+            this.updateItemUploadService.putItemUpdateByDocument(this.requestItemData)
                 .toPromise()
                 .then((value: HttpResponse<Object>) => {
                         this.spinner.hide();

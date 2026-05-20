@@ -14,6 +14,7 @@ import {DocumentForDownload} from './document-for-download';
 export class UpdateDocumentsForDownloadUploadService {
 
     private static readonly URL: string = 'documents-for-download';
+    private static readonly URL_UPDATE: string = 'documents-for-download/document';
 
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {
@@ -23,6 +24,12 @@ export class UpdateDocumentsForDownloadUploadService {
         const urlString = UpdateDocumentsForDownloadUploadService.URL;
         return this.putDataToURL(urlString, itemData);
     }
+
+    public putItemUpdateByDocument(itemData: DocumentForDownload): Observable<HttpResponse<Object>> {
+        const urlString = UpdateDocumentsForDownloadUploadService.URL_UPDATE;
+        return this.putDataToURL(urlString, itemData);
+    }
+
 
     private putDataToURL(partUrl: string, itemData: DocumentForDownload): Observable<any> {
         const url = this.config.apiEndpoint + partUrl;
