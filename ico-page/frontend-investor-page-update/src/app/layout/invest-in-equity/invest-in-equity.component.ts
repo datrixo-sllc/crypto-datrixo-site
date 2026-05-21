@@ -87,7 +87,7 @@ export class InvestInEquityComponent implements OnInit, OnDestroy {
     onSubmitPPMDownload() {
         this.spinner.show();
         this.alertTitle = 'PPM Download';
-        this.investDownloadService.getPPM()
+        this.investDownloadService.getActualByDocType('PPM')
             .toPromise()
             .then((response: Blob) => {
                     this.recieveUtils.recieveResponseBinaryFile(response, InvestInEquityComponent.FN_PPM);

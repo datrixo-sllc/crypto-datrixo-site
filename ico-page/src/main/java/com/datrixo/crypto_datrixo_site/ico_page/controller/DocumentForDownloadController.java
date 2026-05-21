@@ -79,6 +79,16 @@ public class DocumentForDownloadController {
         }
     }
 
+    @GetMapping(value = "/actual/{doctype}")
+    public ResponseEntity<DocumentForDownloadDto> getActualDocumentForDownloadDetailByDocType(@PathVariable("doctype") String typedoc) {
+        DocumentForDownloadDto documentForDownloadDto = documentForDownloadService.findActualByDocType(typedoc);
+        if(documentForDownloadDto != null) {
+            return ResponseEntity.ok(documentForDownloadDto);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Void> deleteDocumentForDownload(@PathVariable("id") Long id) {
         documentForDownloadService.delete(id);

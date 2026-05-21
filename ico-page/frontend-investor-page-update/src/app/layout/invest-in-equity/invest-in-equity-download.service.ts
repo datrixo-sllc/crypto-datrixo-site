@@ -11,6 +11,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class InvestInEquityDownloadService {
+    private static URL_DOCUMENTS_FOR_DOWNLOAD = 'documents-for-download';
+    private static URL_ACTUAL = 'actual';
     private static URL_INVESTOR = 'investor';
     private static URL_PPM = 'ppm';
     private static URL_SUBSCR_AGRMNT = 'subscr_agrmnt';
@@ -18,6 +20,14 @@ export class InvestInEquityDownloadService {
     private static SLASH = '/';
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {}
+
+    getActualByDocType(doctype: String): Observable<Blob>  {
+        const url = this.config.apiEndpoint + InvestInEquityDownloadService.URL_DOCUMENTS_FOR_DOWNLOAD +
+            InvestInEquityDownloadService.SLASH + InvestInEquityDownloadService.URL_ACTUAL +
+            InvestInEquityDownloadService.SLASH + doctype;
+        const headers = this.createHeaders();
+        return this.http.get(url, { responseType: 'blob', headers });
+    }
 
     getPPM(): Observable<Blob>  {
         const url = this.config.apiEndpoint + InvestInEquityDownloadService.URL_INVESTOR +

@@ -19,6 +19,7 @@ import java.util.Optional;
 public interface DocumentForDownloadRepository extends JpaRepository<DocumentForDownload, Long> {
     Optional<DocumentForDownload> findFirstByDocTypeOrderByStartDateDesc(DocumentType documentType);
     Optional<DocumentForDownload> findFirstById(Long id);
+    Optional<DocumentForDownload> findFirstByActualTrueAndDocTypeEquals(DocumentType docType);
 
     // Обновляем actual = false для всех записей с заданным docType, где actual = true
     @Modifying

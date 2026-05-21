@@ -20,4 +20,5 @@ public interface DocumentForDownloadService {
     DocumentForDownloadDto update(MultipartFile file, DocumentForDownloadDto document) throws IOException;
     DocumentForDownloadDto updateByDocument(DocumentForDownloadDto document) throws IOException;
     void delete(Long id);
+    DocumentForDownloadDto findActualByDocType(String typedoc);
 }

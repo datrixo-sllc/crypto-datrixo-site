@@ -219,4 +219,19 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
         }
         documentForDownloadRepository.deleteById(id);
     }
+
+    @Override
+    public DocumentForDownloadDto findActualByDocType(String doctype) {
+        Optional<DocumentForDownload> optionalDocumentForDownload =
+        documentForDownloadRepository.findFirstByActualTrueAndDocTypeEquals(DocumentType.valueOf(doctype));
+        DocumentForDownloadDto documentForDownloadDto = null;
+        if (optionalDocumentForDownload.isPresent()) {
+            DocumentForDownload documentForDownload = optionalDocumentForDownload.get();
+            documentForDownloadDto = new DocumentForDownloadDto(documentForDownload.getId(),
+                    documentForDownload.getDocType().name(), documentForDownload.getStartDate(),
+                    documentForDownload.getActual(),
+                    documentForDownload.getContent());
+        }
+        return documentForDownloadDto;
+    }
 }

@@ -97,7 +97,7 @@ export class InvestComponent implements OnInit, OnDestroy {
     onSubmitPPMDownload() {
         this.spinner.show();
         this.alertTitle = 'PPM Download';
-        this.investDownloadService.getPPM()
+        this.investDownloadService.getActualByDocType('PPM')
             .pipe()
             .subscribe({
                 next: (response: HttpResponse<Blob>) => {
