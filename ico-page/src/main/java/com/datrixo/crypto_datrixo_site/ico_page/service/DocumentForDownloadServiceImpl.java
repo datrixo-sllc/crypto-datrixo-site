@@ -44,6 +44,7 @@ public class DocumentForDownloadServiceImpl implements DocumentForDownloadServic
                 documentForDownloads.stream()
                 .map(s -> new DocumentForDownloadDto(s.getId(), s.getDocType().name(),
                         s.getStartDate(), s.getActual(), s.getContent()))
+                .sorted((o1, o2) -> o1.getActual().compareTo(o2.getActual()) >= 0 ? -1 : +1)
                 .collect(Collectors.toList());
         return new DocumentForDownloadListDto(documentForDownloadDtos);
     }
