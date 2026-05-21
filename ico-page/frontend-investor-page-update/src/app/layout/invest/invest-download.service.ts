@@ -8,6 +8,7 @@ import {IAppConfig} from '../../i-app-config';
 import {APP_CONFIG} from '../../app.config';
 import { Observable } from 'rxjs';
 import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
+import {DocumentForDownload} from '../documents-for-download/document-for-download';
 
 @Injectable()
 export class InvestDownloadService {
@@ -21,12 +22,12 @@ export class InvestDownloadService {
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {}
 
-    getActualByDocType(doctype: String): Observable<HttpResponse<Blob>>  {
+    getActualByDocType(doctype: string): Observable<DocumentForDownload> {
         const url = this.config.apiEndpoint + InvestDownloadService.URL_DOCUMENTS_FOR_DOWNLOAD +
             InvestDownloadService.SLASH + InvestDownloadService.URL_ACTUAL +
             InvestDownloadService.SLASH + doctype;
         const headers = this.createHeaders();
-        return this.http.get(url, { observe: 'response', responseType: 'blob', headers });
+        return this.http.get<DocumentForDownload>(url, { headers });
     }
 
 

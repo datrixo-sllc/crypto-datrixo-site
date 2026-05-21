@@ -8,6 +8,7 @@ import {IAppConfig} from '../../i-app-config';
 import {APP_CONFIG} from '../../app.config';
 import { Observable } from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {DocumentForDownload} from '../documents-for-download/document-for-download';
 
 @Injectable()
 export class InvestInEquityDownloadService {
@@ -21,12 +22,12 @@ export class InvestInEquityDownloadService {
 
     constructor(@Inject(APP_CONFIG) private config: IAppConfig, private http: HttpClient) {}
 
-    getActualByDocType(doctype: String): Observable<Blob>  {
+    getActualByDocType(doctype: string): Observable<DocumentForDownload> {
         const url = this.config.apiEndpoint + InvestInEquityDownloadService.URL_DOCUMENTS_FOR_DOWNLOAD +
             InvestInEquityDownloadService.SLASH + InvestInEquityDownloadService.URL_ACTUAL +
             InvestInEquityDownloadService.SLASH + doctype;
         const headers = this.createHeaders();
-        return this.http.get(url, { responseType: 'blob', headers });
+        return this.http.get<DocumentForDownload>(url, { headers });
     }
 
     getPPM(): Observable<Blob>  {

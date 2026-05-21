@@ -20,8 +20,6 @@ import {PageHeaderComponent} from '../../shared/modules/page-header/page-header.
 import {
     HoldersDatatableResponsiveComponent
 } from './holders-datatable-responsive/holders-datatable-responsive.component';
-import {HttpResponse} from "@angular/common/http";
-
 @Component({
     selector: 'app-invest',
     standalone: true,
@@ -98,16 +96,14 @@ export class InvestComponent implements OnInit, OnDestroy {
         this.spinner.show();
         this.alertTitle = 'PPM Download';
         this.investDownloadService.getActualByDocType('PPM')
-            .pipe()
             .subscribe({
-                next: (response: HttpResponse<Blob>) => {
-                    this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_PPM);
+                next: (document) => {
+                    this.recieveUtils.saveDocumentForDownload(document, InvestComponent.FN_PPM);
                     this.spinner.hide();
                 },
                 error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
-                    // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 }
             });
@@ -116,17 +112,15 @@ export class InvestComponent implements OnInit, OnDestroy {
     onSubmitSubAgrmtDownload() {
         this.spinner.show();
         this.alertTitle = 'Subscription Agreement Download';
-        this.investDownloadService.getSubscrAgrmnt()
-            .pipe()
+        this.investDownloadService.getActualByDocType('SUBSCRIPTION_AGREEMENT')
             .subscribe({
-                next: (response: HttpResponse<Blob>) => {
-                    this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_SUBSCR_AGRMNT);
+                next: (document) => {
+                    this.recieveUtils.saveDocumentForDownload(document, InvestComponent.FN_SUBSCR_AGRMNT);
                     this.spinner.hide();
                 },
                 error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
-                    // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 }
             });
@@ -135,17 +129,15 @@ export class InvestComponent implements OnInit, OnDestroy {
     onSubmitSafeTDownload() {
         this.spinner.show();
         this.alertTitle = 'SAFE-T Download';
-        this.investDownloadService.getSafeT()
-            .pipe()
+        this.investDownloadService.getActualByDocType('SAFE_T')
             .subscribe({
-                next: (response: HttpResponse<Blob>) => {
-                    this.recieveUtils.recieveResponseBinaryFile(response, InvestComponent.FN_SAFE_T);
+                next: (document) => {
+                    this.recieveUtils.saveDocumentForDownload(document, InvestComponent.FN_SAFE_T);
                     this.spinner.hide();
                 },
                 error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
-                    // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                 }
             });

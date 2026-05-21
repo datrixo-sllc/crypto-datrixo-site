@@ -88,51 +88,51 @@ export class InvestInEquityComponent implements OnInit, OnDestroy {
         this.spinner.show();
         this.alertTitle = 'PPM Download';
         this.investDownloadService.getActualByDocType('PPM')
-            .toPromise()
-            .then((response: Blob) => {
-                    this.recieveUtils.recieveResponseBinaryFile(response, InvestInEquityComponent.FN_PPM);
+            .subscribe({
+                next: (document) => {
+                    this.recieveUtils.saveDocumentForDownload(document, InvestInEquityComponent.FN_PPM);
                     this.spinner.hide();
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
-                    // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                });
+                }
+            });
     }
 
     onSubmitSubAgrmtDownload() {
         this.spinner.show();
         this.alertTitle = 'Subscription Agreement Download';
-        this.investDownloadService.getSubscrAgrmnt()
-            .toPromise()
-            .then((response: Blob) => {
-                    this.recieveUtils.recieveResponseBinaryFile(response, InvestInEquityComponent.FN_SUBSCR_AGRMNT);
+        this.investDownloadService.getActualByDocType('SUBSCRIPTION_AGREEMENT')
+            .subscribe({
+                next: (document) => {
+                    this.recieveUtils.saveDocumentForDownload(document, InvestInEquityComponent.FN_SUBSCR_AGRMNT);
                     this.spinner.hide();
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
-                    // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                });
+                }
+            });
     }
 
     onSubmitSafeTDownload() {
         this.spinner.show();
         this.alertTitle = 'SAFE-T Download';
-        this.investDownloadService.getSafeT()
-            .toPromise()
-            .then((response: Blob) => {
-                    this.recieveUtils.recieveResponseBinaryFile(response, InvestInEquityComponent.FN_SAFE_T);
+        this.investDownloadService.getActualByDocType('SAFE_T')
+            .subscribe({
+                next: (document) => {
+                    this.recieveUtils.saveDocumentForDownload(document, InvestInEquityComponent.FN_SAFE_T);
                     this.spinner.hide();
                 },
-                (error: Error) => {
+                error: (error: Error) => {
                     this.alertBody = 'Server pull error: ' + error.message;
                     this.spinner.hide();
-                    // this.modal = this.modalService.open(this.templateAlertRef);
                     this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
-                });
+                }
+            });
     }
 
     onSubmitGetInvoice() {
@@ -147,20 +147,21 @@ export class InvestInEquityComponent implements OnInit, OnDestroy {
         if (this.fileToUpload === null) {
             this.alertTitle = 'Signed Agreement Upload';
             this.alertBody = 'File for uploading is not selected';
-            // this.modal = this.modalService.open(this.templateAlertRef);
             this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
         } else {
+            this.spinner.show();
             this.investUploadService.postSignedAgreement(this.fileToUpload)
                 .toPromise()
-                .then((value: Response) => {
-                        this.alertBody = 'Server pull response' + value.text();
-                        // this.modal = this.modalService.open(this.templateAlertRef);
+                .then(() => {
+                        this.alertTitle = 'Success';
+                        this.alertBody = 'A Doc was uploaded successfully';
+                        this.spinner.hide();
                         this.notyMessage(this.alertTitle, this.alertBody, 'success').show();
                         this.clearUploadParams();
                     },
                     (reason: Error) => {
                         this.alertBody = 'Server pull error: ' + reason.message;
-                        // this.modal = this.modalService.open(this.templateAlertRef);
+                        this.spinner.hide();
                         this.notyMessage(this.alertTitle, this.alertBody, 'error').show();
                         this.clearUploadParams();
                     });
