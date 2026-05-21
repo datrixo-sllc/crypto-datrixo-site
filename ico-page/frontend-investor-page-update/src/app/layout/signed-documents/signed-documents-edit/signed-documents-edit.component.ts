@@ -249,6 +249,4 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
             this.requestItemData.loadDate = event.value;
         }
     }
-
-
 }

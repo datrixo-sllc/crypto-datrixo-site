@@ -16,6 +16,13 @@ import {UpdateDocumentsForDownloadUploadService} from '../update-documents-for-d
 import {AddDocumentsForDownloadUploadService} from '../add-documents-for-download-upload.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { APP_CONFIG, AppConfig } from '../../../app.config';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 /**
  * Created by Yuri Nikiforov.
@@ -26,7 +33,16 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-documents-for-download-edit',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [
+        CommonModule,
+        FormsModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatNativeDateModule,
+        MatIconModule,
+        MatButtonModule
+    ],
     templateUrl: './documets-for-download-edit.component.html',
     styleUrls: ['./documents-for-download-edit.component.scss']
 })
@@ -37,8 +53,11 @@ export class DocumentsForDownloadEditComponent implements OnInit, OnChanges {
 
 
     requestItemData: DocumentForDownload;
-
     username: string;
+    selectedDate: Date;
+    minDate: Date;
+    maxDate: Date;
+    startDate: Date;
 
     constructor(
         private updateItemUploadService: UpdateDocumentsForDownloadUploadService,
@@ -50,8 +69,21 @@ export class DocumentsForDownloadEditComponent implements OnInit, OnChanges {
     }
 
     ngOnInit(): void {
+        this.initDateLimits();
         this.username = localStorage.getItem('username');
     }
+
+    initDateLimits(): void {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        // Минимальная дата - 50 лет назад
+        this.minDate = new Date(currentYear - 50, 0, 1);
+        // Максимальная дата - сегодня
+        this.maxDate = today;
+        // Начальная дата для календаря
+        this.startDate = new Date(currentYear - 10, 0, 1);
+    }
+
 
     ngOnChanges(changes: SimpleChanges): void {
         this.init();
@@ -64,6 +96,7 @@ export class DocumentsForDownloadEditComponent implements OnInit, OnChanges {
             this.listService.getItemDetail(this.id)
                 .subscribe(value => {
                     this.requestItemData = value as DocumentForDownload;
+                    this.selectedDate = this.requestItemData.startDate;
                     this.spinner.hide();
                 }, error => {
                     this.spinner.hide();
@@ -77,6 +110,7 @@ export class DocumentsForDownloadEditComponent implements OnInit, OnChanges {
         ) {
             alert('Fill form, please');
         } else {
+            this.requestItemData.startDate = this.selectedDate;
             this.spinner.show();
             this.updateItemUploadService.putItemUpdateByDocument(this.requestItemData)
                 .toPromise()
@@ -108,6 +142,13 @@ export class DocumentsForDownloadEditComponent implements OnInit, OnChanges {
 
     onBackItem() {
         this.backItemEmit.emit('backItem');
+    }
+
+    onDateChange(event: any): void {
+        if (event.value) {
+            this.selectedDate = event.value;
+            this.requestItemData.startDate = event.value;
+        }
     }
 
 }
