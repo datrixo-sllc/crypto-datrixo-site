@@ -73,91 +73,91 @@ export class DocumentsForDownloadDetailComponent implements OnChanges {
      */
     onViewDocument() {
         if (!this.item || !this.item.content) {
-            alert('Содержимое документа недоступно');
+            alert('Document contents are not available');
             return;
         }
 
         try {
-            // Конвертируем данные в byteArray сначала
+            // Convert data to byteArray first
             const byteArray = this.convertToUint8Array(this.item.content);
-            
-            // Определяем MIME тип на основе заголовков файла
+
+            // Determine MIME type based on file headers
             const mimeType = this.getMimeType(byteArray);
-            console.log('Определенный MIME тип для просмотра:', mimeType);
-            
+            console.log('Detected MIME type for viewing:', mimeType);
+
             // Для SVG создаем blob с правильным типом
             const blob = new Blob([new Uint8Array(byteArray)], { type: mimeType });
-            
-            // Проверяем размер blob
+
+            // Check blob size
             if (blob.size === 0) {
-                alert('Ошибка: Документ имеет нулевой размер');
+                alert('Error: Document has zero size');
                 return;
             }
-            
-            // Создаем URL для blob
+
+            // Create a URL for the blob
             const url = URL.createObjectURL(blob);
-            
-            // Открываем в новой вкладке
+
+            // Open in a new tab
             const newWindow = window.open(url, '_blank');
-            
-            // Если окно заблокировано, показываем сообщение
+
+            // If the window is blocked, show a message
             if (!newWindow) {
-                alert('Пожалуйста, разрешите открытие всплывающих окон для просмотра документа');
+                alert('Please allow pop-ups to view the document');
                 URL.revokeObjectURL(url);
                 return;
             }
-            
-            // Очищаем URL через некоторое время (опционально)
+
+            // Clean up the URL after some time (optional)
             setTimeout(() => {
                 URL.revokeObjectURL(url);
-            }, 60000); // 60 секунд
-            
+            }, 60000); // 60 seconds
+
         } catch (error) {
-            console.error('Ошибка при открытии документа:', error);
-            alert('Не удалось загрузить документ: ' + (error.message || 'Неизвестная ошибка'));
+            console.error('Error opening document:', error);
+            alert('Failed to load document: ' + (error.message || 'Unknown error'));
         }
     }
 
     /**
-     * Определяет MIME тип файла на основе расширения, типа документа или заголовков файла
+     * Determines the MIME type of a file based on its extension, document type, or file headers
      */
     private getMimeType(byteArray?: Uint8Array): string {
-        // Если MIME тип уже указан
+        // If MIME type is already specified
         if (this.item.mimeType) {
             return this.item.mimeType;
         }
 
-        // Проверяем содержимое на SVG (текстовый формат)
+        // Check content for SVG (text format)
         if (byteArray && byteArray.length > 10) {
-            // Преобразуем первые байты в строку для проверки текстовых форматов
+        // Convert the first bytes to a string to check text formats
             const textStart = Array.from(byteArray.slice(0, Math.min(100, byteArray.length)))
                 .map(b => String.fromCharCode(b))
                 .join('');
-            
-            console.log('Начало декодированного содержимого:', textStart.substring(0, 50));
-            
-            // SVG файлы начинаются с <svg или <?xml
+
+            console.log('Decoded content start:', textStart.substring(0, 50));
+
+            // SVG files start with <svg or <?xml
             if (textStart.trim().startsWith('<svg') || textStart.trim().startsWith('<?xml')) {
-                console.log('Обнаружен SVG файл по содержимому');
+                console.log('SVG file detected by content');
                 return 'image/svg+xml';
             }
-            
+
             // Проверяем бинарные заголовки
             const header = String.fromCharCode(byteArray[0], byteArray[1], byteArray[2], byteArray[3]);
             console.log('Заголовок файла:', header);
-            
+
             // PDF файлы начинаются с %PDF
             if (header === '%PDF') {
                 console.log('Обнаружен PDF файл по заголовку');
                 return 'application/pdf';
             }
-            
+
             // PNG файлы начинаются с PNG
             if (header === '\x89PNG') {
                 console.log('Обнаружен PNG файл по заголовку');
                 return 'image/png';
             }
-            
+
             // JPEG файлы начинаются с FF D8
             if (byteArray[0] === 0xFF && byteArray[1] === 0xD8) {
                 console.log('Обнаружен JPEG файл по заголовку');
@@ -213,11 +213,11 @@ export class DocumentsForDownloadDetailComponent implements OnChanges {
      */
     private convertToUint8Array(data: any): Uint8Array {
         console.log('Конвертация данных:', data);
-        
+
         if (data instanceof Uint8Array) {
             return data;
         }
-        
+
         if (Array.isArray(data)) {
             // Проверяем, являются ли элементы числами
             if (data.length > 0 && typeof data[0] === 'number') {
@@ -246,7 +246,7 @@ export class DocumentsForDownloadDetailComponent implements OnChanges {
                 }
             }
         }
-        
+
         if (typeof data === 'string') {
             // Попробуем base64
             try {
@@ -260,7 +260,7 @@ export class DocumentsForDownloadDetailComponent implements OnChanges {
                 console.log('Не base64 строка');
             }
         }
-        
+
         throw new Error('Неподдерживаемый формат данных');
     }
 
@@ -303,15 +303,15 @@ export class DocumentsForDownloadDetailComponent implements OnChanges {
                 alert('Ошибка: Blob имеет нулевой размер. Проверьте данные content.');
                 return;
             }
-            
+
             // Создаем ссылку для скачивания
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            
+
             // Определяем имя файла с правильным расширением
             let fileName = this.item.fileName || `document_${this.item.id}`;
-            
+
             // Если нет расширения, добавляем его на основе MIME типа
             if (!fileName.includes('.')) {
                 switch (mimeType) {
@@ -335,19 +335,19 @@ export class DocumentsForDownloadDetailComponent implements OnChanges {
                         break;
                 }
             }
-            
+
             link.download = fileName;
-            
+
             console.log('Скачивание файла:', fileName, 'размер:', blob.size, 'байт');
-            
+
             // Добавляем ссылку в DOM, кликаем и удаляем
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
+
             // Очищаем URL
             URL.revokeObjectURL(url);
-            
+
         } catch (error) {
             console.error('Ошибка при скачивании документа:', error);
             alert('Ошибка при скачивании документа: ' + error.message);
