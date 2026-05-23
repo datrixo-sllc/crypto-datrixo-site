@@ -11,24 +11,24 @@ import java.util.List;
  * Time: 23:20
  **/
 public class HolderAccountListDto {
-    private List<HolderAccountDto> holderAccountDtoList;
+    private List<HolderAccountDto> holderAccountList;
 
-    public List<HolderAccountDto> getHolderAccountDtoList() {
-        if (holderAccountDtoList == null) {
-            holderAccountDtoList = new ArrayList<>();
+    public List<HolderAccountDto> getHolderAccountList() {
+        if (holderAccountList == null) {
+            holderAccountList = new ArrayList<>();
         }
-        return holderAccountDtoList;
+        return holderAccountList;
     }
 
-    public void setHolderAccountDtoList(List<HolderAccountDto> holderAccountDtoList) {
-        this.holderAccountDtoList = holderAccountDtoList;
+    public void setHolderAccountList(List<HolderAccountDto> holderAccountList) {
+        this.holderAccountList = holderAccountList;
     }
 
     public void setHolderAccounts(List<HolderAccount> holderAccounts) {
         for (HolderAccount holderAccount : holderAccounts) {
             HolderAccountDto holderAccountDto = new HolderAccountDto();
             holderAccountDto.setHolderAccount(holderAccount);
-            getHolderAccountDtoList().add(holderAccountDto);
+            getHolderAccountList().add(holderAccountDto);
         }
     }
 }

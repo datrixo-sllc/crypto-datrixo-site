@@ -1,9 +1,12 @@
 package com.datrixo.crypto_datrixo_site.ico_page.dto;
 
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.SignedDocument;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Yuri Nikiforov.
@@ -19,6 +22,7 @@ public class HolderAccountDto {
     private Boolean initialInvest;
     private String shareTokens;
     private String share;
+    private List<SignedDocumentDto> signedDocuments;
 
     public HolderAccountDto() {
     }
@@ -112,4 +116,15 @@ public class HolderAccountDto {
             this.paidPrice = holderAccount.getPaidPrice();
     }
         }
+
+    public List<SignedDocumentDto> getSignedDocuments() {
+        if(signedDocuments==null){
+            signedDocuments = new ArrayList<>();
+        }
+        return signedDocuments;
+    }
+
+    public void setSignedDocuments(List<SignedDocumentDto> signedDocuments) {
+        this.signedDocuments = signedDocuments;
+    }
 }

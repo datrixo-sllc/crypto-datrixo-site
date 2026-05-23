@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
 import { PageHeaderComponent } from '../../shared/modules/page-header/page-header.component';
 import { CommonModule } from '@angular/common';
 import { MyHoldingDatatableResponsiveComponent } from './my-holding-datatable-responsive/my-holding-datatable-responsive.component';
+import { MyHoldingsResponce } from './my-holdings-responce';
+import { HolderAccount } from './holder-account';
 
 @Component({
     selector: 'app-my-holdings',
@@ -21,9 +23,9 @@ import { MyHoldingDatatableResponsiveComponent } from './my-holding-datatable-re
 })
 export class MyHoldingsComponent implements OnInit, OnDestroy {
 
-    holders: HolderResponce[];
-    response: IcoPageResponse;
 
+    response: MyHoldingsResponce;
+    holderAccounts: HolderAccount[] = [];
     subscriber: Subscription;
 
     constructor(
@@ -32,13 +34,13 @@ export class MyHoldingsComponent implements OnInit, OnDestroy {
         private spinner: NgxSpinnerService) {}
 
     ngOnInit() {
-        this.getIcoPage();
+        this.getMyHoldings();
         this.unSubscribe();
         this.subscriber = interval(300000/*5 min*/).pipe(
-            switchMap(() => this.myHoldingsService.getIcoPage())
+            switchMap(() => this.myHoldingsService.getMyHoldings())
         ).subscribe(value => {
             if (value) {
-                this.response = value as IcoPageResponse;
+                this.response = value as MyHoldingsResponce;
                 this.fillValues();
             }
         }, error => {this.unSubscribe();
@@ -49,13 +51,17 @@ export class MyHoldingsComponent implements OnInit, OnDestroy {
 
 
 
-    getIcoPage(): void {
-        this.myHoldingsService.getIcoPage()
+    getMyHoldings(): void {
+        this.spinner.show();
+        this.myHoldingsService.getMyHoldings()
             .subscribe(value => {
                 if (value) {
-                    this.response = value as IcoPageResponse;
+                    this.response = value as MyHoldingsResponce;
                     this.fillValues();
+                    this.spinner.hide();
                 }
+            }, error => {
+                this.spinner.hide();
             });
     }
 
@@ -73,7 +79,7 @@ export class MyHoldingsComponent implements OnInit, OnDestroy {
 
     private fillValues() {
         if (this.response) {
-            this.holders = this.response.holders;
+            this.holderAccounts = this.response.holderAccountList;
         }
     }
 }

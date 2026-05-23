@@ -16,6 +16,7 @@ export class MyHoldingsService {
     private static readonly INVESTOR: string = 'investor';
     private static readonly HOLDINGS: string = 'holdings';
     private static readonly USER_HOLDINGS: string = 'user-holdings';
+    private static readonly MY_HOLDINGS: string = 'my-holdings';
 
     constructor(
         @Inject(APP_CONFIG) private config: IAppConfig,
@@ -32,6 +33,12 @@ export class MyHoldingsService {
 
     getUserHoldings(id: number): Observable<any> {
         const url = this.config.apiEndpoint + MyHoldingsService.INVESTOR + MyHoldingsService.SLASH + MyHoldingsService.USER_HOLDINGS + MyHoldingsService.SLASH + id;
+        const headers = this.createHeaders();
+        return this.http.get(url, {headers});
+    }
+
+    getMyHoldings(): Observable<any> {
+        const url = this.config.apiEndpoint + MyHoldingsService.INVESTOR + MyHoldingsService.SLASH + MyHoldingsService.MY_HOLDINGS;
         const headers = this.createHeaders();
         return this.http.get(url, {headers});
     }

@@ -5,6 +5,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.dto.SignedDocumentDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.SignedDocumentListByHolderAccountDto;
 import com.datrixo.crypto_datrixo_site.ico_page.dto.SignedDocumentListDto;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.SignedDocument;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,4 +32,6 @@ public interface SignedDocumentService {
     SignedDocumentAdmListDto findAllAdm();
 
     SignedDocumentDto saveByAdmin(MultipartFile file, SignedDocumentDto document) throws IOException;
+
+    List<SignedDocument> findAllByHolderAccount(HolderAccount transactionAccount);
 }
