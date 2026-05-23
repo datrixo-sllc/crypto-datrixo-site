@@ -4,6 +4,7 @@ import com.datrixo.crypto_datrixo_site.ico_page.dto.*;
 // import com.datrixo.crypto_datrixo_site.ico_page.h2.model.Holder;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.Holder;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.HolderAccount;
+import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.SignedDocument;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.model.User;
 import com.datrixo.crypto_datrixo_site.ico_page.mysql.repository.HolderAccountRepository;
 import com.datrixo.crypto_datrixo_site.ico_page.security.MediUser;
@@ -169,6 +170,41 @@ public class InvestorPageController {
             Optional<List<HolderAccount>> holderAccounts = holderAccountRepository.findHolderAccountsByUser(user.get());
             if (holderAccounts.isPresent()) {
                 holderAccountListDto.setHolderAccounts(holderAccounts.get());
+                return holderAccountListDto;
+            } else {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            }
+        }
+    }
+    @GetMapping(value = "/my-holdings", produces = "application/json")
+    public @ResponseBody
+    HolderAccountListDto getMyHoldings() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        MediUser currentUser = (MediUser) auth.getPrincipal();
+        User user = userService.findByUsername(currentUser.getUsername());
+        if (user == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        } else {
+            HolderAccountListDto holderAccountListDto = new HolderAccountListDto();
+            Optional<List<HolderAccount>> holderAccounts = holderAccountRepository.findHolderAccountsByUser(user);
+            if (holderAccounts.isPresent()) {
+                List<HolderAccount> transactionAccounts = holderAccounts.get();
+                List<HolderAccountDto> holderAccountDtoList = new ArrayList<>();
+                transactionAccounts.forEach(transactionAccount -> {
+                    HolderAccountDto holderAccountDto = new HolderAccountDto(transactionAccount.getId(),
+                            transactionAccount.getAddress(), transactionAccount.getUserId(), transactionAccount.getCreateDate(),
+                            transactionAccount.getPaidPrice(), transactionAccount.getInitialInvest());
+                    List<SignedDocument>signedDocumentList =
+                            signedDocumentService.findAllByHolderAccount(transactionAccount);
+                    for(SignedDocument document : signedDocumentList) {
+                        SignedDocumentDto documentDTO =
+                                new SignedDocumentDto(document.getId(), null, null, document.getDocType().name(),
+                                        document.getLoadDate(), document.getContent());
+                        holderAccountDto.getSignedDocuments().add(documentDTO);
+                    }
+                    holderAccountDtoList.add(holderAccountDto);
+                });
+                holderAccountListDto.setHolderAccountList(holderAccountDtoList);
                 return holderAccountListDto;
             } else {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND);

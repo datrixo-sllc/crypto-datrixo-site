@@ -1,74 +1,180 @@
 /**
+
  * Created by Yuri Nikiforov.
+
  * Date: 22.07.2021
+
  * Time: 21:38
+
  */
 
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewChild} from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+
+
+import {
+
+    AfterViewInit,
+
+    Component,
+
+    Input,
+
+    OnChanges,
+
+    OnInit,
+
+    SimpleChanges,
+
+    TemplateRef,
+
+    ViewChild
+
+} from '@angular/core';
+
+import {MatTableDataSource} from '@angular/material/table';
+
+import {MatPaginator} from '@angular/material/paginator';
+
 import {MatPaginatorModule} from '@angular/material/paginator';
+
 import {MatTableModule} from '@angular/material/table';
+
 import {DomSanitizer} from '@angular/platform-browser';
-import {HolderResponce} from '../holder-responce';
-import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
-import { CommonModule } from '@angular/common';
+
+import {NgbModal, NgbModalModule, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+
+import {CommonModule, formatDate} from '@angular/common';
+
+import {HolderAccount} from '../holder-account';
+
+import {SignedDocument} from '../../signed-documents/signed-document';
+import {openSignedDocumentInNewWindow} from '../../signed-documents/signed-document-content.util';
+
+
 
 
 @Component({
+
     selector: 'app-my-holding-datatable-responsive',
+
     standalone: true,
-    imports: [CommonModule, MatPaginatorModule, MatTableModule],
+
+    imports: [CommonModule, MatPaginatorModule, MatTableModule, NgbModalModule],
+
     styleUrls: ['my-holding-datatable-responsive.component.scss'],
+
     templateUrl: 'my-holding-datatable-responsive.component.html',
+
 })
-export class MyHoldingDatatableResponsiveComponent implements OnInit, OnChanges {
-    @Input() items: HolderResponce[];
+
+export class MyHoldingDatatableResponsiveComponent implements OnInit, OnChanges, AfterViewInit {
+
+    @Input() items: HolderAccount[] = [];
+
     etherNet = 'etherscan.io';
-    displayedColumns: string[] = ['asset', 'address', 'createDate', 'equityTokens', 'paidPrice', 'valuePerToken',
-        'totalValueEstimate', 'docs'];
-    dataSource = new MatTableDataSource<HolderResponce>();
+
+    displayedColumns: string[] = ['asset', 'address', 'createDate', 'initialInvest', 'paidPrice', 'docs'];
+
+    dataSource = new MatTableDataSource<HolderAccount>([]);
+
     dataSourceLenth: number;
+
+
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
+
+
     modal: NgbModalRef;
+
     @ViewChild('modalDocsWindow') templateDocsRef: TemplateRef<any>;
-    arrayDocs: string[] = [];
+
+    arrayDocs: SignedDocument[] = [];
+
+
 
     constructor(
+
         public sanitizer: DomSanitizer,
+
         private modalService: NgbModal) {
+
     }
 
-    ngOnInit() {
-        this.items.forEach(function(item) {
-            item.docs = ['Document 1', 'Document 2'];
-        });
-        this.dataSource = new MatTableDataSource<HolderResponce>(this.items);
-        this.dataSource.paginator = this.paginator;
-        this.dataSourceLenth = this.dataSource.data.length;
+
+
+    ngOnInit(): void {
+
+        this.refreshDataSource();
+
     }
+
+
 
     ngOnChanges(changes: SimpleChanges): void {
-        this.dataSource = new MatTableDataSource<HolderResponce>(this.items);
-        this.dataSource.paginator = this.paginator;
-        this.dataSourceLenth = this.dataSource.data.length;
+
+        if (changes['items']) {
+
+            this.refreshDataSource();
+
+        }
+
     }
+
+
+
+    ngAfterViewInit(): void {
+
+        this.dataSource.paginator = this.paginator;
+
+    }
+
+
+
+    private refreshDataSource(): void {
+
+        const items = this.items ?? [];
+
+        this.dataSource = new MatTableDataSource<HolderAccount>(items);
+
+        this.dataSource.paginator = this.paginator;
+
+        this.dataSourceLenth = this.dataSource.data.length;
+
+    }
+
+
 
     applyFilter(filterValue: string) {
+
         this.dataSource.filter = filterValue.trim().toLowerCase();
 
+
+
         if (this.dataSource.paginator) {
+
             this.dataSource.paginator.firstPage();
+
         }
+
     }
 
-    onOpenDocsWindow(docs: []) {
+
+
+    onOpenDocsWindow(docs: SignedDocument[] = []) {
         this.arrayDocs = docs;
         this.modal = this.modalService.open(this.templateDocsRef);
     }
+
+    getDocLabel(doc: SignedDocument): string {
+        const dateLabel = doc.loadDate ? formatDate(doc.loadDate, 'yyyy-MM-dd', 'en-US') : 'Document';
+        return `${doc.docType} | ${dateLabel}`;
+    }
+
+    onViewDocument(doc: SignedDocument, event?: Event): void {
+        event?.preventDefault();
+        openSignedDocumentInNewWindow(doc);
+    }
+
 }
 
 

@@ -411,4 +411,11 @@ public class SignedDocumentServiceImpl implements SignedDocumentService {
         return signedDocumentDto;
 
     }
+
+    @Override
+    public List<SignedDocument> findAllByHolderAccount(HolderAccount transactionAccount) {
+        List<SignedDocument> documents =
+                signedDocumentRepository.findAllByHolderAccount(transactionAccount).orElse(new ArrayList<>());
+        return documents;
+    }
 }

@@ -212,7 +212,7 @@ export class SignedDocumentsEditComponent implements OnInit, OnChanges {
             .subscribe({
                 next: (response: any) => {
                     console.log('Response from getUserHoldings:', response);
-                    this.holdingsData = response.holderAccountDtoList;
+                    this.holdingsData = response.holderAccountList;
                     console.log('Processed holdings data:', this.holdingsData);
                     this.loadingHoldings = false;
                 },
